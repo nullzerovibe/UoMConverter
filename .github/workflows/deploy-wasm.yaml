@@ -35,7 +35,9 @@ jobs:
         run: dotnet publish UoMConverter.Wasm/UoMConverter.Wasm.csproj -c Release -o release --nologo
 
       - name: Fix Base Path
-        run: sed -i 's/<base href="\/" \/>/<base href="\/${{ github.event.repository.name }}\/" \/>/g' release/wwwroot/index.html
+        run: |
+          sed -i 's/<base href="\/" \/>/<base href="\/${{ github.event.repository.name }}\/" \/>/g' release/wwwroot/index.html
+          sed -i 's/href="\/favicon\//href="\/${{ github.event.repository.name }}\/favicon\//g' release/wwwroot/index.html
 
       # Copy index.html to 404.html to support client-side routing
       - name: Fix Routing
@@ -56,5 +58,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-
