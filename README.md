@@ -14,7 +14,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Vibe: Agentic](https://img.shields.io/badge/Vibe-Agentic-blueviolet)](AGENTS.md)
 [![Mode: Vibecoding](https://img.shields.io/badge/Mode-Vibecoding-cyan)](VIBE.md)
-[![Powered By: Antigravity](https://img.shields.io/badge/Powered%20By-Antigravity-orange)](AGENTS.md)
+[![Powered By: Antigravity](https://img.shields.io/badge/Powered%20By-Antigravity-orange)](https://antigravity.google/)
 
 </div>
 
