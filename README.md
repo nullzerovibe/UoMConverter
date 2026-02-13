@@ -29,6 +29,9 @@
 
 **UoMConverter** is a high-performance, extensible unit of measure conversion library for .NET, leveraging source generators for maximum efficiency and a zero-allocation discovery path.
 
+> **[👉 Try the Live WebAssembly Demo 👈](https://nullzerovibe.github.io/UoMConverter/)**
+> *Runs entirely in your browser. Architecture by NullZeroVibe.*
+
 ## Features
 
 - 🚀 **High Performance**: Optimized conversions using pre-compiled formulas generated at compile-time.
