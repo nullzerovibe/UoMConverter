@@ -56,6 +56,14 @@ jobs:
         cd output/library && zip -r ../../UoMConverter-Lib.zip .
         cd ../wasm/wwwroot && zip -r ../../../UoMConverter-Wasm-App.zip .
 
+    - name: Pack NuGet
+      if: startsWith(github.ref, 'refs/tags/')
+      run: dotnet pack UoMConverter/UoMConverter.csproj -c Release -o output/nuget
+
+    - name: Push to NuGet
+      if: startsWith(github.ref, 'refs/tags/')
+      run: dotnet nuget push output/nuget/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+
     - name: Release
       if: startsWith(github.ref, 'refs/tags/')
       uses: softprops/action-gh-release@v1
@@ -63,4 +71,5 @@ jobs:
         files: |
           UoMConverter-Lib.zip
           UoMConverter-Wasm-App.zip
+          output/nuget/*.nupkg
         generate_release_notes: true

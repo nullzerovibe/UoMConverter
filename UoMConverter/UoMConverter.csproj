@@ -4,6 +4,17 @@
     <LangVersion>preview</LangVersion>
     <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
     <CompilerGeneratedFilesOutputPath>obj/GeneratedUnits</CompilerGeneratedFilesOutputPath>
+    
+    <!-- NuGet Metadata -->
+    <PackageId>UoMConverter</PackageId>
+    <Version>0.9.0</Version>
+    <Authors>NullZeroVibe</Authors>
+    <Company>NullZeroVibe</Company>
+    <Description>A high-performance, extensible unit of measure conversion library for .NET, leveraging source generators for maximum efficiency.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/nullzerovibe/UoMConverter</RepositoryUrl>
+    <PackageTags>unit conversion;measurement;source-generator;performance;zero-allocation</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
