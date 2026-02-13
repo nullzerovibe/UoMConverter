@@ -74,7 +74,7 @@ else {
 $gitCommands = @(
     "git add $file",
     "git commit -m ""Bump version to $Version""",
-    "git tag $Version"
+    "git tag v$Version"
 )
 
 foreach ($cmd in $gitCommands) {
@@ -89,4 +89,6 @@ foreach ($cmd in $gitCommands) {
 
 if (-not $DryRun) {
     Write-Host "Version bump to $Version complete!" -ForegroundColor Green
+    Write-Host "Tag 'v$Version' created." -ForegroundColor Green
+    Write-Host "Remember to push tags: git push origin v$Version" -ForegroundColor Yellow
 }
