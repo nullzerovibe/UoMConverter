@@ -1,3 +1,4 @@
+```text
   _  _         _  _  ____                 _   _  _  _            
  | \| | _  _  | || ||_  / ___  _ _  ___  | | | |(_)| |__  ___  _  
  | .  || || | | || | / / / -_)| '_|/ _ \ | |_| || || '_ \/ -_)(_) 
@@ -11,3 +12,4 @@ You are free to use, modify, and distribute it.
 Keep the legacy alive. Keep the vibe open.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 [ nullzerovibe@gmail.com ] // [ null / zero / vibe ]
+```
