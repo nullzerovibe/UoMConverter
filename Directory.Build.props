@@ -11,14 +11,14 @@
     <Description>A high-performance, extensible unit of measure conversion library for .NET, leveraging source generators for maximum efficiency.</Description>
     <PackageTags>unit-conversion;uom;measurements;source-generator;performance;zero-allocation;dotnet;scientific</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReadmeFile>README_NUGET.md</PackageReadmeFile>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(IsPackable)' != 'false'">
-    <None Include="$(MSBuildThisFileDirectory)README.md" Pack="true" PackagePath="\" />
+    <None Include="$(MSBuildThisFileDirectory)README_NUGET.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 </Project>
 
