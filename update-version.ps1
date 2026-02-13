@@ -74,7 +74,9 @@ else {
 $gitCommands = @(
     "git add $file",
     "git commit -m ""Bump version to $Version""",
-    "git tag v$Version"
+    "git tag v$Version",
+    "git push",
+    "git push origin v$Version"
 )
 
 foreach ($cmd in $gitCommands) {

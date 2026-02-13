@@ -7,7 +7,6 @@
     
     <!-- NuGet Metadata -->
     <PackageId>UoMConverter</PackageId>
-    <Version>0.9.0</Version>
     <Authors>NullZeroVibe</Authors>
     <Company>NullZeroVibe</Company>
     <Description>A high-performance, extensible unit of measure conversion library for .NET, leveraging source generators for maximum efficiency.</Description>
