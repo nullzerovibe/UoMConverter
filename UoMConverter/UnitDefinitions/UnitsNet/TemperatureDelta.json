@@ -1,0 +1,132 @@
+{
+  "Name": "TemperatureDelta",
+  "BaseUnit": "Kelvin",
+  "XmlDocSummary": "Difference between two temperatures. The conversions are different than for Temperature.",
+  "BaseDimensions": {
+    "Θ": 1
+  },
+  "Units": [
+    {
+      "SingularName": "Kelvin",
+      "PluralName": "Kelvins",
+      "BaseUnits": {
+        "Θ": "Kelvin"
+      },
+      "FromUnitToBaseFunc": "{x}",
+      "FromBaseToUnitFunc": "{x}",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "∆K" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "DegreeCelsius",
+      "PluralName": "DegreesCelsius",
+      "BaseUnits": {
+        "Θ": "DegreeCelsius"
+      },
+      "FromUnitToBaseFunc": "{x}",
+      "FromBaseToUnitFunc": "{x}",
+      "Prefixes": [ "Milli" ],
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "∆°C" ],
+          "AbbreviationsForPrefixes": { "Milli": "∆m°C" }
+        }
+      ]
+    },
+    {
+      "SingularName": "DegreeDelisle",
+      "PluralName": "DegreesDelisle",
+      "BaseUnits": {
+        "Θ": "DegreeDelisle"
+      },
+      "FromUnitToBaseFunc": "{x} * -2 / 3",
+      "FromBaseToUnitFunc": "{x} * -3 / 2",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "∆°De" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "DegreeFahrenheit",
+      "PluralName": "DegreesFahrenheit",
+      "BaseUnits": {
+        "Θ": "DegreeFahrenheit"
+      },
+      "FromUnitToBaseFunc": "{x} * 5 / 9",
+      "FromBaseToUnitFunc": "{x} * 9 / 5",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "∆°F" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "DegreeNewton",
+      "PluralName": "DegreesNewton",
+      "BaseUnits": {
+        "Θ": "DegreeNewton"
+      },
+      "FromUnitToBaseFunc": "{x} * 100 / 33",
+      "FromBaseToUnitFunc": "{x} * 33 / 100",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "∆°N" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "DegreeRankine",
+      "PluralName": "DegreesRankine",
+      "BaseUnits": {
+        "Θ": "DegreeRankine"
+      },
+      "FromUnitToBaseFunc": "{x} * 5 / 9",
+      "FromBaseToUnitFunc": "{x} * 9 / 5",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "∆°R" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "DegreeReaumur",
+      "PluralName": "DegreesReaumur",
+      "BaseUnits": {
+        "Θ": "DegreeReaumur"
+      },
+      "FromUnitToBaseFunc": "{x} * 5 / 4",
+      "FromBaseToUnitFunc": "{x} * 4 / 5",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "∆°Ré" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "DegreeRoemer",
+      "PluralName": "DegreesRoemer",
+      "BaseUnits": {
+        "Θ": "DegreeRoemer"
+      },
+      "FromUnitToBaseFunc": "{x} * 40 / 21",
+      "FromBaseToUnitFunc": "{x} * 21 / 40",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "∆°Rø" ]
+        }
+      ]
+    }
+  ]
+}

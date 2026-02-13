@@ -1,0 +1,48 @@
+{
+  "Name": "PressureA",
+  "BaseUnit": "Pascal",
+  "XmlDoc": "Absolute Pressure",
+  "BaseDimensions": {
+    "L": -1,
+    "M": 1,
+    "T": -2
+  },
+  "Units": [
+    {
+      "SingularName": "BarA",
+      "PluralName": "BarsA",
+      "FromUnitToBaseFunc": "{x} * 1e5",
+      "FromBaseToUnitFunc": "{x} / 1e5",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "bara" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "PoundForcePerSquareInchA",
+      "PluralName": "PoundsForcePerSquareInchA",
+      "FromUnitToBaseFunc": "{x} * 6.894757293168361e3",
+      "FromBaseToUnitFunc": "{x} / 6.894757293168361e3",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "psia" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "KilogramForcePerSquareCentimeterA",
+      "PluralName": "KilogramsForcePerSquareCentimeterA",
+      "FromUnitToBaseFunc": "{x} * 9.80665e4",
+      "FromBaseToUnitFunc": "{x} / 9.80665e4",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "kgcm²a" ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "Name": "Duration",
+  "Units": [
+    {
+      "SingularName": "JulianMonthAvg",
+      "PluralName": "JulianMonthsAvg",
+      "BaseUnits": {
+        "T": "JulianMonthAvg"
+      },
+      "FromUnitToBaseFunc": "{x} * 30.4375 * 24 * 3600",
+      "FromBaseToUnitFunc": "{x} / (30.4375 * 24 * 3600)",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "months" ]
+        }
+      ]
+    }
+  ]
+}

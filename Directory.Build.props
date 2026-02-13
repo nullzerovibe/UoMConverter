@@ -1,0 +1,23 @@
+<Project>
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Authors>nullzerovibe</Authors>
+    <Company>nullzerovibe</Company>
+    <Copyright>Copyright (c) nullzerovibe 2026</Copyright>
+    <RepositoryUrl>https://github.com/nullzerovibe/UoMConverter</RepositoryUrl>
+    <Version>0.9.0</Version>
+    <Description>A high-performance, extensible unit of measure conversion library for .NET, leveraging source generators for maximum efficiency.</Description>
+    <PackageTags>unit-conversion;uom;measurements;source-generator;performance;zero-allocation;dotnet;scientific</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(IsPackable)' != 'false'">
+    <None Include="$(MSBuildThisFileDirectory)README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+</Project>

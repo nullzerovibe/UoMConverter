@@ -1,0 +1,100 @@
+{
+  "Name": "WarpingMomentOfInertia",
+  "BaseUnit": "MeterToTheSixth",
+  "XmlDocSummary": "A geometric property of an area that is used to determine the warping stress.",
+  "BaseDimensions": {
+    "L": 6
+  },
+  "Units": [
+    {
+      "SingularName": "MeterToTheSixth",
+      "PluralName": "MetersToTheSixth",
+      "BaseUnits": {
+        "L": "Meter"
+      },
+      "FromUnitToBaseFunc": "{x}",
+      "FromBaseToUnitFunc": "{x}",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "m⁶" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "DecimeterToTheSixth",
+      "PluralName": "DecimetersToTheSixth",
+      "BaseUnits": {
+        "L": "Decimeter"
+      },
+      "FromUnitToBaseFunc": "{x} / 1e6",
+      "FromBaseToUnitFunc": "{x} * 1e6",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "dm⁶" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "CentimeterToTheSixth",
+      "PluralName": "CentimetersToTheSixth",
+      "BaseUnits": {
+        "L": "Centimeter"
+      },
+      "FromUnitToBaseFunc": "{x} / 1e12",
+      "FromBaseToUnitFunc": "{x} * 1e12",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "cm⁶" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "MillimeterToTheSixth",
+      "PluralName": "MillimetersToTheSixth",
+      "BaseUnits": {
+        "L": "Millimeter"
+      },
+      "FromUnitToBaseFunc": "{x} / 1e18",
+      "FromBaseToUnitFunc": "{x} * 1e18",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "mm⁶" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "FootToTheSixth",
+      "PluralName": "FeetToTheSixth",
+      "BaseUnits": {
+        "L": "Foot"
+      },
+      "FromUnitToBaseFunc": "{x} * 0.000801843800914862014464",
+      "FromBaseToUnitFunc": "{x} / 0.000801843800914862014464",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "ft⁶"]
+        }
+      ]
+    },
+    {
+      "SingularName": "InchToTheSixth",
+      "PluralName": "InchesToTheSixth",
+      "BaseUnits": {
+        "L": "Inch"
+      },
+      "FromUnitToBaseFunc": "{x} * 0.000000000268535866540096",
+      "FromBaseToUnitFunc": "{x} / 0.000000000268535866540096",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "in⁶" ]
+        }
+      ]
+    }
+  ]
+}

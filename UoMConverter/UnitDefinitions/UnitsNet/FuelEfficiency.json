@@ -1,0 +1,67 @@
+{
+  "Name": "FuelEfficiency",
+  "BaseUnit": "KilometerPerLiter",
+  "XmlDocSummary": "In the context of transport, fuel economy is the energy efficiency of a particular vehicle, given as a ratio of distance traveled per unit of fuel consumed. In most countries, using the metric system, fuel economy is stated as \"fuel consumption\" in liters per 100 kilometers (L/100 km) or kilometers per liter (km/L or kmpl). In countries using non-metric system, fuel economy is expressed in miles per gallon (mpg) (imperial galon or US galon).",
+  "XmlDocRemarks": "https://en.wikipedia.org/wiki/Fuel_efficiency",
+  "BaseDimensions": {
+    "L": -2
+  },
+  "Units": [
+    {
+      "SingularName": "LiterPer100Kilometers",
+      "PluralName": "LitersPer100Kilometers",
+      "FromUnitToBaseFunc": "100 / {x}",
+      "FromBaseToUnitFunc": "100 / {x}",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [
+            "l/100km"
+          ]
+        }
+      ]
+    },
+    {
+      "SingularName": "MilePerUsGallon",
+      "PluralName": "MilesPerUsGallon",
+      "FromUnitToBaseFunc": "{x} * 1.609344 / 3.785411784",
+      "FromBaseToUnitFunc": "{x} * 3.785411784 / 1.609344",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [
+            "mpg (U.S.)"
+          ]
+        }
+      ]
+    },
+    {
+      "SingularName": "MilePerUkGallon",
+      "PluralName": "MilesPerUkGallon",
+      "FromUnitToBaseFunc": "{x} * 1.609344 / 4.54609",
+      "FromBaseToUnitFunc": "{x} * 4.54609 / 1.609344",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [
+            "mpg (imp.)"
+          ]
+        }
+      ]
+    },
+    {
+      "SingularName": "KilometerPerLiter",
+      "PluralName": "KilometersPerLiter",
+      "FromUnitToBaseFunc": "{x}",
+      "FromBaseToUnitFunc": "{x}",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [
+            "km/l"
+          ]
+        }
+      ]
+    }
+  ]
+}

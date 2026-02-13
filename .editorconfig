@@ -1,0 +1,21 @@
+root = true
+
+[*]
+end_of_line = crlf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+indent_style = space
+indent_size = 4
+
+[*.{png,ico,json}]
+indent_style = space
+indent_size = 2
+
+[*.cs]
+# C# Coding Conventions
+csharp_style_var_for_built_in_types = true:suggestion
+csharp_style_var_when_type_is_apparent = true:suggestion
+csharp_style_namespace_declarations = file_scoped:suggestion
+csharp_using_directive_placement = outside_namespace:silent
+dotnet_diagnostic.BC40000.severity = warning

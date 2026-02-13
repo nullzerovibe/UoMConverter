@@ -1,0 +1,19 @@
+{
+  "Name": "Hardness",
+  "BaseUnit": "BHN",
+  "XmlDoc": "Hardness",
+  "Units": [
+    {
+      "SingularName": "BHN",
+      "PluralName": "BHN",
+      "FromUnitToBaseFunc": "{x}",
+      "FromBaseToUnitFunc": "{x}",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "BHN" ]
+        }
+      ]
+    }
+  ]
+}

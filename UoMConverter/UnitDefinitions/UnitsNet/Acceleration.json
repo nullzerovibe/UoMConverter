@@ -1,0 +1,153 @@
+{
+  "Name": "Acceleration",
+  "BaseUnit": "MeterPerSecondSquared",
+  "XmlDocSummary": "Acceleration, in physics, is the rate at which the velocity of an object changes over time. An object's acceleration is the net result of any and all forces acting on the object, as described by Newton's Second Law. The SI unit for acceleration is the Meter per second squared (m/s²). Accelerations are vector quantities (they have magnitude and direction) and add according to the parallelogram law. As a vector, the calculated net force is equal to the product of the object's mass (a scalar quantity) and the acceleration.",
+  "BaseDimensions": {
+    "L": 1,
+    "T": -2
+  },
+  "Units": [
+    {
+      "SingularName": "MeterPerSecondSquared",
+      "PluralName": "MetersPerSecondSquared",
+      "BaseUnits": {
+        "L": "Meter",
+        "T": "Second"
+      },
+      "FromUnitToBaseFunc": "{x}",
+      "FromBaseToUnitFunc": "{x}",
+      "Prefixes": [ "Nano", "Micro", "Milli", "Centi", "Deci", "Kilo" ],
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "m/s²" ]
+        },
+		{
+          "Culture": "ru-RU",
+          "Abbreviations": [ "м/с²" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "InchPerSecondSquared",
+      "PluralName": "InchesPerSecondSquared",
+      "BaseUnits": {
+        "L": "Inch",
+        "T": "Second"
+      },
+      "FromUnitToBaseFunc": "{x} * 0.0254",
+      "FromBaseToUnitFunc": "{x} / 0.0254",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "in/s²" ]
+        },
+		{
+          "Culture": "ru-RU",
+          "Abbreviations": [ "дюйм/с²" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "FootPerSecondSquared",
+      "PluralName": "FeetPerSecondSquared",
+      "BaseUnits": {
+        "L": "Foot",
+        "T": "Second"
+      },
+      "FromUnitToBaseFunc": "{x} * 0.304800",
+      "FromBaseToUnitFunc": "{x} / 0.304800",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "ft/s²" ]
+        },
+		{
+          "Culture": "ru-RU",
+          "Abbreviations": [ "фут/с²" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "KnotPerSecond",
+      "PluralName": "KnotsPerSecond",
+      "BaseUnits": {
+        "L": "NauticalMile",
+        "T": "Second"
+      },
+      "FromUnitToBaseFunc": "{x} * (1852.0 / 3600.0)",
+      "FromBaseToUnitFunc": "{x} / (1852.0 / 3600.0)",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "kn/s" ]
+        },
+        {
+          "Culture": "ru-RU",
+          "Abbreviations": [ "узел/с" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "KnotPerMinute",
+      "PluralName": "KnotsPerMinute",
+      "BaseUnits": {
+        "L": "NauticalMile",
+        "T": "Minute"
+      },
+      "XmlDocSummary": "The knot (/nɒt/) is a unit of speed equal to one nautical mile per hour, exactly 1.852 km/h (approximately 1.151 mph or 0.514 m/s).",
+      "XmlDocRemarks": "https://en.wikipedia.org/wiki/Knot_(unit)",
+      "FromUnitToBaseFunc": "{x} * (1852.0 / 3600.0) / 60",
+      "FromBaseToUnitFunc": "{x} * 60 / (1852.0 / 3600.0)",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "kn/min" ]
+        },
+        {
+          "Culture": "ru-RU",
+          "Abbreviations": [ "узел/мин" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "KnotPerHour",
+      "PluralName": "KnotsPerHour",
+      "BaseUnits": {
+        "L": "NauticalMile",
+        "T": "Hour"
+      },
+      "XmlDocSummary": "The knot (/nɒt/) is a unit of speed equal to one nautical mile per hour, exactly 1.852 km/h (approximately 1.151 mph or 0.514 m/s).",
+      "XmlDocRemarks": "https://en.wikipedia.org/wiki/Knot_(unit)",
+      "FromUnitToBaseFunc": "{x} * (1852.0 / 3600.0) / 3600",
+      "FromBaseToUnitFunc": "{x} * 3600 / (1852.0 / 3600.0)",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "kn/h" ]
+        },
+        {
+          "Culture": "ru-RU",
+          "Abbreviations": [ "узел/час" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "StandardGravity",
+      "PluralName": "StandardGravity",
+      "FromUnitToBaseFunc": "{x} * 9.80665",
+      "FromBaseToUnitFunc": "{x} / 9.80665",
+      "Prefixes": [ "Milli"],
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "g" ]
+        },
+        {
+          "Culture": "ru-RU",
+          "Abbreviations": [ "g" ]
+        }
+      ]
+    }
+  ]
+}

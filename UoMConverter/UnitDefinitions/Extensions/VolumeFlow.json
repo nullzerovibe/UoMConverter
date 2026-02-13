@@ -1,0 +1,53 @@
+{
+  "Name": "VolumeFlow",
+  "Units": [
+    {
+      "SingularName": "CubicCentimeterPerHour",
+      "PluralName": "CubicCentimetersPerHour",
+      "FromUnitToBaseFunc": "{x} * 2.7777777777778e-10",
+      "FromBaseToUnitFunc": "{x} / 2.7777777777778e-10",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "cm³/h" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "CubicInchPerHour",
+      "PluralName": "CubicInchesPerHour",
+      "FromUnitToBaseFunc": "{x} * 4.5519622224454e-9",
+      "FromBaseToUnitFunc": "{x} / 4.5519622224454e-9",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "in³/h" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "CubicMeterPerYear",
+      "PluralName": "CubicMetersPerYear",
+      "FromUnitToBaseFunc": "{x} / 31540000",
+      "FromBaseToUnitFunc": "{x} * 31540000",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "m³/y" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "OilBarrelPerYear",
+      "PluralName": "OilBarrelPerYear",
+      "FromUnitToBaseFunc": "{x} / 6.28981 / 31540000",
+      "FromBaseToUnitFunc": "{x} * 6.28981 * 31540000",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "bbl/y" ]
+        }
+      ]
+    }
+  ]
+}

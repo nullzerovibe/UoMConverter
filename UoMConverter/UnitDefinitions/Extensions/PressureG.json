@@ -1,0 +1,48 @@
+{
+  "Name": "PressureG",
+  "BaseUnit": "Pascal",
+  "XmlDoc": "Gauge Pressure",
+  "BaseDimensions": {
+    "L": -1,
+    "M": 1,
+    "T": -2
+  },
+  "Units": [
+    {
+      "SingularName": "BarG",
+      "PluralName": "BarsG",
+      "FromUnitToBaseFunc": "{x} * 1e5",
+      "FromBaseToUnitFunc": "{x} / 1e5",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "barg" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "PoundForcePerSquareInchG",
+      "PluralName": "PoundsForcePerSquareInchG",
+      "FromUnitToBaseFunc": "{x} * 6.894757293168361e3",
+      "FromBaseToUnitFunc": "{x} / 6.894757293168361e3",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "psig" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "KilogramForcePerSquareCentimeterG",
+      "PluralName": "KilogramsForcePerSquareCentimeterG",
+      "FromUnitToBaseFunc": "{x} * 9.80665e4",
+      "FromBaseToUnitFunc": "{x} / 9.80665e4",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "kgcm²g" ]
+        }
+      ]
+    }
+  ]
+}

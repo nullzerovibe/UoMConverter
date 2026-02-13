@@ -1,0 +1,109 @@
+{
+  "Name": "Angle",
+  "BaseUnit": "Radian",
+  "XmlDocSummary": "In geometry, an angle is the figure formed by two rays, called the sides of the angle, sharing a common endpoint, called the vertex of the angle.",
+  "Units": [
+    {
+      "SingularName": "Radian",
+      "PluralName": "Radians",
+      "FromUnitToBaseFunc": "{x}",
+      "FromBaseToUnitFunc": "{x}",
+      "Prefixes": [ "Nano", "Micro", "Milli", "Centi", "Deci" ],
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "rad" ]
+        },
+        {
+          "Culture": "ru-RU",
+          "Abbreviations": [ "рад" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "Degree",
+      "PluralName": "Degrees",
+      "Prefixes": [ "Nano", "Micro", "Milli" ],
+      "FromUnitToBaseFunc": "{x} * Math.PI / 180",
+      "FromBaseToUnitFunc": "{x} * 180 / Math.PI",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "°", "deg" ]
+        },
+        {
+          "Culture": "ru-RU",
+          "Abbreviations": [ "°" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "Arcminute",
+      "PluralName": "Arcminutes",
+      "FromUnitToBaseFunc": "{x} * Math.PI / (60 * 180)",
+      "FromBaseToUnitFunc": "{x} * 60 * 180 / Math.PI",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "'", "arcmin", "amin", "min" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "Arcsecond",
+      "PluralName": "Arcseconds",
+      "FromUnitToBaseFunc": "{x} * Math.PI / (3600 * 180)",
+      "FromBaseToUnitFunc": "{x} * 3600 * 180 / Math.PI",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "″", "arcsec", "asec", "sec" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "Gradian",
+      "PluralName": "Gradians",
+      "FromUnitToBaseFunc": "{x} * Math.PI / 200",
+      "FromBaseToUnitFunc": "{x} * 200 / Math.PI",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "g" ]
+        },
+        {
+          "Culture": "ru-RU",
+          "Abbreviations": [ "g" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "NatoMil",
+      "PluralName": "NatoMils",
+      "FromUnitToBaseFunc": "{x} * Math.PI / 3200",
+      "FromBaseToUnitFunc": "{x} * 3200 / Math.PI",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "mil" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "Revolution",
+      "PluralName": "Revolutions",
+      "FromUnitToBaseFunc": "{x} * 2 * Math.PI",
+      "FromBaseToUnitFunc": "{x} / (2 * Math.PI)",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "r" ]
+        },
+        {
+          "Culture": "ru-RU",
+          "Abbreviations": [ "r" ]
+        }
+      ]
+    }
+  ]
+}

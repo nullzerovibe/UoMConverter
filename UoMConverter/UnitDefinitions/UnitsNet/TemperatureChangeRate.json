@@ -1,0 +1,159 @@
+{
+  "Name": "TemperatureChangeRate",
+  "BaseUnit": "DegreeCelsiusPerSecond",
+  "XmlDocSummary": "Temperature change rate is the ratio of the temperature change to the time during which the change occurred (value of temperature changes per unit time).",
+  "BaseDimensions": {
+    "T": -1,
+    "Θ": 1
+  },
+  "Units": [
+    {
+      "SingularName": "DegreeCelsiusPerSecond",
+      "PluralName": "DegreesCelsiusPerSecond",
+      "BaseUnits": {
+        "Θ": "DegreeCelsius",
+        "T": "Second"
+      },
+      "FromUnitToBaseFunc": "{x}",
+      "FromBaseToUnitFunc": "{x}",
+      "Prefixes": [ "Nano", "Micro", "Milli", "Centi", "Deci", "Deca", "Hecto", "Kilo" ],
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "°C/s" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "DegreeCelsiusPerMinute",
+      "PluralName": "DegreesCelsiusPerMinute",
+      "BaseUnits": {
+        "Θ": "DegreeCelsius",
+        "T": "Minute"
+      },
+      "FromUnitToBaseFunc": "{x} / 60",
+      "FromBaseToUnitFunc": "{x} * 60",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "°C/min" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "DegreeKelvinPerMinute",
+      "PluralName": "DegreesKelvinPerMinute",
+      "BaseUnits": {
+        "Θ": "Kelvin",
+        "T": "Minute"
+      },
+      "FromUnitToBaseFunc": "{x} / 60",
+      "FromBaseToUnitFunc": "{x} * 60",
+      "Prefixes": [],
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "K/min" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "DegreeFahrenheitPerMinute",
+      "PluralName": "DegreesFahrenheitPerMinute",
+      "BaseUnits": {
+        "Θ": "DegreeFahrenheit",
+        "T": "Minute"
+      },
+      "FromUnitToBaseFunc": "{x} * 5 / 9 / 60",
+      "FromBaseToUnitFunc": "{x} * 9 / 5 * 60",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "°F/min" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "DegreeFahrenheitPerSecond",
+      "PluralName": "DegreesFahrenheitPerSecond",
+      "BaseUnits": {
+        "Θ": "DegreeFahrenheit",
+        "T": "Second"
+      },
+      "FromUnitToBaseFunc": "{x} * 5 / 9",
+      "FromBaseToUnitFunc": "{x} * 9 / 5",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "°F/s" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "DegreeKelvinPerSecond",
+      "PluralName": "DegreesKelvinPerSecond",
+      "BaseUnits": {
+        "Θ": "Kelvin",
+        "T": "Second"
+      },
+      "FromUnitToBaseFunc": "{x}",
+      "FromBaseToUnitFunc": "{x}",
+      "Prefixes": [],
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "K/s" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "DegreeCelsiusPerHour",
+      "PluralName": "DegreesCelsiusPerHour",
+      "BaseUnits": {
+        "Θ": "DegreeCelsius",
+        "T": "Hour"
+      },
+      "FromUnitToBaseFunc": "{x} / 3600",
+      "FromBaseToUnitFunc": "{x} * 3600",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "°C/h" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "DegreeKelvinPerHour",
+      "PluralName": "DegreesKelvinPerHour",
+      "BaseUnits": {
+        "Θ": "Kelvin",
+        "T": "Hour"
+      },
+      "FromUnitToBaseFunc": "{x} / 3600",
+      "FromBaseToUnitFunc": "{x} * 3600",
+      "Prefixes": [],
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "K/h" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "DegreeFahrenheitPerHour",
+      "PluralName": "DegreesFahrenheitPerHour",
+      "BaseUnits": {
+        "Θ": "DegreeFahrenheit",
+        "T": "Hour"
+      },
+      "FromUnitToBaseFunc": "{x} * 5 / 9 / 3600",
+      "FromBaseToUnitFunc": "{x} * 9 / 5 * 3600",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "°F/h" ]
+        }
+      ]
+    }
+  ]
+}

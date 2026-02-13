@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="UoMConverter.Generator/UoMConverter.Generator.csproj" />
+  <Project Path="UoMConverter.Test/UoMConverter.Test.csproj" />
+  <Project Path="UoMConverter/UoMConverter.csproj" />
+  <Project Path="UoMConverter.Wasm/UoMConverter.Wasm.csproj" />
+</Solution>
