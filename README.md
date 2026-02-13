@@ -114,7 +114,7 @@ Create a JSON file in your project and include it as an `AdditionalFiles` item i
 
 ## Synchronization
 
-Maintain unit definitions in sync with upstream sources (like UnitsNet) using the provided script:
+Maintain unit definitions in sync with upstream sources (like [UnitsNet](https://github.com/angularsen/UnitsNet)) using the provided script:
 
 ```powershell
 .\scripts\Sync-UnitsNet.ps1
