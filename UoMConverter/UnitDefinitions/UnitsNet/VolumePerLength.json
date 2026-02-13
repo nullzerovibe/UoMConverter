@@ -1,0 +1,129 @@
+{
+  "Name": "VolumePerLength",
+  "BaseUnit": "CubicMeterPerMeter",
+  "XmlDocSummary": "Volume, typically of fluid, that a container can hold within a unit of length.",
+  "BaseDimensions": {
+    "L": 2
+  },
+  "Units": [
+    {
+      "SingularName": "CubicMeterPerMeter",
+      "PluralName": "CubicMetersPerMeter",
+      "BaseUnits": {
+        "L": "Meter"
+      },
+      "FromUnitToBaseFunc": "{x}",
+      "FromBaseToUnitFunc": "{x}",
+      "Prefixes": [],
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "m³/m" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "LiterPerMeter",
+      "PluralName": "LitersPerMeter",
+      "BaseUnits": {
+        "L": "Decimeter"
+      },
+      "FromUnitToBaseFunc": "{x} / 1000",
+      "FromBaseToUnitFunc": "{x} * 1000",
+      "Prefixes": [],
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "l/m" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "LiterPerKilometer",
+      "PluralName": "LitersPerKilometer",
+      "FromUnitToBaseFunc": "{x} / 1e6",
+      "FromBaseToUnitFunc": "{x} * 1e6",
+      "Prefixes": [],
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "l/km" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "LiterPerMillimeter",
+      "PluralName": "LitersPerMillimeter",
+      "FromUnitToBaseFunc": "{x}",
+      "FromBaseToUnitFunc": "{x}",
+      "Prefixes": [],
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "l/mm" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "OilBarrelPerFoot",
+      "PluralName": "OilBarrelsPerFoot",
+      "FromUnitToBaseFunc": "{x} * 0.158987294928 / 0.3048",
+      "FromBaseToUnitFunc": "{x} * 0.3048 / 0.158987294928",
+      "Prefixes": [],
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "bbl/ft" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "CubicYardPerFoot",
+      "PluralName": "CubicYardsPerFoot",
+      "FromUnitToBaseFunc": "{x} * 0.764554857984 / 0.3048",
+      "FromBaseToUnitFunc": "{x} * 0.3048 / 0.764554857984",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "yd³/ft" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "CubicYardPerUsSurveyFoot",
+      "PluralName": "CubicYardsPerUsSurveyFoot",
+      "FromUnitToBaseFunc": "{x} * 0.764554857984 * 3937 / 1200",
+      "FromBaseToUnitFunc": "{x} * 1200 / (0.764554857984 * 3937)",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "yd³/ftUS" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "UsGallonPerMile",
+      "PluralName": "UsGallonsPerMile",
+      "FromUnitToBaseFunc": "{x} * 0.003785411784 / 1609.344",
+      "FromBaseToUnitFunc": "{x} * 1609.344 / 0.003785411784",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "gal (U.S.)/mi" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "ImperialGallonPerMile",
+      "PluralName": "ImperialGallonsPerMile",
+      "FromUnitToBaseFunc": "{x} * 0.00454609 / 1609.344",
+      "FromBaseToUnitFunc": "{x} * 1609.344 / 0.00454609",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "gal (imp.)/mi" ]
+        }
+      ]
+    }
+  ]
+}

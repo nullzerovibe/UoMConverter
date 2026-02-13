@@ -1,0 +1,45 @@
+{
+  "Name": "Luminosity",
+  "BaseUnit": "Watt",
+  "XmlDocSummary": "Luminosity is an absolute measure of radiated electromagnetic power (light), the radiant power emitted by a light-emitting object.",
+  "XmlDocRemarks": "https://en.wikipedia.org/wiki/Luminosity",
+  "BaseDimensions": {
+    "L": 2,
+    "M": 1,
+    "T": -3
+  },
+  "Units": [
+    {
+      "SingularName": "Watt",
+      "PluralName": "Watts",
+      "BaseUnits": {
+        "L": "Meter",
+        "M": "Kilogram",
+        "T": "Second"
+      },
+      "FromUnitToBaseFunc": "{x}",
+      "FromBaseToUnitFunc": "{x}",
+      "Prefixes": [ "Femto", "Pico", "Nano", "Micro", "Milli", "Deci", "Deca", "Kilo", "Mega", "Giga", "Tera", "Peta" ],
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "W" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "SolarLuminosity",
+      "PluralName": "SolarLuminosities",
+      "XmlDocSummary": "The IAU has defined a nominal solar luminosity of 3.828×10^26 W to promote publication of consistent and comparable values in units of the solar luminosity.",
+      "XmlDocRemarks": "https://en.wikipedia.org/wiki/Luminosity#Measurement",
+      "FromUnitToBaseFunc": "{x} * 3.828e26",
+      "FromBaseToUnitFunc": "{x} / 3.828e26",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "L⊙" ]
+        }
+      ]
+    }
+  ]
+}

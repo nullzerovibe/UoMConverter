@@ -1,0 +1,217 @@
+{
+  "Name": "MassFlow",
+  "BaseUnit": "GramPerSecond",
+  "XmlDocSummary": "Mass flow is the ratio of the mass change to the time during which the change occurred (value of mass changes per unit time).",
+  "BaseDimensions": {
+    "M": 1,
+    "T": -1
+  },
+  "Units": [
+    {
+      "SingularName": "GramPerSecond",
+      "PluralName": "GramsPerSecond",
+      "BaseUnits": {
+        "M": "Gram",
+        "T": "Second"
+      },
+      "FromUnitToBaseFunc": "{x}",
+      "FromBaseToUnitFunc": "{x}",
+      "Prefixes": [ "Nano", "Micro", "Milli", "Centi", "Deci", "Deca", "Hecto", "Kilo" ],
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "g/s", "g/S" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "GramPerDay",
+      "PluralName": "GramsPerDay",
+      "BaseUnits": {
+        "M": "Gram",
+        "T": "Day"
+      },
+      "FromUnitToBaseFunc": "{x} / 86400",
+      "FromBaseToUnitFunc": "{x} * 86400",
+      "Prefixes": [ "Nano", "Micro", "Milli", "Centi", "Deci", "Deca", "Hecto", "Kilo", "Mega" ],
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "g/d" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "GramPerHour",
+      "PluralName": "GramsPerHour",
+      "BaseUnits": {
+        "M": "Gram",
+        "T": "Hour"
+      },
+      "FromUnitToBaseFunc": "{x} / 3600",
+      "FromBaseToUnitFunc": "{x} * 3600",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "g/h" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "KilogramPerHour",
+      "PluralName": "KilogramsPerHour",
+      "BaseUnits": {
+        "M": "Kilogram",
+        "T": "Hour"
+      },
+      "FromUnitToBaseFunc": "{x} / 3.6",
+      "FromBaseToUnitFunc": "{x} * 3.6",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "kg/h" ]
+        },
+        {
+          "Culture": "ru-RU",
+          "Abbreviations": [ "кг/ч" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "KilogramPerMinute",
+      "PluralName": "KilogramsPerMinute",
+      "BaseUnits": {
+        "M": "Kilogram",
+        "T": "Minute"
+      },
+      "FromUnitToBaseFunc": "{x} / 0.06",
+      "FromBaseToUnitFunc": "{x} * 0.06",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "kg/min" ]
+        },
+        {
+          "Culture": "ru-RU",
+          "Abbreviations": [ "кг/мин" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "TonnePerHour",
+      "PluralName": "TonnesPerHour",
+      "BaseUnits": {
+        "M": "Tonne",
+        "T": "Hour"
+      },
+      "FromUnitToBaseFunc": "{x} * 1000 / 3.6",
+      "FromBaseToUnitFunc": "{x} * 3.6 / 1000",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "t/h" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "PoundPerDay",
+      "PluralName": "PoundsPerDay",
+      "BaseUnits": {
+        "M": "Pound",
+        "T": "Day"
+      },
+      "FromUnitToBaseFunc": "{x} * 453.59237 / 86400",
+      "FromBaseToUnitFunc": "{x} * 86400 / 453.59237",
+      "Prefixes": [ "Mega" ],
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "lb/d" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "PoundPerHour",
+      "PluralName": "PoundsPerHour",
+      "BaseUnits": {
+        "M": "Pound",
+        "T": "Hour"
+      },
+      "FromUnitToBaseFunc": "{x} * 453.59237 / 3600",
+      "FromBaseToUnitFunc": "{x} * 3600 / 453.59237",
+      "Prefixes": [ "Mega" ],
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "lb/h" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "PoundPerMinute",
+      "PluralName": "PoundsPerMinute",
+      "BaseUnits": {
+        "M": "Pound",
+        "T": "Minute"
+      },
+      "FromUnitToBaseFunc": "{x} * 453.59237 / 60",
+      "FromBaseToUnitFunc": "{x} * 60 / 453.59237",
+      "Prefixes": [ "Mega" ],
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "lb/min" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "PoundPerSecond",
+      "PluralName": "PoundsPerSecond",
+      "BaseUnits": {
+        "M": "Pound",
+        "T": "Second"
+      },
+      "FromUnitToBaseFunc": "{x} * 453.59237",
+      "FromBaseToUnitFunc": "{x} / 453.59237",
+      "Prefixes": [ "Mega" ],
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "lb/s" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "TonnePerDay",
+      "PluralName": "TonnesPerDay",
+      "BaseUnits": {
+        "M": "Tonne",
+        "T": "Day"
+      },
+      "FromUnitToBaseFunc": "{x} / 0.0864000",
+      "FromBaseToUnitFunc": "{x} * 0.0864000",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "t/d" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "ShortTonPerHour",
+      "PluralName": "ShortTonsPerHour",
+      "BaseUnits": {
+        "M": "ShortTon",
+        "T": "Hour"
+      },
+      "FromUnitToBaseFunc": "{x} * 907.18474 / 3.6",
+      "FromBaseToUnitFunc": "{x} * 3.6 / 907.18474",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "short tn/h" ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+name: CI
+
+on:
+  push:
+    branches: [ "master", "main" ]
+    tags: [ "v*" ]
+  pull_request:
+    branches: [ "master", "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 10.0.x
+    - name: Install WASM Workload
+      run: dotnet workload install wasm-tools
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+    
+    # Publish Library (DLLs - Cross Platform)
+    - name: Publish Library
+      run: dotnet publish UoMConverter/UoMConverter.csproj -c Release -o output/library
+
+    - name: Upload Library (Cross-Platform)
+      uses: actions/upload-artifact@v4
+      with:
+        name: UoMConverter-Lib-CrossPlatform
+        path: output/library/**
+
+    # Publish WASM (WebSite)
+    - name: Publish WASM
+      run: dotnet publish UoMConverter.Wasm/UoMConverter.Wasm.csproj -c Release -o output/wasm
+
+    - name: Upload WASM (WebSite)
+      uses: actions/upload-artifact@v4
+      with:
+        name: UoMConverter-Wasm-App
+        path: output/wasm/wwwroot/**
+
+    # Create GitHub Release (Only on Tag)
+    - name: Zip Artifacts for Release
+      if: startsWith(github.ref, 'refs/tags/')
+      run: |
+        cd output/library && zip -r ../../UoMConverter-Lib.zip .
+        cd ../wasm/wwwroot && zip -r ../../../UoMConverter-Wasm-App.zip .
+
+    - name: Pack NuGet
+      if: startsWith(github.ref, 'refs/tags/')
+      run: dotnet pack UoMConverter/UoMConverter.csproj -c Release -o output/nuget
+
+    - name: Push to NuGet
+      if: startsWith(github.ref, 'refs/tags/')
+      run: dotnet nuget push output/nuget/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+
+    - name: Release
+      if: startsWith(github.ref, 'refs/tags/')
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          UoMConverter-Lib.zip
+          UoMConverter-Wasm-App.zip
+          output/nuget/*.nupkg
+        generate_release_notes: true

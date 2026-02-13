@@ -1,0 +1,155 @@
+{
+  "Name": "StandardVolumeFlow",
+  "BaseUnit": "StandardCubicMeterPerSecond",
+  "XmlDocSummary": "The molar flow rate of a gas corrected to standardized conditions of temperature and pressure thus representing a fixed number of moles of gas regardless of composition and actual flow conditions.",
+  "BaseDimensions": {
+    "M": 1,
+    "T": -1
+  },
+  "Units": [
+    {
+      "SingularName": "StandardCubicMeterPerSecond",
+      "PluralName": "StandardCubicMetersPerSecond",
+      "BaseUnits": {
+        "L": "Meter",
+        "T": "Second"
+      },
+      "FromUnitToBaseFunc": "{x}",
+      "FromBaseToUnitFunc": "{x}",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "Sm³/s" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "StandardCubicMeterPerMinute",
+      "PluralName": "StandardCubicMetersPerMinute",
+      "BaseUnits": {
+        "L": "Meter",
+        "T": "Minute"
+      },
+      "FromUnitToBaseFunc": "{x} / 60",
+      "FromBaseToUnitFunc": "{x} * 60",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "Sm³/min" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "StandardCubicMeterPerHour",
+      "PluralName": "StandardCubicMetersPerHour",
+      "BaseUnits": {
+        "L": "Meter",
+        "T": "Hour"
+      },
+      "FromUnitToBaseFunc": "{x} / 3600",
+      "FromBaseToUnitFunc": "{x} * 3600",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "Sm³/h" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "StandardCubicMeterPerDay",
+      "PluralName": "StandardCubicMetersPerDay",
+      "BaseUnits": {
+        "L": "Meter",
+        "T": "Day"
+      },
+      "FromUnitToBaseFunc": "{x} / 86400",
+      "FromBaseToUnitFunc": "{x} * 86400",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "Sm³/d" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "StandardCubicCentimeterPerMinute",
+      "PluralName": "StandardCubicCentimetersPerMinute",
+      "BaseUnits": {
+        "L": "Centimeter",
+        "T": "Minute"
+      },
+      "FromUnitToBaseFunc": "{x} / 6e7",
+      "FromBaseToUnitFunc": "{x} * 6e7",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "sccm" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "StandardLiterPerMinute",
+      "PluralName": "StandardLitersPerMinute",
+      "BaseUnits": {
+        "L": "Decimeter",
+        "T": "Minute"
+      },
+      "FromUnitToBaseFunc": "{x} / 60000",
+      "FromBaseToUnitFunc": "{x} * 60000",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "slm" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "StandardCubicFootPerSecond",
+      "PluralName": "StandardCubicFeetPerSecond",
+      "BaseUnits": {
+        "L": "Foot",
+        "T": "Second"
+      },
+      "FromUnitToBaseFunc": "{x} * 0.028316846592",
+      "FromBaseToUnitFunc": "{x} / 0.028316846592",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "Sft³/s" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "StandardCubicFootPerMinute",
+      "PluralName": "StandardCubicFeetPerMinute",
+      "BaseUnits": {
+        "L": "Foot",
+        "T": "Minute"
+      },
+      "FromUnitToBaseFunc": "{x} * 0.028316846592 / 60",
+      "FromBaseToUnitFunc": "{x} / (0.028316846592 / 60)",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "scfm" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "StandardCubicFootPerHour",
+      "PluralName": "StandardCubicFeetPerHour",
+      "BaseUnits": {
+        "L": "Foot",
+        "T": "Hour"
+      },
+      "FromUnitToBaseFunc": "{x} * 0.028316846592 / 3600",
+      "FromBaseToUnitFunc": "{x} / (0.028316846592 / 3600)",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "scfh" ]
+        }
+      ]
+    }
+  ]
+}

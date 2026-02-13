@@ -1,0 +1,93 @@
+{
+    "Name": "Volume",
+    "BaseUnit": "CubicMeter",
+    "XmlDocSummary": "Volume units used in historical Croatia/Venice/Ottoman regions for grain and milling.",
+    "Units": [
+        {
+            "SingularName": "Star",
+            "PluralName": "Stari",
+            "XmlDocSummary": "Ancient volume unit (Staio), approx 83.3 Liters.",
+            "FromUnitToBaseFunc": "{x} * 0.0833",
+            "FromBaseToUnitFunc": "{x} / 0.0833",
+            "Localization": [
+                {
+                    "Culture": "en-US",
+                    "Abbreviations": [
+                        "star",
+                        "staio"
+                    ]
+                },
+                {
+                    "Culture": "hr-HR",
+                    "Abbreviations": [
+                        "star"
+                    ]
+                }
+            ]
+        },
+        {
+            "SingularName": "Merica",
+            "PluralName": "Merice",
+            "XmlDocSummary": "Half of a Star, approx 41.6 Liters.",
+            "FromUnitToBaseFunc": "{x} * 0.04165",
+            "FromBaseToUnitFunc": "{x} / 0.04165",
+            "Localization": [
+                {
+                    "Culture": "en-US",
+                    "Abbreviations": [
+                        "merica",
+                        "moggio"
+                    ]
+                },
+                {
+                    "Culture": "hr-HR",
+                    "Abbreviations": [
+                        "merica"
+                    ]
+                }
+            ]
+        },
+        {
+            "SingularName": "Mastil",
+            "PluralName": "Mastili",
+            "XmlDocSummary": "Standard large volume bucket, approx 50 Liters.",
+            "FromUnitToBaseFunc": "{x} * 0.05",
+            "FromBaseToUnitFunc": "{x} / 0.05",
+            "Localization": [
+                {
+                    "Culture": "en-US",
+                    "Abbreviations": [
+                        "maštil"
+                    ]
+                },
+                {
+                    "Culture": "hr-HR",
+                    "Abbreviations": [
+                        "maštil"
+                    ]
+                }
+            ]
+        },
+        {
+            "SingularName": "Akov",
+            "PluralName": "Akovi",
+            "XmlDocSummary": "Large transport unit, approx 56 Liters.",
+            "FromUnitToBaseFunc": "{x} * 0.056",
+            "FromBaseToUnitFunc": "{x} / 0.056",
+            "Localization": [
+                {
+                    "Culture": "en-US",
+                    "Abbreviations": [
+                        "akov"
+                    ]
+                },
+                {
+                    "Culture": "hr-HR",
+                    "Abbreviations": [
+                        "akov"
+                    ]
+                }
+            ]
+        }
+    ]
+}

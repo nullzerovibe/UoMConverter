@@ -1,0 +1,60 @@
+{
+  "Name": "ElectricCurrentDensity",
+  "BaseUnit": "AmperePerSquareMeter",
+  "XmlDocSummary": "In electromagnetism, current density is the electric current per unit area of cross section.",
+  "XmlDocRemarks": "https://en.wikipedia.org/wiki/Current_density",
+  "BaseDimensions": {
+    "L": -2,
+    "I": 1
+  },
+  "Units": [
+    {
+      "SingularName": "AmperePerSquareMeter",
+      "PluralName": "AmperesPerSquareMeter",
+      "BaseUnits": {
+        "L": "Meter",
+        "I": "Ampere"
+      },
+      "FromUnitToBaseFunc": "{x}",
+      "FromBaseToUnitFunc": "{x}",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "A/m²" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "AmperePerSquareInch",
+      "PluralName": "AmperesPerSquareInch",
+      "BaseUnits": {
+        "L": "Inch",
+        "I": "Ampere"
+      },
+      "FromUnitToBaseFunc": "{x} / 0.00064516",
+      "FromBaseToUnitFunc": "{x} * 0.00064516",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "A/in²" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "AmperePerSquareFoot",
+      "PluralName": "AmperesPerSquareFoot",
+      "BaseUnits": {
+        "L": "Foot",
+        "I": "Ampere"
+      },
+      "FromUnitToBaseFunc": "{x} / 9.290304e-2",
+      "FromBaseToUnitFunc": "{x} * 9.290304e-2",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "A/ft²" ]
+        }
+      ]
+    }
+  ]
+}

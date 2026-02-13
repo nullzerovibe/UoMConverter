@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <LangVersion>preview</LangVersion>
+    <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+    <CompilerGeneratedFilesOutputPath>obj/GeneratedUnits</CompilerGeneratedFilesOutputPath>
+    
+    <!-- NuGet Metadata -->
+    <PackageId>UoMConverter</PackageId>
+    <Version>0.9.0</Version>
+    <Authors>NullZeroVibe</Authors>
+    <Company>NullZeroVibe</Company>
+    <Description>A high-performance, extensible unit of measure conversion library for .NET, leveraging source generators for maximum efficiency.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/nullzerovibe/UoMConverter</RepositoryUrl>
+    <PackageTags>unit conversion;measurement;source-generator;performance;zero-allocation</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="GeneratedUnits/**/*.cs" />
+    <None Include="GeneratedUnits/**/*.cs" />
+  </ItemGroup>
+ 
+  <ItemGroup>
+    <ProjectReference Include="..\UoMConverter.Generator\UoMConverter.Generator.csproj" Pattern="Content" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+ 
+  <ItemGroup>
+    <AdditionalFiles Include="UnitDefinitions\**\*.json" />
+  </ItemGroup>
+ 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+  </ItemGroup>
+ 
+  <Target Name="CleanGeneratedUnits" BeforeTargets="CoreCompile">
+    <RemoveDir Directories="GeneratedUnits" />
+    <MakeDir Directories="GeneratedUnits" />
+  </Target>
+ 
+  <Target Name="FlattenGeneratedFiles" AfterTargets="CoreCompile">
+    <ItemGroup>
+      <GeneratedFiles Include="obj/GeneratedUnits/**/*.g.cs" />
+    </ItemGroup>
+    <Copy SourceFiles="@(GeneratedFiles)" DestinationFolder="GeneratedUnits" OverwriteReadOnlyFiles="true" ContinueOnError="true" />
+    <RemoveDir Directories="GeneratedUnits/UoMConverter.Generator" />
+  </Target>
+
+</Project>

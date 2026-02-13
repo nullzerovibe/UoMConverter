@@ -1,0 +1,69 @@
+{
+  "Name": "PowerDensity",
+  "BaseUnit": "WattPerCubicMeter",
+  "XmlDocSummary": "The amount of power in a volume.",
+  "BaseDimensions": {
+    "L": -1,
+    "M": 1,
+    "T": -3
+  },
+  "Units": [
+    {
+      "SingularName": "WattPerCubicMeter",
+      "PluralName": "WattsPerCubicMeter",
+      "BaseUnits": {
+        "L": "Meter",
+        "M": "Kilogram",
+        "T": "Second"
+      },
+      "FromUnitToBaseFunc": "{x}",
+      "FromBaseToUnitFunc": "{x}",
+      "Prefixes": [ "Pico", "Nano", "Micro", "Milli", "Deci", "Deca", "Kilo", "Mega", "Giga", "Tera" ],
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "W/m³" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "WattPerCubicInch",
+      "PluralName": "WattsPerCubicInch",
+      "FromUnitToBaseFunc": "{x} / 1.6387064e-5",
+      "FromBaseToUnitFunc": "{x} * 1.6387064e-5",
+      "Prefixes": [ "Pico", "Nano", "Micro", "Milli", "Deci", "Deca", "Kilo", "Mega", "Giga", "Tera" ],
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "W/in³" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "WattPerCubicFoot",
+      "PluralName": "WattsPerCubicFoot",
+      "FromUnitToBaseFunc": "{x} / 0.028316846592",
+      "FromBaseToUnitFunc": "{x} * 0.028316846592",
+      "Prefixes": [ "Pico", "Nano", "Micro", "Milli", "Deci", "Deca", "Kilo", "Mega", "Giga", "Tera" ],
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "W/ft³" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "WattPerLiter",
+      "PluralName": "WattsPerLiter",
+      "FromUnitToBaseFunc": "{x} * 1.0e3",
+      "FromBaseToUnitFunc": "{x} / 1.0e3",
+      "Prefixes": [ "Pico", "Nano", "Micro", "Milli", "Deci", "Deca", "Kilo", "Mega", "Giga", "Tera" ],
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "W/l" ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "Name": "CoverageTest",
+  "BaseUnit": "TestUnit",
+  "XmlDocSummary": "A synthetic quantity for coverage testing.",
+  "Units": [
+    {
+      "SingularName": "TestUnit",
+      "PluralName": "TestUnits",
+      "FromUnitToBaseFunc": "{x}",
+      "FromBaseToUnitFunc": "{x}",
+      "Localization": []
+    }
+  ]
+}

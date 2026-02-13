@@ -1,0 +1,91 @@
+{
+  "Name": "CoefficientOfThermalExpansion",
+  "BaseUnit": "PerKelvin",
+  "XmlDocSummary": "A unit that represents a fractional change in size in response to a change in temperature.",
+  "BaseDimensions": {
+    "Θ": -1
+  },
+  "Units": [
+    {
+      "SingularName": "PerKelvin",
+      "PluralName": "PerKelvin",
+      "BaseUnits": {
+        "Θ": "Kelvin"
+      },
+      "FromUnitToBaseFunc": "{x}",
+      "FromBaseToUnitFunc": "{x}",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "K⁻¹" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "PerDegreeCelsius",
+      "PluralName": "PerDegreeCelsius",
+      "BaseUnits": {
+        "Θ": "DegreeCelsius"
+      },
+      "FromUnitToBaseFunc": "{x}",
+      "FromBaseToUnitFunc": "{x}",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "°C⁻¹" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "PerDegreeFahrenheit",
+      "PluralName": "PerDegreeFahrenheit",
+      "BaseUnits": {
+        "Θ": "DegreeFahrenheit"
+      },
+      "FromUnitToBaseFunc": "{x} * 9 / 5",
+      "FromBaseToUnitFunc": "{x} * 5 / 9",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "°F⁻¹" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "PpmPerKelvin",
+      "PluralName": "PpmPerKelvin",
+      "FromUnitToBaseFunc": "{x} / 1e6",
+      "FromBaseToUnitFunc": "{x} * 1e6",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "ppm/K" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "PpmPerDegreeCelsius",
+      "PluralName": "PpmPerDegreeCelsius",
+      "FromUnitToBaseFunc": "{x} / 1e6",
+      "FromBaseToUnitFunc": "{x} * 1e6",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "ppm/°C" ]
+        }
+      ]
+    },
+    {
+      "SingularName": "PpmPerDegreeFahrenheit",
+      "PluralName": "PpmPerDegreeFahrenheit",
+      "FromUnitToBaseFunc": "{x} * 9 / 5e6",
+      "FromBaseToUnitFunc": "{x} * 5e6 / 9",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [ "ppm/°F" ]
+        }
+      ]
+    }
+  ]
+}
