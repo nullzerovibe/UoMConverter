@@ -89,8 +89,7 @@
                     style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.5rem;">
                     <span
                         style="display: block; font-weight: 600; margin-left: 0.25rem; margin-bottom: 0; font-size: 0.9rem; letter-spacing: 1px; color: var(--text-muted);">HISTORY</span>
-                    <button class="btn-small" onclick="clearHistory()"
-                        style="background: transparent; border: 1px solid var(--glass-border);">Clear</button>
+                    <button class="btn-clear-history" onclick="clearHistory()">Clear</button>
                 </div>
                 <div id="historyList" class="history-list"></div>
             </div>
@@ -582,7 +581,7 @@ N u l l Z e r o V i b e
 
                     const title = document.createElement('div');
                     title.className = 'doc-group-title interactable';
-                    title.innerHTML = `${q.Name} <span style="font-size:0.8em; color:var(--text-muted); font-weight:400; margin-left:0.5rem">${q.Description || ''}</span>`;
+                    title.innerHTML = `${q.Name} <span style="font-size:0.8em; color:var(--text); font-weight:400; margin-left:0.5rem">${q.Description || ''}</span>`;
                     title.onclick = () => {
                         selectDimension(q.Name);
                         docsModal.style.display = 'none'; // Auto-close on select
@@ -616,7 +615,7 @@ N u l l Z e r o V i b e
 
                         item.appendChild(header);
 
-                        if (u.Plural && u.Plural !== u.Name + 's' && u.Plural !== u.Name) {
+                        if (u.Plural && u.Plural !== u.Name) {
                             const plural = document.createElement('div');
                             plural.className = 'doc-desc';
                             plural.textContent = `Plural: ${u.Plural}`;
