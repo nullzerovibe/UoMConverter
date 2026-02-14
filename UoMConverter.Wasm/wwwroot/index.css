@@ -418,7 +418,6 @@ option {
 
 /* History Section */
 .history-container {
-    margin-top: 2rem;
     padding-top: 1.5rem;
     /* border-top: 1px solid var(--glass-border); Removed by request */
     animation: fadeIn 0.3s ease-out;
@@ -622,5 +621,72 @@ option {
 }
 
 .interactable:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Filter Controls */
+.filter-controls {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: #1e293b;
+    margin: 0;
+    padding: 0.5rem 1.5rem;
+    display: flex;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.modern-select,
+.modern-input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text);
+    border-radius: 4px;
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.modern-select:focus,
+.modern-input:focus {
+    border-color: var(--accent);
+}
+
+/* Input with Clear Button */
+.input-with-clear {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-with-clear input,
+.input-with-clear select {
+    padding-right: 2.5rem;
+}
+
+.clear-input-btn {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    transition: all 0.2s;
+    margin: 0 !important;
+}
+
+.clear-input-btn:hover {
+    color: var(--error);
     background: rgba(255, 255, 255, 0.1);
 }

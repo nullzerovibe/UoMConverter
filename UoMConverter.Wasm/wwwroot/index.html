@@ -137,11 +137,36 @@ N u l l Z e r o V i b e
     </script>
 
     <!-- Documentation Modal -->
-    <div id="docsModal" class="modal-overlay">
+    <div id="docsModal" class="modal-overlay" style="display: none;">
         <div class="modal-content">
             <div class="modal-header">
                 <div class="modal-title">📖 Unit Reference</div>
                 <button id="closeDocsBtn" class="close-btn">&times;</button>
+            </div>
+            <div class="filter-controls">
+                <div class="input-with-clear" style="flex: 1;">
+                    <input type="text" id="docSearch" placeholder="Search units..." class="modern-input"
+                        style="width: 100%;">
+                    <button class="clear-input-btn" id="clearSearchBtn" title="Clear Search">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+                <div class="input-with-clear" style="width: auto; min-width: 150px;">
+                    <select id="docDimFilter" class="modern-select" style="width: 100%;">
+                        <option value="all">All Dimensions</option>
+                    </select>
+                    <button class="clear-input-btn" id="clearDimBtn" title="Clear Filter">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
             </div>
             <div class="modal-body" id="docsBody">
                 <div style="text-align: center; color: var(--text-muted); padding: 2rem;">Loading documentation...</div>
@@ -441,6 +466,10 @@ N u l l Z e r o V i b e
             const closeDocsBtn = document.getElementById('closeDocsBtn');
             const docsBody = document.getElementById('docsBody');
 
+            let allDocs = [];
+            const docSearch = document.getElementById('docSearch');
+            const docDimFilter = document.getElementById('docDimFilter');
+
             docsBtn.onclick = async () => {
                 docsModal.style.display = 'flex';
                 if (docsBody.dataset.loaded) return;
@@ -449,8 +478,15 @@ N u l l Z e r o V i b e
                     docsBody.innerHTML = '<div style="text-align: center; color: var(--text-muted); padding: 2rem;">Loading...</div>';
                     const interop = await getInterop();
                     const json = await interop.invokeMethodAsync('GetDocumentation');
-                    const docs = JSON.parse(json);
-                    renderDocs(docs);
+                    allDocs = JSON.parse(json);
+
+                    // Initial Sort
+                    allDocs.sort((a, b) => a.Name.localeCompare(b.Name));
+                    allDocs.forEach(d => d.Units.sort((a, b) => a.Name.localeCompare(b.Name)));
+
+                    populateDimFilter();
+                    filterAndRenderDocs();
+
                     docsBody.dataset.loaded = 'true';
                 } catch (e) {
                     docsBody.innerHTML = `<div style="color: var(--error); padding: 1rem;">Failed to load docs: ${e.message}</div>`;
@@ -458,20 +494,69 @@ N u l l Z e r o V i b e
                 }
             };
 
-            closeDocsBtn.onclick = () => {
-                docsModal.style.display = 'none';
+            function populateDimFilter() {
+                docDimFilter.innerHTML = '<option value="all">All Dimensions</option>';
+                allDocs.forEach(d => {
+                    const opt = document.createElement('option');
+                    opt.value = d.Name;
+                    opt.textContent = d.Name;
+                    docDimFilter.appendChild(opt);
+                });
+            }
+
+            function filterAndRenderDocs() {
+                const search = docSearch.value.toLowerCase().trim();
+                const dim = docDimFilter.value;
+
+                const filtered = allDocs.map(d => {
+                    // 1. Dimension Filter
+                    if (dim !== 'all' && d.Name !== dim) return null;
+
+                    // 2. Search Filter
+                    if (search) {
+                        const dimMatch = d.Name.toLowerCase().includes(search);
+                        const matchingUnits = d.Units.filter(u =>
+                            u.Name.toLowerCase().includes(search) ||
+                            (u.Abbr && u.Abbr.some(a => a.toLowerCase().includes(search)))
+                        );
+
+                        if (dimMatch) {
+                            return d;
+                        } else if (matchingUnits.length > 0) {
+                            return { ...d, Units: matchingUnits };
+                        } else {
+                            return null;
+                        }
+                    }
+
+                    return d;
+                }).filter(d => d !== null);
+
+                renderDocs(filtered);
+            }
+
+            docSearch.addEventListener('input', filterAndRenderDocs);
+            docDimFilter.addEventListener('change', filterAndRenderDocs);
+
+            document.getElementById('clearSearchBtn').onclick = () => {
+                docSearch.value = '';
+                filterAndRenderDocs();
+                docSearch.focus();
             };
 
-            // Close on click outside
-            docsModal.onclick = (e) => {
-                if (e.target === docsModal) docsModal.style.display = 'none';
+            document.getElementById('clearDimBtn').onclick = () => {
+                docDimFilter.value = 'all';
+                filterAndRenderDocs();
             };
+            docDimFilter.addEventListener('change', filterAndRenderDocs);
 
             function renderDocs(docs) {
                 docsBody.innerHTML = '';
 
-                // Sort Quantities
-                docs.sort((a, b) => a.Name.localeCompare(b.Name));
+                if (docs.length === 0) {
+                    docsBody.innerHTML = '<div style="text-align: center; color: var(--text-muted); padding: 2rem;">No matching units found.</div>';
+                    return;
+                }
 
                 docs.forEach(q => {
                     const group = document.createElement('div');
@@ -480,18 +565,20 @@ N u l l Z e r o V i b e
                     const title = document.createElement('div');
                     title.className = 'doc-group-title interactable';
                     title.innerHTML = `${q.Name} <span style="font-size:0.8em; color:var(--text-muted); font-weight:400; margin-left:0.5rem">${q.Description || ''}</span>`;
-                    title.onclick = () => selectDimension(q.Name);
+                    title.onclick = () => {
+                        selectDimension(q.Name);
+                        docsModal.style.display = 'none'; // Auto-close on select
+                    };
                     group.appendChild(title);
-
-                    // Sort Units
-                    q.Units.sort((a, b) => a.Name.localeCompare(b.Name));
 
                     q.Units.forEach(u => {
                         const item = document.createElement('div');
                         item.className = 'doc-item interactable';
-                        // Pass abbreviation if available, else name, matching the dropdown logic
                         const val = (u.Abbr && u.Abbr.length > 0) ? u.Abbr[0] : u.Name;
-                        item.onclick = () => selectUnit(q.Name, val);
+                        item.onclick = () => {
+                            selectUnit(q.Name, val);
+                            docsModal.style.display = 'none'; // Auto-close on select
+                        };
 
                         const header = document.createElement('div');
                         header.style.display = 'flex';
@@ -511,7 +598,6 @@ N u l l Z e r o V i b e
 
                         item.appendChild(header);
 
-                        // Add Plural if different
                         if (u.Plural && u.Plural !== u.Name + 's' && u.Plural !== u.Name) {
                             const plural = document.createElement('div');
                             plural.className = 'doc-desc';
