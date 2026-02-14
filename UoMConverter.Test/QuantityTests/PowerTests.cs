@@ -14,6 +14,6 @@ public class PowerTests {
     public void Convert_StandardUnits_ReturnsCorrectValue(double value, string from, string to, double expected) {
         var result = _converter.Convert(value, from, to);
         // Using lower precision for Horsepower as exact def might vary in UnitsNet
-        Assert.Equal(expected, result, 1); 
+        Assert.Equal(expected, result, 1);
     }
 }

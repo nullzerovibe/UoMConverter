@@ -15,7 +15,7 @@ public record FormulaResult(
 /// </summary>
 internal static class FormulaConverter {
     private static readonly Regex DecimalToDoubleRegex = new(@"(\d)m\b", RegexOptions.Compiled);
-    
+
     // Simple linear patterns: {x} * 1.23, {x} / 1.23, {x} + 1.23, {x} - 1.23
     private static readonly Regex MultiplyRegex = new(@"^\{x\}\s*\*\s*([\d\.]+)m?$", RegexOptions.Compiled);
     private static readonly Regex DivideRegex = new(@"^\{x\}\s*\/\s*([\d\.]+)m?$", RegexOptions.Compiled);
@@ -32,7 +32,7 @@ internal static class FormulaConverter {
         }
 
         Match m;
-        
+
         m = MultiplyRegex.Match(formula!);
         if (m.Success && double.TryParse(m.Groups[1].Value, NumberStyles.Any, CultureInfo.InvariantCulture, out var factor)) {
             return new FormulaResult("val", factor, 0.0, true);
@@ -56,7 +56,7 @@ internal static class FormulaConverter {
         // Fallback to legacy lambda generation
         var lambdaBody = formula!.Replace("{x}", "val");
         lambdaBody = DecimalToDoubleRegex.Replace(lambdaBody, "$1d");
-        
+
         return new FormulaResult(lambdaBody, 1.0, 0.0, false);
     }
 }

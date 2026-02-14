@@ -65,7 +65,7 @@ public class UoMTests {
         // Assert
         Assert.True(length.Units.ContainsKey("Kilometer"), "Prefixed unit 'Kilometer' should be generated.");
         var km = length.Units["Kilometer"];
-        
+
         // 1 km = 1000 m
         Assert.Equal(1000.0, km.ToBase(1.0));
         Assert.Equal(0.001, km.FromBase(1.0));
@@ -89,7 +89,7 @@ public class UoMTests {
         // Assert
         Assert.True(info.Units.ContainsKey("Kibibyte"), "Binary prefixed unit 'Kibibyte' should be generated.");
         var kib = info.Units["Kibibyte"];
-        
+
         // 1 KiB = 1024 bytes = 1024 * 8 bits = 8192 bits
         Assert.Equal(8192.0, kib.ToBase(1.0));
     }
@@ -148,7 +148,7 @@ public class UoMTests {
         foreach (var q in expectedQuantities) {
             Assert.True(UoMRegistry.Quantities.ContainsKey(q), $"Registry is missing core quantity: {q}");
         }
-        
+
         // Assert total count is at least the number of files we know about (~136)
         Assert.True(UoMRegistry.Quantities.Count >= 135, $"Registry count ({UoMRegistry.Quantities.Count}) is lower than expected.");
     }

@@ -124,10 +124,12 @@ internal static class SourceRenderer {
                                     if (loc.AbbreviationsForPrefixes != null && loc.AbbreviationsForPrefixes.TryGetValue(prefix, out var element)) {
                                         if (element.ValueKind == JsonValueKind.Array) {
                                             abbrs.AddRange(element.EnumerateArray().Select(e => e.GetString() ?? ""));
-                                        } else if (element.ValueKind == JsonValueKind.String) {
+                                        }
+                                        else if (element.ValueKind == JsonValueKind.String) {
                                             abbrs.Add(element.GetString() ?? "");
                                         }
-                                    } else {
+                                    }
+                                    else {
                                         abbrs.AddRange(loc.Abbreviations.Select(abbr => $"{info.symbol}{abbr}"));
                                     }
                                     return new ConfigLocalization {
@@ -170,11 +172,11 @@ internal static class SourceRenderer {
         var safeUnitName = unit.SingularName;
         var toBaseResult = FormulaConverter.Parse(unit.FromUnitToBaseFunc);
         var fromBaseResult = FormulaConverter.Parse(unit.FromBaseToUnitFunc);
-        
+
         var abbreviations = string.Join(", ", (unit.Localization?
             .FirstOrDefault(l => l.Culture == "en-US")?.Abbreviations ?? [])
             .Select(a => $"\"{a}\""));
-        
+
         var remarks = EscapeCodeString(unit.XmlDocRemarks);
         var obsolete = EscapeCodeString(unit.ObsoleteText);
 

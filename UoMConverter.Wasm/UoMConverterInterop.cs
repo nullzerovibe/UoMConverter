@@ -27,7 +27,8 @@ public class UoMConverterInterop {
             var dims = _converter.GetDimensions().ToArray();
             Console.WriteLine($"UoMConverter Interop: Found {dims.Length} dimensions.");
             return dims;
-        } catch (Exception ex) {
+        }
+        catch (Exception ex) {
             Console.WriteLine($"UoMConverter Interop: Error in GetDimensions: {ex.Message}");
             Console.WriteLine(ex.StackTrace);
             return new[] { "Error: " + ex.Message };
@@ -62,12 +63,14 @@ public class UoMConverterInterop {
             if (!string.IsNullOrWhiteSpace(dimension)) {
                 // If dimension is provided, use it (Smart Detection is implicitly N/A or scoped)
                 result = _converter.Convert(value, fromUnit, toUnit, dimension);
-            } else {
+            }
+            else {
                 // If no dimension, respect the smart detection flag
                 result = _converter.Convert(value, fromUnit, toUnit, useSmartDetection);
             }
             return new ConversionResult(true, result, null);
-        } catch (Exception ex) {
+        }
+        catch (Exception ex) {
             return new ConversionResult(false, 0, ex.Message);
         }
     }
@@ -83,8 +86,7 @@ public class UoMConverterInterop {
     /// </summary>
     /// <returns>The version string (e.g., "1.0.0.0").</returns>
     [JSInvokable]
-    public string GetVersion()
-    {
+    public string GetVersion() {
         return System.Reflection.Assembly.GetExecutingAssembly().GetName().Version?.ToString() ?? "Unknown";
     }
 }

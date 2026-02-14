@@ -28,7 +28,8 @@ internal static class QuantityParser {
 
             var quantity = JsonSerializer.Deserialize<ConfigQuantity>(json, JsonOptions);
             return new ProcessedQuantityFile(quantity, text.Path);
-        } catch {
+        }
+        catch {
             // Log error or handle it
             return new ProcessedQuantityFile(null, text.Path);
         }
@@ -46,13 +47,15 @@ internal static class QuantityParser {
                 if (string.IsNullOrEmpty(existing.BaseUnit) && !string.IsNullOrEmpty(file.Quantity.BaseUnit)) {
                     quantities[name] = file.Quantity with { Units = existing.Units };
                     quantities[name].Units.AddRange(file.Quantity.Units);
-                } else {
+                }
+                else {
                     // Just merge units
                     if (file.Quantity.Units != null) {
                         existing.Units.AddRange(file.Quantity.Units);
                     }
                 }
-            } else {
+            }
+            else {
                 quantities[name] = file.Quantity;
             }
         }

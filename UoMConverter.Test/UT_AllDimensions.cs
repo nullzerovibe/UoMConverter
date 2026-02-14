@@ -16,17 +16,17 @@ public class UT_AllDimensions {
         // Arrange
         var converter = new UoMConverter();
         Assert.True(UoMRegistry.Quantities.TryGetValue(dimensionName, out var quantity), $"Dimension {dimensionName} not found in registry.");
-        
+
         var baseUnitName = quantity.BaseUnitName;
         Assert.False(string.IsNullOrEmpty(baseUnitName), $"Base unit for {dimensionName} is missing.");
-        
+
         var units = quantity.Units.Values.ToList();
         Assert.NotEmpty(units);
 
         // Act & Assert: Test first unit's roundtrip to base unit
         var testUnit = units.First();
         double initialValue = 10.0;
-        
+
         // Identity conversion
         var identityResult = converter.Convert(initialValue, testUnit.SingularName, testUnit.SingularName);
         Assert.Equal(initialValue, identityResult, 5);
@@ -39,7 +39,8 @@ public class UT_AllDimensions {
                 var toBase = converter.Convert(initialValue, testUnit.SingularName, baseUnitName);
                 var backFromBase = converter.Convert(toBase, baseUnitName, testUnit.SingularName);
                 Assert.Equal(initialValue, backFromBase, 5);
-            } catch (ArgumentException ex) when (ex.Message.Contains("Cannot convert between different physical quantities")) {
+            }
+            catch (ArgumentException ex) when (ex.Message.Contains("Cannot convert between different physical quantities")) {
                 // This happens when the base unit name (like "Pascal") is ambiguous and resolves 
                 // to a different quantity in the shared registry. This is expected behavior
                 // for some UnitsNet units.
@@ -52,7 +53,7 @@ public class UT_AllDimensions {
     public void Dimension_GetUnitList_ShouldReturnProperMetadata(string dimensionName) {
         var converter = new UoMConverter();
         var units = converter.GetUnitList(dimensionName).ToList();
-        
+
         Assert.NotEmpty(units);
         foreach (var unit in units) {
             Assert.False(string.IsNullOrWhiteSpace(unit.Name), $"Unit Name is empty in {dimensionName}");

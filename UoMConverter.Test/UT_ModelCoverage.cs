@@ -15,7 +15,7 @@ public class UT_ModelCoverage {
             Assert.NotNull(quantity.Description);
             Assert.NotNull(quantity.Units);
             Assert.NotNull(quantity.Dimensions);
-            
+
             // Accessing these ensures coverage of record getters
             _ = quantity.ObsoleteText;
             _ = quantity.IsLogarithmic;
@@ -25,7 +25,7 @@ public class UT_ModelCoverage {
                 Assert.NotNull(unit.SingularName);
                 Assert.NotNull(unit.PluralName);
                 Assert.NotNull(unit.Abbreviations);
-                
+
                 _ = unit.Factor;
                 _ = unit.Offset;
                 _ = unit.Remarks;
@@ -43,7 +43,7 @@ public class UT_ModelCoverage {
     [Fact]
     public void NonLinearConversion_Temperature_ShouldBeAccurate() {
         var converter = new UoMConverter();
-        
+
         // Celsius to Fahrenheit: (20 * 1.8) + 32 = 68
         var celsius = 20.0; // Define celsius variable
         var result = converter.Convert(celsius, "DegreeCelsius", "DegreeFahrenheit", "Temperature");
@@ -52,7 +52,7 @@ public class UT_ModelCoverage {
         // Fahrenheit to Celsius: (68 - 32) / 1.8 = 20
         var backResult = converter.Convert(68, "DegreeFahrenheit", "DegreeCelsius", "Temperature");
         Assert.Equal(20.0, backResult, 2);
-        
+
         // Kelvin to Celsius: 273.15 -> 0
         var zeroCelsius = converter.Convert(273.15, "Kelvin", "DegreeCelsius", "Temperature");
         Assert.Equal(0.0, zeroCelsius, 2);
@@ -61,7 +61,7 @@ public class UT_ModelCoverage {
     [Fact]
     public void DiscoveryAPI_ExhaustivePaths_ShouldCoverAllBlocks() {
         var converter = new UoMConverter();
-        
+
         // 1. Success paths (Ternary 'true' and && 'true')
         Assert.NotEmpty(converter.GetUnitsByDimension("Length"));
         Assert.NotNull(converter.GetQuantity("Length"));
@@ -93,10 +93,10 @@ public class UT_ModelCoverage {
     public void UnitList_ShouldHandleMissingAbbreviations_HitDefensivePath() {
         // This exercises the '?? ""' path in GetUnitList using the synthetic CoverageTest unit
         var converter = new UoMConverter();
-        
+
         // Ensure the synthetic quantity exists (generator should have picked it up)
         var units = converter.GetUnitList("CoverageTest").ToList();
-        
+
         if (units.Any(u => u.Name == "TestUnit")) {
             var testUnit = units.First(u => u.Name == "TestUnit");
             Assert.Equal("", testUnit.Abbreviation); // This hits the ?? "" path
@@ -106,7 +106,7 @@ public class UT_ModelCoverage {
     public void RecordSetterExerciser_ShouldTouchInitSetters() {
         // This exercises the 'init' blocks for record properties
         var q = new Quantity("Test", "Base", "Desc", FrozenDictionary<string, Unit>.Empty, new Dictionary<string, int>());
-        
+
         var q2 = q with {
             Name = "NewName",
             BaseUnitName = "NewBase",

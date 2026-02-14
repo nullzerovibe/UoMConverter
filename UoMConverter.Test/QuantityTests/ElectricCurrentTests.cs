@@ -39,7 +39,7 @@ public class ElectricCurrentTests {
     public void CaseSensitivity_Mega_vs_Milli() {
         // "MA" = MegaAmpere (1e6 A)
         // "mA" = MilliAmpere (1e-3 A)
-        
+
         // 1 MA = 10^9 mA
         var result = _converter.Convert(1, "MA", "mA");
         Assert.Equal(1e9, result, 5);

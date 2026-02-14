@@ -34,11 +34,11 @@
     transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.corner-logo:hover {
-    transform: scale(1.1) rotate(360deg);
-    box-shadow: 0 0 20px rgba(56, 189, 248, 0.6), 0 0 40px rgba(56, 189, 248, 0.3);
-    border-color: var(--accent);
-}
+    .corner-logo:hover {
+        transform: scale(1.1) rotate(360deg);
+        box-shadow: 0 0 20px rgba(56, 189, 248, 0.6), 0 0 40px rgba(56, 189, 248, 0.3);
+        border-color: var(--accent);
+    }
 
 .corner-contact {
     position: fixed;
@@ -53,18 +53,18 @@
     font-family: monospace;
 }
 
-.corner-contact a {
-    color: var(--text-muted);
-    text-decoration: none;
-    transition: color 0.2s;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
+    .corner-contact a {
+        color: var(--text-muted);
+        text-decoration: none;
+        transition: color 0.2s;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
 
-.corner-contact a:hover {
-    color: var(--accent);
-}
+        .corner-contact a:hover {
+            color: var(--accent);
+        }
 
 .contact-icon {
     width: 1.2em;
@@ -83,18 +83,18 @@
     z-index: -1;
 }
 
-.app-banner img {
-    width: 100%;
-    height: 100%;
-    /* Fill the container height (which fits content/max-height) */
-    object-fit: cover;
-    /* Cover if cropped by max-height */
-    object-position: center;
-    /* Center image vertically and horizontally */
-    opacity: 0.6;
-    mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
-}
+    .app-banner img {
+        width: 100%;
+        height: 100%;
+        /* Fill the container height (which fits content/max-height) */
+        object-fit: cover;
+        /* Cover if cropped by max-height */
+        object-position: center;
+        /* Center image vertically and horizontally */
+        opacity: 0.6;
+        mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+    }
 
 * {
     box-sizing: border-box;
@@ -107,9 +107,7 @@
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background-color: var(--bg);
-    background-image:
-        radial-gradient(at 0% 0%, rgba(79, 70, 229, 0.15) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(14, 165, 233, 0.15) 0px, transparent 50%);
+    background-image: radial-gradient(at 0% 0%, rgba(79, 70, 229, 0.15) 0px, transparent 50%), radial-gradient(at 100% 100%, rgba(14, 165, 233, 0.15) 0px, transparent 50%);
     color: var(--text);
     min-height: 100vh;
     display: flex;
@@ -192,16 +190,16 @@ select {
     padding-right: 2.5rem;
 }
 
-select:hover,
-input:hover {
-    border-color: rgba(255, 255, 255, 0.2);
-}
+    select:hover,
+    input:hover {
+        border-color: rgba(255, 255, 255, 0.2);
+    }
 
-select:focus,
-input:focus {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.1);
-}
+    select:focus,
+    input:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.1);
+    }
 
 .grid {
     display: grid;
@@ -219,12 +217,12 @@ input:focus {
     /* Let children handle spacing if needed, but grid usually has gap */
 }
 
-/* Ensure form-groups inside swap-grid take available space */
-.swap-grid>.form-group {
-    flex: 1;
-    margin-bottom: 0;
-    /* Reset margin bottom for alignment */
-}
+    /* Ensure form-groups inside swap-grid take available space */
+    .swap-grid > .form-group {
+        flex: 1;
+        margin-bottom: 0;
+        /* Reset margin bottom for alignment */
+    }
 
 /* Swap Button Specifics */
 button.swap-btn {
@@ -248,18 +246,18 @@ button.swap-btn {
     /* Don't shrink */
 }
 
-button.swap-btn:hover {
-    background: rgba(56, 189, 248, 0.2);
-    color: var(--accent);
-    transform: rotate(180deg);
-    border-color: var(--accent);
-}
+    button.swap-btn:hover {
+        background: rgba(56, 189, 248, 0.2);
+        color: var(--accent);
+        transform: rotate(180deg);
+        border-color: var(--accent);
+    }
 
-button.swap-btn svg {
-    width: 1.25rem;
-    height: 1.25rem;
-    stroke-width: 2.5;
-}
+    button.swap-btn svg {
+        width: 1.25rem;
+        height: 1.25rem;
+        stroke-width: 2.5;
+    }
 
 button {
     width: 100%;
@@ -276,19 +274,19 @@ button {
     box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.3);
 }
 
-button:hover {
-    filter: brightness(1.2);
-}
+    button:hover {
+        filter: brightness(1.2);
+    }
 
-button:active {
-    filter: brightness(0.95);
-}
+    button:active {
+        filter: brightness(0.95);
+    }
 
-button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    transform: none;
-}
+    button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        transform: none;
+    }
 
 .btn-small {
     margin-top: 0;
@@ -304,10 +302,10 @@ button:disabled {
     box-shadow: none;
 }
 
-.btn-small:hover {
-    background: linear-gradient(135deg, var(--success), #059669);
-    filter: brightness(1.2);
-}
+    .btn-small:hover {
+        background: linear-gradient(135deg, var(--success), #059669);
+        filter: brightness(1.2);
+    }
 
 
 
@@ -324,10 +322,10 @@ button:disabled {
     color: var(--text-muted);
 }
 
-.status-badge.ready {
-    color: var(--success);
-    border-color: rgba(16, 185, 129, 0.2);
-}
+    .status-badge.ready {
+        color: var(--success);
+        border-color: rgba(16, 185, 129, 0.2);
+    }
 
 #blazor-error-ui {
     display: none;
@@ -368,9 +366,9 @@ option {
     background-clip: content-box;
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(255, 255, 255, 0.25);
-}
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(255, 255, 255, 0.25);
+    }
 
 
 /* Documentation Modal styles moved to bottom to match ShYCalculator */
@@ -396,9 +394,9 @@ option {
     box-shadow: none;
 }
 
-.close-btn:hover {
-    color: var(--text);
-}
+    .close-btn:hover {
+        color: var(--text);
+    }
 
 /* Result Box */
 .result-container {
@@ -456,10 +454,10 @@ option {
     margin-top: 0;
 }
 
-.icon-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--text);
-}
+    .icon-btn:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--text);
+    }
 
 .timer-badge {
     font-size: 0.75rem;
@@ -484,11 +482,11 @@ option {
     margin: 0;
 }
 
-.btn-clear-history:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--text);
-    border-color: rgba(255, 255, 255, 0.3);
-}
+    .btn-clear-history:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--text);
+        border-color: rgba(255, 255, 255, 0.3);
+    }
 
 /* History Section */
 .history-container {
@@ -529,10 +527,10 @@ option {
     transition: all 0.2s;
 }
 
-.history-item:hover {
-    background: rgba(56, 189, 248, 0.1);
-    border-color: rgba(56, 189, 248, 0.2);
-}
+    .history-item:hover {
+        background: rgba(56, 189, 248, 0.1);
+        border-color: rgba(56, 189, 248, 0.2);
+    }
 
 .hist-detail {
     color: var(--text-muted);
@@ -656,22 +654,22 @@ option {
     z-index: 10;
 }
 
-.scroll-top-btn.visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
+    .scroll-top-btn.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
 
-.scroll-top-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(14, 165, 233, 0.4);
-    background: #38bdf8;
-}
+    .scroll-top-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(14, 165, 233, 0.4);
+        background: #38bdf8;
+    }
 
-.scroll-top-btn svg {
-    width: 1.5rem;
-    height: 1.5rem;
-}
+    .scroll-top-btn svg {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
 
 /* Animations */
 @keyframes fadeIn {
@@ -701,9 +699,9 @@ option {
     transition: background 0.2s;
 }
 
-.interactable:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
+    .interactable:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
 
 /* Filter Controls */
 .filter-controls {
@@ -730,10 +728,10 @@ option {
     font-size: 0.9rem;
 }
 
-.modern-select:focus,
-.modern-input:focus {
-    border-color: var(--accent);
-}
+    .modern-select:focus,
+    .modern-input:focus {
+        border-color: var(--accent);
+    }
 
 /* Input with Clear Button */
 .input-with-clear {
@@ -742,10 +740,10 @@ option {
     align-items: center;
 }
 
-.input-with-clear input,
-.input-with-clear select {
-    padding-right: 2.5rem;
-}
+    .input-with-clear input,
+    .input-with-clear select {
+        padding-right: 2.5rem;
+    }
 
 .clear-input-btn {
     position: absolute;
@@ -767,10 +765,10 @@ option {
     margin: 0 !important;
 }
 
-.clear-input-btn:hover {
-    color: var(--error);
-    background: rgba(255, 255, 255, 0.1);
-}
+    .clear-input-btn:hover {
+        color: var(--error);
+        background: rgba(255, 255, 255, 0.1);
+    }
 
 /* Custom Searchable Select */
 .custom-select-container {
@@ -797,20 +795,20 @@ option {
     background-size: 1.25em;
 }
 
-.custom-select-input:hover {
-    border-color: rgba(255, 255, 255, 0.2);
-}
+    .custom-select-input:hover {
+        border-color: rgba(255, 255, 255, 0.2);
+    }
 
-.custom-select-input:focus {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.1);
-}
+    .custom-select-input:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.1);
+    }
 
-.custom-select-input:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    background-image: none;
-}
+    .custom-select-input:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        background-image: none;
+    }
 
 .custom-select-list {
     position: absolute;
@@ -831,33 +829,33 @@ option {
     overflow-x: hidden;
 }
 
-/* Custom Scrollbar for Dropdown & History */
-.custom-select-list::-webkit-scrollbar,
-.history-list::-webkit-scrollbar {
-    width: 8px;
-}
+    /* Custom Scrollbar for Dropdown & History */
+    .custom-select-list::-webkit-scrollbar,
+    .history-list::-webkit-scrollbar {
+        width: 8px;
+    }
 
-.custom-select-list::-webkit-scrollbar-track,
-.history-list::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 0 6px 6px 0;
-}
+    .custom-select-list::-webkit-scrollbar-track,
+    .history-list::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 0 6px 6px 0;
+    }
 
-.custom-select-list::-webkit-scrollbar-thumb,
-.history-list::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
-}
+    .custom-select-list::-webkit-scrollbar-thumb,
+    .history-list::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 4px;
+    }
 
-.custom-select-list::-webkit-scrollbar-thumb:hover,
-.history-list::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.3);
-}
+        .custom-select-list::-webkit-scrollbar-thumb:hover,
+        .history-list::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
 
-.custom-select-list.open {
-    display: flex;
-    animation: fadeIn 0.1s ease-out;
-}
+    .custom-select-list.open {
+        display: flex;
+        animation: fadeIn 0.1s ease-out;
+    }
 
 .custom-option {
     padding: 0.75rem 1rem;
@@ -870,17 +868,17 @@ option {
     white-space: normal;
 }
 
-.custom-option:hover,
-.custom-option.highlighted {
-    background: rgba(56, 189, 248, 0.15);
-    color: white;
-}
+    .custom-option:hover,
+    .custom-option.highlighted {
+        background: rgba(56, 189, 248, 0.15);
+        color: white;
+    }
 
-.custom-option.selected {
-    background: rgba(56, 189, 248, 0.25);
-    color: var(--accent);
-    font-weight: 600;
-}
+    .custom-option.selected {
+        background: rgba(56, 189, 248, 0.25);
+        color: var(--accent);
+        font-weight: 600;
+    }
 
 .no-results {
     padding: 1rem;

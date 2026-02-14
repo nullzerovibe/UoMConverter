@@ -14,7 +14,7 @@ public class VolumeTests {
     // Ambiguity check: "gal" could be US or Imperial, usually US is default or specific handling needed.
     // UnitsNet distinguishes UsGallon vs ImperialGallon.
     // checking if we can resolve "gal" -> UsGallon if it's the primary abbreviation
-    [InlineData(1, "UsGallon", "l", 3.78541)] 
+    [InlineData(1, "UsGallon", "l", 3.78541)]
     public void Convert_StandardUnits_ReturnsCorrectValue(double value, string from, string to, double expected) {
         var result = _converter.Convert(value, from, to);
         Assert.Equal(expected, result, 3);

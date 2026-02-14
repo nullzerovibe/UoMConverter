@@ -45,7 +45,7 @@ public interface IUoMConverter {
     /// Returns a list of unit names for a specific dimension.
     /// </summary>
     IEnumerable<string> GetUnitsByDimension(string dimension);
-    
+
     /// <summary>
     /// Returns the full documentation of quantities and units as a JSON string.
     /// </summary>

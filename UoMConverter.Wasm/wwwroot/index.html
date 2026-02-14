@@ -7,7 +7,7 @@
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
-        content="High-performance .NET WASM Unit Converter supporting 2800+ units across 90+ dimensions." />
+          content="High-performance .NET WASM Unit Converter supporting 2800+ units across 90+ dimensions." />
     <meta name="keywords" content="unit converter, uom, measurement conversion, wasm, dotnet, blazor, nullzerovibe" />
     <meta name="author" content="NullZeroVibe" />
 
@@ -15,14 +15,14 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="UoMConverter - .NET WASM Unit Converter" />
     <meta property="og:description"
-        content="High-performance .NET WASM Unit Converter supporting 2800+ units across 90+ dimensions." />
+          content="High-performance .NET WASM Unit Converter supporting 2800+ units across 90+ dimensions." />
     <meta property="og:image" content="nlo/nlo-banner.jpg" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:title" content="UoMConverter - .NET WASM Unit Converter" />
     <meta property="twitter:description"
-        content="High-performance .NET WASM Unit Converter supporting 2800+ units across 90+ dimensions." />
+          content="High-performance .NET WASM Unit Converter supporting 2800+ units across 90+ dimensions." />
     <meta property="twitter:image" content="nlo/nlo-banner.jpg" />
 
     <!-- Dynamic Filename Resolver will find the importmap during publish -->
@@ -46,14 +46,16 @@
     <div id="app">
         <div class="card">
             <h1>Unit Converter</h1>
-            <p class="subtitle">High-performance .NET WASM Unit Converter <span id="appVersion"
-                    style="font-size: 0.8em; opacity: 0.7;"></span></p>
+            <p class="subtitle">
+                High-performance .NET WASM Unit Converter <span id="appVersion"
+                                                                style="font-size: 0.8em; opacity: 0.7;"></span>
+            </p>
 
             <div class="form-group">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
                     <label for="dimensionSelect" style="margin-bottom: 0;">Physical Quantity</label>
                     <button id="docsBtn" class="btn-small" disabled
-                        style="width: auto; background: transparent; border: 1px solid var(--glass-border); color: var(--text-muted); padding: 0.25rem 0.75rem; margin: 0; font-size: 0.8rem; cursor: pointer;">
+                            style="width: auto; background: transparent; border: 1px solid var(--glass-border); color: var(--text-muted); padding: 0.25rem 0.75rem; margin: 0; font-size: 0.8rem; cursor: pointer;">
                         📖 Unit Reference
                     </button>
                 </div>
@@ -65,7 +67,7 @@
                 <!-- Custom Searchable Dropdown -->
                 <div class="custom-select-container" id="dimensionContainer">
                     <input type="text" id="dimensionInput" class="custom-select-input" placeholder="Select Quantity..."
-                        autocomplete="off" />
+                           autocomplete="off" />
                     <div class="custom-select-list" id="dimensionList"></div>
                 </div>
             </div>
@@ -82,36 +84,52 @@
                     <!-- Mass -->
                     <option value='{"dim":"Mass","from":"Kilogram","to":"Pound","val":1}'>1 kg to lbs</option>
                     <option value='{"dim":"Mass","from":"Gram","to":"Ounce","val":100}'>100 g to Ounces</option>
-                    <option value='{"dim":"Mass","from":"Tonne","to":"ShortTon","val":1}'>1 Tonne (Metric) to US Ton
+                    <option value='{"dim":"Mass","from":"Tonne","to":"ShortTon","val":1}'>
+                        1 Tonne (Metric) to US Ton
                     </option>
                     <!-- Temperature -->
-                    <option value='{"dim":"Temperature","from":"DegreeCelsius","to":"DegreeFahrenheit","val":0}'>0°C to
-                        °F (Freezing)</option>
-                    <option value='{"dim":"Temperature","from":"DegreeCelsius","to":"DegreeFahrenheit","val":100}'>100°C
-                        to °F (Boiling)</option>
+                    <option value='{"dim":"Temperature","from":"DegreeCelsius","to":"DegreeFahrenheit","val":0}'>
+                        0°C to
+                        °F (Freezing)
+                    </option>
+                    <option value='{"dim":"Temperature","from":"DegreeCelsius","to":"DegreeFahrenheit","val":100}'>
+                        100°C
+                        to °F (Boiling)
+                    </option>
                     <option value='{"dim":"Temperature","from":"DegreeFahrenheit","to":"DegreeCelsius","val":98.6}'>
-                        98.6°F to °C (Body Temp)</option>
+                        98.6°F to °C (Body Temp)
+                    </option>
                     <!-- Speed -->
-                    <option value='{"dim":"Speed","from":"KilometerPerHour","to":"MilePerHour","val":100}'>100 km/h to
-                        mph</option>
-                    <option value='{"dim":"Speed","from":"MeterPerSecond","to":"KilometerPerHour","val":10}'>10 m/s to
-                        km/h</option>
-                    <option value='{"dim":"Speed","from":"Knot","to":"KilometerPerHour","val":20}'>20 Knots to km/h
+                    <option value='{"dim":"Speed","from":"KilometerPerHour","to":"MilePerHour","val":100}'>
+                        100 km/h to
+                        mph
+                    </option>
+                    <option value='{"dim":"Speed","from":"MeterPerSecond","to":"KilometerPerHour","val":10}'>
+                        10 m/s to
+                        km/h
+                    </option>
+                    <option value='{"dim":"Speed","from":"Knot","to":"KilometerPerHour","val":20}'>
+                        20 Knots to km/h
                     </option>
                     <!-- Volume -->
-                    <option value='{"dim":"Volume","from":"Liter","to":"UsGallon","val":3.785}'>3.785 L to US Gallons
+                    <option value='{"dim":"Volume","from":"Liter","to":"UsGallon","val":3.785}'>
+                        3.785 L to US Gallons
                     </option>
-                    <option value='{"dim":"Volume","from":"Milliliter","to":"UsOunce","val":330}'>330 ml to US fl oz
+                    <option value='{"dim":"Volume","from":"Milliliter","to":"UsOunce","val":330}'>
+                        330 ml to US fl oz
                     </option>
-                    <option value='{"dim":"Volume","from":"CubicMeter","to":"CubicFoot","val":1}'>1 m³ to Cubic Feet
+                    <option value='{"dim":"Volume","from":"CubicMeter","to":"CubicFoot","val":1}'>
+                        1 m³ to Cubic Feet
                     </option>
                     <!-- Area -->
-                    <option value='{"dim":"Area","from":"SquareMeter","to":"SquareFoot","val":50}'>50 m² to sq ft
+                    <option value='{"dim":"Area","from":"SquareMeter","to":"SquareFoot","val":50}'>
+                        50 m² to sq ft
                     </option>
                     <option value='{"dim":"Area","from":"Hectare","to":"Acre","val":1}'>1 Hectare to Acres</option>
                     <!-- Time -->
                     <option value='{"dim":"Duration","from":"Hour","to":"Second","val":1}'>1 Hour to Seconds</option>
-                    <option value='{"dim":"Duration","from":"Day","to":"Minute","val":7}'>1 Week (7 Days) to Minutes
+                    <option value='{"dim":"Duration","from":"Day","to":"Minute","val":7}'>
+                        1 Week (7 Days) to Minutes
                     </option>
                     <!-- Digital Storage -->
                     <option value='{"dim":"Information","from":"Gigabyte","to":"Megabyte","val":1}'>1 GB to MB</option>
@@ -119,27 +137,34 @@
                     <option value='{"dim":"Information","from":"Bit","to":"Byte","val":8}'>8 Bits to Byte</option>
                     <!-- Energy -->
                     <option value='{"dim":"Energy","from":"KilowattHour","to":"Joule","val":1}'>1 kWh to Joules</option>
-                    <option value='{"dim":"Energy","from":"Calorie","to":"Joule","val":2000}'>2000 Calories to Joules
+                    <option value='{"dim":"Energy","from":"Calorie","to":"Joule","val":2000}'>
+                        2000 Calories to Joules
                     </option>
                     <!-- Power -->
-                    <option value='{"dim":"Power","from":"Kilowatt","to":"MechanicalHorsepower","val":100}'>100 kW to HP
-                        (Mech)</option>
-                    <option value='{"dim":"Power","from":"Watt","to":"BritishThermalUnitPerHour","val":1000}'>1000 W to
-                        BTU/h</option>
+                    <option value='{"dim":"Power","from":"Kilowatt","to":"MechanicalHorsepower","val":100}'>
+                        100 kW to HP
+                        (Mech)
+                    </option>
+                    <option value='{"dim":"Power","from":"Watt","to":"BritishThermalUnitPerHour","val":1000}'>
+                        1000 W to
+                        BTU/h
+                    </option>
                     <!-- Pressure -->
                     <option value='{"dim":"Pressure","from":"Bar","to":"Pascal","val":1}'>1 Bar to Pascal</option>
-                    <option value='{"dim":"Pressure","from":"PoundForcePerSquareInch","to":"Bar","val":30}'>30 PSI to
-                        Bar</option>
+                    <option value='{"dim":"Pressure","from":"PoundForcePerSquareInch","to":"Bar","val":30}'>
+                        30 PSI to
+                        Bar
+                    </option>
                     <!-- Fuel Efficiency -->
-                    <option
-                        value='{"dim":"FuelEfficiency","from":"LiterPer100Kilometers","to":"MilePerUsGallon","val":8}'>
-                        8 L/100km to MPG (US)</option>
+                    <option value='{"dim":"FuelEfficiency","from":"LiterPer100Kilometers","to":"MilePerUsGallon","val":8}'>
+                        8 L/100km to MPG (US)
+                    </option>
                 </select>
 
                 <!-- Custom Searchable Dropdown -->
                 <div class="custom-select-container" id="exampleContainer">
                     <input type="text" id="exampleInput" class="custom-select-input" placeholder="Select an example..."
-                        autocomplete="off" />
+                           autocomplete="off" />
                     <div class="custom-select-list" id="exampleList"></div>
                 </div>
             </div>
@@ -153,14 +178,14 @@
                     <!-- Custom From Dropdown -->
                     <div class="custom-select-container" id="fromUnitContainer">
                         <input type="text" class="custom-select-input" id="fromUnitInput" placeholder="Select Unit..."
-                            autocomplete="off" disabled>
+                               autocomplete="off" disabled>
                         <div class="custom-select-list" id="fromUnitList"></div>
                     </div>
                 </div>
 
                 <button id="swapBtn" class="swap-btn" title="Swap Units" disabled>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
-                        stroke-linejoin="round">
+                         stroke-linejoin="round">
                         <path d="M20 7H4M20 7l-4-4M20 7l-4 4M4 17h16M4 17l4-4M4 17l4 4" />
                     </svg>
                 </button>
@@ -173,7 +198,7 @@
                     <!-- Custom To Dropdown -->
                     <div class="custom-select-container" id="toUnitContainer">
                         <input type="text" class="custom-select-input" id="toUnitInput" placeholder="Select Unit..."
-                            autocomplete="off" disabled>
+                               autocomplete="off" disabled>
                         <div class="custom-select-list" id="toUnitList"></div>
                     </div>
                 </div>
@@ -192,7 +217,7 @@
                     <!-- Icon-only Copy Button -->
                     <button id="copyBtn" class="icon-btn" title="Copy Result" style="display: none;">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" style="width: 1.2rem; height: 1.2rem;">
+                             stroke-linecap="round" stroke-linejoin="round" style="width: 1.2rem; height: 1.2rem;">
                             <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                             <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                         </svg>
@@ -208,9 +233,8 @@
             <!-- History Section -->
             <div class="history-container" id="historyContainer" style="display: none;">
                 <div class="history-header"
-                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.5rem;">
-                    <span
-                        style="display: block; font-weight: 600; margin-left: 0.25rem; margin-bottom: 0; font-size: 0.9rem; letter-spacing: 1px; color: var(--text-muted);">HISTORY</span>
+                     style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.5rem;">
+                    <span style="display: block; font-weight: 600; margin-left: 0.25rem; margin-bottom: 0; font-size: 0.9rem; letter-spacing: 1px; color: var(--text-muted);">HISTORY</span>
                     <button class="btn-clear-history" onclick="clearHistory()">Clear</button>
                 </div>
                 <div id="historyList" class="history-list"></div>
@@ -226,15 +250,13 @@
     <div class="corner-contact">
         <a href="mailto:nullzerovibe@gmail.com">
             <svg class="contact-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
             </svg>
             nullzerovibe@gmail.com
         </a>
         <a href="https://github.com/nullzerovibe" target="_blank">
             <svg class="contact-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M12 2C6.47 2 2 6.47 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.65.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z" />
+                <path d="M12 2C6.47 2 2 6.47 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.65.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z" />
             </svg>
             github.com/nullzerovibe
         </a>
@@ -249,11 +271,11 @@
         };
         console.log(`%c
 N u l l Z e r o V i b e
-▄▀▀▄░█▀▀█░█▀▀▄░█▀▀ 
-█░░░░█░░█░█░░█░█▀▀ 
+▄▀▀▄░█▀▀█░█▀▀▄░█▀▀
+█░░░░█░░█░█░░█░█▀▀
 ▀▄▄▀░█▄▄█░█▄▄▀░█▄▄
 
- ░▒▒▓▓ LIFETIME OF SYNTAX // AGENTIC EVOLUTION ▓▓▒▒░ 
+ ░▒▒▓▓ LIFETIME OF SYNTAX // AGENTIC EVOLUTION ▓▓▒▒░
 `, 'font-family: monospace; font-weight: bold; color: #00ffff;');
     </script>
 
@@ -267,10 +289,10 @@ N u l l Z e r o V i b e
             <div class="filter-controls">
                 <div class="input-with-clear" style="flex: 1;">
                     <input type="text" id="docSearch" placeholder="Search units..." class="modern-input"
-                        style="width: 100%;">
+                           style="width: 100%;">
                     <button class="clear-input-btn" id="clearSearchBtn" title="Clear Search">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;">
+                             stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;">
                             <line x1="18" y1="6" x2="6" y2="18"></line>
                             <line x1="6" y1="6" x2="18" y2="18"></line>
                         </svg>
@@ -282,7 +304,7 @@ N u l l Z e r o V i b e
                     </select>
                     <button class="clear-input-btn" id="clearDimBtn" title="Clear Filter">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;">
+                             stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;">
                             <line x1="18" y1="6" x2="6" y2="18"></line>
                             <line x1="6" y1="6" x2="18" y2="18"></line>
                         </svg>
@@ -294,7 +316,7 @@ N u l l Z e r o V i b e
             </div>
             <button id="scrollTopBtn" class="scroll-top-btn" title="Go to top">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                    stroke-linejoin="round">
+                     stroke-linejoin="round">
                     <path d="M18 15l-6-6-6 6" />
                 </svg>
             </button>
@@ -955,7 +977,7 @@ N u l l Z e r o V i b e
                     const fromSelect = document.getElementById('fromUnitSelect');
                     // Try to find by value (abbr or name)
                     // The option values are set to (abbr || name) in loadUnitsForDimension
-                    // We need to match what's in the dropdown. 
+                    // We need to match what's in the dropdown.
                     // Since we don't know if the doc click logic passes an abbr or name, we might need to be smart.
                     // For now, let's assume the doc click logic passes the correct value.
                     fromSelect.value = unitNameOrAbbr;

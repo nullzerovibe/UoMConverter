@@ -31,7 +31,7 @@ public class UoMConverterTests {
 
     [Fact]
     public void Convert_CrossQuantity_ThrowsArgumentException() {
-        Assert.Throws<ArgumentException>(() => 
+        Assert.Throws<ArgumentException>(() =>
             _converter.Convert(1, "m", "g"));
     }
 
@@ -45,7 +45,7 @@ public class UoMConverterTests {
     public void GetUnitList_ReturnsProperMetadataForUI() {
         var units = _converter.GetUnitList("Length").ToList();
         var meter = units.FirstOrDefault(u => u.Name == "Meter");
-        
+
         Assert.NotEmpty(meter.Name);
         Assert.Equal("m", meter.Abbreviation);
         Assert.Equal("Meters", meter.Plural);

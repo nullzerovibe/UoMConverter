@@ -1,112 +1,112 @@
 {
-    "Name": "Mass",
-    "BaseUnit": "Kilogram",
-    "XmlDocSummary": "Mass units used in historical Croatia/Venice/Ottoman regions for grain and milling.",
-    "Units": [
+  "Name": "Mass",
+  "BaseUnit": "Kilogram",
+  "XmlDocSummary": "Mass units used in historical Croatia/Venice/Ottoman regions for grain and milling.",
+  "Units": [
+    {
+      "SingularName": "Sat",
+      "PluralName": "Sati",
+      "XmlDocSummary": "Ancient mill unit representing 1 hour of mill work, approx 20-25 kg of flour.",
+      "FromUnitToBaseFunc": "{x} * 22.5",
+      "FromBaseToUnitFunc": "{x} / 22.5",
+      "Localization": [
         {
-            "SingularName": "Sat",
-            "PluralName": "Sati",
-            "XmlDocSummary": "Ancient mill unit representing 1 hour of mill work, approx 20-25 kg of flour.",
-            "FromUnitToBaseFunc": "{x} * 22.5",
-            "FromBaseToUnitFunc": "{x} / 22.5",
-            "Localization": [
-                {
-                    "Culture": "en-US",
-                    "Abbreviations": [
-                        "sat"
-                    ]
-                },
-                {
-                    "Culture": "hr-HR",
-                    "Abbreviations": [
-                        "sat"
-                    ]
-                }
-            ]
+          "Culture": "en-US",
+          "Abbreviations": [
+            "sat"
+          ]
         },
         {
-            "SingularName": "Kamen",
-            "PluralName": "Kameni",
-            "XmlDocSummary": "Ancient mill unit 'Stone', equal to 1 sat (approx 20-25 kg).",
-            "FromUnitToBaseFunc": "{x} * 22.5",
-            "FromBaseToUnitFunc": "{x} / 22.5",
-            "Localization": [
-                {
-                    "Culture": "en-US",
-                    "Abbreviations": [
-                        "kamen"
-                    ]
-                },
-                {
-                    "Culture": "hr-HR",
-                    "Abbreviations": [
-                        "kamen"
-                    ]
-                }
-            ]
-        },
-        {
-            "SingularName": "Sinik",
-            "PluralName": "Sinici",
-            "XmlDocSummary": "Ottoman unit used in Lika/Bosnia, approx 10-12 kg.",
-            "FromUnitToBaseFunc": "{x} * 11",
-            "FromBaseToUnitFunc": "{x} / 11",
-            "Localization": [
-                {
-                    "Culture": "en-US",
-                    "Abbreviations": [
-                        "šinik"
-                    ]
-                },
-                {
-                    "Culture": "hr-HR",
-                    "Abbreviations": [
-                        "šinik"
-                    ]
-                }
-            ]
-        },
-        {
-            "SingularName": "LitraAncient",
-            "PluralName": "LitreAncient",
-            "XmlDocSummary": "Ancient mass unit (Zadar/Venice), approx 330-350g. Distinct from volume 'Litra' (Liter).",
-            "FromUnitToBaseFunc": "{x} * 0.34",
-            "FromBaseToUnitFunc": "{x} / 0.34",
-            "Localization": [
-                {
-                    "Culture": "en-US",
-                    "Abbreviations": [
-                        "litra (ancient)"
-                    ]
-                },
-                {
-                    "Culture": "hr-HR",
-                    "Abbreviations": [
-                        "litra (stara)"
-                    ]
-                }
-            ]
-        },
-        {
-            "SingularName": "Polic",
-            "PluralName": "Polici",
-            "XmlDocSummary": "Half of an Ancient Litra, approx 160-180g.",
-            "FromUnitToBaseFunc": "{x} * 0.17",
-            "FromBaseToUnitFunc": "{x} / 0.17",
-            "Localization": [
-                {
-                    "Culture": "en-US",
-                    "Abbreviations": [
-                        "polić"
-                    ]
-                },
-                {
-                    "Culture": "hr-HR",
-                    "Abbreviations": [
-                        "polić"
-                    ]
-                }
-            ]
+          "Culture": "hr-HR",
+          "Abbreviations": [
+            "sat"
+          ]
         }
-    ]
+      ]
+    },
+    {
+      "SingularName": "Kamen",
+      "PluralName": "Kameni",
+      "XmlDocSummary": "Ancient mill unit 'Stone', equal to 1 sat (approx 20-25 kg).",
+      "FromUnitToBaseFunc": "{x} * 22.5",
+      "FromBaseToUnitFunc": "{x} / 22.5",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [
+            "kamen"
+          ]
+        },
+        {
+          "Culture": "hr-HR",
+          "Abbreviations": [
+            "kamen"
+          ]
+        }
+      ]
+    },
+    {
+      "SingularName": "Sinik",
+      "PluralName": "Sinici",
+      "XmlDocSummary": "Ottoman unit used in Lika/Bosnia, approx 10-12 kg.",
+      "FromUnitToBaseFunc": "{x} * 11",
+      "FromBaseToUnitFunc": "{x} / 11",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [
+            "šinik"
+          ]
+        },
+        {
+          "Culture": "hr-HR",
+          "Abbreviations": [
+            "šinik"
+          ]
+        }
+      ]
+    },
+    {
+      "SingularName": "LitraAncient",
+      "PluralName": "LitreAncient",
+      "XmlDocSummary": "Ancient mass unit (Zadar/Venice), approx 330-350g. Distinct from volume 'Litra' (Liter).",
+      "FromUnitToBaseFunc": "{x} * 0.34",
+      "FromBaseToUnitFunc": "{x} / 0.34",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [
+            "litra (ancient)"
+          ]
+        },
+        {
+          "Culture": "hr-HR",
+          "Abbreviations": [
+            "litra (stara)"
+          ]
+        }
+      ]
+    },
+    {
+      "SingularName": "Polic",
+      "PluralName": "Polici",
+      "XmlDocSummary": "Half of an Ancient Litra, approx 160-180g.",
+      "FromUnitToBaseFunc": "{x} * 0.17",
+      "FromBaseToUnitFunc": "{x} / 0.17",
+      "Localization": [
+        {
+          "Culture": "en-US",
+          "Abbreviations": [
+            "polić"
+          ]
+        },
+        {
+          "Culture": "hr-HR",
+          "Abbreviations": [
+            "polić"
+          ]
+        }
+      ]
+    }
+  ]
 }
