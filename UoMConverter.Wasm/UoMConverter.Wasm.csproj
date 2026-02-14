@@ -22,4 +22,9 @@
     <ProjectReference Include="..\UoMConverter\UoMConverter.csproj" />
   </ItemGroup>
 
+  <!-- Auto-generate 404.html for SPA routing on GitHub Pages -->
+  <Target Name="Create404" AfterTargets="Publish">
+    <Copy SourceFiles="$(PublishDir)wwwroot\index.html" DestinationFiles="$(PublishDir)wwwroot\404.html" />
+  </Target>
+
 </Project>
