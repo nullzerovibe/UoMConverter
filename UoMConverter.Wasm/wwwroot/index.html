@@ -46,7 +46,8 @@
     <div id="app">
         <div class="card">
             <h1>Unit Converter</h1>
-            <p class="subtitle">High-performance .NET WASM Unit Converter</p>
+            <p class="subtitle">High-performance .NET WASM Unit Converter <span id="appVersion"
+                    style="font-size: 0.8em; opacity: 0.7;"></span></p>
 
             <div class="form-group">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
@@ -265,6 +266,17 @@ N u l l Z e r o V i b e
                 console.log("UoMConverter: Interop connection successful:", pong);
             } catch (e) {
                 console.error("UoMConverter: Interop Ping failed:", e);
+            }
+
+            // Fetch and display version
+            try {
+                const interop = await getInterop();
+                const version = await interop.invokeMethodAsync('GetVersion');
+                if (version) {
+                    document.getElementById('appVersion').textContent = `(v${version})`;
+                }
+            } catch (verErr) {
+                console.warn("UoMConverter: Could not fetch version", verErr);
             }
 
             await populateDimensions();
