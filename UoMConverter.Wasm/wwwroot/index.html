@@ -57,14 +57,23 @@
                         📖 Unit Reference
                     </button>
                 </div>
-                <select id="dimensionSelect">
+                <!-- Hidden Native Select for logical compatibility -->
+                <select id="dimensionSelect" style="display: none;">
                     <option value="" disabled selected>Select dimension...</option>
                 </select>
+
+                <!-- Custom Searchable Dropdown -->
+                <div class="custom-select-container" id="dimensionContainer">
+                    <input type="text" id="dimensionInput" class="custom-select-input" placeholder="Select Quantity..."
+                        autocomplete="off" />
+                    <div class="custom-select-list" id="dimensionList"></div>
+                </div>
             </div>
 
             <div class="form-group">
                 <label for="exampleSelect">⚡ Quick Examples</label>
-                <select id="exampleSelect">
+                <!-- Hidden Native Select for data source -->
+                <select id="exampleSelect" style="display: none;">
                     <option value="" disabled selected>Select an example...</option>
                     <!-- Length -->
                     <option value='{"dim":"Length","from":"Meter","to":"Foot","val":10}'>10 Meters to Feet</option>
@@ -126,14 +135,27 @@
                         value='{"dim":"FuelEfficiency","from":"LiterPer100Kilometers","to":"MilePerUsGallon","val":8}'>
                         8 L/100km to MPG (US)</option>
                 </select>
+
+                <!-- Custom Searchable Dropdown -->
+                <div class="custom-select-container" id="exampleContainer">
+                    <input type="text" id="exampleInput" class="custom-select-input" placeholder="Select an example..."
+                        autocomplete="off" />
+                    <div class="custom-select-list" id="exampleList"></div>
+                </div>
             </div>
 
             <div class="swap-grid" style="margin-bottom: 1.5rem;">
                 <div class="form-group">
                     <label for="fromUnitSelect">From Unit</label>
-                    <select id="fromUnitSelect" disabled>
+                    <select id="fromUnitSelect" style="display: none;">
                         <option value="" disabled selected>Unit...</option>
                     </select>
+                    <!-- Custom From Dropdown -->
+                    <div class="custom-select-container" id="fromUnitContainer">
+                        <input type="text" class="custom-select-input" id="fromUnitInput" placeholder="Select Unit..."
+                            autocomplete="off" disabled>
+                        <div class="custom-select-list" id="fromUnitList"></div>
+                    </div>
                 </div>
 
                 <button id="swapBtn" class="swap-btn" title="Swap Units" disabled>
@@ -145,9 +167,15 @@
 
                 <div class="form-group">
                     <label for="toUnitSelect">To Unit</label>
-                    <select id="toUnitSelect" disabled>
+                    <select id="toUnitSelect" style="display: none;">
                         <option value="" disabled selected>Unit...</option>
                     </select>
+                    <!-- Custom To Dropdown -->
+                    <div class="custom-select-container" id="toUnitContainer">
+                        <input type="text" class="custom-select-input" id="toUnitInput" placeholder="Select Unit..."
+                            autocomplete="off" disabled>
+                        <div class="custom-select-list" id="toUnitList"></div>
+                    </div>
                 </div>
             </div>
 
@@ -373,6 +401,9 @@ N u l l Z e r o V i b e
                         opt.textContent = d;
                         select.appendChild(opt);
                     });
+
+                    // Setup Custom Key-Value Dropdown
+                    setupCustomDimDropdown('dimensionContainer', 'dimensionInput', 'dimensionList', 'dimensionSelect', dims);
                 } catch (err) {
                     console.error("UoMConverter: populateDimensions failed:", err);
                     const status = document.getElementById('status');
@@ -399,8 +430,136 @@ N u l l Z e r o V i b e
                     s.disabled = false;
                 });
 
-                // Enable swap button if we have units
+                // Unlock inputs
+                document.getElementById('valueInput').disabled = false;
+                document.getElementById('fromUnitInput').disabled = false;
+                document.getElementById('toUnitInput').disabled = false;
                 document.getElementById('swapBtn').disabled = false;
+
+                // Populate Custom Dropdowns
+                setupCustomDropdown('fromUnitContainer', 'fromUnitInput', 'fromUnitList', 'fromUnitSelect', units);
+                setupCustomDropdown('toUnitContainer', 'toUnitInput', 'toUnitList', 'toUnitSelect', units);
+            }
+
+            function setupCustomDropdown(containerId, inputId, listId, selectId, units) {
+                const container = document.getElementById(containerId);
+                const input = document.getElementById(inputId);
+                const list = document.getElementById(listId);
+                const select = document.getElementById(selectId);
+
+                let allOptions = units.map(u => ({
+                    value: u.abbreviation || u.name,
+                    label: `${u.name} (${u.abbreviation || '-'})`,
+                    abbr: u.abbreviation
+                }));
+
+                // Render list function
+                const renderList = (filterText = '') => {
+                    list.innerHTML = '';
+                    const filtered = allOptions.filter(o =>
+                        o.label.toLowerCase().includes(filterText.toLowerCase())
+                    );
+
+                    if (filtered.length === 0) {
+                        list.innerHTML = '<div class="no-results">No units found</div>';
+                        return;
+                    }
+
+                    filtered.forEach(opt => {
+                        const div = document.createElement('div');
+                        div.className = 'custom-option';
+                        div.textContent = opt.label;
+                        if (input.value === opt.label) div.classList.add('selected');
+
+                        div.onclick = async () => {
+                            input.value = opt.label;
+                            select.value = opt.value;
+                            list.classList.remove('open');
+
+                            // Trigger conversion if both selected
+                            const otherSelectId = selectId === 'fromUnitSelect' ? 'toUnitSelect' : 'fromUnitSelect';
+                            if (document.getElementById(otherSelectId).value) {
+                                await globalThis.convert();
+                            }
+                        };
+                        list.appendChild(div);
+                    });
+                };
+
+                // Input events
+                input.onfocus = () => {
+                    renderList();
+                    list.classList.add('open');
+                };
+
+                input.oninput = () => {
+                    renderList(input.value);
+                    list.classList.add('open');
+                };
+
+                // Click outside to close
+                document.addEventListener('click', (e) => {
+                    if (!container.contains(e.target)) {
+                        list.classList.remove('open');
+                        // Restore valid value if input is invalid
+                        const currentVal = select.value;
+                        if (currentVal) {
+                            const opt = allOptions.find(o => o.value === currentVal);
+                            if (opt) input.value = opt.label;
+                        } else {
+                            input.value = '';
+                        }
+                    }
+                });
+            }
+
+            function setupCustomDimDropdown(containerId, inputId, listId, selectId, dims) {
+                const container = document.getElementById(containerId);
+                const input = document.getElementById(inputId);
+                const list = document.getElementById(listId);
+                const select = document.getElementById(selectId);
+
+                // Render list
+                const renderList = (filterText = '') => {
+                    list.innerHTML = '';
+                    const filtered = dims.filter(d => d.toLowerCase().includes(filterText.toLowerCase()));
+
+                    if (filtered.length === 0) {
+                        list.innerHTML = '<div class="no-results">No quantities found</div>';
+                        return;
+                    }
+
+                    filtered.forEach(d => {
+                        const div = document.createElement('div');
+                        div.className = 'custom-option';
+                        div.textContent = d;
+                        if (input.value === d) div.classList.add('selected');
+
+                        div.onclick = async () => {
+                            input.value = d;
+                            select.value = d;
+                            list.classList.remove('open');
+                            await loadUnitsForDimension(d);
+                        };
+                        list.appendChild(div);
+                    });
+                };
+
+                input.onfocus = () => {
+                    renderList();
+                    list.classList.add('open');
+                };
+
+                input.oninput = () => {
+                    renderList(input.value);
+                    list.classList.add('open');
+                };
+
+                document.addEventListener('click', (e) => {
+                    if (!container.contains(e.target)) {
+                        list.classList.remove('open');
+                    }
+                });
             }
 
             document.getElementById('dimensionSelect').onchange = async (e) => {
@@ -408,10 +567,74 @@ N u l l Z e r o V i b e
             };
 
             // Example Loaded Logic
-            document.getElementById('exampleSelect').onchange = async (e) => {
+            // Example Loaded Logic
+            const exampleSelect = document.getElementById('exampleSelect');
+            exampleSelect.onchange = async (e) => {
                 const ex = JSON.parse(e.target.value);
                 await loadExample(ex);
             };
+
+            // Setup Custom Example Dropdown
+            function setupCustomExampleDropdown() {
+                const container = document.getElementById('exampleContainer');
+                const input = document.getElementById('exampleInput');
+                const list = document.getElementById('exampleList');
+                const select = document.getElementById('exampleSelect');
+
+                // Extract options from select
+                const options = Array.from(select.options)
+                    .filter(o => !o.disabled)
+                    .map(o => ({
+                        value: o.value,
+                        text: o.textContent
+                    }));
+
+                const renderList = (filterText = '') => {
+                    list.innerHTML = '';
+                    const filtered = options.filter(o => o.text.toLowerCase().includes(filterText.toLowerCase()));
+
+                    if (filtered.length === 0) {
+                        list.innerHTML = '<div class="no-results">No examples found</div>';
+                        return;
+                    }
+
+                    filtered.forEach(opt => {
+                        const div = document.createElement('div');
+                        div.className = 'custom-option';
+                        div.textContent = opt.text;
+
+                        div.onclick = async () => {
+                            input.value = opt.text;
+                            select.value = opt.value;
+                            list.classList.remove('open');
+
+                            // Trigger logic
+                            const ex = JSON.parse(opt.value);
+                            await loadExample(ex);
+                        };
+                        list.appendChild(div);
+                    });
+                };
+
+                input.onfocus = () => {
+                    renderList();
+                    list.classList.add('open');
+                };
+
+                input.oninput = () => {
+                    renderList(input.value);
+                    list.classList.add('open');
+                };
+
+                document.addEventListener('click', (e) => {
+                    if (!container.contains(e.target)) {
+                        list.classList.remove('open');
+                    }
+                });
+            }
+
+            // Initialize Example Dropdown
+            setupCustomExampleDropdown();
 
             async function loadExample(ex) {
                 // 1. Select Dimension
@@ -469,12 +692,33 @@ N u l l Z e r o V i b e
                         await globalThis.convert();
                     }
                 }, 50);
+
+                // Update Custom Inputs
+                const updateCustom = (selectId, inputId) => {
+                    const sel = document.getElementById(selectId);
+                    const inp = document.getElementById(inputId);
+                    if (sel.value && sel.selectedIndex >= 0) {
+                        inp.value = sel.options[sel.selectedIndex].text;
+                    }
+                };
+
+                // Wait little more for select logic to finish
+                setTimeout(() => {
+                    updateCustom('dimensionSelect', 'dimensionInput');
+                    updateCustom('fromUnitSelect', 'fromUnitInput');
+                    updateCustom('toUnitSelect', 'toUnitInput');
+                }, 60);
             }
 
             // Programmatic Selection Helpers
             async function selectDimension(dim) {
                 const select = document.getElementById('dimensionSelect');
                 select.value = dim;
+
+                // Update custom input
+                const input = document.getElementById('dimensionInput');
+                if (input) input.value = dim;
+
                 await loadUnitsForDimension(dim);
                 document.getElementById('docsModal').style.display = 'none';
             }
@@ -508,10 +752,26 @@ N u l l Z e r o V i b e
 
             // History & Copy Logic
             let history = [];
-            const MAX_HISTORY = 5;
+            const MAX_HISTORY = 10; // Increased to 10 for persistence
+
+            // Load history on startup
+            try {
+                const saved = localStorage.getItem('uom_history');
+                if (saved) {
+                    history = JSON.parse(saved);
+                    if (history.length > 0) {
+                        document.getElementById('historyContainer').style.display = 'block';
+                        // Defer render until DOM is fully ready if needed, usually fine here
+                        setTimeout(renderHistory, 0);
+                    }
+                }
+            } catch (e) {
+                console.error("Failed to load history:", e);
+            }
 
             globalThis.clearHistory = () => {
                 history = [];
+                localStorage.removeItem('uom_history');
                 document.getElementById('historyContainer').style.display = 'none';
                 document.getElementById('historyList').innerHTML = '';
             };
@@ -523,6 +783,10 @@ N u l l Z e r o V i b e
                 const entry = { val, from, to, result, dim, time: new Date() };
                 history.unshift(entry);
                 if (history.length > MAX_HISTORY) history.pop();
+
+                // Save to localStorage
+                localStorage.setItem('uom_history', JSON.stringify(history));
+
                 renderHistory();
             }
 
@@ -633,6 +897,8 @@ N u l l Z e r o V i b e
             document.getElementById('swapBtn').onclick = async () => {
                 const fromSelect = document.getElementById('fromUnitSelect');
                 const toSelect = document.getElementById('toUnitSelect');
+                const fromInput = document.getElementById('fromUnitInput');
+                const toInput = document.getElementById('toUnitInput');
 
                 if (fromSelect.disabled || toSelect.disabled) return;
 
@@ -642,11 +908,35 @@ N u l l Z e r o V i b e
                 fromSelect.value = toVal;
                 toSelect.value = fromVal;
 
+                // Update Inputs text
+                const tempText = fromInput.value;
+                fromInput.value = toInput.value;
+                toInput.value = tempText;
+
                 // Trigger conversion if both valid
                 if (fromSelect.value && toSelect.value) {
                     await globalThis.convert();
                 }
             };
+
+            // Keyboard Shortcuts
+            document.addEventListener('keydown', async (e) => {
+                // Enter to Convert (if not in a textarea/button)
+                if (e.key === 'Enter' && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'TEXTAREA') {
+                    // Start conversion if button enabled
+                    const btn = document.getElementById('convertBtn');
+                    if (!btn.disabled) {
+                        e.preventDefault();
+                        await globalThis.convert();
+                    }
+                }
+
+                // Alt+S to Swap
+                if (e.altKey && e.code === 'KeyS') {
+                    e.preventDefault();
+                    document.getElementById('swapBtn').click();
+                }
+            });
 
             document.getElementById('convertBtn').onclick = globalThis.convert;
 

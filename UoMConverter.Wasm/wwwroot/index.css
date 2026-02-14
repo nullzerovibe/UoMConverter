@@ -212,15 +212,18 @@ input:focus {
 /* Swap Grid Layout */
 .swap-grid {
     display: flex;
-    align-items: flex-end; /* Align inputs and button to bottom */
+    align-items: flex-end;
+    /* Align inputs and button to bottom */
     gap: 0.5rem;
-    margin-bottom: 0; /* Let children handle spacing if needed, but grid usually has gap */
+    margin-bottom: 0;
+    /* Let children handle spacing if needed, but grid usually has gap */
 }
 
 /* Ensure form-groups inside swap-grid take available space */
-.swap-grid > .form-group {
+.swap-grid>.form-group {
     flex: 1;
-    margin-bottom: 0; /* Reset margin bottom for alignment */
+    margin-bottom: 0;
+    /* Reset margin bottom for alignment */
 }
 
 /* Swap Button Specifics */
@@ -228,9 +231,12 @@ button.swap-btn {
     width: 42px;
     height: 42px;
     padding: 0;
-    margin: 0; /* Reset default button margin */
-    margin-bottom: 2px; /* Slight optical alignment adjustment if needed, usually 0 is fine with flex-end */
-    border-radius: 50%; /* Circular button */
+    margin: 0;
+    /* Reset default button margin */
+    margin-bottom: 2px;
+    /* Slight optical alignment adjustment if needed, usually 0 is fine with flex-end */
+    border-radius: 50%;
+    /* Circular button */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -238,7 +244,8 @@ button.swap-btn {
     color: var(--text-muted);
     box-shadow: none;
     border: 1px solid var(--glass-border);
-    flex-shrink: 0; /* Don't shrink */
+    flex-shrink: 0;
+    /* Don't shrink */
 }
 
 button.swap-btn:hover {
@@ -503,6 +510,10 @@ option {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    max-height: 15rem;
+    /* Approx 4-5 items */
+    overflow-y: auto;
+    padding-right: 4px;
 }
 
 .history-item {
@@ -759,4 +770,122 @@ option {
 .clear-input-btn:hover {
     color: var(--error);
     background: rgba(255, 255, 255, 0.1);
+}
+
+/* Custom Searchable Select */
+.custom-select-container {
+    position: relative;
+    width: 100%;
+}
+
+.custom-select-input {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--glass-border);
+    border-radius: 6px;
+    padding: 0.875rem 1rem;
+    padding-right: 2.5rem;
+    /* Space for arrow */
+    color: var(--text);
+    font-size: 1rem;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8'%3e%3cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3e%3c/path%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.25em;
+}
+
+.custom-select-input:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.custom-select-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.1);
+}
+
+.custom-select-input:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-image: none;
+}
+
+.custom-select-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 12rem;
+    /* Approx 4 items */
+    overflow-y: auto;
+    background: #1e293b;
+    border: 1px solid var(--glass-border);
+    border-radius: 6px;
+    margin-top: 0.25rem;
+    z-index: 50;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    display: none;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* Custom Scrollbar for Dropdown & History */
+.custom-select-list::-webkit-scrollbar,
+.history-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.custom-select-list::-webkit-scrollbar-track,
+.history-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0 6px 6px 0;
+}
+
+.custom-select-list::-webkit-scrollbar-thumb,
+.history-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.custom-select-list::-webkit-scrollbar-thumb:hover,
+.history-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.custom-select-list.open {
+    display: flex;
+    animation: fadeIn 0.1s ease-out;
+}
+
+.custom-option {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: all 0.1s;
+    font-size: 0.95rem;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.custom-option:hover,
+.custom-option.highlighted {
+    background: rgba(56, 189, 248, 0.15);
+    color: white;
+}
+
+.custom-option.selected {
+    background: rgba(56, 189, 248, 0.25);
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.no-results {
+    padding: 1rem;
+    color: var(--text-muted);
+    font-style: italic;
+    text-align: center;
+    font-size: 0.9rem;
 }
