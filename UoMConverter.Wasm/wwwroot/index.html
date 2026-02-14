@@ -62,13 +62,86 @@
                 </select>
             </div>
 
-            <div class="grid">
+            <div class="form-group">
+                <label for="exampleSelect">⚡ Quick Examples</label>
+                <select id="exampleSelect">
+                    <option value="" disabled selected>Select an example...</option>
+                    <!-- Length -->
+                    <option value='{"dim":"Length","from":"Meter","to":"Foot","val":10}'>10 Meters to Feet</option>
+                    <option value='{"dim":"Length","from":"Kilometer","to":"Mile","val":100}'>100 km to Miles</option>
+                    <option value='{"dim":"Length","from":"Centimeter","to":"Inch","val":30}'>30 cm to Inches</option>
+                    <!-- Mass -->
+                    <option value='{"dim":"Mass","from":"Kilogram","to":"Pound","val":1}'>1 kg to lbs</option>
+                    <option value='{"dim":"Mass","from":"Gram","to":"Ounce","val":100}'>100 g to Ounces</option>
+                    <option value='{"dim":"Mass","from":"Tonne","to":"ShortTon","val":1}'>1 Tonne (Metric) to US Ton
+                    </option>
+                    <!-- Temperature -->
+                    <option value='{"dim":"Temperature","from":"DegreeCelsius","to":"DegreeFahrenheit","val":0}'>0°C to
+                        °F (Freezing)</option>
+                    <option value='{"dim":"Temperature","from":"DegreeCelsius","to":"DegreeFahrenheit","val":100}'>100°C
+                        to °F (Boiling)</option>
+                    <option value='{"dim":"Temperature","from":"DegreeFahrenheit","to":"DegreeCelsius","val":98.6}'>
+                        98.6°F to °C (Body Temp)</option>
+                    <!-- Speed -->
+                    <option value='{"dim":"Speed","from":"KilometerPerHour","to":"MilePerHour","val":100}'>100 km/h to
+                        mph</option>
+                    <option value='{"dim":"Speed","from":"MeterPerSecond","to":"KilometerPerHour","val":10}'>10 m/s to
+                        km/h</option>
+                    <option value='{"dim":"Speed","from":"Knot","to":"KilometerPerHour","val":20}'>20 Knots to km/h
+                    </option>
+                    <!-- Volume -->
+                    <option value='{"dim":"Volume","from":"Liter","to":"UsGallon","val":3.785}'>3.785 L to US Gallons
+                    </option>
+                    <option value='{"dim":"Volume","from":"Milliliter","to":"UsOunce","val":330}'>330 ml to US fl oz
+                    </option>
+                    <option value='{"dim":"Volume","from":"CubicMeter","to":"CubicFoot","val":1}'>1 m³ to Cubic Feet
+                    </option>
+                    <!-- Area -->
+                    <option value='{"dim":"Area","from":"SquareMeter","to":"SquareFoot","val":50}'>50 m² to sq ft
+                    </option>
+                    <option value='{"dim":"Area","from":"Hectare","to":"Acre","val":1}'>1 Hectare to Acres</option>
+                    <!-- Time -->
+                    <option value='{"dim":"Duration","from":"Hour","to":"Second","val":1}'>1 Hour to Seconds</option>
+                    <option value='{"dim":"Duration","from":"Day","to":"Minute","val":7}'>1 Week (7 Days) to Minutes
+                    </option>
+                    <!-- Digital Storage -->
+                    <option value='{"dim":"Information","from":"Gigabyte","to":"Megabyte","val":1}'>1 GB to MB</option>
+                    <option value='{"dim":"Information","from":"Terabyte","to":"Gigabyte","val":1}'>1 TB to GB</option>
+                    <option value='{"dim":"Information","from":"Bit","to":"Byte","val":8}'>8 Bits to Byte</option>
+                    <!-- Energy -->
+                    <option value='{"dim":"Energy","from":"KilowattHour","to":"Joule","val":1}'>1 kWh to Joules</option>
+                    <option value='{"dim":"Energy","from":"Calorie","to":"Joule","val":2000}'>2000 Calories to Joules
+                    </option>
+                    <!-- Power -->
+                    <option value='{"dim":"Power","from":"Kilowatt","to":"MechanicalHorsepower","val":100}'>100 kW to HP
+                        (Mech)</option>
+                    <option value='{"dim":"Power","from":"Watt","to":"BritishThermalUnitPerHour","val":1000}'>1000 W to
+                        BTU/h</option>
+                    <!-- Pressure -->
+                    <option value='{"dim":"Pressure","from":"Bar","to":"Pascal","val":1}'>1 Bar to Pascal</option>
+                    <option value='{"dim":"Pressure","from":"PoundForcePerSquareInch","to":"Bar","val":30}'>30 PSI to
+                        Bar</option>
+                    <!-- Fuel Economy -->
+                    <option value='{"dim":"FuelEconomy","from":"LiterPer100Kilometers","to":"MilePerUsGallon","val":8}'>
+                        8 L/100km to MPG (US)</option>
+                </select>
+            </div>
+
+            <div class="swap-grid" style="margin-bottom: 1.5rem;">
                 <div class="form-group">
                     <label for="fromUnitSelect">From Unit</label>
                     <select id="fromUnitSelect" disabled>
                         <option value="" disabled selected>Unit...</option>
                     </select>
                 </div>
+
+                <button id="swapBtn" class="swap-btn" title="Swap Units" disabled>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M20 7H4M20 7l-4-4M20 7l-4 4M4 17h16M4 17l4-4M4 17l4 4" />
+                    </svg>
+                </button>
+
                 <div class="form-group">
                     <label for="toUnitSelect">To Unit</label>
                     <select id="toUnitSelect" disabled>
@@ -324,11 +397,78 @@ N u l l Z e r o V i b e
                     });
                     s.disabled = false;
                 });
+
+                // Enable swap button if we have units
+                document.getElementById('swapBtn').disabled = false;
             }
 
             document.getElementById('dimensionSelect').onchange = async (e) => {
                 await loadUnitsForDimension(e.target.value);
             };
+
+            // Example Loaded Logic
+            document.getElementById('exampleSelect').onchange = async (e) => {
+                const ex = JSON.parse(e.target.value);
+                await loadExample(ex);
+            };
+
+            async function loadExample(ex) {
+                // 1. Select Dimension
+                await selectDimension(ex.dim);
+
+                // 2. Wait for units to populate (selectDimension waits for loadUnitsForDimension)
+                // We need to find the correct value (Abbr or Name) for the select options.
+                // Our presets use 'Name' (e.g. 'Meter'), but option value might be 'm'.
+
+                const fromSelect = document.getElementById('fromUnitSelect');
+                const toSelect = document.getElementById('toUnitSelect');
+
+                const setSelectByText = (select, textOrName) => {
+                    // Try to match value first (if name matches value directly)
+                    // Then try to match text content (Name (Abbr))
+                    // Then try to match just Name part of text
+
+                    // Direct value match?
+                    for (let i = 0; i < select.options.length; i++) {
+                        if (select.options[i].value === textOrName) {
+                            select.selectedIndex = i;
+                            return true;
+                        }
+                    }
+
+                    // Scan options for name match
+                    const targetName = textOrName.toLowerCase();
+                    for (let i = 0; i < select.options.length; i++) {
+                        const optText = select.options[i].textContent.toLowerCase();
+                        // Format is "Name (Abbr)"
+                        if (optText.startsWith(targetName + " ") || optText === targetName) {
+                            select.selectedIndex = i;
+                            return true;
+                        }
+                    }
+                    return false;
+                };
+
+                // Helper to smart select
+                // Ideally our presets should match the Name used in generation.
+                // UnitsNet names are PascalCase usually.
+
+                // Let's try to set it.
+                // Wait a tick ensures UI is fresh if selectDimension was async.
+                setTimeout(async () => {
+                    let f = setSelectByText(fromSelect, ex.from);
+                    let t = setSelectByText(toSelect, ex.to);
+
+                    if (!f) console.warn(`Could not find unit: ${ex.from}`);
+                    if (!t) console.warn(`Could not find unit: ${ex.to}`);
+
+                    document.getElementById('valueInput').value = ex.val;
+
+                    if (f && t) {
+                        await globalThis.convert();
+                    }
+                }, 50);
+            }
 
             // Programmatic Selection Helpers
             async function selectDimension(dim) {
@@ -485,6 +625,25 @@ N u l l Z e r o V i b e
                     outLabel.textContent = err.message;
                     copyBtn.style.display = 'none';
                     timer.style.display = 'none';
+                }
+            };
+
+            // Swap Logic
+            document.getElementById('swapBtn').onclick = async () => {
+                const fromSelect = document.getElementById('fromUnitSelect');
+                const toSelect = document.getElementById('toUnitSelect');
+
+                if (fromSelect.disabled || toSelect.disabled) return;
+
+                const fromVal = fromSelect.value;
+                const toVal = toSelect.value;
+
+                fromSelect.value = toVal;
+                toSelect.value = fromVal;
+
+                // Trigger conversion if both valid
+                if (fromSelect.value && toSelect.value) {
+                    await globalThis.convert();
                 }
             };
 

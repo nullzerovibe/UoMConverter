@@ -209,6 +209,51 @@ input:focus {
     gap: 1rem;
 }
 
+/* Swap Grid Layout */
+.swap-grid {
+    display: flex;
+    align-items: flex-end; /* Align inputs and button to bottom */
+    gap: 0.5rem;
+    margin-bottom: 0; /* Let children handle spacing if needed, but grid usually has gap */
+}
+
+/* Ensure form-groups inside swap-grid take available space */
+.swap-grid > .form-group {
+    flex: 1;
+    margin-bottom: 0; /* Reset margin bottom for alignment */
+}
+
+/* Swap Button Specifics */
+button.swap-btn {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    margin: 0; /* Reset default button margin */
+    margin-bottom: 2px; /* Slight optical alignment adjustment if needed, usually 0 is fine with flex-end */
+    border-radius: 50%; /* Circular button */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-muted);
+    box-shadow: none;
+    border: 1px solid var(--glass-border);
+    flex-shrink: 0; /* Don't shrink */
+}
+
+button.swap-btn:hover {
+    background: rgba(56, 189, 248, 0.2);
+    color: var(--accent);
+    transform: rotate(180deg);
+    border-color: var(--accent);
+}
+
+button.swap-btn svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    stroke-width: 2.5;
+}
+
 button {
     width: 100%;
     background: linear-gradient(135deg, var(--primary), var(--accent));
