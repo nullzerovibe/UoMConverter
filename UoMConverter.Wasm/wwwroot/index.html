@@ -413,6 +413,27 @@ N u l l Z e r o V i b e
             }
 
             async function loadUnitsForDimension(dim) {
+                // Safely clear other inputs
+                try {
+                    const safeSet = (id, val) => {
+                        const el = document.getElementById(id);
+                        if (el) {
+                            if (el.tagName === 'INPUT' || el.tagName === 'SELECT') el.value = val;
+                            else el.textContent = val;
+                        }
+                    };
+                    safeSet('exampleInput', '');
+                    safeSet('exampleSelect', '');
+                    safeSet('fromUnitInput', '');
+                    safeSet('fromUnitSelect', '');
+                    safeSet('toUnitInput', '');
+                    safeSet('toUnitSelect', '');
+                    safeSet('resultLabel', 'Please select units');
+                    safeSet('inputValue', '');
+                } catch (e) {
+                    console.warn("UoMConverter: Failed to clear inputs", e);
+                }
+
                 const interop = await getInterop();
                 const units = await interop.invokeMethodAsync('GetUnits', dim);
 
@@ -442,7 +463,7 @@ N u l l Z e r o V i b e
             }
 
             function setupCustomDropdown(containerId, inputId, listId, selectId, units) {
-                const container = document.getElementById(containerId);
+                // container not needed for blur logic
                 const input = document.getElementById(inputId);
                 const list = document.getElementById(listId);
                 const select = document.getElementById(selectId);
@@ -471,7 +492,9 @@ N u l l Z e r o V i b e
                         div.textContent = opt.label;
                         if (input.value === opt.label) div.classList.add('selected');
 
-                        div.onclick = async () => {
+                        div.onmousedown = async (e) => {
+                            if (e.button !== 0) return;
+                            e.preventDefault();
                             input.value = opt.label;
                             select.value = opt.value;
                             list.classList.remove('open');
@@ -486,22 +509,69 @@ N u l l Z e r o V i b e
                     });
                 };
 
+                // Keyboard Navigation
+                let highlightedIndex = -1;
+
+                const updateHighlight = (items) => {
+                    Array.from(list.children).forEach((child, index) => {
+                        if (index === highlightedIndex) {
+                            child.classList.add('highlighted');
+                            child.scrollIntoView({ block: 'nearest' });
+                        } else {
+                            child.classList.remove('highlighted');
+                        }
+                    });
+                };
+
+                input.onkeydown = (e) => {
+                    if (!list.classList.contains('open')) {
+                        if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+                            renderList(input.value);
+                            list.classList.add('open');
+                        }
+                        return;
+                    }
+
+                    const items = list.children;
+                    if (items.length === 0) return;
+
+                    if (e.key === 'ArrowDown') {
+                        e.preventDefault(); // Prevent cursor move
+                        highlightedIndex = (highlightedIndex + 1) % items.length;
+                        updateHighlight(items);
+                    } else if (e.key === 'ArrowUp') {
+                        e.preventDefault();
+                        highlightedIndex = (highlightedIndex - 1 + items.length) % items.length;
+                        updateHighlight(items);
+                    } else if (e.key === 'Enter') {
+                        e.preventDefault();
+                        if (highlightedIndex >= 0 && items[highlightedIndex]) {
+                            items[highlightedIndex].onmousedown({ button: 0, preventDefault: () => { } });
+                        }
+                    } else if (e.key === 'Escape') {
+                        list.classList.remove('open');
+                        input.blur();
+                    }
+                };
+
                 // Input events
                 input.onfocus = () => {
                     renderList();
                     list.classList.add('open');
+                    highlightedIndex = -1;
                 };
 
                 input.oninput = () => {
                     renderList(input.value);
                     list.classList.add('open');
+                    highlightedIndex = 0;
+                    updateHighlight(list.children);
                 };
 
-                // Click outside to close
-                document.addEventListener('click', (e) => {
-                    if (!container.contains(e.target)) {
+                // Close on blur
+                input.onblur = () => {
+                    setTimeout(() => {
                         list.classList.remove('open');
-                        // Restore valid value if input is invalid
                         const currentVal = select.value;
                         if (currentVal) {
                             const opt = allOptions.find(o => o.value === currentVal);
@@ -509,12 +579,12 @@ N u l l Z e r o V i b e
                         } else {
                             input.value = '';
                         }
-                    }
-                });
+                    }, 200);
+                };
             }
 
             function setupCustomDimDropdown(containerId, inputId, listId, selectId, dims) {
-                const container = document.getElementById(containerId);
+                // container not needed for blur logic
                 const input = document.getElementById(inputId);
                 const list = document.getElementById(listId);
                 const select = document.getElementById(selectId);
@@ -535,7 +605,9 @@ N u l l Z e r o V i b e
                         div.textContent = d;
                         if (input.value === d) div.classList.add('selected');
 
-                        div.onclick = async () => {
+                        div.onmousedown = async (e) => {
+                            if (e.button !== 0) return;
+                            e.preventDefault();
                             input.value = d;
                             select.value = d;
                             list.classList.remove('open');
@@ -545,21 +617,77 @@ N u l l Z e r o V i b e
                     });
                 };
 
+                // Keyboard Navigation
+                let highlightedIndex = -1;
+
+                const updateHighlight = (items) => {
+                    Array.from(list.children).forEach((child, index) => {
+                        if (index === highlightedIndex) {
+                            child.classList.add('highlighted');
+                            child.scrollIntoView({ block: 'nearest' });
+                        } else {
+                            child.classList.remove('highlighted');
+                        }
+                    });
+                };
+
+                input.onkeydown = (e) => {
+                    if (!list.classList.contains('open')) {
+                        if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+                            renderList(input.value);
+                            list.classList.add('open');
+                        }
+                        return;
+                    }
+
+                    const items = list.children;
+                    if (items.length === 0) return;
+
+                    if (e.key === 'ArrowDown') {
+                        e.preventDefault();
+                        highlightedIndex = (highlightedIndex + 1) % items.length;
+                        updateHighlight(items);
+                    } else if (e.key === 'ArrowUp') {
+                        e.preventDefault();
+                        highlightedIndex = (highlightedIndex - 1 + items.length) % items.length;
+                        updateHighlight(items);
+                    } else if (e.key === 'Enter') {
+                        e.preventDefault();
+                        if (highlightedIndex >= 0 && items[highlightedIndex]) {
+                            items[highlightedIndex].onmousedown({ button: 0, preventDefault: () => { } });
+                        }
+                    } else if (e.key === 'Escape') {
+                        list.classList.remove('open');
+                        input.blur();
+                    }
+                };
+
                 input.onfocus = () => {
                     renderList();
                     list.classList.add('open');
+                    highlightedIndex = -1;
                 };
 
                 input.oninput = () => {
                     renderList(input.value);
                     list.classList.add('open');
+                    highlightedIndex = 0;
+                    updateHighlight(list.children);
                 };
 
-                document.addEventListener('click', (e) => {
-                    if (!container.contains(e.target)) {
+                // Close on blur
+                input.onblur = () => {
+                    setTimeout(() => {
                         list.classList.remove('open');
-                    }
-                });
+                        const currentVal = select.value;
+                        if (currentVal) {
+                            const opt = dims.find(d => d === currentVal); // visual check
+                            if (opt) input.value = opt;
+                        } else {
+                            input.value = '';
+                        }
+                    }, 200);
+                };
             }
 
             document.getElementById('dimensionSelect').onchange = async (e) => {
@@ -576,7 +704,7 @@ N u l l Z e r o V i b e
 
             // Setup Custom Example Dropdown
             function setupCustomExampleDropdown() {
-                const container = document.getElementById('exampleContainer');
+                // container not needed for blur logic
                 const input = document.getElementById('exampleInput');
                 const list = document.getElementById('exampleList');
                 const select = document.getElementById('exampleSelect');
@@ -603,7 +731,9 @@ N u l l Z e r o V i b e
                         div.className = 'custom-option';
                         div.textContent = opt.text;
 
-                        div.onclick = async () => {
+                        div.onmousedown = async (e) => {
+                            if (e.button !== 0) return;
+                            e.preventDefault();
                             input.value = opt.text;
                             select.value = opt.value;
                             list.classList.remove('open');
@@ -616,21 +746,78 @@ N u l l Z e r o V i b e
                     });
                 };
 
+                // Keyboard Navigation
+                let highlightedIndex = -1;
+
+                const updateHighlight = (items) => {
+                    Array.from(list.children).forEach((child, index) => {
+                        if (index === highlightedIndex) {
+                            child.classList.add('highlighted');
+                            child.scrollIntoView({ block: 'nearest' });
+                        } else {
+                            child.classList.remove('highlighted');
+                        }
+                    });
+                };
+
+                input.onkeydown = (e) => {
+                    if (!list.classList.contains('open')) {
+                        if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+                            renderList(input.value);
+                            list.classList.add('open');
+                        }
+                        return;
+                    }
+
+                    const items = list.children;
+                    if (items.length === 0) return;
+
+                    if (e.key === 'ArrowDown') {
+                        e.preventDefault();
+                        highlightedIndex = (highlightedIndex + 1) % items.length;
+                        updateHighlight(items);
+                    } else if (e.key === 'ArrowUp') {
+                        e.preventDefault();
+                        highlightedIndex = (highlightedIndex - 1 + items.length) % items.length;
+                        updateHighlight(items);
+                    } else if (e.key === 'Enter') {
+                        e.preventDefault();
+                        if (highlightedIndex >= 0 && items[highlightedIndex]) {
+                            items[highlightedIndex].onmousedown({ button: 0, preventDefault: () => { } });
+                        }
+                    } else if (e.key === 'Escape') {
+                        list.classList.remove('open');
+                        input.blur();
+                    }
+                };
+
                 input.onfocus = () => {
                     renderList();
                     list.classList.add('open');
+                    highlightedIndex = -1;
                 };
 
                 input.oninput = () => {
                     renderList(input.value);
                     list.classList.add('open');
+                    highlightedIndex = 0;
+                    updateHighlight(list.children);
                 };
 
-                document.addEventListener('click', (e) => {
-                    if (!container.contains(e.target)) {
+                // Close on blur
+                input.onblur = () => {
+                    setTimeout(() => {
                         list.classList.remove('open');
-                    }
-                });
+                        const currentVal = select.value;
+                        if (currentVal) {
+                            const opt = options.find(o => o.value === currentVal);
+                            if (opt) input.value = opt.text;
+                        } else {
+                            // examples are optional, so if invalid, just clear
+                            input.value = '';
+                        }
+                    }, 200);
+                };
             }
 
             // Initialize Example Dropdown
@@ -707,6 +894,16 @@ N u l l Z e r o V i b e
                     updateCustom('dimensionSelect', 'dimensionInput');
                     updateCustom('fromUnitSelect', 'fromUnitInput');
                     updateCustom('toUnitSelect', 'toUnitInput');
+
+                    // Restore Example selection (cleared by loadUnitsForDimension)
+                    const exSelect = document.getElementById('exampleSelect');
+                    const options = Array.from(exSelect.options);
+                    // Match by value content since object references differ
+                    const match = options.find(o => o.value && JSON.stringify(JSON.parse(o.value)) === JSON.stringify(ex));
+                    if (match) {
+                        document.getElementById('exampleInput').value = match.textContent.trim();
+                        exSelect.value = match.value;
+                    }
                 }, 60);
             }
 
