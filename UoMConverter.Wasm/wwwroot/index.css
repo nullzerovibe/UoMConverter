@@ -235,31 +235,26 @@ button:disabled {
     transform: none;
 }
 
-.result-container {
-    margin-top: 2rem;
-    padding: 1.5rem;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 16px;
-    border: 1px dashed var(--glass-border);
-    min-height: 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.result-value {
-    font-size: 1.5rem;
+.btn-small {
+    margin-top: 0;
+    width: auto;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.85rem;
     font-weight: 700;
-    color: var(--success);
+    background: linear-gradient(135deg, var(--success), #059669);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    transition: all 0.2s;
+    box-shadow: none;
 }
 
-.result-label {
-    font-size: 0.875rem;
-    color: var(--text-muted);
-    margin-top: 0.25rem;
+.btn-small:hover {
+    background: linear-gradient(135deg, var(--success), #059669);
+    filter: brightness(1.2);
 }
+
+
 
 .status-badge {
     position: fixed;
@@ -323,44 +318,7 @@ option {
 }
 
 
-/* Documentation Modal */
-.modal-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(5px);
-    z-index: 2000;
-    justify-content: center;
-    align-items: center;
-    animation: fadeIn 0.2s ease-out;
-}
-
-.modal-content {
-    background: #1e293b;
-    border: 1px solid var(--glass-border);
-    border-radius: 16px;
-    width: 90%;
-    max-width: 800px;
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
-    animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.modal-header {
-    padding: 1rem 1.5rem;
-    border-bottom: 1px solid var(--glass-border);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 16px 16px 0 0;
-}
+/* Documentation Modal styles moved to bottom to match ShYCalculator */
 
 .modal-title {
     font-size: 1.25rem;
@@ -385,7 +343,165 @@ option {
 
 .close-btn:hover {
     color: var(--text);
+}
+
+/* Result Box */
+.result-container {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+    border: 1px dashed var(--glass-border);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    /* Reset text align */
+    overflow-wrap: break-word;
+}
+
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.result-meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+    width: 100%;
+}
+
+.result-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--success);
+    margin-bottom: 0.5rem;
+}
+
+.result-label {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+/* Copy Button & Timer */
+.icon-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition: all 0.2s;
+    line-height: 0;
+    width: auto;
+    margin-top: 0;
+}
+
+.icon-btn:hover {
     background: rgba(255, 255, 255, 0.1);
+    color: var(--text);
+}
+
+.timer-badge {
+    font-size: 0.75rem;
+    background: rgba(0, 255, 136, 0.1);
+    color: #4ade80;
+    padding: 2px 8px;
+    border-radius: 99px;
+    border: 1px solid rgba(74, 222, 128, 0.2);
+    font-family: monospace;
+}
+
+/* History Section */
+.history-container {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--glass-border);
+    animation: fadeIn 0.3s ease-out;
+}
+
+.history-header {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.history-item {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.history-item:hover {
+    background: rgba(56, 189, 248, 0.1);
+    border-color: rgba(56, 189, 248, 0.2);
+}
+
+.hist-detail {
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.hist-result {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* Documentation Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content {
+    background: #1e293b;
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    width: 100%;
+    max-width: 800px;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.modal-header {
+    padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .modal-body {
@@ -434,6 +550,47 @@ option {
     font-size: 0.875rem;
     color: var(--text-muted);
     margin-top: 0.25rem;
+}
+
+/* Scroll Top Button */
+.scroll-top-btn {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+    padding: 0;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 10;
+}
+
+.scroll-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-top-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(14, 165, 233, 0.4);
+    background: #38bdf8;
+}
+
+.scroll-top-btn svg {
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 /* Animations */

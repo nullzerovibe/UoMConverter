@@ -2,7 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.9.0] - 2026-02-12
+## [Unreleased]
+### Added
+- **UI Enhancements**: Added Copy Result button, Conversion History list, and Execution Timer.
+- **Performance**: Added client-side execution timer (round-trip measurement).
+
+## [0.1.0] - 2026-02-12
 
 ### Changed
 - **Naming**: Renamed project to `UoMConverter`.

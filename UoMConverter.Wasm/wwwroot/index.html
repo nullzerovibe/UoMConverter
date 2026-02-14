@@ -34,7 +34,7 @@
                     <label for="dimensionSelect" style="margin-bottom: 0;">Physical Quantity</label>
                     <button id="docsBtn" class="btn-small" disabled
                         style="width: auto; background: transparent; border: 1px solid var(--glass-border); color: var(--text-muted); padding: 0.25rem 0.75rem; margin: 0; font-size: 0.8rem; cursor: pointer;">
-                        📖 Reference
+                        📖 Unit Reference
                     </button>
                 </div>
                 <select id="dimensionSelect">
@@ -64,9 +64,35 @@
 
             <button id="convertBtn" disabled>Convert Now</button>
 
-            <div class="result-container" id="resultBox">
-                <div class="result-value" id="resultValue">---</div>
-                <div class="result-label" id="resultLabel">Please select units</div>
+            <div class="result-container" id="resultBox" style="position: relative;">
+                <div class="result-row">
+                    <div class="result-value" id="resultValue">---</div>
+                    <!-- Icon-only Copy Button -->
+                    <button id="copyBtn" class="icon-btn" title="Copy Result" style="display: none;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" style="width: 1.2rem; height: 1.2rem;">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="result-meta-row">
+                    <div class="result-label" id="resultLabel">Please select units</div>
+                    <!-- Timer Badge -->
+                    <span id="execTimer" class="timer-badge" style="display: none;">0ms</span>
+                </div>
+            </div>
+
+            <!-- History Section -->
+            <div class="history-container" id="historyContainer" style="display: none;">
+                <div class="history-header"
+                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.5rem;">
+                    <span
+                        style="display: block; font-weight: 600; margin-left: 0.25rem; margin-bottom: 0; font-size: 0.9rem; letter-spacing: 1px; color: var(--text-muted);">HISTORY</span>
+                    <button class="btn-small" onclick="clearHistory()"
+                        style="background: transparent; border: 1px solid var(--glass-border);">Clear</button>
+                </div>
+                <div id="historyList" class="history-list"></div>
             </div>
         </div>
     </div>
@@ -120,6 +146,12 @@ N u l l Z e r o V i b e
             <div class="modal-body" id="docsBody">
                 <div style="text-align: center; color: var(--text-muted); padding: 2rem;">Loading documentation...</div>
             </div>
+            <button id="scrollTopBtn" class="scroll-top-btn" title="Go to top">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M18 15l-6-6-6 6" />
+                </svg>
+            </button>
         </div>
 
         <div id="blazor-error-ui">
@@ -259,12 +291,89 @@ N u l l Z e r o V i b e
                     // Try to find by value (abbr or name)
                     // The option values are set to (abbr || name) in loadUnitsForDimension
                     // We need to match what's in the dropdown. 
-                    // Since we don't know if the doc click passed an abbr or name, we might need to be smart.
+                    // Since we don't know if the doc click logic passes an abbr or name, we might need to be smart.
                     // For now, let's assume the doc click logic passes the correct value.
                     fromSelect.value = unitNameOrAbbr;
                     // Trigger change if needed, but for now just setting value is enough for user to see
                 }, 50);
             }
+
+            // Result Formatting
+            function formatResult(num) {
+                if (num === 0) return "0";
+                const abs = Math.abs(num);
+                // Use scientific notation for very small or very large numbers
+                if (abs < 1e-6 || abs >= 1e9) {
+                    return num.toExponential(4).replace('e+', 'e');
+                }
+                // Otherwise use standard locale string with appropriate precision
+                return num.toLocaleString(undefined, { maximumFractionDigits: 6 });
+            }
+
+            // History & Copy Logic
+            let history = [];
+            const MAX_HISTORY = 5;
+
+            globalThis.clearHistory = () => {
+                history = [];
+                document.getElementById('historyContainer').style.display = 'none';
+                document.getElementById('historyList').innerHTML = '';
+            };
+
+            function updateHistory(val, from, to, result, dim) {
+                const container = document.getElementById('historyContainer');
+                container.style.display = 'block';
+
+                const entry = { val, from, to, result, dim, time: new Date() };
+                history.unshift(entry);
+                if (history.length > MAX_HISTORY) history.pop();
+                renderHistory();
+            }
+
+            function renderHistory() {
+                const list = document.getElementById('historyList');
+                list.innerHTML = history.map((h, i) => `
+                    <div class="history-item" onclick="restoreHistory(${i})" title="Click to restore">
+                        <span class="hist-detail">${h.val} ${h.from} = </span>
+                        <span class="hist-result">${formatResult(h.result)} ${h.to}</span>
+                    </div>
+                `).join('');
+            }
+
+            globalThis.restoreHistory = async (index) => {
+                const item = history[index];
+                if (!item) return;
+
+                // 1. Set Dimension
+                await selectDimension(item.dim);
+
+                // 2. Set Units & Value
+                // Verify options exist before setting
+                const fromSelect = document.getElementById('fromUnitSelect');
+                const toSelect = document.getElementById('toUnitSelect');
+
+                // Allow UI to populate
+                setTimeout(async () => {
+                    fromSelect.value = item.from;
+                    toSelect.value = item.to;
+                    document.getElementById('valueInput').value = item.val;
+
+                    // 3. Trigger Conversion
+                    // await globalThis.convert();
+                }, 100);
+            };
+
+            const copyBtn = document.getElementById('copyBtn');
+            copyBtn.onclick = () => {
+                const text = document.getElementById('resultValue').textContent;
+                navigator.clipboard.writeText(text).then(() => {
+                    const original = copyBtn.innerHTML;
+                    copyBtn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 1.2rem; height: 1.2rem;"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+                    setTimeout(() => {
+                        copyBtn.innerHTML = original;
+                    }, 1500);
+                });
+            };
 
             globalThis.convert = async () => {
                 const val = Number.parseFloat(document.getElementById('valueInput').value);
@@ -273,8 +382,15 @@ N u l l Z e r o V i b e
                 const to = document.getElementById('toUnitSelect').value;
                 const outVal = document.getElementById('resultValue');
                 const outLabel = document.getElementById('resultLabel');
+                const timer = document.getElementById('execTimer');
+                const copyBtn = document.getElementById('copyBtn');
 
                 if (!from || !to || Number.isNaN(val)) return;
+
+                outLabel.textContent = "Converting...";
+
+                // Client-side timing
+                const startTime = performance.now();
 
                 try {
                     const interop = await getInterop();
@@ -282,18 +398,38 @@ N u l l Z e r o V i b e
                     // Also pass useSmartDetection=true (default) to allow implicit resolution if dimension is empty
                     const useSmartDetection = true;
                     const res = await interop.invokeMethodAsync('Convert', val, from, to, dim, useSmartDetection);
+
+                    const endTime = performance.now();
+                    const duration = (endTime - startTime).toFixed(1);
+
                     if (res.success) {
-                        outVal.textContent = res.value.toLocaleString(undefined, { maximumFractionDigits: 6 });
+                        outVal.textContent = formatResult(res.value);
                         outLabel.textContent = `Successfully converted to ${to}`;
                         outLabel.style.color = '';
+
+                        // Update UI Elements
+                        copyBtn.style.display = 'block'; // Block because it is icon-btn now
+                        timer.style.display = 'block';
+                        timer.textContent = `${duration}ms`;
+
+                        // Update History
+                        // Avoid duplicates at the top
+                        if (history.length === 0 ||
+                            (history[0].val !== val || history[0].from !== from || history[0].to !== to || history[0].dim !== dim)) {
+                            updateHistory(val, from, to, res.value, dim);
+                        }
                     } else {
                         outVal.textContent = "Error";
                         outLabel.textContent = res.error;
                         outLabel.style.color = 'var(--error)';
+                        copyBtn.style.display = 'none';
+                        timer.style.display = 'none';
                     }
                 } catch (err) {
                     outVal.textContent = "Interop Error";
                     outLabel.textContent = err.message;
+                    copyBtn.style.display = 'none';
+                    timer.style.display = 'none';
                 }
             };
 
@@ -391,6 +527,24 @@ N u l l Z e r o V i b e
 
             // Enable Docs button when ready
             docsBtn.disabled = false;
+
+            // Scroll Top Logic
+            const docsBodyEl = document.getElementById('docsBody');
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+            if (docsBodyEl && scrollTopBtn) {
+                docsBodyEl.addEventListener('scroll', () => {
+                    if (docsBodyEl.scrollTop > 300) {
+                        scrollTopBtn.classList.add('visible');
+                    } else {
+                        scrollTopBtn.classList.remove('visible');
+                    }
+                });
+
+                scrollTopBtn.addEventListener('click', () => {
+                    docsBodyEl.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
         </script>
 </body>
 
