@@ -466,6 +466,24 @@ N u l l Z e r o V i b e
             const closeDocsBtn = document.getElementById('closeDocsBtn');
             const docsBody = document.getElementById('docsBody');
 
+            const closeDocs = () => {
+                docsModal.style.display = 'none';
+            };
+
+            closeDocsBtn.onclick = closeDocs;
+
+            // Close when clicking outside content
+            docsModal.onclick = (e) => {
+                if (e.target === docsModal) closeDocs();
+            };
+
+            // Close on Esc key
+            globalThis.addEventListener('keydown', (e) => {
+                if (e.key === "Escape" && docsModal.style.display === 'flex') {
+                    closeDocs();
+                }
+            });
+
             let allDocs = [];
             const docSearch = document.getElementById('docSearch');
             const docDimFilter = document.getElementById('docDimFilter');
