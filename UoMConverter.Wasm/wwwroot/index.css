@@ -420,7 +420,7 @@ option {
 .history-container {
     margin-top: 2rem;
     padding-top: 1.5rem;
-    border-top: 1px solid var(--glass-border);
+    /* border-top: 1px solid var(--glass-border); Removed by request */
     animation: fadeIn 0.3s ease-out;
 }
 
