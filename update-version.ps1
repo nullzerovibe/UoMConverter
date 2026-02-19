@@ -70,9 +70,28 @@ else {
     Write-Error "Could not find <Version> tag in $file."
 }
 
+# Update Version in sw.js
+$swFile = "UoMConverter.Wasm\wwwroot\sw.js"
+if (Test-Path $swFile) {
+    $swContent = Get-Content $swFile -Raw
+    if ($swContent -match "const APP_VERSION = '.*?';") {
+        $swContent = $swContent -replace "const APP_VERSION = '.*?';", "const APP_VERSION = '$Version';"
+        if ($DryRun) {
+            Write-Host "[DryRun] Would update $swFile to version $Version"
+        }
+        else {
+            Set-Content $swFile $swContent
+            Write-Host "Updated $swFile to version $Version"
+        }
+    }
+}
+
 # Git Operations
-$gitCommands = @(
-    "git add $file",
+$gitCommands = @("git add $file")
+if (Test-Path $swFile) {
+    $gitCommands += "git add $swFile"
+}
+$gitCommands += @(
     "git commit -m ""Bump version to $Version""",
     "git tag v$Version",
     "git push",

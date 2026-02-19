@@ -332,6 +332,8 @@ export const appState = {
     status: signal('Initializing...'),
     isReady: signal(false),
     isOfflineReady: signal(false),
+    pwaUpdateAvailable: signal(false),
+    pwaInstallPrompt: signal(null),
     isLoading: signal(true),
     version: signal('Loading...'),
     docsOpen: signal(false),
@@ -769,6 +771,22 @@ export const actions = {
         if (last && typeof last.focus === 'function') {
             last.focus();
         }
+    },
+
+    installPwa: async () => {
+        const promptEvent = appState.pwaInstallPrompt.value;
+        if (promptEvent) {
+            promptEvent.prompt();
+            const result = await promptEvent.userChoice;
+            if (result.outcome === 'accepted') {
+                appState.pwaInstallPrompt.value = null;
+                util.notify("App installed successfully!", "success", "download");
+            }
+        }
+    },
+
+    refreshPwa: () => {
+        globalThis.location.reload();
     }
 };
 

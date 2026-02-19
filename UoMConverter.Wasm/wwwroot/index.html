@@ -212,6 +212,9 @@ N u l l Z e r o V i b e
                         reg.addEventListener('updatefound', () => {
                             const newWorker = reg.installing;
                             newWorker.addEventListener('statechange', () => {
+                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    globalThis.dispatchEvent(new CustomEvent('sw-update'));
+                                }
                                 if (newWorker.state === 'activated') {
                                     globalThis.dispatchEvent(new CustomEvent('sw-ready'));
                                 }
@@ -219,6 +222,12 @@ N u l l Z e r o V i b e
                         });
                     })
                     .catch(err => console.error('SW: Registration failed', err));
+            });
+
+            // Capture install prompt
+            globalThis.addEventListener('beforeinstallprompt', (e) => {
+                e.preventDefault();
+                globalThis.dispatchEvent(new CustomEvent('pwa-install-ready', { detail: e }));
             });
         }
     </script>
