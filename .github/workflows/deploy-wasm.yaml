@@ -38,6 +38,13 @@ jobs:
         run: |
           sed -i 's/<base href="\/" \/>/<base href="\/${{ github.event.repository.name }}\/" \/>/g' release/wwwroot/index.html
           sed -i 's/href="\/favicon\//href="\/${{ github.event.repository.name }}\/favicon\//g' release/wwwroot/index.html
+          sed -i "s|navigator.serviceWorker.register('/sw.js')|navigator.serviceWorker.register('/${{ github.event.repository.name }}/sw.js')|g" release/wwwroot/index.html
+          
+          # Patch sw.js: Replace start matching '/ with '/RepoName/
+          sed -i "s|'\/|'/${{ github.event.repository.name }}\/|g" release/wwwroot/sw.js
+
+          # Patch manifest: Replace "/favicon/ with "/RepoName/favicon/
+          sed -i 's|"/favicon/|"\/${{ github.event.repository.name }}\/favicon\/|g' release/wwwroot/favicon/site.webmanifest
 
       # Copy index.html to 404.html to support client-side routing
       - name: Fix Routing

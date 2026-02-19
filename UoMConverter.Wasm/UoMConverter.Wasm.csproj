@@ -8,6 +8,7 @@
     <!-- AOT and Trimming for maximum performance -->
     <RunAOTCompilation>true</RunAOTCompilation>
     <PublishTrimmed>true</PublishTrimmed>
+    <BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
     <InvariantGlobalization>true</InvariantGlobalization>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <IsPackable>false</IsPackable>
@@ -20,6 +21,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\UoMConverter\UoMConverter.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ServiceWorker Include="wwwroot\sw.js" PublishedContent="wwwroot\sw.js" />
   </ItemGroup>
 
   <!-- Auto-generate 404.html for SPA routing on GitHub Pages -->

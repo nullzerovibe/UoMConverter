@@ -1,1382 +1,227 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="sl-theme-dark">
 
 <head>
     <meta charset="utf-8" />
-    <title>UoMConverter WASM</title>
+    <title>UoMConverter (Preact + Shoelace)</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description"
-          content="High-performance .NET WASM Unit Converter supporting 2800+ units across 90+ dimensions." />
-    <meta name="keywords" content="unit converter, uom, measurement conversion, wasm, dotnet, blazor, nullzerovibe" />
-    <meta name="author" content="NullZeroVibe" />
+    <meta name="description" content="High-performance .NET WASM Unit Converter with a premium industrial theme." />
+    <meta name="theme-color" content="#0f172a" />
 
-    <!-- Open Graph / Facebook -->
+    <!-- OpenGraph / Social Sharing -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="UoMConverter - .NET WASM Unit Converter" />
+    <meta property="og:title" content="UoMConverter - Industrial .NET WASM Engine" />
     <meta property="og:description"
-          content="High-performance .NET WASM Unit Converter supporting 2800+ units across 90+ dimensions." />
-    <meta property="og:image" content="nlo/nlo-banner.jpg" />
+        content="A blazingly fast unit converter and a professional industrial aesthetic." />
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/nullzerovibe/UoMConverter/main/docs/preview.png" />
+    <meta property="og:url" content="https://nullzerovibe.github.io/UoMConverter/" />
+    <meta name="twitter:card" content="summary_large_image" />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="UoMConverter - .NET WASM Unit Converter" />
-    <meta property="twitter:description"
-          content="High-performance .NET WASM Unit Converter supporting 2800+ units across 90+ dimensions." />
-    <meta property="twitter:image" content="nlo/nlo-banner.jpg" />
+    <!-- Shoelace (CDN) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/themes/light.css" />
+    <script type="module"
+        src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/shoelace-autoloader.js"></script>
 
-    <!-- Dynamic Filename Resolver will find the importmap during publish -->
-    <script type="importmap"></script>
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="index.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+
+    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
     <link rel="manifest" href="/favicon/site.webmanifest">
-</head>
 
-<body>
-    <header class="app-banner">
-        <img src="nlo/nlo-banner.jpg" alt="nullzerovibe banner" />
-    </header>
-    <div id="status" class="status-badge">Initializing .NET WASM Unit Converter...</div>
-
-    <div id="app">
-        <div class="card">
-            <h1>Unit Converter</h1>
-            <p class="subtitle">
-                High-performance .NET WASM Unit Converter <span id="appVersion"
-                                                                style="font-size: 0.8em; opacity: 0.7;"></span>
-            </p>
-
-            <div class="form-group">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                    <label for="dimensionSelect" style="margin-bottom: 0;">Physical Quantity</label>
-                    <button id="docsBtn" class="btn-small" disabled
-                            style="width: auto; background: transparent; border: 1px solid var(--glass-border); color: var(--text-muted); padding: 0.25rem 0.75rem; margin: 0; font-size: 0.8rem; cursor: pointer;">
-                        📖 Unit Reference
-                    </button>
-                </div>
-                <!-- Hidden Native Select for logical compatibility -->
-                <select id="dimensionSelect" style="display: none;">
-                    <option value="" disabled selected>Select dimension...</option>
-                </select>
-
-                <!-- Custom Searchable Dropdown -->
-                <div class="custom-select-container" id="dimensionContainer">
-                    <input type="text" id="dimensionInput" class="custom-select-input" placeholder="Select Quantity..."
-                           autocomplete="off" />
-                    <div class="custom-select-list" id="dimensionList"></div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="exampleSelect">⚡ Quick Examples</label>
-                <!-- Hidden Native Select for data source -->
-                <select id="exampleSelect" style="display: none;">
-                    <option value="" disabled selected>Select an example...</option>
-                    <!-- Length -->
-                    <option value='{"dim":"Length","from":"Meter","to":"Foot","val":10}'>10 Meters to Feet</option>
-                    <option value='{"dim":"Length","from":"Kilometer","to":"Mile","val":100}'>100 km to Miles</option>
-                    <option value='{"dim":"Length","from":"Centimeter","to":"Inch","val":30}'>30 cm to Inches</option>
-                    <!-- Mass -->
-                    <option value='{"dim":"Mass","from":"Kilogram","to":"Pound","val":1}'>1 kg to lbs</option>
-                    <option value='{"dim":"Mass","from":"Gram","to":"Ounce","val":100}'>100 g to Ounces</option>
-                    <option value='{"dim":"Mass","from":"Tonne","to":"ShortTon","val":1}'>
-                        1 Tonne (Metric) to US Ton
-                    </option>
-                    <!-- Temperature -->
-                    <option value='{"dim":"Temperature","from":"DegreeCelsius","to":"DegreeFahrenheit","val":0}'>
-                        0°C to
-                        °F (Freezing)
-                    </option>
-                    <option value='{"dim":"Temperature","from":"DegreeCelsius","to":"DegreeFahrenheit","val":100}'>
-                        100°C
-                        to °F (Boiling)
-                    </option>
-                    <option value='{"dim":"Temperature","from":"DegreeFahrenheit","to":"DegreeCelsius","val":98.6}'>
-                        98.6°F to °C (Body Temp)
-                    </option>
-                    <!-- Speed -->
-                    <option value='{"dim":"Speed","from":"KilometerPerHour","to":"MilePerHour","val":100}'>
-                        100 km/h to
-                        mph
-                    </option>
-                    <option value='{"dim":"Speed","from":"MeterPerSecond","to":"KilometerPerHour","val":10}'>
-                        10 m/s to
-                        km/h
-                    </option>
-                    <option value='{"dim":"Speed","from":"Knot","to":"KilometerPerHour","val":20}'>
-                        20 Knots to km/h
-                    </option>
-                    <!-- Volume -->
-                    <option value='{"dim":"Volume","from":"Liter","to":"UsGallon","val":3.785}'>
-                        3.785 L to US Gallons
-                    </option>
-                    <option value='{"dim":"Volume","from":"Milliliter","to":"UsOunce","val":330}'>
-                        330 ml to US fl oz
-                    </option>
-                    <option value='{"dim":"Volume","from":"CubicMeter","to":"CubicFoot","val":1}'>
-                        1 m³ to Cubic Feet
-                    </option>
-                    <!-- Area -->
-                    <option value='{"dim":"Area","from":"SquareMeter","to":"SquareFoot","val":50}'>
-                        50 m² to sq ft
-                    </option>
-                    <option value='{"dim":"Area","from":"Hectare","to":"Acre","val":1}'>1 Hectare to Acres</option>
-                    <!-- Time -->
-                    <option value='{"dim":"Duration","from":"Hour","to":"Second","val":1}'>1 Hour to Seconds</option>
-                    <option value='{"dim":"Duration","from":"Day","to":"Minute","val":7}'>
-                        1 Week (7 Days) to Minutes
-                    </option>
-                    <!-- Digital Storage -->
-                    <option value='{"dim":"Information","from":"Gigabyte","to":"Megabyte","val":1}'>1 GB to MB</option>
-                    <option value='{"dim":"Information","from":"Terabyte","to":"Gigabyte","val":1}'>1 TB to GB</option>
-                    <option value='{"dim":"Information","from":"Bit","to":"Byte","val":8}'>8 Bits to Byte</option>
-                    <!-- Energy -->
-                    <option value='{"dim":"Energy","from":"KilowattHour","to":"Joule","val":1}'>1 kWh to Joules</option>
-                    <option value='{"dim":"Energy","from":"Calorie","to":"Joule","val":2000}'>
-                        2000 Calories to Joules
-                    </option>
-                    <!-- Power -->
-                    <option value='{"dim":"Power","from":"Kilowatt","to":"MechanicalHorsepower","val":100}'>
-                        100 kW to HP
-                        (Mech)
-                    </option>
-                    <option value='{"dim":"Power","from":"Watt","to":"BritishThermalUnitPerHour","val":1000}'>
-                        1000 W to
-                        BTU/h
-                    </option>
-                    <!-- Pressure -->
-                    <option value='{"dim":"Pressure","from":"Bar","to":"Pascal","val":1}'>1 Bar to Pascal</option>
-                    <option value='{"dim":"Pressure","from":"PoundForcePerSquareInch","to":"Bar","val":30}'>
-                        30 PSI to
-                        Bar
-                    </option>
-                    <!-- Fuel Efficiency -->
-                    <option value='{"dim":"FuelEfficiency","from":"LiterPer100Kilometers","to":"MilePerUsGallon","val":8}'>
-                        8 L/100km to MPG (US)
-                    </option>
-                </select>
-
-                <!-- Custom Searchable Dropdown -->
-                <div class="custom-select-container" id="exampleContainer">
-                    <input type="text" id="exampleInput" class="custom-select-input" placeholder="Select an example..."
-                           autocomplete="off" />
-                    <div class="custom-select-list" id="exampleList"></div>
-                </div>
-            </div>
-
-            <div class="swap-grid" style="margin-bottom: 1.5rem;">
-                <div class="form-group">
-                    <label for="fromUnitSelect">From Unit</label>
-                    <select id="fromUnitSelect" style="display: none;">
-                        <option value="" disabled selected>Unit...</option>
-                    </select>
-                    <!-- Custom From Dropdown -->
-                    <div class="custom-select-container" id="fromUnitContainer">
-                        <input type="text" class="custom-select-input" id="fromUnitInput" placeholder="Select Unit..."
-                               autocomplete="off" disabled>
-                        <div class="custom-select-list" id="fromUnitList"></div>
-                    </div>
-                </div>
-
-                <button id="swapBtn" class="swap-btn" title="Swap Units" disabled>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
-                         stroke-linejoin="round">
-                        <path d="M20 7H4M20 7l-4-4M20 7l-4 4M4 17h16M4 17l4-4M4 17l4 4" />
-                    </svg>
-                </button>
-
-                <div class="form-group">
-                    <label for="toUnitSelect">To Unit</label>
-                    <select id="toUnitSelect" style="display: none;">
-                        <option value="" disabled selected>Unit...</option>
-                    </select>
-                    <!-- Custom To Dropdown -->
-                    <div class="custom-select-container" id="toUnitContainer">
-                        <input type="text" class="custom-select-input" id="toUnitInput" placeholder="Select Unit..."
-                               autocomplete="off" disabled>
-                        <div class="custom-select-list" id="toUnitList"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="valueInput">Value to Convert</label>
-                <input id="valueInput" type="number" placeholder="Enter value..." value="1" />
-            </div>
-
-            <button id="convertBtn" disabled>Convert Now</button>
-
-            <div class="result-container" id="resultBox" style="position: relative;">
-                <div class="result-row">
-                    <div class="result-value" id="resultValue">---</div>
-                    <!-- Icon-only Copy Button -->
-                    <button id="copyBtn" class="icon-btn" title="Copy Result" style="display: none;">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                             stroke-linecap="round" stroke-linejoin="round" style="width: 1.2rem; height: 1.2rem;">
-                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                        </svg>
-                    </button>
-                </div>
-                <div class="result-meta-row">
-                    <div class="result-label" id="resultLabel">Please select units</div>
-                    <!-- Timer Badge -->
-                    <span id="execTimer" class="timer-badge" style="display: none;">0ms</span>
-                </div>
-            </div>
-
-            <!-- History Section -->
-            <div class="history-container" id="historyContainer" style="display: none;">
-                <div class="history-header"
-                     style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.5rem;">
-                    <span style="display: block; font-weight: 600; margin-left: 0.25rem; margin-bottom: 0; font-size: 0.9rem; letter-spacing: 1px; color: var(--text-muted);">HISTORY</span>
-                    <button class="btn-clear-history" onclick="clearHistory()">Clear</button>
-                </div>
-                <div id="historyList" class="history-list"></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Corner Elements -->
-    <a href="https://github.com/nullzerovibe/UoMConverter" target="_blank">
-        <img src="nlo/nlo-profile.png" alt="NullZeroVibe Logo" class="corner-logo" />
-    </a>
-
-    <div class="corner-contact">
-        <a href="mailto:nullzerovibe@gmail.com">
-            <svg class="contact-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-            </svg>
-            nullzerovibe@gmail.com
-        </a>
-        <a href="https://github.com/nullzerovibe" target="_blank">
-            <svg class="contact-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C6.47 2 2 6.47 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.65.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z" />
-            </svg>
-            github.com/nullzerovibe
-        </a>
-    </div>
+    <!-- Import Map for Blazor (generated during publish) -->
+    <script type="importmap"></script>
 
     <script>
-        // Global handler for the .NET instance
+        // Global Console Branding
+        console.log(`%c
+N u l l Z e r o V i b e
+▄▀▀▄░█▀▀█░█▀▀▄░█▀▀ 
+█░░░░█░░█░█░░█░█▀▀ 
+▀▄▄▀░█▄▄█░█▄▄▀░█▄▄
+
+ ░▒▒▓▓ LIFETIME OF SYNTAX // AGENTIC EVOLUTION ▓▓▒▒░ 
+`, 'font-family: monospace; font-weight: bold; color: #00ffff;');
+    </script>
+</head>
+
+<body class="is-booting">
+    <!-- Boot Guard Splash Screen -->
+    <div id="boot-splash" class="boot-splash">
+        <img src="nlo/nlo-banner.jpg" class="splash-banner" alt="">
+        <div class="splash-logo">UoMConverter</div>
+        <div class="splash-description">High-performance .NET WASM Unit Converter</div>
+        <div class="splash-loader"></div>
+        <div class="splash-status" id="boot-status">Initializing Engine...</div>
+    </div>
+
+    <!-- App Root -->
+    <div id="app" v-cloak>
+        <!-- Preact will mount here -->
+    </div>
+
+    <!-- Background Decoration -->
+    <img src="nlo/nlo-banner.jpg" class="app-banner" alt="" style="display:none;">
+    <!-- Hidden but kept for asset reference if needed -->
+
+    <!-- Corner Links (Static) -->
+    <div class="contact-footer">
+        <a href="mailto:nullzerovibe@gmail.com" class="contact-link">
+            <sl-icon name="envelope"></sl-icon>
+            <span>nullzerovibe@gmail.com</span>
+        </a>
+        <a href="https://github.com/nullzerovibe" target="_blank" class="contact-link">
+            <sl-icon name="github"></sl-icon>
+            <span>github.com/nullzerovibe</span>
+        </a>
+        <a href="https://x.com/nullzerovibe" target="_blank" class="contact-link">
+            <sl-icon name="twitter-x"></sl-icon>
+            <span>x.com/nullzerovibe</span>
+        </a>
+    </div>
+
+    <a href="https://github.com/nullzerovibe/UoMConverter" target="_blank" class="corner-logo-wrapper">
+        <img src="nlo/nlo-profile.png" alt="NullZeroVibe" class="corner-logo" />
+    </a>
+
+    <!-- Global Interop Setup (Must run before Blazor starts) -->
+    <script>
         globalThis.uomConverter = null;
         globalThis.registerUoMConverter = (dotNetHelper) => {
             console.log("UoMConverter: .NET Instance Registered!", dotNetHelper);
-            globalThis.uomConverter = dotNetHelper;
-        };
-        console.log(`%c
-N u l l Z e r o V i b e
-▄▀▀▄░█▀▀█░█▀▀▄░█▀▀
-█░░░░█░░█░█░░█░█▀▀
-▀▄▄▀░█▄▄█░█▄▄▀░█▄▄
+            const status = document.getElementById('boot-status');
+            if (status) status.textContent = 'Mounting UI...';
 
- ░▒▒▓▓ LIFETIME OF SYNTAX // AGENTIC EVOLUTION ▓▓▒▒░
-`, 'font-family: monospace; font-weight: bold; color: #00ffff;');
+            globalThis.uomConverter = dotNetHelper;
+            // Dispatch event for app.js to catch if it's already waiting
+            globalThis.dispatchEvent(new CustomEvent('uom-converter-ready', { detail: dotNetHelper }));
+        };
     </script>
 
-    <!-- Documentation Modal -->
-    <div id="docsModal" class="modal-overlay" style="display: none;">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="modal-title">📖 Unit Reference</div>
-                <button id="closeDocsBtn" class="close-btn">&times;</button>
-            </div>
-            <div class="filter-controls">
-                <div class="input-with-clear" style="flex: 1;">
-                    <input type="text" id="docSearch" placeholder="Search units..." class="modern-input"
-                           style="width: 100%;">
-                    <button class="clear-input-btn" id="clearSearchBtn" title="Clear Search">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                             stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;">
-                            <line x1="18" y1="6" x2="6" y2="18"></line>
-                            <line x1="6" y1="6" x2="18" y2="18"></line>
-                        </svg>
-                    </button>
-                </div>
-                <div class="input-with-clear" style="width: auto; min-width: 150px;">
-                    <select id="docDimFilter" class="modern-select" style="width: 100%;">
-                        <option value="all">All Dimensions</option>
-                    </select>
-                    <button class="clear-input-btn" id="clearDimBtn" title="Clear Filter">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                             stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;">
-                            <line x1="18" y1="6" x2="6" y2="18"></line>
-                            <line x1="6" y1="6" x2="18" y2="18"></line>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            <div class="modal-body" id="docsBody">
-                <div style="text-align: center; color: var(--text-muted); padding: 2rem;">Loading documentation...</div>
-            </div>
-            <button id="scrollTopBtn" class="scroll-top-btn" title="Go to top">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                     stroke-linejoin="round">
-                    <path d="M18 15l-6-6-6 6" />
-                </svg>
-            </button>
-        </div>
+    <!-- UI Boot Guard (Shoelace Definition Watcher) -->
+    <script>
+        (async () => {
+            console.log("Boot Guard: Monitoring Shoelace Definitions...");
+            const status = document.getElementById('boot-status');
 
-        <div id="blazor-error-ui">
-            An error occurred. <a href="" class="reload">Reload</a>
-        </div>
-
-        <script type="module">
-            // --- DYNAMIC FILENAME RESOLVER ---
-            // Automatically finds the fingerprinted blazor.webassembly.js from the importmap
-            globalThis.blazorInit = new Promise((resolve) => {
-                let retries = 0;
-                const maxRetries = 20;
-
-                const loadEngine = () => {
-                    const mapTag = document.querySelector('script[type="importmap"]');
-                    let url = "_framework/blazor.webassembly.js"; // Standard fallback
-
-                    if (mapTag && mapTag.textContent.trim().length > 0) {
-                        try {
-                            const map = JSON.parse(mapTag.textContent);
-                            url = map.imports["./_framework/blazor.webassembly.js"] || url;
-                            console.log("UoMConverter: Importmap found. Resolved URL:", url);
-                        } catch (e) {
-                            console.error("UoMConverter: Failed to parse importmap:", e);
-                        }
-                    } else if (retries < maxRetries) {
-                        retries++;
-                        setTimeout(loadEngine, 100);
-                        return;
-                    } else {
-                        console.warn("UoMConverter: Importmap not found/empty after timeout. Using fallback:", url);
-                    }
-
-                    console.log("UoMConverter: Injecting script tag for:", url);
-                    const script = document.createElement('script');
-                    script.src = url;
-                    script.type = "module";
-                    script.setAttribute('autostart', 'false');
-                    script.onload = () => {
-                        console.log("UoMConverter: Script loaded. Starting Blazor...");
-                        resolve(Blazor.start());
-                    };
-                    script.onerror = (e) => console.error("UoMConverter: Failed to load script:", url, e);
-                    document.body.appendChild(script);
-                };
-                loadEngine();
-            });
-
-            async function getInterop() {
-                if (globalThis.uomConverter) return globalThis.uomConverter;
-                // Wait for registration
-                while (!globalThis.uomConverter) {
-                    await new Promise(r => setTimeout(r, 50));
-                }
-                return globalThis.uomConverter;
-            }
-
-            // Initialize UI after Wasm is ready
-            await globalThis.blazorInit;
-            const status = document.getElementById('status');
-            status.textContent = "Engine Ready";
-            status.classList.add('ready');
-
-            console.log("UoMConverter: Waiting for interop registration...");
             try {
-                const interop = await getInterop();
-                const pong = await interop.invokeMethodAsync('Ping');
-                console.log("UoMConverter: Interop connection successful:", pong);
+                // Wait for core components to be defined by Shoelace Autoloader
+                await Promise.all([
+                    customElements.whenDefined('sl-button'),
+                    customElements.whenDefined('sl-dialog'),
+                    customElements.whenDefined('sl-card'),
+                    customElements.whenDefined('sl-input'),
+                    customElements.whenDefined('sl-icon')
+                ]);
+
+                console.log("Boot Guard: Shoelace components defined.");
+                if (status) status.textContent = 'Engine Ready';
+
+                // Once components are defined, lift the cloak and hide splash
+                // We Wait a tiny bit extra for WASM if possible, but the app handles WASM load internally
+                setTimeout(() => {
+                    const app = document.getElementById('app');
+                    const splash = document.getElementById('boot-splash');
+
+                    if (app) app.removeAttribute('v-cloak');
+                    if (splash) splash.classList.add('hidden');
+                    document.body.classList.remove('is-booting');
+
+                    console.log("Boot Guard: Cloak lifted. UI synchronized.");
+                }, 150);
+
             } catch (e) {
-                console.error("UoMConverter: Interop Ping failed:", e);
+                console.error("Boot Guard: Initialization failed!", e);
+                if (status) status.textContent = 'Boot Error: ' + e.message;
             }
+        })();
+    </script>
 
-            // Fetch and display version
-            try {
-                const interop = await getInterop();
-                const version = await interop.invokeMethodAsync('GetVersion');
-                if (version) {
-                    document.getElementById('appVersion').textContent = `(v${version})`;
-                }
-            } catch (verErr) {
-                console.warn("UoMConverter: Could not fetch version", verErr);
-            }
+    <!-- Blazor Bootstrapper -->
+    <script type="module">
+        // --- DYNAMIC FILENAME RESOLVER & BLAZOR STARTER ---
+        // Same logic as before to find the hashed blazor.webassembly.js
+        (function () {
+            let retries = 0;
+            const maxRetries = 20;
 
-            await populateDimensions();
-            document.getElementById('convertBtn').disabled = false;
+            const loadEngine = () => {
+                const mapTag = document.querySelector('script[type="importmap"]');
+                let url = "_framework/blazor.webassembly.js"; // Fallback
 
-            async function populateDimensions() {
-                try {
-                    const select = document.getElementById('dimensionSelect');
-                    const interop = await getInterop();
-                    const dims = await interop.invokeMethodAsync('GetDimensions');
-
-                    if (!dims || dims.length === 0) {
-                        console.warn("UoMConverter: Received empty dimensions list.");
-                        return;
-                    }
-
-                    dims.sort().forEach(d => {
-                        const opt = document.createElement('option');
-                        opt.value = d;
-                        opt.textContent = d;
-                        select.appendChild(opt);
-                    });
-
-                    // Setup Custom Key-Value Dropdown
-                    setupCustomDimDropdown('dimensionContainer', 'dimensionInput', 'dimensionList', 'dimensionSelect', dims);
-                } catch (err) {
-                    console.error("UoMConverter: populateDimensions failed:", err);
-                    const status = document.getElementById('status');
-                    status.textContent = "Engine Error";
-                    status.style.background = "var(--error)";
-                }
-            }
-
-            async function loadUnitsForDimension(dim) {
-                // Safely clear other inputs
-                try {
-                    const safeSet = (id, val) => {
-                        const el = document.getElementById(id);
-                        if (el) {
-                            if (el.tagName === 'INPUT' || el.tagName === 'SELECT') el.value = val;
-                            else el.textContent = val;
-                        }
-                    };
-                    safeSet('exampleInput', '');
-                    safeSet('exampleSelect', '');
-                    safeSet('fromUnitInput', '');
-                    safeSet('fromUnitSelect', '');
-                    safeSet('toUnitInput', '');
-                    safeSet('toUnitSelect', '');
-                    safeSet('resultLabel', 'Please select units');
-                    safeSet('inputValue', '');
-                } catch (e) {
-                    console.warn("UoMConverter: Failed to clear inputs", e);
-                }
-
-                const interop = await getInterop();
-                const units = await interop.invokeMethodAsync('GetUnits', dim);
-
-                const fromSelect = document.getElementById('fromUnitSelect');
-                const toSelect = document.getElementById('toUnitSelect');
-
-                [fromSelect, toSelect].forEach(s => {
-                    s.innerHTML = '<option value="" disabled selected>Unit...</option>';
-                    units.sort((a, b) => a.name.localeCompare(b.name)).forEach(u => {
-                        const opt = document.createElement('option');
-                        opt.value = u.abbreviation || u.name;
-                        opt.textContent = `${u.name} (${u.abbreviation || '?'})`;
-                        s.appendChild(opt);
-                    });
-                    s.disabled = false;
-                });
-
-                // Unlock inputs
-                document.getElementById('valueInput').disabled = false;
-                document.getElementById('fromUnitInput').disabled = false;
-                document.getElementById('toUnitInput').disabled = false;
-                document.getElementById('swapBtn').disabled = false;
-
-                // Populate Custom Dropdowns
-                setupCustomDropdown('fromUnitContainer', 'fromUnitInput', 'fromUnitList', 'fromUnitSelect', units);
-                setupCustomDropdown('toUnitContainer', 'toUnitInput', 'toUnitList', 'toUnitSelect', units);
-            }
-
-            function setupCustomDropdown(containerId, inputId, listId, selectId, units) {
-                // container not needed for blur logic
-                const input = document.getElementById(inputId);
-                const list = document.getElementById(listId);
-                const select = document.getElementById(selectId);
-
-                let allOptions = units.map(u => ({
-                    value: u.abbreviation || u.name,
-                    label: `${u.name} (${u.abbreviation || '-'})`,
-                    abbr: u.abbreviation
-                }));
-
-                // Render list function
-                const renderList = (filterText = '') => {
-                    list.innerHTML = '';
-                    const filtered = allOptions.filter(o =>
-                        o.label.toLowerCase().includes(filterText.toLowerCase())
-                    );
-
-                    if (filtered.length === 0) {
-                        list.innerHTML = '<div class="no-results">No units found</div>';
-                        return;
-                    }
-
-                    filtered.forEach(opt => {
-                        const div = document.createElement('div');
-                        div.className = 'custom-option';
-                        div.textContent = opt.label;
-                        if (input.value === opt.label) div.classList.add('selected');
-
-                        div.onmousedown = async (e) => {
-                            if (e.button !== 0) return;
-                            e.preventDefault();
-                            input.value = opt.label;
-                            select.value = opt.value;
-                            list.classList.remove('open');
-
-                            // Trigger conversion if both selected
-                            const otherSelectId = selectId === 'fromUnitSelect' ? 'toUnitSelect' : 'fromUnitSelect';
-                            if (document.getElementById(otherSelectId).value) {
-                                await globalThis.convert();
+                if (mapTag && mapTag.textContent.trim().length > 0) {
+                    try {
+                        const map = JSON.parse(mapTag.textContent);
+                        // Try to find the blazor script in imports
+                        for (const key in map.imports) {
+                            if (key.includes("blazor.webassembly.js")) {
+                                url = map.imports[key];
+                                break;
                             }
-                        };
-                        list.appendChild(div);
-                    });
-                };
-
-                // Keyboard Navigation
-                let highlightedIndex = -1;
-
-                const updateHighlight = (items) => {
-                    Array.from(list.children).forEach((child, index) => {
-                        if (index === highlightedIndex) {
-                            child.classList.add('highlighted');
-                            child.scrollIntoView({ block: 'nearest' });
-                        } else {
-                            child.classList.remove('highlighted');
                         }
-                    });
-                };
-
-                input.onkeydown = (e) => {
-                    if (!list.classList.contains('open')) {
-                        if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
-                            renderList(''); // Show all
-                            list.classList.add('open');
-                        }
-                        return;
+                        console.log("Bootstrapper: Importmap found. URL:", url);
+                    } catch (e) {
+                        console.error("Bootstrapper: Importmap parse failed:", e);
                     }
-
-                    const items = list.children;
-                    if (items.length === 0) return;
-
-                    if (e.key === 'ArrowDown') {
-                        e.preventDefault(); // Prevent cursor move
-                        highlightedIndex = (highlightedIndex + 1) % items.length;
-                        updateHighlight(items);
-                    } else if (e.key === 'ArrowUp') {
-                        e.preventDefault();
-                        highlightedIndex = (highlightedIndex - 1 + items.length) % items.length;
-                        updateHighlight(items);
-                    } else if (e.key === 'Enter') {
-                        e.preventDefault();
-                        if (highlightedIndex >= 0 && items[highlightedIndex]) {
-                            items[highlightedIndex].onmousedown({ button: 0, preventDefault: () => { } });
-                        }
-                    } else if (e.key === 'Escape') {
-                        list.classList.remove('open');
-                        input.blur();
-                    }
-                };
-
-                input.onclick = () => {
-                    if (!list.classList.contains('open')) {
-                        renderList('');
-                        list.classList.add('open');
-                    }
-                };
-
-                // Input events
-                input.onclick = () => {
-                    if (!list.classList.contains('open')) {
-                        renderList('');
-                        list.classList.add('open');
-                    }
-                };
-
-                input.onfocus = () => {
-                    renderList();
-                    list.classList.add('open');
-                    highlightedIndex = -1;
-                };
-
-                input.oninput = () => {
-                    renderList(input.value);
-                    list.classList.add('open');
-                    highlightedIndex = 0;
-                    updateHighlight(list.children);
-                };
-
-                // Close on blur
-                input.onblur = () => {
-                    setTimeout(() => {
-                        list.classList.remove('open');
-                        const currentVal = select.value;
-                        if (currentVal) {
-                            const opt = allOptions.find(o => o.value === currentVal);
-                            if (opt) input.value = opt.label;
-                        } else {
-                            input.value = '';
-                        }
-                    }, 200);
-                };
-            }
-
-            function setupCustomDimDropdown(containerId, inputId, listId, selectId, dims) {
-                // container not needed for blur logic
-                const input = document.getElementById(inputId);
-                const list = document.getElementById(listId);
-                const select = document.getElementById(selectId);
-
-                // Render list
-                const renderList = (filterText = '') => {
-                    list.innerHTML = '';
-                    const filtered = dims.filter(d => d.toLowerCase().includes(filterText.toLowerCase()));
-
-                    if (filtered.length === 0) {
-                        list.innerHTML = '<div class="no-results">No quantities found</div>';
-                        return;
-                    }
-
-                    filtered.forEach(d => {
-                        const div = document.createElement('div');
-                        div.className = 'custom-option';
-                        div.textContent = d;
-                        if (input.value === d) div.classList.add('selected');
-
-                        div.onmousedown = async (e) => {
-                            if (e.button !== 0) return;
-                            e.preventDefault();
-                            input.value = d;
-                            select.value = d;
-                            list.classList.remove('open');
-                            await loadUnitsForDimension(d);
-                        };
-                        list.appendChild(div);
-                    });
-                };
-
-                // Keyboard Navigation
-                let highlightedIndex = -1;
-
-                const updateHighlight = (items) => {
-                    Array.from(list.children).forEach((child, index) => {
-                        if (index === highlightedIndex) {
-                            child.classList.add('highlighted');
-                            child.scrollIntoView({ block: 'nearest' });
-                        } else {
-                            child.classList.remove('highlighted');
-                        }
-                    });
-                };
-
-                input.onkeydown = (e) => {
-                    if (!list.classList.contains('open')) {
-                        if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
-                            renderList(''); // Show all
-                            list.classList.add('open');
-                        }
-                        return;
-                    }
-
-                    const items = list.children;
-                    if (items.length === 0) return;
-
-                    if (e.key === 'ArrowDown') {
-                        e.preventDefault();
-                        highlightedIndex = (highlightedIndex + 1) % items.length;
-                        updateHighlight(items);
-                    } else if (e.key === 'ArrowUp') {
-                        e.preventDefault();
-                        highlightedIndex = (highlightedIndex - 1 + items.length) % items.length;
-                        updateHighlight(items);
-                    } else if (e.key === 'Enter') {
-                        e.preventDefault();
-                        if (highlightedIndex >= 0 && items[highlightedIndex]) {
-                            items[highlightedIndex].onmousedown({ button: 0, preventDefault: () => { } });
-                        }
-                    } else if (e.key === 'Escape') {
-                        list.classList.remove('open');
-                        input.blur();
-                    }
-                };
-
-                input.onclick = () => {
-                    if (!list.classList.contains('open')) {
-                        renderList('');
-                        list.classList.add('open');
-                    }
-                };
-
-                input.onfocus = () => {
-                    renderList();
-                    list.classList.add('open');
-                    highlightedIndex = -1;
-                };
-
-                input.oninput = () => {
-                    renderList(input.value);
-                    list.classList.add('open');
-                    highlightedIndex = 0;
-                    updateHighlight(list.children);
-                };
-
-                // Close on blur
-                input.onblur = () => {
-                    setTimeout(() => {
-                        list.classList.remove('open');
-                        const currentVal = select.value;
-                        if (currentVal) {
-                            const opt = dims.find(d => d === currentVal); // visual check
-                            if (opt) input.value = opt;
-                        } else {
-                            input.value = '';
-                        }
-                    }, 200);
-                };
-            }
-
-            document.getElementById('dimensionSelect').onchange = async (e) => {
-                await loadUnitsForDimension(e.target.value);
-            };
-
-            // Example Loaded Logic
-            // Example Loaded Logic
-            const exampleSelect = document.getElementById('exampleSelect');
-            exampleSelect.onchange = async (e) => {
-                const ex = JSON.parse(e.target.value);
-                await loadExample(ex);
-            };
-
-            // Setup Custom Example Dropdown
-            function setupCustomExampleDropdown() {
-                // container not needed for blur logic
-                const input = document.getElementById('exampleInput');
-                const list = document.getElementById('exampleList');
-                const select = document.getElementById('exampleSelect');
-
-                // Extract options from select
-                const options = Array.from(select.options)
-                    .filter(o => !o.disabled)
-                    .map(o => ({
-                        value: o.value,
-                        text: o.textContent
-                    }));
-
-                const renderList = (filterText = '') => {
-                    list.innerHTML = '';
-                    const filtered = options.filter(o => o.text.toLowerCase().includes(filterText.toLowerCase()));
-
-                    if (filtered.length === 0) {
-                        list.innerHTML = '<div class="no-results">No examples found</div>';
-                        return;
-                    }
-
-                    filtered.forEach(opt => {
-                        const div = document.createElement('div');
-                        div.className = 'custom-option';
-                        div.textContent = opt.text;
-
-                        div.onmousedown = async (e) => {
-                            if (e.button !== 0) return;
-                            e.preventDefault();
-                            input.value = opt.text;
-                            select.value = opt.value;
-                            list.classList.remove('open');
-
-                            // Trigger logic
-                            const ex = JSON.parse(opt.value);
-                            await loadExample(ex);
-                        };
-                        list.appendChild(div);
-                    });
-                };
-
-                // Keyboard Navigation
-                let highlightedIndex = -1;
-
-                const updateHighlight = (items) => {
-                    Array.from(list.children).forEach((child, index) => {
-                        if (index === highlightedIndex) {
-                            child.classList.add('highlighted');
-                            child.scrollIntoView({ block: 'nearest' });
-                        } else {
-                            child.classList.remove('highlighted');
-                        }
-                    });
-                };
-
-                input.onkeydown = (e) => {
-                    if (!list.classList.contains('open')) {
-                        if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
-                            renderList(''); // Show all
-                            list.classList.add('open');
-                        }
-                        return;
-                    }
-
-                    const items = list.children;
-                    if (items.length === 0) return;
-
-                    if (e.key === 'ArrowDown') {
-                        e.preventDefault();
-                        highlightedIndex = (highlightedIndex + 1) % items.length;
-                        updateHighlight(items);
-                    } else if (e.key === 'ArrowUp') {
-                        e.preventDefault();
-                        highlightedIndex = (highlightedIndex - 1 + items.length) % items.length;
-                        updateHighlight(items);
-                    } else if (e.key === 'Enter') {
-                        e.preventDefault();
-                        if (highlightedIndex >= 0 && items[highlightedIndex]) {
-                            items[highlightedIndex].onmousedown({ button: 0, preventDefault: () => { } });
-                        }
-                    } else if (e.key === 'Escape') {
-                        list.classList.remove('open');
-                        input.blur();
-                    }
-                };
-
-                input.onclick = () => {
-                    if (!list.classList.contains('open')) {
-                        renderList('');
-                        list.classList.add('open');
-                    }
-                };
-
-                input.onfocus = () => {
-                    renderList();
-                    list.classList.add('open');
-                    highlightedIndex = -1;
-                };
-
-                input.oninput = () => {
-                    renderList(input.value);
-                    list.classList.add('open');
-                    highlightedIndex = 0;
-                    updateHighlight(list.children);
-                };
-
-                // Close on blur
-                input.onblur = () => {
-                    setTimeout(() => {
-                        list.classList.remove('open');
-                        const currentVal = select.value;
-                        if (currentVal) {
-                            const opt = options.find(o => o.value === currentVal);
-                            if (opt) input.value = opt.text;
-                        } else {
-                            // examples are optional, so if invalid, just clear
-                            input.value = '';
-                        }
-                    }, 200);
-                };
-            }
-
-            // Initialize Example Dropdown
-            setupCustomExampleDropdown();
-
-            async function loadExample(ex) {
-                // 1. Select Dimension
-                await selectDimension(ex.dim);
-
-                // 2. Wait for units to populate (selectDimension waits for loadUnitsForDimension)
-                // We need to find the correct value (Abbr or Name) for the select options.
-                // Our presets use 'Name' (e.g. 'Meter'), but option value might be 'm'.
-
-                const fromSelect = document.getElementById('fromUnitSelect');
-                const toSelect = document.getElementById('toUnitSelect');
-
-                const setSelectByText = (select, textOrName) => {
-                    // Try to match value first (if name matches value directly)
-                    // Then try to match text content (Name (Abbr))
-                    // Then try to match just Name part of text
-
-                    // Direct value match?
-                    for (let i = 0; i < select.options.length; i++) {
-                        if (select.options[i].value === textOrName) {
-                            select.selectedIndex = i;
-                            return true;
-                        }
-                    }
-
-                    // Scan options for name match
-                    const targetName = textOrName.toLowerCase();
-                    for (let i = 0; i < select.options.length; i++) {
-                        const optText = select.options[i].textContent.toLowerCase();
-                        // Format is "Name (Abbr)"
-                        if (optText.startsWith(targetName + " ") || optText === targetName) {
-                            select.selectedIndex = i;
-                            return true;
-                        }
-                    }
-                    return false;
-                };
-
-                // Helper to smart select
-                // Ideally our presets should match the Name used in generation.
-                // UnitsNet names are PascalCase usually.
-
-                // Let's try to set it.
-                // Wait a tick ensures UI is fresh if selectDimension was async.
-                setTimeout(async () => {
-                    let f = setSelectByText(fromSelect, ex.from);
-                    let t = setSelectByText(toSelect, ex.to);
-
-                    if (!f) console.warn(`Could not find unit: ${ex.from}`);
-                    if (!t) console.warn(`Could not find unit: ${ex.to}`);
-
-                    document.getElementById('valueInput').value = ex.val;
-
-                    if (f && t) {
-                        await globalThis.convert();
-                    }
-                }, 50);
-
-                // Update Custom Inputs
-                const updateCustom = (selectId, inputId) => {
-                    const sel = document.getElementById(selectId);
-                    const inp = document.getElementById(inputId);
-                    if (sel.value && sel.selectedIndex >= 0) {
-                        inp.value = sel.options[sel.selectedIndex].text;
-                    }
-                };
-
-                // Wait little more for select logic to finish
-                setTimeout(() => {
-                    updateCustom('dimensionSelect', 'dimensionInput');
-                    updateCustom('fromUnitSelect', 'fromUnitInput');
-                    updateCustom('toUnitSelect', 'toUnitInput');
-
-                    // Restore Example selection (cleared by loadUnitsForDimension)
-                    const exSelect = document.getElementById('exampleSelect');
-                    const options = Array.from(exSelect.options);
-                    // Match by value content since object references differ
-                    const match = options.find(o => o.value && JSON.stringify(JSON.parse(o.value)) === JSON.stringify(ex));
-                    if (match) {
-                        document.getElementById('exampleInput').value = match.textContent.trim();
-                        exSelect.value = match.value;
-                    }
-                }, 60);
-            }
-
-            // Programmatic Selection Helpers
-            async function selectDimension(dim) {
-                const select = document.getElementById('dimensionSelect');
-                select.value = dim;
-
-                // Update custom input
-                const input = document.getElementById('dimensionInput');
-                if (input) input.value = dim;
-
-                await loadUnitsForDimension(dim);
-                document.getElementById('docsModal').style.display = 'none';
-            }
-
-            async function selectUnit(dim, unitNameOrAbbr) {
-                await selectDimension(dim);
-                // Wait a tick for options to populate
-                setTimeout(() => {
-                    const fromSelect = document.getElementById('fromUnitSelect');
-                    // Try to find by value (abbr or name)
-                    // The option values are set to (abbr || name) in loadUnitsForDimension
-                    // We need to match what's in the dropdown.
-                    // Since we don't know if the doc click logic passes an abbr or name, we might need to be smart.
-                    // For now, let's assume the doc click logic passes the correct value.
-                    fromSelect.value = unitNameOrAbbr;
-                    // Trigger change if needed, but for now just setting value is enough for user to see
-                }, 50);
-            }
-
-            // Result Formatting
-            function formatResult(num) {
-                if (num === 0) return "0";
-                const abs = Math.abs(num);
-                // Use scientific notation for very small or very large numbers
-                if (abs < 1e-6 || abs >= 1e9) {
-                    return num.toExponential(4).replace('e+', 'e');
-                }
-                // Otherwise use standard locale string with appropriate precision
-                return num.toLocaleString(undefined, { maximumFractionDigits: 6 });
-            }
-
-            // History & Copy Logic
-            let history = [];
-            const MAX_HISTORY = 10; // Increased to 10 for persistence
-
-            // Load history on startup
-            try {
-                const saved = localStorage.getItem('uom_history');
-                if (saved) {
-                    history = JSON.parse(saved);
-                    if (history.length > 0) {
-                        document.getElementById('historyContainer').style.display = 'block';
-                        // Defer render until DOM is fully ready if needed, usually fine here
-                        setTimeout(renderHistory, 0);
-                    }
-                }
-            } catch (e) {
-                console.error("Failed to load history:", e);
-            }
-
-            globalThis.clearHistory = () => {
-                history = [];
-                localStorage.removeItem('uom_history');
-                document.getElementById('historyContainer').style.display = 'none';
-                document.getElementById('historyList').innerHTML = '';
-            };
-
-            function updateHistory(val, from, to, result, dim) {
-                const container = document.getElementById('historyContainer');
-                container.style.display = 'block';
-
-                const entry = { val, from, to, result, dim, time: new Date() };
-                history.unshift(entry);
-                if (history.length > MAX_HISTORY) history.pop();
-
-                // Save to localStorage
-                localStorage.setItem('uom_history', JSON.stringify(history));
-
-                renderHistory();
-            }
-
-            function renderHistory() {
-                const list = document.getElementById('historyList');
-                list.innerHTML = history.map((h, i) => `
-                    <div class="history-item" onclick="restoreHistory(${i})" title="Click to restore">
-                        <span class="hist-detail">${h.val} ${h.from} = </span>
-                        <span class="hist-result">${formatResult(h.result)} ${h.to}</span>
-                    </div>
-                `).join('');
-            }
-
-            globalThis.restoreHistory = async (index) => {
-                const item = history[index];
-                if (!item) return;
-
-                // 1. Set Dimension
-                await selectDimension(item.dim);
-
-                // 2. Set Units & Value
-                // Verify options exist before setting
-                const fromSelect = document.getElementById('fromUnitSelect');
-                const toSelect = document.getElementById('toUnitSelect');
-
-                // Allow UI to populate
-                setTimeout(async () => {
-                    fromSelect.value = item.from;
-                    toSelect.value = item.to;
-                    document.getElementById('valueInput').value = item.val;
-
-                    // 3. Trigger Conversion
-                    // await globalThis.convert();
-                }, 100);
-            };
-
-            const copyBtn = document.getElementById('copyBtn');
-            copyBtn.onclick = () => {
-                const text = document.getElementById('resultValue').textContent;
-                navigator.clipboard.writeText(text).then(() => {
-                    const original = copyBtn.innerHTML;
-                    copyBtn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 1.2rem; height: 1.2rem;"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
-                    setTimeout(() => {
-                        copyBtn.innerHTML = original;
-                    }, 1500);
-                });
-            };
-
-            globalThis.convert = async () => {
-                const val = Number.parseFloat(document.getElementById('valueInput').value);
-                const dim = document.getElementById('dimensionSelect').value;
-                const from = document.getElementById('fromUnitSelect').value;
-                const to = document.getElementById('toUnitSelect').value;
-                const outVal = document.getElementById('resultValue');
-                const outLabel = document.getElementById('resultLabel');
-                const timer = document.getElementById('execTimer');
-                const copyBtn = document.getElementById('copyBtn');
-
-                if (!from || !to || Number.isNaN(val)) return;
-
-                outLabel.textContent = "Converting...";
-
-                // Client-side timing
-                const startTime = performance.now();
-
-                try {
-                    const interop = await getInterop();
-                    // Pass dimension to resolve ambiguities (e.g. 'A' for Ampere vs Angstrom)
-                    // Also pass useSmartDetection=true (default) to allow implicit resolution if dimension is empty
-                    const useSmartDetection = true;
-                    const res = await interop.invokeMethodAsync('Convert', val, from, to, dim, useSmartDetection);
-
-                    const endTime = performance.now();
-                    const duration = (endTime - startTime).toFixed(1);
-
-                    if (res.success) {
-                        outVal.textContent = formatResult(res.value);
-                        outLabel.textContent = `Successfully converted to ${to}`;
-                        outLabel.style.color = '';
-
-                        // Update UI Elements
-                        copyBtn.style.display = 'block'; // Block because it is icon-btn now
-                        timer.style.display = 'block';
-                        timer.textContent = `${duration}ms`;
-
-                        // Update History
-                        // Avoid duplicates at the top
-                        if (history.length === 0 ||
-                            (history[0].val !== val || history[0].from !== from || history[0].to !== to || history[0].dim !== dim)) {
-                            updateHistory(val, from, to, res.value, dim);
-                        }
-                    } else {
-                        outVal.textContent = "Error";
-                        outLabel.textContent = res.error;
-                        outLabel.style.color = 'var(--error)';
-                        copyBtn.style.display = 'none';
-                        timer.style.display = 'none';
-                    }
-                } catch (err) {
-                    outVal.textContent = "Interop Error";
-                    outLabel.textContent = err.message;
-                    copyBtn.style.display = 'none';
-                    timer.style.display = 'none';
-                }
-            };
-
-            // Swap Logic
-            document.getElementById('swapBtn').onclick = async () => {
-                const fromSelect = document.getElementById('fromUnitSelect');
-                const toSelect = document.getElementById('toUnitSelect');
-                const fromInput = document.getElementById('fromUnitInput');
-                const toInput = document.getElementById('toUnitInput');
-
-                if (fromSelect.disabled || toSelect.disabled) return;
-
-                const fromVal = fromSelect.value;
-                const toVal = toSelect.value;
-
-                fromSelect.value = toVal;
-                toSelect.value = fromVal;
-
-                // Update Inputs text
-                const tempText = fromInput.value;
-                fromInput.value = toInput.value;
-                toInput.value = tempText;
-
-                // Trigger conversion if both valid
-                if (fromSelect.value && toSelect.value) {
-                    await globalThis.convert();
-                }
-            };
-
-            // Keyboard Shortcuts
-            document.addEventListener('keydown', async (e) => {
-                // Enter to Convert (if not in a textarea/button)
-                if (e.key === 'Enter' && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'TEXTAREA') {
-                    // Start conversion if button enabled
-                    const btn = document.getElementById('convertBtn');
-                    if (!btn.disabled) {
-                        e.preventDefault();
-                        await globalThis.convert();
-                    }
+                } else if (retries < maxRetries) {
+                    // Importmap might not be populated yet if it's being injected late? 
+                    // Usually it's static in index.html or injected by server.
+                    // If static empty, use fallback immediately.
+                    // If we suspect a race (unlikely in static hosting), wait.
+                    // For now, proceed with fallback if empty.
                 }
 
-                // Alt+S to Swap
-                if (e.altKey && e.code === 'KeyS') {
-                    e.preventDefault();
-                    document.getElementById('swapBtn').click();
-                }
+                console.log("Bootstrapper: Loading Blazor from", url);
+                const script = document.createElement('script');
+                script.src = url;
+                script.type = "module";
+                script.setAttribute('autostart', 'false');
+                script.onload = () => {
+                    console.log("Bootstrapper: Blazor script loaded. Starting...");
+                    Blazor.start().then(() => {
+                        console.log("Bootstrapper: Blazor started.");
+                    }).catch(e => console.error("Bootstrapper: Blazor.start failed", e));
+                };
+                script.onerror = (e) => console.error("Bootstrapper: Script load failed", e);
+                document.body.appendChild(script);
+            };
+
+            // Small delay to ensure DOM is ready and importmap (if any) is parsed
+            setTimeout(loadEngine, 50);
+        })();
+    </script>
+
+    <!-- Main UI Logic -->
+    <script type="module" src="index.js"></script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            globalThis.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => {
+                        console.log('SW: Registered', reg);
+                        // Check if already active or wait for it
+                        if (reg.active) {
+                            globalThis.dispatchEvent(new CustomEvent('sw-ready'));
+                        }
+                        reg.addEventListener('updatefound', () => {
+                            const newWorker = reg.installing;
+                            newWorker.addEventListener('statechange', () => {
+                                if (newWorker.state === 'activated') {
+                                    globalThis.dispatchEvent(new CustomEvent('sw-ready'));
+                                }
+                            });
+                        });
+                    })
+                    .catch(err => console.error('SW: Registration failed', err));
             });
-
-            document.getElementById('convertBtn').onclick = globalThis.convert;
-
-            // -- Documentation Logic --
-            const docsModal = document.getElementById('docsModal');
-            const docsBtn = document.getElementById('docsBtn');
-            const closeDocsBtn = document.getElementById('closeDocsBtn');
-            const docsBody = document.getElementById('docsBody');
-
-            const closeDocs = () => {
-                docsModal.style.display = 'none';
-            };
-
-            closeDocsBtn.onclick = closeDocs;
-
-            // Close when clicking outside content
-            docsModal.onclick = (e) => {
-                if (e.target === docsModal) closeDocs();
-            };
-
-            // Close on Esc key
-            globalThis.addEventListener('keydown', (e) => {
-                if (e.key === "Escape" && docsModal.style.display === 'flex') {
-                    closeDocs();
-                }
-            });
-
-            let allDocs = [];
-            const docSearch = document.getElementById('docSearch');
-            const docDimFilter = document.getElementById('docDimFilter');
-
-            docsBtn.onclick = async () => {
-                docsModal.style.display = 'flex';
-                if (docsBody.dataset.loaded) return;
-
-                try {
-                    docsBody.innerHTML = '<div style="text-align: center; color: var(--text-muted); padding: 2rem;">Loading...</div>';
-                    const interop = await getInterop();
-                    const json = await interop.invokeMethodAsync('GetDocumentation');
-                    allDocs = JSON.parse(json);
-
-                    // Initial Sort
-                    allDocs.sort((a, b) => a.Name.localeCompare(b.Name));
-                    allDocs.forEach(d => d.Units.sort((a, b) => a.Name.localeCompare(b.Name)));
-
-                    populateDimFilter();
-                    filterAndRenderDocs();
-
-                    docsBody.dataset.loaded = 'true';
-                } catch (e) {
-                    docsBody.innerHTML = `<div style="color: var(--error); padding: 1rem;">Failed to load docs: ${e.message}</div>`;
-                    console.error(e);
-                }
-            };
-
-            function populateDimFilter() {
-                docDimFilter.innerHTML = '<option value="all">All Dimensions</option>';
-                allDocs.forEach(d => {
-                    const opt = document.createElement('option');
-                    opt.value = d.Name;
-                    opt.textContent = d.Name;
-                    docDimFilter.appendChild(opt);
-                });
-            }
-
-            function filterAndRenderDocs() {
-                const search = docSearch.value.toLowerCase().trim();
-                const dim = docDimFilter.value;
-
-                const filtered = allDocs.map(d => {
-                    // 1. Dimension Filter
-                    if (dim !== 'all' && d.Name !== dim) return null;
-
-                    // 2. Search Filter
-                    if (search) {
-                        const dimMatch = d.Name.toLowerCase().includes(search);
-                        const matchingUnits = d.Units.filter(u =>
-                            u.Name.toLowerCase().includes(search) ||
-                            (u.Abbr && u.Abbr.some(a => a.toLowerCase().includes(search)))
-                        );
-
-                        if (dimMatch) {
-                            return d;
-                        } else if (matchingUnits.length > 0) {
-                            return { ...d, Units: matchingUnits };
-                        } else {
-                            return null;
-                        }
-                    }
-
-                    return d;
-                }).filter(d => d !== null);
-
-                renderDocs(filtered);
-            }
-
-            docSearch.addEventListener('input', filterAndRenderDocs);
-            docDimFilter.addEventListener('change', filterAndRenderDocs);
-
-            document.getElementById('clearSearchBtn').onclick = () => {
-                docSearch.value = '';
-                filterAndRenderDocs();
-                docSearch.focus();
-            };
-
-            document.getElementById('clearDimBtn').onclick = () => {
-                docDimFilter.value = 'all';
-                filterAndRenderDocs();
-            };
-            docDimFilter.addEventListener('change', filterAndRenderDocs);
-
-            function renderDocs(docs) {
-                docsBody.innerHTML = '';
-
-                if (docs.length === 0) {
-                    docsBody.innerHTML = '<div style="text-align: center; color: var(--text-muted); padding: 2rem;">No matching units found.</div>';
-                    return;
-                }
-
-                docs.forEach(q => {
-                    const group = document.createElement('div');
-                    group.className = 'doc-group';
-
-                    const title = document.createElement('div');
-                    title.className = 'doc-group-title interactable';
-                    title.innerHTML = `${q.Name} <span style="font-size:0.8em; color:var(--text); font-weight:400; margin-left:0.5rem">${q.Description || ''}</span>`;
-                    title.onclick = () => {
-                        selectDimension(q.Name);
-                        docsModal.style.display = 'none'; // Auto-close on select
-                    };
-                    group.appendChild(title);
-
-                    q.Units.forEach(u => {
-                        const item = document.createElement('div');
-                        item.className = 'doc-item interactable';
-                        const val = (u.Abbr && u.Abbr.length > 0) ? u.Abbr[0] : u.Name;
-                        item.onclick = () => {
-                            selectUnit(q.Name, val);
-                            docsModal.style.display = 'none'; // Auto-close on select
-                        };
-
-                        const header = document.createElement('div');
-                        header.style.display = 'flex';
-                        header.style.alignItems = 'center';
-
-                        const name = document.createElement('span');
-                        name.className = 'doc-name';
-                        name.textContent = u.Name;
-                        header.appendChild(name);
-
-                        if (u.Abbr && u.Abbr.length > 0) {
-                            const abbr = document.createElement('span');
-                            abbr.className = 'doc-abbr';
-                            abbr.textContent = u.Abbr.join(', ');
-                            header.appendChild(abbr);
-                        }
-
-                        item.appendChild(header);
-
-                        if (u.Plural && u.Plural !== u.Name) {
-                            const plural = document.createElement('div');
-                            plural.className = 'doc-desc';
-                            plural.textContent = `Plural: ${u.Plural}`;
-                            item.appendChild(plural);
-                        }
-
-                        group.appendChild(item);
-                    });
-                    docsBody.appendChild(group);
-                });
-            }
-
-            // Enable Docs button when ready
-            docsBtn.disabled = false;
-
-            // Scroll Top Logic
-            const docsBodyEl = document.getElementById('docsBody');
-            const scrollTopBtn = document.getElementById('scrollTopBtn');
-
-            if (docsBodyEl && scrollTopBtn) {
-                docsBodyEl.addEventListener('scroll', () => {
-                    if (docsBodyEl.scrollTop > 300) {
-                        scrollTopBtn.classList.add('visible');
-                    } else {
-                        scrollTopBtn.classList.remove('visible');
-                    }
-                });
-
-                scrollTopBtn.addEventListener('click', () => {
-                    docsBodyEl.scrollTo({ top: 0, behavior: 'smooth' });
-                });
-            }
-        </script>
+        }
+    </script>
 </body>
 
 </html>

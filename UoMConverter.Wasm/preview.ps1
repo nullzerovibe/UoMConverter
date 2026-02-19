@@ -15,6 +15,11 @@ if (!(Test-Path $publishDir)) {
 
 Write-Host "Serving from $publishDir on port 5083..."
 Push-Location $publishDir
-# -o opens the browser, -p sets the port
-dotnet serve -p 5083 -o
-Pop-Location
+try {
+    # -o opens the browser, -p sets the port
+    dotnet serve -p 5083 -o
+}
+finally {
+    Pop-Location
+    Write-Host "Server stopped."
+}
