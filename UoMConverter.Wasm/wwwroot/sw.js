@@ -23,9 +23,7 @@ const ASSETS = [
     '/favicon/favicon.ico',
     '/favicon/site.webmanifest',
     '/favicon/android-chrome-192x192.png',
-    '/favicon/android-chrome-512x512.png',
-    'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/themes/light.css',
-    'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/shoelace-autoloader.js'
+    '/favicon/android-chrome-512x512.png'
 ];
 
 self.addEventListener('install', (event) => {
@@ -36,8 +34,15 @@ self.addEventListener('install', (event) => {
 
     // 2. Append all the compiled Blazor WASM/DLL files from the manifest
     if (typeof self.assetsManifest !== 'undefined' && self.assetsManifest.assets) {
-        const blazorAssets = self.assetsManifest.assets.map(asset => asset.url === '' ? '/' : asset.url);
-        offlineAssets = offlineAssets.concat(blazorAssets);
+        const blazorAssets = self.assetsManifest.assets
+            .filter(asset => !asset.url.startsWith('.') && !asset.url.endsWith('.md'))
+            .map(asset => {
+                if (asset.url === '') return '/';
+                return asset.url.startsWith('/') ? asset.url : `/${asset.url}`;
+            });
+
+        // Remove duplicates using a Set (Blazor manifest already includes files like index.html)
+        offlineAssets = [...new Set(offlineAssets.concat(blazorAssets))];
     }
 
     // 3. Cache everything upfront. Now the app is perfectly offline-capable immediately!

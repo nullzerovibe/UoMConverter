@@ -787,6 +787,30 @@ export const actions = {
 
     refreshPwa: () => {
         globalThis.location.reload();
+    },
+
+    uninstallApp: async () => {
+        actions.openConfirm(
+            "Clear App Data",
+            "Are you sure you want to unregister the Service Worker and clear all cached app data? You will still need to manually remove the app icon from your device using your browser's uninstall option.",
+            async () => {
+                if ('serviceWorker' in navigator) {
+                    const regs = await navigator.serviceWorker.getRegistrations();
+                    for (const reg of regs) {
+                        await reg.unregister();
+                    }
+                }
+                if ('caches' in window) {
+                    const keys = await caches.keys();
+                    for (const key of keys) {
+                        await caches.delete(key);
+                    }
+                }
+                util.notify("App data cleared. Please use your browser menu to fully uninstall.", "success", "trash");
+                setTimeout(() => window.location.reload(), 2000);
+            },
+            { variant: 'danger', confirmLabel: 'Clear Data' }
+        );
     }
 };
 
