@@ -36,16 +36,16 @@ self.addEventListener('install', (event) => {
     if (typeof self.assetsManifest !== 'undefined' && self.assetsManifest.assets) {
         const blazorAssets = self.assetsManifest.assets
             .filter(asset => !asset.url.startsWith('.') && !asset.url.endsWith('.md'))
-            .map(asset => {
-                if (asset.url === '') return '/';
-                return asset.url.startsWith('/') ? asset.url : `/${asset.url}`;
-            });
+            .map(asset => asset.url === '' ? './' : asset.url);
 
-        // Remove duplicates using a Set (Blazor manifest already includes files like index.html)
-        offlineAssets = [...new Set(offlineAssets.concat(blazorAssets))];
+        offlineAssets = offlineAssets.concat(blazorAssets);
     }
 
-    // 3. Cache everything upfront. Now the app is perfectly offline-capable immediately!
+    // 3. Resolve all to absolute URLs to guarantee proper deduplication
+    offlineAssets = offlineAssets.map(url => new URL(url, self.location.href).href);
+    offlineAssets = [...new Set(offlineAssets)];
+
+    // 4. Cache everything upfront. Now the app is perfectly offline-capable immediately!
     event.waitUntil(
         caches.open(CACHE_NAME).then((cache) => {
             return cache.addAll(offlineAssets);

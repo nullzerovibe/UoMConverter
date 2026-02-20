@@ -2,8 +2,8 @@
   "name": "UoMConverter WASM",
   "short_name": "UoMConverter",
   "description": "High-performance .NET WASM Unit Converter with a premium industrial theme.",
-  "id": "./",
-  "start_url": "./",
+  "id": "uomconverter",
+  "start_url": "/",
   "scope": "/",
   "icons": [
     {
