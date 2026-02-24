@@ -713,6 +713,8 @@ export const actions = {
                         inputValue: val,
                         fromUnit: appState.fromUnit.value,
                         toUnit: appState.toUnit.value,
+                        fromUnitAbbr: fromStr,
+                        toUnitAbbr: toStr,
                         resultValue: resultFormatted
                     };
                     const maxLen = parseInt(appState.settings.value.historyLength) || 15;

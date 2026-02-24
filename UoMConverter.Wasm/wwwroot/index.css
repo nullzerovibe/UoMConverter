@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+
 :root {
     /* Generic Variables (Fonts, Spacing, Z-index) */
     --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -1941,6 +1943,13 @@ sl-button[variant="danger"]::part(base):focus-visible {
     flex: 1;
 }
 
+.calc-number {
+    font-family: 'Orbitron', var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
 .result-actions {
     display: flex;
     align-items: center;
@@ -1963,7 +1972,7 @@ sl-button[variant="danger"]::part(base):focus-visible {
 .result-msg {
     color: var(--text-muted);
     font-size: 0.9rem;
-    font-weight: 500;
+    /* font-weight: 500; */
 }
 
 .guide-btn sl-icon {
@@ -2097,7 +2106,6 @@ sl-button[variant="danger"]::part(base):focus-visible {
 }
 
 .hist-expr {
-    font-family: var(--font-mono);
     font-size: 0.95rem;
     white-space: pre-wrap;
     word-wrap: break-word;
@@ -2117,7 +2125,6 @@ sl-button[variant="danger"]::part(base):focus-visible {
 
 .hist-res {
     color: var(--success);
-    font-weight: bold;
 }
 
 .history-item-meta {
@@ -2536,7 +2543,6 @@ sl-tab-panel {
 
 .doc-name:hover {
     color: #2563eb;
-    text-decoration: underline dotted;
 }
 
 .doc-args {
@@ -4788,7 +4794,12 @@ sl-tooltip::part(body) {
 .doc-name {
     font-weight: 600;
     font-size: 0.95rem;
-    color: var(--text-main);
+    color: var(--accent);
+    transition: color 0.2s ease, filter 0.2s ease;
+}
+
+.doc-name:hover {
+    filter: brightness(1.2);
 }
 
 .doc-desc {

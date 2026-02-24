@@ -71,7 +71,8 @@ self.addEventListener('fetch', (event) => {
     // except for those specifically included in ASSETS (CDNs)
     const isCdn = event.request.url.includes('cdn.jsdelivr.net') ||
         event.request.url.includes('api.iconify.design') ||
-        event.request.url.includes('fonts.googleapis.com');
+        event.request.url.includes('fonts.googleapis.com') ||
+        event.request.url.includes('fonts.gstatic.com');
 
     event.respondWith(
         caches.match(event.request).then((response) => {

@@ -346,8 +346,8 @@ export const MainCard = ({ state, actions }) => {
                             ${state.resultValue.value !== '---' && state.resultValue.value !== 'Error' ? (() => {
             const toUnitFull = state.units.value.find(u => (u.name || u.Name) === state.toUnit.value);
             const toAbbr = toUnitFull ? (toUnitFull.abbreviation || toUnitFull.Abbreviation || formatLabel(state.toUnit.value)) : formatLabel(state.toUnit.value);
-            return html`<span style="color: var(--success);">${state.resultValue.value}</span><span style="color: var(--text-muted); font-size: 1.2rem; font-weight: 500; margin-left: 0.5rem; word-break: normal; transform: translateY(6px);">${toAbbr}</span>`;
-        })() : (state.resultValue.value === 'Error' ? html`<span style="color: var(--error);">${state.resultValue.value}</span>` : html`<span style="color: var(--success);">${state.resultValue.value}</span>`)}
+            return html`<span class="calc-number" style="color: var(--success);">${state.resultValue.value}</span><span style="color: var(--text-muted); font-size: 1.2rem; font-weight: 500; margin-left: 0.5rem; word-break: normal; transform: translateY(6px);">${toAbbr}</span>`;
+        })() : (state.resultValue.value === 'Error' ? html`<span class="calc-number" style="color: var(--error);">${state.resultValue.value}</span>` : html`<span class="calc-number" style="color: var(--success);">${state.resultValue.value}</span>`)}
                         </div>
                         <div class="result-actions ${state.resultValue.value === '---' || state.resultValue.value === 'Error' ? 'u-hidden' : ''}">
                             <sl-dropdown placement="bottom-end" hoist>
@@ -373,7 +373,19 @@ export const MainCard = ({ state, actions }) => {
 
                     <div class="result-footer">
                         <div class="result-badge-area ${state.message.value ? 'u-visible' : 'u-invisible'}">
-                            <span class="result-msg" style="${state.resultValue.value === 'Error' ? 'color: var(--error);' : ''}">${state.message.value}</span>
+                            <span class="result-msg" style="${state.resultValue.value === 'Error' ? 'color: var(--error);' : ''}">${(() => {
+            if (state.message.value && state.message.value.startsWith('Successfully converted ')) {
+                const restStr = state.message.value.substring(23);
+                const firstSpaceIdx = restStr.indexOf(' ');
+                if (firstSpaceIdx > 0) {
+                    const num = restStr.substring(0, firstSpaceIdx);
+                    const unit = restStr.substring(firstSpaceIdx + 1);
+                    return html`Successfully converted <span class="calc-number" style="color: var(--accent); font-weight: 500;">${num}</span> ${unit}`;
+                }
+            }
+            return state.message.value;
+        })()
+        }</span>
                         </div>
                         <div class="result-stats ${state.resultValue.value === 'Error' ? 'u-hidden' : ''}">
                             ${state.calcTime.value === null ? null : html`
@@ -410,11 +422,9 @@ export const MainCard = ({ state, actions }) => {
                         </div>
                         <div class="history-list">
                             ${state.history.value.map(item => {
-            // Find abbreviations from state if possible, otherwise fallback to full names to ensure format is "Alias (FullName)"
-            const fromUnitFull = state.units.value.find(u => (u.name || u.Name) === item.fromUnit);
-            const toUnitFull = state.units.value.find(u => (u.name || u.Name) === item.toUnit);
-            const fromAbbr = fromUnitFull ? (fromUnitFull.abbreviation || fromUnitFull.Abbreviation) : null;
-            const toAbbr = toUnitFull ? (toUnitFull.abbreviation || toUnitFull.Abbreviation) : null;
+            // Prefer storing abbreviations from state directly on the item, fallback to lookup
+            const fromAbbr = item.fromUnitAbbr || (() => { const u = state.units.value.find(x => (x.name || x.Name) === item.fromUnit); return u ? (u.abbreviation || u.Abbreviation) : null; })();
+            const toAbbr = item.toUnitAbbr || (() => { const u = state.units.value.find(x => (x.name || x.Name) === item.toUnit); return u ? (u.abbreviation || u.Abbreviation) : null; })();
 
             const displayFrom = fromAbbr ? `${fromAbbr} (${formatLabel(item.fromUnit)})` : formatLabel(item.fromUnit);
             const displayTo = toAbbr ? `${toAbbr} (${formatLabel(item.toUnit)})` : formatLabel(item.toUnit);
@@ -422,8 +432,8 @@ export const MainCard = ({ state, actions }) => {
             return html`
                                 <div class="history-item" onclick=${() => actions.loadHistoryItem(item)} style="display: flex; justify-content: space-between; align-items: center; overflow: hidden; gap: 1rem;">
                                     <div class="history-item-main" style="flex: 1; display: flex; align-items: center; justify-content: space-between; min-width: 0; gap: 1rem;">
-                                        <span class="hist-expr" style="font-size: 0.9rem; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1;" title="${item.inputValue} ${displayFrom}">${item.inputValue} <span style="opacity: 0.8">${displayFrom}</span></span>
-                                        <span class="hist-res" style="font-size: 0.9rem; color: var(--success); font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1; text-align: right;" title="${item.resultValue} ${displayTo}"><span style="color: var(--accent); margin-right: 0.5rem;">=</span> ${item.resultValue} <span style="opacity: 0.8">${displayTo}</span></span>
+                                        <span class="hist-expr" style="font-size: 0.9rem; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1;" title="${item.inputValue} ${displayFrom}"><span class="calc-number" style="color: var(--accent); font-weight: 500;">${item.inputValue}</span> <span style="opacity: 0.8">${displayFrom}</span></span>
+                                        <span class="hist-res" style="font-size: 0.9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1; text-align: right;" title="${item.resultValue} ${displayTo}"><span style="color: var(--accent); margin-right: 0.5rem;">=</span> <span class="calc-number" style="color: var(--success);">${item.resultValue}</span> <span style="color: var(--text-muted); opacity: 0.8">${displayTo}</span></span>
                                     </div>
                                 </div>
                             `})}
@@ -1047,7 +1057,7 @@ export const Documentation = ({ state, actions }) => {
                                     <div class="dimension-group" style="margin-bottom: 2rem; content-visibility: auto; contain-intrinsic-size: auto 300px;">
                                         <div style="margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(255, 255, 255, 0.05); display: flex; align-items: center; justify-content: space-between;">
                                             <div>
-                                                <span class="hover-underline" style="color: var(--accent); font-weight: 700; font-size: 1.15rem; margin-right: 0.75rem; cursor: pointer;" onclick=${() => { actions.setDimension(dim.Name); appState.docsOpen.value = false; }}>${formatLabel(dim.Name)}</span>
+                                                <span class="doc-name" style="margin-right: 0.75rem; cursor: pointer;" onclick=${() => { actions.setDimension(dim.Name); appState.docsOpen.value = false; }}>${formatLabel(dim.Name)}</span>
                                                 <span style="color: var(--text-muted); font-size: 0.95rem;">${dim.Description || ''}</span>
                                             </div>
                                             <sl-icon-button 
@@ -1065,7 +1075,7 @@ export const Documentation = ({ state, actions }) => {
                     return html`
                                                 <div class="doc-card">
                                                     <div class="doc-header" style="justify-content: flex-start; gap: 0.75rem; margin-bottom: 0.25rem;">
-                                                        <span class="doc-name hover-underline" style="color: var(--accent); font-size: 1.05rem; cursor: pointer;" onclick=${() => { actions.setDimension(dim.Name); actions.setFromUnit(u.Name); appState.toUnit.value = ''; appState.docsOpen.value = false; }}>${formatLabel(u.Name)}</span>
+                                                        <span class="doc-name" style="font-size: 1.05rem; cursor: pointer;" onclick=${() => { actions.setDimension(dim.Name); actions.setFromUnit(u.Name); appState.toUnit.value = ''; appState.docsOpen.value = false; }}>${formatLabel(u.Name)}</span>
                                                         ${abbr ? html`<sl-badge class="uom-badge" size="small">${abbr}</sl-badge>` : null}
                                                     </div>
                                                     <div class="doc-desc">
