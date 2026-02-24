@@ -658,11 +658,22 @@ export const Documentation = ({ state, actions }) => {
     };
 
     const docSelectOptions = useMemo(() => {
+        const dims = [...(state.dimensions.value || [])];
+        const pinned = state.pinnedDimensions?.value || [];
+
+        dims.sort((a, b) => {
+            const aPinned = pinned.includes(a);
+            const bPinned = pinned.includes(b);
+            if (aPinned && !bPinned) return -1;
+            if (!aPinned && bPinned) return 1;
+            return a.localeCompare(b);
+        });
+
         return html`
             <sl-option value="All_Dimensions">All Dimensions</sl-option>
-            ${state.dimensions.value && state.dimensions.value.map(d => html`<sl-option value=${d}>${formatLabel(d)}</sl-option>`)}
+            ${dims.map(d => html`<sl-option value=${d}>${formatLabel(d)}</sl-option>`)}
         `;
-    }, [state.dimensions.value]);
+    }, [state.dimensions.value, state.pinnedDimensions?.value]);
 
     const onSort = (field) => {
         if (state.operatorSortBy.value === field) {
@@ -751,19 +762,19 @@ export const Documentation = ({ state, actions }) => {
 
     const onSaveSettings = (e) => {
         e.preventDefault();
-        actions.saveSettings(state.settings.value);
+        actions.saveSettings();
     };
 
     const isSettingsDirty = () => {
-        const s1 = state.settings.value;
-        const s2 = state.settingsOriginal.value;
+        const s1 = state.draftSettings.value;
+        const s2 = state.settings.value;
         return JSON.stringify(s1) !== JSON.stringify(s2);
     };
 
     const onInputChange = (e) => {
         const { name, value } = e.target;
         const finalValue = name === 'historyLength' ? (parseInt(value) || 0) : value;
-        state.settings.value = { ...state.settings.value, [name]: finalValue };
+        state.draftSettings.value = { ...state.draftSettings.value, [name]: finalValue };
     };
 
     const setInputValue = (name, val) => {
@@ -845,9 +856,9 @@ export const Documentation = ({ state, actions }) => {
                                         Appearance Theme
                                     </label>
                                     <${ModernSelect}
-                                        value=${state.settings.value.theme}
+                                        value=${state.draftSettings.value.theme}
                                         options=${themeOptions}
-                                        onChange=${onThemeChange}
+                                        onChange=${(val) => state.draftSettings.value = { ...state.draftSettings.value, theme: val }}
                                         placeholder="Select Theme"
                                         hoist=${true}
                                         className="w-100"
@@ -860,9 +871,9 @@ export const Documentation = ({ state, actions }) => {
                                         Number Formatting
                                     </label>
                                     <${ModernSelect}
-                                        value=${state.settings.value.numberFormat || 'auto'}
+                                        value=${state.draftSettings.value.numberFormat || 'auto'}
                                         options=${numFormatOptions}
-                                        onChange=${onFormatChange}
+                                        onChange=${(val) => state.draftSettings.value = { ...state.draftSettings.value, numberFormat: val }}
                                         placeholder="Select Format"
                                         hoist=${true}
                                         className="w-100"
@@ -870,36 +881,14 @@ export const Documentation = ({ state, actions }) => {
                                 </div>
 
                                 <div class="form-group">
-                                    <div class="u-flex u-items-center u-justify-between">
-                                        <label class="u-mt-0">
-                                            <sl-icon src="https://api.iconify.design/lucide/hash.svg?color=%23cbd5e1" class="setting-icon"></sl-icon>
-                                            Thousands Separator
-                                        </label>
-                                        <sl-switch name="useThousandsSeparator" checked=${state.settings.value.useThousandsSeparator !== false} onsl-change=${(e) => { state.settings.value = { ...state.settings.value, useThousandsSeparator: e.target.checked }; actions.saveSettings({ ...state.settings.value, useThousandsSeparator: e.target.checked }); }}></sl-switch>
-                                    </div>
-                                    <div class="subtle-help" style="margin: 0rem;">Format numbers with comma separators (e.g., 1,000,000).</div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="u-flex u-items-center u-justify-between">
-                                        <label class="u-mt-0">
-                                            <sl-icon src="https://api.iconify.design/lucide/lock.svg?color=%23cbd5e1" class="setting-icon"></sl-icon>
-                                            Lock Category Scope
-                                        </label>
-                                        <sl-switch name="useDimension" checked=${state.settings.value.useDimension} onsl-change=${(e) => { state.settings.value = { ...state.settings.value, useDimension: e.target.checked }; actions.saveSettings({ ...state.settings.value, useDimension: e.target.checked }); }}></sl-switch>
-                                    </div>
-                                    <div class="subtle-help" style="margin: 0rem;">Passes the selected dimension explicitly to the conversion engine to restrict conversions across categories.</div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label>
+                                    <label style="height: 22px;">
                                         <sl-icon src="https://api.iconify.design/lucide/arrow-down-up.svg?color=%23cbd5e1" class="setting-icon"></sl-icon>
                                         Unit Sorting Mode
                                     </label>
                                     <${ModernSelect}
-                                        value=${state.settings.value.unitSortMode || 'alpha'}
+                                        value=${state.draftSettings.value.unitSortMode || 'alpha'}
                                         options=${sortModeOptions}
-                                        onChange=${(val) => { state.settings.value = { ...state.settings.value, unitSortMode: val }; actions.saveSettings({ ...state.settings.value, unitSortMode: val }); }}
+                                        onChange=${(val) => { state.draftSettings.value = { ...state.draftSettings.value, unitSortMode: val }; }}
                                         placeholder="Select Sort Mode"
                                         hoist=${true}
                                         className="w-100"
@@ -910,67 +899,34 @@ export const Documentation = ({ state, actions }) => {
                                 <div class="form-group">
                                     <div class="u-flex u-items-center u-justify-between">
                                         <label class="u-mt-0">
-                                            <sl-icon src="https://api.iconify.design/lucide/trending-up.svg?color=%23cbd5e1" class="setting-icon"></sl-icon>
-                                            Smart Unit Priority
-                                        </label>
-                                        <sl-switch name="useUnitFrequency" checked=${state.settings.value.useUnitFrequency !== false} onsl-change=${(e) => { state.settings.value = { ...state.settings.value, useUnitFrequency: e.target.checked }; actions.saveSettings({ ...state.settings.value, useUnitFrequency: e.target.checked }); }}></sl-switch>
-                                    </div>
-                                    <div class="subtle-help" style="margin: 0rem;">Promotes frequently used units to the top of the dropdown list.</div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="u-flex u-items-center u-justify-between">
-                                        <label class="u-mt-0">
-                                            <sl-icon src="https://api.iconify.design/lucide/brain-circuit.svg?color=%23cbd5e1" class="setting-icon"></sl-icon>
-                                            Smart Detection
-                                        </label>
-                                        <sl-switch name="useSmartDetection" checked=${state.settings.value.useSmartDetection} onsl-change=${(e) => { state.settings.value = { ...state.settings.value, useSmartDetection: e.target.checked }; }}></sl-switch>
-                                    </div>
-                                    <div class="subtle-help" style="margin: 0rem;">Allows the engine to dynamically infer unit dimensions internally when required.</div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="u-flex u-items-center u-justify-between">
-                                        <label class="u-mt-0">
-                                            <sl-icon src="https://api.iconify.design/lucide/tag.svg?color=%23cbd5e1" class="setting-icon"></sl-icon>
-                                            Send Unit Aliases
-                                        </label>
-                                        <sl-switch name="useAlias" checked=${state.settings.value.useAlias} onsl-change=${(e) => { state.settings.value = { ...state.settings.value, useAlias: e.target.checked }; }}></sl-switch>
-                                    </div>
-                                    <div class="subtle-help">Sends unit abbreviations (e.g. 'km/h') to the engine instead of full names.</div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="u-flex u-items-center u-justify-between u-mb-05">
-                                        <label class="u-mt-0">
                                             <sl-icon src="https://api.iconify.design/lucide/history.svg?color=%23cbd5e1" class="setting-icon"></sl-icon>
                                             Enable History Recording
                                         </label>
-                                         <sl-switch name="enableHistory" checked=${state.settings.value.enableHistory} onsl-change=${(e) => {
+                                         <sl-switch name="enableHistory" checked=${state.draftSettings.value.enableHistory} onsl-change=${(e) => {
             const isChecked = e.target.checked;
-            let newLen = state.settings.value.historyLength;
+            let newLen = state.draftSettings.value.historyLength;
             if (isChecked && (!newLen || Number.parseInt(newLen) <= 0)) newLen = 10;
-            state.settings.value = { ...state.settings.value, enableHistory: isChecked, historyLength: newLen };
+            state.draftSettings.value = { ...state.draftSettings.value, enableHistory: isChecked, historyLength: newLen };
         }}></sl-switch>
                                     </div>
 
-                                    ${state.settings.value.enableHistory ? html`
-                                        <div class="form-group u-mb-2">
-                                            <sl-input name="historyLength" type="number" min="1" max="100" value=${state.settings.value.historyLength} onsl-input=${onInputChange}>
+                                    ${state.draftSettings.value.enableHistory ? html`
+                                        <div class="form-group">
+                                            <sl-input name="historyLength" type="number" min="1" max="100" value=${state.draftSettings.value.historyLength} onsl-input=${onInputChange}>
                                                 <div slot="help-text" class="subtle-help">Maximum number of calculations to keep in history memory.</div>
                                                 <sl-button slot="prefix" variant="text" class="btn-stepper"
-                                                    onclick=${(e) => { e.preventDefault(); state.settings.value = { ...state.settings.value, historyLength: Math.max(1, parseInt(state.settings.value.historyLength) - 1) }; }}>
+                                                    onclick=${(e) => { e.preventDefault(); state.draftSettings.value = { ...state.draftSettings.value, historyLength: Math.max(1, parseInt(state.draftSettings.value.historyLength) - 1) }; }}>
                                                     <sl-icon name="dash-lg"></sl-icon>
                                                 </sl-button>
                                                 <sl-button slot="suffix" variant="text" class="btn-stepper"
-                                                    onclick=${(e) => { e.preventDefault(); state.settings.value = { ...state.settings.value, historyLength: Math.min(100, parseInt(state.settings.value.historyLength) + 1) }; }}>
+                                                    onclick=${(e) => { e.preventDefault(); state.draftSettings.value = { ...state.draftSettings.value, historyLength: Math.min(100, parseInt(state.draftSettings.value.historyLength) + 1) }; }}>
                                                     <sl-icon name="plus-lg"></sl-icon>
                                                 </sl-button>
                                             </sl-input>
                                         </div>
                                     ` : html`
-                                        <div class="form-group u-mb-2" style="opacity: 0.5; pointer-events: none;">
-                                            <sl-input name="historyLength" type="number" value=${state.settings.value.historyLength} disabled>
+                                        <div class="form-group" style="opacity: 0.5; pointer-events: none;">
+                                            <sl-input name="historyLength" type="number" value=${state.draftSettings.value.historyLength} disabled>
                                                 <div slot="help-text" class="subtle-help">Enable history recording to adjust record limit.</div>
                                                 <sl-button slot="prefix" variant="text" class="btn-stepper" disabled>
                                                     <sl-icon name="dash-lg"></sl-icon>
@@ -981,6 +937,61 @@ export const Documentation = ({ state, actions }) => {
                                             </sl-input>
                                         </div>
                                     `}
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="u-flex u-items-center u-justify-between">
+                                        <label class="u-mt-0">
+                                            <sl-icon src="https://api.iconify.design/lucide/trending-up.svg?color=%23cbd5e1" class="setting-icon"></sl-icon>
+                                            Smart Unit Priority
+                                        </label>
+                                        <sl-switch name="useUnitFrequency" checked=${state.draftSettings.value.useUnitFrequency !== false} onsl-change=${(e) => { state.draftSettings.value = { ...state.draftSettings.value, useUnitFrequency: e.target.checked }; }}></sl-switch>
+                                    </div>
+                                    <div class="subtle-help" style="margin: 0rem;">Promotes frequently used units to the top of the dropdown list.</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="u-flex u-items-center u-justify-between">
+                                        <label class="u-mt-0">
+                                            <sl-icon src="https://api.iconify.design/lucide/brain-circuit.svg?color=%23cbd5e1" class="setting-icon"></sl-icon>
+                                            Smart Detection
+                                        </label>
+                                        <sl-switch name="useSmartDetection" checked=${state.draftSettings.value.useSmartDetection} onsl-change=${(e) => { state.draftSettings.value = { ...state.draftSettings.value, useSmartDetection: e.target.checked }; }}></sl-switch>
+                                    </div>
+                                    <div class="subtle-help" style="margin: 0rem;">Allows the engine to dynamically infer unit dimensions internally when required.</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="u-flex u-items-center u-justify-between">
+                                        <label class="u-mt-0">
+                                            <sl-icon src="https://api.iconify.design/lucide/tag.svg?color=%23cbd5e1" class="setting-icon"></sl-icon>
+                                            Send Unit Aliases
+                                        </label>
+                                        <sl-switch name="useAlias" checked=${state.draftSettings.value.useAlias} onsl-change=${(e) => { state.draftSettings.value = { ...state.draftSettings.value, useAlias: e.target.checked }; }}></sl-switch>
+                                    </div>
+                                    <div class="subtle-help">Sends unit abbreviations (e.g. 'km/h') to the engine instead of full names.</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="u-flex u-items-center u-justify-between">
+                                        <label class="u-mt-0">
+                                            <sl-icon src="https://api.iconify.design/lucide/lock.svg?color=%23cbd5e1" class="setting-icon"></sl-icon>
+                                            Lock Category Scope
+                                        </label>
+                                        <sl-switch name="useDimension" checked=${state.draftSettings.value.useDimension} onsl-change=${(e) => { state.draftSettings.value = { ...state.draftSettings.value, useDimension: e.target.checked }; }}></sl-switch>
+                                    </div>
+                                    <div class="subtle-help" style="margin: 0rem;">Passes the selected dimension explicitly to the conversion engine to restrict conversions across categories.</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="u-flex u-items-center u-justify-between">
+                                        <label class="u-mt-0">
+                                            <sl-icon src="https://api.iconify.design/lucide/hash.svg?color=%23cbd5e1" class="setting-icon"></sl-icon>
+                                            Thousands Separator
+                                        </label>
+                                        <sl-switch name="useThousandsSeparator" checked=${state.draftSettings.value.useThousandsSeparator !== false} onsl-change=${(e) => { state.draftSettings.value = { ...state.draftSettings.value, useThousandsSeparator: e.target.checked }; }}></sl-switch>
+                                    </div>
+                                    <div class="subtle-help" style="margin: 0rem;">Format numbers with comma separators (e.g., 1,000,000).</div>
                                 </div>
                             </form>
                             ${(state.isOfflineReady?.value || window.matchMedia('(display-mode: standalone)').matches) ? html`
@@ -1197,8 +1208,8 @@ export const Documentation = ({ state, actions }) => {
                                 `;
             };
 
-            const pinnedDocs = allDocs.filter(d => pinned.includes(d.Name));
-            const unpinnedDocs = allDocs.filter(d => !pinned.includes(d.Name));
+            const pinnedDocs = allDocs.filter(d => pinned.includes(d.Name)).sort((a, b) => (a.Name || '').localeCompare(b.Name || ''));
+            const unpinnedDocs = allDocs.filter(d => !pinned.includes(d.Name)).sort((a, b) => (a.Name || '').localeCompare(b.Name || ''));
 
             const renderedPinned = pinnedDocs.map(renderDimensionGroup).filter(n => n !== null);
             const renderedUnpinned = unpinnedDocs.map(renderDimensionGroup).filter(n => n !== null);

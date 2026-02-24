@@ -5127,3 +5127,14 @@ sl-tooltip::part(body) {
 .action-btn.suggest-pin::part(base) {
     color: var(--sl-color-warning-500);
 }
+
+/* --- Settings Form Responsive Grid --- */
+@media (min-width: 768px) {
+    .settings-form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        /* row-gap: 0; */
+        column-gap: 2rem;
+        align-items: start;
+    }
+}

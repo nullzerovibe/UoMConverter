@@ -374,6 +374,7 @@ export const appState = {
     docsSafe: signal(false),
     settings: signal(settings),
     settingsOriginal: signal(JSON.parse(JSON.stringify(settings))),
+    draftSettings: signal(JSON.parse(JSON.stringify(settings))),
     knownNames: signal(new Set(['pi', 'e', 'true', 'false'])),
     librarySearch: signal(''),
 
@@ -969,13 +970,19 @@ export const actions = {
 
         actions.convert();
     },
-    saveSettings: async (newSettings) => {
+    saveSettings: async () => {
         if (!appState.isReady.value) return;
         try {
-            const interop = globalThis.uomConverter;
-            // await interop.invokeMethodAsync('ConfigureDates', newSettings.dateFormat, newSettings.culture);
+            const newSettings = { ...appState.draftSettings.value };
 
-            appState.settings.value = { ...newSettings };
+            // Apply immediate theme changes right upon save
+            const isDark = newSettings.theme === 'dark' || (newSettings.theme === 'auto' && globalThis.matchMedia('(prefers-color-scheme: dark)').matches);
+            const theme = isDark ? 'dark' : 'light';
+            document.body.dataset.theme = theme;
+            document.documentElement.dataset.theme = theme;
+            document.documentElement.className = isDark ? 'sl-theme-dark' : 'sl-theme-light';
+
+            appState.settings.value = newSettings;
             appState.settingsOriginal.value = JSON.parse(JSON.stringify(newSettings));
 
             const maxLen = parseInt(newSettings.historyLength) || 15;
@@ -984,8 +991,11 @@ export const actions = {
             }
 
             localStorage.setItem(STORAGE_KEY_SETTINGS, JSON.stringify(newSettings));
-            appState.message.value = "Settings saved & engine reconfigured";
+            appState.message.value = "Settings saved globally";
             util.notify("Settings saved successfully!");
+
+            // Re-trigger a fresh conversion now that settings have actually been applied to the engine parameters
+            actions.convert();
         } catch (e) {
             console.error("Settings failed", e);
             appState.message.value = "Error: " + e.message;
@@ -1017,8 +1027,8 @@ export const actions = {
     },
 
     cancelSettings: () => {
-        appState.settings.value = JSON.parse(JSON.stringify(appState.settingsOriginal.value));
-        util.notify("Changes reverted", "neutral", "arrow-counterclockwise");
+        appState.draftSettings.value = JSON.parse(JSON.stringify(appState.settings.value));
+        // We no longer trigger a notification when cancelling defaults, we simply let the dialog close
     },
 
     openConfirm: (title, message, callback, options = {}) => {
