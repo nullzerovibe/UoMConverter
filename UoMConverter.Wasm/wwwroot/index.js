@@ -267,6 +267,52 @@ export const MainCard = ({ state, actions }) => {
     const dims = state.dimensions.value;
     const units = state.units.value;
 
+    const displayUnits = useMemo(() => {
+        let sorted = [...units];
+        const isScale = state.settings.value.unitSortMode === 'scale';
+
+        // Primary sort: Alpha or Scale
+        sorted.sort((a, b) => {
+            const factorA = a.Factor ?? a.factor ?? 0;
+            const factorB = b.Factor ?? b.factor ?? 0;
+            const nameA = a.Name || a.name || '';
+            const nameB = b.Name || b.name || '';
+
+            if (isScale) {
+                // Ascending by factor (smallest unit to largest unit)
+                return factorA - factorB;
+            }
+            // Alphabetical fallback
+            return nameA.localeCompare(nameB);
+        });
+
+        // Smart Frequency priority
+        if (state.settings.value.useUnitFrequency !== false) {
+            const usage = state.unitUsage?.value || {};
+            const dimName = state.selectedDimension.value;
+            sorted.sort((a, b) => {
+                const nameA = a.Name || a.name || '';
+                const nameB = b.Name || b.name || '';
+                const countA = usage[`${dimName}::${nameA}`]?.count || 0;
+                const countB = usage[`${dimName}::${nameB}`]?.count || 0;
+
+                // Only promote if used at least 2 times, otherwise stick to primary sort
+                if (countA >= 2 || countB >= 2) {
+                    if (countA !== countB) return countB - countA; // Descending count
+
+                    // Tie-breaker based on most recent
+                    const recA = usage[`${dimName}::${nameA}`]?.lastUsed || 0;
+                    const recB = usage[`${dimName}::${nameB}`]?.lastUsed || 0;
+                    if (recA !== recB) return recB - recA;
+                }
+
+                return 0; // Maintain original order if neither meets threshold or tied
+            });
+        }
+
+        return sorted;
+    }, [units, state.settings.value.unitSortMode, state.settings.value.useUnitFrequency, state.unitUsage?.value, state.selectedDimension.value]);
+
     return html`
         <sl-card class="main-card">
             <${Header} state=${state} actions=${actions} />
@@ -293,7 +339,7 @@ export const MainCard = ({ state, actions }) => {
                                 placeholder="Select a unit"
                                 hoist
                             >
-                                ${units.map(u => {
+                                ${displayUnits.map(u => {
         const name = u.name || u.Name;
         const abbr = u.abbreviation || u.Abbreviation || '';
         const display = abbr ? `${abbr} (${formatLabel(name)})` : formatLabel(name);
@@ -316,7 +362,7 @@ export const MainCard = ({ state, actions }) => {
                                 placeholder="Select a unit"
                                 hoist
                             >
-                                 ${units.map(u => {
+                                 ${displayUnits.map(u => {
         const name = u.name || u.Name;
         const abbr = u.abbreviation || u.Abbreviation || '';
         const display = abbr ? `${abbr} (${formatLabel(name)})` : formatLabel(name);
@@ -582,6 +628,11 @@ export const Documentation = ({ state, actions }) => {
         { value: 'engineering', label: 'Engineering (120e3)', icon: 'https://api.iconify.design/lucide/wrench.svg' }
     ];
 
+    const sortModeOptions = [
+        { value: 'alpha', label: 'Alphabetical', icon: 'https://api.iconify.design/lucide/arrow-down-a-z.svg' },
+        { value: 'scale', label: 'Relative Scale', icon: 'https://api.iconify.design/lucide/arrow-up-wide-narrow.svg' }
+    ];
+
     const onSearch = (e) => {
         const val = e.target.value;
         state.docSearch.value = val;
@@ -838,6 +889,33 @@ export const Documentation = ({ state, actions }) => {
                                         <sl-switch name="useDimension" checked=${state.settings.value.useDimension} onsl-change=${(e) => { state.settings.value = { ...state.settings.value, useDimension: e.target.checked }; actions.saveSettings({ ...state.settings.value, useDimension: e.target.checked }); }}></sl-switch>
                                     </div>
                                     <div class="subtle-help" style="margin: 0rem;">Passes the selected dimension explicitly to the conversion engine to restrict conversions across categories.</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <sl-icon src="https://api.iconify.design/lucide/arrow-down-up.svg?color=%23cbd5e1" class="setting-icon"></sl-icon>
+                                        Unit Sorting Mode
+                                    </label>
+                                    <${ModernSelect}
+                                        value=${state.settings.value.unitSortMode || 'alpha'}
+                                        options=${sortModeOptions}
+                                        onChange=${(val) => { state.settings.value = { ...state.settings.value, unitSortMode: val }; actions.saveSettings({ ...state.settings.value, unitSortMode: val }); }}
+                                        placeholder="Select Sort Mode"
+                                        hoist=${true}
+                                        className="w-100"
+                                    />
+                                    <div class="subtle-help" style="margin: 0rem;">"Relative Scale" orders units from smallest (e.g. mm) to largest (e.g. km).</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="u-flex u-items-center u-justify-between">
+                                        <label class="u-mt-0">
+                                            <sl-icon src="https://api.iconify.design/lucide/trending-up.svg?color=%23cbd5e1" class="setting-icon"></sl-icon>
+                                            Smart Unit Priority
+                                        </label>
+                                        <sl-switch name="useUnitFrequency" checked=${state.settings.value.useUnitFrequency !== false} onsl-change=${(e) => { state.settings.value = { ...state.settings.value, useUnitFrequency: e.target.checked }; actions.saveSettings({ ...state.settings.value, useUnitFrequency: e.target.checked }); }}></sl-switch>
+                                    </div>
+                                    <div class="subtle-help" style="margin: 0rem;">Promotes frequently used units to the top of the dropdown list.</div>
                                 </div>
 
                                 <div class="form-group">

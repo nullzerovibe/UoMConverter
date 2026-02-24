@@ -43,7 +43,7 @@ public class UoMConverterInterop {
     [JSInvokable]
     public UnitData[] GetUnits(string dimension) {
         return _converter.GetUnitList(dimension)
-            .Select(u => new UnitData(u.Name, u.Abbreviation, u.Plural))
+            .Select(u => new UnitData(u.Name, u.Abbreviation, u.Plural, u.Factor))
             .ToArray();
     }
 
@@ -116,7 +116,8 @@ public class UoMConverterInterop {
 /// <param name="Name">The full name of the unit.</param>
 /// <param name="Abbreviation">The abbreviation of the unit.</param>
 /// <param name="Plural">The plural form of the unit name.</param>
-public record UnitData(string Name, string Abbreviation, string Plural);
+/// <param name="Factor">The linear conversion factor to the base unit.</param>
+public record UnitData(string Name, string Abbreviation, string Plural, double Factor);
 
 /// <summary>
 /// Result of a conversion operation.

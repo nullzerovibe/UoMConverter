@@ -6,6 +6,7 @@ export const STORAGE_KEY_SETTINGS = 'uom_conv_settings';
 export const STORAGE_KEY_SNIPPETS = 'uom_conv_snippets';
 export const STORAGE_KEY_PINNED_DIMS = 'uom_conv_pinned_dims';
 export const STORAGE_KEY_DIM_USAGE = 'uom_conv_dim_usage';
+export const STORAGE_KEY_UNIT_FREQ = 'uom_conv_unit_freq';
 
 export const formatLabel = (str) => {
     if (!str) return '';
@@ -187,7 +188,7 @@ const loadSnippets = () => {
 };
 
 const loadSavedSettings = () => {
-    const defaults = { dateFormat: 'dd/MM/yyyy', culture: 'en-US', enableHistory: true, historyLength: 15, theme: 'auto', numberFormat: 'auto', useDimension: true, useSmartDetection: false, useAlias: true };
+    const defaults = { dateFormat: 'dd/MM/yyyy', culture: 'en-US', enableHistory: true, historyLength: 15, theme: 'auto', numberFormat: 'auto', useDimension: true, useSmartDetection: false, useAlias: true, unitSortMode: 'alpha', useUnitFrequency: true };
     try {
         const saved = localStorage.getItem(STORAGE_KEY_SETTINGS);
         if (!saved) return defaults;
@@ -339,11 +340,19 @@ const loadDimensionUsage = () => {
     } catch { return {}; }
 };
 
+const loadUnitUsage = () => {
+    try {
+        const saved = localStorage.getItem(STORAGE_KEY_UNIT_FREQ);
+        return saved ? JSON.parse(saved) : {};
+    } catch { return {}; }
+};
+
 export const appState = {
     // UoM State
     dimensions: signal([]),
     pinnedDimensions: signal(loadPinnedDims()),
     dimensionUsage: signal(loadDimensionUsage()),
+    unitUsage: signal(loadUnitUsage()),
     selectedDimension: signal(''),
     dimensionSearch: signal(''),
     units: signal([]),
@@ -414,6 +423,10 @@ effect(() => {
 
 effect(() => {
     localStorage.setItem(STORAGE_KEY_DIM_USAGE, JSON.stringify(appState.dimensionUsage.value));
+});
+
+effect(() => {
+    localStorage.setItem(STORAGE_KEY_UNIT_FREQ, JSON.stringify(appState.unitUsage.value));
 });
 
 effect(() => {
@@ -775,13 +788,29 @@ export const actions = {
         await actions.loadUnits(dim);
     },
 
+    trackUnitUsage: (dimName, unitName) => {
+        if (!appState.settings.value.useUnitFrequency) return;
+
+        const currentUsage = { ...appState.unitUsage.value };
+        const key = `${dimName}::${unitName}`;
+        if (!currentUsage[key]) {
+            currentUsage[key] = { count: 1, lastUsed: Date.now() };
+        } else {
+            currentUsage[key].count++;
+            currentUsage[key].lastUsed = Date.now();
+        }
+        appState.unitUsage.value = currentUsage;
+    },
+
     setFromUnit: (unit) => {
         appState.fromUnit.value = unit;
+        actions.trackUnitUsage(appState.selectedDimension.value, unit);
         actions.convert();
     },
 
     setToUnit: (unit) => {
         appState.toUnit.value = unit;
+        actions.trackUnitUsage(appState.selectedDimension.value, unit);
         actions.convert();
     },
 
@@ -828,17 +857,17 @@ export const actions = {
                     const findUnit = (query) => {
                         const q = query.toLowerCase();
                         return units.find(u =>
-                            (u.name || u.Name).toLowerCase() === q ||
-                            (u.abbreviation || u.Abbreviation || '').toLowerCase() === q ||
-                            (u.plural || u.Plural || '').toLowerCase() === q
+                            (u.Name || '').toLowerCase() === q ||
+                            (u.Abbreviation || '').toLowerCase() === q ||
+                            (u.Plural || '').toLowerCase() === q
                         );
                     };
 
                     const matchedFrom = findUnit(fromStr);
                     const matchedTo = findUnit(toStr);
 
-                    if (matchedFrom) appState.fromUnit.value = matchedFrom.name || matchedFrom.Name;
-                    if (matchedTo) appState.toUnit.value = matchedTo.name || matchedTo.Name;
+                    if (matchedFrom) appState.fromUnit.value = matchedFrom.Name;
+                    if (matchedTo) appState.toUnit.value = matchedTo.Name;
 
                     appState.inputValue.value = val;
 
@@ -888,14 +917,14 @@ export const actions = {
             return;
         }
 
-        const fromUnitFull = appState.units.value.find(u => (u.name || u.Name) === appState.fromUnit.value);
-        const toUnitFull = appState.units.value.find(u => (u.name || u.Name) === appState.toUnit.value);
+        const fromUnitFull = appState.units.value.find(u => u.Name === appState.fromUnit.value);
+        const toUnitFull = appState.units.value.find(u => u.Name === appState.toUnit.value);
 
-        const fromName = fromUnitFull ? (fromUnitFull.name || fromUnitFull.Name) : appState.fromUnit.value;
-        const toName = toUnitFull ? (toUnitFull.name || toUnitFull.Name) : appState.toUnit.value;
+        const fromName = fromUnitFull ? fromUnitFull.Name : appState.fromUnit.value;
+        const toName = toUnitFull ? toUnitFull.Name : appState.toUnit.value;
 
-        const fromAbbr = fromUnitFull ? (fromUnitFull.abbreviation || fromUnitFull.Abbreviation || fromName) : fromName;
-        const toAbbr = toUnitFull ? (toUnitFull.abbreviation || toUnitFull.Abbreviation || toName) : toName;
+        const fromAbbr = fromUnitFull ? (fromUnitFull.Abbreviation || fromName) : fromName;
+        const toAbbr = toUnitFull ? (toUnitFull.Abbreviation || toName) : toName;
 
         let payload = '';
 

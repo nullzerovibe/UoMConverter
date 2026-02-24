@@ -12,7 +12,7 @@ namespace UoMConverter;
 public class UoMConverter : IUoMConverter {
     private readonly FrozenDictionary<string, (Quantity Q, Unit U)> _unitLookup;
     private readonly FrozenDictionary<string, (Quantity Q, Unit U)> _exactNameLookup;
-    private readonly FrozenDictionary<string, List<(string Name, string Abbreviation, string Plural)>> _unitListCache;
+    private readonly FrozenDictionary<string, List<(string Name, string Abbreviation, string Plural, double Factor)>> _unitListCache;
 
     /// <summary>
     /// Maps every unit name/abbreviation to all Quantities that contain it.
@@ -28,47 +28,9 @@ public class UoMConverter : IUoMConverter {
         _unitLookup = UoMRegistry.UnitLookup;
         _exactNameLookup = UoMRegistry.ExactNameLookup;
 
-        // Pre-compute unit lists for zero-allocation access
-        var cache = new Dictionary<string, List<(string, string, string)>>(StringComparer.OrdinalIgnoreCase);
-
-        // Build reverse lookup: Unit Identifier -> Quantities[]
-        var unitToQs = new Dictionary<string, HashSet<Quantity>>(StringComparer.OrdinalIgnoreCase);
-
-        foreach (var q in UoMRegistry.Quantities.Values) {
-            var list = q.Units.Values.Where(u => u != null).Select(static u => (
-                u?.SingularName ?? "",
-                u?.Abbreviations?.FirstOrDefault() ?? "",
-                u?.PluralName ?? ""
-            )).ToList();
-            cache[q.Name] = list;
-
-            // Populate reverse lookup
-            foreach (var u in q.Units.Values) {
-                if (u == null) continue;
-                AddToReverseLookup(unitToQs, u.SingularName, q);
-                AddToReverseLookup(unitToQs, u.PluralName, q);
-                foreach (var abbr in u.Abbreviations) {
-                    AddToReverseLookup(unitToQs, abbr, q);
-                }
-            }
-        }
-        _unitListCache = cache.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase);
-
-        // Finalize reverse lookup
-        _unitToQuantities = unitToQs.ToFrozenDictionary(
-            kvp => kvp.Key,
-            kvp => kvp.Value.ToArray(),
-            StringComparer.OrdinalIgnoreCase
-        );
-    }
-
-    private static void AddToReverseLookup(Dictionary<string, HashSet<Quantity>> lookup, string key, Quantity q) {
-        if (string.IsNullOrWhiteSpace(key)) return;
-        if (!lookup.TryGetValue(key, out var set)) {
-            set = [];
-            lookup[key] = set;
-        }
-        set.Add(q);
+        // Fetch pre-computed caches globally to ensure zero-allocation instantiation
+        _unitListCache = UoMRegistry.UnitListCache.Value;
+        _unitToQuantities = UoMRegistry.UnitToQuantities.Value;
     }
 
     /// <summary>
@@ -230,10 +192,10 @@ public class UoMConverter : IUoMConverter {
 
     /// <summary>
     /// Gets a list of units for a specific quantity, optimized for UI display.
-    /// Returns a collection of (SingularName, Abbreviation, PluralName).
+    /// Returns a collection of (SingularName, Abbreviation, PluralName, Factor).
     /// </summary>
     /// <param name="dimension">The name of the physical quantity.</param>
-    public IEnumerable<(string Name, string Abbreviation, string Plural)> GetUnitList(string dimension) {
+    public IEnumerable<(string Name, string Abbreviation, string Plural, double Factor)> GetUnitList(string dimension) {
         if (!string.IsNullOrWhiteSpace(dimension) && _unitListCache.TryGetValue(dimension, out var list)) {
             return list;
         }

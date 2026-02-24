@@ -29,7 +29,7 @@ public interface IUoMConverter {
     /// <summary>
     /// Gets a list of units for a specific quantity, optimized for UI display.
     /// </summary>
-    IEnumerable<(string Name, string Abbreviation, string Plural)> GetUnitList(string dimension);
+    IEnumerable<(string Name, string Abbreviation, string Plural, double Factor)> GetUnitList(string dimension);
 
     /// <summary>
     /// Gets full metadata for a specific unit by name or abbreviation.
