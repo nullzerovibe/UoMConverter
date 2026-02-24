@@ -1,7 +1,7 @@
 import { h, render } from 'https://esm.sh/preact@10.19.3';
 import { useEffect, useMemo, useRef, useState } from 'https://esm.sh/preact@10.19.3/hooks';
 import htm from 'https://esm.sh/htm@3.1.1';
-import { FLAT_MAP, EXAMPLE_GROUPS, getCategoryIconUrl, getTypeIconUrl, appState, actions } from './logic.js';
+import { FLAT_MAP, EXAMPLE_GROUPS, getCategoryIconUrl, getTypeIconUrl, appState, actions, formatLabel, matchesQueryTokens } from './logic.js';
 
 const html = htm.bind(h);
 
@@ -138,13 +138,39 @@ export const DimensionCombobox = ({ state, actions }) => {
 
     // Partition into pinned vs unpinned
     const pinnedDims = validFilteredDims.filter(d => pinned.includes(d.Name));
-    const unpinnedDims = validFilteredDims.filter(d => !pinned.includes(d.Name));
+    let unpinnedDims = validFilteredDims.filter(d => !pinned.includes(d.Name));
+
+    const usage = state.dimensionUsage.value || {};
+
+    // Sort unpinned by usage count DESC, then alphabetically
+    unpinnedDims.sort((a, b) => {
+        const countA = usage[a.Name]?.count || 0;
+        const countB = usage[b.Name]?.count || 0;
+        if (countA !== countB) return countB - countA;
+        return a.Name.localeCompare(b.Name);
+    });
+
+    // Extract up to 3 recents (that aren't pinned, and only if we aren't hard searching)
+    const isSearching = state.dimensionSearch.value.trim().length > 0;
+    let recentDims = [];
+    let otherDims = unpinnedDims;
+
+    if (!isSearching) {
+        recentDims = [...unpinnedDims]
+            .filter(d => usage[d.Name]?.lastUsed)
+            .sort((a, b) => (usage[b.Name]?.lastUsed || 0) - (usage[a.Name]?.lastUsed || 0))
+            .slice(0, 3);
+
+        // Remove recents from 'others' to prevent duplication
+        const recentNames = recentDims.map(d => d.Name);
+        otherDims = unpinnedDims.filter(d => !recentNames.includes(d.Name));
+    }
 
     // Find selected dimension object
     const selectedDim = allDocs.find(d => d.Name === state.selectedDimension.value);
 
     // If dims hasn't loaded fully or mismatch, just use Name
-    const displayLabel = selectedDim ? selectedDim.Name : state.selectedDimension.value;
+    const displayLabel = selectedDim ? formatLabel(selectedDim.Name) : (state.selectedDimension.value ? formatLabel(state.selectedDimension.value) : 'Select a dimension...');
 
     return html`
         <sl-dropdown ref=${dropdownRef} class="expression-combobox-dropdown" distance="8" placement="bottom-start" hoist>
@@ -183,29 +209,52 @@ export const DimensionCombobox = ({ state, actions }) => {
                             <sl-menu-item class="snippet-item ${d.Name === state.selectedDimension.value ? 'is-selected' : ''}" onclick=${() => onDimensionSelect(d.Name)}>
                                 <sl-icon src="https://api.iconify.design/lucide/scale.svg" slot="prefix" class="snippet-icon"></sl-icon>
                                 <div class="snippet-info">
-                                    <div class="snippet-label">${d.Name}</div>
-                                    <div class="snippet-preview u-mono" style="opacity: 0.6; white-space: normal;">${d.Description || d.Name}</div>
+                                    <div class="snippet-label">${formatLabel(d.Name)}</div>
+                                    <div class="snippet-preview u-mono" style="opacity: 0.6; white-space: normal;">${d.Description || formatLabel(d.Name)}</div>
                                 </div>
                                 <div slot="suffix" class="snippet-actions">
                                     <sl-icon-button name="pin-angle-fill" class="action-btn pinned" onclick=${(e) => togglePin(e, d.Name)} title="Unpin Dimension"></sl-icon-button>
                                 </div>
                             </sl-menu-item>
                         `)}
-                        ${unpinnedDims.length > 0 ? html`<sl-menu-label style="margin-top: 0.5rem">Other Dimensions</sl-menu-label>` : null}
                     ` : null}
 
-                    ${unpinnedDims.map(d => html`
+                    ${recentDims.length > 0 ? html`
+                        <sl-menu-label style="margin-top: 0.5rem">Recent</sl-menu-label>
+                        ${recentDims.map(d => {
+        const isSuggested = (usage[d.Name]?.count || 0) >= 5;
+        return html`
+                            <sl-menu-item class="snippet-item ${d.Name === state.selectedDimension.value ? 'is-selected' : ''}" onclick=${() => onDimensionSelect(d.Name)}>
+                                <sl-icon src="https://api.iconify.design/lucide/history.svg" slot="prefix" class="snippet-icon"></sl-icon>
+                                <div class="snippet-info">
+                                    <div class="snippet-label">${formatLabel(d.Name)}</div>
+                                    <div class="snippet-preview u-mono" style="opacity: 0.6; white-space: normal;">${d.Description || formatLabel(d.Name)}</div>
+                                </div>
+                                <div slot="suffix" class="snippet-actions">
+                                    <sl-icon-button name="pin-angle" class="action-btn ${isSuggested ? 'suggest-pin' : ''}" onclick=${(e) => togglePin(e, d.Name)} title="Pin Dimension"></sl-icon-button>
+                                </div>
+                            </sl-menu-item>
+                            `;
+    })}
+                    ` : null}
+
+                    ${otherDims.length > 0 ? html`<sl-menu-label style="margin-top: 0.5rem">Other Dimensions</sl-menu-label>` : null}
+
+                    ${otherDims.map(d => {
+        const isSuggested = (usage[d.Name]?.count || 0) >= 5;
+        return html`
                         <sl-menu-item class="snippet-item ${d.Name === state.selectedDimension.value ? 'is-selected' : ''}" onclick=${() => onDimensionSelect(d.Name)}>
                             <sl-icon src="https://api.iconify.design/lucide/scale.svg" slot="prefix" class="snippet-icon"></sl-icon>
                             <div class="snippet-info">
-                                <div class="snippet-label">${d.Name}</div>
-                                <div class="snippet-preview u-mono" style="opacity: 0.6; white-space: normal;">${d.Description || d.Name}</div>
+                                <div class="snippet-label">${formatLabel(d.Name)}</div>
+                                <div class="snippet-preview u-mono" style="opacity: 0.6; white-space: normal;">${d.Description || formatLabel(d.Name)}</div>
                             </div>
                             <div slot="suffix" class="snippet-actions">
-                                <sl-icon-button name="pin-angle" class="action-btn" onclick=${(e) => togglePin(e, d.Name)} title="Pin Dimension"></sl-icon-button>
+                                <sl-icon-button name="pin-angle" class="action-btn ${isSuggested ? 'suggest-pin' : ''}" onclick=${(e) => togglePin(e, d.Name)} title="Pin Dimension"></sl-icon-button>
                             </div>
                         </sl-menu-item>
-                    `)}
+                        `;
+    })}
                 </sl-menu>
             </div>
         </sl-dropdown>
@@ -241,12 +290,13 @@ export const MainCard = ({ state, actions }) => {
                             <sl-select 
                                 value=${state.fromUnit.value} 
                                 onsl-change=${(e) => actions.setFromUnit(e.target.value)}
+                                placeholder="Select a unit"
                                 hoist
                             >
                                 ${units.map(u => {
         const name = u.name || u.Name;
         const abbr = u.abbreviation || u.Abbreviation || '';
-        const display = abbr ? `${abbr} (${name})` : name;
+        const display = abbr ? `${abbr} (${formatLabel(name)})` : formatLabel(name);
         return html`<sl-option value=${name}>
                                         <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">${display}</div>
                                     </sl-option>`;
@@ -263,12 +313,13 @@ export const MainCard = ({ state, actions }) => {
                             <sl-select 
                                 value=${state.toUnit.value} 
                                 onsl-change=${(e) => actions.setToUnit(e.target.value)}
+                                placeholder="Select a unit"
                                 hoist
                             >
                                  ${units.map(u => {
         const name = u.name || u.Name;
         const abbr = u.abbreviation || u.Abbreviation || '';
-        const display = abbr ? `${abbr} (${name})` : name;
+        const display = abbr ? `${abbr} (${formatLabel(name)})` : formatLabel(name);
         return html`<sl-option value=${name}>
                                         <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">${display}</div>
                                      </sl-option>`;
@@ -284,6 +335,7 @@ export const MainCard = ({ state, actions }) => {
                             step="any" 
                             value=${state.inputValue.value} 
                             oninput=${(e) => actions.setInputValue(e.target.value)}
+                            onpaste=${(e) => actions.handleSmartPaste(e)}
                         ></sl-input>
                     </div>
                 </div>
@@ -293,12 +345,29 @@ export const MainCard = ({ state, actions }) => {
                         <div class="result-value">
                             ${state.resultValue.value !== '---' && state.resultValue.value !== 'Error' ? (() => {
             const toUnitFull = state.units.value.find(u => (u.name || u.Name) === state.toUnit.value);
-            const toAbbr = toUnitFull ? (toUnitFull.abbreviation || toUnitFull.Abbreviation || state.toUnit.value) : state.toUnit.value;
+            const toAbbr = toUnitFull ? (toUnitFull.abbreviation || toUnitFull.Abbreviation || formatLabel(state.toUnit.value)) : formatLabel(state.toUnit.value);
             return html`<span style="color: var(--success);">${state.resultValue.value}</span><span style="color: var(--text-muted); font-size: 1.2rem; font-weight: 500; margin-left: 0.5rem; word-break: normal; transform: translateY(6px);">${toAbbr}</span>`;
         })() : html`<span style="color: var(--success);">${state.resultValue.value}</span>`}
                         </div>
                         <div class="result-actions ${state.resultValue.value === '---' || state.resultValue.value === 'Error' ? 'u-hidden' : ''}">
-                            <sl-icon-button name="copy" label="Copy Result" onclick=${() => actions.copyToClipboard(state.resultValue.value)} class="copy-btn"></sl-icon-button>
+                            <sl-dropdown placement="bottom-end" hoist>
+                                <sl-icon-button slot="trigger" name="copy" label="Copy Options" class="copy-btn"></sl-icon-button>
+                                <sl-menu>
+                                    <sl-menu-item onclick=${() => actions.copyExtended('number')}>
+                                        <sl-icon slot="prefix" src="https://api.iconify.design/lucide/hash.svg"></sl-icon> Copy Number
+                                    </sl-menu-item>
+                                    <sl-menu-item onclick=${() => actions.copyExtended('symbol')}>
+                                        <sl-icon slot="prefix" src="https://api.iconify.design/lucide/tag.svg"></sl-icon> Copy with Unit
+                                    </sl-menu-item>
+                                    <sl-menu-item onclick=${() => actions.copyExtended('equation')}>
+                                        <sl-icon slot="prefix" src="https://api.iconify.design/lucide/equal.svg"></sl-icon> Copy Equation
+                                    </sl-menu-item>
+                                    <sl-divider></sl-divider>
+                                    <sl-menu-item onclick=${() => actions.copyExtended('json')}>
+                                        <sl-icon slot="prefix" src="https://api.iconify.design/lucide/braces.svg"></sl-icon> Copy as JSON
+                                    </sl-menu-item>
+                                </sl-menu>
+                            </sl-dropdown>
                         </div>
                     </div>
 
@@ -347,8 +416,8 @@ export const MainCard = ({ state, actions }) => {
             const fromAbbr = fromUnitFull ? (fromUnitFull.abbreviation || fromUnitFull.Abbreviation) : null;
             const toAbbr = toUnitFull ? (toUnitFull.abbreviation || toUnitFull.Abbreviation) : null;
 
-            const displayFrom = fromAbbr ? `${fromAbbr} (${item.fromUnit})` : item.fromUnit;
-            const displayTo = toAbbr ? `${toAbbr} (${item.toUnit})` : item.toUnit;
+            const displayFrom = fromAbbr ? `${fromAbbr} (${formatLabel(item.fromUnit)})` : formatLabel(item.fromUnit);
+            const displayTo = toAbbr ? `${toAbbr} (${formatLabel(item.toUnit)})` : formatLabel(item.toUnit);
 
             return html`
                                 <div class="history-item" onclick=${() => actions.loadHistoryItem(item)} style="display: flex; justify-content: space-between; align-items: center; overflow: hidden; gap: 1rem;">
@@ -478,6 +547,12 @@ export const Documentation = ({ state, actions }) => {
         { value: 'dark', label: 'Industrial Black (Dark)', icon: 'https://api.iconify.design/lucide/moon.svg' }
     ];
 
+    const numFormatOptions = [
+        { value: 'auto', label: 'Auto (Dynamic)', icon: 'https://api.iconify.design/lucide/hash.svg' },
+        { value: 'scientific', label: 'Scientific (1.2e5)', icon: 'https://api.iconify.design/lucide/flask-conical.svg' },
+        { value: 'engineering', label: 'Engineering (120e3)', icon: 'https://api.iconify.design/lucide/wrench.svg' }
+    ];
+
     const onSearch = (e) => {
         const val = e.target.value;
         state.docSearch.value = val;
@@ -495,6 +570,19 @@ export const Documentation = ({ state, actions }) => {
     const onThemeChange = (val) => {
         state.settings.value = { ...state.settings.value, theme: val };
     };
+
+    const onFormatChange = (val) => {
+        state.settings.value = { ...state.settings.value, numberFormat: val };
+        // Immediately kick off calculation so the new format is reflected in the UI behind the dialog
+        actions.convert();
+    };
+
+    const docSelectOptions = useMemo(() => {
+        return html`
+            <sl-option value="All_Dimensions">All Dimensions</sl-option>
+            ${state.dimensions.value && state.dimensions.value.map(d => html`<sl-option value=${d}>${formatLabel(d)}</sl-option>`)}
+        `;
+    }, [state.dimensions.value]);
 
     const onSort = (field) => {
         if (state.operatorSortBy.value === field) {
@@ -681,7 +769,21 @@ export const Documentation = ({ state, actions }) => {
                                         options=${themeOptions}
                                         onChange=${onThemeChange}
                                         placeholder="Select Theme"
-                                        icon="palette"
+                                        hoist=${true}
+                                        className="w-100"
+                                    />
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <sl-icon src="https://api.iconify.design/lucide/hash.svg?color=%23cbd5e1" class="setting-icon"></sl-icon>
+                                        Number Formatting
+                                    </label>
+                                    <${ModernSelect}
+                                        value=${state.settings.value.numberFormat || 'auto'}
+                                        options=${numFormatOptions}
+                                        onChange=${onFormatChange}
+                                        placeholder="Select Format"
                                         hoist=${true}
                                         className="w-100"
                                     />
@@ -731,16 +833,18 @@ export const Documentation = ({ state, actions }) => {
                                 </div>
                             </form>
                             ${(state.isOfflineReady?.value || window.matchMedia('(display-mode: standalone)').matches) ? html`
-                                <div class="settings-danger-alert">
-                                    <sl-icon src="https://api.iconify.design/lucide/alert-triangle.svg?color=%23ef4444" class="settings-danger-icon"></sl-icon>
-                                    <div class="settings-danger-content">
-                                        <div>
-                                            <strong>App Installation Data</strong>
-                                            <span>Clear cached app data and unregister the Service Worker. You will still need to manually remove the app from your device.</span>
+                                <div class="settings-alerts">
+                                    <div class="settings-danger-alert">
+                                        <sl-icon src="https://api.iconify.design/lucide/alert-triangle.svg?color=%23ef4444" class="settings-danger-icon"></sl-icon>
+                                        <div class="settings-danger-content">
+                                            <div>
+                                                <strong>App Installation Data</strong>
+                                                <span>Clear cached app data and unregister the Service Worker. You will still need to manually remove the app from your device.</span>
+                                            </div>
+                                            <sl-button variant="danger" outline onclick=${actions.uninstallApp} size="small" style="align-self: flex-start;">
+                                                <sl-icon slot="prefix" name="trash"></sl-icon> Clear App Data & Unregister
+                                            </sl-button>
                                         </div>
-                                        <sl-button variant="danger" outline onclick=${actions.uninstallApp} size="small" style="align-self: flex-start;">
-                                            <sl-icon slot="prefix" name="trash"></sl-icon> Clear App Data & Unregister
-                                        </sl-button>
                                     </div>
                                 </div>
                             ` : null}
@@ -851,7 +955,7 @@ export const Documentation = ({ state, actions }) => {
         </sl-tab-panel>
 
                 <sl-tab-panel name="reference" onscroll=${onPanelScroll}>
-                    <div class="docs-header" style="display: flex; gap: 0.5rem; padding: 1rem; border-bottom: 1px solid var(--glass-border); background: var(--glass-bg); position: sticky; top: 0; z-index: 10;">
+                    <div class="docs-header" style="display: flex; gap: 0.5rem; padding: 1rem; position: sticky; top: 0; z-index: 10;">
                         <sl-input placeholder="Search units..." clearable 
                             autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
                             oninput=${(e) => { state.docSearch.value = e.target.value; sessionStorage.setItem('docSearch', e.target.value); }} 
@@ -865,14 +969,14 @@ export const Documentation = ({ state, actions }) => {
                             hoist
                             style="flex: 1;"
                         >
-                            <sl-option value="All_Dimensions">All Dimensions</sl-option>
-                            ${state.dimensions.value && state.dimensions.value.map(d => html`<sl-option value=${d}>${d}</sl-option>`)}
+                            ${docSelectOptions}
                         </sl-select>
                     </div>
                     
                     <div class="docs-list" style="padding: 1rem;">
                         ${(() => {
-            const query = (state.docSearch.value || '').trim().toLowerCase();
+            const rawQuery = (state.docSearch.value || '').trim().toLowerCase();
+            const queryTokens = rawQuery ? rawQuery.split(/\s+/) : [];
             const cat = state.docCategory.value || 'All_Dimensions';
             const allDocs = Array.isArray(state.docs.value) ? state.docs.value : [];
             const pinned = state.pinnedDimensions?.value || [];
@@ -884,23 +988,33 @@ export const Documentation = ({ state, actions }) => {
                 if (!isDimMatch) return null;
 
                 const filteredUnits = (dim.Units || []).filter(u => {
-                    if (!query) return true;
-                    const n = (u.Name || '').toLowerCase();
-                    const p = (u.Plural || '').toLowerCase();
-                    const a = (u.Abbr || []).join(' ').toLowerCase();
-                    return n.includes(query) || p.includes(query) || a.includes(query);
+                    if (queryTokens.length === 0) return true;
+
+                    const pName = u.Name || '';
+                    const fName = formatLabel(pName);
+                    const pPlural = u.Plural || '';
+                    const fPlural = formatLabel(pPlural);
+                    const a = (u.Abbr || []).join(' ');
+
+                    return matchesQueryTokens(pName, queryTokens) ||
+                        matchesQueryTokens(fName, queryTokens) ||
+                        matchesQueryTokens(pPlural, queryTokens) ||
+                        matchesQueryTokens(fPlural, queryTokens) ||
+                        matchesQueryTokens(a, queryTokens);
                 });
 
-                if (filteredUnits.length === 0 && query && !(dim.Name || '').toLowerCase().includes(query)) return null;
+                const dimNameMatch = matchesQueryTokens(dim.Name || '', queryTokens) || matchesQueryTokens(formatLabel(dim.Name || ''), queryTokens);
+
+                if (filteredUnits.length === 0 && queryTokens.length > 0 && !dimNameMatch) return null;
 
                 visibleCount += filteredUnits.length;
                 const isPinned = pinned.includes(dim.Name);
 
                 return html`
-                                    <div class="dimension-group" style="margin-bottom: 2rem;">
+                                    <div class="dimension-group" style="margin-bottom: 2rem; content-visibility: auto; contain-intrinsic-size: auto 300px;">
                                         <div style="margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(255, 255, 255, 0.05); display: flex; align-items: center; justify-content: space-between;">
                                             <div>
-                                                <span style="color: var(--accent); font-weight: 700; font-size: 1.15rem; margin-right: 0.75rem;">${dim.Name}</span>
+                                                <span class="hover-underline" style="color: var(--accent); font-weight: 700; font-size: 1.15rem; margin-right: 0.75rem; cursor: pointer;" onclick=${() => { actions.setDimension(dim.Name); appState.docsOpen.value = false; }}>${formatLabel(dim.Name)}</span>
                                                 <span style="color: var(--text-muted); font-size: 0.95rem;">${dim.Description || ''}</span>
                                             </div>
                                             <sl-icon-button 
@@ -918,11 +1032,11 @@ export const Documentation = ({ state, actions }) => {
                     return html`
                                                 <div class="doc-card">
                                                     <div class="doc-header" style="justify-content: flex-start; gap: 0.75rem; margin-bottom: 0.25rem;">
-                                                        <span class="doc-name" style="color: var(--accent); font-size: 1.05rem;">${u.Name}</span>
-                                                        ${abbr ? html`<sl-badge variant="neutral" size="small" style="--sl-color-neutral-600: var(--glass-border); --sl-color-neutral-50: transparent; color: var(--text-main);">${abbr}</sl-badge>` : null}
+                                                        <span class="doc-name hover-underline" style="color: var(--accent); font-size: 1.05rem; cursor: pointer;" onclick=${() => { actions.setDimension(dim.Name); actions.setFromUnit(u.Name); appState.toUnit.value = ''; appState.docsOpen.value = false; }}>${formatLabel(u.Name)}</span>
+                                                        ${abbr ? html`<sl-badge class="uom-badge" size="small">${abbr}</sl-badge>` : null}
                                                     </div>
                                                     <div class="doc-desc">
-                                                        Plural: ${u.Plural || u.Name}
+                                                        Plural: ${u.Plural ? formatLabel(u.Plural) : formatLabel(u.Name)}
                                                     </div>
                                                 </div>
                                                 `;

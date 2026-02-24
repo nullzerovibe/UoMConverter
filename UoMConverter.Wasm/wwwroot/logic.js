@@ -4,6 +4,21 @@ import { signal, effect } from 'https://esm.sh/@preact/signals@1.2.2?deps=preact
 export const STORAGE_KEY_HISTORY = 'uom_conv_history';
 export const STORAGE_KEY_SETTINGS = 'uom_conv_settings';
 export const STORAGE_KEY_SNIPPETS = 'uom_conv_snippets';
+export const STORAGE_KEY_PINNED_DIMS = 'uom_conv_pinned_dims';
+export const STORAGE_KEY_DIM_USAGE = 'uom_conv_dim_usage';
+
+export const formatLabel = (str) => {
+    if (!str) return '';
+    // Insert space before all caps (that are following a lowercase letter) and trim
+    return str.replace(/([a-z])([A-Z])/g, '$1 $2').trim();
+};
+
+export const matchesQueryTokens = (text, queryTokens) => {
+    if (!text || queryTokens.length === 0) return true;
+    const lowerText = text.toLowerCase();
+    // Return true only if EVERY token is found within the text
+    return queryTokens.every(token => lowerText.includes(token));
+};
 
 export const EXAMPLE_GROUPS = [
     {
@@ -172,13 +187,15 @@ const loadSnippets = () => {
 };
 
 const loadSavedSettings = () => {
-    const defaults = { dateFormat: 'dd/MM/yyyy', culture: 'en-US', enableHistory: true, historyLength: 15, theme: 'auto' };
+    const defaults = { dateFormat: 'dd/MM/yyyy', culture: 'en-US', enableHistory: true, historyLength: 15, theme: 'auto', numberFormat: 'auto' };
     try {
         const saved = localStorage.getItem(STORAGE_KEY_SETTINGS);
         if (!saved) return defaults;
         return { ...defaults, ...JSON.parse(saved) };
     } catch { return defaults; }
 };
+
+
 
 const formatDate = (pattern) => {
     const now = new Date();
@@ -305,7 +322,6 @@ const inferVariables = (expr) => {
 
 // --- STATE ---
 const settings = loadSavedSettings();
-const STORAGE_KEY_PINNED_DIMS = 'uom_pinned_dims';
 
 const loadPinnedDims = () => {
     try {
@@ -316,11 +332,19 @@ const loadPinnedDims = () => {
     }
 };
 
+const loadDimensionUsage = () => {
+    try {
+        const saved = localStorage.getItem(STORAGE_KEY_DIM_USAGE);
+        return saved ? JSON.parse(saved) : {};
+    } catch { return {}; }
+};
+
 export const appState = {
     // UoM State
     dimensions: signal([]),
     pinnedDimensions: signal(loadPinnedDims()),
-    selectedDimension: signal('Length'),
+    dimensionUsage: signal(loadDimensionUsage()),
+    selectedDimension: signal(''),
     dimensionSearch: signal(''),
     units: signal([]),
     fromUnit: signal(''),
@@ -386,6 +410,10 @@ effect(() => {
 
 effect(() => {
     localStorage.setItem(STORAGE_KEY_SNIPPETS, JSON.stringify(appState.snippets.value));
+});
+
+effect(() => {
+    localStorage.setItem(STORAGE_KEY_DIM_USAGE, JSON.stringify(appState.dimensionUsage.value));
 });
 
 effect(() => {
@@ -510,8 +538,27 @@ export const actions = {
             appState.isReady.value = true;
             appState.isLoading.value = false;
 
+            // Setup URL sync effect
+            let isInitializing = true;
+            effect(() => {
+                const q = appState.selectedDimension.value;
+                const f = appState.fromUnit.value;
+                const t = appState.toUnit.value;
+                const v = appState.inputValue.value;
+
+                if (appState.isReady.value && q && f && t && !isInitializing) {
+                    const url = new URL(window.location.href);
+                    if (url.searchParams.get('q') !== q) url.searchParams.set('q', q);
+                    if (url.searchParams.get('from') !== f) url.searchParams.set('from', f);
+                    if (url.searchParams.get('to') !== t) url.searchParams.set('to', t);
+                    if (url.searchParams.get('val') !== String(v)) url.searchParams.set('val', v);
+                    window.history.replaceState({}, '', url);
+                }
+            });
+
             // Load Initial Dimensions
             await actions.loadDimensions();
+            isInitializing = false;
 
             // Load Docs (background)
             loadDocumentation();
@@ -530,8 +577,19 @@ export const actions = {
             appState.dimensions.value = dims;
 
             if (dims.length > 0) {
-                appState.selectedDimension.value = dims[0];
-                await actions.loadUnits(dims[0]);
+                const urlParams = new URLSearchParams(window.location.search);
+                const initQ = urlParams.get('q');
+
+                if (initQ && dims.includes(initQ)) {
+                    appState.selectedDimension.value = initQ;
+                    await actions.loadUnits(appState.selectedDimension.value);
+                } else {
+                    appState.selectedDimension.value = '';
+                    appState.units.value = [];
+                    appState.fromUnit.value = '';
+                    appState.toUnit.value = '';
+                    appState.resultValue.value = '---';
+                }
             }
         } catch (e) {
             console.error("Failed to load dimensions", e);
@@ -546,13 +604,36 @@ export const actions = {
             const units = await interop.invokeMethodAsync('GetUnits', dimension);
             appState.units.value = units;
 
-            // Smart defaults
-            if (units.length >= 2) {
+            const urlParams = new URLSearchParams(window.location.search);
+            const initFrom = urlParams.get('from');
+            const initTo = urlParams.get('to');
+            const initVal = urlParams.get('val');
+
+            // Set initial value if present in URL
+            if (initVal !== null && !isNaN(parseFloat(initVal))) {
+                appState.inputValue.value = parseFloat(initVal);
+            }
+
+            // Smart defaults or URL restore
+            if (initFrom && units.some(u => (u.name || u.Name) === initFrom)) {
+                appState.fromUnit.value = initFrom;
+            } else if (units.length >= 2) {
                 appState.fromUnit.value = units[0].name || units[0].Name;
-                appState.toUnit.value = units[1].name || units[1].Name;
             } else if (units.length > 0) {
                 appState.fromUnit.value = units[0].name || units[0].Name;
+            }
+
+            if (initTo && units.some(u => (u.name || u.Name) === initTo)) {
+                appState.toUnit.value = initTo;
+            } else if (units.length >= 2) {
+                appState.toUnit.value = units[1].name || units[1].Name;
+            } else if (units.length > 0) {
                 appState.toUnit.value = units[0].name || units[0].Name;
+            }
+
+            // Clean up init defaults so they don't block manual changes later
+            if (initFrom || initTo || initVal) {
+                // We use replaceState via the global effect to maintain the clean URL state
             }
 
             // Trigger calculation
@@ -566,7 +647,7 @@ export const actions = {
         if (!appState.isReady.value) return;
 
         const val = parseFloat(appState.inputValue.value);
-        if (isNaN(val)) {
+        if (isNaN(val) || !appState.fromUnit.value || !appState.toUnit.value || !appState.selectedDimension.value) {
             appState.resultValue.value = '---';
             appState.calcTime.value = null;
             appState.message.value = '';
@@ -588,8 +669,19 @@ export const actions = {
 
             if (res.success || res.Success) {
                 const r = res.value ?? res.Value;
-                // Format to meaningful decimal places
-                const resultFormatted = parseFloat(r.toPrecision(12)).toString();
+
+                const fmt = appState.settings.value.numberFormat || 'auto';
+                let resultFormatted;
+
+                if (fmt === 'scientific') {
+                    resultFormatted = new Intl.NumberFormat('en-US', { notation: 'scientific', maximumSignificantDigits: 7 }).format(r).toLowerCase();
+                } else if (fmt === 'engineering') {
+                    resultFormatted = new Intl.NumberFormat('en-US', { notation: 'engineering', maximumSignificantDigits: 7 }).format(r).toLowerCase();
+                } else {
+                    // format to meaningful decimal places natively
+                    resultFormatted = parseFloat(r.toPrecision(12)).toString();
+                }
+
                 appState.resultValue.value = resultFormatted;
 
                 const fromUnitFull = appState.units.value.find(u => (u.name || u.Name) === appState.fromUnit.value);
@@ -643,6 +735,17 @@ export const actions = {
 
     setDimension: async (dim) => {
         appState.selectedDimension.value = dim;
+
+        // Track usage (do not re-clone blindly, just update the signal cleanly)
+        const currentUsage = { ...appState.dimensionUsage.value };
+        if (!currentUsage[dim]) {
+            currentUsage[dim] = { count: 1, lastUsed: Date.now() };
+        } else {
+            currentUsage[dim].count++;
+            currentUsage[dim].lastUsed = Date.now();
+        }
+        appState.dimensionUsage.value = currentUsage;
+
         await actions.loadUnits(dim);
     },
 
@@ -662,6 +765,69 @@ export const actions = {
         appState.fromUnit.value = to;
         appState.toUnit.value = from;
         actions.convert();
+    },
+
+    handleSmartPaste: async (e) => {
+        const text = (e.clipboardData || window.clipboardData).getData('text');
+        if (!text) return;
+
+        // Try to match patterns like "500 psi to kPa" or "500.25 kg in lbs"
+        // Match: 1) Number, 2) FromUnit, 3) Separator (to/in/into/->|=), 4) ToUnit
+        const match = text.match(/^\s*([+-]?\d*(?:\.\d+)?(?:[eE][+-]?\d+)?)\s+([a-zA-Z°μµ/23^]+)\s+(?:to|in|into|->|=)\s+([a-zA-Z°μµ/23^]+)\s*$/i);
+
+        if (match) {
+            e.preventDefault(); // Stop literal numerical pasting since we are handling the entire UI state swap
+
+            const val = parseFloat(match[1]);
+            const fromStr = match[2].trim();
+            const toStr = match[3].trim();
+
+            if (isNaN(val)) return;
+
+            try {
+                const interop = globalThis.uomConverter;
+
+                // 1. Identify what dimension the "from" unit belongs to
+                const dimension = await interop.invokeMethodAsync('GetDimensionForUnit', fromStr);
+
+                if (dimension) {
+                    // Update UI Dimension (this triggers loadUnits via effect implicitly, but we'll do it sequentially here to guarantee state sync before convert)
+                    appState.selectedDimension.value = dimension;
+
+                    // Force a load of the correct units in the background to populate the from/to dropdowns correctly
+                    const units = await interop.invokeMethodAsync('GetUnits', dimension);
+                    appState.units.value = units;
+
+                    // Try to exactly match the requested units against the actual names or abbreviations
+                    const findUnit = (query) => {
+                        const q = query.toLowerCase();
+                        return units.find(u =>
+                            (u.name || u.Name).toLowerCase() === q ||
+                            (u.abbreviation || u.Abbreviation || '').toLowerCase() === q ||
+                            (u.plural || u.Plural || '').toLowerCase() === q
+                        );
+                    };
+
+                    const matchedFrom = findUnit(fromStr);
+                    const matchedTo = findUnit(toStr);
+
+                    if (matchedFrom) appState.fromUnit.value = matchedFrom.name || matchedFrom.Name;
+                    if (matchedTo) appState.toUnit.value = matchedTo.name || matchedTo.Name;
+
+                    appState.inputValue.value = val;
+
+                    // Trigger final calculation
+                    actions.convert();
+
+                    util.notify(`Smart Paste: Switched to ${dimension}`, "success");
+                } else {
+                    util.notify(`Smart Paste: Unknown unit '${fromStr}'`, "warning");
+                }
+            } catch (err) {
+                console.error("Smart paste failed.", err);
+            }
+        }
+        // If it didn't match the regex, let the default browser paste behavior continue in the number input field.
     },
 
     setInputValue: (val) => {
@@ -687,18 +853,64 @@ export const actions = {
         navigator.clipboard.writeText(text);
         util.notify("Copied to clipboard!", "success", "copy");
     },
+    copyExtended: (format) => {
+        const val = appState.inputValue.value;
+        const res = appState.resultValue.value;
+
+        if (res === '---' || res === 'Error') {
+            util.notify("Nothing to copy!", "warning");
+            return;
+        }
+
+        const fromUnitFull = appState.units.value.find(u => (u.name || u.Name) === appState.fromUnit.value);
+        const toUnitFull = appState.units.value.find(u => (u.name || u.Name) === appState.toUnit.value);
+
+        const fromName = fromUnitFull ? (fromUnitFull.name || fromUnitFull.Name) : appState.fromUnit.value;
+        const toName = toUnitFull ? (toUnitFull.name || toUnitFull.Name) : appState.toUnit.value;
+
+        const fromAbbr = fromUnitFull ? (fromUnitFull.abbreviation || fromUnitFull.Abbreviation || fromName) : fromName;
+        const toAbbr = toUnitFull ? (toUnitFull.abbreviation || toUnitFull.Abbreviation || toName) : toName;
+
+        let payload = '';
+
+        switch (format) {
+            case 'number':
+                payload = res;
+                break;
+            case 'symbol':
+                payload = `${res} ${toAbbr}`;
+                break;
+            case 'equation':
+                payload = `${val} ${fromAbbr} = ${res} ${toAbbr}`;
+                break;
+            case 'json':
+                payload = JSON.stringify({
+                    dimension: appState.selectedDimension.value,
+                    source: { value: val, unit: fromName, abbreviation: fromAbbr },
+                    target: { value: res, unit: toName, abbreviation: toAbbr }
+                }, null, 2);
+                break;
+            default:
+                payload = res;
+        }
+
+        navigator.clipboard.writeText(payload);
+        util.notify("Copied to clipboard!", "success", "copy");
+    },
     clearHistory: () => {
         appState.history.value = [];
     },
-    loadHistoryItem: (item) => {
+    loadHistoryItem: async (item) => {
+        // First set the dimension if available
+        if (item.dimension) {
+            appState.selectedDimension.value = item.dimension;
+            // Await units load for the restored dimension so fromUnit and toUnit apply properly
+            await actions.loadUnits(item.dimension);
+        }
+
         appState.inputValue.value = item.inputValue;
         appState.fromUnit.value = item.fromUnit;
         appState.toUnit.value = item.toUnit;
-
-        // Optional: also select the right dimension if we saved it
-        if (item.dimension) {
-            appState.selectedDimension.value = item.dimension;
-        }
 
         actions.convert();
     },

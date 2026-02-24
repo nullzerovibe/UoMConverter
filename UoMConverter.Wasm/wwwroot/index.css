@@ -26,6 +26,11 @@ a:hover {
     filter: brightness(1.2);
 }
 
+.hover-underline:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
 
 
 /* FOUC Guard */
@@ -440,7 +445,7 @@ body.is-booting {
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    border-bottom-color: #cbd5e1;
+    border-bottom: 1px solid #cbd5e1;
 }
 
 [data-theme="light"] .ops-table th {
@@ -1922,6 +1927,7 @@ sl-button[variant="danger"]::part(base):focus-visible {
     justify-content: space-between;
     gap: 1rem;
     flex: 1;
+    min-height: 51px;
 }
 
 .result-value {
@@ -1944,7 +1950,8 @@ sl-button[variant="danger"]::part(base):focus-visible {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-top: 1rem;
+    min-height: 30px;
+    /* margin-top: 1rem; */
 }
 
 .result-badge-area {
@@ -2064,6 +2071,7 @@ sl-button[variant="danger"]::part(base):focus-visible {
     padding: 0.75rem 1rem;
     cursor: pointer;
     transition: all 0.2s;
+    min-height: 1rem;
 }
 
 [data-theme="dark"] .history-item {
@@ -2432,6 +2440,10 @@ sl-tab-panel {
 
 [data-theme="dark"] .alert-icon {
     color: #d97706;
+}
+
+.settings-alerts {
+    padding: 2rem;
 }
 
 .settings-danger-alert {
@@ -5057,4 +5069,48 @@ sl-tooltip::part(body) {
     overflow: hidden;
     text-overflow: ellipsis;
     opacity: 0.6;
+}
+
+.action-btn {
+    opacity: 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.snippet-item:hover .action-btn,
+.snippet-item:focus-within .action-btn,
+.action-btn.pinned {
+    opacity: 1;
+}
+
+.action-btn.pinned::part(base) {
+    color: var(--sl-color-primary-500);
+}
+
+@keyframes pulse-pin {
+    0% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 0 rgba(234, 182, 118, 0));
+        color: inherit;
+    }
+
+    50% {
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 4px rgba(234, 182, 118, 0.8));
+        color: var(--sl-color-warning-500);
+    }
+
+    100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 0 rgba(234, 182, 118, 0));
+        color: inherit;
+    }
+}
+
+.action-btn.suggest-pin {
+    opacity: 1 !important;
+    animation: pulse-pin 2s ease-in-out infinite;
+}
+
+.action-btn.suggest-pin::part(base) {
+    color: var(--sl-color-warning-500);
 }

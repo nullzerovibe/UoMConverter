@@ -48,6 +48,25 @@ public class UoMConverterInterop {
     }
 
     /// <summary>
+    /// Finds the first dimension that contains a unit matching the given name or abbreviation.
+    /// </summary>
+    /// <param name="unitQuery">The name or abbreviation to search for.</param>
+    /// <returns>The dimension name, or null if not found.</returns>
+    [JSInvokable]
+    public string? GetDimensionForUnit(string unitQuery) {
+        var dims = _converter.GetDimensions();
+        foreach (var d in dims) {
+            var units = _converter.GetUnitList(d);
+            if (units.Any(u => string.Equals(u.Name, unitQuery, StringComparison.OrdinalIgnoreCase) || 
+                               string.Equals(u.Abbreviation, unitQuery, StringComparison.OrdinalIgnoreCase) ||
+                               string.Equals(u.Plural, unitQuery, StringComparison.OrdinalIgnoreCase))) {
+                return d;
+            }
+        }
+        return null;
+    }
+
+    /// <summary>
     /// Converts a value from one unit to another.
     /// </summary>
     /// <param name="value">The value to convert.</param>
