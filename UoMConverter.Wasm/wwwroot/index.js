@@ -346,7 +346,16 @@ export const MainCard = ({ state, actions }) => {
                             ${state.resultValue.value !== '---' && state.resultValue.value !== 'Error' ? (() => {
             const toUnitFull = state.units.value.find(u => (u.name || u.Name) === state.toUnit.value);
             const toAbbr = toUnitFull ? (toUnitFull.abbreviation || toUnitFull.Abbreviation || formatLabel(state.toUnit.value)) : formatLabel(state.toUnit.value);
-            return html`<span class="calc-number" style="color: var(--success);">${state.resultValue.value}</span><span style="color: var(--text-muted); font-size: 1.2rem; font-weight: 500; margin-left: 0.5rem; word-break: normal; transform: translateY(6px);">${toAbbr}</span>`;
+            const formatNumberVal = (v, useSep) => {
+                if (useSep === false || v === 'Error') return v;
+                const str = String(v);
+                if (str.includes('e') || str.includes('E')) return str;
+                const parts = str.split('.');
+                parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                return parts.join('.');
+            };
+            const formattedResult = formatNumberVal(state.resultValue.value, state.settings.value.useThousandsSeparator);
+            return html`<span class="calc-number" style="color: var(--success);">${formattedResult}</span><span style="color: var(--text-muted); font-size: 1.2rem; font-weight: 500; margin-left: 0.5rem; word-break: normal; transform: translateY(6px);">${toAbbr}</span>`;
         })() : (state.resultValue.value === 'Error' ? html`<span class="calc-number" style="color: var(--error);">${state.resultValue.value}</span>` : html`<span class="calc-number" style="color: var(--success);">${state.resultValue.value}</span>`)}
                         </div>
                         <div class="result-actions ${state.resultValue.value === '---' || state.resultValue.value === 'Error' ? 'u-hidden' : ''}">
@@ -429,11 +438,21 @@ export const MainCard = ({ state, actions }) => {
             const displayFrom = fromAbbr ? `${fromAbbr} (${formatLabel(item.fromUnit)})` : formatLabel(item.fromUnit);
             const displayTo = toAbbr ? `${toAbbr} (${formatLabel(item.toUnit)})` : formatLabel(item.toUnit);
 
+            const formatVal = (v) => {
+                const useSep = state.settings.value.useThousandsSeparator !== false;
+                if (!useSep || v === 'Error') return v;
+                const str = String(v);
+                if (str.includes('e') || str.includes('E')) return str;
+                const parts = str.split('.');
+                parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                return parts.join('.');
+            };
+
             return html`
                                 <div class="history-item" onclick=${() => actions.loadHistoryItem(item)} style="display: flex; justify-content: space-between; align-items: center; overflow: hidden; gap: 1rem;">
                                     <div class="history-item-main" style="flex: 1; display: flex; align-items: center; justify-content: space-between; min-width: 0; gap: 1rem;">
-                                        <span class="hist-expr" style="font-size: 0.9rem; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1;" title="${item.inputValue} ${displayFrom}"><span class="calc-number" style="color: var(--accent); font-weight: 500;">${item.inputValue}</span> <span style="opacity: 0.8">${displayFrom}</span></span>
-                                        <span class="hist-res" style="font-size: 0.9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1; text-align: right;" title="${item.resultValue} ${displayTo}"><span style="color: var(--accent); margin-right: 0.5rem;">=</span> <span class="calc-number" style="color: var(--success);">${item.resultValue}</span> <span style="color: var(--text-muted); opacity: 0.8">${displayTo}</span></span>
+                                        <span class="hist-expr" style="font-size: 0.9rem; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1;" title="${item.inputValue} ${displayFrom}"><span class="calc-number" style="color: var(--accent); font-weight: 500;">${formatVal(item.inputValue)}</span> <span style="opacity: 0.8">${displayFrom}</span></span>
+                                        <span class="hist-res" style="font-size: 0.9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1; text-align: right;" title="${item.resultValue} ${displayTo}"><span style="color: var(--accent); margin-right: 0.5rem;">=</span> <span class="calc-number" style="color: var(--success);">${formatVal(item.resultValue)}</span> <span style="color: var(--text-muted); opacity: 0.8">${displayTo}</span></span>
                                     </div>
                                 </div>
                             `})}
@@ -802,10 +821,21 @@ export const Documentation = ({ state, actions }) => {
                                 <div class="form-group">
                                     <div class="u-flex u-items-center u-justify-between">
                                         <label class="u-mt-0">
+                                            <sl-icon src="https://api.iconify.design/lucide/hash.svg?color=%23cbd5e1" class="setting-icon"></sl-icon>
+                                            Thousands Separator
+                                        </label>
+                                        <sl-switch name="useThousandsSeparator" checked=${state.settings.value.useThousandsSeparator !== false} onsl-change=${(e) => { state.settings.value = { ...state.settings.value, useThousandsSeparator: e.target.checked }; actions.saveSettings({ ...state.settings.value, useThousandsSeparator: e.target.checked }); }}></sl-switch>
+                                    </div>
+                                    <div class="subtle-help" style="margin: 0rem;">Format numbers with comma separators (e.g., 1,000,000).</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="u-flex u-items-center u-justify-between">
+                                        <label class="u-mt-0">
                                             <sl-icon src="https://api.iconify.design/lucide/lock.svg?color=%23cbd5e1" class="setting-icon"></sl-icon>
                                             Lock Category Scope
                                         </label>
-                                        <sl-switch name="useDimension" checked=${state.settings.value.useDimension} onsl-change=${(e) => { state.settings.value = { ...state.settings.value, useDimension: e.target.checked }; }}></sl-switch>
+                                        <sl-switch name="useDimension" checked=${state.settings.value.useDimension} onsl-change=${(e) => { state.settings.value = { ...state.settings.value, useDimension: e.target.checked }; actions.saveSettings({ ...state.settings.value, useDimension: e.target.checked }); }}></sl-switch>
                                     </div>
                                     <div class="subtle-help" style="margin: 0rem;">Passes the selected dimension explicitly to the conversion engine to restrict conversions across categories.</div>
                                 </div>

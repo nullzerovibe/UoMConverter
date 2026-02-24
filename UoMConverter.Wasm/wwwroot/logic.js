@@ -704,7 +704,15 @@ export const actions = {
                 const toUnitFull = appState.units.value.find(u => (u.name || u.Name) === appState.toUnit.value);
                 const fromStr = fromUnitFull ? (fromUnitFull.abbreviation || fromUnitFull.Abbreviation || appState.fromUnit.value) : appState.fromUnit.value;
                 const toStr = toUnitFull ? (toUnitFull.abbreviation || toUnitFull.Abbreviation || appState.toUnit.value) : appState.toUnit.value;
-                appState.message.value = `Successfully converted ${val} ${fromStr}`;
+
+                let displayVal = String(val);
+                if (appState.settings.value.useThousandsSeparator !== false && !displayVal.includes('e') && !displayVal.includes('E')) {
+                    const parts = displayVal.split('.');
+                    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    displayVal = parts.join('.');
+                }
+
+                appState.message.value = `Successfully converted ${displayVal} ${fromStr}`;
 
                 if (appState.settings.value.enableHistory) {
                     const newItem = {
