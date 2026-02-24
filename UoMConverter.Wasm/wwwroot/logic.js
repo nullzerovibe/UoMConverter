@@ -187,7 +187,7 @@ const loadSnippets = () => {
 };
 
 const loadSavedSettings = () => {
-    const defaults = { dateFormat: 'dd/MM/yyyy', culture: 'en-US', enableHistory: true, historyLength: 15, theme: 'auto', numberFormat: 'auto' };
+    const defaults = { dateFormat: 'dd/MM/yyyy', culture: 'en-US', enableHistory: true, historyLength: 15, theme: 'auto', numberFormat: 'auto', useDimension: true, useSmartDetection: false, useAlias: true };
     try {
         const saved = localStorage.getItem(STORAGE_KEY_SETTINGS);
         if (!saved) return defaults;
@@ -657,14 +657,30 @@ export const actions = {
         const start = performance.now();
         try {
             const interop = globalThis.uomConverter;
-            // Convert(double value, string fromUnit, string toUnit, string? dimension = null)
+
+            // Resolve Settings for Engine Conversion
+            let dimParam = appState.settings.value.useDimension ? appState.selectedDimension.value : null;
+            let fromParam = appState.fromUnit.value;
+            let toParam = appState.toUnit.value;
+
+            if (appState.settings.value.useAlias) {
+                const fromUnitFull = appState.units.value.find(u => (u.name || u.Name) === appState.fromUnit.value);
+                const toUnitFull = appState.units.value.find(u => (u.name || u.Name) === appState.toUnit.value);
+                fromParam = fromUnitFull && (fromUnitFull.abbreviation || fromUnitFull.Abbreviation) ? (fromUnitFull.abbreviation || fromUnitFull.Abbreviation) : appState.fromUnit.value;
+                toParam = toUnitFull && (toUnitFull.abbreviation || toUnitFull.Abbreviation) ? (toUnitFull.abbreviation || toUnitFull.Abbreviation) : appState.toUnit.value;
+            }
+
+            // Convert(double value, string fromUnit, string toUnit, string? dimension = null, bool useSmartDetection = true)
+            const smartDetectionParam = appState.settings.value.useSmartDetection !== undefined ? appState.settings.value.useSmartDetection : true;
+            console.log(`[Engine] Convert(value: ${val}, fromUnit: "${fromParam}", toUnit: "${toParam}", dimension: ${dimParam ? `"${dimParam}"` : 'null'}, useSmartDetection: ${smartDetectionParam})`);
+
             const res = await interop.invokeMethodAsync(
                 'Convert',
                 val,
-                appState.fromUnit.value,
-                appState.toUnit.value,
-                appState.selectedDimension.value,
-                false // useSmartDetection (we are explicit here)
+                fromParam,
+                toParam,
+                dimParam,
+                smartDetectionParam
             );
 
             if (res.success || res.Success) {

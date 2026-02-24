@@ -340,14 +340,14 @@ export const MainCard = ({ state, actions }) => {
                     </div>
                 </div>
 
-                <div class="result-box ${state.resultValue.value === 'Error' ? 'error' : ''}">
+                <div class="result-box">
                     <div class="result-body">
                         <div class="result-value">
                             ${state.resultValue.value !== '---' && state.resultValue.value !== 'Error' ? (() => {
             const toUnitFull = state.units.value.find(u => (u.name || u.Name) === state.toUnit.value);
             const toAbbr = toUnitFull ? (toUnitFull.abbreviation || toUnitFull.Abbreviation || formatLabel(state.toUnit.value)) : formatLabel(state.toUnit.value);
             return html`<span style="color: var(--success);">${state.resultValue.value}</span><span style="color: var(--text-muted); font-size: 1.2rem; font-weight: 500; margin-left: 0.5rem; word-break: normal; transform: translateY(6px);">${toAbbr}</span>`;
-        })() : html`<span style="color: var(--success);">${state.resultValue.value}</span>`}
+        })() : (state.resultValue.value === 'Error' ? html`<span style="color: var(--error);">${state.resultValue.value}</span>` : html`<span style="color: var(--success);">${state.resultValue.value}</span>`)}
                         </div>
                         <div class="result-actions ${state.resultValue.value === '---' || state.resultValue.value === 'Error' ? 'u-hidden' : ''}">
                             <sl-dropdown placement="bottom-end" hoist>
@@ -372,8 +372,8 @@ export const MainCard = ({ state, actions }) => {
                     </div>
 
                     <div class="result-footer">
-                        <div class="result-badge-area ${state.message.value ? 'u-visible' : 'u-invisible'} ${state.resultValue.value === 'Error' ? 'u-hidden' : ''}">
-                            <span class="result-msg">${state.message.value}</span>
+                        <div class="result-badge-area ${state.message.value ? 'u-visible' : 'u-invisible'}">
+                            <span class="result-msg" style="${state.resultValue.value === 'Error' ? 'color: var(--error);' : ''}">${state.message.value}</span>
                         </div>
                         <div class="result-stats ${state.resultValue.value === 'Error' ? 'u-hidden' : ''}">
                             ${state.calcTime.value === null ? null : html`
@@ -787,6 +787,39 @@ export const Documentation = ({ state, actions }) => {
                                         hoist=${true}
                                         className="w-100"
                                     />
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="u-flex u-items-center u-justify-between">
+                                        <label class="u-mt-0">
+                                            <sl-icon src="https://api.iconify.design/lucide/lock.svg?color=%23cbd5e1" class="setting-icon"></sl-icon>
+                                            Lock Category Scope
+                                        </label>
+                                        <sl-switch name="useDimension" checked=${state.settings.value.useDimension} onsl-change=${(e) => { state.settings.value = { ...state.settings.value, useDimension: e.target.checked }; }}></sl-switch>
+                                    </div>
+                                    <div class="subtle-help" style="margin: 0rem;">Passes the selected dimension explicitly to the conversion engine to restrict conversions across categories.</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="u-flex u-items-center u-justify-between">
+                                        <label class="u-mt-0">
+                                            <sl-icon src="https://api.iconify.design/lucide/brain-circuit.svg?color=%23cbd5e1" class="setting-icon"></sl-icon>
+                                            Smart Detection
+                                        </label>
+                                        <sl-switch name="useSmartDetection" checked=${state.settings.value.useSmartDetection} onsl-change=${(e) => { state.settings.value = { ...state.settings.value, useSmartDetection: e.target.checked }; }}></sl-switch>
+                                    </div>
+                                    <div class="subtle-help" style="margin: 0rem;">Allows the engine to dynamically infer unit dimensions internally when required.</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="u-flex u-items-center u-justify-between">
+                                        <label class="u-mt-0">
+                                            <sl-icon src="https://api.iconify.design/lucide/tag.svg?color=%23cbd5e1" class="setting-icon"></sl-icon>
+                                            Send Unit Aliases
+                                        </label>
+                                        <sl-switch name="useAlias" checked=${state.settings.value.useAlias} onsl-change=${(e) => { state.settings.value = { ...state.settings.value, useAlias: e.target.checked }; }}></sl-switch>
+                                    </div>
+                                    <div class="subtle-help">Sends unit abbreviations (e.g. 'km/h') to the engine instead of full names.</div>
                                 </div>
 
                                 <div class="form-group">

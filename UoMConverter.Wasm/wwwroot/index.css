@@ -2444,6 +2444,7 @@ sl-tab-panel {
 
 .settings-alerts {
     padding: 2rem;
+    padding-top: 0rem;
 }
 
 .settings-danger-alert {
@@ -2837,6 +2838,7 @@ sl-tab-panel[name="about"]::part(base) {
     padding: 2rem;
     box-sizing: border-box;
     max-width: 100%;
+    padding-bottom: 0rem;
 }
 
 .form-group {
