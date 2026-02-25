@@ -451,7 +451,21 @@ export const MainCard = ({ state, actions }) => {
             })()}</span>
                             `}
                         </div>
-                        <div class="result-stats ${state.resultValue.value === 'Error' ? 'u-hidden' : ''}">
+                        <div class="result-stats ${state.resultValue.value === 'Error' ? 'u-hidden' : ''}" style="display: flex; gap: 0.5rem; align-items: center;">
+                            ${(state.selectedDimension.value && state.fromUnit.value) ? html`
+                                <div class="live-chips-toggle-wrapper">
+                                    <sl-button size="small" variant="text" class="btn-live-chips" onclick=${() => {
+                state.showAllUnits.value = !state.showAllUnits.value;
+                if (state.showAllUnits.value && state.allConversions.value.length === 0) {
+                    actions.convert();
+                }
+            }}>
+                                        <sl-icon slot="prefix" src="https://api.iconify.design/lucide/zap.svg" class="type-icon-sm" style="color: var(--accent); opacity: 0.9;"></sl-icon>
+                                        ${state.showAllUnits.value ? 'Hide Units' : 'Show Units'}
+                                        <sl-icon slot="suffix" name=${state.showAllUnits.value ? "chevron-up" : "chevron-down"}></sl-icon>
+                                    </sl-button>
+                                </div>
+                            ` : null}
                             ${state.calcTime.value === null ? null : html`
                                 <sl-badge size="small" class="uom-badge">
                                     <sl-icon src="https://api.iconify.design/lucide/timer.svg?color=%23cbd5e1" class="type-icon-sm"></sl-icon>
@@ -461,9 +475,28 @@ export const MainCard = ({ state, actions }) => {
                         </div>
                     </div>
                 </div>
+
+                <!-- Live Chips -->
+                ${state.showAllUnits.value && state.allConversions.value.length > 0 ? html`
+                    <div class="live-chips-section is-expanded">
+                        <div class="live-chips-grid">
+                            ${state.allConversions.value.map(c => {
+                const rawName = c.unit.name || c.unit.Name;
+                const isCurrent = rawName === state.toUnit.value;
+                const abbr = (c.unit.abbreviation || c.unit.Abbreviation) || formatLabel(rawName);
+                return html`
+                                    <div class="live-chip ${isCurrent ? 'is-active' : ''} ${c.success ? '' : 'is-error'}" title="${formatLabel(rawName)}" onclick=${() => { actions.setToUnit(rawName); }}>
+                                        <div class="chip-name">${abbr}</div>
+                                        <div class="chip-value">${c.formattedValue}</div>
+                                    </div>
+                                `;
+            })}
+                        </div>
+                    </div>
+                ` : null}
                 
                 ${state.settings.value.enableHistory && state.history.value.length > 0 ? html`
-                    <div class="history-section" style="margin-top: 0.5rem;">
+                    <div class="history-section">
                         <div class="history-header">
                             <label class="section-label" style="text-transform: uppercase;">
                                 <sl-icon src="https://api.iconify.design/lucide/history.svg" class="section-icon" style="margin-right: 0.5rem; vertical-align: middle;"></sl-icon>
@@ -864,11 +897,11 @@ export const Documentation = ({ state, actions }) => {
                 <sl-tab slot="nav" panel="reference" active=${state.docActiveTab.value === 'reference'}>
                     <sl-icon src="https://api.iconify.design/lucide/bookmark.svg?color=currentColor" class="tab-icon"></sl-icon> Unit Reference
                 </sl-tab>
-                <sl-tab slot="nav" panel="settings" active=${state.docActiveTab.value === 'settings'}>
-                    <sl-icon src="https://api.iconify.design/lucide/settings-2.svg?color=currentColor" class="tab-icon"></sl-icon> Settings
-                </sl-tab>
                 <sl-tab slot="nav" panel="shortcuts" active=${state.docActiveTab.value === 'shortcuts'}>
                     <sl-icon src="https://api.iconify.design/lucide/keyboard.svg?color=currentColor" class="tab-icon"></sl-icon> Shortcuts
+                </sl-tab>
+                <sl-tab slot="nav" panel="settings" active=${state.docActiveTab.value === 'settings'}>
+                    <sl-icon src="https://api.iconify.design/lucide/settings-2.svg?color=currentColor" class="tab-icon"></sl-icon> Settings
                 </sl-tab>
                 <sl-tab slot="nav" panel="about" active=${state.docActiveTab.value === 'about'}>
                     <sl-icon src="https://api.iconify.design/lucide/info.svg?color=currentColor" class="tab-icon"></sl-icon> About

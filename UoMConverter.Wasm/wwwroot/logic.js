@@ -363,6 +363,10 @@ export const appState = {
     resultFormula: signal(''),
     isSwapping: signal(false),
 
+    // Live Chips State
+    showAllUnits: signal(false),
+    allConversions: signal([]),
+
     // App Shell State
     status: signal('Initializing...'),
     isReady: signal(false),
@@ -668,6 +672,7 @@ export const actions = {
             appState.resultFormula.value = '';
             appState.calcTime.value = null;
             appState.message.value = '';
+            appState.allConversions.value = [];
             return;
         }
 
@@ -716,6 +721,58 @@ export const actions = {
                 }
 
                 appState.resultValue.value = resultFormatted;
+
+                // === Calculate All Units === 
+                if (appState.showAllUnits.value) {
+                    const allUnits = [...(appState.units.value || [])].sort((a, b) => {
+                        const factorA = a.Factor ?? a.factor ?? 0;
+                        const factorB = b.Factor ?? b.factor ?? 0;
+                        return factorA - factorB;
+                    });
+                    const allPromises = allUnits.map(async (u) => {
+                        const targetParam = (appState.settings.value.useAlias && (u.abbreviation || u.Abbreviation))
+                            ? (u.abbreviation || u.Abbreviation)
+                            : (u.name || u.Name);
+
+                        try {
+                            const unitRes = await interop.invokeMethodAsync('Convert', val, fromParam, targetParam, dimParam, smartDetectionParam);
+                            return { unit: u, result: unitRes };
+                        } catch (err) {
+                            return { unit: u, result: { success: false, value: 'Error' } };
+                        }
+                    });
+
+                    Promise.all(allPromises).then(results => {
+                        appState.allConversions.value = results.map(r => {
+                            let formatted = 'Error';
+                            let raw = null;
+                            if (r.result.success || r.result.Success) {
+                                raw = r.result.value ?? r.result.Value;
+                                const fmt = appState.settings.value.numberFormat || 'auto';
+                                if (fmt === 'scientific') {
+                                    formatted = new Intl.NumberFormat('en-US', { notation: 'scientific', maximumSignificantDigits: 7 }).format(raw).toLowerCase();
+                                } else if (fmt === 'engineering') {
+                                    formatted = new Intl.NumberFormat('en-US', { notation: 'engineering', maximumSignificantDigits: 7 }).format(raw).toLowerCase();
+                                } else {
+                                    formatted = parseFloat(raw.toPrecision(12)).toString();
+                                    if (appState.settings.value.useThousandsSeparator !== false && !formatted.includes('e') && !formatted.includes('E')) {
+                                        const parts = formatted.split('.');
+                                        parts[0] = parts[0].replace(/\\B(?=(\\d{3})+(?!\\d))/g, ",");
+                                        formatted = parts.join('.');
+                                    }
+                                }
+                            }
+                            return {
+                                unit: r.unit,
+                                formattedValue: formatted,
+                                rawValue: raw,
+                                success: r.result.success || r.result.Success
+                            };
+                        });
+                    });
+                } else {
+                    appState.allConversions.value = [];
+                }
 
                 const fromUnitFull = appState.units.value.find(u => (u.name || u.Name) === appState.fromUnit.value);
                 const toUnitFull = appState.units.value.find(u => (u.name || u.Name) === appState.toUnit.value);

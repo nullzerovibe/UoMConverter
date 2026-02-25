@@ -5184,3 +5184,107 @@ sl-tooltip::part(body) {
     flex-direction: column;
     gap: 1.5rem;
 }
+
+/* --- Live Chips Grid --- */
+.live-chips-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.btn-live-chips::part(base) {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0;
+}
+
+.btn-live-chips:hover::part(base) {
+    color: var(--accent);
+}
+
+.btn-live-chips::part(label) {
+    padding-left: 0.25rem;
+}
+
+.live-chips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 0.75rem;
+    padding: 0.5rem;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 0.5rem;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .live-chips-grid {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.live-chip {
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-height: 1rem;
+    border: 1px solid transparent;
+    /* default for light-theme unless overridden */
+}
+
+[data-theme="dark"] .live-chip {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--glass-border);
+}
+
+[data-theme="dark"] .live-chip:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--accent);
+}
+
+.live-chip.is-active {
+    border-color: var(--success);
+    background: rgba(16, 185, 129, 0.05);
+}
+
+[data-theme="light"] .live-chip.is-active {
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.live-chip.is-error {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.chip-name {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.chip-value {
+    font-size: 0.95rem;
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.live-chip.is-active .chip-value {
+    color: var(--success);
+}
+
+[data-theme="light"] .live-chip {
+    background: rgba(255, 255, 255, 0.6);
+}
