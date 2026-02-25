@@ -28,8 +28,10 @@ public interface IUoMConverter {
 
     /// <summary>
     /// Gets a list of units for a specific quantity, optimized for UI display.
+    /// Returns a collection of (SingularName, Abbreviation, PluralName, Factor, Offset, IsComplex).
     /// </summary>
-    IEnumerable<(string Name, string Abbreviation, string Plural, double Factor)> GetUnitList(string dimension);
+    /// <param name="dimension">The name of the physical quantity.</param>
+    IEnumerable<(string Name, string Abbreviation, string Plural, double Factor, double Offset, bool IsComplex)> GetUnitList(string dimension);
 
     /// <summary>
     /// Gets full metadata for a specific unit by name or abbreviation.

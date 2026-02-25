@@ -12,7 +12,7 @@ namespace UoMConverter;
 public class UoMConverter : IUoMConverter {
     private readonly FrozenDictionary<string, (Quantity Q, Unit U)> _unitLookup;
     private readonly FrozenDictionary<string, (Quantity Q, Unit U)> _exactNameLookup;
-    private readonly FrozenDictionary<string, List<(string Name, string Abbreviation, string Plural, double Factor)>> _unitListCache;
+    private readonly FrozenDictionary<string, List<(string Name, string Abbreviation, string Plural, double Factor, double Offset, bool IsComplex)>> _unitListCache;
 
     /// <summary>
     /// Maps every unit name/abbreviation to all Quantities that contain it.
@@ -192,10 +192,10 @@ public class UoMConverter : IUoMConverter {
 
     /// <summary>
     /// Gets a list of units for a specific quantity, optimized for UI display.
-    /// Returns a collection of (SingularName, Abbreviation, PluralName, Factor).
+    /// Returns a collection of (SingularName, Abbreviation, PluralName, Factor, Offset, IsComplex).
     /// </summary>
     /// <param name="dimension">The name of the physical quantity.</param>
-    public IEnumerable<(string Name, string Abbreviation, string Plural, double Factor)> GetUnitList(string dimension) {
+    public IEnumerable<(string Name, string Abbreviation, string Plural, double Factor, double Offset, bool IsComplex)> GetUnitList(string dimension) {
         if (!string.IsNullOrWhiteSpace(dimension) && _unitListCache.TryGetValue(dimension, out var list)) {
             return list;
         }

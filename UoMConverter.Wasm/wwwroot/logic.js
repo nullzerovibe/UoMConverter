@@ -360,6 +360,8 @@ export const appState = {
     toUnit: signal(''),
     inputValue: signal(1),
     resultValue: signal('---'),
+    resultFormula: signal(''),
+    isSwapping: signal(false),
 
     // App Shell State
     status: signal('Initializing...'),
@@ -663,6 +665,7 @@ export const actions = {
         const val = parseFloat(appState.inputValue.value);
         if (isNaN(val) || !appState.fromUnit.value || !appState.toUnit.value || !appState.selectedDimension.value) {
             appState.resultValue.value = '---';
+            appState.resultFormula.value = '';
             appState.calcTime.value = null;
             appState.message.value = '';
             return;
@@ -718,6 +721,110 @@ export const actions = {
                 const toUnitFull = appState.units.value.find(u => (u.name || u.Name) === appState.toUnit.value);
                 const fromStr = fromUnitFull ? (fromUnitFull.abbreviation || fromUnitFull.Abbreviation || appState.fromUnit.value) : appState.fromUnit.value;
                 const toStr = toUnitFull ? (toUnitFull.abbreviation || toUnitFull.Abbreviation || appState.toUnit.value) : appState.toUnit.value;
+
+                // --- Math Breakdown Generation ---
+                if (fromUnitFull && toUnitFull) {
+                    const fFactor = fromUnitFull.factor || fromUnitFull.Factor || 1;
+                    const fOffset = fromUnitFull.offset || fromUnitFull.Offset || 0;
+                    const fComplex = fromUnitFull.isComplex || fromUnitFull.IsComplex || false;
+
+                    const tFactor = toUnitFull.factor || toUnitFull.Factor || 1;
+                    const tOffset = toUnitFull.offset || toUnitFull.Offset || 0;
+                    const tComplex = toUnitFull.isComplex || toUnitFull.IsComplex || false;
+
+                    const formatNum = (n) => {
+                        let str = parseFloat(Number(n).toPrecision(10)).toString();
+                        if (appState.settings.value.useThousandsSeparator !== false && !str.includes('e') && !str.includes('E')) {
+                            const parts = str.split('.');
+                            parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                            str = parts.join('.');
+                        }
+                        return str;
+                    };
+
+                    let displayResultFormat = resultFormatted;
+                    if (appState.settings.value.useThousandsSeparator !== false && !displayResultFormat.includes('e') && !displayResultFormat.includes('E')) {
+                        const parts = displayResultFormat.split('.');
+                        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                        displayResultFormat = parts.join('.');
+                    }
+
+                    const fAbbrRaw = fromUnitFull.abbreviation || fromUnitFull.Abbreviation || appState.fromUnit.value;
+                    const tAbbrRaw = toUnitFull.abbreviation || toUnitFull.Abbreviation || appState.toUnit.value;
+                    const fAbbrStr = (fAbbrRaw.startsWith('°') || fAbbrRaw === '%') ? fAbbrRaw : `\xA0${fAbbrRaw}`;
+                    const tAbbrStr = (tAbbrRaw.startsWith('°') || tAbbrRaw === '%') ? tAbbrRaw : `\xA0${tAbbrRaw}`;
+
+                    const inputStr = `<span class="calc-number" style="color: var(--accent); font-weight: 500;">${formatNum(val)}</span>${fAbbrStr}`;
+                    const resStrFormatted = `<span class="calc-number" style="color: var(--success); font-weight: 500;">${displayResultFormat}</span>${tAbbrStr}`;
+                    const eqStr = `<span style="color: var(--accent);">=</span>`;
+
+                    // For the equation string where input might be wrapped in parentheses, we only want the plain formatted number without the unit for internal calculation steps,
+                    // but the user wants the unit attached to the number. 
+                    const numOnlyStr = formatNum(val);
+
+                    if (fComplex || tComplex) {
+                        // Hardcode common temperature complex cases for better UX
+                        if (appState.fromUnit.value === 'DegreeCelsius' && appState.toUnit.value === 'DegreeFahrenheit') {
+                            appState.resultFormula.value = `${inputStr} × 1.8 + 32 ${eqStr} ${resStrFormatted}`;
+                        } else if (appState.fromUnit.value === 'DegreeFahrenheit' && appState.toUnit.value === 'DegreeCelsius') {
+                            appState.resultFormula.value = `(${inputStr} - 32) ÷ 1.8 ${eqStr} ${resStrFormatted}`;
+                        } else if (appState.fromUnit.value === 'DegreeCelsius' && appState.toUnit.value === 'Kelvin') {
+                            appState.resultFormula.value = `${inputStr} + 273.15 ${eqStr} ${resStrFormatted}`;
+                        } else if (appState.fromUnit.value === 'Kelvin' && appState.toUnit.value === 'DegreeCelsius') {
+                            appState.resultFormula.value = `${inputStr} - 273.15 ${eqStr} ${resStrFormatted}`;
+                        } else if (appState.fromUnit.value === 'DegreeFahrenheit' && appState.toUnit.value === 'Kelvin') {
+                            appState.resultFormula.value = `(${inputStr} - 32) ÷ 1.8 + 273.15 ${eqStr} ${resStrFormatted}`;
+                        } else if (appState.fromUnit.value === 'Kelvin' && appState.toUnit.value === 'DegreeFahrenheit') {
+                            appState.resultFormula.value = `(${inputStr} - 273.15) × 1.8 + 32 ${eqStr} ${resStrFormatted}`;
+                        } else {
+                            appState.resultFormula.value = `ƒ(${inputStr}) ${eqStr} ${resStrFormatted}`;
+                        }
+                    } else if (appState.fromUnit.value === appState.toUnit.value) {
+                        appState.resultFormula.value = `${inputStr} ${eqStr} ${resStrFormatted}`;
+                    } else {
+                        // Linear equation: Result = ((Input * fFactor) + fOffset - tOffset) / tFactor
+                        let formula = "";
+
+                        // If no offsets are involved, we can simplify purely to a single multiplication or division
+                        if (fOffset === 0 && tOffset === 0) {
+                            const combinedScale = fFactor / tFactor;
+                            const combinedScaleFloat = parseFloat(combinedScale.toPrecision(10));
+
+                            if (Math.abs(combinedScaleFloat - 1.0) < 1e-10) {
+                                formula += `${inputStr} ${eqStr} ${resStrFormatted}`;
+                            } else if (combinedScaleFloat > 1) {
+                                let displayScale = formatNum(combinedScaleFloat);
+                                formula += `${inputStr} × ${displayScale} ${eqStr} ${resStrFormatted}`;
+                            } else {
+                                const divScaleFloat = parseFloat((1 / combinedScale).toPrecision(10));
+                                formula += `${inputStr} ÷ ${formatNum(divScaleFloat)} ${eqStr} ${resStrFormatted}`;
+                            }
+                        } else {
+                            // Offsets involved. Map out base transformation explicitly.
+                            // Step 1: Input to Base
+                            let baseStr = numOnlyStr; // Use numOnlyStr for intermediate calculation steps
+                            if (fFactor !== 1) baseStr = `${baseStr} × ${formatNum(fFactor)}`;
+                            if (fOffset !== 0) {
+                                baseStr = fOffset > 0 ? `(${baseStr} + ${formatNum(fOffset)})` : `(${baseStr} - ${formatNum(Math.abs(fOffset))})`;
+                            }
+
+                            // Step 2: Base to Target
+                            let resStr = baseStr;
+                            if (tOffset !== 0) {
+                                resStr = tOffset > 0 ? `(${resStr} - ${formatNum(tOffset)})` : `(${resStr} + ${formatNum(Math.abs(tOffset))})`;
+                            }
+                            if (tFactor !== 1) {
+                                resStr = `(${resStr}) ÷ ${formatNum(tFactor)}`;
+                            }
+
+                            formula += `${inputStr} → ${resStr} ${eqStr} ${resStrFormatted}`; // Display inputStr at the start, then the calculation, then resStrFormatted
+                        }
+
+                        appState.resultFormula.value = formula;
+                    }
+                } else {
+                    appState.resultFormula.value = '';
+                }
 
                 let displayVal = String(val);
                 if (appState.settings.value.useThousandsSeparator !== false && !displayVal.includes('e') && !displayVal.includes('E')) {
@@ -820,6 +927,10 @@ export const actions = {
         const to = appState.toUnit.value;
         appState.fromUnit.value = to;
         appState.toUnit.value = from;
+        appState.isSwapping.value = true;
+        setTimeout(() => {
+            appState.isSwapping.value = false;
+        }, 300);
         actions.convert();
     },
 
@@ -952,6 +1063,60 @@ export const actions = {
 
         navigator.clipboard.writeText(payload);
         util.notify("Copied to clipboard!", "success", "copy");
+    },
+    shareExtended: async (format) => {
+        const val = appState.inputValue.value;
+        const res = appState.resultValue.value;
+
+        if (res === '---' || res === 'Error') {
+            util.notify("Nothing to share!", "warning");
+            return;
+        }
+
+        const fromUnitFull = appState.units.value.find(u => u.Name === appState.fromUnit.value);
+        const toUnitFull = appState.units.value.find(u => u.Name === appState.toUnit.value);
+
+        const fromName = fromUnitFull ? fromUnitFull.Name : appState.fromUnit.value;
+        const toName = toUnitFull ? toUnitFull.Name : appState.toUnit.value;
+
+        const fromAbbr = fromUnitFull ? (fromUnitFull.Abbreviation || fromName) : fromName;
+        const toAbbr = toUnitFull ? (toUnitFull.Abbreviation || toName) : toName;
+
+        let title = 'Unit Conversion';
+        let text = '';
+
+        switch (format) {
+            case 'number':
+                text = res;
+                break;
+            case 'symbol':
+                text = `${res} ${toAbbr}`;
+                break;
+            case 'equation':
+                title = `${fromName} to ${toName}`;
+                text = `${val} ${fromAbbr} = ${res} ${toAbbr}`;
+                break;
+            default:
+                text = res;
+        }
+
+        if (navigator.share) {
+            try {
+                await navigator.share({
+                    title: title,
+                    text: text,
+                });
+                util.notify("Shared successfully!", "success", "share");
+            } catch (err) {
+                if (err.name !== 'AbortError') {
+                    console.error('Error sharing:', err);
+                    util.notify("Sharing failed", "warning");
+                }
+            }
+        } else {
+            // Fallback strategy if Web Share API is not supported
+            actions.copyExtended(format);
+        }
     },
     clearHistory: () => {
         appState.history.value = [];

@@ -43,7 +43,7 @@ public class UoMConverterInterop {
     [JSInvokable]
     public UnitData[] GetUnits(string dimension) {
         return _converter.GetUnitList(dimension)
-            .Select(u => new UnitData(u.Name, u.Abbreviation, u.Plural, u.Factor))
+            .Select(u => new UnitData(u.Name, u.Abbreviation, u.Plural, u.Factor, u.Offset, u.IsComplex))
             .ToArray();
     }
 
@@ -117,7 +117,9 @@ public class UoMConverterInterop {
 /// <param name="Abbreviation">The abbreviation of the unit.</param>
 /// <param name="Plural">The plural form of the unit name.</param>
 /// <param name="Factor">The linear conversion factor to the base unit.</param>
-public record UnitData(string Name, string Abbreviation, string Plural, double Factor);
+/// <param name="Offset">The linear offset to the base unit.</param>
+/// <param name="IsComplex">True if unit employs a non-linear conversion function (e.g. Temperature).</param>
+public record UnitData(string Name, string Abbreviation, string Plural, double Factor, double Offset, bool IsComplex);
 
 /// <summary>
 /// Result of a conversion operation.

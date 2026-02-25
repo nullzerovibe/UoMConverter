@@ -351,7 +351,7 @@ export const MainCard = ({ state, actions }) => {
                         </div>
                         
                         <sl-button variant="neutral" outline class="btn-secondary swap-btn" onclick=${actions.swapUnits}>
-                            <sl-icon slot="prefix" name="arrow-left-right"></sl-icon>
+                            <sl-icon slot="prefix" name="arrow-left-right" class=${state.isSwapping.value ? 'flip-horizontal-animation' : ''}></sl-icon>
                         </sl-button>
 
                         <div class="form-group" style="flex: 1; margin: 0;">
@@ -423,24 +423,33 @@ export const MainCard = ({ state, actions }) => {
                                     </sl-menu-item>
                                 </sl-menu>
                             </sl-dropdown>
+                            ${navigator.share ? html`
+                                <sl-icon-button name="share" label="Share Result" class="copy-btn" onclick=${() => actions.shareExtended('equation')}></sl-icon-button>
+                            ` : null}
                         </div>
                     </div>
 
                     <div class="result-footer">
-                        <div class="result-badge-area ${state.message.value ? 'u-visible' : 'u-invisible'}">
-                            <span class="result-msg" style="${state.resultValue.value === 'Error' ? 'color: var(--error);' : ''}">${(() => {
-            if (state.message.value && state.message.value.startsWith('Successfully converted ')) {
-                const restStr = state.message.value.substring(23);
-                const firstSpaceIdx = restStr.indexOf(' ');
-                if (firstSpaceIdx > 0) {
-                    const num = restStr.substring(0, firstSpaceIdx);
-                    const unit = restStr.substring(firstSpaceIdx + 1);
-                    return html`Successfully converted <span class="calc-number" style="color: var(--accent); font-weight: 500;">${num}</span> ${unit}`;
+                        <div class="result-badge-area ${(state.resultFormula.value || state.message.value) ? 'u-visible' : 'u-invisible'}">
+                            ${state.resultFormula.value ? html`
+                                <span class="result-msg" style="font-family: var(--sl-font-mono); letter-spacing: -0.2px; display: flex; align-items: center;">
+                                    <sl-icon src="https://api.iconify.design/lucide/calculator.svg" style="font-size: 0.9rem; margin-right: 0.35rem; opacity: 0.7; transform: translateY(-0.5px);"></sl-icon>
+                                    <span dangerouslySetInnerHTML=${{ __html: state.resultFormula.value }}></span>
+                                </span>
+                            ` : html`
+                                <span class="result-msg" style="${state.resultValue.value === 'Error' ? 'color: var(--error);' : ''}">${(() => {
+                if (state.message.value && state.message.value.startsWith('Successfully converted ')) {
+                    const restStr = state.message.value.substring(23);
+                    const firstSpaceIdx = restStr.indexOf(' ');
+                    if (firstSpaceIdx > 0) {
+                        const num = restStr.substring(0, firstSpaceIdx);
+                        const unit = restStr.substring(firstSpaceIdx + 1);
+                        return html`Successfully converted <span class="calc-number" style="color: var(--accent); font-weight: 500;">${num}</span> ${unit}`;
+                    }
                 }
-            }
-            return state.message.value;
-        })()
-        }</span>
+                return state.message.value;
+            })()}</span>
+                            `}
                         </div>
                         <div class="result-stats ${state.resultValue.value === 'Error' ? 'u-hidden' : ''}">
                             ${state.calcTime.value === null ? null : html`
@@ -477,24 +486,24 @@ export const MainCard = ({ state, actions }) => {
                         </div>
                         <div class="history-list">
                             ${state.history.value.map(item => {
-            // Prefer storing abbreviations from state directly on the item, fallback to lookup
-            const fromAbbr = item.fromUnitAbbr || (() => { const u = state.units.value.find(x => (x.name || x.Name) === item.fromUnit); return u ? (u.abbreviation || u.Abbreviation) : null; })();
-            const toAbbr = item.toUnitAbbr || (() => { const u = state.units.value.find(x => (x.name || x.Name) === item.toUnit); return u ? (u.abbreviation || u.Abbreviation) : null; })();
+                // Prefer storing abbreviations from state directly on the item, fallback to lookup
+                const fromAbbr = item.fromUnitAbbr || (() => { const u = state.units.value.find(x => (x.name || x.Name) === item.fromUnit); return u ? (u.abbreviation || u.Abbreviation) : null; })();
+                const toAbbr = item.toUnitAbbr || (() => { const u = state.units.value.find(x => (x.name || x.Name) === item.toUnit); return u ? (u.abbreviation || u.Abbreviation) : null; })();
 
-            const displayFrom = fromAbbr ? `${fromAbbr} (${formatLabel(item.fromUnit)})` : formatLabel(item.fromUnit);
-            const displayTo = toAbbr ? `${toAbbr} (${formatLabel(item.toUnit)})` : formatLabel(item.toUnit);
+                const displayFrom = fromAbbr ? `${fromAbbr} (${formatLabel(item.fromUnit)})` : formatLabel(item.fromUnit);
+                const displayTo = toAbbr ? `${toAbbr} (${formatLabel(item.toUnit)})` : formatLabel(item.toUnit);
 
-            const formatVal = (v) => {
-                const useSep = state.settings.value.useThousandsSeparator !== false;
-                if (!useSep || v === 'Error') return v;
-                const str = String(v);
-                if (str.includes('e') || str.includes('E')) return str;
-                const parts = str.split('.');
-                parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                return parts.join('.');
-            };
+                const formatVal = (v) => {
+                    const useSep = state.settings.value.useThousandsSeparator !== false;
+                    if (!useSep || v === 'Error') return v;
+                    const str = String(v);
+                    if (str.includes('e') || str.includes('E')) return str;
+                    const parts = str.split('.');
+                    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    return parts.join('.');
+                };
 
-            return html`
+                return html`
                                 <div class="history-item" onclick=${() => actions.loadHistoryItem(item)} style="display: flex; justify-content: space-between; align-items: center; overflow: hidden; gap: 1rem;">
                                     <div class="history-item-main" style="flex: 1; display: flex; align-items: center; justify-content: space-between; min-width: 0; gap: 1rem;">
                                         <span class="hist-expr" style="font-size: 0.9rem; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1;" title="${item.inputValue} ${displayFrom}"><span class="calc-number" style="color: var(--accent); font-weight: 500;">${formatVal(item.inputValue)}</span> <span style="opacity: 0.8">${displayFrom}</span></span>
@@ -592,6 +601,23 @@ export const Documentation = ({ state, actions }) => {
     const [contentReady, setContentReady] = useState(false);
     const timerRef = useRef(null);
     const contentTimerRef = useRef(null);
+
+    // Sync Shoelace sl-tab-group when docActiveTab changes externally (like hotkeys)
+    useEffect(() => {
+        if (state.docsOpen.value && state.docActiveTab.value) {
+            const syncTab = () => {
+                const tg = document.querySelector('.docs-dialog sl-tab-group');
+                if (tg && typeof tg.show === 'function') {
+                    try { tg.show(state.docActiveTab.value); } catch (e) { }
+                }
+            };
+            // Try immediately and slightly delayed to account for Shoelace mounting animation
+            requestAnimationFrame(() => {
+                syncTab();
+                setTimeout(syncTab, 100);
+            });
+        }
+    }, [state.docsOpen.value, state.docActiveTab.value]);
 
     const categories = useMemo(() => [ALL_CATS, ...new Set(functions.map(f => {
         const c = f.Category || f.category;
@@ -835,16 +861,18 @@ export const Documentation = ({ state, actions }) => {
             state.showScrollTop.value = false;
             state.docActiveTab.value = e.detail.name;
         }}>
-                <sl-tab slot="nav" panel="reference">
+                <sl-tab slot="nav" panel="reference" active=${state.docActiveTab.value === 'reference'}>
                     <sl-icon src="https://api.iconify.design/lucide/bookmark.svg?color=currentColor" class="tab-icon"></sl-icon> Unit Reference
                 </sl-tab>
-                <sl-tab slot="nav" panel="settings">
+                <sl-tab slot="nav" panel="settings" active=${state.docActiveTab.value === 'settings'}>
                     <sl-icon src="https://api.iconify.design/lucide/settings-2.svg?color=currentColor" class="tab-icon"></sl-icon> Settings
                 </sl-tab>
-                <sl-tab slot="nav" panel="about">
+                <sl-tab slot="nav" panel="shortcuts" active=${state.docActiveTab.value === 'shortcuts'}>
+                    <sl-icon src="https://api.iconify.design/lucide/keyboard.svg?color=currentColor" class="tab-icon"></sl-icon> Shortcuts
+                </sl-tab>
+                <sl-tab slot="nav" panel="about" active=${state.docActiveTab.value === 'about'}>
                     <sl-icon src="https://api.iconify.design/lucide/info.svg?color=currentColor" class="tab-icon"></sl-icon> About
                 </sl-tab>
-                
 
                 <sl-tab-panel name="settings">
                     <div class="settings-flex-wrapper">
@@ -1018,6 +1046,49 @@ export const Documentation = ({ state, actions }) => {
                             <sl-button variant="primary" type="submit" form="settings-form" class="btn-save-settings" disabled=${!isSettingsDirty()}>
                                 Save Settings
                             </sl-button>
+                        </div>
+                    </div>
+                </sl-tab-panel>
+
+                <sl-tab-panel name="shortcuts">
+                    <div class="about-flex-wrapper">
+                        <div class="about-content-area" onscroll=${onPanelScroll}>
+                            <div class="shortcuts-container">
+                                
+                                <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.75rem;">
+                                    <span style="color: var(--text-base); font-size: 1rem;">Swap Units</span>
+                                    <kbd style="background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); padding: 0.2rem 0.6rem; border-radius: 4px; font-family: monospace; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">S</kbd>
+                                </div>
+                                
+                                <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.75rem;">
+                                    <span style="color: var(--text-base); font-size: 1rem;">Copy Number Output</span>
+                                    <kbd style="background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); padding: 0.2rem 0.6rem; border-radius: 4px; font-family: monospace; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">C</kbd>
+                                </div>
+
+                                <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.75rem;">
+                                    <span style="color: var(--text-base); font-size: 1rem;">Copy Full Equation</span>
+                                    <div style="display:flex; gap: 0.5rem; align-items: center;">
+                                        <kbd style="background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); padding: 0.2rem 0.6rem; border-radius: 4px; font-family: monospace; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">Ctrl</kbd> <span style="font-size: 0.8rem; color: var(--text-muted);">+</span> <kbd style="background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); padding: 0.2rem 0.6rem; border-radius: 4px; font-family: monospace; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">C</kbd>
+                                    </div>
+                                </div>
+
+                                <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.75rem;">
+                                    <span style="color: var(--text-base); font-size: 1rem;">Focus Input Value</span>
+                                    <kbd style="background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); padding: 0.2rem 0.6rem; border-radius: 4px; font-family: monospace; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">Space</kbd>
+                                </div>
+
+                                <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.75rem;">
+                                    <span style="color: var(--text-base); font-size: 1rem;">Trigger Manual Calculation</span>
+                                    <div style="display:flex; gap: 0.5rem; align-items: center;">
+                                        <kbd style="background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); padding: 0.2rem 0.6rem; border-radius: 4px; font-family: monospace; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">Ctrl</kbd> <span style="font-size: 0.8rem; color: var(--text-muted);">+</span> <kbd style="background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); padding: 0.2rem 0.6rem; border-radius: 4px; font-family: monospace; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">Enter</kbd>
+                                    </div>
+                                </div>
+
+                                 <div style="display: flex; align-items: center; justify-content: space-between;">
+                                    <span style="color: var(--text-base); font-size: 1rem;">Open Shortcuts View</span>
+                                    <kbd style="background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); padding: 0.2rem 0.6rem; border-radius: 4px; font-family: monospace; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">?</kbd>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </sl-tab-panel>
@@ -1282,18 +1353,62 @@ export const ConfirmDialog = ({ state, actions }) => {
     `;
 };
 
+
 const App = ({ state, actions }) => {
     useEffect(() => {
         actions.init();
 
         const handleKeyDown = (e) => {
+            const isInputFocused = document.activeElement && (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA' || document.activeElement.tagName.startsWith('SL-'));
+
+            // Show hotkeys via Documentation Modal
+            if (e.key === '?' || (e.key === '/' && !isInputFocused)) {
+                if (!isInputFocused) {
+                    e.preventDefault();
+                    if (!state.docsOpen.value) {
+                        state.docActiveTab.value = 'shortcuts';
+                        state.docsOpen.value = true;
+                    } else {
+                        state.docsOpen.value = false;
+                    }
+                }
+            }
+
+            // Swap units
+            if (e.key.toLowerCase() === 's' && !isInputFocused) {
+                e.preventDefault();
+                actions.swapUnits();
+            }
+
+            // Copy number output
+            if (e.key.toLowerCase() === 'c' && !e.ctrlKey && !e.metaKey && !isInputFocused) {
+                e.preventDefault();
+                actions.copyExtended('number');
+            }
+
+            // Focus input value
+            if (e.key === ' ' && !isInputFocused && !state.confirmDialog.open.value && !state.docsOpen.value) {
+                e.preventDefault();
+                const inputEle = document.querySelector('sl-input[type="number"]');
+                if (inputEle) {
+                    inputEle.focus();
+                }
+            }
+
+            // Ctrl+C to copy equation
+            if (e.key.toLowerCase() === 'c' && (e.ctrlKey || e.metaKey) && !isInputFocused) {
+                e.preventDefault();
+                actions.copyExtended('equation');
+            }
+
             // Ctrl+S to save snippet
-            if (e.key === 's' && (e.ctrlKey || e.metaKey)) {
+            if (e.key.toLowerCase() === 's' && (e.ctrlKey || e.metaKey)) {
                 e.preventDefault();
                 actions.openSaveSnippet();
             }
+
             // Ctrl+Enter to trigger calculate
-            if (e.key === 'Enter' && e.ctrlKey) {
+            if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
                 actions.calculate();
             }
         };
