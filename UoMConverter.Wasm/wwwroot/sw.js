@@ -6,7 +6,7 @@ try {
 }
 
 // The semantic version is updated by update-version.ps1
-const APP_VERSION = '0.9.2.11'; // Cache busted for formatNumberVal boolean check fix
+const APP_VERSION = '0.9.2.12'; // Cache busted for formatNumberVal boolean check fix
 
 // Use the build hash for the cache name to ensure fresh cache on every build
 const buildHash = (typeof self.assetsManifest !== 'undefined' && self.assetsManifest.version)
@@ -89,6 +89,7 @@ self.addEventListener('fetch', (event) => {
         })
     );
 });
+
 
 
 
