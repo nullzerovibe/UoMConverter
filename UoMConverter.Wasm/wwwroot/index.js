@@ -539,8 +539,8 @@ export const MainCard = ({ state, actions }) => {
                 return html`
                                 <div class="history-item" onclick=${() => actions.loadHistoryItem(item)} style="display: flex; justify-content: space-between; align-items: center; overflow: hidden; gap: 1rem;">
                                     <div class="history-item-main" style="flex: 1; display: flex; align-items: center; justify-content: space-between; min-width: 0; gap: 1rem;">
-                                        <span class="hist-expr" style="font-size: 0.9rem; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1;" title="${item.inputValue} ${displayFrom}"><span class="calc-number" style="color: var(--accent); font-weight: 500;">${formatVal(item.inputValue)}</span> <span style="opacity: 0.8">${displayFrom}</span></span>
-                                        <span class="hist-res" style="font-size: 0.9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1; text-align: right;" title="${item.resultValue} ${displayTo}"><span style="color: var(--accent); margin-right: 0.5rem;">=</span> <span class="calc-number" style="color: var(--success);">${formatVal(item.resultValue)}</span> <span style="color: var(--text-muted); opacity: 0.8">${displayTo}</span></span>
+                                        <span class="hist-expr" style="font-size: 0.9rem; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1;" title="${item.inputValue} ${displayFrom}"><span class="calc-number" style="color: var(--accent); font-weight: 500;">${formatVal(item.inputValue)}</span> <span style="opacity: 0.8">${displayFrom}</span></span>
+                                        <span class="hist-res" style="font-size: 0.9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1; text-align: right;" title="${item.resultValue} ${displayTo}"><span style="color: var(--accent); margin-right: 0.5rem;">=</span> <span class="calc-number" style="color: var(--success);">${formatVal(item.resultValue)}</span> <span style="color: var(--text); opacity: 0.8">${displayTo}</span></span>
                                     </div>
                                 </div>
                             `})}
@@ -1089,36 +1089,36 @@ export const Documentation = ({ state, actions }) => {
                             <div class="shortcuts-container">
                                 
                                 <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.75rem;">
-                                    <span style="color: var(--text-base); font-size: 1rem;">Swap Units</span>
+                                    <span style="color: color: color-mix(in srgb, var(--text), transparent 30%); font-size: 1rem;">Swap Units</span>
                                     <kbd style="background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); padding: 0.2rem 0.6rem; border-radius: 4px; font-family: monospace; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">S</kbd>
                                 </div>
                                 
                                 <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.75rem;">
-                                    <span style="color: var(--text-base); font-size: 1rem;">Copy Number Output</span>
+                                    <span style="color: color: color-mix(in srgb, var(--text), transparent 30%); font-size: 1rem;">Copy Number Output</span>
                                     <kbd style="background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); padding: 0.2rem 0.6rem; border-radius: 4px; font-family: monospace; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">C</kbd>
                                 </div>
 
                                 <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.75rem;">
-                                    <span style="color: var(--text-base); font-size: 1rem;">Copy Full Equation</span>
+                                    <span style="color: color: color-mix(in srgb, var(--text), transparent 30%); font-size: 1rem;">Copy Full Equation</span>
                                     <div style="display:flex; gap: 0.5rem; align-items: center;">
                                         <kbd style="background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); padding: 0.2rem 0.6rem; border-radius: 4px; font-family: monospace; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">Ctrl</kbd> <span style="font-size: 0.8rem; color: var(--text-muted);">+</span> <kbd style="background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); padding: 0.2rem 0.6rem; border-radius: 4px; font-family: monospace; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">C</kbd>
                                     </div>
                                 </div>
 
                                 <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.75rem;">
-                                    <span style="color: var(--text-base); font-size: 1rem;">Focus Input Value</span>
+                                    <span style="color: color: color-mix(in srgb, var(--text), transparent 30%); font-size: 1rem;">Focus Input Value</span>
                                     <kbd style="background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); padding: 0.2rem 0.6rem; border-radius: 4px; font-family: monospace; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">Space</kbd>
                                 </div>
 
                                 <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.75rem;">
-                                    <span style="color: var(--text-base); font-size: 1rem;">Trigger Manual Calculation</span>
+                                    <span style="color: color: color-mix(in srgb, var(--text), transparent 30%); font-size: 1rem;">Trigger Manual Calculation</span>
                                     <div style="display:flex; gap: 0.5rem; align-items: center;">
                                         <kbd style="background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); padding: 0.2rem 0.6rem; border-radius: 4px; font-family: monospace; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">Ctrl</kbd> <span style="font-size: 0.8rem; color: var(--text-muted);">+</span> <kbd style="background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); padding: 0.2rem 0.6rem; border-radius: 4px; font-family: monospace; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">Enter</kbd>
                                     </div>
                                 </div>
 
                                  <div style="display: flex; align-items: center; justify-content: space-between;">
-                                    <span style="color: var(--text-base); font-size: 1rem;">Open Shortcuts View</span>
+                                    <span style="color: color: color-mix(in srgb, var(--text), transparent 30%); font-size: 1rem;">Open Shortcuts View</span>
                                     <kbd style="background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); padding: 0.2rem 0.6rem; border-radius: 4px; font-family: monospace; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">?</kbd>
                                 </div>
                             </div>
@@ -1281,7 +1281,7 @@ export const Documentation = ({ state, actions }) => {
                                         <div style="margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(255, 255, 255, 0.05); display: flex; align-items: center; justify-content: space-between;">
                                             <div>
                                                 <span class="doc-name" style="margin-right: 0.75rem; cursor: pointer;" onclick=${() => { actions.setDimension(dim.Name); appState.docsOpen.value = false; }}>${formatLabel(dim.Name)}</span>
-                                                <span style="color: var(--text-muted); font-size: 0.95rem;">${dim.Description || ''}</span>
+                                                <span style="color: color-mix(in srgb, var(--text), transparent 20%); font-size: 0.95rem;">${dim.Description || ''}</span>
                                             </div>
                                             <sl-icon-button 
                                                 name=${isPinned ? "pin-angle-fill" : "pin-angle"}
