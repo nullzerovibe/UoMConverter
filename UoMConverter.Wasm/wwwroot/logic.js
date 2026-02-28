@@ -819,65 +819,10 @@ export const actions = {
                     // but the user wants the unit attached to the number. 
                     const numOnlyStr = formatNum(val);
 
-                    if (fComplex || tComplex) {
-                        // Hardcode common temperature complex cases for better UX
-                        if (appState.fromUnit.value === 'DegreeCelsius' && appState.toUnit.value === 'DegreeFahrenheit') {
-                            appState.resultFormula.value = `${inputStr} × 1.8 + 32 ${eqStr} ${resStrFormatted}`;
-                        } else if (appState.fromUnit.value === 'DegreeFahrenheit' && appState.toUnit.value === 'DegreeCelsius') {
-                            appState.resultFormula.value = `(${inputStr} - 32) ÷ 1.8 ${eqStr} ${resStrFormatted}`;
-                        } else if (appState.fromUnit.value === 'DegreeCelsius' && appState.toUnit.value === 'Kelvin') {
-                            appState.resultFormula.value = `${inputStr} + 273.15 ${eqStr} ${resStrFormatted}`;
-                        } else if (appState.fromUnit.value === 'Kelvin' && appState.toUnit.value === 'DegreeCelsius') {
-                            appState.resultFormula.value = `${inputStr} - 273.15 ${eqStr} ${resStrFormatted}`;
-                        } else if (appState.fromUnit.value === 'DegreeFahrenheit' && appState.toUnit.value === 'Kelvin') {
-                            appState.resultFormula.value = `(${inputStr} - 32) ÷ 1.8 + 273.15 ${eqStr} ${resStrFormatted}`;
-                        } else if (appState.fromUnit.value === 'Kelvin' && appState.toUnit.value === 'DegreeFahrenheit') {
-                            appState.resultFormula.value = `(${inputStr} - 273.15) × 1.8 + 32 ${eqStr} ${resStrFormatted}`;
-                        } else {
-                            appState.resultFormula.value = `ƒ(${inputStr}) ${eqStr} ${resStrFormatted}`;
-                        }
-                    } else if (appState.fromUnit.value === appState.toUnit.value) {
+                    if (appState.fromUnit.value === appState.toUnit.value) {
                         appState.resultFormula.value = `${inputStr} ${eqStr} ${resStrFormatted}`;
                     } else {
-                        // Linear equation: Result = ((Input * fFactor) + fOffset - tOffset) / tFactor
-                        let formula = "";
-
-                        // If no offsets are involved, we can simplify purely to a single multiplication or division
-                        if (fOffset === 0 && tOffset === 0) {
-                            const combinedScale = fFactor / tFactor;
-                            const combinedScaleFloat = parseFloat(combinedScale.toPrecision(10));
-
-                            if (Math.abs(combinedScaleFloat - 1.0) < 1e-10) {
-                                formula += `${inputStr} ${eqStr} ${resStrFormatted}`;
-                            } else if (combinedScaleFloat > 1) {
-                                let displayScale = formatNum(combinedScaleFloat);
-                                formula += `${inputStr} × ${displayScale} ${eqStr} ${resStrFormatted}`;
-                            } else {
-                                const divScaleFloat = parseFloat((1 / combinedScale).toPrecision(10));
-                                formula += `${inputStr} ÷ ${formatNum(divScaleFloat)} ${eqStr} ${resStrFormatted}`;
-                            }
-                        } else {
-                            // Offsets involved. Map out base transformation explicitly.
-                            // Step 1: Input to Base
-                            let baseStr = numOnlyStr; // Use numOnlyStr for intermediate calculation steps
-                            if (fFactor !== 1) baseStr = `${baseStr} × ${formatNum(fFactor)}`;
-                            if (fOffset !== 0) {
-                                baseStr = fOffset > 0 ? `(${baseStr} + ${formatNum(fOffset)})` : `(${baseStr} - ${formatNum(Math.abs(fOffset))})`;
-                            }
-
-                            // Step 2: Base to Target
-                            let resStr = baseStr;
-                            if (tOffset !== 0) {
-                                resStr = tOffset > 0 ? `(${resStr} - ${formatNum(tOffset)})` : `(${resStr} + ${formatNum(Math.abs(tOffset))})`;
-                            }
-                            if (tFactor !== 1) {
-                                resStr = `(${resStr}) ÷ ${formatNum(tFactor)}`;
-                            }
-
-                            formula += `${inputStr} → ${resStr} ${eqStr} ${resStrFormatted}`; // Display inputStr at the start, then the calculation, then resStrFormatted
-                        }
-
-                        appState.resultFormula.value = formula;
+                        appState.resultFormula.value = `${inputStr} ${eqStr} ${resStrFormatted}`;
                     }
                 } else {
                     appState.resultFormula.value = '';

@@ -479,20 +479,6 @@ body.is-booting {
     /* Sky 700 */
 }
 
-/* Light Theme Lists & Controls */
-[data-theme="light"] .doc-card {
-    background: rgba(255, 255, 255, 0.3) !important;
-    border: 1px solid #cbd5e1;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-
-[data-theme="light"] .doc-card:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: var(--accent);
-    /* transform: translateY(-1px); */
-    /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); */
-}
-
 [data-theme="light"] .doc-name {
     color: #0f172a;
     font-weight: 600;
@@ -549,7 +535,7 @@ body.is-booting {
 [data-theme="light"] sl-select::part(combobox),
 [data-theme="light"] sl-textarea::part(base),
 [data-theme="light"] sl-input:has(.btn-stepper)::part(base) {
-    background: rgba(255, 255, 255, 0.1) !important;
+    background: rgba(255, 255, 255, 0.3) !important;
     border-color: #cbd5e1 !important;
     color: #0f172a !important;
     backdrop-filter: none;
@@ -604,7 +590,7 @@ body.is-booting {
 
 /* Light Theme Dropdown Menus */
 [data-theme="light"] sl-select::part(listbox) {
-    background: linear-gradient(135deg, rgba(222, 225, 229, 0.7) 0%, rgba(230, 232, 234, 0.4) 100%) !important;
+    background: linear-gradient(135deg, rgb(222 225 229 / 50%) 0%, rgb(230 232 234 / 80%) 100%) !important;
     backdrop-filter: blur(24px) !important;
     -webkit-backdrop-filter: blur(24px) !important;
     border: 1px solid rgba(255, 255, 255, 0.3) !important;
@@ -1461,7 +1447,7 @@ sl-card::part(body) {
     /* Gradient: Slate 800 -> Slate 900 */
     backdrop-filter: blur(20px);
     border: 1px solid var(--glass-border);
-    border-radius: 12px;
+    border-radius: var(--sl-border-radius-medium) !important;
     box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     padding: 0;
@@ -1913,7 +1899,7 @@ sl-button[variant="danger"]::part(base):focus-visible {
 
 /* Result Box */
 .result-box {
-    border-radius: 12px;
+    border-radius: var(--sl-border-radius-medium);
     padding: 1.25rem;
     position: relative;
     min-height: 80px;
@@ -2113,7 +2099,7 @@ sl-button[variant="danger"]::part(base):focus-visible {
 }
 
 .history-item {
-    border-radius: 8px;
+    border-radius: var(--sl-border-radius-medium) !important;
     padding: 0.75rem 1rem;
     cursor: pointer;
     transition: all 0.2s;
@@ -4333,6 +4319,16 @@ sl-tooltip::part(body) {
     color: inherit;
 }
 
+[data-theme="light"] .about-link {
+    color: var(--sl-color-primary-600);
+    text-decoration: none;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+[data-theme="light"] .about-link:hover {
+    filter: brightness(1.2);
+}
+
 .invalid-icon {
     font-size: 1.25rem;
     color: inherit;
@@ -4392,14 +4388,11 @@ sl-tooltip::part(body) {
 
 /* Light Theme - Functions List */
 [data-theme="light"] .doc-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 100%) !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05) !important;
-    backdrop-filter: blur(4px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.2) 100%) !important;
 }
 
 [data-theme="light"] .doc-card:hover {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.2) 100%) !important;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 100%) !important;
     border-color: var(--accent) !important;
 }
 
@@ -4629,7 +4622,7 @@ sl-tooltip::part(body) {
 /* Light Theme - History Result */
 [data-theme="light"] .hist-res {
     color: var(--success) !important;
-    font-weight: 700;
+    font-weight: 400;
 }
 
 /* Light Theme - Tooltip */
@@ -4919,7 +4912,6 @@ sl-tooltip::part(body) {
 [data-theme="light"] .combobox-trigger {
     background-color: rgba(255, 255, 255, 0.3) !important;
     -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.35);
     transition: all 0.2s ease;
 }
