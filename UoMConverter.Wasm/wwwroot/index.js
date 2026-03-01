@@ -1158,7 +1158,7 @@ export const Documentation = ({ state, actions }) => {
                                 <sl-icon src="https://api.iconify.design/lucide/cpu.svg?color=%23cbd5e1" class="about-icon"></sl-icon>
                                 <div>
                                     <strong>The Product.</strong>
-                                    <span>UoMConverter is a high-performance .NET unit converter designed for zero-allocation parsing and lightning-fast execution. It supports complex unit conversions across multiple dimensions (Length, Mass, Temperature, etc.) with 100% logic coverage.</span>
+                                    <span>UoMConverter is a high-performance .NET unit conversion engine designed for zero-allocation parsing and lightning-fast execution. It provides robust, dimension-aware transformations (Length, Mass, BitRate, etc.) with 100% logic and branch coverage, ensuring mathematical precision for mission-critical applications.</span>
                                 </div>
                             </div>
                         </section>
@@ -1169,11 +1169,11 @@ export const Documentation = ({ state, actions }) => {
                                 <div>
                                     <div class="u-mb-1">
                                         <strong>The Demo App.</strong>
-                                        <span>This is a browser-native playground built to test the <strong>WebAssembly (WASM)</strong> implementation of UoMConverter.</span>
+                                        <span>This is a browser-native playground built to test the <strong>WebAssembly (WASM)</strong> implementation of UoMConverter. By running the engine directly in your client, it eliminates calculation latency and server roundtrips, providing an instantaneous, offline-ready experience.</span>
                                     </div>
                                     <div>
                                         <strong>Sandbox Mode.</strong>
-                                        <span>This diagnostic environment is intended for feature exploration and engine verification.</span>
+                                        <span>This diagnostic environment is intended for feature exploration and engine verification. It serves as a visual wrapper for technical validation of the underlying library.</span>
                                     </div>
                                 </div>
                             </div>
@@ -1197,14 +1197,14 @@ export const Documentation = ({ state, actions }) => {
 |_|\\_| \\_,_||_||_|/___|\\___||_|  \\___/  \\___/ |_||_.__/\\___|
  
  
-                      ▄▀▀▄░█▀▀█░█▀▀▄░█▀▀ 
-                      █░░░░█░░█░█░░█░█▀▀ 
-                      ▀▄▄▀░█▄▄█░█▄▄▀░█▄▄ 
+                       ▄▀▀▄░█▀▀█░█▀▀▄░█▀▀ 
+                       █░░░░█░░█░█░░█░█▀▀ 
+                       ▀▄▄▀░█▄▄█░█▄▄▀░█▄▄ 
  
      ░▒▒▓▓ LIFETIME OF SYNTAX // AGENTIC EVOLUTION ▓▓▒▒░ 
  </pre>
                                 <div class="vibe-description">
-                                    VIBE CHECK: This code was orchestrated through intent.<br/>
+                                    This code was orchestrated through intent - an agentic collaboration.<br/>
                                     You are free to use, modify, and distribute it.<br/>
                                     Keep the units aligned. Keep the vibe open.
                                 </div>

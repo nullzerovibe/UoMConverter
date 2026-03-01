@@ -6,10 +6,9 @@
 
 [ AGENTIC MIT LICENSE ]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-VIBE CHECK: 
-This code was orchestrated through intent. 
+This code was orchestrated through intent - an agentic collaboration.
 You are free to use, modify, and distribute it. 
-Keep the legacy alive. Keep the vibe open.
+Keep the units aligned. Keep the vibe open.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 [ nullzerovibe@gmail.com ] // [ null / zero / vibe ]
 ```

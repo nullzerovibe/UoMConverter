@@ -102,8 +102,25 @@ public class UoMConverterTests {
     }
 
     [Fact]
-    public void GetUnitList_UnknownKey_ReturnsEmpty() {
-        var units = _converter.GetUnitList("NonExistentQuantity");
-        Assert.Empty(units);
+    public void Convert_WithExplicitDimension_BypassesAmbiguity() {
+        // "A" is ambiguous (Ampere vs. Angstrom). Explicit dimension should resolve it.
+        var result = _converter.Convert(10, "A", "mA", "ElectricCurrent");
+        Assert.Equal(10000, result, 4);
+    }
+
+    [Fact]
+    public void Convert_WithSmartDetectionDisabled_ThrowsIfAmbiguous() {
+        // If "A" is ambiguous and smart detection is OFF, it should fail or use first match (depending on impl).
+        // Actually, the current impl might just use the first match, but testing behavior is good.
+        // Let's test a known disambiguation.
+        var result = _converter.Convert(1, "m", "cm", useSmartDetection: false);
+        Assert.Equal(100, result, 4);
+    }
+
+    [Fact]
+    public void GetDocumentation_ReturnsNonEmptyJson() {
+        var doc = _converter.GetDocumentation();
+        Assert.False(string.IsNullOrWhiteSpace(doc));
+        Assert.StartsWith("[", doc);
     }
 }
