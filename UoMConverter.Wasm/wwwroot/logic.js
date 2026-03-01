@@ -1,4 +1,4 @@
-import { signal, effect } from 'https://esm.sh/@preact/signals@1.2.2?deps=preact@10.19.3';
+import { signal, effect, batch } from 'https://esm.sh/@preact/signals@1.2.2?deps=preact@10.19.3';
 
 // --- CONFIGURATION & CONSTANTS ---
 export const STORAGE_KEY_HISTORY = 'uom_conv_history';
@@ -559,26 +559,99 @@ export const actions = {
             appState.isLoading.value = false;
 
             // Setup URL sync effect
-            let isInitializing = true;
-            effect(() => {
+            let lastPushedUrl = "";
+            let isHandlingPopState = false;
+            let syncDebounceTimer = null;
+
+            const syncUrlNow = (isPop = false) => {
+                if (!appState.isReady.value) return;
+                if (isHandlingPopState && !isPop) return;
+
                 const q = appState.selectedDimension.value;
                 const f = appState.fromUnit.value;
                 const t = appState.toUnit.value;
                 const v = appState.inputValue.value;
 
-                if (appState.isReady.value && q && f && t && !isInitializing) {
-                    const url = new URL(window.location.href);
-                    if (url.searchParams.get('q') !== q) url.searchParams.set('q', q);
-                    if (url.searchParams.get('from') !== f) url.searchParams.set('from', f);
-                    if (url.searchParams.get('to') !== t) url.searchParams.set('to', t);
-                    if (url.searchParams.get('val') !== String(v)) url.searchParams.set('val', v);
-                    window.history.replaceState({}, '', url);
+                if (!q || !f || !t) return;
+
+                const url = new URL(window.location.href);
+                const oldQ = url.searchParams.get('q');
+                const oldF = url.searchParams.get('from');
+                const oldT = url.searchParams.get('to');
+                const oldV = url.searchParams.get('val');
+
+                const hasUnitChange = oldQ !== q || oldF !== f || oldT !== t;
+                const hasValueChange = oldV !== String(v);
+
+                if (!hasUnitChange && !hasValueChange && lastPushedUrl !== "") return;
+
+                url.searchParams.set('q', q);
+                url.searchParams.set('from', f);
+                url.searchParams.set('to', t);
+                url.searchParams.set('val', v);
+
+                const urlStr = url.toString();
+                if (urlStr === lastPushedUrl) return;
+
+                if (isPop) {
+                    lastPushedUrl = urlStr;
+                } else if (hasUnitChange && lastPushedUrl !== "") {
+                    // Only push if we already have a baseline URL, otherwise replace initial state
+                    window.history.pushState({ q, f, t, v }, '', url);
+                    lastPushedUrl = urlStr;
+                } else {
+                    window.history.replaceState({ q, f, t, v }, '', url);
+                    lastPushedUrl = urlStr;
+                }
+            };
+
+            const syncUrlDebounced = () => {
+                if (syncDebounceTimer) clearTimeout(syncDebounceTimer);
+                syncDebounceTimer = setTimeout(() => syncUrlNow(), 50);
+            };
+
+            effect(() => {
+                // Subscribe to all relevant signals
+                appState.selectedDimension.value;
+                appState.fromUnit.value;
+                appState.toUnit.value;
+                appState.inputValue.value;
+                syncUrlDebounced();
+            });
+
+            window.addEventListener('popstate', async (e) => {
+                if (syncDebounceTimer) clearTimeout(syncDebounceTimer);
+
+                const urlParams = new URLSearchParams(window.location.search);
+                const q = urlParams.get('q');
+                const f = urlParams.get('from');
+                const t = urlParams.get('to');
+                const v = urlParams.get('val');
+
+                if (!q) return;
+
+                isHandlingPopState = true;
+                try {
+                    await batch(async () => {
+                        if (q !== appState.selectedDimension.value) {
+                            appState.selectedDimension.value = q;
+                            await actions.loadUnits(q);
+                        }
+
+                        if (f) appState.fromUnit.value = f;
+                        if (t) appState.toUnit.value = t;
+                        if (v !== null) appState.inputValue.value = parseFloat(v);
+
+                        actions.convert();
+                    });
+                    syncUrlNow(true);
+                } finally {
+                    isHandlingPopState = false;
                 }
             });
 
             // Load Initial Dimensions
             await actions.loadDimensions();
-            isInitializing = false;
 
             // Load Docs (background)
             loadDocumentation();

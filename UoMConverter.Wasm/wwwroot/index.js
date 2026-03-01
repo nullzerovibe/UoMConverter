@@ -67,7 +67,7 @@ export const Header = ({ state, actions }) => html`
                 UoMConverter 
             </h1>
             <p class="app-subtitle">
-                High-performance .NET WASM Unit Converter 
+                High-performance .NET WASM Units of Measure Converter 
             </p>
         </div>
     </header>
@@ -175,8 +175,7 @@ export const DimensionCombobox = ({ state, actions }) => {
     return html`
         <sl-dropdown ref=${dropdownRef} class="expression-combobox-dropdown" distance="8" placement="bottom-start" hoist>
             <div slot="trigger" class="combobox-trigger" tabindex="0">
-                <sl-icon src="https://api.iconify.design/lucide/scale.svg" class="trigger-icon"></sl-icon>
-                <div class="trigger-label" style="font-weight: 500;">
+                <div class="trigger-label ${!selectedDim && !state.selectedDimension.value ? 'is-placeholder' : ''}">
                     ${displayLabel}
                 </div>
                 <sl-icon name="chevron-down" class="ml-auto opacity-50"></sl-icon>
@@ -207,7 +206,6 @@ export const DimensionCombobox = ({ state, actions }) => {
                         <sl-menu-label>Pinned</sl-menu-label>
                         ${pinnedDims.map(d => html`
                             <sl-menu-item class="snippet-item ${d.Name === state.selectedDimension.value ? 'is-selected' : ''}" onclick=${() => onDimensionSelect(d.Name)}>
-                                <sl-icon src="https://api.iconify.design/lucide/scale.svg" slot="prefix" class="snippet-icon"></sl-icon>
                                 <div class="snippet-info">
                                     <div class="snippet-label">${formatLabel(d.Name)}</div>
                                     <div class="snippet-preview u-mono" style="opacity: 0.6; white-space: normal;">${d.Description || formatLabel(d.Name)}</div>
@@ -225,7 +223,6 @@ export const DimensionCombobox = ({ state, actions }) => {
         const isSuggested = (usage[d.Name]?.count || 0) >= 5;
         return html`
                             <sl-menu-item class="snippet-item ${d.Name === state.selectedDimension.value ? 'is-selected' : ''}" onclick=${() => onDimensionSelect(d.Name)}>
-                                <sl-icon src="https://api.iconify.design/lucide/history.svg" slot="prefix" class="snippet-icon"></sl-icon>
                                 <div class="snippet-info">
                                     <div class="snippet-label">${formatLabel(d.Name)}</div>
                                     <div class="snippet-preview u-mono" style="opacity: 0.6; white-space: normal;">${d.Description || formatLabel(d.Name)}</div>
@@ -244,7 +241,6 @@ export const DimensionCombobox = ({ state, actions }) => {
         const isSuggested = (usage[d.Name]?.count || 0) >= 5;
         return html`
                         <sl-menu-item class="snippet-item ${d.Name === state.selectedDimension.value ? 'is-selected' : ''}" onclick=${() => onDimensionSelect(d.Name)}>
-                            <sl-icon src="https://api.iconify.design/lucide/scale.svg" slot="prefix" class="snippet-icon"></sl-icon>
                             <div class="snippet-info">
                                 <div class="snippet-label">${formatLabel(d.Name)}</div>
                                 <div class="snippet-preview u-mono" style="opacity: 0.6; white-space: normal;">${d.Description || formatLabel(d.Name)}</div>
@@ -350,7 +346,9 @@ export const MainCard = ({ state, actions }) => {
                             </sl-select>
                         </div>
                         
-                        <sl-button variant="neutral" outline class="btn-secondary swap-btn" onclick=${actions.swapUnits}>
+                        <sl-button variant="neutral" outline class="btn-secondary swap-btn" 
+                            disabled=${!state.fromUnit.value || !state.toUnit.value}
+                            onclick=${actions.swapUnits}>
                             <sl-icon slot="prefix" name="arrow-left-right" class=${state.isSwapping.value ? 'flip-horizontal-animation' : ''}></sl-icon>
                         </sl-button>
 
@@ -401,7 +399,17 @@ export const MainCard = ({ state, actions }) => {
                 return parts.join('.');
             };
             const formattedResult = formatNumberVal(state.resultValue.value, state.settings.value.useThousandsSeparator);
-            return html`<span class="calc-number" style="color: var(--success);">${formattedResult}</span><span style="color: var(--text-muted); font-size: 1.2rem; font-weight: 500; margin-left: 0.5rem; word-break: normal; transform: translateY(6px);">${toAbbr}</span>`;
+            return html`
+                <span class="calc-number clickable-copy" 
+                      style="color: var(--success);" 
+                      onclick=${() => actions.copyExtended('number')}
+                      title="Click to copy number"
+                >${formattedResult}</span>
+                <span class="clickable-copy" 
+                      style="color: var(--text-muted); font-size: 1.2rem; font-weight: 500; margin-left: 0.5rem; word-break: normal; transform: translateY(6px);"
+                      onclick=${() => actions.copyExtended('symbol')}
+                      title="Click to copy with unit"
+                >${toAbbr}</span>`;
         })() : (state.resultValue.value === 'Error' ? html`<span class="calc-number" style="color: var(--error);">${state.resultValue.value}</span>` : html`<span class="calc-number" style="color: var(--success);">${state.resultValue.value}</span>`)}
                         </div>
                         <div class="result-actions ${state.resultValue.value === '---' || state.resultValue.value === 'Error' ? 'u-hidden' : ''}">
@@ -432,7 +440,11 @@ export const MainCard = ({ state, actions }) => {
                     <div class="result-footer">
                         <div class="result-badge-area ${(state.resultFormula.value || state.message.value) ? 'u-visible' : 'u-invisible'}">
                             ${state.resultFormula.value ? html`
-                                <span class="result-msg" style="font-family: var(--sl-font-mono); letter-spacing: -0.2px; display: flex; align-items: center;">
+                                <span class="result-msg clickable-copy" 
+                                      style="font-family: var(--sl-font-mono); letter-spacing: -0.2px; display: flex; align-items: center;"
+                                      onclick=${() => actions.copyExtended('equation')}
+                                      title="Click to copy equation"
+                                >
                                     <sl-icon src="https://api.iconify.design/lucide/calculator.svg" style="font-size: 0.9rem; margin-right: 0.35rem; opacity: 0.7; transform: translateY(-0.5px);"></sl-icon>
                                     <span dangerouslySetInnerHTML=${{ __html: state.resultFormula.value }}></span>
                                 </span>
@@ -600,7 +612,7 @@ const ModernSelect = ({ value, options, onChange, placeholder, icon, hoist = fal
         <sl-dropdown ref=${dropdownRef} distance="8" placement="bottom-start" hoist=${hoist} class="modern-select ${className}">
             <div slot="trigger" class="combobox-trigger" tabindex="0">
                 <sl-icon src="${iconSrc}" class="trigger-icon"></sl-icon>
-                <div class="trigger-label">
+                <div class="trigger-label ${!selected ? 'is-placeholder' : ''}">
                     ${label}
                 </div>
                 <sl-icon name="chevron-down" class="ml-auto opacity-50"></sl-icon>
@@ -1089,37 +1101,37 @@ export const Documentation = ({ state, actions }) => {
                             <div class="shortcuts-container">
                                 
                                 <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.75rem;">
-                                    <span style="color: color: color-mix(in srgb, var(--text), transparent 30%); font-size: 1rem;">Swap Units</span>
-                                    <kbd style="background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); padding: 0.2rem 0.6rem; border-radius: 4px; font-family: monospace; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">S</kbd>
+                                    <span style="color: color-mix(in srgb, var(--text), transparent 30%); font-size: 1rem;">Swap Units</span>
+                                    <kbd class="kbd-badge">S</kbd>
                                 </div>
                                 
                                 <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.75rem;">
-                                    <span style="color: color: color-mix(in srgb, var(--text), transparent 30%); font-size: 1rem;">Copy Number Output</span>
-                                    <kbd style="background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); padding: 0.2rem 0.6rem; border-radius: 4px; font-family: monospace; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">C</kbd>
+                                    <span style="color: color-mix(in srgb, var(--text), transparent 30%); font-size: 1rem;">Copy Number Output</span>
+                                    <kbd class="kbd-badge">C</kbd>
                                 </div>
 
                                 <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.75rem;">
-                                    <span style="color: color: color-mix(in srgb, var(--text), transparent 30%); font-size: 1rem;">Copy Full Equation</span>
+                                    <span style="color: color-mix(in srgb, var(--text), transparent 30%); font-size: 1rem;">Copy Full Equation</span>
                                     <div style="display:flex; gap: 0.5rem; align-items: center;">
-                                        <kbd style="background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); padding: 0.2rem 0.6rem; border-radius: 4px; font-family: monospace; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">Ctrl</kbd> <span style="font-size: 0.8rem; color: var(--text-muted);">+</span> <kbd style="background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); padding: 0.2rem 0.6rem; border-radius: 4px; font-family: monospace; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">C</kbd>
+                                        <kbd class="kbd-badge">Ctrl</kbd> <span style="font-size: 0.8rem; color: var(--text-muted);">+</span> <kbd class="kbd-badge">C</kbd>
                                     </div>
                                 </div>
 
                                 <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.75rem;">
-                                    <span style="color: color: color-mix(in srgb, var(--text), transparent 30%); font-size: 1rem;">Focus Input Value</span>
-                                    <kbd style="background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); padding: 0.2rem 0.6rem; border-radius: 4px; font-family: monospace; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">Space</kbd>
+                                    <span style="color: color-mix(in srgb, var(--text), transparent 30%); font-size: 1rem;">Focus Input Value</span>
+                                    <kbd class="kbd-badge">Space</kbd>
                                 </div>
 
                                 <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.75rem;">
-                                    <span style="color: color: color-mix(in srgb, var(--text), transparent 30%); font-size: 1rem;">Trigger Manual Calculation</span>
+                                    <span style="color: color-mix(in srgb, var(--text), transparent 30%); font-size: 1rem;">Trigger Manual Calculation</span>
                                     <div style="display:flex; gap: 0.5rem; align-items: center;">
-                                        <kbd style="background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); padding: 0.2rem 0.6rem; border-radius: 4px; font-family: monospace; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">Ctrl</kbd> <span style="font-size: 0.8rem; color: var(--text-muted);">+</span> <kbd style="background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); padding: 0.2rem 0.6rem; border-radius: 4px; font-family: monospace; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">Enter</kbd>
+                                        <kbd class="kbd-badge">Ctrl</kbd> <span style="font-size: 0.8rem; color: var(--text-muted);">+</span> <kbd class="kbd-badge">Enter</kbd>
                                     </div>
                                 </div>
 
                                  <div style="display: flex; align-items: center; justify-content: space-between;">
-                                    <span style="color: color: color-mix(in srgb, var(--text), transparent 30%); font-size: 1rem;">Open Shortcuts View</span>
-                                    <kbd style="background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); padding: 0.2rem 0.6rem; border-radius: 4px; font-family: monospace; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">?</kbd>
+                                    <span style="color: color-mix(in srgb, var(--text), transparent 30%); font-size: 1rem;">Open Shortcuts View</span>
+                                    <kbd class="kbd-badge">?</kbd>
                                 </div>
                             </div>
                         </div>

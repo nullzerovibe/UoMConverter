@@ -28,9 +28,24 @@ a:hover {
     filter: brightness(1.2);
 }
 
+.is-placeholder {
+    color: var(--sl-input-placeholder-color) !important;
+    -webkit-text-fill-color: var(--sl-input-placeholder-color) !important;
+}
+
 .hover-underline:hover {
     text-decoration: underline;
     text-underline-offset: 4px;
+}
+
+.clickable-copy {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.clickable-copy:hover {
+    filter: brightness(1.2);
+    /* opacity: 0.9; */
 }
 
 
@@ -234,7 +249,18 @@ body.is-booting {
     --sl-input-border-color: var(--glass-border);
     --sl-input-color: #cbd5e1;
     /* Subtle Slate 300 */
-    --sl-input-placeholder-color: var(--text-muted);
+    /* --sl-input-placeholder-color: color-mix(in srgb, var(--text-muted), transparent 60%); */
+    --sl-input-placeholder-color: color-mix(in srgb, #64748b, #FFFFFF82 60%);
+
+    /* Placeholder overrides for maximum specificity */
+    & ::placeholder,
+    & sl-input::part(input)::placeholder,
+    & sl-select::part(display-input)::placeholder,
+    & sl-textarea::part(textarea)::placeholder {
+        color: var(--sl-input-placeholder-color) !important;
+        -webkit-text-fill-color: var(--sl-input-placeholder-color) !important;
+        opacity: 1 !important;
+    }
 
     --transparent-white: #ffffff35;
 }
@@ -281,8 +307,19 @@ body.is-booting {
     /* Slate 100 */
     --sl-input-border-color: #cbd5e1;
     --sl-input-color: #0f172a;
-    --sl-input-placeholder-color: #64748b;
-    /* Slate 500 - Darker for visibility */
+    /* --sl-input-placeholder-color: color-mix(in srgb, #64748b, transparent 60%); */
+    --sl-input-placeholder-color: color-mix(in srgb, #64748b, #00000082 60%);
+    /* Slate 500 - Darker for visibility, mixed with transparency for weight */
+
+    /* Placeholder overrides for maximum specificity */
+    & ::placeholder,
+    & sl-input::part(input)::placeholder,
+    & sl-select::part(display-input)::placeholder,
+    & sl-textarea::part(textarea)::placeholder {
+        color: var(--sl-input-placeholder-color) !important;
+        -webkit-text-fill-color: var(--sl-input-placeholder-color) !important;
+        opacity: 1 !important;
+    }
 
     /* Syntax Highlighting Overrides for Light Mode */
     --hl-op: #0284c7;
@@ -308,7 +345,8 @@ body.is-booting {
     /* Red 500 */
 
     /* Document/Card Overrides */
-    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 /* Light Theme Syntax Mappings */
@@ -493,7 +531,6 @@ body.is-booting {
 [data-theme="light"] sl-textarea::part(base) {
     background: rgba(255, 255, 255, 0.3) !important;
     border-color: #cbd5e1;
-    color: #0f172a;
 }
 
 [data-theme="light"] sl-input:focus-within::part(base),
@@ -528,7 +565,6 @@ body.is-booting {
 [data-theme="light"] sl-input::part(base) {
     background: rgba(255, 255, 255, 0.3) !important;
     border-color: #cbd5e1 !important;
-    color: #0f172a !important;
     backdrop-filter: none;
 }
 
@@ -537,7 +573,6 @@ body.is-booting {
 [data-theme="light"] sl-input:has(.btn-stepper)::part(base) {
     background: rgba(255, 255, 255, 0.3) !important;
     border-color: #cbd5e1 !important;
-    color: #0f172a !important;
     backdrop-filter: none;
 }
 
@@ -546,7 +581,6 @@ body.is-booting {
 [data-theme="light"] .history-item {
     background: rgba(255, 255, 255, 0.3) !important;
     border-color: #cbd5e1 !important;
-    color: #0f172a !important;
     backdrop-filter: none;
 }
 
@@ -564,6 +598,25 @@ body.is-booting {
 [data-theme="light"] sl-select::part(combobox) {
     color: #0f172a !important;
     -webkit-text-fill-color: #0f172a !important;
+}
+
+/* HIGH SPECIFICITY PLACEHOLDER FIX - Overrides the above dark text fill */
+[data-theme="light"] sl-input::part(input)::placeholder,
+[data-theme="light"] sl-textarea::part(textarea)::placeholder,
+[data-theme="light"] sl-select::part(display-input)::placeholder,
+[data-theme="light"] ::placeholder {
+    color: var(--sl-input-placeholder-color) !important;
+    -webkit-text-fill-color: var(--sl-input-placeholder-color) !important;
+    opacity: 1 !important;
+}
+
+[data-theme="dark"] sl-input::part(input)::placeholder,
+[data-theme="dark"] sl-textarea::part(textarea)::placeholder,
+[data-theme="dark"] sl-select::part(display-input)::placeholder,
+[data-theme="dark"] ::placeholder {
+    color: var(--sl-input-placeholder-color) !important;
+    -webkit-text-fill-color: var(--sl-input-placeholder-color) !important;
+    opacity: 1 !important;
 }
 
 /* Specific Fix for Dialog Inputs (Name, etc.) */
@@ -649,7 +702,7 @@ body.is-booting {
 
 /* Light Theme Settings Text Contrast */
 [data-theme="light"] .form-group label {
-    color: var(--text) !important;
+    /* color: var(--text) !important; */
     /* Slate 900 */
 }
 
@@ -1439,6 +1492,7 @@ sl-card::part(body) {
     text-overflow: ellipsis;
     white-space: nowrap;
     font-size: 1rem;
+    font-weight: 400;
 }
 
 .expression-combobox-dropdown::part(panel) {
@@ -1538,7 +1592,7 @@ sl-card::part(body) {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    padding: 0.75rem 1rem 0.25rem 1rem;
+    /* padding: 0.75rem 1rem 0.25rem 1rem; */
 }
 
 [data-theme="light"] .snippet-item::part(base) {
@@ -1577,9 +1631,9 @@ sl-card::part(body) {
     color: #64748b !important;
     /* Slate 500 */
     border-radius: 4px;
-    padding: 0.25rem 0.5rem;
+    /* padding: 0.25rem 0.5rem; */
     font-size: 0.8rem;
-    margin-top: 0.25rem;
+    /* margin-top: 0.25rem; */
 }
 
 /* Scrollbar refinement for light theme dropdown */
@@ -1630,14 +1684,14 @@ sl-option::part(base):hover {
 .snippet-info {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 0px;
     flex: 1;
     min-width: 0;
 }
 
 .snippet-label {
-    font-weight: 600;
-    font-size: 0.95rem;
+    /* font-weight: 600; */
+    /* font-size: 0.95rem; */
     color: var(--text);
     white-space: nowrap;
     overflow: hidden;
@@ -1762,7 +1816,7 @@ sl-input::part(base):focus-within {
 sl-input::part(input) {
     color: #cbd5e1;
     /* Subtle Slate 300 */
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 sl-input::part(clear-button),
@@ -2639,16 +2693,28 @@ sl-tab-panel {
 }
 
 .stats-badge::part(base),
-.result-type-badge-sm::part(base) {
+.result-type-badge-sm::part(base),
+.kbd-badge {
     border-radius: 4px !important;
-    padding: 0.15rem 0.45rem !important;
-    font-size: 0.72rem;
+    padding: 0.2rem 0.6rem !important;
+    font-size: 1rem;
     display: inline-flex;
     align-items: center;
     background: rgba(0, 0, 0, 0.45) !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
     color: #cbd5e1 !important;
     opacity: 0.85;
+    font-family: var(--font-mono);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="light"] .stats-badge::part(base),
+[data-theme="light"] .result-type-badge-sm::part(base),
+[data-theme="light"] .kbd-badge {
+    background-color: rgba(241, 245, 249, 0.4) !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #475569 !important;
+    box-shadow: none !important;
 }
 
 .stats-icon {
@@ -3203,8 +3269,8 @@ sl-input:has(.btn-stepper)::part(suffix) {
     font-family: var(--font-mono);
     font-size: 0.95rem;
     font-weight: 500;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    /* Explicit transitions */
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Explicit transitions to avoid flickering background-clip */
     opacity: 0.7;
     /* Standardized non-hover opacity */
 }
@@ -3217,11 +3283,13 @@ sl-input:has(.btn-stepper)::part(suffix) {
     align-items: center;
     justify-content: center;
     opacity: 0.8;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-link:hover {
     opacity: 1;
+    filter: none;
+    /* Disable global a:hover brightness filter */
     /* Restore Gradient Text */
     background: linear-gradient(135deg, #2563eb 0%, #38bdf8 100%);
     -webkit-background-clip: text;
@@ -5031,7 +5099,7 @@ sl-tooltip::part(body) {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    padding: 0.75rem 1rem 0.25rem 1rem;
+    /* padding: 0.75rem 1rem 0.25rem 1rem; */
 }
 
 [data-theme="light"] .snippet-item::part(base) {
@@ -5064,9 +5132,9 @@ sl-tooltip::part(body) {
     border: 1px solid transparent !important;
     color: #64748b !important;
     border-radius: 4px;
-    padding: 0.25rem 0.5rem;
+    /* padding: 0.25rem 0.5rem; */
     font-size: 0.8rem;
-    margin-top: 0.25rem;
+    /* margin-top: 0.25rem; */
 }
 
 [data-theme="light"] .combobox-menu::-webkit-scrollbar-thumb {
@@ -5086,14 +5154,14 @@ sl-tooltip::part(body) {
 .snippet-info {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 0px;
     flex: 1;
     min-width: 0;
 }
 
 .snippet-label {
-    font-weight: 600;
-    font-size: 0.95rem;
+    /* font-weight: 600; */
+    /* font-size: 0.95rem; */
     color: var(--text);
     white-space: nowrap;
     overflow: hidden;
