@@ -1536,7 +1536,7 @@ sl-card::part(body) {
 }
 
 .snippet-item {
-    border-radius: 8px;
+    border-radius: var(--sl-border-radius-medium);
     margin: 2px 0;
 }
 
@@ -2017,7 +2017,7 @@ sl-button[variant="danger"]::part(base):focus-visible {
     justify-content: center;
     padding: 0.5rem 1rem;
     margin: 1rem 0 0 0;
-    border-radius: 8px;
+    border-radius: var(--sl-border-radius-medium);
     background: rgba(56, 189, 248, 0.1);
     border: 1px solid rgba(56, 189, 248, 0.2);
     color: var(--text-muted);
@@ -2067,7 +2067,7 @@ sl-button[variant="danger"]::part(base):focus-visible {
     align-items: center;
     justify-content: center;
     transition: var(--sl-transition-fast) color, var(--sl-transition-fast) background-color;
-    border-radius: 8px;
+    border-radius: var(--sl-border-radius-medium);
     transform: translateY(2px);
 }
 
@@ -2229,7 +2229,7 @@ sl-button[variant="danger"]::part(base):focus-visible {
 .doc-item {
     background: rgba(255, 255, 255, 0.05);
     padding: 0.75rem;
-    border-radius: 8px;
+    border-radius: var(--sl-border-radius-medium);
     margin-bottom: 0.5rem;
 }
 
@@ -2492,7 +2492,7 @@ sl-tab-panel {
     align-items: flex-start;
     background: rgba(245, 158, 11, 0.1);
     border: 1px solid rgba(245, 158, 11, 0.2);
-    border-radius: 8px;
+    border-radius: var(--sl-border-radius-medium);
     padding: 1rem;
     font-size: 0.9rem;
     line-height: 1.5;
@@ -2535,7 +2535,7 @@ sl-tab-panel {
     align-items: flex-start;
     background: rgba(239, 68, 68, 0.1);
     border: 1px solid rgba(239, 68, 68, 0.2);
-    border-radius: 8px;
+    border-radius: var(--sl-border-radius-medium);
     padding: 1rem;
     color: var(--text-muted);
     font-size: 0.9rem;
@@ -2571,7 +2571,7 @@ sl-tab-panel {
 }
 
 .doc-card {
-    border-radius: 8px;
+    border-radius: var(--sl-border-radius-medium);
     padding: 0.75rem 1rem;
     transition: background 0.2s ease, border-color 0.2s ease;
 }
@@ -3532,7 +3532,7 @@ sl-tooltip::part(body) {
 [data-theme="dark"] sl-tooltip::part(body) {
     background-color: rgba(15, 23, 42, 0.95);
     border: 1px solid var(--glass-border);
-    border-radius: 8px;
+    border-radius: var(--sl-border-radius-medium);
     color: #f1f5f9;
 }
 
@@ -3609,7 +3609,7 @@ sl-tab-panel[active]::part(base) {
     line-height: 1.5;
     background: rgba(0, 0, 0, 0.3);
     border: 1px solid var(--glass-border);
-    border-radius: 8px;
+    border-radius: var(--sl-border-radius-medium);
     overflow: hidden;
     min-height: 100px;
     transition: border-color 0.2s ease;
@@ -4362,7 +4362,7 @@ sl-tooltip::part(body) {
 .validation-result {
     margin-top: 0.75rem;
     padding: 0.75rem;
-    border-radius: 8px;
+    border-radius: var(--sl-border-radius-medium);
     font-size: 0.9rem;
     display: flex;
     align-items: flex-start;
@@ -4873,7 +4873,7 @@ sl-tooltip::part(body) {
 .doc-card {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
-    border-radius: 8px;
+    border-radius: var(--sl-border-radius-medium);
     padding: 0.75rem 1rem;
     display: flex;
     flex-direction: column;
@@ -4904,7 +4904,7 @@ sl-tooltip::part(body) {
 
 /* History Items */
 .history-item {
-    border-radius: 8px;
+    border-radius: var(--sl-border-radius-medium);
     padding: 0.75rem 1rem;
     cursor: pointer;
     transition: all 0.2s;
@@ -5050,7 +5050,7 @@ sl-tooltip::part(body) {
 }
 
 .snippet-item {
-    border-radius: 8px;
+    border-radius: var(--sl-border-radius-medium);
     margin: 2px 0;
 }
 
@@ -5294,7 +5294,7 @@ sl-tooltip::part(body) {
 }
 
 .live-chip {
-    border-radius: 8px;
+    border-radius: var(--sl-border-radius-medium);
     padding: 0.75rem 1rem;
     display: flex;
     flex-direction: column;
