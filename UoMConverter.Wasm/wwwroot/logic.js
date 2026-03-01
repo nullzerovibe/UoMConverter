@@ -188,7 +188,7 @@ const loadSnippets = () => {
 };
 
 const loadSavedSettings = () => {
-    const defaults = { dateFormat: 'dd/MM/yyyy', culture: 'en-US', enableHistory: true, historyLength: 15, theme: 'auto', numberFormat: 'auto', useDimension: true, useSmartDetection: false, useAlias: true, unitSortMode: 'alpha', useUnitFrequency: true };
+    const defaults = { dateFormat: 'dd/MM/yyyy', culture: 'en-US', enableHistory: true, historyLength: 15, theme: 'auto', numberFormat: 'auto', useDimension: true, useSmartDetection: false, useAlias: true, copyUnitAliases: true, unitSortMode: 'alpha', useUnitFrequency: true };
     try {
         const saved = localStorage.getItem(STORAGE_KEY_SETTINGS);
         if (!saved) return defaults;
@@ -1104,14 +1104,18 @@ export const actions = {
             return;
         }
 
-        const fromUnitFull = appState.units.value.find(u => u.Name === appState.fromUnit.value);
-        const toUnitFull = appState.units.value.find(u => u.Name === appState.toUnit.value);
+        const fromUnitFull = appState.units.value.find(u => (u.name || u.Name) === appState.fromUnit.value);
+        const toUnitFull = appState.units.value.find(u => (u.name || u.Name) === appState.toUnit.value);
 
-        const fromName = fromUnitFull ? fromUnitFull.Name : appState.fromUnit.value;
-        const toName = toUnitFull ? toUnitFull.Name : appState.toUnit.value;
+        const fromName = fromUnitFull ? (fromUnitFull.name || fromUnitFull.Name) : appState.fromUnit.value;
+        const toName = toUnitFull ? (toUnitFull.name || toUnitFull.Name) : appState.toUnit.value;
 
-        const fromAbbr = fromUnitFull ? (fromUnitFull.Abbreviation || fromName) : fromName;
-        const toAbbr = toUnitFull ? (toUnitFull.Abbreviation || toName) : toName;
+        const realFromAbbr = (fromUnitFull?.abbreviation || fromUnitFull?.Abbreviation) || fromName;
+        const realToAbbr = (toUnitFull?.abbreviation || toUnitFull?.Abbreviation) || toName;
+
+        const useAliases = appState.settings.value.copyUnitAliases !== false;
+        const displayFromAbbr = useAliases ? realFromAbbr : fromName;
+        const displayToAbbr = useAliases ? realToAbbr : toName;
 
         let payload = '';
 
@@ -1120,16 +1124,16 @@ export const actions = {
                 payload = res;
                 break;
             case 'symbol':
-                payload = `${res} ${toAbbr}`;
+                payload = `${res} ${displayToAbbr}`;
                 break;
             case 'equation':
-                payload = `${val} ${fromAbbr} = ${res} ${toAbbr}`;
+                payload = `${val} ${displayFromAbbr} = ${res} ${displayToAbbr}`;
                 break;
             case 'json':
                 payload = JSON.stringify({
                     dimension: appState.selectedDimension.value,
-                    source: { value: val, unit: fromName, abbreviation: fromAbbr },
-                    target: { value: res, unit: toName, abbreviation: toAbbr }
+                    source: { value: val, unit: fromName, abbreviation: realFromAbbr },
+                    target: { value: res, unit: toName, abbreviation: realToAbbr }
                 }, null, 2);
                 break;
             default:
@@ -1148,14 +1152,18 @@ export const actions = {
             return;
         }
 
-        const fromUnitFull = appState.units.value.find(u => u.Name === appState.fromUnit.value);
-        const toUnitFull = appState.units.value.find(u => u.Name === appState.toUnit.value);
+        const fromUnitFull = appState.units.value.find(u => (u.name || u.Name) === appState.fromUnit.value);
+        const toUnitFull = appState.units.value.find(u => (u.name || u.Name) === appState.toUnit.value);
 
-        const fromName = fromUnitFull ? fromUnitFull.Name : appState.fromUnit.value;
-        const toName = toUnitFull ? toUnitFull.Name : appState.toUnit.value;
+        const fromName = fromUnitFull ? (fromUnitFull.name || fromUnitFull.Name) : appState.fromUnit.value;
+        const toName = toUnitFull ? (toUnitFull.name || toUnitFull.Name) : appState.toUnit.value;
 
-        const fromAbbr = fromUnitFull ? (fromUnitFull.Abbreviation || fromName) : fromName;
-        const toAbbr = toUnitFull ? (toUnitFull.Abbreviation || toName) : toName;
+        const realFromAbbr = (fromUnitFull?.abbreviation || fromUnitFull?.Abbreviation) || fromName;
+        const realToAbbr = (toUnitFull?.abbreviation || toUnitFull?.Abbreviation) || toName;
+
+        const useAliases = appState.settings.value.copyUnitAliases !== false;
+        const displayFromAbbr = useAliases ? realFromAbbr : fromName;
+        const displayToAbbr = useAliases ? realToAbbr : toName;
 
         let title = 'Unit Conversion';
         let text = '';
@@ -1165,11 +1173,11 @@ export const actions = {
                 text = res;
                 break;
             case 'symbol':
-                text = `${res} ${toAbbr}`;
+                text = `${res} ${displayToAbbr}`;
                 break;
             case 'equation':
                 title = `${fromName} to ${toName}`;
-                text = `${val} ${fromAbbr} = ${res} ${toAbbr}`;
+                text = `${val} ${displayFromAbbr} = ${res} ${displayToAbbr}`;
                 break;
             default:
                 text = res;

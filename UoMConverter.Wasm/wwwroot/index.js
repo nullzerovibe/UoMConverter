@@ -1048,6 +1048,17 @@ export const Documentation = ({ state, actions }) => {
                                 <div class="form-group">
                                     <div class="u-flex u-items-center u-justify-between">
                                         <label class="u-mt-0">
+                                            <sl-icon src="https://api.iconify.design/lucide/clipboard-copy.svg?color=%23cbd5e1" class="setting-icon"></sl-icon>
+                                            Copy Unit Aliases
+                                        </label>
+                                        <sl-switch name="copyUnitAliases" checked=${state.draftSettings.value.copyUnitAliases !== false} onsl-change=${(e) => { state.draftSettings.value = { ...state.draftSettings.value, copyUnitAliases: e.target.checked }; }}></sl-switch>
+                                    </div>
+                                    <div class="subtle-help">Use unit abbreviations (e.g. 'km/h') when copying to clipboard instead of full names.</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="u-flex u-items-center u-justify-between">
+                                        <label class="u-mt-0">
                                             <sl-icon src="https://api.iconify.design/lucide/lock.svg?color=%23cbd5e1" class="setting-icon"></sl-icon>
                                             Lock Category Scope
                                         </label>
@@ -1180,10 +1191,10 @@ export const Documentation = ({ state, actions }) => {
 
                         <section class="about-section">
                             <div class="vibe-card">
-                                <pre class="vibe-text"> _  _         _  _  ____                 _   _  _  _      
-| \\| | _  _  | || ||_  / ___  _ _  ___  | | | |(_)| |__  ___
-| .  || || | | || | / / / -_)| '_|/ _ \\ | |_| || || '_ \\/ -_)
-|_|\\_| \\_,_| |_||_|/___|\\___||_|  \\___/  \\___/ |_||_.__/\\___|
+                                <pre class="vibe-text"> _  _        _  _  ____                 _   _  _  _      
+| \\| | _  _ | || ||_  / ___  _ _  ___  | | | |(_)| |__  ___
+| .  || || || || | / / / -_)| '_|/ _ \\ | |_| || || '_ \\/ -_)
+|_|\\_| \\_,_||_||_|/___|\\___||_|  \\___/  \\___/ |_||_.__/\\___|
  
  
                       ▄▀▀▄░█▀▀█░█▀▀▄░█▀▀ 
