@@ -34,7 +34,7 @@ jobs:
       run: dotnet publish UoMConverter/UoMConverter.csproj -c Release -o output/library
 
     - name: Upload Library (Cross-Platform)
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: UoMConverter-Lib-CrossPlatform
         path: output/library/**
@@ -44,7 +44,7 @@ jobs:
       run: dotnet publish UoMConverter.Wasm/UoMConverter.Wasm.csproj -c Release -o output/wasm
 
     - name: Upload WASM (WebSite)
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: UoMConverter-Wasm-App
         path: output/wasm/wwwroot/**
