@@ -125,3 +125,5 @@ orleans.codegen.cs
 # Bloc-specific ignores
 .DS_Store
 Thumbs.db
+# CI / local publish outputs
+output/

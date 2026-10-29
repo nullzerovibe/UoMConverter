@@ -1,0 +1,17 @@
+# WHY: The index is LF; normalize regardless of each contributor's core.autocrlf.
+* text=auto
+
+*.cs      text diff=csharp
+*.csproj  text
+*.props   text
+*.slnx    text
+*.md      text
+*.json    text
+*.yml     text eol=lf
+*.yaml    text eol=lf
+*.sh      text eol=lf
+*.ps1     text eol=crlf
+
+*.png binary
+*.jpg binary
+*.ico binary

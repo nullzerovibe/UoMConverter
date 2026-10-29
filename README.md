@@ -135,11 +135,13 @@ Units are compiled into the package from JSON definitions under [`UoMConverter/U
 
 We leverage the extensive unit definitions from [UnitsNet](https://github.com/angularsen/UnitsNet). Specifically, we reuse their [Common/UnitDefinitions](https://github.com/angularsen/UnitsNet/tree/master/Common/UnitDefinitions) JSON files to ensure compatibility and comprehensive coverage.
 
-To keep these definitions in sync with upstream sources, use the provided script:
+To update the definitions, sync a pinned upstream tag or commit and review the diff in a pull request:
 
 ```powershell
-.\scripts\Sync-UnitsNet.ps1
+.\scripts\Sync-UnitsNet.ps1 -Ref v6.0.0
 ```
+
+The resolved commit is recorded in `UoMConverter/UnitDefinitions/UnitsNet/UPSTREAM.txt`. Formulas are parsed against an allowlisted grammar at build time (`UOM0002`), and to/from formulas must be inverses (`UOM0003`).
 
 ## License
 

@@ -1,7 +1,10 @@
 name: Deploy to GitHub Pages
 
+# WHY: Deploy only code that passed CI; a red main must never reach the public demo.
 on:
-  push:
+  workflow_run:
+    workflows: [ "CI" ]
+    types: [ completed ]
     branches: [ "main" ]
   workflow_dispatch:
 
@@ -16,12 +19,16 @@ concurrency:
 
 jobs:
   deploy:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # WHY: Deploy exactly the commit CI validated, not whatever main points to now.
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v5
