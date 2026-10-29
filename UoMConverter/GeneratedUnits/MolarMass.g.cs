@@ -171,7 +171,7 @@ public static partial class UoMRegistry {
             "KilogramPerMole",
             "In chemistry, the molar mass M is a physical property defined as the mass of a given substance (chemical element or chemical compound) divided by the amount of substance.",
             MolarMassUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["M"] = 1, ["N"] = -1 },
+            new Dictionary<string, int> { ["M"] = 1, ["N"] = -1 }.ToFrozenDictionary(),
             null,
             false,
             1

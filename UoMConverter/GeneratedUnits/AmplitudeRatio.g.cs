@@ -63,7 +63,7 @@ public static partial class UoMRegistry {
             "DecibelVolt",
             "The strength of a signal expressed in decibels (dB) relative to one volt RMS.",
             AmplitudeRatioUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> {  },
+            new Dictionary<string, int> {  }.ToFrozenDictionary(),
             null,
             true,
             2

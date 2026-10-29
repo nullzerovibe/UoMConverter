@@ -51,7 +51,7 @@ public static partial class UoMRegistry {
             "KilogramPerSquareMeter",
             "The area density of a two-dimensional object is calculated as the mass per unit area. For paper this is also called grammage.",
             AreaDensityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = -2, ["M"] = 1 },
+            new Dictionary<string, int> { ["L"] = -2, ["M"] = 1 }.ToFrozenDictionary(),
             null,
             false,
             1

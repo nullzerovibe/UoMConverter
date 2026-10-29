@@ -51,7 +51,7 @@ public static partial class UoMRegistry {
             "CoulombPerSquareMeter",
             "In electromagnetism, surface charge density is a measure of the amount of electric charge per surface area.",
             ElectricSurfaceChargeDensityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = -2, ["T"] = 1, ["I"] = 1 },
+            new Dictionary<string, int> { ["L"] = -2, ["T"] = 1, ["I"] = 1 }.ToFrozenDictionary(),
             null,
             false,
             1

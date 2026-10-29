@@ -123,7 +123,7 @@ public static partial class UoMRegistry {
             "CubicMeterPerMeter",
             "Volume, typically of fluid, that a container can hold within a unit of length.",
             VolumePerLengthUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 2 },
+            new Dictionary<string, int> { ["L"] = 2 }.ToFrozenDictionary(),
             null,
             false,
             1

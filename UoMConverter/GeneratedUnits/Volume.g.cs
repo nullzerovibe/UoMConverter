@@ -723,7 +723,7 @@ public static partial class UoMRegistry {
             "CubicMeter",
             "Volume units used in historical Croatia/Venice/Ottoman regions for grain and milling.",
             VolumeUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> {  },
+            new Dictionary<string, int> {  }.ToFrozenDictionary(),
             null,
             false,
             1

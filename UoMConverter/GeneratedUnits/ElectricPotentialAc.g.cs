@@ -75,7 +75,7 @@ public static partial class UoMRegistry {
             "VoltAc",
             "The Electric Potential of a system known to use Alternating Current.",
             ElectricPotentialAcUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> {  },
+            new Dictionary<string, int> {  }.ToFrozenDictionary(),
             null,
             false,
             1

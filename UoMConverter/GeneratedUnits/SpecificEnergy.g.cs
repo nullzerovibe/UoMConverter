@@ -375,7 +375,7 @@ public static partial class UoMRegistry {
             "JoulePerKilogram",
             "The SpecificEnergy",
             SpecificEnergyUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 2, ["T"] = -2 },
+            new Dictionary<string, int> { ["L"] = 2, ["T"] = -2 }.ToFrozenDictionary(),
             null,
             false,
             1

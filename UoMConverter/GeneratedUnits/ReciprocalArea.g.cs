@@ -147,7 +147,7 @@ public static partial class UoMRegistry {
             "InverseSquareMeter",
             "Reciprocal area (Inverse-square) quantity is used to specify a physical quantity inversely proportional to the square of the distance.",
             ReciprocalAreaUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = -2 },
+            new Dictionary<string, int> { ["L"] = -2 }.ToFrozenDictionary(),
             null,
             false,
             1

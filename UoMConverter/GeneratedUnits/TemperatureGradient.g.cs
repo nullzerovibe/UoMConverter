@@ -63,7 +63,7 @@ public static partial class UoMRegistry {
             "KelvinPerMeter",
             "",
             TemperatureGradientUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = -1, ["Θ"] = 1 },
+            new Dictionary<string, int> { ["L"] = -1, ["Θ"] = 1 }.ToFrozenDictionary(),
             null,
             false,
             1

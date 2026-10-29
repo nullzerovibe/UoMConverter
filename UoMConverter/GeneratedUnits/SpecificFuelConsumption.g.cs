@@ -63,7 +63,7 @@ public static partial class UoMRegistry {
             "GramPerKilonewtonSecond",
             "SFC is the fuel efficiency of an engine design with respect to thrust output",
             SpecificFuelConsumptionUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = -1, ["T"] = 1 },
+            new Dictionary<string, int> { ["L"] = -1, ["T"] = 1 }.ToFrozenDictionary(),
             null,
             false,
             1

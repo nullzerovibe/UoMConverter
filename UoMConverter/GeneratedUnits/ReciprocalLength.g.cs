@@ -135,7 +135,7 @@ public static partial class UoMRegistry {
             "InverseMeter",
             "Reciprocal (Inverse) Length is used in various fields of science and mathematics. It is defined as the inverse value of a length unit.",
             ReciprocalLengthUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = -1 },
+            new Dictionary<string, int> { ["L"] = -1 }.ToFrozenDictionary(),
             null,
             false,
             1

@@ -111,7 +111,7 @@ public static partial class UoMRegistry {
             "Ohm",
             "In electrical circuits, reactance is the opposition presented to alternating current by inductance and capacitance. Along with resistance, it is one of two elements of impedance.",
             ElectricReactanceUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -3, ["I"] = -2 },
+            new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -3, ["I"] = -2 }.ToFrozenDictionary(),
             null,
             false,
             1

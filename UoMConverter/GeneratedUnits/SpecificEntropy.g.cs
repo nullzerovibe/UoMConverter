@@ -123,7 +123,7 @@ public static partial class UoMRegistry {
             "JoulePerKilogramKelvin",
             "Specific entropy is an amount of energy required to raise temperature of a substance by 1 Kelvin per unit mass.",
             SpecificEntropyUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 2, ["T"] = -2, ["Θ"] = -1 },
+            new Dictionary<string, int> { ["L"] = 2, ["T"] = -2, ["Θ"] = -1 }.ToFrozenDictionary(),
             null,
             false,
             1

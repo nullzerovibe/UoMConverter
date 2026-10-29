@@ -51,7 +51,7 @@ public static partial class UoMRegistry {
             "MolePerKilogram",
             "Molality is a measure of the amount of solute in a solution relative to a given mass of solvent.",
             MolalityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["N"] = 1, ["M"] = -1 },
+            new Dictionary<string, int> { ["N"] = 1, ["M"] = -1 }.ToFrozenDictionary(),
             null,
             false,
             1

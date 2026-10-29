@@ -27,7 +27,7 @@ public static partial class UoMRegistry {
             "Weber",
             "In physics, specifically electromagnetism, the magnetic flux through a surface is the surface integral of the normal component of the magnetic field B passing through that surface.",
             MagneticFluxUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -2, ["I"] = -1 },
+            new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -2, ["I"] = -1 }.ToFrozenDictionary(),
             null,
             false,
             1

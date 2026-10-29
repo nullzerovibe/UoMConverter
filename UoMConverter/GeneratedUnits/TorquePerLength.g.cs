@@ -267,7 +267,7 @@ public static partial class UoMRegistry {
             "NewtonMeterPerMeter",
             "The magnitude of torque per unit length.",
             TorquePerLengthUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 1, ["M"] = 1, ["T"] = -2 },
+            new Dictionary<string, int> { ["L"] = 1, ["M"] = 1, ["T"] = -2 }.ToFrozenDictionary(),
             null,
             false,
             1

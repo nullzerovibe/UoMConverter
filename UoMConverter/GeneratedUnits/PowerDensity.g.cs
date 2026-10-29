@@ -543,7 +543,7 @@ public static partial class UoMRegistry {
             "WattPerCubicMeter",
             "The amount of power in a volume.",
             PowerDensityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = -1, ["M"] = 1, ["T"] = -3 },
+            new Dictionary<string, int> { ["L"] = -1, ["M"] = 1, ["T"] = -3 }.ToFrozenDictionary(),
             null,
             false,
             1

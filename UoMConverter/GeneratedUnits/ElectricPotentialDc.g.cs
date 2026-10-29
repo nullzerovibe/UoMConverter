@@ -75,7 +75,7 @@ public static partial class UoMRegistry {
             "VoltDc",
             "The Electric Potential of a system known to use Direct Current.",
             ElectricPotentialDcUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> {  },
+            new Dictionary<string, int> {  }.ToFrozenDictionary(),
             null,
             false,
             1

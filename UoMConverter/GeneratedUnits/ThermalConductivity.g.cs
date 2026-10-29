@@ -39,7 +39,7 @@ public static partial class UoMRegistry {
             "WattPerMeterKelvin",
             "Thermal conductivity is the property of a material to conduct heat.",
             ThermalConductivityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 1, ["M"] = 1, ["T"] = -3, ["Θ"] = -1 },
+            new Dictionary<string, int> { ["L"] = 1, ["M"] = 1, ["T"] = -3, ["Θ"] = -1 }.ToFrozenDictionary(),
             null,
             false,
             1

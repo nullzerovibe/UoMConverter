@@ -123,7 +123,7 @@ public static partial class UoMRegistry {
             "StandardCubicMeterPerSecond",
             "The molar flow rate of a gas corrected to standardized conditions of temperature and pressure thus representing a fixed number of moles of gas regardless of composition and actual flow conditions.",
             StandardVolumeFlowUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["M"] = 1, ["T"] = -1 },
+            new Dictionary<string, int> { ["M"] = 1, ["T"] = -1 }.ToFrozenDictionary(),
             null,
             false,
             1

@@ -183,7 +183,7 @@ public static partial class UoMRegistry {
             "Watt",
             "Luminosity is an absolute measure of radiated electromagnetic power (light), the radiant power emitted by a light-emitting object.",
             LuminosityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -3 },
+            new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -3 }.ToFrozenDictionary(),
             null,
             false,
             1

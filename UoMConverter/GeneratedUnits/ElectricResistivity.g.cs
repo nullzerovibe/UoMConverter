@@ -183,7 +183,7 @@ public static partial class UoMRegistry {
             "OhmMeter",
             "Electrical resistivity (also known as resistivity, specific electrical resistance, or volume resistivity) is a fundamental property that quantifies how strongly a given material opposes the flow of electric current.",
             ElectricResistivityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 3, ["M"] = 1, ["T"] = -3, ["I"] = -2 },
+            new Dictionary<string, int> { ["L"] = 3, ["M"] = 1, ["T"] = -3, ["I"] = -2 }.ToFrozenDictionary(),
             null,
             false,
             1

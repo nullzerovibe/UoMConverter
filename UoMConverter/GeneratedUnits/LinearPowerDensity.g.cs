@@ -315,7 +315,7 @@ public static partial class UoMRegistry {
             "WattPerMeter",
             "The Linear Power Density of a substance is its power per unit length.  The term linear density is most often used when describing the characteristics of one-dimensional objects, although linear density can also be used to describe the density of a three-dimensional quantity along one particular dimension.",
             LinearPowerDensityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["M"] = 1, ["L"] = 1, ["T"] = -3 },
+            new Dictionary<string, int> { ["M"] = 1, ["L"] = 1, ["T"] = -3 }.ToFrozenDictionary(),
             null,
             false,
             1

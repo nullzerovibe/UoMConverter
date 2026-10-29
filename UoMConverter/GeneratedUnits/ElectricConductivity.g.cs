@@ -87,7 +87,7 @@ public static partial class UoMRegistry {
             "SiemensPerMeter",
             "Electrical conductivity or specific conductance is the reciprocal of electrical resistivity, and measures a material's ability to conduct an electric current.",
             ElectricConductivityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = -3, ["M"] = -1, ["T"] = 3, ["I"] = 2 },
+            new Dictionary<string, int> { ["L"] = -3, ["M"] = -1, ["T"] = 3, ["I"] = 2 }.ToFrozenDictionary(),
             null,
             false,
             1

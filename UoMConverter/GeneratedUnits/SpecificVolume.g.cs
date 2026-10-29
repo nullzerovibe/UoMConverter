@@ -51,7 +51,7 @@ public static partial class UoMRegistry {
             "CubicMeterPerKilogram",
             "In thermodynamics, the specific volume of a substance is the ratio of the substance's volume to its mass. It is the reciprocal of density and an intrinsic property of matter as well.",
             SpecificVolumeUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 3, ["M"] = -1 },
+            new Dictionary<string, int> { ["L"] = 3, ["M"] = -1 }.ToFrozenDictionary(),
             null,
             false,
             1

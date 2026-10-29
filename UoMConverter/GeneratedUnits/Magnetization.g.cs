@@ -27,7 +27,7 @@ public static partial class UoMRegistry {
             "AmperePerMeter",
             "In classical electromagnetism, magnetization is the vector field that expresses the density of permanent or induced magnetic dipole moments in a magnetic material.",
             MagnetizationUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = -1, ["I"] = 1 },
+            new Dictionary<string, int> { ["L"] = -1, ["I"] = 1 }.ToFrozenDictionary(),
             null,
             false,
             1

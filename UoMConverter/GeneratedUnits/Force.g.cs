@@ -195,7 +195,7 @@ public static partial class UoMRegistry {
             "Newton",
             "In physics, a force is any influence that causes an object to undergo a certain change, either concerning its movement, direction, or geometrical construction. In other words, a force can cause an object with mass to change its velocity (which includes to begin moving from a state of rest), i.e., to accelerate, or a flexible object to deform, or both. Force can also be described by intuitive concepts such as a push or a pull. A force has both magnitude and direction, making it a vector quantity. It is measured in the SI unit of newtons and represented by the symbol F.",
             ForceUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 1, ["M"] = 1, ["T"] = -2 },
+            new Dictionary<string, int> { ["L"] = 1, ["M"] = 1, ["T"] = -2 }.ToFrozenDictionary(),
             null,
             false,
             1

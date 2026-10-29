@@ -123,7 +123,7 @@ public static partial class UoMRegistry {
             "JoulePerSquareMeter",
             "Irradiation is the process by which an object is exposed to radiation. The exposure can originate from various sources, including natural sources.",
             IrradiationUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["M"] = 1, ["T"] = -2 },
+            new Dictionary<string, int> { ["M"] = 1, ["T"] = -2 }.ToFrozenDictionary(),
             null,
             false,
             1

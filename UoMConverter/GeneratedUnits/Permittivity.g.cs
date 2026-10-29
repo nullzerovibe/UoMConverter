@@ -27,7 +27,7 @@ public static partial class UoMRegistry {
             "FaradPerMeter",
             "In electromagnetism, permittivity is the measure of resistance that is encountered when forming an electric field in a particular medium.",
             PermittivityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = -3, ["M"] = -1, ["T"] = 4, ["I"] = 2 },
+            new Dictionary<string, int> { ["L"] = -3, ["M"] = -1, ["T"] = 4, ["I"] = 2 }.ToFrozenDictionary(),
             null,
             false,
             1

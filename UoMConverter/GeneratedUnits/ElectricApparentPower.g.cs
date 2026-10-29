@@ -87,7 +87,7 @@ public static partial class UoMRegistry {
             "Voltampere",
             "Power engineers measure apparent power as the magnitude of the vector sum of active and reactive power. It is the product of the root mean square voltage (in volts) and the root mean square current (in amperes).",
             ElectricApparentPowerUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -3 },
+            new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -3 }.ToFrozenDictionary(),
             null,
             false,
             1

@@ -339,7 +339,7 @@ public static partial class UoMRegistry {
             "Watt",
             "In physics, power is the rate of doing work. It is equivalent to an amount of energy consumed per unit time.",
             PowerUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -3 },
+            new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -3 }.ToFrozenDictionary(),
             null,
             false,
             1

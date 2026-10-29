@@ -27,7 +27,7 @@ public static partial class UoMRegistry {
             "Lumen",
             "In photometry, luminous flux or luminous power is the measure of the perceived power of light.",
             LuminousFluxUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["J"] = 1 },
+            new Dictionary<string, int> { ["J"] = 1 }.ToFrozenDictionary(),
             null,
             false,
             1

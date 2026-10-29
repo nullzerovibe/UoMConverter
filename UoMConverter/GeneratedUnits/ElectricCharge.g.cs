@@ -147,7 +147,7 @@ public static partial class UoMRegistry {
             "Coulomb",
             "Electric charge is the physical property of matter that causes it to experience a force when placed in an electromagnetic field.",
             ElectricChargeUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["T"] = 1, ["I"] = 1 },
+            new Dictionary<string, int> { ["T"] = 1, ["I"] = 1 }.ToFrozenDictionary(),
             null,
             false,
             1

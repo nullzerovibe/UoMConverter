@@ -255,7 +255,7 @@ public static partial class UoMRegistry {
             "VoltPerSecond",
             "ElectricPotential change rate is the ratio of the electric potential change to the time during which the change occurred (value of electric potential changes per unit time).",
             ElectricPotentialChangeRateUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -4, ["I"] = -1 },
+            new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -4, ["I"] = -1 }.ToFrozenDictionary(),
             null,
             false,
             1

@@ -87,7 +87,7 @@ public static partial class UoMRegistry {
             "PerKelvin",
             "A unit that represents a fractional change in size in response to a change in temperature.",
             CoefficientOfThermalExpansionUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["Θ"] = -1 },
+            new Dictionary<string, int> { ["Θ"] = -1 }.ToFrozenDictionary(),
             null,
             false,
             1

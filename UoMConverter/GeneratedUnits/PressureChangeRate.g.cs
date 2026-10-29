@@ -231,7 +231,7 @@ public static partial class UoMRegistry {
             "PascalPerSecond",
             "Pressure change rate is the ratio of the pressure change to the time during which the change occurred (value of pressure changes per unit time).",
             PressureChangeRateUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = -1, ["M"] = 1, ["T"] = -3 },
+            new Dictionary<string, int> { ["L"] = -1, ["M"] = 1, ["T"] = -3 }.ToFrozenDictionary(),
             null,
             false,
             1

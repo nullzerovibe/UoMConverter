@@ -11,7 +11,7 @@ public interface IUoMConverter {
     /// By default, uses smart detection to resolve ambiguities (e.g. "A" -> "m").
     /// </summary>
     /// <exception cref="System.ArgumentNullException">Thrown if a unit is null.</exception>
-    /// <exception cref="System.ArgumentException">Thrown if units are unknown, incompatible, or ambiguous.</exception>
+    /// <exception cref="UoMConversionException">Thrown if units are unknown, incompatible, or ambiguous (see derived types).</exception>
     double Convert(double value, string fromUnit, string toUnit, bool useSmartDetection = true);
 
     /// <summary>
@@ -21,16 +21,28 @@ public interface IUoMConverter {
     double Convert(double value, string fromUnit, string toUnit, string dimension);
 
     /// <summary>
+    /// Attempts a conversion without throwing. Uses smart detection, like <see cref="Convert(double, string, string, bool)"/>.
+    /// </summary>
+    /// <returns>True and the converted value on success; false if units are null, unknown, incompatible, or ambiguous.</returns>
+    bool TryConvert(double value, string? fromUnit, string? toUnit, out double result);
+
+    /// <summary>
+    /// Attempts a conversion scoped to a physical quantity without throwing. A null or blank dimension falls back to smart detection.
+    /// </summary>
+    /// <returns>True and the converted value on success; false otherwise.</returns>
+    bool TryConvert(double value, string? fromUnit, string? toUnit, string? dimension, out double result);
+
+    /// <summary>
     /// Returns all available physical quantity names (e.g., "Mass", "Length").
     /// </summary>
     IEnumerable<string> GetDimensions();
 
     /// <summary>
-    /// Gets a list of units for a specific quantity, optimized for UI display.
-    /// Returns a collection of (SingularName, Abbreviation, PluralName, Factor, Offset, IsComplex).
+    /// Gets an immutable list of units for a specific quantity, optimized for UI display.
     /// </summary>
-    /// <param name="dimension">The name of the physical quantity.</param>
-    IEnumerable<(string Name, string Abbreviation, string Plural, double Factor, double Offset, bool IsComplex)> GetUnitList(string dimension);
+    /// <param name="dimension">The name of the physical quantity (case-insensitive).</param>
+    /// <returns>The units, or an empty list if the quantity is unknown.</returns>
+    IReadOnlyList<UnitInfo> GetUnitList(string dimension);
 
     /// <summary>
     /// Gets full metadata for a specific unit by name or abbreviation.

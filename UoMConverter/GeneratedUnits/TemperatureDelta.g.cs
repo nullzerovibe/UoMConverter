@@ -123,7 +123,7 @@ public static partial class UoMRegistry {
             "Kelvin",
             "Difference between two temperatures. The conversions are different than for Temperature.",
             TemperatureDeltaUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["Θ"] = 1 },
+            new Dictionary<string, int> { ["Θ"] = 1 }.ToFrozenDictionary(),
             null,
             false,
             1

@@ -99,7 +99,7 @@ public static partial class UoMRegistry {
             "AmperePerSecond",
             "In electromagnetism, the current gradient describes how the current changes in time.",
             ElectricCurrentGradientUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["T"] = -1, ["I"] = 1 },
+            new Dictionary<string, int> { ["T"] = -1, ["I"] = 1 }.ToFrozenDictionary(),
             null,
             false,
             1

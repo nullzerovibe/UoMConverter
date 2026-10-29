@@ -99,7 +99,7 @@ public static partial class UoMRegistry {
             "SquareMeterKelvinPerKilowatt",
             "Thermal insulance (R-value) is a measure of a material's resistance to the heat current. It quantifies how effectively a material can resist the transfer of heat through conduction, convection, and radiation. It has the units square metre kelvins per watt (m2⋅K/W) in SI units or square foot degree Fahrenheit–hours per British thermal unit (ft2⋅°F⋅h/Btu) in imperial units. The higher the thermal insulance, the better a material insulates against heat transfer. It is commonly used in construction to assess the insulation properties of materials such as walls, roofs, and insulation products.",
             ThermalInsulanceUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["M"] = -1, ["T"] = 3, ["Θ"] = 1 },
+            new Dictionary<string, int> { ["M"] = -1, ["T"] = 3, ["Θ"] = 1 }.ToFrozenDictionary(),
             null,
             false,
             1

@@ -75,7 +75,7 @@ public static partial class UoMRegistry {
             "Henry",
             "Inductance is a property of an electrical conductor which opposes a change in current.",
             ElectricInductanceUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -2, ["I"] = -2 },
+            new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -2, ["I"] = -2 }.ToFrozenDictionary(),
             null,
             false,
             1

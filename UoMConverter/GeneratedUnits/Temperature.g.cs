@@ -135,7 +135,7 @@ public static partial class UoMRegistry {
             "Kelvin",
             "A temperature is a numerical measure of hot or cold. Its measurement is by detection of heat radiation or particle velocity or kinetic energy, or by the bulk behavior of a thermometric material. It may be calibrated in any of various temperature scales, Celsius, Fahrenheit, Kelvin, etc. The fundamental physical definition of temperature is provided by thermodynamics.",
             TemperatureUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["Θ"] = 1 },
+            new Dictionary<string, int> { ["Θ"] = 1 }.ToFrozenDictionary(),
             null,
             false,
             1

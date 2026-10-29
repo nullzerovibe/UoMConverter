@@ -111,7 +111,7 @@ public static partial class UoMRegistry {
             "CoulombPerKilogram",
             "Radiation exposure is a measure of the ionization of air due to ionizing radiation from photons.",
             RadiationExposureUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["M"] = -1, ["T"] = 1, ["I"] = 1 },
+            new Dictionary<string, int> { ["M"] = -1, ["T"] = 1, ["I"] = 1 }.ToFrozenDictionary(),
             null,
             false,
             1

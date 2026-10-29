@@ -303,7 +303,7 @@ public static partial class UoMRegistry {
             "DecimalFraction",
             "The mass fraction is defined as the mass of a constituent divided by the total mass of the mixture.",
             MassFractionUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> {  },
+            new Dictionary<string, int> {  }.ToFrozenDictionary(),
             null,
             false,
             1

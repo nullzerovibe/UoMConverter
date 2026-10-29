@@ -195,7 +195,7 @@ public static partial class UoMRegistry {
             "NewtonPerSecond",
             "Force change rate is the ratio of the force change to the time during which the change occurred (value of force changes per unit time).",
             ForceChangeRateUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 1, ["M"] = 1, ["T"] = -3 },
+            new Dictionary<string, int> { ["L"] = 1, ["M"] = 1, ["T"] = -3 }.ToFrozenDictionary(),
             null,
             false,
             1

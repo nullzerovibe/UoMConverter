@@ -123,7 +123,7 @@ public static partial class UoMRegistry {
             "JoulePerCubicMeterKelvin",
             "The volumetric heat capacity is the amount of energy that must be added, in the form of heat, to one unit of volume of the material in order to cause an increase of one unit in its temperature.",
             VolumetricHeatCapacityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["M"] = 1, ["L"] = -1, ["T"] = -2, ["Θ"] = -1 },
+            new Dictionary<string, int> { ["M"] = 1, ["L"] = -1, ["T"] = -2, ["Θ"] = -1 }.ToFrozenDictionary(),
             null,
             false,
             1

@@ -63,7 +63,7 @@ public static partial class UoMRegistry {
             "VoltampereReactive",
             "In electric power transmission and distribution, volt-ampere reactive (var) is a unit of measurement of reactive power. Reactive power exists in an AC circuit when the current and voltage are not in phase.",
             ElectricReactivePowerUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -3 },
+            new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -3 }.ToFrozenDictionary(),
             null,
             false,
             1

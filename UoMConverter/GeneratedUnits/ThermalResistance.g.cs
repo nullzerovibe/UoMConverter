@@ -39,7 +39,7 @@ public static partial class UoMRegistry {
             "KelvinPerWatt",
             "Thermal resistance (R) measures the opposition to the heat current in a material or system. It is measured in units of kelvins per watt (K/W) and indicates how much temperature difference (in kelvins) is required to transfer a unit of heat current (in watts) through the material or object. It is essential to optimize the building insulation, evaluate the efficiency of electronic devices, and enhance the performance of heat sinks in various applications.",
             ThermalResistanceUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = -2, ["M"] = -1, ["T"] = 3, ["Θ"] = 1 },
+            new Dictionary<string, int> { ["L"] = -2, ["M"] = -1, ["T"] = 3, ["Θ"] = 1 }.ToFrozenDictionary(),
             null,
             false,
             1

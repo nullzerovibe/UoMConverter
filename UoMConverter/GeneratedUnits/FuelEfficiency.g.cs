@@ -63,7 +63,7 @@ public static partial class UoMRegistry {
             "KilometerPerLiter",
             "In the context of transport, fuel economy is the energy efficiency of a particular vehicle, given as a ratio of distance traveled per unit of fuel consumed. In most countries, using the metric system, fuel economy is stated as \"fuel consumption\" in liters per 100 kilometers (L/100 km) or kilometers per liter (km/L or kmpl). In countries using non-metric system, fuel economy is expressed in miles per gallon (mpg) (imperial galon or US galon).",
             FuelEfficiencyUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = -2 },
+            new Dictionary<string, int> { ["L"] = -2 }.ToFrozenDictionary(),
             null,
             false,
             1

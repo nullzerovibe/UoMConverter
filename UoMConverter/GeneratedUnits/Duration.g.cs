@@ -183,7 +183,7 @@ public static partial class UoMRegistry {
             "Second",
             "Time is a dimension in which events can be ordered from the past through the present into the future, and also the measure of durations of events and the intervals between them.",
             DurationUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["T"] = 1 },
+            new Dictionary<string, int> { ["T"] = 1 }.ToFrozenDictionary(),
             null,
             false,
             1

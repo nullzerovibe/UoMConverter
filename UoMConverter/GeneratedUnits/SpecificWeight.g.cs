@@ -219,7 +219,7 @@ public static partial class UoMRegistry {
             "NewtonPerCubicMeter",
             "The SpecificWeight, or more precisely, the volumetric weight density, of a substance is its weight per unit volume.",
             SpecificWeightUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = -2, ["M"] = 1, ["T"] = -2 },
+            new Dictionary<string, int> { ["L"] = -2, ["M"] = 1, ["T"] = -2 }.ToFrozenDictionary(),
             null,
             false,
             1

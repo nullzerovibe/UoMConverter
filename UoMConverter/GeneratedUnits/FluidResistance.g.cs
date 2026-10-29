@@ -243,7 +243,7 @@ public static partial class UoMRegistry {
             "PascalSecondPerCubicMeter",
             "Fluid Resistance is a force acting opposite to the relative motion of any object moving with respect to a surrounding fluid. Fluid Resistance is sometimes referred to as drag or fluid friction.",
             FluidResistanceUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["M"] = 1, ["L"] = -4, ["T"] = -1 },
+            new Dictionary<string, int> { ["M"] = 1, ["L"] = -4, ["T"] = -1 }.ToFrozenDictionary(),
             null,
             false,
             1

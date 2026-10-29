@@ -207,7 +207,7 @@ public static partial class UoMRegistry {
             "Siemens",
             "The electrical conductance of an object is a measure of the ease with which an electric current passes. Along with susceptance, it is one of two elements of admittance. Its reciprocal quantity is electrical resistance.",
             ElectricConductanceUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = -2, ["M"] = -1, ["T"] = 3, ["I"] = 2 },
+            new Dictionary<string, int> { ["L"] = -2, ["M"] = -1, ["T"] = 3, ["I"] = 2 }.ToFrozenDictionary(),
             null,
             false,
             1

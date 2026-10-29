@@ -87,7 +87,7 @@ public static partial class UoMRegistry {
             "Sievert",
             "Equivalent dose is a dose quantity representing the stochastic health effects of low levels of ionizing radiation on the human body which represents the probability of radiation-induced cancer and genetic damage.",
             RadiationEquivalentDoseUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 2, ["T"] = -2 },
+            new Dictionary<string, int> { ["L"] = 2, ["T"] = -2 }.ToFrozenDictionary(),
             null,
             false,
             1

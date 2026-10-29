@@ -159,7 +159,7 @@ public static partial class UoMRegistry {
             "JoulePerCubicMeter",
             "",
             EnergyDensityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["M"] = 1, ["L"] = -1, ["T"] = -2 },
+            new Dictionary<string, int> { ["M"] = 1, ["L"] = -1, ["T"] = -2 }.ToFrozenDictionary(),
             null,
             false,
             1

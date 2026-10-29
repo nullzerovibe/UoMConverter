@@ -471,7 +471,7 @@ public static partial class UoMRegistry {
             "NewtonPerMeter",
             "The magnitude of force per unit length.",
             ForcePerLengthUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["M"] = 1, ["T"] = -2 },
+            new Dictionary<string, int> { ["M"] = 1, ["T"] = -2 }.ToFrozenDictionary(),
             null,
             false,
             1

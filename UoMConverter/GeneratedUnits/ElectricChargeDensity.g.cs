@@ -27,7 +27,7 @@ public static partial class UoMRegistry {
             "CoulombPerCubicMeter",
             "In electromagnetism, charge density is a measure of the amount of electric charge per volume.",
             ElectricChargeDensityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = -3, ["T"] = 1, ["I"] = 1 },
+            new Dictionary<string, int> { ["L"] = -3, ["T"] = 1, ["I"] = 1 }.ToFrozenDictionary(),
             null,
             false,
             1

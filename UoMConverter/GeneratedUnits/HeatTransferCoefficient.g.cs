@@ -75,7 +75,7 @@ public static partial class UoMRegistry {
             "WattPerSquareMeterKelvin",
             "The heat transfer coefficient or film coefficient, or film effectiveness, in thermodynamics and in mechanics is the proportionality constant between the heat flux and the thermodynamic driving force for the flow of heat (i.e., the temperature difference, ΔT)",
             HeatTransferCoefficientUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["M"] = 1, ["T"] = -3, ["Θ"] = -1 },
+            new Dictionary<string, int> { ["M"] = 1, ["T"] = -3, ["Θ"] = -1 }.ToFrozenDictionary(),
             null,
             false,
             1

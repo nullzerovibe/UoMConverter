@@ -147,7 +147,7 @@ public static partial class UoMRegistry {
             "MeterPerSecondCubed",
             "",
             JerkUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 1, ["T"] = -3 },
+            new Dictionary<string, int> { ["L"] = 1, ["T"] = -3 }.ToFrozenDictionary(),
             null,
             false,
             1

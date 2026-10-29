@@ -99,7 +99,7 @@ public static partial class UoMRegistry {
             "Farad",
             "Capacitance is the ability of a body to store an electric charge.",
             CapacitanceUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = -2, ["M"] = -1, ["T"] = 4, ["I"] = 2 },
+            new Dictionary<string, int> { ["L"] = -2, ["M"] = -1, ["T"] = 4, ["I"] = 2 }.ToFrozenDictionary(),
             null,
             false,
             1

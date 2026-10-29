@@ -171,7 +171,7 @@ public static partial class UoMRegistry {
             "NewtonSecond",
             "In classical mechanics, impulse is the integral of a force, F, over the time interval, t, for which it acts. Impulse applied to an object produces an equivalent vector change in its linear momentum, also in the resultant direction.",
             ImpulseUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 1, ["M"] = 1, ["T"] = -1 },
+            new Dictionary<string, int> { ["L"] = 1, ["M"] = 1, ["T"] = -1 }.ToFrozenDictionary(),
             null,
             false,
             1

@@ -135,7 +135,7 @@ public static partial class UoMRegistry {
             "NewtonSecondPerMeterSquared",
             "The dynamic (shear) viscosity of a fluid expresses its resistance to shearing flows, where adjacent layers move parallel to each other with different speeds",
             DynamicViscosityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = -1, ["M"] = 1, ["T"] = -1 },
+            new Dictionary<string, int> { ["L"] = -1, ["M"] = 1, ["T"] = -1 }.ToFrozenDictionary(),
             null,
             false,
             1

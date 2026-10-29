@@ -207,7 +207,7 @@ public static partial class UoMRegistry {
             "Siemens",
             "Electric admittance is a measure of how easily a circuit or device will allow a current to flow by the combined effect of conductance and susceptance in a circuit. It is defined as the inverse of impedance. The SI unit of admittance is the siemens (symbol S).",
             ElectricAdmittanceUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = -2, ["M"] = -1, ["T"] = 3, ["I"] = 2 },
+            new Dictionary<string, int> { ["L"] = -2, ["M"] = -1, ["T"] = 3, ["I"] = 2 }.ToFrozenDictionary(),
             "Admittance is a complex number, which is not currently supported by UnitsNet. Please use either ElectricConductance or ElectricSusceptance instead.",
             false,
             1

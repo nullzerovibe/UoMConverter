@@ -39,7 +39,7 @@ public static partial class UoMRegistry {
             "DecimalFractionPerSecond",
             "The change in ratio per unit of time.",
             RatioChangeRateUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["T"] = -1 },
+            new Dictionary<string, int> { ["T"] = -1 }.ToFrozenDictionary(),
             null,
             false,
             1

@@ -99,7 +99,7 @@ public static partial class UoMRegistry {
             "JoulePerKelvin",
             "Entropy is an important concept in the branch of science known as thermodynamics. The idea of \"irreversibility\" is central to the understanding of entropy.  It is often said that entropy is an expression of the disorder, or randomness of a system, or of our lack of information about it. Entropy is an extensive property. It has the dimension of energy divided by temperature, which has a unit of joules per kelvin (J/K) in the International System of Units",
             EntropyUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -2, ["Θ"] = -1 },
+            new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -2, ["Θ"] = -1 }.ToFrozenDictionary(),
             null,
             false,
             1

@@ -231,7 +231,7 @@ public static partial class UoMRegistry {
             "KilogramPerMeter",
             "The Linear Density, or more precisely, the linear mass density, of a substance is its mass per unit length.  The term linear density is most often used when describing the characteristics of one-dimensional objects, although linear density can also be used to describe the density of a three-dimensional quantity along one particular dimension.",
             LinearDensityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = -1, ["M"] = 1 },
+            new Dictionary<string, int> { ["L"] = -1, ["M"] = 1 }.ToFrozenDictionary(),
             null,
             false,
             1

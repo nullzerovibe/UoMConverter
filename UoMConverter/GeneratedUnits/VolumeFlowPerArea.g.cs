@@ -39,7 +39,7 @@ public static partial class UoMRegistry {
             "CubicMeterPerSecondPerSquareMeter",
             "",
             VolumeFlowPerAreaUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 1, ["T"] = -1 },
+            new Dictionary<string, int> { ["L"] = 1, ["T"] = -1 }.ToFrozenDictionary(),
             null,
             false,
             1

@@ -159,7 +159,7 @@ public static partial class UoMRegistry {
             "KilogramPerSecondPerSquareMeter",
             "Mass flux is the mass flow rate per unit area.",
             MassFluxUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = -2, ["M"] = 1, ["T"] = -1 },
+            new Dictionary<string, int> { ["L"] = -2, ["M"] = 1, ["T"] = -1 }.ToFrozenDictionary(),
             null,
             false,
             1

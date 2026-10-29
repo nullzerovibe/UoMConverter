@@ -50,7 +50,6 @@ public static partial class UoMRegistry {
         LoadCapacitance();
         LoadCoefficientOfThermalExpansion();
         LoadCompressibility();
-        LoadCoverageTest();
         LoadDensity();
         LoadDoseAreaProduct();
         LoadDuration();

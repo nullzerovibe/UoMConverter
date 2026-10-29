@@ -363,7 +363,7 @@ public static partial class UoMRegistry {
             "Becquerel",
             "Amount of ionizing radiation released when an element spontaneously emits energy as a result of the radioactive decay of an unstable atom per unit time.",
             RadioactivityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["T"] = -1 },
+            new Dictionary<string, int> { ["T"] = -1 }.ToFrozenDictionary(),
             null,
             false,
             1

@@ -183,7 +183,7 @@ public static partial class UoMRegistry {
             "MeterPerSecondSquared",
             "Acceleration, in physics, is the rate at which the velocity of an object changes over time. An object's acceleration is the net result of any and all forces acting on the object, as described by Newton's Second Law. The SI unit for acceleration is the Meter per second squared (m/s²). Accelerations are vector quantities (they have magnitude and direction) and add according to the parallelogram law. As a vector, the calculated net force is equal to the product of the object's mass (a scalar quantity) and the acceleration.",
             AccelerationUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 1, ["T"] = -2 },
+            new Dictionary<string, int> { ["L"] = 1, ["T"] = -2 }.ToFrozenDictionary(),
             null,
             false,
             1

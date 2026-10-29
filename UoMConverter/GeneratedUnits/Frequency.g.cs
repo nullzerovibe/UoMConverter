@@ -159,7 +159,7 @@ public static partial class UoMRegistry {
             "Hertz",
             "The number of occurrences of a repeating event per unit time.",
             FrequencyUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["T"] = -1 },
+            new Dictionary<string, int> { ["T"] = -1 }.ToFrozenDictionary(),
             null,
             false,
             1

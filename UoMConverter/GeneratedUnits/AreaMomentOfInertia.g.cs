@@ -87,7 +87,7 @@ public static partial class UoMRegistry {
             "MeterToTheFourth",
             "A geometric property of an area that reflects how its points are distributed with regard to an axis.",
             AreaMomentOfInertiaUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 4 },
+            new Dictionary<string, int> { ["L"] = 4 }.ToFrozenDictionary(),
             null,
             false,
             1

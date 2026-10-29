@@ -219,7 +219,7 @@ public static partial class UoMRegistry {
             "Gray",
             "Absorbed dose is a dose quantity which is the measure of the energy deposited in matter by ionizing radiation per unit mass.",
             AbsorbedDoseOfIonizingRadiationUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 2, ["T"] = -2 },
+            new Dictionary<string, int> { ["L"] = 2, ["T"] = -2 }.ToFrozenDictionary(),
             null,
             false,
             1

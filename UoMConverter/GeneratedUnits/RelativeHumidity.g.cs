@@ -27,7 +27,7 @@ public static partial class UoMRegistry {
             "Percent",
             "Relative humidity is a ratio of the actual water vapor present in the air to the maximum water vapor in the air at the given temperature.",
             RelativeHumidityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> {  },
+            new Dictionary<string, int> {  }.ToFrozenDictionary(),
             null,
             false,
             1

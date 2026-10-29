@@ -51,7 +51,7 @@ public static partial class UoMRegistry {
             "AmperePerSquareMeter",
             "In electromagnetism, current density is the electric current per unit area of cross section.",
             ElectricCurrentDensityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = -2, ["I"] = 1 },
+            new Dictionary<string, int> { ["L"] = -2, ["I"] = 1 }.ToFrozenDictionary(),
             null,
             false,
             1

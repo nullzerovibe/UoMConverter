@@ -51,7 +51,7 @@ public static partial class UoMRegistry {
             "VoltampereHour",
             "A unit for expressing the integral of apparent power over time, equal to the product of 1 volt-ampere and 1 hour, or to 3600 joules.",
             ApparentEnergyUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -2 },
+            new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -2 }.ToFrozenDictionary(),
             null,
             false,
             1

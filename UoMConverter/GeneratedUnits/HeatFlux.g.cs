@@ -231,7 +231,7 @@ public static partial class UoMRegistry {
             "WattPerSquareMeter",
             "Heat flux is the flow of energy per unit of area per unit of time",
             HeatFluxUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["M"] = 1, ["T"] = -3 },
+            new Dictionary<string, int> { ["M"] = 1, ["T"] = -3 }.ToFrozenDictionary(),
             null,
             false,
             1

@@ -351,7 +351,7 @@ public static partial class UoMRegistry {
             "KilogramSquareMeter",
             "A property of body reflects how its mass is distributed with regard to an axis.",
             MassMomentOfInertiaUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 2, ["M"] = 1 },
+            new Dictionary<string, int> { ["L"] = 2, ["M"] = 1 }.ToFrozenDictionary(),
             null,
             false,
             1

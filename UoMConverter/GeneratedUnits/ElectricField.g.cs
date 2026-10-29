@@ -27,7 +27,7 @@ public static partial class UoMRegistry {
             "VoltPerMeter",
             "An electric field is a force field that surrounds electric charges that attracts or repels other electric charges.",
             ElectricFieldUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 1, ["M"] = 1, ["T"] = -3, ["I"] = -1 },
+            new Dictionary<string, int> { ["L"] = 1, ["M"] = 1, ["T"] = -3, ["I"] = -1 }.ToFrozenDictionary(),
             null,
             false,
             1

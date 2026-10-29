@@ -147,7 +147,7 @@ public static partial class UoMRegistry {
             "MolePerCubicMeter",
             "Molar concentration, also called molarity, amount concentration or substance concentration, is a measure of the concentration of a solute in a solution, or of any chemical species, in terms of amount of substance in a given volume.",
             MolarityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = -3, ["N"] = 1 },
+            new Dictionary<string, int> { ["L"] = -3, ["N"] = 1 }.ToFrozenDictionary(),
             null,
             false,
             1

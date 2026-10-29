@@ -27,7 +27,7 @@ public static partial class UoMRegistry {
             "Amount",
             "A way of representing a number of items.",
             ScalarUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> {  },
+            new Dictionary<string, int> {  }.ToFrozenDictionary(),
             null,
             false,
             1

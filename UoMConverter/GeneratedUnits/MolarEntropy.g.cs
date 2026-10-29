@@ -51,7 +51,7 @@ public static partial class UoMRegistry {
             "JoulePerMoleKelvin",
             "Molar entropy is amount of energy required to increase temperature of 1 mole substance by 1 Kelvin.",
             MolarEntropyUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -2, ["Θ"] = -1, ["N"] = -1 },
+            new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -2, ["Θ"] = -1, ["N"] = -1 }.ToFrozenDictionary(),
             null,
             false,
             1

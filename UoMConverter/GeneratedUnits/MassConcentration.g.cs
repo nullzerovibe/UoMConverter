@@ -603,7 +603,7 @@ public static partial class UoMRegistry {
             "KilogramPerCubicMeter",
             "In chemistry, the mass concentration ρi (or γi) is defined as the mass of a constituent mi divided by the volume of the mixture V",
             MassConcentrationUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["M"] = 1, ["L"] = -3 },
+            new Dictionary<string, int> { ["M"] = 1, ["L"] = -3 }.ToFrozenDictionary(),
             null,
             false,
             1

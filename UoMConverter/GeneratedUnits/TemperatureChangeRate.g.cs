@@ -219,7 +219,7 @@ public static partial class UoMRegistry {
             "DegreeCelsiusPerSecond",
             "Temperature change rate is the ratio of the temperature change to the time during which the change occurred (value of temperature changes per unit time).",
             TemperatureChangeRateUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["T"] = -1, ["Θ"] = 1 },
+            new Dictionary<string, int> { ["T"] = -1, ["Θ"] = 1 }.ToFrozenDictionary(),
             null,
             false,
             1

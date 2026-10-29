@@ -27,13 +27,9 @@ public sealed class UoMConverterInterop {
     /// Retrieves all units for a specific dimension.
     /// </summary>
     /// <param name="dimension">The dimension to retrieve units for.</param>
-    /// <returns>An array of unit data.</returns>
+    /// <returns>The units of the dimension (serialized to JS in camelCase).</returns>
     [JSInvokable]
-    public UnitData[] GetUnits(string dimension) {
-        return _converter.GetUnitList(dimension)
-            .Select(u => new UnitData(u.Name, u.Abbreviation, u.Plural, u.Factor, u.Offset, u.IsComplex))
-            .ToArray();
-    }
+    public IReadOnlyList<UnitInfo> GetUnits(string dimension) => _converter.GetUnitList(dimension);
 
     /// <summary>
     /// Finds the first dimension that contains a unit matching the given name or abbreviation.
@@ -86,17 +82,6 @@ public sealed class UoMConverterInterop {
         return System.Reflection.Assembly.GetExecutingAssembly().GetName().Version?.ToString() ?? "Unknown";
     }
 }
-
-/// <summary>
-/// Data record for a unit of measurement.
-/// </summary>
-/// <param name="Name">The full name of the unit.</param>
-/// <param name="Abbreviation">The abbreviation of the unit.</param>
-/// <param name="Plural">The plural form of the unit name.</param>
-/// <param name="Factor">The linear conversion factor to the base unit.</param>
-/// <param name="Offset">The linear offset to the base unit.</param>
-/// <param name="IsComplex">True if unit employs a non-linear conversion function (e.g. Temperature).</param>
-public record UnitData(string Name, string Abbreviation, string Plural, double Factor, double Offset, bool IsComplex);
 
 /// <summary>
 /// Result of a conversion operation.

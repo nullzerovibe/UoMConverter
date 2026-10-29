@@ -1,6 +1,8 @@
 param (
     [string]$Version,
-    [switch]$DryRun
+    [switch]$DryRun,
+    # WHY: Pushing a v* tag triggers the CI release job, which publishes to NuGet. Publishing must be an explicit decision.
+    [switch]$Release
 )
 
 $ErrorActionPreference = "Stop"
@@ -87,29 +89,41 @@ if (Test-Path $swFile) {
 }
 
 # Git Operations
-$gitCommands = @("git add $file")
-if (Test-Path $swFile) {
-    $gitCommands += "git add $swFile"
+if (-not $Release) {
+    Write-Host "`nFiles updated. Review, then commit on your branch." -ForegroundColor Green
+    Write-Host "To publish: merge to main, then run .\update-version.ps1 -Version $Version -Release" -ForegroundColor Yellow
+    exit
 }
-$gitCommands += @(
-    "git commit -m ""Bump version to $Version""",
-    "git tag v$Version",
-    "git push",
-    "git push origin v$Version"
+
+$branch = (git rev-parse --abbrev-ref HEAD).Trim()
+if ($branch -ne "main") {
+    Write-Error "Releases must be tagged from 'main' (current: '$branch')."
+}
+$dirty = git status --porcelain --untracked-files=no
+if ($dirty -and -not $DryRun) {
+    $unexpected = $dirty | Where-Object { $_ -notmatch "Directory\.Build\.props|sw\.js" }
+    if ($unexpected) { Write-Error "Working tree has uncommitted changes besides the version files:`n$($unexpected -join "`n")" }
+}
+
+$gitCommands = @(
+    @("add", $file),
+    @("add", $swFile),
+    @("commit", "-m", "Bump version to $Version"),
+    @("tag", "v$Version"),
+    @("push"),
+    @("push", "origin", "v$Version")
 )
 
-foreach ($cmd in $gitCommands) {
+foreach ($gitArgs in $gitCommands) {
     if ($DryRun) {
-        Write-Host "[DryRun] Would execute: $cmd"
+        Write-Host "[DryRun] Would execute: git $($gitArgs -join ' ')"
+        continue
     }
-    else {
-        Write-Host "Executing: $cmd"
-        Invoke-Expression $cmd
-    }
+    Write-Host "Executing: git $($gitArgs -join ' ')"
+    & git @gitArgs
+    if ($LASTEXITCODE -ne 0) { Write-Error "git $($gitArgs -join ' ') failed (exit $LASTEXITCODE); stopping before any further release step." }
 }
 
 if (-not $DryRun) {
-    Write-Host "Version bump to $Version complete!" -ForegroundColor Green
-    Write-Host "Tag 'v$Version' created." -ForegroundColor Green
-    Write-Host "Remember to push tags: git push origin v$Version" -ForegroundColor Yellow
+    Write-Host "Version $Version tagged and pushed; CI will verify and publish." -ForegroundColor Green
 }

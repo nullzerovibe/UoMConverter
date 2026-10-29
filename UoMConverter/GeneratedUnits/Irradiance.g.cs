@@ -183,7 +183,7 @@ public static partial class UoMRegistry {
             "WattPerSquareMeter",
             "Irradiance is the intensity of ultraviolet (UV) or visible light incident on a surface.",
             IrradianceUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["M"] = 1, ["T"] = -3 },
+            new Dictionary<string, int> { ["M"] = 1, ["T"] = -3 }.ToFrozenDictionary(),
             null,
             false,
             1

@@ -51,7 +51,7 @@ public static partial class UoMRegistry {
             "KilogramPerJoule",
             "Brake specific fuel consumption (BSFC) is a measure of the fuel efficiency of any prime mover that burns fuel and produces rotational, or shaft, power. It is typically used for comparing the efficiency of internal combustion engines with a shaft output.",
             BrakeSpecificFuelConsumptionUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = -2, ["T"] = 2 },
+            new Dictionary<string, int> { ["L"] = -2, ["T"] = 2 }.ToFrozenDictionary(),
             null,
             false,
             1

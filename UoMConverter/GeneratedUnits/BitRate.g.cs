@@ -483,7 +483,7 @@ public static partial class UoMRegistry {
             "BitPerSecond",
             "In telecommunications and computing, bit rate is the number of bits that are conveyed or processed per unit of time.",
             BitRateUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["T"] = -1 },
+            new Dictionary<string, int> { ["T"] = -1 }.ToFrozenDictionary(),
             null,
             false,
             1

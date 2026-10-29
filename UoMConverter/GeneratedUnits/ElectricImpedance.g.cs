@@ -111,7 +111,7 @@ public static partial class UoMRegistry {
             "Ohm",
             "Electric impedance is the opposition to alternating current presented by the combined effect of resistance and reactance in a circuit. It is defined as the inverse of admittance. The SI unit of impedance is the ohm (symbol Ω).",
             ElectricImpedanceUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -3, ["I"] = -2 },
+            new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -3, ["I"] = -2 }.ToFrozenDictionary(),
             "Impedance is a complex number, which is not currently supported by UnitsNet. Please use either ElectricResistance or ElectricReactance instead.",
             false,
             1

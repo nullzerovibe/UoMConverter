@@ -51,7 +51,7 @@ public static partial class UoMRegistry {
             "VoltampereReactiveHour",
             "The volt-ampere reactive hour (expressed as varh) is the reactive power of one Volt-ampere reactive produced in one hour.",
             ElectricReactiveEnergyUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -2 },
+            new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -2 }.ToFrozenDictionary(),
             null,
             false,
             1

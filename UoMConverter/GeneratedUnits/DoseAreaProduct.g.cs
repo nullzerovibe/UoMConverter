@@ -315,7 +315,7 @@ public static partial class UoMRegistry {
             "GraySquareMeter",
             "It is defined as the absorbed dose multiplied by the area irradiated.",
             DoseAreaProductUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 4, ["T"] = -2 },
+            new Dictionary<string, int> { ["L"] = 4, ["T"] = -2 }.ToFrozenDictionary(),
             null,
             false,
             1

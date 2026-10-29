@@ -87,7 +87,7 @@ public static partial class UoMRegistry {
             "Tesla",
             "A magnetic field is a force field that is created by moving electric charges (electric currents) and magnetic dipoles, and exerts a force on other nearby moving charges and magnetic dipoles.",
             MagneticFieldUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["M"] = 1, ["T"] = -2, ["I"] = -1 },
+            new Dictionary<string, int> { ["M"] = 1, ["T"] = -2, ["I"] = -1 }.ToFrozenDictionary(),
             null,
             false,
             1

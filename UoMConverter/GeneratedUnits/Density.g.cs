@@ -687,7 +687,7 @@ public static partial class UoMRegistry {
             "KilogramPerCubicMeter",
             "The density, or more precisely, the volumetric mass density, of a substance is its mass per unit volume.",
             DensityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = -3, ["M"] = 1 },
+            new Dictionary<string, int> { ["L"] = -3, ["M"] = 1 }.ToFrozenDictionary(),
             null,
             false,
             1

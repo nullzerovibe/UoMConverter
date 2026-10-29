@@ -135,7 +135,7 @@ public static partial class UoMRegistry {
             "CandelaPerSquareMeter",
             "",
             LuminanceUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["J"] = 1, ["L"] = -2 },
+            new Dictionary<string, int> { ["J"] = 1, ["L"] = -2 }.ToFrozenDictionary(),
             null,
             false,
             1

@@ -1,23 +1,25 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Frozen;
+using System.Collections.Immutable;
 using System.Linq;
 
 namespace UoMConverter;
 
 public static partial class UoMRegistry {
+    // WARN: Caches are process-wide and shared by every converter; never expose mutable collections (List<T>, T[]) publicly.
+
     /// <summary>
-    /// Statically cached global lookup containing optimized unit lists per dimension.
-    /// Loaded on first access to drastically reduce UoMConverter initialization cost.
+    /// Statically cached unit lists per dimension. Values are boxed <see cref="ImmutableArray{T}"/> so callers can neither mutate nor allocate.
     /// </summary>
-    public static readonly Lazy<FrozenDictionary<string, List<(string Name, string Abbreviation, string Plural, double Factor, double Offset, bool IsComplex)>>> UnitListCache 
+    internal static readonly Lazy<FrozenDictionary<string, IReadOnlyList<UnitInfo>>> UnitListCache
         = new(BuildUnitListCache, System.Threading.LazyThreadSafetyMode.ExecutionAndPublication);
 
     /// <summary>
     /// Statically cached reverse lookup mapping every unit name/abbreviation to all Quantities that contain it.
     /// Used for Smart Detection to resolve ambiguities (e.g. "A" -> [ElectricCurrent, Length]).
     /// </summary>
-    public static readonly Lazy<FrozenDictionary<string, Quantity[]>> UnitToQuantities 
+    internal static readonly Lazy<FrozenDictionary<string, Quantity[]>> UnitToQuantities
         = new(BuildUnitToQuantities, System.Threading.LazyThreadSafetyMode.ExecutionAndPublication);
 
     /// <summary>
@@ -87,27 +89,40 @@ public static partial class UoMRegistry {
             .ToFrozenDictionary(kvp => kvp.Key, kvp => kvp.Value.First(), StringComparer.OrdinalIgnoreCase);
     }
 
-    private static FrozenDictionary<string, List<(string, string, string, double, double, bool)>> BuildUnitListCache() {
-        var cache = new Dictionary<string, List<(string, string, string, double, double, bool)>>(StringComparer.OrdinalIgnoreCase);
+    private static FrozenDictionary<string, IReadOnlyList<UnitInfo>> BuildUnitListCache() {
+        var cache = new Dictionary<string, IReadOnlyList<UnitInfo>>(StringComparer.OrdinalIgnoreCase);
 
         foreach (var q in Quantities.Values) {
-            bool isComplex = q.IsLogarithmic || q.Name.Equals("Temperature", StringComparison.OrdinalIgnoreCase);
-            var list = q.Units.Values.Where(u => u != null).Select(u => {
-                double offset = u.ToBase(0.0);
-                double factor = u.ToBase(1.0) - offset;
-                return (
-                    u.SingularName,
-                    u.Abbreviations?.FirstOrDefault() ?? "",
-                    u.PluralName,
-                    factor,
-                    offset,
-                    isComplex
-                );
-            }).ToList();
-            cache[q.Name] = list;
+            var units = q.Units.Values.Where(u => u != null).ToArray();
+            var affine = units.Select(TryGetAffine).ToArray();
+            var isComplex = q.IsLogarithmic || affine.Any(a => a is null || a.Value.Offset != 0);
+
+            var builder = ImmutableArray.CreateBuilder<UnitInfo>(units.Length);
+            for (var i = 0; i < units.Length; i++) {
+                var u = units[i];
+                // WHY: Non-affine units (e.g. reciprocal FuelEfficiency) yield ±Infinity/NaN, which JSON (WASM interop) cannot serialize.
+                var (factor, offset) = affine[i] ?? (0.0, 0.0);
+                builder.Add(new UnitInfo(u.SingularName, u.Abbreviations is { Count: > 0 } abbreviations ? abbreviations[0] : "", u.PluralName, factor, offset, isComplex));
+            }
+            cache[q.Name] = builder.MoveToImmutable();
         }
 
         return cache.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase);
+    }
+
+    /// <summary>
+    /// Returns (Factor, Offset) when <c>ToBase</c> is affine (<c>a·x + b</c>) and finite; otherwise null.
+    /// </summary>
+    internal static (double Factor, double Offset)? TryGetAffine(Unit u) {
+        var offset = u.ToBase(0.0);
+        var factor = u.ToBase(1.0) - offset;
+        if (!double.IsFinite(offset) || !double.IsFinite(factor) || factor == 0) return null;
+
+        foreach (var x in (ReadOnlySpan<double>)[2.0, -7.5, 1e3]) {
+            var expected = factor * x + offset;
+            if (Math.Abs(u.ToBase(x) - expected) > 1e-9 * Math.Max(1.0, Math.Abs(expected))) return null;
+        }
+        return (factor, offset);
     }
 
     private static FrozenDictionary<string, Quantity[]> BuildUnitToQuantities() {

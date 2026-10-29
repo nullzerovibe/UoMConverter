@@ -111,7 +111,7 @@ public static partial class UoMRegistry {
             "Ohm",
             "The electrical resistance of an object is a measure of its opposition to the flow of electric current. Along with reactance, it is one of two elements of impedance. Its reciprocal quantity is electrical conductance.",
             ElectricResistanceUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -3, ["I"] = -2 },
+            new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -3, ["I"] = -2 }.ToFrozenDictionary(),
             null,
             false,
             1

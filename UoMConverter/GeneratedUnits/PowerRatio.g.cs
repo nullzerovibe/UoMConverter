@@ -39,7 +39,7 @@ public static partial class UoMRegistry {
             "DecibelWatt",
             "The strength of a signal expressed in decibels (dB) relative to one watt.",
             PowerRatioUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> {  },
+            new Dictionary<string, int> {  }.ToFrozenDictionary(),
             null,
             true,
             1

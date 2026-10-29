@@ -447,7 +447,7 @@ public static partial class UoMRegistry {
             "Kilogram",
             "Mass units used in historical Croatia/Venice/Ottoman regions for grain and milling.",
             MassUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> {  },
+            new Dictionary<string, int> {  }.ToFrozenDictionary(),
             null,
             false,
             1

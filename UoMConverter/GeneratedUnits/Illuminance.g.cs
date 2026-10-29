@@ -63,7 +63,7 @@ public static partial class UoMRegistry {
             "Lux",
             "In photometry, illuminance is the total luminous flux incident on a surface, per unit area.",
             IlluminanceUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = -2, ["J"] = 1 },
+            new Dictionary<string, int> { ["L"] = -2, ["J"] = 1 }.ToFrozenDictionary(),
             null,
             false,
             1

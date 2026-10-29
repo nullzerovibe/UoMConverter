@@ -87,7 +87,7 @@ public static partial class UoMRegistry {
             "MeterToTheSixth",
             "A geometric property of an area that is used to determine the warping stress.",
             WarpingMomentOfInertiaUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 6 },
+            new Dictionary<string, int> { ["L"] = 6 }.ToFrozenDictionary(),
             null,
             false,
             1

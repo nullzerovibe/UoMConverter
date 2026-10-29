@@ -63,7 +63,7 @@ public static partial class UoMRegistry {
             "RadianPerSecondSquared",
             "Angular acceleration is the rate of change of rotational speed.",
             RotationalAccelerationUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["T"] = -2 },
+            new Dictionary<string, int> { ["T"] = -2 }.ToFrozenDictionary(),
             null,
             false,
             1

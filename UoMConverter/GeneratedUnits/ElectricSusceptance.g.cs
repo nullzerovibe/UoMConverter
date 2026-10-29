@@ -207,7 +207,7 @@ public static partial class UoMRegistry {
             "Siemens",
             "Electrical susceptance is the imaginary part of admittance, where the real part is conductance.",
             ElectricSusceptanceUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = -2, ["M"] = -1, ["T"] = 3, ["I"] = 2 },
+            new Dictionary<string, int> { ["L"] = -2, ["M"] = -1, ["T"] = 3, ["I"] = 2 }.ToFrozenDictionary(),
             null,
             false,
             1

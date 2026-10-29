@@ -123,7 +123,7 @@ public static partial class UoMRegistry {
             "MolePerSecond",
             "Molar flow is the ratio of the amount of substance change to the time during which the change occurred (value of amount of substance changes per unit time).",
             MolarFlowUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["N"] = 1, ["T"] = -1 },
+            new Dictionary<string, int> { ["N"] = 1, ["T"] = -1 }.ToFrozenDictionary(),
             null,
             false,
             1

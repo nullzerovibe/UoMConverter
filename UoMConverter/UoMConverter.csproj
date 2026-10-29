@@ -1,7 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <LangVersion>preview</LangVersion>
+    <LangVersion>latest</LangVersion>
+    <IsAotCompatible>true</IsAotCompatible>
     <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
     <CompilerGeneratedFilesOutputPath>obj/GeneratedUnits</CompilerGeneratedFilesOutputPath>
     <PackageId>UoMConverter</PackageId>
@@ -24,6 +25,11 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
   </ItemGroup>
  
+  <!-- WHY: The compiler never deletes stale emitted files, so a removed quantity would linger in obj and be mirrored as live. -->
+  <Target Name="CleanEmittedGeneratedFiles" BeforeTargets="CoreCompile">
+    <RemoveDir Directories="$(CompilerGeneratedFilesOutputPath)" />
+  </Target>
+
   <!-- WHY: Mirrors generator output into a browsable, tracked folder. Runs only after a successful compile, so a failed build never empties it. -->
   <Target Name="SyncGeneratedUnits" AfterTargets="CoreCompile">
     <ItemGroup>

@@ -135,7 +135,7 @@ public static partial class UoMRegistry {
             "SievertPerSecond",
             "A dose rate is quantity of radiation absorbed or delivered per unit time.",
             RadiationEquivalentDoseRateUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 2, ["T"] = -3 },
+            new Dictionary<string, int> { ["L"] = 2, ["T"] = -3 }.ToFrozenDictionary(),
             null,
             false,
             1

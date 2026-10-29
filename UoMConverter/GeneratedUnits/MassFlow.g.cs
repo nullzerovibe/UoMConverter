@@ -411,7 +411,7 @@ public static partial class UoMRegistry {
             "GramPerSecond",
             "Mass flow is the ratio of the mass change to the time during which the change occurred (value of mass changes per unit time).",
             MassFlowUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["M"] = 1, ["T"] = -1 },
+            new Dictionary<string, int> { ["M"] = 1, ["T"] = -1 }.ToFrozenDictionary(),
             null,
             false,
             1

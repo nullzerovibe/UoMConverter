@@ -123,7 +123,7 @@ public static partial class UoMRegistry {
             "SquareMeterPerSecond",
             "The viscosity of a fluid is a measure of its resistance to gradual deformation by shear stress or tensile stress.",
             KinematicViscosityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 2, ["T"] = -1 },
+            new Dictionary<string, int> { ["L"] = 2, ["T"] = -1 }.ToFrozenDictionary(),
             null,
             false,
             1

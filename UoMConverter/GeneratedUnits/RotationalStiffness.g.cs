@@ -423,7 +423,7 @@ public static partial class UoMRegistry {
             "NewtonMeterPerRadian",
             "https://en.wikipedia.org/wiki/Stiffness#Rotational_stiffness",
             RotationalStiffnessUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -2 },
+            new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -2 }.ToFrozenDictionary(),
             null,
             false,
             1

@@ -51,7 +51,7 @@ public static partial class UoMRegistry {
             "JoulePerMole",
             "Molar energy is the amount of energy stored in 1 mole of a substance.",
             MolarEnergyUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
-            new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -2, ["N"] = -1 },
+            new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -2, ["N"] = -1 }.ToFrozenDictionary(),
             null,
             false,
             1
