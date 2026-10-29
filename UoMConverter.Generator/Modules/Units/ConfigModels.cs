@@ -44,7 +44,7 @@ public record ConfigUnit {
     public string? XmlDocSummary { get; init; }
     public string? XmlDocRemarks { get; init; }
     public string? ObsoleteText { get; init; }
-    public bool SkipConversionGeneration { get; init; } = false;
+    public bool SkipConversionGeneration { get; init; }
 }
 
 public record ConfigLocalization {
@@ -56,4 +56,4 @@ public record ConfigLocalization {
 /// <summary>
 /// Result of processing a single JSON file.
 /// </summary>
-internal record ProcessedQuantityFile(ConfigQuantity? Quantity, string Path);
+internal sealed record ProcessedQuantityFile(ConfigQuantity? Quantity, string Path, string? Error = null);

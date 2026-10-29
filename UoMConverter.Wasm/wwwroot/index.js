@@ -1,7 +1,7 @@
 import { h, render } from 'https://esm.sh/preact@10.19.3';
 import { useEffect, useMemo, useRef, useState } from 'https://esm.sh/preact@10.19.3/hooks';
 import htm from 'https://esm.sh/htm@3.1.1';
-import { FLAT_MAP, EXAMPLE_GROUPS, getCategoryIconUrl, getTypeIconUrl, appState, actions, formatLabel, matchesQueryTokens } from './logic.js';
+import { EXAMPLE_GROUPS, getCategoryIconUrl, appState, actions, formatLabel, matchesQueryTokens, unitUsageKey } from './logic.js';
 
 const html = htm.bind(h);
 
@@ -211,7 +211,7 @@ export const DimensionCombobox = ({ state, actions }) => {
                                     <div class="snippet-preview u-mono" style="opacity: 0.6; white-space: normal;">${d.Description || formatLabel(d.Name)}</div>
                                 </div>
                                 <div slot="suffix" class="snippet-actions">
-                                    <sl-icon-button name="pin-angle-fill" class="action-btn pinned" onclick=${(e) => togglePin(e, d.Name)} title="Unpin Dimension"></sl-icon-button>
+                                    <sl-icon-button name="pin-angle-fill" class="action-btn pinned" onclick=${(e) => togglePin(e, d.Name)} title="Unpin Dimension" label="Unpin Dimension"></sl-icon-button>
                                 </div>
                             </sl-menu-item>
                         `)}
@@ -228,7 +228,7 @@ export const DimensionCombobox = ({ state, actions }) => {
                                     <div class="snippet-preview u-mono" style="opacity: 0.6; white-space: normal;">${d.Description || formatLabel(d.Name)}</div>
                                 </div>
                                 <div slot="suffix" class="snippet-actions">
-                                    <sl-icon-button name="pin-angle" class="action-btn ${isSuggested ? 'suggest-pin' : ''}" onclick=${(e) => togglePin(e, d.Name)} title="Pin Dimension"></sl-icon-button>
+                                    <sl-icon-button name="pin-angle" class="action-btn ${isSuggested ? 'suggest-pin' : ''}" onclick=${(e) => togglePin(e, d.Name)} title="Pin Dimension" label="Pin Dimension"></sl-icon-button>
                                 </div>
                             </sl-menu-item>
                             `;
@@ -246,7 +246,7 @@ export const DimensionCombobox = ({ state, actions }) => {
                                 <div class="snippet-preview u-mono" style="opacity: 0.6; white-space: normal;">${d.Description || formatLabel(d.Name)}</div>
                             </div>
                             <div slot="suffix" class="snippet-actions">
-                                <sl-icon-button name="pin-angle" class="action-btn ${isSuggested ? 'suggest-pin' : ''}" onclick=${(e) => togglePin(e, d.Name)} title="Pin Dimension"></sl-icon-button>
+                                <sl-icon-button name="pin-angle" class="action-btn ${isSuggested ? 'suggest-pin' : ''}" onclick=${(e) => togglePin(e, d.Name)} title="Pin Dimension" label="Pin Dimension"></sl-icon-button>
                             </div>
                         </sl-menu-item>
                         `;
@@ -289,16 +289,18 @@ export const MainCard = ({ state, actions }) => {
             sorted.sort((a, b) => {
                 const nameA = a.Name || a.name || '';
                 const nameB = b.Name || b.name || '';
-                const countA = usage[`${dimName}::${nameA}`]?.count || 0;
-                const countB = usage[`${dimName}::${nameB}`]?.count || 0;
+                const usageA = usage[unitUsageKey(dimName, nameA)];
+                const usageB = usage[unitUsageKey(dimName, nameB)];
+                const countA = usageA?.count || 0;
+                const countB = usageB?.count || 0;
 
                 // Only promote if used at least 2 times, otherwise stick to primary sort
                 if (countA >= 2 || countB >= 2) {
                     if (countA !== countB) return countB - countA; // Descending count
 
                     // Tie-breaker based on most recent
-                    const recA = usage[`${dimName}::${nameA}`]?.lastUsed || 0;
-                    const recB = usage[`${dimName}::${nameB}`]?.lastUsed || 0;
+                    const recA = usageA?.lastUsed || 0;
+                    const recB = usageB?.lastUsed || 0;
                     if (recA !== recB) return recB - recA;
                 }
 
@@ -335,6 +337,7 @@ export const MainCard = ({ state, actions }) => {
                                 placeholder="Select a unit"
                                 hoist
                             >
+                                <span slot="label" class="u-sr-only">From unit</span>
                                 ${displayUnits.map(u => {
         const name = u.name || u.Name;
         const abbr = u.abbreviation || u.Abbreviation || '';
@@ -349,7 +352,7 @@ export const MainCard = ({ state, actions }) => {
                         <sl-button variant="neutral" outline class="btn-secondary swap-btn" 
                             disabled=${!state.fromUnit.value || !state.toUnit.value}
                             onclick=${actions.swapUnits}>
-                            <sl-icon slot="prefix" name="arrow-left-right" class=${state.isSwapping.value ? 'flip-horizontal-animation' : ''}></sl-icon>
+                            <sl-icon slot="prefix" name="arrow-left-right" label="Swap units" class=${state.isSwapping.value ? 'flip-horizontal-animation' : ''}></sl-icon>
                         </sl-button>
 
                         <div class="form-group" style="flex: 1; margin: 0;">
@@ -360,6 +363,7 @@ export const MainCard = ({ state, actions }) => {
                                 placeholder="Select a unit"
                                 hoist
                             >
+                                <span slot="label" class="u-sr-only">To unit</span>
                                  ${displayUnits.map(u => {
         const name = u.name || u.Name;
         const abbr = u.abbreviation || u.Abbreviation || '';
@@ -380,13 +384,13 @@ export const MainCard = ({ state, actions }) => {
                             value=${state.inputValue.value} 
                             oninput=${(e) => actions.setInputValue(e.target.value)}
                             onpaste=${(e) => actions.handleSmartPaste(e)}
-                        ></sl-input>
+                        ><span slot="label" class="u-sr-only">Value to convert</span></sl-input>
                     </div>
                 </div>
 
                 <div class="result-box">
                     <div class="result-body">
-                        <div class="result-value">
+                        <div class="result-value" aria-live="polite" aria-atomic="true">
                             ${state.resultValue.value !== '---' && state.resultValue.value !== 'Error' ? (() => {
             const toUnitFull = state.units.value.find(u => (u.name || u.Name) === state.toUnit.value);
             const toAbbr = toUnitFull ? (toUnitFull.abbreviation || toUnitFull.Abbreviation || formatLabel(state.toUnit.value)) : formatLabel(state.toUnit.value);
@@ -497,7 +501,7 @@ export const MainCard = ({ state, actions }) => {
                 const isCurrent = rawName === state.toUnit.value;
                 const abbr = (c.unit.abbreviation || c.unit.Abbreviation) || formatLabel(rawName);
                 return html`
-                                    <div class="live-chip ${isCurrent ? 'is-active' : ''} ${c.success ? '' : 'is-error'}" title="${formatLabel(rawName)}" onclick=${() => { actions.setToUnit(rawName); }}>
+                                    <div class="live-chip ${isCurrent ? 'is-active' : ''} ${c.success ? '' : 'is-error'}" title="${formatLabel(rawName)}" role="button" tabindex="0" onclick=${() => { actions.setToUnit(rawName); }} onkeydown=${onActivateKey(() => actions.setToUnit(rawName))}>
                                         <div class="chip-name">${abbr}</div>
                                         <div class="chip-value">${c.formattedValue}</div>
                                     </div>
@@ -549,7 +553,7 @@ export const MainCard = ({ state, actions }) => {
                 };
 
                 return html`
-                                <div class="history-item" onclick=${() => actions.loadHistoryItem(item)} style="display: flex; justify-content: space-between; align-items: center; overflow: hidden; gap: 1rem;">
+                                <div class="history-item" role="button" tabindex="0" onclick=${() => actions.loadHistoryItem(item)} onkeydown=${onActivateKey(() => actions.loadHistoryItem(item))} style="display: flex; justify-content: space-between; align-items: center; overflow: hidden; gap: 1rem;">
                                     <div class="history-item-main" style="flex: 1; display: flex; align-items: center; justify-content: space-between; min-width: 0; gap: 1rem;">
                                         <span class="hist-expr" style="font-size: 0.9rem; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1;" title="${item.inputValue} ${displayFrom}"><span class="calc-number" style="color: var(--accent); font-weight: 500;">${formatVal(item.inputValue)}</span> <span style="opacity: 0.8">${displayFrom}</span></span>
                                         <span class="hist-res" style="font-size: 0.9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1; text-align: right;" title="${item.resultValue} ${displayTo}"><span style="color: var(--accent); margin-right: 0.5rem;">=</span> <span class="calc-number" style="color: var(--success);">${formatVal(item.resultValue)}</span> <span style="color: var(--text); opacity: 0.8">${displayTo}</span></span>
@@ -631,6 +635,9 @@ const ModernSelect = ({ value, options, onChange, placeholder, icon, hoist = fal
         </sl-dropdown>
     `;
 };
+
+// WHY: Debounce reference search; each update re-filters ~1,800 units.
+let docSearchTimer = 0;
 
 export const Documentation = ({ state, actions }) => {
     const ALL_CATS = 'All_Categories';
@@ -718,9 +725,6 @@ export const Documentation = ({ state, actions }) => {
     };
 
     // Updated handler for Theme ModernSelect
-    const onThemeChange = (val) => {
-        state.settings.value = { ...state.settings.value, theme: val };
-    };
 
     const onFormatChange = (val) => {
         state.settings.value = { ...state.settings.value, numberFormat: val };
@@ -814,22 +818,6 @@ export const Documentation = ({ state, actions }) => {
         if (v1 > v2) return dir === 'asc' ? 1 : -1;
         return 0;
     }), [operators, state.operatorSortBy.value, state.operatorSortDir.value]);
-
-    const renderSortHeader = (label, field, sortBySignal, sortDirSignal, onSortFn) => {
-        const isActive = sortBySignal.value === field;
-        const dir = sortDirSignal.value;
-        return html`
-            <th onclick=${() => onSortFn(field)} class="sortable-header ${isActive ? 'active' : ''}">
-                <div class="th-content">
-                    ${label}
-                    <sl-icon name="${isActive ? (dir === 'asc' ? 'sort-up' : 'sort-down') : 'arrow-down-up'}" 
-                             class="${isActive ? 'u-text-accent' : ''}"
-                             style="font-size: 0.7rem; opacity: ${isActive ? 1 : 0.4};">
-                    </sl-icon>
-                </div>
-            </th>
-        `;
-    };
 
     const onSaveSettings = (e) => {
         e.preventDefault();
@@ -1133,13 +1121,6 @@ export const Documentation = ({ state, actions }) => {
                                     <kbd class="kbd-badge">Space</kbd>
                                 </div>
 
-                                <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.75rem;">
-                                    <span style="color: color-mix(in srgb, var(--text), transparent 30%); font-size: 1rem;">Trigger Manual Calculation</span>
-                                    <div style="display:flex; gap: 0.5rem; align-items: center;">
-                                        <kbd class="kbd-badge">Ctrl</kbd> <span style="font-size: 0.8rem; color: var(--text-muted);">+</span> <kbd class="kbd-badge">Enter</kbd>
-                                    </div>
-                                </div>
-
                                  <div style="display: flex; align-items: center; justify-content: space-between;">
                                     <span style="color: color-mix(in srgb, var(--text), transparent 30%); font-size: 1rem;">Open Shortcuts View</span>
                                     <kbd class="kbd-badge">?</kbd>
@@ -1247,7 +1228,11 @@ export const Documentation = ({ state, actions }) => {
                     <div class="docs-header" style="display: flex; gap: 0.5rem; padding: 1rem; position: sticky; top: 0; z-index: 10;">
                         <sl-input placeholder="Search units..." clearable 
                             autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
-                            oninput=${(e) => { state.docSearch.value = e.target.value; sessionStorage.setItem('docSearch', e.target.value); }} 
+                            oninput=${(e) => {
+                const value = e.target.value;
+                clearTimeout(docSearchTimer);
+                docSearchTimer = setTimeout(() => { state.docSearch.value = value; sessionStorage.setItem('docSearch', value); }, 150);
+            }}
                             onsl-clear=${() => { state.docSearch.value = ''; sessionStorage.setItem('docSearch', ''); }} 
                             value=${state.docSearch.value} style="flex: 2;">
                             <sl-icon name="search" slot="prefix"></sl-icon>
@@ -1264,6 +1249,8 @@ export const Documentation = ({ state, actions }) => {
                     
                     <div class="docs-list" style="padding: 1rem;">
                         ${(() => {
+            // WHY: The reference lists ~1,800 units; building it while the dialog is closed taxed every keystroke in the main card.
+            if (!state.docsOpen.value || state.docActiveTab.value !== 'reference') return null;
             const rawQuery = (state.docSearch.value || '').trim().toLowerCase();
             const queryTokens = rawQuery ? rawQuery.split(/\s+/) : [];
             const cat = state.docCategory.value || 'All_Dimensions';
@@ -1303,7 +1290,7 @@ export const Documentation = ({ state, actions }) => {
                                     <div class="dimension-group" style="margin-bottom: 2rem; content-visibility: auto; contain-intrinsic-size: auto 300px;">
                                         <div style="margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(255, 255, 255, 0.05); display: flex; align-items: center; justify-content: space-between;">
                                             <div>
-                                                <span class="doc-name" style="margin-right: 0.75rem; cursor: pointer;" onclick=${() => { actions.setDimension(dim.Name); appState.docsOpen.value = false; }}>${formatLabel(dim.Name)}</span>
+                                                <span class="doc-name" role="button" tabindex="0" style="margin-right: 0.75rem; cursor: pointer;" onclick=${() => { actions.setDimension(dim.Name); appState.docsOpen.value = false; }} onkeydown=${onActivateKey(() => { actions.setDimension(dim.Name); appState.docsOpen.value = false; })}>${formatLabel(dim.Name)}</span>
                                                 <span style="color: color-mix(in srgb, var(--text), transparent 20%); font-size: 0.95rem;">${dim.Description || ''}</span>
                                             </div>
                                             <sl-icon-button 
@@ -1321,7 +1308,7 @@ export const Documentation = ({ state, actions }) => {
                     return html`
                                                 <div class="doc-card">
                                                     <div class="doc-header" style="justify-content: flex-start; gap: 0.75rem; margin-bottom: 0.25rem;">
-                                                        <span class="doc-name" style="font-size: 1.05rem; cursor: pointer;" onclick=${() => { actions.setDimension(dim.Name); actions.setFromUnit(u.Name); appState.toUnit.value = ''; appState.docsOpen.value = false; }}>${formatLabel(u.Name)}</span>
+                                                        <span class="doc-name" role="button" tabindex="0" style="font-size: 1.05rem; cursor: pointer;" onclick=${async () => { appState.docsOpen.value = false; await actions.setDimension(dim.Name); actions.setFromUnit(u.Name); }} onkeydown=${onActivateKey(async () => { appState.docsOpen.value = false; await actions.setDimension(dim.Name); actions.setFromUnit(u.Name); })}>${formatLabel(u.Name)}</span>
                                                         ${abbr ? html`<sl-badge class="uom-badge" size="small">${abbr}</sl-badge>` : null}
                                                     </div>
                                                     <div class="doc-desc">
@@ -1410,12 +1397,20 @@ export const ConfirmDialog = ({ state, actions }) => {
 };
 
 
+// WHY: Clickable rows/chips must be operable by keyboard (Enter/Space) and announced as buttons.
+const onActivateKey = (fn) => (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        fn(e);
+    }
+};
+
 const App = ({ state, actions }) => {
     useEffect(() => {
         actions.init();
 
         const handleKeyDown = (e) => {
-            const isInputFocused = document.activeElement && (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA' || document.activeElement.tagName.startsWith('SL-'));
+            const isInputFocused = document.activeElement && (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA' || ['SL-INPUT', 'SL-SELECT', 'SL-TEXTAREA'].includes(document.activeElement.tagName) || document.activeElement.isContentEditable);
 
             // Show hotkeys via Documentation Modal
             if (e.key === '?' || (e.key === '/' && !isInputFocused)) {
@@ -1430,8 +1425,11 @@ const App = ({ state, actions }) => {
                 }
             }
 
+            // WHY: Single-key shortcuts must not fire on modifier combos (e.g. browser Ctrl+S).
+            const hasModifier = e.ctrlKey || e.metaKey || e.altKey;
+
             // Swap units
-            if (e.key.toLowerCase() === 's' && !isInputFocused) {
+            if (e.key.toLowerCase() === 's' && !hasModifier && !isInputFocused) {
                 e.preventDefault();
                 actions.swapUnits();
             }
@@ -1451,21 +1449,11 @@ const App = ({ state, actions }) => {
                 }
             }
 
-            // Ctrl+C to copy equation
-            if (e.key.toLowerCase() === 'c' && (e.ctrlKey || e.metaKey) && !isInputFocused) {
+            // Ctrl+C to copy equation, unless the user is copying selected text natively
+            const hasTextSelection = (globalThis.getSelection?.()?.toString() ?? '').length > 0;
+            if (e.key.toLowerCase() === 'c' && (e.ctrlKey || e.metaKey) && !isInputFocused && !hasTextSelection) {
                 e.preventDefault();
                 actions.copyExtended('equation');
-            }
-
-            // Ctrl+S to save snippet
-            if (e.key.toLowerCase() === 's' && (e.ctrlKey || e.metaKey)) {
-                e.preventDefault();
-                actions.openSaveSnippet();
-            }
-
-            // Ctrl+Enter to trigger calculate
-            if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
-                actions.calculate();
             }
         };
 
@@ -1505,12 +1493,12 @@ const App = ({ state, actions }) => {
     // Reactive Feedback: Result Ping
     useEffect(() => {
         const resEl = document.querySelector('.result-value');
-        if (resEl && state.result.value !== '0' && state.result.value !== '') {
+        if (resEl && state.resultValue.value !== '---' && state.resultValue.value !== 'Error') {
             resEl.classList.remove('result-animate');
             void resEl.offsetWidth; // Trigger reflow
             resEl.classList.add('result-animate');
         }
-    }, [state.result.value]);
+    }, [state.resultValue.value]);
 
     return html`
     <div class="status-indicator">

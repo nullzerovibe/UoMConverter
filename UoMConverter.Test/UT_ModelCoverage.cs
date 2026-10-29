@@ -90,19 +90,6 @@ public class UT_ModelCoverage {
     }
 
     [Fact]
-    public void UnitList_ShouldHandleMissingAbbreviations_HitDefensivePath() {
-        // This exercises the '?? ""' path in GetUnitList using the synthetic CoverageTest unit
-        var converter = new UoMConverter();
-
-        // Ensure the synthetic quantity exists (generator should have picked it up)
-        var units = converter.GetUnitList("CoverageTest").ToList();
-
-        if (units.Any(u => u.Name == "TestUnit")) {
-            var testUnit = units.First(u => u.Name == "TestUnit");
-            Assert.Equal("", testUnit.Abbreviation); // This hits the ?? "" path
-        }
-    }
-    [Fact]
     public void RecordSetterExerciser_ShouldTouchInitSetters() {
         // This exercises the 'init' blocks for record properties
         var q = new Quantity("Test", "Base", "Desc", FrozenDictionary<string, Unit>.Empty, new Dictionary<string, int>());

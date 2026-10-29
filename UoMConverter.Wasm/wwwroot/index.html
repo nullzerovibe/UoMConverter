@@ -24,9 +24,12 @@
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- Shoelace (CDN) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/themes/light.css" />
+    <!-- WHY: SRI pins the exact bytes of these version-pinned CDN files; dynamically loaded Shoelace chunks cannot carry SRI. -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/themes/light.css"
+        integrity="sha384-0usmJJJTG5wZwRFlxdECle5gNAqtRYVm8rHBHjGO0+Cpgp83KTGEANVIFUYafjaO" crossorigin="anonymous" />
     <script type="module"
-        src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/shoelace-autoloader.js"></script>
+        src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/shoelace-autoloader.js"
+        integrity="sha384-rsRbuKcK03eS6T2ouIt4+Ho0AbSSHEWABYpNJCKdACuV1at0Ah+G8n1WqV4a2Iby" crossorigin="anonymous"></script>
 
     <!-- Custom Styles -->
     <link rel="stylesheet" href="index.css" />
@@ -206,7 +209,7 @@ N u l l Z e r o V i b e
     <script>
         if ('serviceWorker' in navigator) {
             globalThis.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
+                navigator.serviceWorker.register('/sw.js', { updateViaCache: 'none' })
                     .then(reg => {
                         console.log('SW: Registered', reg);
                         // Check if already active or wait for it

@@ -7,13 +7,56 @@ on:
   pull_request:
     branches: [ "master", "main" ]
 
+permissions:
+  contents: read
+
 jobs:
-  build:
-
+  # WHY: Library + tests need no WASM workload; keep the feedback loop fast.
+  test:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v5
+      with:
+        dotnet-version: 10.0.x
+    - name: Restore
+      run: |
+        dotnet restore UoMConverter.Test/UoMConverter.Test.csproj
+        dotnet restore UoMConverter.Generator.Test/UoMConverter.Generator.Test.csproj
+    - name: Build
+      run: |
+        dotnet build UoMConverter.Test/UoMConverter.Test.csproj -c Release --no-restore
+        dotnet build UoMConverter.Generator.Test/UoMConverter.Generator.Test.csproj -c Release --no-restore
+    - name: Test
+      run: |
+        dotnet test UoMConverter.Test/UoMConverter.Test.csproj -c Release --no-build --verbosity normal --collect:"XPlat Code Coverage" --results-directory output/coverage
+        dotnet test UoMConverter.Generator.Test/UoMConverter.Generator.Test.csproj -c Release --no-build --verbosity normal --collect:"XPlat Code Coverage" --results-directory output/coverage
+    - name: Upload Coverage
+      uses: actions/upload-artifact@v7
+      with:
+        name: UoMConverter-Coverage
+        path: output/coverage/**/coverage.cobertura.xml
 
+    - name: Publish Library
+      run: dotnet publish UoMConverter/UoMConverter.csproj -c Release -o output/library
+    - name: Pack NuGet
+      run: dotnet pack UoMConverter/UoMConverter.csproj -c Release -o output/nuget
+    - name: Upload Library (Cross-Platform)
+      uses: actions/upload-artifact@v7
+      with:
+        name: UoMConverter-Lib-CrossPlatform
+        path: output/library/**
+    - name: Upload NuGet Package
+      uses: actions/upload-artifact@v7
+      with:
+        name: UoMConverter-NuGet
+        path: output/nuget/*
+
+  # WHY: main pushes are already published by deploy-wasm.yaml; validate the AOT build on PRs and package it on tags.
+  wasm:
+    if: github.event_name == 'pull_request' || startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
     - name: Setup .NET
@@ -22,54 +65,49 @@ jobs:
         dotnet-version: 10.0.x
     - name: Install WASM Workload
       run: dotnet workload install wasm-tools
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
-    
-    # Publish Library (DLLs - Cross Platform)
-    - name: Publish Library
-      run: dotnet publish UoMConverter/UoMConverter.csproj -c Release -o output/library
-
-    - name: Upload Library (Cross-Platform)
-      uses: actions/upload-artifact@v7
-      with:
-        name: UoMConverter-Lib-CrossPlatform
-        path: output/library/**
-
-    # Publish WASM (WebSite)
     - name: Publish WASM
       run: dotnet publish UoMConverter.Wasm/UoMConverter.Wasm.csproj -c Release -o output/wasm
-
     - name: Upload WASM (WebSite)
       uses: actions/upload-artifact@v7
       with:
         name: UoMConverter-Wasm-App
         path: output/wasm/wwwroot/**
 
-    # Create GitHub Release (Only on Tag)
-    - name: Zip Artifacts for Release
-      if: startsWith(github.ref, 'refs/tags/')
+  release:
+    if: startsWith(github.ref, 'refs/tags/')
+    needs: [ test, wasm ]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+    - uses: actions/checkout@v4
+    # WHY: A mistyped or stray tag must never publish a package whose version differs from the code.
+    - name: Verify Tag Matches Version
       run: |
-        cd output/library && zip -r ../../UoMConverter-Lib.zip .
-        cd ../wasm/wwwroot && zip -r ../../../UoMConverter-Wasm-App.zip .
-
-    - name: Pack NuGet
-      if: startsWith(github.ref, 'refs/tags/')
-      run: dotnet pack UoMConverter/UoMConverter.csproj -c Release -o output/nuget
-
+        version=$(grep -oPm1 '(?<=<Version>)[^<]+' Directory.Build.props)
+        tag="${GITHUB_REF_NAME#v}"
+        if [ "$version" != "$tag" ]; then
+          echo "::error::Tag v$tag does not match <Version>$version</Version> in Directory.Build.props"
+          exit 1
+        fi
+    - uses: actions/setup-dotnet@v5
+      with:
+        dotnet-version: 10.0.x
+    - name: Download Artifacts
+      uses: actions/download-artifact@v4
+      with:
+        path: artifacts
+    - name: Zip Artifacts for Release
+      run: |
+        (cd artifacts/UoMConverter-Lib-CrossPlatform && zip -r ../../UoMConverter-Lib.zip .)
+        (cd artifacts/UoMConverter-Wasm-App && zip -r ../../UoMConverter-Wasm-App.zip .)
     - name: Push to NuGet
-      if: startsWith(github.ref, 'refs/tags/')
-      run: dotnet nuget push output/nuget/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
-
+      run: dotnet nuget push artifacts/UoMConverter-NuGet/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
     - name: Release
-      if: startsWith(github.ref, 'refs/tags/')
       uses: softprops/action-gh-release@v2
       with:
         files: |
           UoMConverter-Lib.zip
           UoMConverter-Wasm-App.zip
-          output/nuget/*.nupkg
+          artifacts/UoMConverter-NuGet/*.nupkg
         generate_release_notes: true

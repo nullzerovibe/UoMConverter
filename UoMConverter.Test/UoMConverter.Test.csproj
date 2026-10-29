@@ -2,7 +2,8 @@
 
   <PropertyGroup>
     <IsPackable>false</IsPackable>
-    <NoWarn>$(NoWarn);1591</NoWarn>
+    <!-- WHY: Method_Scenario_Expected is the test naming convention (CA1707). -->
+    <NoWarn>$(NoWarn);1591;CA1707</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>

@@ -27,19 +27,19 @@
 [![Live Demo](https://img.shields.io/badge/Demo-WASM-brightgreen)](https://nullzerovibe.github.io/UoMConverter/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-**UoMConverter** is a high-performance, extensible unit of measure conversion library for .NET, leveraging source generators for maximum efficiency and a zero-allocation discovery path.
+**UoMConverter** is a high-performance, extensible unit of measure conversion library for .NET, leveraging source generators for compile-time unit definitions and a zero-allocation conversion path.
 
 > **[👉 Try the Live WebAssembly Demo 👈](https://nullzerovibe.github.io/UoMConverter/)**
 > *Runs entirely in your browser. Architecture by NullZeroVibe.*
 
 ## Features
 
-- 🚀 **High-Performance Core**: Optimized .NET engine using source-generated conversion logic for zero-allocation discovery and lightning-fast execution.
-- 🧩 **Extensible Architecture**: Easily add custom physical quantities and units via simple JSON definitions with built-in localization support.
-- 🏘️ **Source Generated Registry**: The entire unit registry and conversion formulas are baked in at compile-time, eliminating runtime reflection and dictionary lookups.
-- 🛡️ **Mission-Critical Precision**: Achieves 100% logic and branch coverage, ensuring mathematical reliability across all dimensions.
-- 🧵 **Thread Safe & Stateless**: Designed for high-concurrency environments like Web APIs and multithreaded desktop applications.
-- 🗺️ **WASM Optimized**: Tiny memory footprint and near-instant startup, perfect for browser-native WebAssembly deployments.
+- 🚀 **High-Performance Core**: Unit lookup and conversion run on precomputed frozen indexes: ~40–80 ns per conversion with **zero allocations** (BenchmarkDotNet, .NET 10, x64; see `UoMConverter.Benchmarks`, and guarded by a regression test).
+- 🏘️ **Source Generated Registry**: 136 quantities and 1,779 units are compiled in from JSON definitions at build time. No reflection, no runtime parsing; linear units are precomputed `Factor`/`Offset` pairs.
+- 🔒 **Safe Lookups**: Names are case-insensitive (`kilometer`), abbreviations are case-sensitive (`mW` ≠ `MW`) and only fall back to case-insensitive matching when unambiguous (`KG` → `kg`).
+- 🧭 **Smart Detection**: Resolves shared abbreviations (e.g. `A` = Ampere or Ångström) by finding the quantity both units have in common, and refuses to guess when results would differ.
+- 🧵 **Thread Safe & Immutable**: The registry is immutable and shared; one instance (or the DI singleton) serves any number of threads.
+- 🧪 **Tested**: Every unit round-trips through its base unit, plus regression tests for casing, ambiguity, immutability, and allocations.
 
 ## Interactive Demo Features
 
@@ -58,135 +58,90 @@ The [Live WebAssembly Demo](https://nullzerovibe.github.io/UoMConverter/) showca
 dotnet add package UoMConverter
 ```
 
-### Basic Usage
+Targets **.NET 10** (LTS).
 
-The `UoMConverter` class provides a high-level API for easy unit conversion and discovery.
+### Basic Usage
 
 ```csharp
 using UoMConverter;
 
 var converter = new UoMConverter.UoMConverter();
 
-// Simple conversion by string names or abbreviations
-double grams = converter.Convert(1.0, "Kilogram", "Gram");
-Console.WriteLine($"1kg is {grams}g"); // Output: 1000
+// Names (case-insensitive) or abbreviations (case-sensitive)
+double grams = converter.Convert(1.0, "Kilogram", "Gram"); // 1000
+double meters = converter.Convert(100, "cm", "m");          // 1
 
-// Using abbreviations
-double meters = converter.Convert(100, "cm", "m");
-Console.WriteLine($"100cm is {meters}m"); // Output: 1
+// Smart Detection (default): "A" is both Ampere and Ångström; "mA" settles it.
+double milliamps = converter.Convert(10, "A", "mA");        // 10000
 
-// Advanced: Handling Ambiguity with Smart Detection (Default: true)
-// Resolves units like "A" (Ampere vs Angstrom) by finding a common quantity.
-double current = converter.Convert(10, "A", "mA", useSmartDetection: true);
+// Explicit dimension: skips detection and resolves any ambiguity.
+double result = converter.Convert(1.5, "km", "m", dimension: "Length"); // 1500
+```
 
-// Advanced: Explicit Dimension for Maximum Performance
-// Skips discovery logic by providing the physical quantity name.
-double result = converter.Convert(1.5, "km", "m", dimension: "Length");
+### Error Handling
+
+`Convert` throws typed exceptions, all deriving from `ArgumentException`. Use `TryConvert` on hot or untrusted paths: it never throws.
+
+```csharp
+try {
+    converter.Convert(1, "Kelvin", "DegreeCelsius"); // absolute or delta temperature?
+}
+catch (AmbiguousConversionException ex) {
+    // ex.CandidateDimensions: ["Temperature", "TemperatureDelta"]
+    var celsius = converter.Convert(1, "Kelvin", "DegreeCelsius", ex.CandidateDimensions[0]);
+}
+catch (UnknownUnitException ex)       { /* ex.Unit, ex.Dimension */ }
+catch (IncompatibleUnitsException ex) { /* ex.FromUnit, ex.ToUnit, e.g. "m" -> "g" */ }
+
+if (converter.TryConvert(1, "kg", "lb", out var pounds)) { /* ... */ }
 ```
 
 ### Discovery API (UI Ready)
 
-Perfect for populating dropdowns or search interfaces.
-
 ```csharp
-var converter = new UoMConverter.UoMConverter();
+var dimensions = converter.GetDimensions();       // "Length", "Mass", "Temperature", ...
+var units = converter.GetUnitList("Mass");         // IReadOnlyList<UnitInfo>, immutable
 
-// Get all available physical quantities
-var dimensions = converter.GetDimensions(); // ["Mass", "Length", "Temperature", ...]
-
-// Get unit list for a specific dimension with metadata
-var units = converter.GetUnitList("Mass");
-foreach (var (name, abbr, plural) in units)
-{
-    Console.WriteLine($"{name} ({abbr}) - {plural}");
+foreach (var unit in units) {
+    Console.WriteLine($"{unit.Name} ({unit.Abbreviation}) - {unit.Plural}");
 }
+
+string? dimension = converter.GetDimensionForUnit("km"); // "Length"
+Unit? kilometer = converter.GetUnit("km");               // full metadata: names, abbreviations, Factor/Offset
 ```
 
 ## Integration Examples
 
 ### ASP.NET Core (Dependency Injection)
 
-For web applications, register the converter as a singleton in your `Program.cs`:
-
 ```csharp
 // Program.cs
-builder.Services.AddSingleton<IUoMConverter, UoMConverter.UoMConverter>();
+using UoMConverter.Extensions;
 
-// In your Controller or Service
-public class ConversionController : ControllerBase
-{
-    private readonly IUoMConverter _converter;
-    
-    public ConversionController(IUoMConverter converter)
-    {
-        _converter = converter;
-    }
+builder.Services.AddUoMConverter(); // singleton IUoMConverter; respects an existing registration
 
-    [HttpGet("convert")]
-    public IActionResult GetConversion(double value, string from, string to)
-    {
-        var result = _converter.Convert(value, from, to);
-        return Ok(new { Value = value, From = from, To = to, Result = result });
-    }
-}
+// Minimal API
+app.MapGet("/convert", (double value, string from, string to, IUoMConverter converter) =>
+    converter.TryConvert(value, from, to, out var result)
+        ? Results.Ok(new { value, from, to, result })
+        : Results.BadRequest($"Cannot convert '{from}' to '{to}'."));
 ```
 
-### Console Application (Localization Support)
+## Unit Definitions
 
-The library supports regional abbreviations and pluralization out of the box.
-
-```csharp
-using UoMConverter;
-
-var converter = new UoMConverter.UoMConverter();
-
-// Use specific cultures for unit discovery
-var unitsEn = converter.GetUnitList("Mass", "en-US");
-var unitsDe = converter.GetUnitList("Mass", "de-DE");
-
-// High-performance conversion in a loop
-for (int i = 0; i < 1000; i++)
-{
-    var res = converter.Convert(i, "Meter", "Foot");
-}
-```
-
-## Advanced: Adding Custom Units
-
-Create a JSON file in your project and include it as an `AdditionalFiles` item in your `.csproj`.
-
-```json
-{
-  "Name": "Currency",
-  "BaseUnit": "Credit",
-  "Units": [
-    {
-      "SingularName": "Credit",
-      "PluralName": "Credits",
-      "FromUnitToBaseFunc": "val",
-      "FromBaseToUnitFunc": "val",
-      "Localization": [ { "Culture": "en-US", "Abbreviations": ["CR"] } ]
-    },
-    {
-      "SingularName": "Gold",
-      "PluralName": "Gold",
-      "FromUnitToBaseFunc": "val * 100",
-      "FromBaseToUnitFunc": "val / 100",
-      "Localization": [ { "Culture": "en-US", "Abbreviations": ["GP"] } ]
-    }
-  ]
-}
-```
+Units are compiled into the package from JSON definitions under [`UoMConverter/UnitDefinitions`](UoMConverter/UnitDefinitions): `UnitsNet/` mirrors upstream [UnitsNet](https://github.com/angularsen/UnitsNet) definitions, and `Extensions/` adds or extends quantities. Defining custom units in *consuming* projects is not supported yet; to add a unit, contribute a JSON file to `Extensions/`.
 
 ## Synchronization
 
 We leverage the extensive unit definitions from [UnitsNet](https://github.com/angularsen/UnitsNet). Specifically, we reuse their [Common/UnitDefinitions](https://github.com/angularsen/UnitsNet/tree/master/Common/UnitDefinitions) JSON files to ensure compatibility and comprehensive coverage.
 
-To keep these definitions in sync with upstream sources, use the provided script:
+To update the definitions, sync a pinned upstream tag or commit and review the diff in a pull request:
 
 ```powershell
-.\scripts\Sync-UnitsNet.ps1
+.\scripts\Sync-UnitsNet.ps1 -Ref v6.0.0
 ```
+
+The resolved commit is recorded in `UoMConverter/UnitDefinitions/UnitsNet/UPSTREAM.txt`. Formulas are parsed against an allowlisted grammar at build time (`UOM0002`), and to/from formulas must be inverses (`UOM0003`).
 
 ## License
 

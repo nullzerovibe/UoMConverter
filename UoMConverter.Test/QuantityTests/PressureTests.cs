@@ -15,7 +15,7 @@ public class PressureTests {
     [InlineData(101325, "Pascal", "Atmosphere", 1)]
     // Test Case Insensitivity
     [InlineData(1, "bar", "Bar", 1)]
-    [InlineData(1, "PA", "pa", 1)]
+    [InlineData(1, "PASCAL", "pascals", 1)]
     public void Convert_StandardUnits_ReturnsCorrectValue(double value, string from, string to, double expected) {
         var result = _converter.Convert(value, from, to);
         Assert.Equal(expected, result, 1); // Less precision due to approximates

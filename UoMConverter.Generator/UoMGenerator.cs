@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,30 @@ namespace UoMConverter.Generator;
 /// </summary>
 [Generator]
 public class UoMGenerator : IIncrementalGenerator {
+    internal static readonly DiagnosticDescriptor InvalidUnitDefinition = new(
+        id: "UOM0001",
+        title: "Invalid unit definition file",
+        messageFormat: "Unit definition '{0}' could not be parsed and was skipped: {1}",
+        category: "UoMConverter",
+        defaultSeverity: DiagnosticSeverity.Warning,
+        isEnabledByDefault: true);
+
+    internal static readonly DiagnosticDescriptor InvalidFormula = new(
+        id: "UOM0002",
+        title: "Invalid unit formula",
+        messageFormat: "Unit '{0}' was skipped: {1}",
+        category: "UoMConverter",
+        defaultSeverity: DiagnosticSeverity.Error,
+        isEnabledByDefault: true);
+
+    internal static readonly DiagnosticDescriptor InconsistentFormulas = new(
+        id: "UOM0003",
+        title: "Unit formulas are not inverses",
+        messageFormat: "Unit '{0}': {1}",
+        category: "UoMConverter",
+        defaultSeverity: DiagnosticSeverity.Warning,
+        isEnabledByDefault: true);
+
     /// <summary>
     /// Initializes the generator pipeline.
     /// </summary>
@@ -23,7 +48,7 @@ public class UoMGenerator : IIncrementalGenerator {
         var jsonFiles = context.AdditionalTextsProvider
             .Where(file => file.Path.EndsWith(".json", StringComparison.OrdinalIgnoreCase))
             .Select((text, token) => QuantityParser.ProcessJsonFile(text, token))
-            .Where(x => x.Quantity is not null);
+            .Where(x => x.Quantity is not null || x.Error is not null);
 
         // 2. Collect all processed files into a single bundle
         var quantities = jsonFiles.Collect();
@@ -38,13 +63,23 @@ public class UoMGenerator : IIncrementalGenerator {
     private static void GenerateUnits(SourceProductionContext spc, ImmutableArray<ProcessedQuantityFile> source) {
         if (source.IsDefaultOrEmpty) return;
 
+        foreach (var file in source) {
+            if (file.Error is null) continue;
+            var location = Location.Create(file.Path, default, default);
+            spc.ReportDiagnostic(Diagnostic.Create(InvalidUnitDefinition, location, System.IO.Path.GetFileName(file.Path), file.Error));
+        }
+
         // 1. Merge standard and custom quantities, resolving overrides and collisions
         var finalQuantities = QuantityParser.MergeQuantities(source);
 
         // 2. Generate individual quantity files (e.g., Length.g.cs, Mass.g.cs)
         // These files contain partial class implementations for loading unit data.
         foreach (var quantity in finalQuantities) {
-            var sourceText = SourceRenderer.RenderQuantityFile(quantity);
+            var diagnostics = new List<RenderDiagnostic>();
+            var sourceText = SourceRenderer.RenderQuantityFile(quantity, diagnostics);
+            foreach (var d in diagnostics) {
+                spc.ReportDiagnostic(Diagnostic.Create(d.IsError ? InvalidFormula : InconsistentFormulas, Location.None, d.Unit, d.Message));
+            }
             spc.AddSource($"{quantity.Name}.g.cs", SourceText.From(sourceText, Encoding.UTF8));
         }
 

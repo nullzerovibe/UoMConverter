@@ -30,9 +30,11 @@ public class UoMConverterTests {
     }
 
     [Fact]
-    public void Convert_CrossQuantity_ThrowsArgumentException() {
-        Assert.Throws<ArgumentException>(() =>
+    public void Convert_CrossQuantity_ThrowsIncompatibleUnits() {
+        var ex = Assert.Throws<IncompatibleUnitsException>(() =>
             _converter.Convert(1, "m", "g"));
+        Assert.Equal("m", ex.FromUnit);
+        Assert.Equal("g", ex.ToUnit);
     }
 
     [Fact]
@@ -55,7 +57,7 @@ public class UoMConverterTests {
     public void GetUnit_ReturnsFullMetadata() {
         var unit = _converter.GetUnit("cm");
         Assert.NotNull(unit);
-        Assert.Equal("CentiMeter", unit.SingularName);
+        Assert.Equal("Centimeter", unit.SingularName);
         Assert.Contains("cm", unit.Abbreviations);
     }
 
@@ -75,18 +77,26 @@ public class UoMConverterTests {
     }
 
     [Theory]
-    [InlineData(null)]
     [InlineData("")]
     [InlineData("   ")]
-    public void Convert_InvalidInput_ThrowsArgumentException(string? invalidUnit) {
-        Assert.Throws<ArgumentException>(() => _converter.Convert(10, invalidUnit!, "Meter"));
-        Assert.Throws<ArgumentException>(() => _converter.Convert(10, "Meter", invalidUnit!));
+    public void Convert_InvalidInput_ThrowsArgumentException(string invalidUnit) {
+        Assert.Equal("fromUnit", Assert.Throws<UnknownUnitException>(() => _converter.Convert(10, invalidUnit, "Meter")).ParamName);
+        Assert.Equal("toUnit", Assert.Throws<UnknownUnitException>(() => _converter.Convert(10, "Meter", invalidUnit)).ParamName);
     }
 
     [Fact]
-    public void Convert_UnknownUnit_ThrowsArgumentException() {
-        var ex = Assert.Throws<ArgumentException>(() => _converter.Convert(10, "NotAUnit", "Meter"));
-        Assert.Contains("Unknown source unit", ex.Message);
+    public void Convert_NullUnit_ThrowsArgumentNullException() {
+        Assert.Throws<ArgumentNullException>(() => _converter.Convert(10, null!, "Meter"));
+        Assert.Throws<ArgumentNullException>(() => _converter.Convert(10, "Meter", null!));
+        Assert.Throws<ArgumentNullException>(() => _converter.Convert(10, null!, "Meter", "Length"));
+    }
+
+    [Fact]
+    public void Convert_UnknownUnit_ThrowsUnknownUnit() {
+        var ex = Assert.Throws<UnknownUnitException>(() => _converter.Convert(10, "NotAUnit", "Meter"));
+        Assert.Equal("NotAUnit", ex.Unit);
+        Assert.Null(ex.Dimension);
+        Assert.IsAssignableFrom<ArgumentException>(ex);
     }
 
     [Fact]

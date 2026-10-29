@@ -29,9 +29,11 @@ internal static class QuantityParser {
             var quantity = JsonSerializer.Deserialize<ConfigQuantity>(json, JsonOptions);
             return new ProcessedQuantityFile(quantity, text.Path);
         }
-        catch {
-            // Log error or handle it
-            return new ProcessedQuantityFile(null, text.Path);
+        catch (OperationCanceledException) {
+            throw;
+        }
+        catch (Exception ex) {
+            return new ProcessedQuantityFile(null, text.Path, ex.Message);
         }
     }
 
@@ -42,18 +44,12 @@ internal static class QuantityParser {
             if (file.Quantity == null) continue;
 
             var name = file.Quantity.Name;
+            // WARN: Never mutate pipeline inputs; the incremental driver caches them across runs and duplicates would accumulate.
             if (quantities.TryGetValue(name, out var existing)) {
-                // If existing is missing metadata but the new one has it, use the new one's metadata
-                if (string.IsNullOrEmpty(existing.BaseUnit) && !string.IsNullOrEmpty(file.Quantity.BaseUnit)) {
-                    quantities[name] = file.Quantity with { Units = existing.Units };
-                    quantities[name].Units.AddRange(file.Quantity.Units);
-                }
-                else {
-                    // Just merge units
-                    if (file.Quantity.Units != null) {
-                        existing.Units.AddRange(file.Quantity.Units);
-                    }
-                }
+                List<ConfigUnit> merged = [.. existing.Units ?? [], .. file.Quantity.Units ?? []];
+                quantities[name] = string.IsNullOrEmpty(existing.BaseUnit) && !string.IsNullOrEmpty(file.Quantity.BaseUnit)
+                    ? file.Quantity with { Units = merged }
+                    : existing with { Units = merged };
             }
             else {
                 quantities[name] = file.Quantity;
