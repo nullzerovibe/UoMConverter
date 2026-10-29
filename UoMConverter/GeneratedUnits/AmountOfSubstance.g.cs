@@ -18,116 +18,116 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // FemtoMole
-        AmountOfSubstanceUnits.TryAdd("FemtoMole", new Unit(
-            SingularName: "FemtoMole",
-            PluralName: "FemtoMoles",
+        // Femtomole
+        AmountOfSubstanceUnits.TryAdd("Femtomole", new Unit(
+            SingularName: "Femtomole",
+            PluralName: "Femtomoles",
             Abbreviations: ["fmol"],
-            Factor: 1,
+            Factor: 1E-15,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-15,
-            FromUnitToBase: static val => (val) * 1E-15,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PicoMole
-        AmountOfSubstanceUnits.TryAdd("PicoMole", new Unit(
-            SingularName: "PicoMole",
-            PluralName: "PicoMoles",
+        // Picomole
+        AmountOfSubstanceUnits.TryAdd("Picomole", new Unit(
+            SingularName: "Picomole",
+            PluralName: "Picomoles",
             Abbreviations: ["pmol"],
-            Factor: 1,
+            Factor: 1E-12,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-12,
-            FromUnitToBase: static val => (val) * 1E-12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoMole
-        AmountOfSubstanceUnits.TryAdd("NanoMole", new Unit(
-            SingularName: "NanoMole",
-            PluralName: "NanoMoles",
+        // Nanomole
+        AmountOfSubstanceUnits.TryAdd("Nanomole", new Unit(
+            SingularName: "Nanomole",
+            PluralName: "Nanomoles",
             Abbreviations: ["nmol"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroMole
-        AmountOfSubstanceUnits.TryAdd("MicroMole", new Unit(
-            SingularName: "MicroMole",
-            PluralName: "MicroMoles",
+        // Micromole
+        AmountOfSubstanceUnits.TryAdd("Micromole", new Unit(
+            SingularName: "Micromole",
+            PluralName: "Micromoles",
             Abbreviations: ["µmol"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliMole
-        AmountOfSubstanceUnits.TryAdd("MilliMole", new Unit(
-            SingularName: "MilliMole",
-            PluralName: "MilliMoles",
+        // Millimole
+        AmountOfSubstanceUnits.TryAdd("Millimole", new Unit(
+            SingularName: "Millimole",
+            PluralName: "Millimoles",
             Abbreviations: ["mmol"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiMole
-        AmountOfSubstanceUnits.TryAdd("CentiMole", new Unit(
-            SingularName: "CentiMole",
-            PluralName: "CentiMoles",
+        // Centimole
+        AmountOfSubstanceUnits.TryAdd("Centimole", new Unit(
+            SingularName: "Centimole",
+            PluralName: "Centimoles",
             Abbreviations: ["cmol"],
-            Factor: 1,
+            Factor: 0.01,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.01,
-            FromUnitToBase: static val => (val) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciMole
-        AmountOfSubstanceUnits.TryAdd("DeciMole", new Unit(
-            SingularName: "DeciMole",
-            PluralName: "DeciMoles",
+        // Decimole
+        AmountOfSubstanceUnits.TryAdd("Decimole", new Unit(
+            SingularName: "Decimole",
+            PluralName: "Decimoles",
             Abbreviations: ["dmol"],
-            Factor: 1,
+            Factor: 0.1,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.1,
-            FromUnitToBase: static val => (val) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloMole
-        AmountOfSubstanceUnits.TryAdd("KiloMole", new Unit(
-            SingularName: "KiloMole",
-            PluralName: "KiloMoles",
+        // Kilomole
+        AmountOfSubstanceUnits.TryAdd("Kilomole", new Unit(
+            SingularName: "Kilomole",
+            PluralName: "Kilomoles",
             Abbreviations: ["kmol"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaMole
-        AmountOfSubstanceUnits.TryAdd("MegaMole", new Unit(
-            SingularName: "MegaMole",
-            PluralName: "MegaMoles",
+        // Megamole
+        AmountOfSubstanceUnits.TryAdd("Megamole", new Unit(
+            SingularName: "Megamole",
+            PluralName: "Megamoles",
             Abbreviations: ["Mmol"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundMole
         AmountOfSubstanceUnits.TryAdd("PoundMole", new Unit(
@@ -138,80 +138,80 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoPoundMole
-        AmountOfSubstanceUnits.TryAdd("NanoPoundMole", new Unit(
-            SingularName: "NanoPoundMole",
-            PluralName: "NanoPoundMoles",
+        // NanopoundMole
+        AmountOfSubstanceUnits.TryAdd("NanopoundMole", new Unit(
+            SingularName: "NanopoundMole",
+            PluralName: "NanopoundMoles",
             Abbreviations: ["nlbmol"],
-            Factor: 1,
+            Factor: 4.5359237000000005E-07,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 453.59237) / 1E-09,
-            FromUnitToBase: static val => (val * 453.59237) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroPoundMole
-        AmountOfSubstanceUnits.TryAdd("MicroPoundMole", new Unit(
-            SingularName: "MicroPoundMole",
-            PluralName: "MicroPoundMoles",
+        // MicropoundMole
+        AmountOfSubstanceUnits.TryAdd("MicropoundMole", new Unit(
+            SingularName: "MicropoundMole",
+            PluralName: "MicropoundMoles",
             Abbreviations: ["µlbmol"],
-            Factor: 1,
+            Factor: 0.00045359237,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 453.59237) / 1E-06,
-            FromUnitToBase: static val => (val * 453.59237) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliPoundMole
-        AmountOfSubstanceUnits.TryAdd("MilliPoundMole", new Unit(
-            SingularName: "MilliPoundMole",
-            PluralName: "MilliPoundMoles",
+        // MillipoundMole
+        AmountOfSubstanceUnits.TryAdd("MillipoundMole", new Unit(
+            SingularName: "MillipoundMole",
+            PluralName: "MillipoundMoles",
             Abbreviations: ["mlbmol"],
-            Factor: 1,
+            Factor: 0.45359237,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 453.59237) / 0.001,
-            FromUnitToBase: static val => (val * 453.59237) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiPoundMole
-        AmountOfSubstanceUnits.TryAdd("CentiPoundMole", new Unit(
-            SingularName: "CentiPoundMole",
-            PluralName: "CentiPoundMoles",
+        // CentipoundMole
+        AmountOfSubstanceUnits.TryAdd("CentipoundMole", new Unit(
+            SingularName: "CentipoundMole",
+            PluralName: "CentipoundMoles",
             Abbreviations: ["clbmol"],
-            Factor: 1,
+            Factor: 4.535923700000001,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 453.59237) / 0.01,
-            FromUnitToBase: static val => (val * 453.59237) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciPoundMole
-        AmountOfSubstanceUnits.TryAdd("DeciPoundMole", new Unit(
-            SingularName: "DeciPoundMole",
-            PluralName: "DeciPoundMoles",
+        // DecipoundMole
+        AmountOfSubstanceUnits.TryAdd("DecipoundMole", new Unit(
+            SingularName: "DecipoundMole",
+            PluralName: "DecipoundMoles",
             Abbreviations: ["dlbmol"],
-            Factor: 1,
+            Factor: 45.35923700000001,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 453.59237) / 0.1,
-            FromUnitToBase: static val => (val * 453.59237) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloPoundMole
-        AmountOfSubstanceUnits.TryAdd("KiloPoundMole", new Unit(
-            SingularName: "KiloPoundMole",
-            PluralName: "KiloPoundMoles",
+        // KilopoundMole
+        AmountOfSubstanceUnits.TryAdd("KilopoundMole", new Unit(
+            SingularName: "KilopoundMole",
+            PluralName: "KilopoundMoles",
             Abbreviations: ["klbmol"],
-            Factor: 1,
+            Factor: 453592.37,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 453.59237) / 1000,
-            FromUnitToBase: static val => (val * 453.59237) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -220,7 +220,7 @@ public static partial class UoMRegistry {
             "Mole is the amount of substance containing Avagadro's Number (6.02 x 10 ^ 23) of real particles such as molecules,atoms, ions or radicals.",
             AmountOfSubstanceUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["N"] = 1 },
-            "",
+            null,
             false,
             1
         );

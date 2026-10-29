@@ -14,24 +14,24 @@ public static partial class UoMRegistry {
             SingularName: "CubicCentimeterPerHour",
             PluralName: "CubicCentimetersPerHour",
             Abbreviations: ["cm³/h"],
-            Factor: 1,
+            Factor: 2.7777777777778E-10,
             Offset: 0,
-            FromBaseToUnit: static val => val / 2.7777777777778e-10,
-            FromUnitToBase: static val => val * 2.7777777777778e-10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CubicInchPerHour
         VolumeFlowUnits.TryAdd("CubicInchPerHour", new Unit(
             SingularName: "CubicInchPerHour",
             PluralName: "CubicInchesPerHour",
             Abbreviations: ["in³/h"],
-            Factor: 1,
+            Factor: 4.5519622224454E-09,
             Offset: 0,
-            FromBaseToUnit: static val => val / 4.5519622224454e-9,
-            FromUnitToBase: static val => val * 4.5519622224454e-9,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CubicMeterPerYear
         VolumeFlowUnits.TryAdd("CubicMeterPerYear", new Unit(
@@ -42,8 +42,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CubicMeterPerSecond
         VolumeFlowUnits.TryAdd("CubicMeterPerSecond", new Unit(
@@ -54,8 +54,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CubicMeterPerMinute
         VolumeFlowUnits.TryAdd("CubicMeterPerMinute", new Unit(
@@ -66,8 +66,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CubicMeterPerHour
         VolumeFlowUnits.TryAdd("CubicMeterPerHour", new Unit(
@@ -78,8 +78,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CubicMeterPerDay
         VolumeFlowUnits.TryAdd("CubicMeterPerDay", new Unit(
@@ -90,8 +90,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CubicFootPerSecond
         VolumeFlowUnits.TryAdd("CubicFootPerSecond", new Unit(
@@ -102,8 +102,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CubicFootPerMinute
         VolumeFlowUnits.TryAdd("CubicFootPerMinute", new Unit(
@@ -112,10 +112,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["ft³/min", "CFM"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (0.028316846592 / 60),
-            FromUnitToBase: static val => val * 0.028316846592 / 60,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (0.028316846592 / 60)),
+            FromUnitToBase: static val => (val * 0.028316846592 / 60),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CubicFootPerHour
         VolumeFlowUnits.TryAdd("CubicFootPerHour", new Unit(
@@ -124,10 +124,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["ft³/h", "cf/hr"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (0.028316846592 / 3600),
-            FromUnitToBase: static val => val * 0.028316846592 / 3600,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (0.028316846592 / 3600)),
+            FromUnitToBase: static val => (val * 0.028316846592 / 3600),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CubicYardPerSecond
         VolumeFlowUnits.TryAdd("CubicYardPerSecond", new Unit(
@@ -138,8 +138,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CubicYardPerMinute
         VolumeFlowUnits.TryAdd("CubicYardPerMinute", new Unit(
@@ -148,10 +148,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["yd³/min"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (0.764554857984 / 60),
-            FromUnitToBase: static val => val * 0.764554857984 / 60,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (0.764554857984 / 60)),
+            FromUnitToBase: static val => (val * 0.764554857984 / 60),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CubicYardPerHour
         VolumeFlowUnits.TryAdd("CubicYardPerHour", new Unit(
@@ -160,10 +160,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["yd³/h"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (0.764554857984 / 3600),
-            FromUnitToBase: static val => val * 0.764554857984 / 3600,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (0.764554857984 / 3600)),
+            FromUnitToBase: static val => (val * 0.764554857984 / 3600),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CubicYardPerDay
         VolumeFlowUnits.TryAdd("CubicYardPerDay", new Unit(
@@ -172,10 +172,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["cy/day"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (0.764554857984 / 86400),
-            FromUnitToBase: static val => val * 0.764554857984 / 86400,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (0.764554857984 / 86400)),
+            FromUnitToBase: static val => (val * 0.764554857984 / 86400),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // MillionUsGallonPerDay
         VolumeFlowUnits.TryAdd("MillionUsGallonPerDay", new Unit(
@@ -184,10 +184,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["MGD"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (1e6 * 0.003785411784 / 86400),
-            FromUnitToBase: static val => val * 1e6 * 0.003785411784 / 86400,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (1e6 * 0.003785411784 / 86400)),
+            FromUnitToBase: static val => (val * 1e6 * 0.003785411784 / 86400),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // UsGallonPerDay
         VolumeFlowUnits.TryAdd("UsGallonPerDay", new Unit(
@@ -196,22 +196,22 @@ public static partial class UoMRegistry {
             Abbreviations: ["gpd", "gal/d"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (0.003785411784 / 86400),
-            FromUnitToBase: static val => val * 0.003785411784 / 86400,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (0.003785411784 / 86400)),
+            FromUnitToBase: static val => (val * 0.003785411784 / 86400),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaUsGallonPerDay
-        VolumeFlowUnits.TryAdd("MegaUsGallonPerDay", new Unit(
-            SingularName: "MegaUsGallonPerDay",
-            PluralName: "MegaUsGallonsPerDay",
+        // MegausGallonPerDay
+        VolumeFlowUnits.TryAdd("MegausGallonPerDay", new Unit(
+            SingularName: "MegausGallonPerDay",
+            PluralName: "MegausGallonsPerDay",
             Abbreviations: ["Mgpd", "Mgal/d"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / (0.003785411784 / 86400)) / 1000000,
-            FromUnitToBase: static val => (val * 0.003785411784 / 86400) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / (0.003785411784 / 86400)) / 1000000),
+            FromUnitToBase: static val => ((val * 1000000) * 0.003785411784 / 86400),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // LiterPerSecond
         VolumeFlowUnits.TryAdd("LiterPerSecond", new Unit(
@@ -222,116 +222,116 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoLiterPerSecond
-        VolumeFlowUnits.TryAdd("NanoLiterPerSecond", new Unit(
-            SingularName: "NanoLiterPerSecond",
-            PluralName: "NanoLitersPerSecond",
+        // NanoliterPerSecond
+        VolumeFlowUnits.TryAdd("NanoliterPerSecond", new Unit(
+            SingularName: "NanoliterPerSecond",
+            PluralName: "NanolitersPerSecond",
             Abbreviations: ["nl/s", "nLPS"],
-            Factor: 1,
+            Factor: 1.0000000000000002E-12,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1000) / 1E-09,
-            FromUnitToBase: static val => (val / 1000) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroLiterPerSecond
-        VolumeFlowUnits.TryAdd("MicroLiterPerSecond", new Unit(
-            SingularName: "MicroLiterPerSecond",
-            PluralName: "MicroLitersPerSecond",
+        // MicroliterPerSecond
+        VolumeFlowUnits.TryAdd("MicroliterPerSecond", new Unit(
+            SingularName: "MicroliterPerSecond",
+            PluralName: "MicrolitersPerSecond",
             Abbreviations: ["µl/s", "µLPS"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1000) / 1E-06,
-            FromUnitToBase: static val => (val / 1000) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliLiterPerSecond
-        VolumeFlowUnits.TryAdd("MilliLiterPerSecond", new Unit(
-            SingularName: "MilliLiterPerSecond",
-            PluralName: "MilliLitersPerSecond",
+        // MilliliterPerSecond
+        VolumeFlowUnits.TryAdd("MilliliterPerSecond", new Unit(
+            SingularName: "MilliliterPerSecond",
+            PluralName: "MillilitersPerSecond",
             Abbreviations: ["ml/s", "mLPS"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1000) / 0.001,
-            FromUnitToBase: static val => (val / 1000) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiLiterPerSecond
-        VolumeFlowUnits.TryAdd("CentiLiterPerSecond", new Unit(
-            SingularName: "CentiLiterPerSecond",
-            PluralName: "CentiLitersPerSecond",
+        // CentiliterPerSecond
+        VolumeFlowUnits.TryAdd("CentiliterPerSecond", new Unit(
+            SingularName: "CentiliterPerSecond",
+            PluralName: "CentilitersPerSecond",
             Abbreviations: ["cl/s", "cLPS"],
-            Factor: 1,
+            Factor: 1E-05,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1000) / 0.01,
-            FromUnitToBase: static val => (val / 1000) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciLiterPerSecond
-        VolumeFlowUnits.TryAdd("DeciLiterPerSecond", new Unit(
-            SingularName: "DeciLiterPerSecond",
-            PluralName: "DeciLitersPerSecond",
+        // DeciliterPerSecond
+        VolumeFlowUnits.TryAdd("DeciliterPerSecond", new Unit(
+            SingularName: "DeciliterPerSecond",
+            PluralName: "DecilitersPerSecond",
             Abbreviations: ["dl/s", "dLPS"],
-            Factor: 1,
+            Factor: 0.0001,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1000) / 0.1,
-            FromUnitToBase: static val => (val / 1000) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DecaLiterPerSecond
-        VolumeFlowUnits.TryAdd("DecaLiterPerSecond", new Unit(
-            SingularName: "DecaLiterPerSecond",
-            PluralName: "DecaLitersPerSecond",
+        // DecaliterPerSecond
+        VolumeFlowUnits.TryAdd("DecaliterPerSecond", new Unit(
+            SingularName: "DecaliterPerSecond",
+            PluralName: "DecalitersPerSecond",
             Abbreviations: ["dal/s", "daLPS"],
-            Factor: 1,
+            Factor: 0.01,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1000) / 10,
-            FromUnitToBase: static val => (val / 1000) * 10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // HectoLiterPerSecond
-        VolumeFlowUnits.TryAdd("HectoLiterPerSecond", new Unit(
-            SingularName: "HectoLiterPerSecond",
-            PluralName: "HectoLitersPerSecond",
+        // HectoliterPerSecond
+        VolumeFlowUnits.TryAdd("HectoliterPerSecond", new Unit(
+            SingularName: "HectoliterPerSecond",
+            PluralName: "HectolitersPerSecond",
             Abbreviations: ["hl/s", "hLPS"],
-            Factor: 1,
+            Factor: 0.1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1000) / 100,
-            FromUnitToBase: static val => (val / 1000) * 100,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloLiterPerSecond
-        VolumeFlowUnits.TryAdd("KiloLiterPerSecond", new Unit(
-            SingularName: "KiloLiterPerSecond",
-            PluralName: "KiloLitersPerSecond",
+        // KiloliterPerSecond
+        VolumeFlowUnits.TryAdd("KiloliterPerSecond", new Unit(
+            SingularName: "KiloliterPerSecond",
+            PluralName: "KilolitersPerSecond",
             Abbreviations: ["kl/s", "kLPS"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1000) / 1000,
-            FromUnitToBase: static val => (val / 1000) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaLiterPerSecond
-        VolumeFlowUnits.TryAdd("MegaLiterPerSecond", new Unit(
-            SingularName: "MegaLiterPerSecond",
-            PluralName: "MegaLitersPerSecond",
+        // MegaliterPerSecond
+        VolumeFlowUnits.TryAdd("MegaliterPerSecond", new Unit(
+            SingularName: "MegaliterPerSecond",
+            PluralName: "MegalitersPerSecond",
             Abbreviations: ["Ml/s", "MLPS"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1000) / 1000000,
-            FromUnitToBase: static val => (val / 1000) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // LiterPerMinute
         VolumeFlowUnits.TryAdd("LiterPerMinute", new Unit(
@@ -340,118 +340,118 @@ public static partial class UoMRegistry {
             Abbreviations: ["l/min", "LPM"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * (1000 * 60),
-            FromUnitToBase: static val => val / (1000 * 60),
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * (1000 * 60)),
+            FromUnitToBase: static val => (val / (1000 * 60)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoLiterPerMinute
-        VolumeFlowUnits.TryAdd("NanoLiterPerMinute", new Unit(
-            SingularName: "NanoLiterPerMinute",
-            PluralName: "NanoLitersPerMinute",
+        // NanoliterPerMinute
+        VolumeFlowUnits.TryAdd("NanoliterPerMinute", new Unit(
+            SingularName: "NanoliterPerMinute",
+            PluralName: "NanolitersPerMinute",
             Abbreviations: ["nl/min", "nLPM"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * (1000 * 60)) / 1E-09,
-            FromUnitToBase: static val => (val / (1000 * 60)) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * (1000 * 60)) / 1E-09),
+            FromUnitToBase: static val => ((val * 1E-09) / (1000 * 60)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroLiterPerMinute
-        VolumeFlowUnits.TryAdd("MicroLiterPerMinute", new Unit(
-            SingularName: "MicroLiterPerMinute",
-            PluralName: "MicroLitersPerMinute",
+        // MicroliterPerMinute
+        VolumeFlowUnits.TryAdd("MicroliterPerMinute", new Unit(
+            SingularName: "MicroliterPerMinute",
+            PluralName: "MicrolitersPerMinute",
             Abbreviations: ["µl/min", "µLPM"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * (1000 * 60)) / 1E-06,
-            FromUnitToBase: static val => (val / (1000 * 60)) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * (1000 * 60)) / 1E-06),
+            FromUnitToBase: static val => ((val * 1E-06) / (1000 * 60)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliLiterPerMinute
-        VolumeFlowUnits.TryAdd("MilliLiterPerMinute", new Unit(
-            SingularName: "MilliLiterPerMinute",
-            PluralName: "MilliLitersPerMinute",
+        // MilliliterPerMinute
+        VolumeFlowUnits.TryAdd("MilliliterPerMinute", new Unit(
+            SingularName: "MilliliterPerMinute",
+            PluralName: "MillilitersPerMinute",
             Abbreviations: ["ml/min", "mLPM"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * (1000 * 60)) / 0.001,
-            FromUnitToBase: static val => (val / (1000 * 60)) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * (1000 * 60)) / 0.001),
+            FromUnitToBase: static val => ((val * 0.001) / (1000 * 60)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiLiterPerMinute
-        VolumeFlowUnits.TryAdd("CentiLiterPerMinute", new Unit(
-            SingularName: "CentiLiterPerMinute",
-            PluralName: "CentiLitersPerMinute",
+        // CentiliterPerMinute
+        VolumeFlowUnits.TryAdd("CentiliterPerMinute", new Unit(
+            SingularName: "CentiliterPerMinute",
+            PluralName: "CentilitersPerMinute",
             Abbreviations: ["cl/min", "cLPM"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * (1000 * 60)) / 0.01,
-            FromUnitToBase: static val => (val / (1000 * 60)) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * (1000 * 60)) / 0.01),
+            FromUnitToBase: static val => ((val * 0.01) / (1000 * 60)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciLiterPerMinute
-        VolumeFlowUnits.TryAdd("DeciLiterPerMinute", new Unit(
-            SingularName: "DeciLiterPerMinute",
-            PluralName: "DeciLitersPerMinute",
+        // DeciliterPerMinute
+        VolumeFlowUnits.TryAdd("DeciliterPerMinute", new Unit(
+            SingularName: "DeciliterPerMinute",
+            PluralName: "DecilitersPerMinute",
             Abbreviations: ["dl/min", "dLPM"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * (1000 * 60)) / 0.1,
-            FromUnitToBase: static val => (val / (1000 * 60)) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * (1000 * 60)) / 0.1),
+            FromUnitToBase: static val => ((val * 0.1) / (1000 * 60)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DecaLiterPerMinute
-        VolumeFlowUnits.TryAdd("DecaLiterPerMinute", new Unit(
-            SingularName: "DecaLiterPerMinute",
-            PluralName: "DecaLitersPerMinute",
+        // DecaliterPerMinute
+        VolumeFlowUnits.TryAdd("DecaliterPerMinute", new Unit(
+            SingularName: "DecaliterPerMinute",
+            PluralName: "DecalitersPerMinute",
             Abbreviations: ["dal/min", "daLPM"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * (1000 * 60)) / 10,
-            FromUnitToBase: static val => (val / (1000 * 60)) * 10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * (1000 * 60)) / 10),
+            FromUnitToBase: static val => ((val * 10) / (1000 * 60)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // HectoLiterPerMinute
-        VolumeFlowUnits.TryAdd("HectoLiterPerMinute", new Unit(
-            SingularName: "HectoLiterPerMinute",
-            PluralName: "HectoLitersPerMinute",
+        // HectoliterPerMinute
+        VolumeFlowUnits.TryAdd("HectoliterPerMinute", new Unit(
+            SingularName: "HectoliterPerMinute",
+            PluralName: "HectolitersPerMinute",
             Abbreviations: ["hl/min", "hLPM"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * (1000 * 60)) / 100,
-            FromUnitToBase: static val => (val / (1000 * 60)) * 100,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * (1000 * 60)) / 100),
+            FromUnitToBase: static val => ((val * 100) / (1000 * 60)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloLiterPerMinute
-        VolumeFlowUnits.TryAdd("KiloLiterPerMinute", new Unit(
-            SingularName: "KiloLiterPerMinute",
-            PluralName: "KiloLitersPerMinute",
+        // KiloliterPerMinute
+        VolumeFlowUnits.TryAdd("KiloliterPerMinute", new Unit(
+            SingularName: "KiloliterPerMinute",
+            PluralName: "KilolitersPerMinute",
             Abbreviations: ["kl/min", "kLPM"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * (1000 * 60)) / 1000,
-            FromUnitToBase: static val => (val / (1000 * 60)) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * (1000 * 60)) / 1000),
+            FromUnitToBase: static val => ((val * 1000) / (1000 * 60)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaLiterPerMinute
-        VolumeFlowUnits.TryAdd("MegaLiterPerMinute", new Unit(
-            SingularName: "MegaLiterPerMinute",
-            PluralName: "MegaLitersPerMinute",
+        // MegaliterPerMinute
+        VolumeFlowUnits.TryAdd("MegaliterPerMinute", new Unit(
+            SingularName: "MegaliterPerMinute",
+            PluralName: "MegalitersPerMinute",
             Abbreviations: ["Ml/min", "MLPM"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * (1000 * 60)) / 1000000,
-            FromUnitToBase: static val => (val / (1000 * 60)) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * (1000 * 60)) / 1000000),
+            FromUnitToBase: static val => ((val * 1000000) / (1000 * 60)),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // LiterPerHour
         VolumeFlowUnits.TryAdd("LiterPerHour", new Unit(
@@ -460,118 +460,118 @@ public static partial class UoMRegistry {
             Abbreviations: ["l/h", "LPH"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * (1000 * 3600),
-            FromUnitToBase: static val => val / (1000 * 3600),
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * (1000 * 3600)),
+            FromUnitToBase: static val => (val / (1000 * 3600)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoLiterPerHour
-        VolumeFlowUnits.TryAdd("NanoLiterPerHour", new Unit(
-            SingularName: "NanoLiterPerHour",
-            PluralName: "NanoLitersPerHour",
+        // NanoliterPerHour
+        VolumeFlowUnits.TryAdd("NanoliterPerHour", new Unit(
+            SingularName: "NanoliterPerHour",
+            PluralName: "NanolitersPerHour",
             Abbreviations: ["nl/h", "nLPH"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * (1000 * 3600)) / 1E-09,
-            FromUnitToBase: static val => (val / (1000 * 3600)) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * (1000 * 3600)) / 1E-09),
+            FromUnitToBase: static val => ((val * 1E-09) / (1000 * 3600)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroLiterPerHour
-        VolumeFlowUnits.TryAdd("MicroLiterPerHour", new Unit(
-            SingularName: "MicroLiterPerHour",
-            PluralName: "MicroLitersPerHour",
+        // MicroliterPerHour
+        VolumeFlowUnits.TryAdd("MicroliterPerHour", new Unit(
+            SingularName: "MicroliterPerHour",
+            PluralName: "MicrolitersPerHour",
             Abbreviations: ["µl/h", "µLPH"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * (1000 * 3600)) / 1E-06,
-            FromUnitToBase: static val => (val / (1000 * 3600)) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * (1000 * 3600)) / 1E-06),
+            FromUnitToBase: static val => ((val * 1E-06) / (1000 * 3600)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliLiterPerHour
-        VolumeFlowUnits.TryAdd("MilliLiterPerHour", new Unit(
-            SingularName: "MilliLiterPerHour",
-            PluralName: "MilliLitersPerHour",
+        // MilliliterPerHour
+        VolumeFlowUnits.TryAdd("MilliliterPerHour", new Unit(
+            SingularName: "MilliliterPerHour",
+            PluralName: "MillilitersPerHour",
             Abbreviations: ["ml/h", "mLPH"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * (1000 * 3600)) / 0.001,
-            FromUnitToBase: static val => (val / (1000 * 3600)) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * (1000 * 3600)) / 0.001),
+            FromUnitToBase: static val => ((val * 0.001) / (1000 * 3600)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiLiterPerHour
-        VolumeFlowUnits.TryAdd("CentiLiterPerHour", new Unit(
-            SingularName: "CentiLiterPerHour",
-            PluralName: "CentiLitersPerHour",
+        // CentiliterPerHour
+        VolumeFlowUnits.TryAdd("CentiliterPerHour", new Unit(
+            SingularName: "CentiliterPerHour",
+            PluralName: "CentilitersPerHour",
             Abbreviations: ["cl/h", "cLPH"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * (1000 * 3600)) / 0.01,
-            FromUnitToBase: static val => (val / (1000 * 3600)) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * (1000 * 3600)) / 0.01),
+            FromUnitToBase: static val => ((val * 0.01) / (1000 * 3600)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciLiterPerHour
-        VolumeFlowUnits.TryAdd("DeciLiterPerHour", new Unit(
-            SingularName: "DeciLiterPerHour",
-            PluralName: "DeciLitersPerHour",
+        // DeciliterPerHour
+        VolumeFlowUnits.TryAdd("DeciliterPerHour", new Unit(
+            SingularName: "DeciliterPerHour",
+            PluralName: "DecilitersPerHour",
             Abbreviations: ["dl/h", "dLPH"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * (1000 * 3600)) / 0.1,
-            FromUnitToBase: static val => (val / (1000 * 3600)) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * (1000 * 3600)) / 0.1),
+            FromUnitToBase: static val => ((val * 0.1) / (1000 * 3600)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DecaLiterPerHour
-        VolumeFlowUnits.TryAdd("DecaLiterPerHour", new Unit(
-            SingularName: "DecaLiterPerHour",
-            PluralName: "DecaLitersPerHour",
+        // DecaliterPerHour
+        VolumeFlowUnits.TryAdd("DecaliterPerHour", new Unit(
+            SingularName: "DecaliterPerHour",
+            PluralName: "DecalitersPerHour",
             Abbreviations: ["dal/h", "daLPH"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * (1000 * 3600)) / 10,
-            FromUnitToBase: static val => (val / (1000 * 3600)) * 10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * (1000 * 3600)) / 10),
+            FromUnitToBase: static val => ((val * 10) / (1000 * 3600)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // HectoLiterPerHour
-        VolumeFlowUnits.TryAdd("HectoLiterPerHour", new Unit(
-            SingularName: "HectoLiterPerHour",
-            PluralName: "HectoLitersPerHour",
+        // HectoliterPerHour
+        VolumeFlowUnits.TryAdd("HectoliterPerHour", new Unit(
+            SingularName: "HectoliterPerHour",
+            PluralName: "HectolitersPerHour",
             Abbreviations: ["hl/h", "hLPH"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * (1000 * 3600)) / 100,
-            FromUnitToBase: static val => (val / (1000 * 3600)) * 100,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * (1000 * 3600)) / 100),
+            FromUnitToBase: static val => ((val * 100) / (1000 * 3600)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloLiterPerHour
-        VolumeFlowUnits.TryAdd("KiloLiterPerHour", new Unit(
-            SingularName: "KiloLiterPerHour",
-            PluralName: "KiloLitersPerHour",
+        // KiloliterPerHour
+        VolumeFlowUnits.TryAdd("KiloliterPerHour", new Unit(
+            SingularName: "KiloliterPerHour",
+            PluralName: "KilolitersPerHour",
             Abbreviations: ["kl/h", "kLPH"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * (1000 * 3600)) / 1000,
-            FromUnitToBase: static val => (val / (1000 * 3600)) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * (1000 * 3600)) / 1000),
+            FromUnitToBase: static val => ((val * 1000) / (1000 * 3600)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaLiterPerHour
-        VolumeFlowUnits.TryAdd("MegaLiterPerHour", new Unit(
-            SingularName: "MegaLiterPerHour",
-            PluralName: "MegaLitersPerHour",
+        // MegaliterPerHour
+        VolumeFlowUnits.TryAdd("MegaliterPerHour", new Unit(
+            SingularName: "MegaliterPerHour",
+            PluralName: "MegalitersPerHour",
             Abbreviations: ["Ml/h", "MLPH"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * (1000 * 3600)) / 1000000,
-            FromUnitToBase: static val => (val / (1000 * 3600)) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * (1000 * 3600)) / 1000000),
+            FromUnitToBase: static val => ((val * 1000000) / (1000 * 3600)),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // LiterPerDay
         VolumeFlowUnits.TryAdd("LiterPerDay", new Unit(
@@ -580,118 +580,118 @@ public static partial class UoMRegistry {
             Abbreviations: ["l/day", "l/d", "LPD"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * (1000 * 86400),
-            FromUnitToBase: static val => val / (1000 * 86400),
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * (1000 * 86400)),
+            FromUnitToBase: static val => (val / (1000 * 86400)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoLiterPerDay
-        VolumeFlowUnits.TryAdd("NanoLiterPerDay", new Unit(
-            SingularName: "NanoLiterPerDay",
-            PluralName: "NanoLitersPerDay",
+        // NanoliterPerDay
+        VolumeFlowUnits.TryAdd("NanoliterPerDay", new Unit(
+            SingularName: "NanoliterPerDay",
+            PluralName: "NanolitersPerDay",
             Abbreviations: ["nl/day", "nl/d", "nLPD"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * (1000 * 86400)) / 1E-09,
-            FromUnitToBase: static val => (val / (1000 * 86400)) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * (1000 * 86400)) / 1E-09),
+            FromUnitToBase: static val => ((val * 1E-09) / (1000 * 86400)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroLiterPerDay
-        VolumeFlowUnits.TryAdd("MicroLiterPerDay", new Unit(
-            SingularName: "MicroLiterPerDay",
-            PluralName: "MicroLitersPerDay",
+        // MicroliterPerDay
+        VolumeFlowUnits.TryAdd("MicroliterPerDay", new Unit(
+            SingularName: "MicroliterPerDay",
+            PluralName: "MicrolitersPerDay",
             Abbreviations: ["µl/day", "µl/d", "µLPD"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * (1000 * 86400)) / 1E-06,
-            FromUnitToBase: static val => (val / (1000 * 86400)) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * (1000 * 86400)) / 1E-06),
+            FromUnitToBase: static val => ((val * 1E-06) / (1000 * 86400)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliLiterPerDay
-        VolumeFlowUnits.TryAdd("MilliLiterPerDay", new Unit(
-            SingularName: "MilliLiterPerDay",
-            PluralName: "MilliLitersPerDay",
+        // MilliliterPerDay
+        VolumeFlowUnits.TryAdd("MilliliterPerDay", new Unit(
+            SingularName: "MilliliterPerDay",
+            PluralName: "MillilitersPerDay",
             Abbreviations: ["ml/day", "ml/d", "mLPD"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * (1000 * 86400)) / 0.001,
-            FromUnitToBase: static val => (val / (1000 * 86400)) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * (1000 * 86400)) / 0.001),
+            FromUnitToBase: static val => ((val * 0.001) / (1000 * 86400)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiLiterPerDay
-        VolumeFlowUnits.TryAdd("CentiLiterPerDay", new Unit(
-            SingularName: "CentiLiterPerDay",
-            PluralName: "CentiLitersPerDay",
+        // CentiliterPerDay
+        VolumeFlowUnits.TryAdd("CentiliterPerDay", new Unit(
+            SingularName: "CentiliterPerDay",
+            PluralName: "CentilitersPerDay",
             Abbreviations: ["cl/day", "cl/d", "cLPD"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * (1000 * 86400)) / 0.01,
-            FromUnitToBase: static val => (val / (1000 * 86400)) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * (1000 * 86400)) / 0.01),
+            FromUnitToBase: static val => ((val * 0.01) / (1000 * 86400)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciLiterPerDay
-        VolumeFlowUnits.TryAdd("DeciLiterPerDay", new Unit(
-            SingularName: "DeciLiterPerDay",
-            PluralName: "DeciLitersPerDay",
+        // DeciliterPerDay
+        VolumeFlowUnits.TryAdd("DeciliterPerDay", new Unit(
+            SingularName: "DeciliterPerDay",
+            PluralName: "DecilitersPerDay",
             Abbreviations: ["dl/day", "dl/d", "dLPD"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * (1000 * 86400)) / 0.1,
-            FromUnitToBase: static val => (val / (1000 * 86400)) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * (1000 * 86400)) / 0.1),
+            FromUnitToBase: static val => ((val * 0.1) / (1000 * 86400)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DecaLiterPerDay
-        VolumeFlowUnits.TryAdd("DecaLiterPerDay", new Unit(
-            SingularName: "DecaLiterPerDay",
-            PluralName: "DecaLitersPerDay",
+        // DecaliterPerDay
+        VolumeFlowUnits.TryAdd("DecaliterPerDay", new Unit(
+            SingularName: "DecaliterPerDay",
+            PluralName: "DecalitersPerDay",
             Abbreviations: ["dal/day", "dal/d", "daLPD"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * (1000 * 86400)) / 10,
-            FromUnitToBase: static val => (val / (1000 * 86400)) * 10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * (1000 * 86400)) / 10),
+            FromUnitToBase: static val => ((val * 10) / (1000 * 86400)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // HectoLiterPerDay
-        VolumeFlowUnits.TryAdd("HectoLiterPerDay", new Unit(
-            SingularName: "HectoLiterPerDay",
-            PluralName: "HectoLitersPerDay",
+        // HectoliterPerDay
+        VolumeFlowUnits.TryAdd("HectoliterPerDay", new Unit(
+            SingularName: "HectoliterPerDay",
+            PluralName: "HectolitersPerDay",
             Abbreviations: ["hl/day", "hl/d", "hLPD"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * (1000 * 86400)) / 100,
-            FromUnitToBase: static val => (val / (1000 * 86400)) * 100,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * (1000 * 86400)) / 100),
+            FromUnitToBase: static val => ((val * 100) / (1000 * 86400)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloLiterPerDay
-        VolumeFlowUnits.TryAdd("KiloLiterPerDay", new Unit(
-            SingularName: "KiloLiterPerDay",
-            PluralName: "KiloLitersPerDay",
+        // KiloliterPerDay
+        VolumeFlowUnits.TryAdd("KiloliterPerDay", new Unit(
+            SingularName: "KiloliterPerDay",
+            PluralName: "KilolitersPerDay",
             Abbreviations: ["kl/day", "kl/d", "kLPD"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * (1000 * 86400)) / 1000,
-            FromUnitToBase: static val => (val / (1000 * 86400)) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * (1000 * 86400)) / 1000),
+            FromUnitToBase: static val => ((val * 1000) / (1000 * 86400)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaLiterPerDay
-        VolumeFlowUnits.TryAdd("MegaLiterPerDay", new Unit(
-            SingularName: "MegaLiterPerDay",
-            PluralName: "MegaLitersPerDay",
+        // MegaliterPerDay
+        VolumeFlowUnits.TryAdd("MegaliterPerDay", new Unit(
+            SingularName: "MegaliterPerDay",
+            PluralName: "MegalitersPerDay",
             Abbreviations: ["Ml/day", "Ml/d", "MLPD"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * (1000 * 86400)) / 1000000,
-            FromUnitToBase: static val => (val / (1000 * 86400)) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * (1000 * 86400)) / 1000000),
+            FromUnitToBase: static val => ((val * 1000000) / (1000 * 86400)),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // UsGallonPerSecond
         VolumeFlowUnits.TryAdd("UsGallonPerSecond", new Unit(
@@ -702,8 +702,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // UsGallonPerMinute
         VolumeFlowUnits.TryAdd("UsGallonPerMinute", new Unit(
@@ -712,10 +712,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["gal (U.S.)/min", "GPM"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (0.003785411784 / 60),
-            FromUnitToBase: static val => val * 0.003785411784 / 60,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (0.003785411784 / 60)),
+            FromUnitToBase: static val => (val * 0.003785411784 / 60),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // UkGallonPerDay
         VolumeFlowUnits.TryAdd("UkGallonPerDay", new Unit(
@@ -724,22 +724,22 @@ public static partial class UoMRegistry {
             Abbreviations: ["gal (U. K.)/d"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (0.00454609 / 86400),
-            FromUnitToBase: static val => val * 0.00454609 / 86400,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (0.00454609 / 86400)),
+            FromUnitToBase: static val => (val * 0.00454609 / 86400),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaUkGallonPerDay
-        VolumeFlowUnits.TryAdd("MegaUkGallonPerDay", new Unit(
-            SingularName: "MegaUkGallonPerDay",
-            PluralName: "MegaUkGallonsPerDay",
+        // MegaukGallonPerDay
+        VolumeFlowUnits.TryAdd("MegaukGallonPerDay", new Unit(
+            SingularName: "MegaukGallonPerDay",
+            PluralName: "MegaukGallonsPerDay",
             Abbreviations: ["Mgal (U. K.)/d"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / (0.00454609 / 86400)) / 1000000,
-            FromUnitToBase: static val => (val * 0.00454609 / 86400) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / (0.00454609 / 86400)) / 1000000),
+            FromUnitToBase: static val => ((val * 1000000) * 0.00454609 / 86400),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // UkGallonPerHour
         VolumeFlowUnits.TryAdd("UkGallonPerHour", new Unit(
@@ -748,10 +748,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["gal (imp.)/h"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (0.00454609 / 3600),
-            FromUnitToBase: static val => val * 0.00454609 / 3600,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (0.00454609 / 3600)),
+            FromUnitToBase: static val => (val * 0.00454609 / 3600),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // UkGallonPerMinute
         VolumeFlowUnits.TryAdd("UkGallonPerMinute", new Unit(
@@ -760,10 +760,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["gal (imp.)/min"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (0.00454609 / 60),
-            FromUnitToBase: static val => val * 0.00454609 / 60,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (0.00454609 / 60)),
+            FromUnitToBase: static val => (val * 0.00454609 / 60),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // UkGallonPerSecond
         VolumeFlowUnits.TryAdd("UkGallonPerSecond", new Unit(
@@ -774,20 +774,20 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaUkGallonPerSecond
-        VolumeFlowUnits.TryAdd("MegaUkGallonPerSecond", new Unit(
-            SingularName: "MegaUkGallonPerSecond",
-            PluralName: "MegaUkGallonsPerSecond",
+        // MegaukGallonPerSecond
+        VolumeFlowUnits.TryAdd("MegaukGallonPerSecond", new Unit(
+            SingularName: "MegaukGallonPerSecond",
+            PluralName: "MegaukGallonsPerSecond",
             Abbreviations: ["Mgal (imp.)/s"],
-            Factor: 1,
+            Factor: 4546.09,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 0.00454609) / 1000000,
-            FromUnitToBase: static val => (val * 0.00454609) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // KilousGallonPerMinute
         VolumeFlowUnits.TryAdd("KilousGallonPerMinute", new Unit(
@@ -796,10 +796,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["kgal (U.S.)/min", "KGPM"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (1000 * 0.003785411784 / 60),
-            FromUnitToBase: static val => val * 1000 * 0.003785411784 / 60,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (1000 * 0.003785411784 / 60)),
+            FromUnitToBase: static val => (val * 1000 * 0.003785411784 / 60),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // UsGallonPerHour
         VolumeFlowUnits.TryAdd("UsGallonPerHour", new Unit(
@@ -808,10 +808,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["gal (U.S.)/h"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (0.003785411784 / 3600),
-            FromUnitToBase: static val => val * 0.003785411784 / 3600,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (0.003785411784 / 3600)),
+            FromUnitToBase: static val => (val * 0.003785411784 / 3600),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CubicDecimeterPerMinute
         VolumeFlowUnits.TryAdd("CubicDecimeterPerMinute", new Unit(
@@ -822,8 +822,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // OilBarrelPerDay
         VolumeFlowUnits.TryAdd("OilBarrelPerDay", new Unit(
@@ -832,10 +832,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["bbl/d", "BOPD"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (0.158987294928 / 86400),
-            FromUnitToBase: static val => val * 0.158987294928 / 86400,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (0.158987294928 / 86400)),
+            FromUnitToBase: static val => (val * 0.158987294928 / 86400),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // OilBarrelPerMinute
         VolumeFlowUnits.TryAdd("OilBarrelPerMinute", new Unit(
@@ -844,10 +844,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["bbl/min", "bpm"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (0.158987294928 / 60),
-            FromUnitToBase: static val => val * 0.158987294928 / 60,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (0.158987294928 / 60)),
+            FromUnitToBase: static val => (val * 0.158987294928 / 60),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // OilBarrelPerHour
         VolumeFlowUnits.TryAdd("OilBarrelPerHour", new Unit(
@@ -856,10 +856,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["bbl/hr", "bph"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (0.158987294928 / 3600),
-            FromUnitToBase: static val => val * 0.158987294928 / 3600,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (0.158987294928 / 3600)),
+            FromUnitToBase: static val => (val * 0.158987294928 / 3600),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // OilBarrelPerSecond
         VolumeFlowUnits.TryAdd("OilBarrelPerSecond", new Unit(
@@ -870,20 +870,20 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CubicMillimeterPerSecond
         VolumeFlowUnits.TryAdd("CubicMillimeterPerSecond", new Unit(
             SingularName: "CubicMillimeterPerSecond",
             PluralName: "CubicMillimetersPerSecond",
             Abbreviations: ["mm³/s"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e-9,
-            FromUnitToBase: static val => val * 1e-9,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // AcreFootPerSecond
         VolumeFlowUnits.TryAdd("AcreFootPerSecond", new Unit(
@@ -894,8 +894,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // AcreFootPerMinute
         VolumeFlowUnits.TryAdd("AcreFootPerMinute", new Unit(
@@ -904,10 +904,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["af/m"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (1233.48183754752 / 60),
-            FromUnitToBase: static val => val * 1233.48183754752 / 60,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (1233.48183754752 / 60)),
+            FromUnitToBase: static val => (val * 1233.48183754752 / 60),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // AcreFootPerHour
         VolumeFlowUnits.TryAdd("AcreFootPerHour", new Unit(
@@ -916,10 +916,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["af/h"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (1233.48183754752 / 3600),
-            FromUnitToBase: static val => val * 1233.48183754752 / 3600,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (1233.48183754752 / 3600)),
+            FromUnitToBase: static val => (val * 1233.48183754752 / 3600),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // AcreFootPerDay
         VolumeFlowUnits.TryAdd("AcreFootPerDay", new Unit(
@@ -928,10 +928,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["af/d"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (1233.48183754752 / 86400),
-            FromUnitToBase: static val => val * 1233.48183754752 / 86400,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (1233.48183754752 / 86400)),
+            FromUnitToBase: static val => (val * 1233.48183754752 / 86400),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CubicCentimeterPerMinute
         VolumeFlowUnits.TryAdd("CubicCentimeterPerMinute", new Unit(
@@ -940,10 +940,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["cm³/min"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (1e-6 / 60),
-            FromUnitToBase: static val => val * 1e-6 / 60,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (1e-6 / 60)),
+            FromUnitToBase: static val => (val * 1e-6 / 60),
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -952,7 +952,7 @@ public static partial class UoMRegistry {
             "In physics and engineering, in particular fluid dynamics and hydrometry, the volumetric flow rate, (also known as volume flow rate, rate of fluid flow or volume velocity) is the volume of fluid which passes through a given surface per unit time. The SI unit is m³/s (cubic meters per second). In US Customary Units and British Imperial Units, volumetric flow rate is often expressed as ft³/s (cubic feet per second). It is usually represented by the symbol Q.",
             VolumeFlowUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 3, ["T"] = -1 },
-            "",
+            null,
             false,
             1
         );

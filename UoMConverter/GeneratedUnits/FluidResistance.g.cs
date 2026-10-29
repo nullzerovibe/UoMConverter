@@ -14,48 +14,48 @@ public static partial class UoMRegistry {
             SingularName: "PascalSecondPerLiter",
             PluralName: "PascalSecondsPerLiter",
             Abbreviations: ["Pa·s/l"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e3,
-            FromUnitToBase: static val => val * 1e3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PascalMinutePerLiter
         FluidResistanceUnits.TryAdd("PascalMinutePerLiter", new Unit(
             SingularName: "PascalMinutePerLiter",
             PluralName: "PascalMinutesPerLiter",
             Abbreviations: ["Pa·min/l"],
-            Factor: 1,
+            Factor: 60000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 6e4,
-            FromUnitToBase: static val => val * 6e4,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PascalSecondPerMilliliter
         FluidResistanceUnits.TryAdd("PascalSecondPerMilliliter", new Unit(
             SingularName: "PascalSecondPerMilliliter",
             PluralName: "PascalSecondsPerMilliliter",
             Abbreviations: ["Pa·s/ml"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e6,
-            FromUnitToBase: static val => val * 1e6,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PascalMinutePerMilliliter
         FluidResistanceUnits.TryAdd("PascalMinutePerMilliliter", new Unit(
             SingularName: "PascalMinutePerMilliliter",
             PluralName: "PascalMinutesPerMilliliter",
             Abbreviations: ["Pa·min/ml"],
-            Factor: 1,
+            Factor: 60000000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 6e7,
-            FromUnitToBase: static val => val * 6e7,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PascalSecondPerCubicMeter
         FluidResistanceUnits.TryAdd("PascalSecondPerCubicMeter", new Unit(
@@ -66,20 +66,20 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaPascalSecondPerCubicMeter
-        FluidResistanceUnits.TryAdd("MegaPascalSecondPerCubicMeter", new Unit(
-            SingularName: "MegaPascalSecondPerCubicMeter",
-            PluralName: "MegaPascalSecondsPerCubicMeter",
+        // MegapascalSecondPerCubicMeter
+        FluidResistanceUnits.TryAdd("MegapascalSecondPerCubicMeter", new Unit(
+            SingularName: "MegapascalSecondPerCubicMeter",
+            PluralName: "MegapascalSecondsPerCubicMeter",
             Abbreviations: ["MPa·s/m³"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PascalMinutePerCubicMeter
         FluidResistanceUnits.TryAdd("PascalMinutePerCubicMeter", new Unit(
@@ -90,116 +90,116 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PascalSecondPerCubicCentimeter
         FluidResistanceUnits.TryAdd("PascalSecondPerCubicCentimeter", new Unit(
             SingularName: "PascalSecondPerCubicCentimeter",
             PluralName: "PascalSecondsPerCubicCentimeter",
             Abbreviations: ["Pa·s/cm³"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e6,
-            FromUnitToBase: static val => val * 1e6,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PascalMinutePerCubicCentimeter
         FluidResistanceUnits.TryAdd("PascalMinutePerCubicCentimeter", new Unit(
             SingularName: "PascalMinutePerCubicCentimeter",
             PluralName: "PascalMinutesPerCubicCentimeter",
             Abbreviations: ["Pa·min/cm³"],
-            Factor: 1,
+            Factor: 60000000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 6e7,
-            FromUnitToBase: static val => val * 6e7,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DyneSecondPerCentimeterToTheFifth
         FluidResistanceUnits.TryAdd("DyneSecondPerCentimeterToTheFifth", new Unit(
             SingularName: "DyneSecondPerCentimeterToTheFifth",
             PluralName: "DyneSecondsPerCentimeterToTheFifth",
             Abbreviations: ["dyn·s/cm⁵", "dyn·s·cm⁻⁵"],
-            Factor: 1,
+            Factor: 100000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e5,
-            FromUnitToBase: static val => val * 1e5,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Vascular_resistance",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // MillimeterMercurySecondPerLiter
         FluidResistanceUnits.TryAdd("MillimeterMercurySecondPerLiter", new Unit(
             SingularName: "MillimeterMercurySecondPerLiter",
             PluralName: "MillimeterMercurySecondsPerLiter",
             Abbreviations: ["mmHg·s/l"],
-            Factor: 1,
+            Factor: 133322.368,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1.33322368e5,
-            FromUnitToBase: static val => val * 1.33322368e5,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // MillimeterMercuryMinutePerLiter
         FluidResistanceUnits.TryAdd("MillimeterMercuryMinutePerLiter", new Unit(
             SingularName: "MillimeterMercuryMinutePerLiter",
             PluralName: "MillimeterMercuryMinutesPerLiter",
             Abbreviations: ["mmHg·min/l"],
-            Factor: 1,
+            Factor: 7999342.08,
             Offset: 0,
-            FromBaseToUnit: static val => val / 7.99934208e6,
-            FromUnitToBase: static val => val * 7.99934208e6,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // MillimeterMercurySecondPerMilliliter
         FluidResistanceUnits.TryAdd("MillimeterMercurySecondPerMilliliter", new Unit(
             SingularName: "MillimeterMercurySecondPerMilliliter",
             PluralName: "MillimeterMercurySecondsPerMilliliter",
             Abbreviations: ["mmHg·s/ml"],
-            Factor: 1,
+            Factor: 133322368,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1.33322368e8,
-            FromUnitToBase: static val => val * 1.33322368e8,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // MillimeterMercuryMinutePerMilliliter
         FluidResistanceUnits.TryAdd("MillimeterMercuryMinutePerMilliliter", new Unit(
             SingularName: "MillimeterMercuryMinutePerMilliliter",
             PluralName: "MillimeterMercuryMinutesPerMilliliter",
             Abbreviations: ["mmHg·min/ml"],
-            Factor: 1,
+            Factor: 7999342080,
             Offset: 0,
-            FromBaseToUnit: static val => val / 7.99934208e9,
-            FromUnitToBase: static val => val * 7.99934208e9,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // MillimeterMercurySecondPerCubicCentimeter
         FluidResistanceUnits.TryAdd("MillimeterMercurySecondPerCubicCentimeter", new Unit(
             SingularName: "MillimeterMercurySecondPerCubicCentimeter",
             PluralName: "MillimeterMercurySecondsPerCubicCentimeter",
             Abbreviations: ["mmHg·s/cm³"],
-            Factor: 1,
+            Factor: 133322368,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1.33322368e8,
-            FromUnitToBase: static val => val * 1.33322368e8,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // MillimeterMercuryMinutePerCubicCentimeter
         FluidResistanceUnits.TryAdd("MillimeterMercuryMinutePerCubicCentimeter", new Unit(
             SingularName: "MillimeterMercuryMinutePerCubicCentimeter",
             PluralName: "MillimeterMercuryMinutesPerCubicCentimeter",
             Abbreviations: ["mmHg·min/cm³"],
-            Factor: 1,
+            Factor: 7999342080,
             Offset: 0,
-            FromBaseToUnit: static val => val / 7.99934208e9,
-            FromUnitToBase: static val => val * 7.99934208e9,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // MillimeterMercurySecondPerCubicMeter
         FluidResistanceUnits.TryAdd("MillimeterMercurySecondPerCubicMeter", new Unit(
@@ -210,32 +210,32 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // MillimeterMercuryMinutePerCubicMeter
         FluidResistanceUnits.TryAdd("MillimeterMercuryMinutePerCubicMeter", new Unit(
             SingularName: "MillimeterMercuryMinutePerCubicMeter",
             PluralName: "MillimeterMercuryMinutesPerCubicMeter",
             Abbreviations: ["mmHg·min/m³"],
-            Factor: 1,
+            Factor: 7999.34208,
             Offset: 0,
-            FromBaseToUnit: static val => val / 7.99934208e3,
-            FromUnitToBase: static val => val * 7.99934208e3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // WoodUnit
         FluidResistanceUnits.TryAdd("WoodUnit", new Unit(
             SingularName: "WoodUnit",
             PluralName: "WoodUnits",
             Abbreviations: ["WU", "HRU"],
-            Factor: 1,
+            Factor: 7999342.08,
             Offset: 0,
-            FromBaseToUnit: static val => val / 7.99934208e6,
-            FromUnitToBase: static val => val * 7.99934208e6,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Vascular_resistance",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -244,7 +244,7 @@ public static partial class UoMRegistry {
             "Fluid Resistance is a force acting opposite to the relative motion of any object moving with respect to a surrounding fluid. Fluid Resistance is sometimes referred to as drag or fluid friction.",
             FluidResistanceUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["M"] = 1, ["L"] = -4, ["T"] = -1 },
-            "",
+            null,
             false,
             1
         );

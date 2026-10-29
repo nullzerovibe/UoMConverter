@@ -18,8 +18,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -28,7 +28,7 @@ public static partial class UoMRegistry {
             "In electromagnetism, charge density is a measure of the amount of electric charge per volume.",
             ElectricChargeDensityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = -3, ["T"] = 1, ["I"] = 1 },
-            "",
+            null,
             false,
             1
         );

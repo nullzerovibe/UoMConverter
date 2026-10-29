@@ -18,8 +18,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // NewtonSecond
         ImpulseUnits.TryAdd("NewtonSecond", new Unit(
@@ -30,104 +30,104 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoNewtonSecond
-        ImpulseUnits.TryAdd("NanoNewtonSecond", new Unit(
-            SingularName: "NanoNewtonSecond",
-            PluralName: "NanoNewtonSeconds",
+        // NanonewtonSecond
+        ImpulseUnits.TryAdd("NanonewtonSecond", new Unit(
+            SingularName: "NanonewtonSecond",
+            PluralName: "NanonewtonSeconds",
             Abbreviations: ["nN·s"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroNewtonSecond
-        ImpulseUnits.TryAdd("MicroNewtonSecond", new Unit(
-            SingularName: "MicroNewtonSecond",
-            PluralName: "MicroNewtonSeconds",
+        // MicronewtonSecond
+        ImpulseUnits.TryAdd("MicronewtonSecond", new Unit(
+            SingularName: "MicronewtonSecond",
+            PluralName: "MicronewtonSeconds",
             Abbreviations: ["µN·s"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliNewtonSecond
-        ImpulseUnits.TryAdd("MilliNewtonSecond", new Unit(
-            SingularName: "MilliNewtonSecond",
-            PluralName: "MilliNewtonSeconds",
+        // MillinewtonSecond
+        ImpulseUnits.TryAdd("MillinewtonSecond", new Unit(
+            SingularName: "MillinewtonSecond",
+            PluralName: "MillinewtonSeconds",
             Abbreviations: ["mN·s"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiNewtonSecond
-        ImpulseUnits.TryAdd("CentiNewtonSecond", new Unit(
-            SingularName: "CentiNewtonSecond",
-            PluralName: "CentiNewtonSeconds",
+        // CentinewtonSecond
+        ImpulseUnits.TryAdd("CentinewtonSecond", new Unit(
+            SingularName: "CentinewtonSecond",
+            PluralName: "CentinewtonSeconds",
             Abbreviations: ["cN·s"],
-            Factor: 1,
+            Factor: 0.01,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.01,
-            FromUnitToBase: static val => (val) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciNewtonSecond
-        ImpulseUnits.TryAdd("DeciNewtonSecond", new Unit(
-            SingularName: "DeciNewtonSecond",
-            PluralName: "DeciNewtonSeconds",
+        // DecinewtonSecond
+        ImpulseUnits.TryAdd("DecinewtonSecond", new Unit(
+            SingularName: "DecinewtonSecond",
+            PluralName: "DecinewtonSeconds",
             Abbreviations: ["dN·s"],
-            Factor: 1,
+            Factor: 0.1,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.1,
-            FromUnitToBase: static val => (val) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DecaNewtonSecond
-        ImpulseUnits.TryAdd("DecaNewtonSecond", new Unit(
-            SingularName: "DecaNewtonSecond",
-            PluralName: "DecaNewtonSeconds",
+        // DecanewtonSecond
+        ImpulseUnits.TryAdd("DecanewtonSecond", new Unit(
+            SingularName: "DecanewtonSecond",
+            PluralName: "DecanewtonSeconds",
             Abbreviations: ["daN·s"],
-            Factor: 1,
+            Factor: 10,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 10,
-            FromUnitToBase: static val => (val) * 10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloNewtonSecond
-        ImpulseUnits.TryAdd("KiloNewtonSecond", new Unit(
-            SingularName: "KiloNewtonSecond",
-            PluralName: "KiloNewtonSeconds",
+        // KilonewtonSecond
+        ImpulseUnits.TryAdd("KilonewtonSecond", new Unit(
+            SingularName: "KilonewtonSecond",
+            PluralName: "KilonewtonSeconds",
             Abbreviations: ["kN·s"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaNewtonSecond
-        ImpulseUnits.TryAdd("MegaNewtonSecond", new Unit(
-            SingularName: "MegaNewtonSecond",
-            PluralName: "MegaNewtonSeconds",
+        // MeganewtonSecond
+        ImpulseUnits.TryAdd("MeganewtonSecond", new Unit(
+            SingularName: "MeganewtonSecond",
+            PluralName: "MeganewtonSeconds",
             Abbreviations: ["MN·s"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundFootPerSecond
         ImpulseUnits.TryAdd("PoundFootPerSecond", new Unit(
@@ -136,10 +136,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["lb·ft/s"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (0.45359237 * 0.3048),
-            FromUnitToBase: static val => val * (0.45359237 * 0.3048),
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (0.45359237 * 0.3048)),
+            FromUnitToBase: static val => (val * (0.45359237 * 0.3048)),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundForceSecond
         ImpulseUnits.TryAdd("PoundForceSecond", new Unit(
@@ -148,10 +148,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["lbf·s"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (0.45359237 * 9.80665),
-            FromUnitToBase: static val => val * 0.45359237 * 9.80665,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (0.45359237 * 9.80665)),
+            FromUnitToBase: static val => (val * 0.45359237 * 9.80665),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // SlugFootPerSecond
         ImpulseUnits.TryAdd("SlugFootPerSecond", new Unit(
@@ -160,10 +160,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["slug·ft/s"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (0.45359237 * 9.80665),
-            FromUnitToBase: static val => val * (0.45359237 * 9.80665),
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (0.45359237 * 9.80665)),
+            FromUnitToBase: static val => (val * (0.45359237 * 9.80665)),
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -172,7 +172,7 @@ public static partial class UoMRegistry {
             "In classical mechanics, impulse is the integral of a force, F, over the time interval, t, for which it acts. Impulse applied to an object produces an equivalent vector change in its linear momentum, also in the resultant direction.",
             ImpulseUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 1, ["M"] = 1, ["T"] = -1 },
-            "",
+            null,
             false,
             1
         );

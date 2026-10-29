@@ -18,8 +18,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Neper
         LevelUnits.TryAdd("Neper", new Unit(
@@ -28,10 +28,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["Np"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => 0.115129254 * val,
-            FromUnitToBase: static val => (1 / 0.115129254) * val,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (0.115129254 * val),
+            FromUnitToBase: static val => ((1 / 0.115129254) * val),
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -40,7 +40,7 @@ public static partial class UoMRegistry {
             "Level is the logarithm of the ratio of a quantity Q to a reference value of that quantity, Q₀, expressed in dimensionless units.",
             LevelUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> {  },
-            "",
+            null,
             true,
             1
         );

@@ -18,104 +18,104 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Stokes
         KinematicViscosityUnits.TryAdd("Stokes", new Unit(
             SingularName: "Stokes",
             PluralName: "Stokes",
             Abbreviations: ["St"],
-            Factor: 1,
+            Factor: 0.0001,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e4,
-            FromUnitToBase: static val => val / 1e4,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoStokes
-        KinematicViscosityUnits.TryAdd("NanoStokes", new Unit(
-            SingularName: "NanoStokes",
-            PluralName: "NanoStokes",
+        // Nanostokes
+        KinematicViscosityUnits.TryAdd("Nanostokes", new Unit(
+            SingularName: "Nanostokes",
+            PluralName: "Nanostokes",
             Abbreviations: ["nSt"],
-            Factor: 1,
+            Factor: 1.0000000000000002E-13,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e4) / 1E-09,
-            FromUnitToBase: static val => (val / 1e4) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroStokes
-        KinematicViscosityUnits.TryAdd("MicroStokes", new Unit(
-            SingularName: "MicroStokes",
-            PluralName: "MicroStokes",
+        // Microstokes
+        KinematicViscosityUnits.TryAdd("Microstokes", new Unit(
+            SingularName: "Microstokes",
+            PluralName: "Microstokes",
             Abbreviations: ["µSt"],
-            Factor: 1,
+            Factor: 1E-10,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e4) / 1E-06,
-            FromUnitToBase: static val => (val / 1e4) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliStokes
-        KinematicViscosityUnits.TryAdd("MilliStokes", new Unit(
-            SingularName: "MilliStokes",
-            PluralName: "MilliStokes",
+        // Millistokes
+        KinematicViscosityUnits.TryAdd("Millistokes", new Unit(
+            SingularName: "Millistokes",
+            PluralName: "Millistokes",
             Abbreviations: ["mSt"],
-            Factor: 1,
+            Factor: 1.0000000000000001E-07,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e4) / 0.001,
-            FromUnitToBase: static val => (val / 1e4) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiStokes
-        KinematicViscosityUnits.TryAdd("CentiStokes", new Unit(
-            SingularName: "CentiStokes",
-            PluralName: "CentiStokes",
+        // Centistokes
+        KinematicViscosityUnits.TryAdd("Centistokes", new Unit(
+            SingularName: "Centistokes",
+            PluralName: "Centistokes",
             Abbreviations: ["cSt"],
-            Factor: 1,
+            Factor: 1.0000000000000002E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e4) / 0.01,
-            FromUnitToBase: static val => (val / 1e4) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciStokes
-        KinematicViscosityUnits.TryAdd("DeciStokes", new Unit(
-            SingularName: "DeciStokes",
-            PluralName: "DeciStokes",
+        // Decistokes
+        KinematicViscosityUnits.TryAdd("Decistokes", new Unit(
+            SingularName: "Decistokes",
+            PluralName: "Decistokes",
             Abbreviations: ["dSt"],
-            Factor: 1,
+            Factor: 1E-05,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e4) / 0.1,
-            FromUnitToBase: static val => (val / 1e4) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloStokes
-        KinematicViscosityUnits.TryAdd("KiloStokes", new Unit(
-            SingularName: "KiloStokes",
-            PluralName: "KiloStokes",
+        // Kilostokes
+        KinematicViscosityUnits.TryAdd("Kilostokes", new Unit(
+            SingularName: "Kilostokes",
+            PluralName: "Kilostokes",
             Abbreviations: ["kSt"],
-            Factor: 1,
+            Factor: 0.1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e4) / 1000,
-            FromUnitToBase: static val => (val / 1e4) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // SquareFootPerSecond
         KinematicViscosityUnits.TryAdd("SquareFootPerSecond", new Unit(
             SingularName: "SquareFootPerSecond",
             PluralName: "SquareFeetPerSecond",
             Abbreviations: ["ft²/s"],
-            Factor: 1,
+            Factor: 0.09290304,
             Offset: 0,
-            FromBaseToUnit: static val => val / 9.290304e-2,
-            FromUnitToBase: static val => val * 9.290304e-2,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -124,7 +124,7 @@ public static partial class UoMRegistry {
             "The viscosity of a fluid is a measure of its resistance to gradual deformation by shear stress or tensile stress.",
             KinematicViscosityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 2, ["T"] = -1 },
-            "",
+            null,
             false,
             1
         );

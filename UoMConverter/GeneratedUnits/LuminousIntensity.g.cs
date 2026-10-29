@@ -18,8 +18,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -28,7 +28,7 @@ public static partial class UoMRegistry {
             "In photometry, luminous intensity is a measure of the wavelength-weighted power emitted by a light source in a particular direction per unit solid angle, based on the luminosity function, a standardized model of the sensitivity of the human eye.",
             LuminousIntensityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["J"] = 1 },
-            "",
+            null,
             false,
             1
         );

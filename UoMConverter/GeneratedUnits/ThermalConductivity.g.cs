@@ -18,8 +18,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // BtuPerHourFootFahrenheit
         ThermalConductivityUnits.TryAdd("BtuPerHourFootFahrenheit", new Unit(
@@ -28,10 +28,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["BTU/(h·ft·°F)"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / ((1055.05585262 / (0.3048 * 3600)) * 1.8),
-            FromUnitToBase: static val => val * ((1055.05585262 / (0.3048 * 3600)) * 1.8),
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / ((1055.05585262 / (0.3048 * 3600)) * 1.8)),
+            FromUnitToBase: static val => (val * ((1055.05585262 / (0.3048 * 3600)) * 1.8)),
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -40,7 +40,7 @@ public static partial class UoMRegistry {
             "Thermal conductivity is the property of a material to conduct heat.",
             ThermalConductivityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 1, ["M"] = 1, ["T"] = -3, ["Θ"] = -1 },
-            "",
+            null,
             false,
             1
         );

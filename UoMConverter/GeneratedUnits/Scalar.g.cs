@@ -18,8 +18,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -28,7 +28,7 @@ public static partial class UoMRegistry {
             "A way of representing a number of items.",
             ScalarUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> {  },
-            "",
+            null,
             false,
             1
         );

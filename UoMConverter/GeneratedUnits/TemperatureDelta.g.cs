@@ -18,8 +18,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DegreeCelsius
         TemperatureDeltaUnits.TryAdd("DegreeCelsius", new Unit(
@@ -30,20 +30,20 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliDegreeCelsius
-        TemperatureDeltaUnits.TryAdd("MilliDegreeCelsius", new Unit(
-            SingularName: "MilliDegreeCelsius",
-            PluralName: "MilliDegreesCelsius",
+        // MillidegreeCelsius
+        TemperatureDeltaUnits.TryAdd("MillidegreeCelsius", new Unit(
+            SingularName: "MillidegreeCelsius",
+            PluralName: "MillidegreesCelsius",
             Abbreviations: ["∆m°C"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DegreeDelisle
         TemperatureDeltaUnits.TryAdd("DegreeDelisle", new Unit(
@@ -52,10 +52,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["∆°De"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * -3 / 2,
-            FromUnitToBase: static val => val * -2 / 3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * -3 / 2),
+            FromUnitToBase: static val => (val * -2 / 3),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DegreeFahrenheit
         TemperatureDeltaUnits.TryAdd("DegreeFahrenheit", new Unit(
@@ -64,10 +64,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["∆°F"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 9 / 5,
-            FromUnitToBase: static val => val * 5 / 9,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 9 / 5),
+            FromUnitToBase: static val => (val * 5 / 9),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DegreeNewton
         TemperatureDeltaUnits.TryAdd("DegreeNewton", new Unit(
@@ -76,10 +76,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["∆°N"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 33 / 100,
-            FromUnitToBase: static val => val * 100 / 33,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 33 / 100),
+            FromUnitToBase: static val => (val * 100 / 33),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DegreeRankine
         TemperatureDeltaUnits.TryAdd("DegreeRankine", new Unit(
@@ -88,10 +88,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["∆°R"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 9 / 5,
-            FromUnitToBase: static val => val * 5 / 9,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 9 / 5),
+            FromUnitToBase: static val => (val * 5 / 9),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DegreeReaumur
         TemperatureDeltaUnits.TryAdd("DegreeReaumur", new Unit(
@@ -100,10 +100,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["∆°Ré"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 4 / 5,
-            FromUnitToBase: static val => val * 5 / 4,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 4 / 5),
+            FromUnitToBase: static val => (val * 5 / 4),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DegreeRoemer
         TemperatureDeltaUnits.TryAdd("DegreeRoemer", new Unit(
@@ -112,10 +112,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["∆°Rø"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 21 / 40,
-            FromUnitToBase: static val => val * 40 / 21,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 21 / 40),
+            FromUnitToBase: static val => (val * 40 / 21),
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -124,7 +124,7 @@ public static partial class UoMRegistry {
             "Difference between two temperatures. The conversions are different than for Temperature.",
             TemperatureDeltaUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["Θ"] = 1 },
-            "",
+            null,
             false,
             1
         );

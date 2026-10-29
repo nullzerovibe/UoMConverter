@@ -18,68 +18,68 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoVolt
-        ElectricPotentialUnits.TryAdd("NanoVolt", new Unit(
-            SingularName: "NanoVolt",
-            PluralName: "NanoVolts",
+        // Nanovolt
+        ElectricPotentialUnits.TryAdd("Nanovolt", new Unit(
+            SingularName: "Nanovolt",
+            PluralName: "Nanovolts",
             Abbreviations: ["nV"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroVolt
-        ElectricPotentialUnits.TryAdd("MicroVolt", new Unit(
-            SingularName: "MicroVolt",
-            PluralName: "MicroVolts",
+        // Microvolt
+        ElectricPotentialUnits.TryAdd("Microvolt", new Unit(
+            SingularName: "Microvolt",
+            PluralName: "Microvolts",
             Abbreviations: ["µV"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliVolt
-        ElectricPotentialUnits.TryAdd("MilliVolt", new Unit(
-            SingularName: "MilliVolt",
-            PluralName: "MilliVolts",
+        // Millivolt
+        ElectricPotentialUnits.TryAdd("Millivolt", new Unit(
+            SingularName: "Millivolt",
+            PluralName: "Millivolts",
             Abbreviations: ["mV"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloVolt
-        ElectricPotentialUnits.TryAdd("KiloVolt", new Unit(
-            SingularName: "KiloVolt",
-            PluralName: "KiloVolts",
+        // Kilovolt
+        ElectricPotentialUnits.TryAdd("Kilovolt", new Unit(
+            SingularName: "Kilovolt",
+            PluralName: "Kilovolts",
             Abbreviations: ["kV"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaVolt
-        ElectricPotentialUnits.TryAdd("MegaVolt", new Unit(
-            SingularName: "MegaVolt",
-            PluralName: "MegaVolts",
+        // Megavolt
+        ElectricPotentialUnits.TryAdd("Megavolt", new Unit(
+            SingularName: "Megavolt",
+            PluralName: "Megavolts",
             Abbreviations: ["MV"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -88,7 +88,7 @@ public static partial class UoMRegistry {
             "In classical electromagnetism, the electric potential (a scalar quantity denoted by Φ, ΦE or V and also called the electric field potential or the electrostatic potential) at a point is the amount of electric potential energy that a unitary point charge would have when located at that point.",
             ElectricPotentialUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -3, ["I"] = -1 },
-            "",
+            null,
             false,
             1
         );

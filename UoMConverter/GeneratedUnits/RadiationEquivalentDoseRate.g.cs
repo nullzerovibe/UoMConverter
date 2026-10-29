@@ -18,44 +18,44 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoSievertPerHour
-        RadiationEquivalentDoseRateUnits.TryAdd("NanoSievertPerHour", new Unit(
-            SingularName: "NanoSievertPerHour",
-            PluralName: "NanoSievertsPerHour",
+        // NanosievertPerHour
+        RadiationEquivalentDoseRateUnits.TryAdd("NanosievertPerHour", new Unit(
+            SingularName: "NanosievertPerHour",
+            PluralName: "NanosievertsPerHour",
             Abbreviations: ["nSv/h"],
-            Factor: 1,
+            Factor: 2.777777777777778E-13,
             Offset: 0,
-            FromBaseToUnit: static val => (val*3600) / 1E-09,
-            FromUnitToBase: static val => (val/3600) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroSievertPerHour
-        RadiationEquivalentDoseRateUnits.TryAdd("MicroSievertPerHour", new Unit(
-            SingularName: "MicroSievertPerHour",
-            PluralName: "MicroSievertsPerHour",
+        // MicrosievertPerHour
+        RadiationEquivalentDoseRateUnits.TryAdd("MicrosievertPerHour", new Unit(
+            SingularName: "MicrosievertPerHour",
+            PluralName: "MicrosievertsPerHour",
             Abbreviations: ["µSv/h"],
-            Factor: 1,
+            Factor: 2.7777777777777777E-10,
             Offset: 0,
-            FromBaseToUnit: static val => (val*3600) / 1E-06,
-            FromUnitToBase: static val => (val/3600) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliSievertPerHour
-        RadiationEquivalentDoseRateUnits.TryAdd("MilliSievertPerHour", new Unit(
-            SingularName: "MilliSievertPerHour",
-            PluralName: "MilliSievertsPerHour",
+        // MillisievertPerHour
+        RadiationEquivalentDoseRateUnits.TryAdd("MillisievertPerHour", new Unit(
+            SingularName: "MillisievertPerHour",
+            PluralName: "MillisievertsPerHour",
             Abbreviations: ["mSv/h"],
-            Factor: 1,
+            Factor: 2.7777777777777776E-07,
             Offset: 0,
-            FromBaseToUnit: static val => (val*3600) / 0.001,
-            FromUnitToBase: static val => (val/3600) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // SievertPerSecond
         RadiationEquivalentDoseRateUnits.TryAdd("SievertPerSecond", new Unit(
@@ -66,44 +66,44 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoSievertPerSecond
-        RadiationEquivalentDoseRateUnits.TryAdd("NanoSievertPerSecond", new Unit(
-            SingularName: "NanoSievertPerSecond",
-            PluralName: "NanoSievertsPerSecond",
+        // NanosievertPerSecond
+        RadiationEquivalentDoseRateUnits.TryAdd("NanosievertPerSecond", new Unit(
+            SingularName: "NanosievertPerSecond",
+            PluralName: "NanosievertsPerSecond",
             Abbreviations: ["nSv/s"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroSievertPerSecond
-        RadiationEquivalentDoseRateUnits.TryAdd("MicroSievertPerSecond", new Unit(
-            SingularName: "MicroSievertPerSecond",
-            PluralName: "MicroSievertsPerSecond",
+        // MicrosievertPerSecond
+        RadiationEquivalentDoseRateUnits.TryAdd("MicrosievertPerSecond", new Unit(
+            SingularName: "MicrosievertPerSecond",
+            PluralName: "MicrosievertsPerSecond",
             Abbreviations: ["µSv/s"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliSievertPerSecond
-        RadiationEquivalentDoseRateUnits.TryAdd("MilliSievertPerSecond", new Unit(
-            SingularName: "MilliSievertPerSecond",
-            PluralName: "MilliSievertsPerSecond",
+        // MillisievertPerSecond
+        RadiationEquivalentDoseRateUnits.TryAdd("MillisievertPerSecond", new Unit(
+            SingularName: "MillisievertPerSecond",
+            PluralName: "MillisievertsPerSecond",
             Abbreviations: ["mSv/s"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // RoentgenEquivalentManPerHour
         RadiationEquivalentDoseRateUnits.TryAdd("RoentgenEquivalentManPerHour", new Unit(
@@ -112,22 +112,22 @@ public static partial class UoMRegistry {
             Abbreviations: ["rem/h"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 100 * 3600,
-            FromUnitToBase: static val => val / 100 / 3600,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 100 * 3600),
+            FromUnitToBase: static val => (val / 100 / 3600),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliRoentgenEquivalentManPerHour
-        RadiationEquivalentDoseRateUnits.TryAdd("MilliRoentgenEquivalentManPerHour", new Unit(
-            SingularName: "MilliRoentgenEquivalentManPerHour",
-            PluralName: "MilliRoentgensEquivalentManPerHour",
+        // MilliroentgenEquivalentManPerHour
+        RadiationEquivalentDoseRateUnits.TryAdd("MilliroentgenEquivalentManPerHour", new Unit(
+            SingularName: "MilliroentgenEquivalentManPerHour",
+            PluralName: "MilliroentgensEquivalentManPerHour",
             Abbreviations: ["mrem/h"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 100 * 3600) / 0.001,
-            FromUnitToBase: static val => (val / 100 / 3600) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * 100 * 3600) / 0.001),
+            FromUnitToBase: static val => ((val * 0.001) / 100 / 3600),
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -136,7 +136,7 @@ public static partial class UoMRegistry {
             "A dose rate is quantity of radiation absorbed or delivered per unit time.",
             RadiationEquivalentDoseRateUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 2, ["T"] = -3 },
-            "",
+            null,
             false,
             1
         );

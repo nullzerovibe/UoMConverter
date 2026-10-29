@@ -18,116 +18,116 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroVoltPerSecond
-        ElectricPotentialChangeRateUnits.TryAdd("MicroVoltPerSecond", new Unit(
-            SingularName: "MicroVoltPerSecond",
-            PluralName: "MicroVoltsPerSecond",
+        // MicrovoltPerSecond
+        ElectricPotentialChangeRateUnits.TryAdd("MicrovoltPerSecond", new Unit(
+            SingularName: "MicrovoltPerSecond",
+            PluralName: "MicrovoltsPerSecond",
             Abbreviations: ["µV/s"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliVoltPerSecond
-        ElectricPotentialChangeRateUnits.TryAdd("MilliVoltPerSecond", new Unit(
-            SingularName: "MilliVoltPerSecond",
-            PluralName: "MilliVoltsPerSecond",
+        // MillivoltPerSecond
+        ElectricPotentialChangeRateUnits.TryAdd("MillivoltPerSecond", new Unit(
+            SingularName: "MillivoltPerSecond",
+            PluralName: "MillivoltsPerSecond",
             Abbreviations: ["mV/s"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloVoltPerSecond
-        ElectricPotentialChangeRateUnits.TryAdd("KiloVoltPerSecond", new Unit(
-            SingularName: "KiloVoltPerSecond",
-            PluralName: "KiloVoltsPerSecond",
+        // KilovoltPerSecond
+        ElectricPotentialChangeRateUnits.TryAdd("KilovoltPerSecond", new Unit(
+            SingularName: "KilovoltPerSecond",
+            PluralName: "KilovoltsPerSecond",
             Abbreviations: ["kV/s"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaVoltPerSecond
-        ElectricPotentialChangeRateUnits.TryAdd("MegaVoltPerSecond", new Unit(
-            SingularName: "MegaVoltPerSecond",
-            PluralName: "MegaVoltsPerSecond",
+        // MegavoltPerSecond
+        ElectricPotentialChangeRateUnits.TryAdd("MegavoltPerSecond", new Unit(
+            SingularName: "MegavoltPerSecond",
+            PluralName: "MegavoltsPerSecond",
             Abbreviations: ["MV/s"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // VoltPerMicrosecond
         ElectricPotentialChangeRateUnits.TryAdd("VoltPerMicrosecond", new Unit(
             SingularName: "VoltPerMicrosecond",
             PluralName: "VoltsPerMicrosecond",
             Abbreviations: ["V/μs"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1E6,
-            FromUnitToBase: static val => val * 1E6,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroVoltPerMicrosecond
-        ElectricPotentialChangeRateUnits.TryAdd("MicroVoltPerMicrosecond", new Unit(
-            SingularName: "MicroVoltPerMicrosecond",
-            PluralName: "MicroVoltsPerMicrosecond",
+        // MicrovoltPerMicrosecond
+        ElectricPotentialChangeRateUnits.TryAdd("MicrovoltPerMicrosecond", new Unit(
+            SingularName: "MicrovoltPerMicrosecond",
+            PluralName: "MicrovoltsPerMicrosecond",
             Abbreviations: ["µV/μs"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1E6) / 1E-06,
-            FromUnitToBase: static val => (val * 1E6) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliVoltPerMicrosecond
-        ElectricPotentialChangeRateUnits.TryAdd("MilliVoltPerMicrosecond", new Unit(
-            SingularName: "MilliVoltPerMicrosecond",
-            PluralName: "MilliVoltsPerMicrosecond",
+        // MillivoltPerMicrosecond
+        ElectricPotentialChangeRateUnits.TryAdd("MillivoltPerMicrosecond", new Unit(
+            SingularName: "MillivoltPerMicrosecond",
+            PluralName: "MillivoltsPerMicrosecond",
             Abbreviations: ["mV/μs"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1E6) / 0.001,
-            FromUnitToBase: static val => (val * 1E6) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloVoltPerMicrosecond
-        ElectricPotentialChangeRateUnits.TryAdd("KiloVoltPerMicrosecond", new Unit(
-            SingularName: "KiloVoltPerMicrosecond",
-            PluralName: "KiloVoltsPerMicrosecond",
+        // KilovoltPerMicrosecond
+        ElectricPotentialChangeRateUnits.TryAdd("KilovoltPerMicrosecond", new Unit(
+            SingularName: "KilovoltPerMicrosecond",
+            PluralName: "KilovoltsPerMicrosecond",
             Abbreviations: ["kV/μs"],
-            Factor: 1,
+            Factor: 1000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1E6) / 1000,
-            FromUnitToBase: static val => (val * 1E6) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaVoltPerMicrosecond
-        ElectricPotentialChangeRateUnits.TryAdd("MegaVoltPerMicrosecond", new Unit(
-            SingularName: "MegaVoltPerMicrosecond",
-            PluralName: "MegaVoltsPerMicrosecond",
+        // MegavoltPerMicrosecond
+        ElectricPotentialChangeRateUnits.TryAdd("MegavoltPerMicrosecond", new Unit(
+            SingularName: "MegavoltPerMicrosecond",
+            PluralName: "MegavoltsPerMicrosecond",
             Abbreviations: ["MV/μs"],
-            Factor: 1,
+            Factor: 1000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1E6) / 1000000,
-            FromUnitToBase: static val => (val * 1E6) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // VoltPerMinute
         ElectricPotentialChangeRateUnits.TryAdd("VoltPerMinute", new Unit(
@@ -138,56 +138,56 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroVoltPerMinute
-        ElectricPotentialChangeRateUnits.TryAdd("MicroVoltPerMinute", new Unit(
-            SingularName: "MicroVoltPerMinute",
-            PluralName: "MicroVoltsPerMinute",
+        // MicrovoltPerMinute
+        ElectricPotentialChangeRateUnits.TryAdd("MicrovoltPerMinute", new Unit(
+            SingularName: "MicrovoltPerMinute",
+            PluralName: "MicrovoltsPerMinute",
             Abbreviations: ["µV/min"],
-            Factor: 1,
+            Factor: 1.6666666666666667E-08,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 60) / 1E-06,
-            FromUnitToBase: static val => (val / 60) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliVoltPerMinute
-        ElectricPotentialChangeRateUnits.TryAdd("MilliVoltPerMinute", new Unit(
-            SingularName: "MilliVoltPerMinute",
-            PluralName: "MilliVoltsPerMinute",
+        // MillivoltPerMinute
+        ElectricPotentialChangeRateUnits.TryAdd("MillivoltPerMinute", new Unit(
+            SingularName: "MillivoltPerMinute",
+            PluralName: "MillivoltsPerMinute",
             Abbreviations: ["mV/min"],
-            Factor: 1,
+            Factor: 1.6666666666666667E-05,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 60) / 0.001,
-            FromUnitToBase: static val => (val / 60) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloVoltPerMinute
-        ElectricPotentialChangeRateUnits.TryAdd("KiloVoltPerMinute", new Unit(
-            SingularName: "KiloVoltPerMinute",
-            PluralName: "KiloVoltsPerMinute",
+        // KilovoltPerMinute
+        ElectricPotentialChangeRateUnits.TryAdd("KilovoltPerMinute", new Unit(
+            SingularName: "KilovoltPerMinute",
+            PluralName: "KilovoltsPerMinute",
             Abbreviations: ["kV/min"],
-            Factor: 1,
+            Factor: 16.666666666666668,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 60) / 1000,
-            FromUnitToBase: static val => (val / 60) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaVoltPerMinute
-        ElectricPotentialChangeRateUnits.TryAdd("MegaVoltPerMinute", new Unit(
-            SingularName: "MegaVoltPerMinute",
-            PluralName: "MegaVoltsPerMinute",
+        // MegavoltPerMinute
+        ElectricPotentialChangeRateUnits.TryAdd("MegavoltPerMinute", new Unit(
+            SingularName: "MegavoltPerMinute",
+            PluralName: "MegavoltsPerMinute",
             Abbreviations: ["MV/min"],
-            Factor: 1,
+            Factor: 16666.666666666668,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 60) / 1000000,
-            FromUnitToBase: static val => (val / 60) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // VoltPerHour
         ElectricPotentialChangeRateUnits.TryAdd("VoltPerHour", new Unit(
@@ -198,56 +198,56 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroVoltPerHour
-        ElectricPotentialChangeRateUnits.TryAdd("MicroVoltPerHour", new Unit(
-            SingularName: "MicroVoltPerHour",
-            PluralName: "MicroVoltsPerHour",
+        // MicrovoltPerHour
+        ElectricPotentialChangeRateUnits.TryAdd("MicrovoltPerHour", new Unit(
+            SingularName: "MicrovoltPerHour",
+            PluralName: "MicrovoltsPerHour",
             Abbreviations: ["µV/h"],
-            Factor: 1,
+            Factor: 2.7777777777777777E-10,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 3600) / 1E-06,
-            FromUnitToBase: static val => (val / 3600) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliVoltPerHour
-        ElectricPotentialChangeRateUnits.TryAdd("MilliVoltPerHour", new Unit(
-            SingularName: "MilliVoltPerHour",
-            PluralName: "MilliVoltsPerHour",
+        // MillivoltPerHour
+        ElectricPotentialChangeRateUnits.TryAdd("MillivoltPerHour", new Unit(
+            SingularName: "MillivoltPerHour",
+            PluralName: "MillivoltsPerHour",
             Abbreviations: ["mV/h"],
-            Factor: 1,
+            Factor: 2.7777777777777776E-07,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 3600) / 0.001,
-            FromUnitToBase: static val => (val / 3600) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloVoltPerHour
-        ElectricPotentialChangeRateUnits.TryAdd("KiloVoltPerHour", new Unit(
-            SingularName: "KiloVoltPerHour",
-            PluralName: "KiloVoltsPerHour",
+        // KilovoltPerHour
+        ElectricPotentialChangeRateUnits.TryAdd("KilovoltPerHour", new Unit(
+            SingularName: "KilovoltPerHour",
+            PluralName: "KilovoltsPerHour",
             Abbreviations: ["kV/h"],
-            Factor: 1,
+            Factor: 0.2777777777777778,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 3600) / 1000,
-            FromUnitToBase: static val => (val / 3600) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaVoltPerHour
-        ElectricPotentialChangeRateUnits.TryAdd("MegaVoltPerHour", new Unit(
-            SingularName: "MegaVoltPerHour",
-            PluralName: "MegaVoltsPerHour",
+        // MegavoltPerHour
+        ElectricPotentialChangeRateUnits.TryAdd("MegavoltPerHour", new Unit(
+            SingularName: "MegavoltPerHour",
+            PluralName: "MegavoltsPerHour",
             Abbreviations: ["MV/h"],
-            Factor: 1,
+            Factor: 277.77777777777777,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 3600) / 1000000,
-            FromUnitToBase: static val => (val / 3600) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -256,7 +256,7 @@ public static partial class UoMRegistry {
             "ElectricPotential change rate is the ratio of the electric potential change to the time during which the change occurred (value of electric potential changes per unit time).",
             ElectricPotentialChangeRateUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -4, ["I"] = -1 },
-            "",
+            null,
             false,
             1
         );

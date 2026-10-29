@@ -18,8 +18,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CubicFootPerMinutePerSquareFoot
         VolumeFlowPerAreaUnits.TryAdd("CubicFootPerMinutePerSquareFoot", new Unit(
@@ -28,10 +28,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["CFM/ft²"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 9.290304e-2 / (0.028316846592 / 60),
-            FromUnitToBase: static val => val * (0.028316846592 / 60) / 9.290304e-2,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 9.290304e-2 / (0.028316846592 / 60)),
+            FromUnitToBase: static val => (val * (0.028316846592 / 60) / 9.290304e-2),
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -40,7 +40,7 @@ public static partial class UoMRegistry {
             "",
             VolumeFlowPerAreaUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 1, ["T"] = -1 },
-            "",
+            null,
             false,
             1
         );

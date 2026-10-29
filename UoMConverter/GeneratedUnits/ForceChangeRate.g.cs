@@ -18,32 +18,32 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DecaNewtonPerMinute
-        ForceChangeRateUnits.TryAdd("DecaNewtonPerMinute", new Unit(
-            SingularName: "DecaNewtonPerMinute",
-            PluralName: "DecaNewtonsPerMinute",
+        // DecanewtonPerMinute
+        ForceChangeRateUnits.TryAdd("DecanewtonPerMinute", new Unit(
+            SingularName: "DecanewtonPerMinute",
+            PluralName: "DecanewtonsPerMinute",
             Abbreviations: ["daN/min"],
-            Factor: 1,
+            Factor: 0.16666666666666666,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 60) / 10,
-            FromUnitToBase: static val => (val / 60) * 10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloNewtonPerMinute
-        ForceChangeRateUnits.TryAdd("KiloNewtonPerMinute", new Unit(
-            SingularName: "KiloNewtonPerMinute",
-            PluralName: "KiloNewtonsPerMinute",
+        // KilonewtonPerMinute
+        ForceChangeRateUnits.TryAdd("KilonewtonPerMinute", new Unit(
+            SingularName: "KilonewtonPerMinute",
+            PluralName: "KilonewtonsPerMinute",
             Abbreviations: ["kN/min"],
-            Factor: 1,
+            Factor: 16.666666666666668,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 60) / 1000,
-            FromUnitToBase: static val => (val / 60) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // NewtonPerSecond
         ForceChangeRateUnits.TryAdd("NewtonPerSecond", new Unit(
@@ -54,92 +54,92 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoNewtonPerSecond
-        ForceChangeRateUnits.TryAdd("NanoNewtonPerSecond", new Unit(
-            SingularName: "NanoNewtonPerSecond",
-            PluralName: "NanoNewtonsPerSecond",
+        // NanonewtonPerSecond
+        ForceChangeRateUnits.TryAdd("NanonewtonPerSecond", new Unit(
+            SingularName: "NanonewtonPerSecond",
+            PluralName: "NanonewtonsPerSecond",
             Abbreviations: ["nN/s"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroNewtonPerSecond
-        ForceChangeRateUnits.TryAdd("MicroNewtonPerSecond", new Unit(
-            SingularName: "MicroNewtonPerSecond",
-            PluralName: "MicroNewtonsPerSecond",
+        // MicronewtonPerSecond
+        ForceChangeRateUnits.TryAdd("MicronewtonPerSecond", new Unit(
+            SingularName: "MicronewtonPerSecond",
+            PluralName: "MicronewtonsPerSecond",
             Abbreviations: ["µN/s"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliNewtonPerSecond
-        ForceChangeRateUnits.TryAdd("MilliNewtonPerSecond", new Unit(
-            SingularName: "MilliNewtonPerSecond",
-            PluralName: "MilliNewtonsPerSecond",
+        // MillinewtonPerSecond
+        ForceChangeRateUnits.TryAdd("MillinewtonPerSecond", new Unit(
+            SingularName: "MillinewtonPerSecond",
+            PluralName: "MillinewtonsPerSecond",
             Abbreviations: ["mN/s"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiNewtonPerSecond
-        ForceChangeRateUnits.TryAdd("CentiNewtonPerSecond", new Unit(
-            SingularName: "CentiNewtonPerSecond",
-            PluralName: "CentiNewtonsPerSecond",
+        // CentinewtonPerSecond
+        ForceChangeRateUnits.TryAdd("CentinewtonPerSecond", new Unit(
+            SingularName: "CentinewtonPerSecond",
+            PluralName: "CentinewtonsPerSecond",
             Abbreviations: ["cN/s"],
-            Factor: 1,
+            Factor: 0.01,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.01,
-            FromUnitToBase: static val => (val) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciNewtonPerSecond
-        ForceChangeRateUnits.TryAdd("DeciNewtonPerSecond", new Unit(
-            SingularName: "DeciNewtonPerSecond",
-            PluralName: "DeciNewtonsPerSecond",
+        // DecinewtonPerSecond
+        ForceChangeRateUnits.TryAdd("DecinewtonPerSecond", new Unit(
+            SingularName: "DecinewtonPerSecond",
+            PluralName: "DecinewtonsPerSecond",
             Abbreviations: ["dN/s"],
-            Factor: 1,
+            Factor: 0.1,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.1,
-            FromUnitToBase: static val => (val) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DecaNewtonPerSecond
-        ForceChangeRateUnits.TryAdd("DecaNewtonPerSecond", new Unit(
-            SingularName: "DecaNewtonPerSecond",
-            PluralName: "DecaNewtonsPerSecond",
+        // DecanewtonPerSecond
+        ForceChangeRateUnits.TryAdd("DecanewtonPerSecond", new Unit(
+            SingularName: "DecanewtonPerSecond",
+            PluralName: "DecanewtonsPerSecond",
             Abbreviations: ["daN/s"],
-            Factor: 1,
+            Factor: 10,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 10,
-            FromUnitToBase: static val => (val) * 10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloNewtonPerSecond
-        ForceChangeRateUnits.TryAdd("KiloNewtonPerSecond", new Unit(
-            SingularName: "KiloNewtonPerSecond",
-            PluralName: "KiloNewtonsPerSecond",
+        // KilonewtonPerSecond
+        ForceChangeRateUnits.TryAdd("KilonewtonPerSecond", new Unit(
+            SingularName: "KilonewtonPerSecond",
+            PluralName: "KilonewtonsPerSecond",
             Abbreviations: ["kN/s"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundForcePerMinute
         ForceChangeRateUnits.TryAdd("PoundForcePerMinute", new Unit(
@@ -148,22 +148,22 @@ public static partial class UoMRegistry {
             Abbreviations: ["lbf/min"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / 4.4482216152605 * 60,
-            FromUnitToBase: static val => val * 4.4482216152605 / 60,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / 4.4482216152605 * 60),
+            FromUnitToBase: static val => (val * 4.4482216152605 / 60),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloPoundForcePerMinute
-        ForceChangeRateUnits.TryAdd("KiloPoundForcePerMinute", new Unit(
-            SingularName: "KiloPoundForcePerMinute",
-            PluralName: "KiloPoundsForcePerMinute",
+        // KilopoundForcePerMinute
+        ForceChangeRateUnits.TryAdd("KilopoundForcePerMinute", new Unit(
+            SingularName: "KilopoundForcePerMinute",
+            PluralName: "KilopoundsForcePerMinute",
             Abbreviations: ["kipf/min", "kip/min", "k/min"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 4.4482216152605 * 60) / 1000,
-            FromUnitToBase: static val => (val * 4.4482216152605 / 60) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / 4.4482216152605 * 60) / 1000),
+            FromUnitToBase: static val => ((val * 1000) * 4.4482216152605 / 60),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundForcePerSecond
         ForceChangeRateUnits.TryAdd("PoundForcePerSecond", new Unit(
@@ -174,20 +174,20 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloPoundForcePerSecond
-        ForceChangeRateUnits.TryAdd("KiloPoundForcePerSecond", new Unit(
-            SingularName: "KiloPoundForcePerSecond",
-            PluralName: "KiloPoundsForcePerSecond",
+        // KilopoundForcePerSecond
+        ForceChangeRateUnits.TryAdd("KilopoundForcePerSecond", new Unit(
+            SingularName: "KilopoundForcePerSecond",
+            PluralName: "KilopoundsForcePerSecond",
             Abbreviations: ["kipf/s", "kip/s", "k/s"],
-            Factor: 1,
+            Factor: 4448.2216152605,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 4.4482216152605) / 1000,
-            FromUnitToBase: static val => (val * 4.4482216152605) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -196,7 +196,7 @@ public static partial class UoMRegistry {
             "Force change rate is the ratio of the force change to the time during which the change occurred (value of force changes per unit time).",
             ForceChangeRateUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 1, ["M"] = 1, ["T"] = -3 },
-            "",
+            null,
             false,
             1
         );

@@ -18,20 +18,20 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloNewtonPerCubicMillimeter
-        SpecificWeightUnits.TryAdd("KiloNewtonPerCubicMillimeter", new Unit(
-            SingularName: "KiloNewtonPerCubicMillimeter",
-            PluralName: "KiloNewtonsPerCubicMillimeter",
+        // KilonewtonPerCubicMillimeter
+        SpecificWeightUnits.TryAdd("KilonewtonPerCubicMillimeter", new Unit(
+            SingularName: "KilonewtonPerCubicMillimeter",
+            PluralName: "KilonewtonsPerCubicMillimeter",
             Abbreviations: ["kN/mm³"],
-            Factor: 1,
+            Factor: 1000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 0.000000001) / 1000,
-            FromUnitToBase: static val => (val * 1000000000) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // NewtonPerCubicCentimeter
         SpecificWeightUnits.TryAdd("NewtonPerCubicCentimeter", new Unit(
@@ -42,20 +42,20 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloNewtonPerCubicCentimeter
-        SpecificWeightUnits.TryAdd("KiloNewtonPerCubicCentimeter", new Unit(
-            SingularName: "KiloNewtonPerCubicCentimeter",
-            PluralName: "KiloNewtonsPerCubicCentimeter",
+        // KilonewtonPerCubicCentimeter
+        SpecificWeightUnits.TryAdd("KilonewtonPerCubicCentimeter", new Unit(
+            SingularName: "KilonewtonPerCubicCentimeter",
+            PluralName: "KilonewtonsPerCubicCentimeter",
             Abbreviations: ["kN/cm³"],
-            Factor: 1,
+            Factor: 1000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 0.000001) / 1000,
-            FromUnitToBase: static val => (val * 1000000) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // NewtonPerCubicMeter
         SpecificWeightUnits.TryAdd("NewtonPerCubicMeter", new Unit(
@@ -66,56 +66,56 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloNewtonPerCubicMeter
-        SpecificWeightUnits.TryAdd("KiloNewtonPerCubicMeter", new Unit(
-            SingularName: "KiloNewtonPerCubicMeter",
-            PluralName: "KiloNewtonsPerCubicMeter",
+        // KilonewtonPerCubicMeter
+        SpecificWeightUnits.TryAdd("KilonewtonPerCubicMeter", new Unit(
+            SingularName: "KilonewtonPerCubicMeter",
+            PluralName: "KilonewtonsPerCubicMeter",
             Abbreviations: ["kN/m³"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaNewtonPerCubicMeter
-        SpecificWeightUnits.TryAdd("MegaNewtonPerCubicMeter", new Unit(
-            SingularName: "MegaNewtonPerCubicMeter",
-            PluralName: "MegaNewtonsPerCubicMeter",
+        // MeganewtonPerCubicMeter
+        SpecificWeightUnits.TryAdd("MeganewtonPerCubicMeter", new Unit(
+            SingularName: "MeganewtonPerCubicMeter",
+            PluralName: "MeganewtonsPerCubicMeter",
             Abbreviations: ["MN/m³"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // KilogramForcePerCubicMillimeter
         SpecificWeightUnits.TryAdd("KilogramForcePerCubicMillimeter", new Unit(
             SingularName: "KilogramForcePerCubicMillimeter",
             PluralName: "KilogramsForcePerCubicMillimeter",
             Abbreviations: ["kgf/mm³"],
-            Factor: 1,
+            Factor: 9806650000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 9.80665e9,
-            FromUnitToBase: static val => val * 9.80665e9,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // KilogramForcePerCubicCentimeter
         SpecificWeightUnits.TryAdd("KilogramForcePerCubicCentimeter", new Unit(
             SingularName: "KilogramForcePerCubicCentimeter",
             PluralName: "KilogramsForcePerCubicCentimeter",
             Abbreviations: ["kgf/cm³"],
-            Factor: 1,
+            Factor: 9806650,
             Offset: 0,
-            FromBaseToUnit: static val => val / 9.80665e6,
-            FromUnitToBase: static val => val * 9.80665e6,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // KilogramForcePerCubicMeter
         SpecificWeightUnits.TryAdd("KilogramForcePerCubicMeter", new Unit(
@@ -126,8 +126,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundForcePerCubicInch
         SpecificWeightUnits.TryAdd("PoundForcePerCubicInch", new Unit(
@@ -136,22 +136,22 @@ public static partial class UoMRegistry {
             Abbreviations: ["lbf/in³"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1.6387064e-5 / 4.4482216152605,
-            FromUnitToBase: static val => val * 4.4482216152605 / 1.6387064e-5,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 1.6387064e-5 / 4.4482216152605),
+            FromUnitToBase: static val => (val * 4.4482216152605 / 1.6387064e-5),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloPoundForcePerCubicInch
-        SpecificWeightUnits.TryAdd("KiloPoundForcePerCubicInch", new Unit(
-            SingularName: "KiloPoundForcePerCubicInch",
-            PluralName: "KiloPoundsForcePerCubicInch",
+        // KilopoundForcePerCubicInch
+        SpecificWeightUnits.TryAdd("KilopoundForcePerCubicInch", new Unit(
+            SingularName: "KilopoundForcePerCubicInch",
+            PluralName: "KilopoundsForcePerCubicInch",
             Abbreviations: ["kipf/in³"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1.6387064e-5 / 4.4482216152605) / 1000,
-            FromUnitToBase: static val => (val * 4.4482216152605 / 1.6387064e-5) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * 1.6387064e-5 / 4.4482216152605) / 1000),
+            FromUnitToBase: static val => ((val * 1000) * 4.4482216152605 / 1.6387064e-5),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundForcePerCubicFoot
         SpecificWeightUnits.TryAdd("PoundForcePerCubicFoot", new Unit(
@@ -160,58 +160,58 @@ public static partial class UoMRegistry {
             Abbreviations: ["lbf/ft³"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 0.028316846592 / 4.4482216152605,
-            FromUnitToBase: static val => val * 4.4482216152605 / 0.028316846592,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 0.028316846592 / 4.4482216152605),
+            FromUnitToBase: static val => (val * 4.4482216152605 / 0.028316846592),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloPoundForcePerCubicFoot
-        SpecificWeightUnits.TryAdd("KiloPoundForcePerCubicFoot", new Unit(
-            SingularName: "KiloPoundForcePerCubicFoot",
-            PluralName: "KiloPoundsForcePerCubicFoot",
+        // KilopoundForcePerCubicFoot
+        SpecificWeightUnits.TryAdd("KilopoundForcePerCubicFoot", new Unit(
+            SingularName: "KilopoundForcePerCubicFoot",
+            PluralName: "KilopoundsForcePerCubicFoot",
             Abbreviations: ["kipf/ft³"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 0.028316846592 / 4.4482216152605) / 1000,
-            FromUnitToBase: static val => (val * 4.4482216152605 / 0.028316846592) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * 0.028316846592 / 4.4482216152605) / 1000),
+            FromUnitToBase: static val => ((val * 1000) * 4.4482216152605 / 0.028316846592),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // TonneForcePerCubicMillimeter
         SpecificWeightUnits.TryAdd("TonneForcePerCubicMillimeter", new Unit(
             SingularName: "TonneForcePerCubicMillimeter",
             PluralName: "TonnesForcePerCubicMillimeter",
             Abbreviations: ["tf/mm³"],
-            Factor: 1,
+            Factor: 9806650000000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 9.80665e12,
-            FromUnitToBase: static val => val * 9.80665e12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // TonneForcePerCubicCentimeter
         SpecificWeightUnits.TryAdd("TonneForcePerCubicCentimeter", new Unit(
             SingularName: "TonneForcePerCubicCentimeter",
             PluralName: "TonnesForcePerCubicCentimeter",
             Abbreviations: ["tf/cm³"],
-            Factor: 1,
+            Factor: 9806650000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 9.80665e9,
-            FromUnitToBase: static val => val * 9.80665e9,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // TonneForcePerCubicMeter
         SpecificWeightUnits.TryAdd("TonneForcePerCubicMeter", new Unit(
             SingularName: "TonneForcePerCubicMeter",
             PluralName: "TonnesForcePerCubicMeter",
             Abbreviations: ["tf/m³"],
-            Factor: 1,
+            Factor: 9806.65,
             Offset: 0,
-            FromBaseToUnit: static val => val / 9.80665e3,
-            FromUnitToBase: static val => val * 9.80665e3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -220,7 +220,7 @@ public static partial class UoMRegistry {
             "The SpecificWeight, or more precisely, the volumetric weight density, of a substance is its weight per unit volume.",
             SpecificWeightUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = -2, ["M"] = 1, ["T"] = -2 },
-            "",
+            null,
             false,
             1
         );

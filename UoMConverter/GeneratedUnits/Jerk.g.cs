@@ -18,80 +18,80 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoMeterPerSecondCubed
-        JerkUnits.TryAdd("NanoMeterPerSecondCubed", new Unit(
-            SingularName: "NanoMeterPerSecondCubed",
-            PluralName: "NanoMetersPerSecondCubed",
+        // NanometerPerSecondCubed
+        JerkUnits.TryAdd("NanometerPerSecondCubed", new Unit(
+            SingularName: "NanometerPerSecondCubed",
+            PluralName: "NanometersPerSecondCubed",
             Abbreviations: ["nm/s³"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroMeterPerSecondCubed
-        JerkUnits.TryAdd("MicroMeterPerSecondCubed", new Unit(
-            SingularName: "MicroMeterPerSecondCubed",
-            PluralName: "MicroMetersPerSecondCubed",
+        // MicrometerPerSecondCubed
+        JerkUnits.TryAdd("MicrometerPerSecondCubed", new Unit(
+            SingularName: "MicrometerPerSecondCubed",
+            PluralName: "MicrometersPerSecondCubed",
             Abbreviations: ["µm/s³"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliMeterPerSecondCubed
-        JerkUnits.TryAdd("MilliMeterPerSecondCubed", new Unit(
-            SingularName: "MilliMeterPerSecondCubed",
-            PluralName: "MilliMetersPerSecondCubed",
+        // MillimeterPerSecondCubed
+        JerkUnits.TryAdd("MillimeterPerSecondCubed", new Unit(
+            SingularName: "MillimeterPerSecondCubed",
+            PluralName: "MillimetersPerSecondCubed",
             Abbreviations: ["mm/s³"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiMeterPerSecondCubed
-        JerkUnits.TryAdd("CentiMeterPerSecondCubed", new Unit(
-            SingularName: "CentiMeterPerSecondCubed",
-            PluralName: "CentiMetersPerSecondCubed",
+        // CentimeterPerSecondCubed
+        JerkUnits.TryAdd("CentimeterPerSecondCubed", new Unit(
+            SingularName: "CentimeterPerSecondCubed",
+            PluralName: "CentimetersPerSecondCubed",
             Abbreviations: ["cm/s³"],
-            Factor: 1,
+            Factor: 0.01,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.01,
-            FromUnitToBase: static val => (val) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciMeterPerSecondCubed
-        JerkUnits.TryAdd("DeciMeterPerSecondCubed", new Unit(
-            SingularName: "DeciMeterPerSecondCubed",
-            PluralName: "DeciMetersPerSecondCubed",
+        // DecimeterPerSecondCubed
+        JerkUnits.TryAdd("DecimeterPerSecondCubed", new Unit(
+            SingularName: "DecimeterPerSecondCubed",
+            PluralName: "DecimetersPerSecondCubed",
             Abbreviations: ["dm/s³"],
-            Factor: 1,
+            Factor: 0.1,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.1,
-            FromUnitToBase: static val => (val) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloMeterPerSecondCubed
-        JerkUnits.TryAdd("KiloMeterPerSecondCubed", new Unit(
-            SingularName: "KiloMeterPerSecondCubed",
-            PluralName: "KiloMetersPerSecondCubed",
+        // KilometerPerSecondCubed
+        JerkUnits.TryAdd("KilometerPerSecondCubed", new Unit(
+            SingularName: "KilometerPerSecondCubed",
+            PluralName: "KilometersPerSecondCubed",
             Abbreviations: ["km/s³"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // InchPerSecondCubed
         JerkUnits.TryAdd("InchPerSecondCubed", new Unit(
@@ -102,8 +102,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // FootPerSecondCubed
         JerkUnits.TryAdd("FootPerSecondCubed", new Unit(
@@ -114,8 +114,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // StandardGravitiesPerSecond
         JerkUnits.TryAdd("StandardGravitiesPerSecond", new Unit(
@@ -126,20 +126,20 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliStandardGravitiesPerSecond
-        JerkUnits.TryAdd("MilliStandardGravitiesPerSecond", new Unit(
-            SingularName: "MilliStandardGravitiesPerSecond",
-            PluralName: "MilliStandardGravitiesPerSecond",
+        // MillistandardGravitiesPerSecond
+        JerkUnits.TryAdd("MillistandardGravitiesPerSecond", new Unit(
+            SingularName: "MillistandardGravitiesPerSecond",
+            PluralName: "MillistandardGravitiesPerSecond",
             Abbreviations: ["mg/s"],
-            Factor: 1,
+            Factor: 0.00980665,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 9.80665) / 0.001,
-            FromUnitToBase: static val => (val * 9.80665) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -148,7 +148,7 @@ public static partial class UoMRegistry {
             "",
             JerkUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 1, ["T"] = -3 },
-            "",
+            null,
             false,
             1
         );

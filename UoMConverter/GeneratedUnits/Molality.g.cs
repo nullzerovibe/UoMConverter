@@ -18,32 +18,32 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliMolePerKilogram
-        MolalityUnits.TryAdd("MilliMolePerKilogram", new Unit(
-            SingularName: "MilliMolePerKilogram",
-            PluralName: "MilliMolesPerKilogram",
+        // MillimolePerKilogram
+        MolalityUnits.TryAdd("MillimolePerKilogram", new Unit(
+            SingularName: "MillimolePerKilogram",
+            PluralName: "MillimolesPerKilogram",
             Abbreviations: ["mmol/kg"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // MolePerGram
         MolalityUnits.TryAdd("MolePerGram", new Unit(
             SingularName: "MolePerGram",
             PluralName: "MolesPerGram",
             Abbreviations: ["mol/g"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e-3,
-            FromUnitToBase: static val => val / 1e-3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -52,7 +52,7 @@ public static partial class UoMRegistry {
             "Molality is a measure of the amount of solute in a solution relative to a given mass of solvent.",
             MolalityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["N"] = 1, ["M"] = -1 },
-            "",
+            null,
             false,
             1
         );

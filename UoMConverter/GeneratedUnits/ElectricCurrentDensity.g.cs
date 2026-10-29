@@ -18,8 +18,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // AmperePerSquareInch
         ElectricCurrentDensityUnits.TryAdd("AmperePerSquareInch", new Unit(
@@ -30,20 +30,20 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // AmperePerSquareFoot
         ElectricCurrentDensityUnits.TryAdd("AmperePerSquareFoot", new Unit(
             SingularName: "AmperePerSquareFoot",
             PluralName: "AmperesPerSquareFoot",
             Abbreviations: ["A/ft²"],
-            Factor: 1,
+            Factor: 10.763910416709722,
             Offset: 0,
-            FromBaseToUnit: static val => val * 9.290304e-2,
-            FromUnitToBase: static val => val / 9.290304e-2,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -52,7 +52,7 @@ public static partial class UoMRegistry {
             "In electromagnetism, current density is the electric current per unit area of cross section.",
             ElectricCurrentDensityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = -2, ["I"] = 1 },
-            "",
+            null,
             false,
             1
         );

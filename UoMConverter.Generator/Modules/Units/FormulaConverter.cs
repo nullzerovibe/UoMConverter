@@ -16,11 +16,12 @@ public record FormulaResult(
 internal static class FormulaConverter {
     private static readonly Regex DecimalToDoubleRegex = new(@"(\d)m\b", RegexOptions.Compiled);
 
-    // Simple linear patterns: {x} * 1.23, {x} / 1.23, {x} + 1.23, {x} - 1.23
-    private static readonly Regex MultiplyRegex = new(@"^\{x\}\s*\*\s*([\d\.]+)m?$", RegexOptions.Compiled);
-    private static readonly Regex DivideRegex = new(@"^\{x\}\s*\/\s*([\d\.]+)m?$", RegexOptions.Compiled);
-    private static readonly Regex AddRegex = new(@"^\{x\}\s*\+\s*([\d\.]+)m?$", RegexOptions.Compiled);
-    private static readonly Regex SubtractRegex = new(@"^\{x\}\s*\-\s*([\d\.]+)m?$", RegexOptions.Compiled);
+    // Simple linear patterns: {x} * 1.23, {x} / 1e-3, {x} + 1.23, {x} - 1.23
+    private const string Num = @"([\d\.]+(?:[eE][+-]?\d+)?)[mdMD]?";
+    private static readonly Regex MultiplyRegex = new($@"^\{{x\}}\s*\*\s*{Num}$", RegexOptions.Compiled);
+    private static readonly Regex DivideRegex = new($@"^\{{x\}}\s*\/\s*{Num}$", RegexOptions.Compiled);
+    private static readonly Regex AddRegex = new($@"^\{{x\}}\s*\+\s*{Num}$", RegexOptions.Compiled);
+    private static readonly Regex SubtractRegex = new($@"^\{{x\}}\s*\-\s*{Num}$", RegexOptions.Compiled);
 
     public static FormulaResult Parse(string? formula) {
         if (string.IsNullOrWhiteSpace(formula)) {

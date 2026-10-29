@@ -18,8 +18,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // WattPerSquareMeterCelsius
         HeatTransferCoefficientUnits.TryAdd("WattPerSquareMeterCelsius", new Unit(
@@ -30,8 +30,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // BtuPerHourSquareFootDegreeFahrenheit
         HeatTransferCoefficientUnits.TryAdd("BtuPerHourSquareFootDegreeFahrenheit", new Unit(
@@ -40,10 +40,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["Btu/(h·ft²·°F)", "Btu/(ft²·h·°F)", "Btu/(hr·ft²·°F)", "Btu/(ft²·hr·°F)"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / ((1055.05585262 / (0.3048 * 0.3048 * 3600)) * 1.8),
-            FromUnitToBase: static val => val * ((1055.05585262 / (0.3048 * 0.3048 * 3600)) * 1.8),
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / ((1055.05585262 / (0.3048 * 0.3048 * 3600)) * 1.8)),
+            FromUnitToBase: static val => (val * ((1055.05585262 / (0.3048 * 0.3048 * 3600)) * 1.8)),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CaloriePerHourSquareMeterDegreeCelsius
         HeatTransferCoefficientUnits.TryAdd("CaloriePerHourSquareMeterDegreeCelsius", new Unit(
@@ -52,22 +52,22 @@ public static partial class UoMRegistry {
             Abbreviations: ["kcal/(h·m²·°C)", "kcal/(m²·h·°C)", "kcal/(hr·m²·°C)", "kcal/(m²·hr·°C)"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 4.184) * 3600,
-            FromUnitToBase: static val => (val * 4.184) / 3600,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / 4.184) * 3600),
+            FromUnitToBase: static val => ((val * 4.184) / 3600),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloCaloriePerHourSquareMeterDegreeCelsius
-        HeatTransferCoefficientUnits.TryAdd("KiloCaloriePerHourSquareMeterDegreeCelsius", new Unit(
-            SingularName: "KiloCaloriePerHourSquareMeterDegreeCelsius",
-            PluralName: "KiloCaloriesPerHourSquareMeterDegreeCelsius",
+        // KilocaloriePerHourSquareMeterDegreeCelsius
+        HeatTransferCoefficientUnits.TryAdd("KilocaloriePerHourSquareMeterDegreeCelsius", new Unit(
+            SingularName: "KilocaloriePerHourSquareMeterDegreeCelsius",
+            PluralName: "KilocaloriesPerHourSquareMeterDegreeCelsius",
             Abbreviations: ["kkcal/(h·m²·°C)", "kkcal/(m²·h·°C)", "kkcal/(hr·m²·°C)", "kkcal/(m²·hr·°C)"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => ((val / 4.184) * 3600) / 1000,
-            FromUnitToBase: static val => ((val * 4.184) / 3600) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (((val / 4.184) * 3600) / 1000),
+            FromUnitToBase: static val => (((val * 1000) * 4.184) / 3600),
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -76,7 +76,7 @@ public static partial class UoMRegistry {
             "The heat transfer coefficient or film coefficient, or film effectiveness, in thermodynamics and in mechanics is the proportionality constant between the heat flux and the thermodynamic driving force for the flow of heat (i.e., the temperature difference, ΔT)",
             HeatTransferCoefficientUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["M"] = 1, ["T"] = -3, ["Θ"] = -1 },
-            "",
+            null,
             false,
             1
         );

@@ -18,80 +18,80 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PicoFarad
-        CapacitanceUnits.TryAdd("PicoFarad", new Unit(
-            SingularName: "PicoFarad",
-            PluralName: "PicoFarads",
+        // Picofarad
+        CapacitanceUnits.TryAdd("Picofarad", new Unit(
+            SingularName: "Picofarad",
+            PluralName: "Picofarads",
             Abbreviations: ["pF"],
-            Factor: 1,
+            Factor: 1E-12,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-12,
-            FromUnitToBase: static val => (val) * 1E-12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoFarad
-        CapacitanceUnits.TryAdd("NanoFarad", new Unit(
-            SingularName: "NanoFarad",
-            PluralName: "NanoFarads",
+        // Nanofarad
+        CapacitanceUnits.TryAdd("Nanofarad", new Unit(
+            SingularName: "Nanofarad",
+            PluralName: "Nanofarads",
             Abbreviations: ["nF"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroFarad
-        CapacitanceUnits.TryAdd("MicroFarad", new Unit(
-            SingularName: "MicroFarad",
-            PluralName: "MicroFarads",
+        // Microfarad
+        CapacitanceUnits.TryAdd("Microfarad", new Unit(
+            SingularName: "Microfarad",
+            PluralName: "Microfarads",
             Abbreviations: ["µF"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliFarad
-        CapacitanceUnits.TryAdd("MilliFarad", new Unit(
-            SingularName: "MilliFarad",
-            PluralName: "MilliFarads",
+        // Millifarad
+        CapacitanceUnits.TryAdd("Millifarad", new Unit(
+            SingularName: "Millifarad",
+            PluralName: "Millifarads",
             Abbreviations: ["mF"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloFarad
-        CapacitanceUnits.TryAdd("KiloFarad", new Unit(
-            SingularName: "KiloFarad",
-            PluralName: "KiloFarads",
+        // Kilofarad
+        CapacitanceUnits.TryAdd("Kilofarad", new Unit(
+            SingularName: "Kilofarad",
+            PluralName: "Kilofarads",
             Abbreviations: ["kF"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaFarad
-        CapacitanceUnits.TryAdd("MegaFarad", new Unit(
-            SingularName: "MegaFarad",
-            PluralName: "MegaFarads",
+        // Megafarad
+        CapacitanceUnits.TryAdd("Megafarad", new Unit(
+            SingularName: "Megafarad",
+            PluralName: "Megafarads",
             Abbreviations: ["MF"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -100,7 +100,7 @@ public static partial class UoMRegistry {
             "Capacitance is the ability of a body to store an electric charge.",
             CapacitanceUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = -2, ["M"] = -1, ["T"] = 4, ["I"] = 2 },
-            "",
+            null,
             false,
             1
         );

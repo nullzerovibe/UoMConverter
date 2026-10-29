@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
 using System.Globalization;
+using System.Text.RegularExpressions;
 using System;
 
 /// <summary>
@@ -53,9 +54,10 @@ internal static class SourceRenderer {
         sb.Append("/// Central registry for all physical quantities and units.").Append(NL);
         sb.Append("/// </summary>").Append(NL);
         sb.Append("public static partial class UoMRegistry {").Append(NL);
-        sb.Append("    private static readonly Dictionary<string, Quantity> _quantities = [];").Append(NL);
+        sb.Append("    private static readonly Dictionary<string, Quantity> _quantities = new(StringComparer.OrdinalIgnoreCase);").Append(NL);
         sb.Append("    private static readonly Dictionary<string, (Quantity Q, Unit U)> _unitLookupBuilder = new(StringComparer.OrdinalIgnoreCase);").Append(NL);
         sb.Append("    private static readonly Dictionary<string, (Quantity Q, Unit U)> _exactNameLookupBuilder = new(StringComparer.OrdinalIgnoreCase);").Append(NL);
+        sb.Append("    private static readonly Dictionary<string, (Quantity Q, Unit U)> _abbreviationLookupBuilder = new(StringComparer.Ordinal);").Append(NL);
         sb.Append(NL);
         sb.Append("    /// <summary>").Append(NL);
         sb.Append("    /// Gets all registered physical quantities keyed by their name.").Append(NL);
@@ -66,9 +68,13 @@ internal static class SourceRenderer {
         sb.Append("    /// </summary>").Append(NL);
         sb.Append("    public static FrozenDictionary<string, (Quantity Q, Unit U)> UnitLookup { get; private set; } = FrozenDictionary<string, (Quantity, Unit)>.Empty;").Append(NL);
         sb.Append("    /// <summary>").Append(NL);
-        sb.Append("    /// Gets a lookup of units by name (case-sensitive).").Append(NL);
+        sb.Append("    /// Gets a lookup of units by singular or plural name only (case-insensitive). Takes priority over <see cref=\"UnitLookup\"/>.").Append(NL);
         sb.Append("    /// </summary>").Append(NL);
         sb.Append("    public static FrozenDictionary<string, (Quantity Q, Unit U)> ExactNameLookup { get; private set; } = FrozenDictionary<string, (Quantity, Unit)>.Empty;").Append(NL);
+        sb.Append("    /// <summary>").Append(NL);
+        sb.Append("    /// Gets a lookup of units by abbreviation (case-sensitive, e.g. 'mW' vs 'MW').").Append(NL);
+        sb.Append("    /// </summary>").Append(NL);
+        sb.Append("    public static FrozenDictionary<string, (Quantity Q, Unit U)> AbbreviationLookup { get; private set; } = FrozenDictionary<string, (Quantity, Unit)>.Empty;").Append(NL);
         sb.Append(NL);
         sb.Append("    static UoMRegistry() {").Append(NL);
 
@@ -76,9 +82,10 @@ internal static class SourceRenderer {
             sb.Append($"        Load{quantity.Name}();").Append(NL);
         }
 
-        sb.Append("        Quantities = _quantities.ToFrozenDictionary();").Append(NL);
+        sb.Append("        Quantities = _quantities.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase);").Append(NL);
         sb.Append("        UnitLookup = _unitLookupBuilder.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase);").Append(NL);
         sb.Append("        ExactNameLookup = _exactNameLookupBuilder.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase);").Append(NL);
+        sb.Append("        AbbreviationLookup = _abbreviationLookupBuilder.ToFrozenDictionary(StringComparer.Ordinal);").Append(NL);
         sb.Append("    }").Append(NL);
         sb.Append(NL);
         sb.Append("    private static void RegisterUnit(Quantity q, Unit u) {").Append(NL);
@@ -91,6 +98,7 @@ internal static class SourceRenderer {
         sb.Append("        }").Append(NL);
         sb.Append("        foreach (var abbr in u.Abbreviations) {").Append(NL);
         sb.Append("            _unitLookupBuilder.TryAdd(abbr, entry);").Append(NL);
+        sb.Append("            _abbreviationLookupBuilder.TryAdd(abbr, entry);").Append(NL);
         sb.Append("        }").Append(NL);
         sb.Append("    }").Append(NL);
         sb.Append("}").Append(NL);
@@ -112,12 +120,11 @@ internal static class SourceRenderer {
                 if (unit.Prefixes != null) {
                     foreach (var prefix in unit.Prefixes) {
                         if (PrefixConstants.SIPrefixes.TryGetValue(prefix, out var info) || PrefixConstants.BinaryPrefixes.TryGetValue(prefix, out info)) {
-                            var factorStr = info.factor.ToString("G", CultureInfo.InvariantCulture);
                             var prefixedUnit = new ConfigUnit {
-                                SingularName = $"{prefix}{unit.SingularName}",
-                                PluralName = $"{prefix}{unit.PluralName}",
-                                FromUnitToBaseFunc = $"({unit.FromUnitToBaseFunc}) * {factorStr}",
-                                FromBaseToUnitFunc = $"({unit.FromBaseToUnitFunc}) / {factorStr}",
+                                SingularName = PrefixedName(prefix, unit.SingularName),
+                                PluralName = PrefixedName(prefix, unit.PluralName),
+                                FromUnitToBaseFunc = unit.FromUnitToBaseFunc,
+                                FromBaseToUnitFunc = unit.FromBaseToUnitFunc,
                                 Localization = unit.Localization?.Select(loc => {
                                     var abbrs = new List<string>();
                                     // Check if there's an explicit override for this prefix
@@ -140,62 +147,59 @@ internal static class SourceRenderer {
                                 XmlDocSummary = $"Represents the {prefix} prefix of {unit.SingularName}.",
                                 ObsoleteText = unit.ObsoleteText
                             };
-                            RenderUnit(sb, safeName, prefixedUnit);
+                            RenderUnit(sb, safeName, prefixedUnit, info.factor);
                         }
                     }
                 }
             }
         }
 
-        var baseUnit = quantity.BaseUnit ?? "";
-        var description = EscapeCodeString(quantity.XmlDocSummary);
-        var obsolete = EscapeCodeString(quantity.ObsoleteText);
         var dims = string.Join(", ", quantity.BaseDimensions?
-            .Select(d => $"[\"{d.Key}\"] = {d.Value}") ?? []);
+            .Select(d => $"[{Literal(d.Key)}] = {d.Value}") ?? []);
 
         sb.Append(NL);
         sb.Append($"        var q = new Quantity(").Append(NL);
-        sb.Append($"            \"{safeName}\",").Append(NL);
-        sb.Append($"            \"{baseUnit}\",").Append(NL);
-        sb.Append($"            \"{description}\",").Append(NL);
+        sb.Append($"            {Literal(safeName)},").Append(NL);
+        sb.Append($"            {Literal(quantity.BaseUnit)},").Append(NL);
+        sb.Append($"            {Literal(quantity.XmlDocSummary)},").Append(NL);
         sb.Append($"            {safeName}Units.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),").Append(NL);
         sb.Append($"            new Dictionary<string, int> {{ {dims} }},").Append(NL);
-        sb.Append($"            \"{obsolete}\",").Append(NL);
+        sb.Append($"            {NullableLiteral(quantity.ObsoleteText)},").Append(NL);
         sb.Append($"            {quantity.IsLogarithmic.ToString().ToLowerInvariant()},").Append(NL);
-        sb.Append($"            {quantity.ScalingFactor.ToString("G", CultureInfo.InvariantCulture)}").Append(NL);
+        sb.Append($"            {Number(quantity.ScalingFactor)}").Append(NL);
         sb.Append("        );").Append(NL);
-        sb.Append($"        _quantities.Add(\"{safeName}\", q);").Append(NL);
+        sb.Append($"        _quantities.Add({Literal(safeName)}, q);").Append(NL);
         sb.Append($"        foreach (var u in q.Units.Values) RegisterUnit(q, u);").Append(NL);
     }
 
-    private static void RenderUnit(StringBuilder sb, string safeName, ConfigUnit unit) {
+    private static void RenderUnit(StringBuilder sb, string safeName, ConfigUnit unit, double prefixFactor = 1.0) {
         var safeUnitName = unit.SingularName;
         var toBaseResult = FormulaConverter.Parse(unit.FromUnitToBaseFunc);
         var fromBaseResult = FormulaConverter.Parse(unit.FromBaseToUnitFunc);
 
+        // WHY: Unit.FromBase falls back to Factor/Offset, which derive from toBase only; a mixed pair must be emitted as two lambdas.
+        var isLinear = toBaseResult.IsLinear && fromBaseResult.IsLinear;
+        var factor = Number(isLinear ? toBaseResult.Factor * prefixFactor : 1.0);
+        var offset = Number(isLinear ? toBaseResult.Offset : 0.0);
+        var toBaseLambda = isLinear ? "null" : $"static val => {ScaleInput(ToExpression(toBaseResult), prefixFactor)}";
+        var fromBaseLambda = isLinear ? "null" : $"static val => {ScaleOutput(ToExpression(fromBaseResult), prefixFactor)}";
+
         var abbreviations = string.Join(", ", (unit.Localization?
             .FirstOrDefault(l => l.Culture == "en-US")?.Abbreviations ?? [])
-            .Select(a => $"\"{a}\""));
-
-        var remarks = EscapeCodeString(unit.XmlDocRemarks);
-        var obsolete = EscapeCodeString(unit.ObsoleteText);
-
-        var factor = toBaseResult.Factor.ToString("G", CultureInfo.InvariantCulture);
-        var offset = toBaseResult.Offset.ToString("G", CultureInfo.InvariantCulture);
-        var toBaseLambda = toBaseResult.IsLinear ? "null" : $"static val => {toBaseResult.Lambda}";
-        var fromBaseLambda = fromBaseResult.IsLinear ? "null" : $"static val => {fromBaseResult.Lambda}";
+            // WARN: Upstream UnitsNet JSON pre-escapes quotes for its own emitter (e.g. inch: "\\\""); unescape before re-escaping.
+            .Select(a => Literal(a.Replace("\\\"", "\""))));
 
         sb.Append($"        // {safeUnitName}").Append(NL);
-        sb.Append($"        {safeName}Units.TryAdd(\"{safeUnitName}\", new Unit(").Append(NL);
-        sb.Append($"            SingularName: \"{safeUnitName}\",").Append(NL);
-        sb.Append($"            PluralName: \"{unit.PluralName}\",").Append(NL);
+        sb.Append($"        {safeName}Units.TryAdd({Literal(safeUnitName)}, new Unit(").Append(NL);
+        sb.Append($"            SingularName: {Literal(safeUnitName)},").Append(NL);
+        sb.Append($"            PluralName: {Literal(unit.PluralName)},").Append(NL);
         sb.Append($"            Abbreviations: [{abbreviations}],").Append(NL);
         sb.Append($"            Factor: {factor},").Append(NL);
         sb.Append($"            Offset: {offset},").Append(NL);
         sb.Append($"            FromBaseToUnit: {fromBaseLambda},").Append(NL);
         sb.Append($"            FromUnitToBase: {toBaseLambda},").Append(NL);
-        sb.Append($"            Remarks: \"{remarks}\",").Append(NL);
-        sb.Append($"            ObsoleteText: \"{obsolete}\"").Append(NL);
+        sb.Append($"            Remarks: {NullableLiteral(unit.XmlDocRemarks)},").Append(NL);
+        sb.Append($"            ObsoleteText: {NullableLiteral(unit.ObsoleteText)}").Append(NL);
         sb.Append($"        ));").Append(NL);
     }
 
@@ -206,4 +210,28 @@ internal static class SourceRenderer {
             .Replace("\r", "")
             .Replace("\n", " ") ?? "";
     }
+
+    internal static string Literal(string? input) => $"\"{EscapeCodeString(input)}\"";
+
+    // WHY: Matches UnitsNet naming ("Kilo" + "Meter" -> "Kilometer", "Kilo" + "WattHour" -> "KilowattHour"); case-only, so case-insensitive lookups are unaffected.
+    internal static string PrefixedName(string prefix, string name) =>
+        string.IsNullOrEmpty(name) ? prefix : prefix + char.ToLowerInvariant(name[0]) + name.Substring(1);
+
+    // WHY: "R" round-trips on every host; "G" truncates to 15 digits under .NET Framework MSBuild (Visual Studio).
+    internal static string Number(double value) => value.ToString("R", CultureInfo.InvariantCulture);
+
+    private static readonly Regex ValToken = new(@"\bval\b", RegexOptions.Compiled);
+
+    internal static string ToExpression(FormulaResult r) =>
+        r.IsLinear ? $"(val * {Number(r.Factor)} + {Number(r.Offset)})" : $"({r.Lambda})";
+
+    // WHY: A prefixed unit converts as f(x * k) to base, and g(b) / k from base; scaling the output of f is wrong for offsets and non-linear f.
+    internal static string ScaleInput(string expression, double prefixFactor) =>
+        prefixFactor == 1.0 ? expression : ValToken.Replace(expression, $"(val * {Number(prefixFactor)})");
+
+    internal static string ScaleOutput(string expression, double prefixFactor) =>
+        prefixFactor == 1.0 ? expression : $"({expression} / {Number(prefixFactor)})";
+
+    // WHY: Empty metadata must surface as null so consumers can rely on `ObsoleteText is not null`.
+    internal static string NullableLiteral(string? input) => string.IsNullOrWhiteSpace(input) ? "null" : Literal(input);
 }

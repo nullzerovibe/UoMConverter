@@ -18,8 +18,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // SquareMeterKelvinPerWatt
         ThermalInsulanceUnits.TryAdd("SquareMeterKelvinPerWatt", new Unit(
@@ -30,8 +30,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // SquareMeterDegreeCelsiusPerWatt
         ThermalInsulanceUnits.TryAdd("SquareMeterDegreeCelsiusPerWatt", new Unit(
@@ -42,8 +42,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // SquareCentimeterKelvinPerWatt
         ThermalInsulanceUnits.TryAdd("SquareCentimeterKelvinPerWatt", new Unit(
@@ -54,8 +54,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // SquareMillimeterKelvinPerWatt
         ThermalInsulanceUnits.TryAdd("SquareMillimeterKelvinPerWatt", new Unit(
@@ -66,8 +66,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // SquareCentimeterHourDegreeCelsiusPerKilocalorie
         ThermalInsulanceUnits.TryAdd("SquareCentimeterHourDegreeCelsiusPerKilocalorie", new Unit(
@@ -76,10 +76,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["cm²Hr°C/kcal"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 4.184 / (0.0001 * 3600),
-            FromUnitToBase: static val => val * (0.0001 * 3600) / 4.184,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 4.184 / (0.0001 * 3600)),
+            FromUnitToBase: static val => (val * (0.0001 * 3600) / 4.184),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // HourSquareFeetDegreeFahrenheitPerBtu
         ThermalInsulanceUnits.TryAdd("HourSquareFeetDegreeFahrenheitPerBtu", new Unit(
@@ -88,10 +88,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["Hrft²°F/Btu"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * (1055.05585262 * 1.8) / (1000 * 0.3048 * 0.3048 * 3600),
-            FromUnitToBase: static val => val * (1000 * 0.3048 * 0.3048 * 3600) / (1055.05585262 * 1.8),
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * (1055.05585262 * 1.8) / (1000 * 0.3048 * 0.3048 * 3600)),
+            FromUnitToBase: static val => (val * (1000 * 0.3048 * 0.3048 * 3600) / (1055.05585262 * 1.8)),
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -100,7 +100,7 @@ public static partial class UoMRegistry {
             "Thermal insulance (R-value) is a measure of a material's resistance to the heat current. It quantifies how effectively a material can resist the transfer of heat through conduction, convection, and radiation. It has the units square metre kelvins per watt (m2⋅K/W) in SI units or square foot degree Fahrenheit–hours per British thermal unit (ft2⋅°F⋅h/Btu) in imperial units. The higher the thermal insulance, the better a material insulates against heat transfer. It is commonly used in construction to assess the insulation properties of materials such as walls, roofs, and insulation products.",
             ThermalInsulanceUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["M"] = -1, ["T"] = 3, ["Θ"] = 1 },
-            "",
+            null,
             false,
             1
         );

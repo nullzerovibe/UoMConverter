@@ -16,10 +16,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["months"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (30.4375 * 24 * 3600),
-            FromUnitToBase: static val => val * 30.4375 * 24 * 3600,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (30.4375 * 24 * 3600)),
+            FromUnitToBase: static val => (val * 30.4375 * 24 * 3600),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Year365
         DurationUnits.TryAdd("Year365", new Unit(
@@ -28,10 +28,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["yr", "year", "years"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (365 * 24 * 3600),
-            FromUnitToBase: static val => val * 365 * 24 * 3600,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (365 * 24 * 3600)),
+            FromUnitToBase: static val => (val * 365 * 24 * 3600),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Month30
         DurationUnits.TryAdd("Month30", new Unit(
@@ -40,10 +40,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["mo", "month", "months"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (30 * 24 * 3600),
-            FromUnitToBase: static val => val * 30 * 24 * 3600,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (30 * 24 * 3600)),
+            FromUnitToBase: static val => (val * 30 * 24 * 3600),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Week
         DurationUnits.TryAdd("Week", new Unit(
@@ -52,10 +52,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["wk", "week", "weeks"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (7 * 24 * 3600),
-            FromUnitToBase: static val => val * 7 * 24 * 3600,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (7 * 24 * 3600)),
+            FromUnitToBase: static val => (val * 7 * 24 * 3600),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Day
         DurationUnits.TryAdd("Day", new Unit(
@@ -64,10 +64,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["d", "day", "days"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (24 * 3600),
-            FromUnitToBase: static val => val * 24 * 3600,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (24 * 3600)),
+            FromUnitToBase: static val => (val * 24 * 3600),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Hour
         DurationUnits.TryAdd("Hour", new Unit(
@@ -78,8 +78,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Minute
         DurationUnits.TryAdd("Minute", new Unit(
@@ -90,8 +90,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Second
         DurationUnits.TryAdd("Second", new Unit(
@@ -102,56 +102,56 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PicoSecond
-        DurationUnits.TryAdd("PicoSecond", new Unit(
-            SingularName: "PicoSecond",
-            PluralName: "PicoSeconds",
+        // Picosecond
+        DurationUnits.TryAdd("Picosecond", new Unit(
+            SingularName: "Picosecond",
+            PluralName: "Picoseconds",
             Abbreviations: ["ps", "psec", "psecs", "psecond", "pseconds"],
-            Factor: 1,
+            Factor: 1E-12,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-12,
-            FromUnitToBase: static val => (val) * 1E-12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoSecond
-        DurationUnits.TryAdd("NanoSecond", new Unit(
-            SingularName: "NanoSecond",
-            PluralName: "NanoSeconds",
+        // Nanosecond
+        DurationUnits.TryAdd("Nanosecond", new Unit(
+            SingularName: "Nanosecond",
+            PluralName: "Nanoseconds",
             Abbreviations: ["ns", "nsec", "nsecs", "nsecond", "nseconds"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroSecond
-        DurationUnits.TryAdd("MicroSecond", new Unit(
-            SingularName: "MicroSecond",
-            PluralName: "MicroSeconds",
+        // Microsecond
+        DurationUnits.TryAdd("Microsecond", new Unit(
+            SingularName: "Microsecond",
+            PluralName: "Microseconds",
             Abbreviations: ["µs", "µsec", "µsecs", "µsecond", "µseconds"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliSecond
-        DurationUnits.TryAdd("MilliSecond", new Unit(
-            SingularName: "MilliSecond",
-            PluralName: "MilliSeconds",
+        // Millisecond
+        DurationUnits.TryAdd("Millisecond", new Unit(
+            SingularName: "Millisecond",
+            PluralName: "Milliseconds",
             Abbreviations: ["ms", "msec", "msecs", "msecond", "mseconds"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // JulianYear
         DurationUnits.TryAdd("JulianYear", new Unit(
@@ -160,10 +160,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["jyr", "jyear", "jyears"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (365.25 * 24 * 3600),
-            FromUnitToBase: static val => val * 365.25 * 24 * 3600,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (365.25 * 24 * 3600)),
+            FromUnitToBase: static val => (val * 365.25 * 24 * 3600),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Sol
         DurationUnits.TryAdd("Sol", new Unit(
@@ -174,8 +174,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -184,7 +184,7 @@ public static partial class UoMRegistry {
             "Time is a dimension in which events can be ordered from the past through the present into the future, and also the measure of durations of events and the intervals between them.",
             DurationUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["T"] = 1 },
-            "",
+            null,
             false,
             1
         );

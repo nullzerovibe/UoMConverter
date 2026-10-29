@@ -18,44 +18,44 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliLux
-        IlluminanceUnits.TryAdd("MilliLux", new Unit(
-            SingularName: "MilliLux",
-            PluralName: "MilliLux",
+        // Millilux
+        IlluminanceUnits.TryAdd("Millilux", new Unit(
+            SingularName: "Millilux",
+            PluralName: "Millilux",
             Abbreviations: ["mlx"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloLux
-        IlluminanceUnits.TryAdd("KiloLux", new Unit(
-            SingularName: "KiloLux",
-            PluralName: "KiloLux",
+        // Kilolux
+        IlluminanceUnits.TryAdd("Kilolux", new Unit(
+            SingularName: "Kilolux",
+            PluralName: "Kilolux",
             Abbreviations: ["klx"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaLux
-        IlluminanceUnits.TryAdd("MegaLux", new Unit(
-            SingularName: "MegaLux",
-            PluralName: "MegaLux",
+        // Megalux
+        IlluminanceUnits.TryAdd("Megalux", new Unit(
+            SingularName: "Megalux",
+            PluralName: "Megalux",
             Abbreviations: ["Mlx"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -64,7 +64,7 @@ public static partial class UoMRegistry {
             "In photometry, illuminance is the total luminous flux incident on a surface, per unit area.",
             IlluminanceUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = -2, ["J"] = 1 },
-            "",
+            null,
             false,
             1
         );

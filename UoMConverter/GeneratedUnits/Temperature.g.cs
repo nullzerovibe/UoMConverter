@@ -18,8 +18,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DegreeCelsius
         TemperatureUnits.TryAdd("DegreeCelsius", new Unit(
@@ -30,8 +30,8 @@ public static partial class UoMRegistry {
             Offset: 273.15,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // MillidegreeCelsius
         TemperatureUnits.TryAdd("MillidegreeCelsius", new Unit(
@@ -40,10 +40,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["m°C"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val - 273.15) * 1000,
-            FromUnitToBase: static val => val / 1000 + 273.15,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val - 273.15) * 1000),
+            FromUnitToBase: static val => (val / 1000 + 273.15),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DegreeDelisle
         TemperatureUnits.TryAdd("DegreeDelisle", new Unit(
@@ -52,10 +52,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["°De"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val - 373.15) * -3 / 2,
-            FromUnitToBase: static val => val * -2 / 3 + 373.15,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val - 373.15) * -3 / 2),
+            FromUnitToBase: static val => (val * -2 / 3 + 373.15),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DegreeFahrenheit
         TemperatureUnits.TryAdd("DegreeFahrenheit", new Unit(
@@ -64,10 +64,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["°F"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val - 459.67 * 5 / 9) * 9 / 5,
-            FromUnitToBase: static val => val * 5 / 9 + 459.67 * 5 / 9,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val - 459.67 * 5 / 9) * 9 / 5),
+            FromUnitToBase: static val => (val * 5 / 9 + 459.67 * 5 / 9),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DegreeNewton
         TemperatureUnits.TryAdd("DegreeNewton", new Unit(
@@ -76,10 +76,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["°N"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val - 273.15) * 33 / 100,
-            FromUnitToBase: static val => val * 100 / 33 + 273.15,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val - 273.15) * 33 / 100),
+            FromUnitToBase: static val => (val * 100 / 33 + 273.15),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DegreeRankine
         TemperatureUnits.TryAdd("DegreeRankine", new Unit(
@@ -88,10 +88,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["°R"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 9 / 5,
-            FromUnitToBase: static val => val * 5 / 9,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 9 / 5),
+            FromUnitToBase: static val => (val * 5 / 9),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DegreeReaumur
         TemperatureUnits.TryAdd("DegreeReaumur", new Unit(
@@ -100,10 +100,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["°Ré"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val - 273.15) * 4 / 5,
-            FromUnitToBase: static val => val * 5 / 4 + 273.15,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val - 273.15) * 4 / 5),
+            FromUnitToBase: static val => (val * 5 / 4 + 273.15),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DegreeRoemer
         TemperatureUnits.TryAdd("DegreeRoemer", new Unit(
@@ -112,10 +112,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["°Rø"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val - (273.15 - 7.5 * 40d / 21)) * 21 / 40,
-            FromUnitToBase: static val => val * 40 / 21 + 273.15 - 7.5 * 40d / 21,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val - (273.15 - 7.5 * 40d / 21)) * 21 / 40),
+            FromUnitToBase: static val => (val * 40 / 21 + 273.15 - 7.5 * 40d / 21),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // SolarTemperature
         TemperatureUnits.TryAdd("SolarTemperature", new Unit(
@@ -126,8 +126,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -136,7 +136,7 @@ public static partial class UoMRegistry {
             "A temperature is a numerical measure of hot or cold. Its measurement is by detection of heat radiation or particle velocity or kinetic energy, or by the bulk behavior of a thermometric material. It may be calibrated in any of various temperature scales, Celsius, Fahrenheit, Kelvin, etc. The fundamental physical definition of temperature is provided by thermodynamics.",
             TemperatureUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["Θ"] = 1 },
-            "",
+            null,
             false,
             1
         );

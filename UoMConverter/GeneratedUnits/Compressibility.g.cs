@@ -18,32 +18,32 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // InverseKilopascal
         CompressibilityUnits.TryAdd("InverseKilopascal", new Unit(
             SingularName: "InverseKilopascal",
             PluralName: "InverseKilopascals",
             Abbreviations: ["kPa⁻¹", "1/kPa"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e3,
-            FromUnitToBase: static val => val * 1e3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // InverseMegapascal
         CompressibilityUnits.TryAdd("InverseMegapascal", new Unit(
             SingularName: "InverseMegapascal",
             PluralName: "InverseMegapascals",
             Abbreviations: ["MPa⁻¹", "1/MPa"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e6,
-            FromUnitToBase: static val => val * 1e6,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // InverseAtmosphere
         CompressibilityUnits.TryAdd("InverseAtmosphere", new Unit(
@@ -54,8 +54,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // InverseMillibar
         CompressibilityUnits.TryAdd("InverseMillibar", new Unit(
@@ -66,32 +66,32 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // InverseBar
         CompressibilityUnits.TryAdd("InverseBar", new Unit(
             SingularName: "InverseBar",
             PluralName: "InverseBars",
             Abbreviations: ["bar⁻¹", "1/bar"],
-            Factor: 1,
+            Factor: 100000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e5,
-            FromUnitToBase: static val => val * 1e5,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // InversePoundForcePerSquareInch
         CompressibilityUnits.TryAdd("InversePoundForcePerSquareInch", new Unit(
             SingularName: "InversePoundForcePerSquareInch",
             PluralName: "InversePoundsForcePerSquareInch",
             Abbreviations: ["psi⁻¹", "1/psi"],
-            Factor: 1,
+            Factor: 6894.757293168361,
             Offset: 0,
-            FromBaseToUnit: static val => val / 6.894757293168361e3,
-            FromUnitToBase: static val => val * 6.894757293168361e3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -100,7 +100,7 @@ public static partial class UoMRegistry {
             "",
             CompressibilityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 1, ["M"] = -1, ["T"] = 2 },
-            "",
+            null,
             false,
             1
         );

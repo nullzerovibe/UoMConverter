@@ -18,20 +18,20 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliAmperePerSecond
-        ElectricCurrentGradientUnits.TryAdd("MilliAmperePerSecond", new Unit(
-            SingularName: "MilliAmperePerSecond",
-            PluralName: "MilliAmperesPerSecond",
+        // MilliamperePerSecond
+        ElectricCurrentGradientUnits.TryAdd("MilliamperePerSecond", new Unit(
+            SingularName: "MilliamperePerSecond",
+            PluralName: "MilliamperesPerSecond",
             Abbreviations: ["mA/s"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // AmperePerMinute
         ElectricCurrentGradientUnits.TryAdd("AmperePerMinute", new Unit(
@@ -42,56 +42,56 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliAmperePerMinute
-        ElectricCurrentGradientUnits.TryAdd("MilliAmperePerMinute", new Unit(
-            SingularName: "MilliAmperePerMinute",
-            PluralName: "MilliAmperesPerMinute",
+        // MilliamperePerMinute
+        ElectricCurrentGradientUnits.TryAdd("MilliamperePerMinute", new Unit(
+            SingularName: "MilliamperePerMinute",
+            PluralName: "MilliamperesPerMinute",
             Abbreviations: ["mA/min"],
-            Factor: 1,
+            Factor: 1.6666666666666667E-05,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 60) / 0.001,
-            FromUnitToBase: static val => (val / 60) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // AmperePerMillisecond
         ElectricCurrentGradientUnits.TryAdd("AmperePerMillisecond", new Unit(
             SingularName: "AmperePerMillisecond",
             PluralName: "AmperesPerMillisecond",
             Abbreviations: ["A/ms"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1E3,
-            FromUnitToBase: static val => val * 1E3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // AmperePerMicrosecond
         ElectricCurrentGradientUnits.TryAdd("AmperePerMicrosecond", new Unit(
             SingularName: "AmperePerMicrosecond",
             PluralName: "AmperesPerMicrosecond",
             Abbreviations: ["A/μs"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1E6,
-            FromUnitToBase: static val => val * 1E6,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // AmperePerNanosecond
         ElectricCurrentGradientUnits.TryAdd("AmperePerNanosecond", new Unit(
             SingularName: "AmperePerNanosecond",
             PluralName: "AmperesPerNanosecond",
             Abbreviations: ["A/ns"],
-            Factor: 1,
+            Factor: 1000000000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1E9,
-            FromUnitToBase: static val => val * 1E9,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -100,7 +100,7 @@ public static partial class UoMRegistry {
             "In electromagnetism, the current gradient describes how the current changes in time.",
             ElectricCurrentGradientUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["T"] = -1, ["I"] = 1 },
-            "",
+            null,
             false,
             1
         );

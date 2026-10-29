@@ -18,8 +18,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DecibelMilliwatt
         PowerRatioUnits.TryAdd("DecibelMilliwatt", new Unit(
@@ -30,8 +30,8 @@ public static partial class UoMRegistry {
             Offset: -30,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -40,7 +40,7 @@ public static partial class UoMRegistry {
             "The strength of a signal expressed in decibels (dB) relative to one watt.",
             PowerRatioUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> {  },
-            "",
+            null,
             true,
             1
         );

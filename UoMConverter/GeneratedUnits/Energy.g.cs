@@ -18,104 +18,104 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoJoule
-        EnergyUnits.TryAdd("NanoJoule", new Unit(
-            SingularName: "NanoJoule",
-            PluralName: "NanoJoules",
+        // Nanojoule
+        EnergyUnits.TryAdd("Nanojoule", new Unit(
+            SingularName: "Nanojoule",
+            PluralName: "Nanojoules",
             Abbreviations: ["nJ"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroJoule
-        EnergyUnits.TryAdd("MicroJoule", new Unit(
-            SingularName: "MicroJoule",
-            PluralName: "MicroJoules",
+        // Microjoule
+        EnergyUnits.TryAdd("Microjoule", new Unit(
+            SingularName: "Microjoule",
+            PluralName: "Microjoules",
             Abbreviations: ["µJ"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliJoule
-        EnergyUnits.TryAdd("MilliJoule", new Unit(
-            SingularName: "MilliJoule",
-            PluralName: "MilliJoules",
+        // Millijoule
+        EnergyUnits.TryAdd("Millijoule", new Unit(
+            SingularName: "Millijoule",
+            PluralName: "Millijoules",
             Abbreviations: ["mJ"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloJoule
-        EnergyUnits.TryAdd("KiloJoule", new Unit(
-            SingularName: "KiloJoule",
-            PluralName: "KiloJoules",
+        // Kilojoule
+        EnergyUnits.TryAdd("Kilojoule", new Unit(
+            SingularName: "Kilojoule",
+            PluralName: "Kilojoules",
             Abbreviations: ["kJ"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaJoule
-        EnergyUnits.TryAdd("MegaJoule", new Unit(
-            SingularName: "MegaJoule",
-            PluralName: "MegaJoules",
+        // Megajoule
+        EnergyUnits.TryAdd("Megajoule", new Unit(
+            SingularName: "Megajoule",
+            PluralName: "Megajoules",
             Abbreviations: ["MJ"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaJoule
-        EnergyUnits.TryAdd("GigaJoule", new Unit(
-            SingularName: "GigaJoule",
-            PluralName: "GigaJoules",
+        // Gigajoule
+        EnergyUnits.TryAdd("Gigajoule", new Unit(
+            SingularName: "Gigajoule",
+            PluralName: "Gigajoules",
             Abbreviations: ["GJ"],
-            Factor: 1,
+            Factor: 1000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000,
-            FromUnitToBase: static val => (val) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // TeraJoule
-        EnergyUnits.TryAdd("TeraJoule", new Unit(
-            SingularName: "TeraJoule",
-            PluralName: "TeraJoules",
+        // Terajoule
+        EnergyUnits.TryAdd("Terajoule", new Unit(
+            SingularName: "Terajoule",
+            PluralName: "Terajoules",
             Abbreviations: ["TJ"],
-            Factor: 1,
+            Factor: 1000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000000,
-            FromUnitToBase: static val => (val) * 1000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PetaJoule
-        EnergyUnits.TryAdd("PetaJoule", new Unit(
-            SingularName: "PetaJoule",
-            PluralName: "PetaJoules",
+        // Petajoule
+        EnergyUnits.TryAdd("Petajoule", new Unit(
+            SingularName: "Petajoule",
+            PluralName: "Petajoules",
             Abbreviations: ["PJ"],
-            Factor: 1,
+            Factor: 1000000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000000000,
-            FromUnitToBase: static val => (val) * 1000000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Calorie
         EnergyUnits.TryAdd("Calorie", new Unit(
@@ -126,32 +126,32 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloCalorie
-        EnergyUnits.TryAdd("KiloCalorie", new Unit(
-            SingularName: "KiloCalorie",
-            PluralName: "KiloCalories",
+        // Kilocalorie
+        EnergyUnits.TryAdd("Kilocalorie", new Unit(
+            SingularName: "Kilocalorie",
+            PluralName: "Kilocalories",
             Abbreviations: ["kcal"],
-            Factor: 1,
+            Factor: 4184,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 4.184) / 1000,
-            FromUnitToBase: static val => (val * 4.184) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaCalorie
-        EnergyUnits.TryAdd("MegaCalorie", new Unit(
-            SingularName: "MegaCalorie",
-            PluralName: "MegaCalories",
+        // Megacalorie
+        EnergyUnits.TryAdd("Megacalorie", new Unit(
+            SingularName: "Megacalorie",
+            PluralName: "Megacalories",
             Abbreviations: ["Mcal"],
-            Factor: 1,
+            Factor: 4184000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 4.184) / 1000000,
-            FromUnitToBase: static val => (val * 4.184) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // BritishThermalUnit
         EnergyUnits.TryAdd("BritishThermalUnit", new Unit(
@@ -162,104 +162,104 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloBritishThermalUnit
-        EnergyUnits.TryAdd("KiloBritishThermalUnit", new Unit(
-            SingularName: "KiloBritishThermalUnit",
-            PluralName: "KiloBritishThermalUnits",
+        // KilobritishThermalUnit
+        EnergyUnits.TryAdd("KilobritishThermalUnit", new Unit(
+            SingularName: "KilobritishThermalUnit",
+            PluralName: "KilobritishThermalUnits",
             Abbreviations: ["kBTU"],
-            Factor: 1,
+            Factor: 1055055.85262,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1055.05585262) / 1000,
-            FromUnitToBase: static val => (val * 1055.05585262) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaBritishThermalUnit
-        EnergyUnits.TryAdd("MegaBritishThermalUnit", new Unit(
-            SingularName: "MegaBritishThermalUnit",
-            PluralName: "MegaBritishThermalUnits",
+        // MegabritishThermalUnit
+        EnergyUnits.TryAdd("MegabritishThermalUnit", new Unit(
+            SingularName: "MegabritishThermalUnit",
+            PluralName: "MegabritishThermalUnits",
             Abbreviations: ["MBTU"],
-            Factor: 1,
+            Factor: 1055055852.62,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1055.05585262) / 1000000,
-            FromUnitToBase: static val => (val * 1055.05585262) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaBritishThermalUnit
-        EnergyUnits.TryAdd("GigaBritishThermalUnit", new Unit(
-            SingularName: "GigaBritishThermalUnit",
-            PluralName: "GigaBritishThermalUnits",
+        // GigabritishThermalUnit
+        EnergyUnits.TryAdd("GigabritishThermalUnit", new Unit(
+            SingularName: "GigabritishThermalUnit",
+            PluralName: "GigabritishThermalUnits",
             Abbreviations: ["GBTU"],
-            Factor: 1,
+            Factor: 1055055852620,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1055.05585262) / 1000000000,
-            FromUnitToBase: static val => (val * 1055.05585262) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // ElectronVolt
         EnergyUnits.TryAdd("ElectronVolt", new Unit(
             SingularName: "ElectronVolt",
             PluralName: "ElectronVolts",
             Abbreviations: ["eV"],
-            Factor: 1,
+            Factor: 1.602176634E-19,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1.602176634e-19,
-            FromUnitToBase: static val => val * 1.602176634e-19,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Electronvolt",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
-        // KiloElectronVolt
-        EnergyUnits.TryAdd("KiloElectronVolt", new Unit(
-            SingularName: "KiloElectronVolt",
-            PluralName: "KiloElectronVolts",
+        // KiloelectronVolt
+        EnergyUnits.TryAdd("KiloelectronVolt", new Unit(
+            SingularName: "KiloelectronVolt",
+            PluralName: "KiloelectronVolts",
             Abbreviations: ["keV"],
-            Factor: 1,
+            Factor: 1.602176634E-16,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1.602176634e-19) / 1000,
-            FromUnitToBase: static val => (val * 1.602176634e-19) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaElectronVolt
-        EnergyUnits.TryAdd("MegaElectronVolt", new Unit(
-            SingularName: "MegaElectronVolt",
-            PluralName: "MegaElectronVolts",
+        // MegaelectronVolt
+        EnergyUnits.TryAdd("MegaelectronVolt", new Unit(
+            SingularName: "MegaelectronVolt",
+            PluralName: "MegaelectronVolts",
             Abbreviations: ["MeV"],
-            Factor: 1,
+            Factor: 1.6021766339999998E-13,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1.602176634e-19) / 1000000,
-            FromUnitToBase: static val => (val * 1.602176634e-19) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaElectronVolt
-        EnergyUnits.TryAdd("GigaElectronVolt", new Unit(
-            SingularName: "GigaElectronVolt",
-            PluralName: "GigaElectronVolts",
+        // GigaelectronVolt
+        EnergyUnits.TryAdd("GigaelectronVolt", new Unit(
+            SingularName: "GigaelectronVolt",
+            PluralName: "GigaelectronVolts",
             Abbreviations: ["GeV"],
-            Factor: 1,
+            Factor: 1.6021766339999998E-10,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1.602176634e-19) / 1000000000,
-            FromUnitToBase: static val => (val * 1.602176634e-19) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // TeraElectronVolt
-        EnergyUnits.TryAdd("TeraElectronVolt", new Unit(
-            SingularName: "TeraElectronVolt",
-            PluralName: "TeraElectronVolts",
+        // TeraelectronVolt
+        EnergyUnits.TryAdd("TeraelectronVolt", new Unit(
+            SingularName: "TeraelectronVolt",
+            PluralName: "TeraelectronVolts",
             Abbreviations: ["TeV"],
-            Factor: 1,
+            Factor: 1.602176634E-07,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1.602176634e-19) / 1000000000000,
-            FromUnitToBase: static val => (val * 1.602176634e-19) * 1000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // FootPound
         EnergyUnits.TryAdd("FootPound", new Unit(
@@ -271,79 +271,79 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Pound-foot_(torque)",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // Erg
         EnergyUnits.TryAdd("Erg", new Unit(
             SingularName: "Erg",
             PluralName: "Ergs",
             Abbreviations: ["erg"],
-            Factor: 1,
+            Factor: 1E-07,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e-7,
-            FromUnitToBase: static val => val * 1e-7,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Erg",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // WattHour
         EnergyUnits.TryAdd("WattHour", new Unit(
             SingularName: "WattHour",
             PluralName: "WattHours",
             Abbreviations: ["Wh"],
-            Factor: 1,
+            Factor: 3600,
             Offset: 0,
-            FromBaseToUnit: static val => val / 3600d,
-            FromUnitToBase: static val => val * 3600d,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloWattHour
-        EnergyUnits.TryAdd("KiloWattHour", new Unit(
-            SingularName: "KiloWattHour",
-            PluralName: "KiloWattHours",
+        // KilowattHour
+        EnergyUnits.TryAdd("KilowattHour", new Unit(
+            SingularName: "KilowattHour",
+            PluralName: "KilowattHours",
             Abbreviations: ["kWh"],
-            Factor: 1,
+            Factor: 3600000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 3600d) / 1000,
-            FromUnitToBase: static val => (val * 3600d) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaWattHour
-        EnergyUnits.TryAdd("MegaWattHour", new Unit(
-            SingularName: "MegaWattHour",
-            PluralName: "MegaWattHours",
+        // MegawattHour
+        EnergyUnits.TryAdd("MegawattHour", new Unit(
+            SingularName: "MegawattHour",
+            PluralName: "MegawattHours",
             Abbreviations: ["MWh"],
-            Factor: 1,
+            Factor: 3600000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 3600d) / 1000000,
-            FromUnitToBase: static val => (val * 3600d) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaWattHour
-        EnergyUnits.TryAdd("GigaWattHour", new Unit(
-            SingularName: "GigaWattHour",
-            PluralName: "GigaWattHours",
+        // GigawattHour
+        EnergyUnits.TryAdd("GigawattHour", new Unit(
+            SingularName: "GigawattHour",
+            PluralName: "GigawattHours",
             Abbreviations: ["GWh"],
-            Factor: 1,
+            Factor: 3600000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 3600d) / 1000000000,
-            FromUnitToBase: static val => (val * 3600d) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // TeraWattHour
-        EnergyUnits.TryAdd("TeraWattHour", new Unit(
-            SingularName: "TeraWattHour",
-            PluralName: "TeraWattHours",
+        // TerawattHour
+        EnergyUnits.TryAdd("TerawattHour", new Unit(
+            SingularName: "TerawattHour",
+            PluralName: "TerawattHours",
             Abbreviations: ["TWh"],
-            Factor: 1,
+            Factor: 3600000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 3600d) / 1000000000000,
-            FromUnitToBase: static val => (val * 3600d) * 1000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // WattDay
         EnergyUnits.TryAdd("WattDay", new Unit(
@@ -352,130 +352,130 @@ public static partial class UoMRegistry {
             Abbreviations: ["Wd"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (24 * 3600d),
-            FromUnitToBase: static val => val * 24 * 3600d,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (24 * 3600d)),
+            FromUnitToBase: static val => (val * 24 * 3600d),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloWattDay
-        EnergyUnits.TryAdd("KiloWattDay", new Unit(
-            SingularName: "KiloWattDay",
-            PluralName: "KiloWattDays",
+        // KilowattDay
+        EnergyUnits.TryAdd("KilowattDay", new Unit(
+            SingularName: "KilowattDay",
+            PluralName: "KilowattDays",
             Abbreviations: ["kWd"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / (24 * 3600d)) / 1000,
-            FromUnitToBase: static val => (val * 24 * 3600d) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / (24 * 3600d)) / 1000),
+            FromUnitToBase: static val => ((val * 1000) * 24 * 3600d),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaWattDay
-        EnergyUnits.TryAdd("MegaWattDay", new Unit(
-            SingularName: "MegaWattDay",
-            PluralName: "MegaWattDays",
+        // MegawattDay
+        EnergyUnits.TryAdd("MegawattDay", new Unit(
+            SingularName: "MegawattDay",
+            PluralName: "MegawattDays",
             Abbreviations: ["MWd"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / (24 * 3600d)) / 1000000,
-            FromUnitToBase: static val => (val * 24 * 3600d) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / (24 * 3600d)) / 1000000),
+            FromUnitToBase: static val => ((val * 1000000) * 24 * 3600d),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaWattDay
-        EnergyUnits.TryAdd("GigaWattDay", new Unit(
-            SingularName: "GigaWattDay",
-            PluralName: "GigaWattDays",
+        // GigawattDay
+        EnergyUnits.TryAdd("GigawattDay", new Unit(
+            SingularName: "GigawattDay",
+            PluralName: "GigawattDays",
             Abbreviations: ["GWd"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / (24 * 3600d)) / 1000000000,
-            FromUnitToBase: static val => (val * 24 * 3600d) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / (24 * 3600d)) / 1000000000),
+            FromUnitToBase: static val => ((val * 1000000000) * 24 * 3600d),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // TeraWattDay
-        EnergyUnits.TryAdd("TeraWattDay", new Unit(
-            SingularName: "TeraWattDay",
-            PluralName: "TeraWattDays",
+        // TerawattDay
+        EnergyUnits.TryAdd("TerawattDay", new Unit(
+            SingularName: "TerawattDay",
+            PluralName: "TerawattDays",
             Abbreviations: ["TWd"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / (24 * 3600d)) / 1000000000000,
-            FromUnitToBase: static val => (val * 24 * 3600d) * 1000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / (24 * 3600d)) / 1000000000000),
+            FromUnitToBase: static val => ((val * 1000000000000) * 24 * 3600d),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // ThermEc
         EnergyUnits.TryAdd("ThermEc", new Unit(
             SingularName: "ThermEc",
             PluralName: "ThermsEc",
             Abbreviations: ["th (E.C.)"],
-            Factor: 1,
+            Factor: 105505585.262,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1.05505585262e8,
-            FromUnitToBase: static val => val * 1.05505585262e8,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Therm",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
-        // DecaThermEc
-        EnergyUnits.TryAdd("DecaThermEc", new Unit(
-            SingularName: "DecaThermEc",
-            PluralName: "DecaThermsEc",
+        // DecathermEc
+        EnergyUnits.TryAdd("DecathermEc", new Unit(
+            SingularName: "DecathermEc",
+            PluralName: "DecathermsEc",
             Abbreviations: ["Dth (E.C.)"],
-            Factor: 1,
+            Factor: 1055055852.6199999,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1.05505585262e8) / 10,
-            FromUnitToBase: static val => (val * 1.05505585262e8) * 10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // ThermUs
         EnergyUnits.TryAdd("ThermUs", new Unit(
             SingularName: "ThermUs",
             PluralName: "ThermsUs",
             Abbreviations: ["th (U.S.)"],
-            Factor: 1,
+            Factor: 105480400,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1.054804e8,
-            FromUnitToBase: static val => val * 1.054804e8,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Therm",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
-        // DecaThermUs
-        EnergyUnits.TryAdd("DecaThermUs", new Unit(
-            SingularName: "DecaThermUs",
-            PluralName: "DecaThermsUs",
+        // DecathermUs
+        EnergyUnits.TryAdd("DecathermUs", new Unit(
+            SingularName: "DecathermUs",
+            PluralName: "DecathermsUs",
             Abbreviations: ["Dth (U.S.)"],
-            Factor: 1,
+            Factor: 1054804000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1.054804e8) / 10,
-            FromUnitToBase: static val => (val * 1.054804e8) * 10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // ThermImperial
         EnergyUnits.TryAdd("ThermImperial", new Unit(
             SingularName: "ThermImperial",
             PluralName: "ThermsImperial",
             Abbreviations: ["th (imp.)"],
-            Factor: 1,
+            Factor: 105505585.257348,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1.05505585257348e8,
-            FromUnitToBase: static val => val * 1.05505585257348e8,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Therm",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
-        // DecaThermImperial
-        EnergyUnits.TryAdd("DecaThermImperial", new Unit(
-            SingularName: "DecaThermImperial",
-            PluralName: "DecaThermsImperial",
+        // DecathermImperial
+        EnergyUnits.TryAdd("DecathermImperial", new Unit(
+            SingularName: "DecathermImperial",
+            PluralName: "DecathermsImperial",
             Abbreviations: ["Dth (imp.)"],
-            Factor: 1,
+            Factor: 1055055852.57348,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1.05505585257348e8) / 10,
-            FromUnitToBase: static val => (val * 1.05505585257348e8) * 10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // HorsepowerHour
         EnergyUnits.TryAdd("HorsepowerHour", new Unit(
@@ -484,10 +484,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["hp·h"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (76.0402249 * 9.80665 * 3600),
-            FromUnitToBase: static val => val * 76.0402249 * 9.80665 * 3600,
+            FromBaseToUnit: static val => (val / (76.0402249 * 9.80665 * 3600)),
+            FromUnitToBase: static val => (val * 76.0402249 * 9.80665 * 3600),
             Remarks: "https://en.wikipedia.org/wiki/Horsepower-hour",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -496,7 +496,7 @@ public static partial class UoMRegistry {
             "The joule, symbol J, is a derived unit of energy, work, or amount of heat in the International System of Units. It is equal to the energy transferred (or work done) when applying a force of one newton through a distance of one metre (1 newton metre or N·m), or in passing an electric current of one ampere through a resistance of one ohm for one second. Many other units of energy are included. Please do not confuse this definition of the calorie with the one colloquially used by the food industry, the large calorie, which is equivalent to 1 kcal. Thermochemical definition of the calorie is used. For BTU, the IT definition is used.",
             EnergyUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -2 },
-            "",
+            null,
             false,
             1
         );

@@ -18,80 +18,80 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PicoOhmMeter
-        ElectricResistivityUnits.TryAdd("PicoOhmMeter", new Unit(
-            SingularName: "PicoOhmMeter",
-            PluralName: "PicoOhmMeters",
+        // PicoohmMeter
+        ElectricResistivityUnits.TryAdd("PicoohmMeter", new Unit(
+            SingularName: "PicoohmMeter",
+            PluralName: "PicoohmMeters",
             Abbreviations: ["pΩ·m"],
-            Factor: 1,
+            Factor: 1E-12,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-12,
-            FromUnitToBase: static val => (val) * 1E-12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoOhmMeter
-        ElectricResistivityUnits.TryAdd("NanoOhmMeter", new Unit(
-            SingularName: "NanoOhmMeter",
-            PluralName: "NanoOhmMeters",
+        // NanoohmMeter
+        ElectricResistivityUnits.TryAdd("NanoohmMeter", new Unit(
+            SingularName: "NanoohmMeter",
+            PluralName: "NanoohmMeters",
             Abbreviations: ["nΩ·m"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroOhmMeter
-        ElectricResistivityUnits.TryAdd("MicroOhmMeter", new Unit(
-            SingularName: "MicroOhmMeter",
-            PluralName: "MicroOhmMeters",
+        // MicroohmMeter
+        ElectricResistivityUnits.TryAdd("MicroohmMeter", new Unit(
+            SingularName: "MicroohmMeter",
+            PluralName: "MicroohmMeters",
             Abbreviations: ["µΩ·m"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliOhmMeter
-        ElectricResistivityUnits.TryAdd("MilliOhmMeter", new Unit(
-            SingularName: "MilliOhmMeter",
-            PluralName: "MilliOhmMeters",
+        // MilliohmMeter
+        ElectricResistivityUnits.TryAdd("MilliohmMeter", new Unit(
+            SingularName: "MilliohmMeter",
+            PluralName: "MilliohmMeters",
             Abbreviations: ["mΩ·m"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloOhmMeter
-        ElectricResistivityUnits.TryAdd("KiloOhmMeter", new Unit(
-            SingularName: "KiloOhmMeter",
-            PluralName: "KiloOhmMeters",
+        // KiloohmMeter
+        ElectricResistivityUnits.TryAdd("KiloohmMeter", new Unit(
+            SingularName: "KiloohmMeter",
+            PluralName: "KiloohmMeters",
             Abbreviations: ["kΩ·m"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaOhmMeter
-        ElectricResistivityUnits.TryAdd("MegaOhmMeter", new Unit(
-            SingularName: "MegaOhmMeter",
-            PluralName: "MegaOhmMeters",
+        // MegaohmMeter
+        ElectricResistivityUnits.TryAdd("MegaohmMeter", new Unit(
+            SingularName: "MegaohmMeter",
+            PluralName: "MegaohmMeters",
             Abbreviations: ["MΩ·m"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // OhmCentimeter
         ElectricResistivityUnits.TryAdd("OhmCentimeter", new Unit(
@@ -102,80 +102,80 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PicoOhmCentimeter
-        ElectricResistivityUnits.TryAdd("PicoOhmCentimeter", new Unit(
-            SingularName: "PicoOhmCentimeter",
-            PluralName: "PicoOhmsCentimeter",
+        // PicoohmCentimeter
+        ElectricResistivityUnits.TryAdd("PicoohmCentimeter", new Unit(
+            SingularName: "PicoohmCentimeter",
+            PluralName: "PicoohmsCentimeter",
             Abbreviations: ["pΩ·cm"],
-            Factor: 1,
+            Factor: 1E-14,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 100) / 1E-12,
-            FromUnitToBase: static val => (val / 100) * 1E-12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoOhmCentimeter
-        ElectricResistivityUnits.TryAdd("NanoOhmCentimeter", new Unit(
-            SingularName: "NanoOhmCentimeter",
-            PluralName: "NanoOhmsCentimeter",
+        // NanoohmCentimeter
+        ElectricResistivityUnits.TryAdd("NanoohmCentimeter", new Unit(
+            SingularName: "NanoohmCentimeter",
+            PluralName: "NanoohmsCentimeter",
             Abbreviations: ["nΩ·cm"],
-            Factor: 1,
+            Factor: 1.0000000000000001E-11,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 100) / 1E-09,
-            FromUnitToBase: static val => (val / 100) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroOhmCentimeter
-        ElectricResistivityUnits.TryAdd("MicroOhmCentimeter", new Unit(
-            SingularName: "MicroOhmCentimeter",
-            PluralName: "MicroOhmsCentimeter",
+        // MicroohmCentimeter
+        ElectricResistivityUnits.TryAdd("MicroohmCentimeter", new Unit(
+            SingularName: "MicroohmCentimeter",
+            PluralName: "MicroohmsCentimeter",
             Abbreviations: ["µΩ·cm"],
-            Factor: 1,
+            Factor: 1E-08,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 100) / 1E-06,
-            FromUnitToBase: static val => (val / 100) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliOhmCentimeter
-        ElectricResistivityUnits.TryAdd("MilliOhmCentimeter", new Unit(
-            SingularName: "MilliOhmCentimeter",
-            PluralName: "MilliOhmsCentimeter",
+        // MilliohmCentimeter
+        ElectricResistivityUnits.TryAdd("MilliohmCentimeter", new Unit(
+            SingularName: "MilliohmCentimeter",
+            PluralName: "MilliohmsCentimeter",
             Abbreviations: ["mΩ·cm"],
-            Factor: 1,
+            Factor: 1E-05,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 100) / 0.001,
-            FromUnitToBase: static val => (val / 100) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloOhmCentimeter
-        ElectricResistivityUnits.TryAdd("KiloOhmCentimeter", new Unit(
-            SingularName: "KiloOhmCentimeter",
-            PluralName: "KiloOhmsCentimeter",
+        // KiloohmCentimeter
+        ElectricResistivityUnits.TryAdd("KiloohmCentimeter", new Unit(
+            SingularName: "KiloohmCentimeter",
+            PluralName: "KiloohmsCentimeter",
             Abbreviations: ["kΩ·cm"],
-            Factor: 1,
+            Factor: 10,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 100) / 1000,
-            FromUnitToBase: static val => (val / 100) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaOhmCentimeter
-        ElectricResistivityUnits.TryAdd("MegaOhmCentimeter", new Unit(
-            SingularName: "MegaOhmCentimeter",
-            PluralName: "MegaOhmsCentimeter",
+        // MegaohmCentimeter
+        ElectricResistivityUnits.TryAdd("MegaohmCentimeter", new Unit(
+            SingularName: "MegaohmCentimeter",
+            PluralName: "MegaohmsCentimeter",
             Abbreviations: ["MΩ·cm"],
-            Factor: 1,
+            Factor: 10000,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 100) / 1000000,
-            FromUnitToBase: static val => (val / 100) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -184,7 +184,7 @@ public static partial class UoMRegistry {
             "Electrical resistivity (also known as resistivity, specific electrical resistance, or volume resistivity) is a fundamental property that quantifies how strongly a given material opposes the flow of electric current.",
             ElectricResistivityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 3, ["M"] = 1, ["T"] = -3, ["I"] = -2 },
-            "",
+            null,
             false,
             1
         );

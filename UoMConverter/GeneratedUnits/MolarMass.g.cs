@@ -14,120 +14,120 @@ public static partial class UoMRegistry {
             SingularName: "GramPerMole",
             PluralName: "GramsPerMole",
             Abbreviations: ["g/mol"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e3,
-            FromUnitToBase: static val => val / 1e3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoGramPerMole
-        MolarMassUnits.TryAdd("NanoGramPerMole", new Unit(
-            SingularName: "NanoGramPerMole",
-            PluralName: "NanoGramsPerMole",
+        // NanogramPerMole
+        MolarMassUnits.TryAdd("NanogramPerMole", new Unit(
+            SingularName: "NanogramPerMole",
+            PluralName: "NanogramsPerMole",
             Abbreviations: ["ng/mol"],
-            Factor: 1,
+            Factor: 1.0000000000000002E-12,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 1E-09,
-            FromUnitToBase: static val => (val / 1e3) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroGramPerMole
-        MolarMassUnits.TryAdd("MicroGramPerMole", new Unit(
-            SingularName: "MicroGramPerMole",
-            PluralName: "MicroGramsPerMole",
+        // MicrogramPerMole
+        MolarMassUnits.TryAdd("MicrogramPerMole", new Unit(
+            SingularName: "MicrogramPerMole",
+            PluralName: "MicrogramsPerMole",
             Abbreviations: ["µg/mol"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 1E-06,
-            FromUnitToBase: static val => (val / 1e3) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliGramPerMole
-        MolarMassUnits.TryAdd("MilliGramPerMole", new Unit(
-            SingularName: "MilliGramPerMole",
-            PluralName: "MilliGramsPerMole",
+        // MilligramPerMole
+        MolarMassUnits.TryAdd("MilligramPerMole", new Unit(
+            SingularName: "MilligramPerMole",
+            PluralName: "MilligramsPerMole",
             Abbreviations: ["mg/mol"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 0.001,
-            FromUnitToBase: static val => (val / 1e3) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiGramPerMole
-        MolarMassUnits.TryAdd("CentiGramPerMole", new Unit(
-            SingularName: "CentiGramPerMole",
-            PluralName: "CentiGramsPerMole",
+        // CentigramPerMole
+        MolarMassUnits.TryAdd("CentigramPerMole", new Unit(
+            SingularName: "CentigramPerMole",
+            PluralName: "CentigramsPerMole",
             Abbreviations: ["cg/mol"],
-            Factor: 1,
+            Factor: 1E-05,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 0.01,
-            FromUnitToBase: static val => (val / 1e3) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciGramPerMole
-        MolarMassUnits.TryAdd("DeciGramPerMole", new Unit(
-            SingularName: "DeciGramPerMole",
-            PluralName: "DeciGramsPerMole",
+        // DecigramPerMole
+        MolarMassUnits.TryAdd("DecigramPerMole", new Unit(
+            SingularName: "DecigramPerMole",
+            PluralName: "DecigramsPerMole",
             Abbreviations: ["dg/mol"],
-            Factor: 1,
+            Factor: 0.0001,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 0.1,
-            FromUnitToBase: static val => (val / 1e3) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DecaGramPerMole
-        MolarMassUnits.TryAdd("DecaGramPerMole", new Unit(
-            SingularName: "DecaGramPerMole",
-            PluralName: "DecaGramsPerMole",
+        // DecagramPerMole
+        MolarMassUnits.TryAdd("DecagramPerMole", new Unit(
+            SingularName: "DecagramPerMole",
+            PluralName: "DecagramsPerMole",
             Abbreviations: ["dag/mol"],
-            Factor: 1,
+            Factor: 0.01,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 10,
-            FromUnitToBase: static val => (val / 1e3) * 10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // HectoGramPerMole
-        MolarMassUnits.TryAdd("HectoGramPerMole", new Unit(
-            SingularName: "HectoGramPerMole",
-            PluralName: "HectoGramsPerMole",
+        // HectogramPerMole
+        MolarMassUnits.TryAdd("HectogramPerMole", new Unit(
+            SingularName: "HectogramPerMole",
+            PluralName: "HectogramsPerMole",
             Abbreviations: ["hg/mol"],
-            Factor: 1,
+            Factor: 0.1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 100,
-            FromUnitToBase: static val => (val / 1e3) * 100,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloGramPerMole
-        MolarMassUnits.TryAdd("KiloGramPerMole", new Unit(
-            SingularName: "KiloGramPerMole",
-            PluralName: "KiloGramsPerMole",
+        // KilogramPerMole
+        MolarMassUnits.TryAdd("KilogramPerMole", new Unit(
+            SingularName: "KilogramPerMole",
+            PluralName: "KilogramsPerMole",
             Abbreviations: ["kg/mol"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 1000,
-            FromUnitToBase: static val => (val / 1e3) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // KilogramPerKilomole
         MolarMassUnits.TryAdd("KilogramPerKilomole", new Unit(
             SingularName: "KilogramPerKilomole",
             PluralName: "KilogramsPerKilomole",
             Abbreviations: ["kg/kmol"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e3,
-            FromUnitToBase: static val => val / 1e3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundPerMole
         MolarMassUnits.TryAdd("PoundPerMole", new Unit(
@@ -138,32 +138,32 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloPoundPerMole
-        MolarMassUnits.TryAdd("KiloPoundPerMole", new Unit(
-            SingularName: "KiloPoundPerMole",
-            PluralName: "KiloPoundsPerMole",
+        // KilopoundPerMole
+        MolarMassUnits.TryAdd("KilopoundPerMole", new Unit(
+            SingularName: "KilopoundPerMole",
+            PluralName: "KilopoundsPerMole",
             Abbreviations: ["klb/mol"],
-            Factor: 1,
+            Factor: 453.59237,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 0.45359237) / 1000,
-            FromUnitToBase: static val => (val * 0.45359237) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaPoundPerMole
-        MolarMassUnits.TryAdd("MegaPoundPerMole", new Unit(
-            SingularName: "MegaPoundPerMole",
-            PluralName: "MegaPoundsPerMole",
+        // MegapoundPerMole
+        MolarMassUnits.TryAdd("MegapoundPerMole", new Unit(
+            SingularName: "MegapoundPerMole",
+            PluralName: "MegapoundsPerMole",
             Abbreviations: ["Mlb/mol"],
-            Factor: 1,
+            Factor: 453592.37,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 0.45359237) / 1000000,
-            FromUnitToBase: static val => (val * 0.45359237) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -172,7 +172,7 @@ public static partial class UoMRegistry {
             "In chemistry, the molar mass M is a physical property defined as the mass of a given substance (chemical element or chemical compound) divided by the amount of substance.",
             MolarMassUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["M"] = 1, ["N"] = -1 },
-            "",
+            null,
             false,
             1
         );

@@ -18,80 +18,80 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoMeterPerSecondSquared
-        AccelerationUnits.TryAdd("NanoMeterPerSecondSquared", new Unit(
-            SingularName: "NanoMeterPerSecondSquared",
-            PluralName: "NanoMetersPerSecondSquared",
+        // NanometerPerSecondSquared
+        AccelerationUnits.TryAdd("NanometerPerSecondSquared", new Unit(
+            SingularName: "NanometerPerSecondSquared",
+            PluralName: "NanometersPerSecondSquared",
             Abbreviations: ["nm/s²"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroMeterPerSecondSquared
-        AccelerationUnits.TryAdd("MicroMeterPerSecondSquared", new Unit(
-            SingularName: "MicroMeterPerSecondSquared",
-            PluralName: "MicroMetersPerSecondSquared",
+        // MicrometerPerSecondSquared
+        AccelerationUnits.TryAdd("MicrometerPerSecondSquared", new Unit(
+            SingularName: "MicrometerPerSecondSquared",
+            PluralName: "MicrometersPerSecondSquared",
             Abbreviations: ["µm/s²"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliMeterPerSecondSquared
-        AccelerationUnits.TryAdd("MilliMeterPerSecondSquared", new Unit(
-            SingularName: "MilliMeterPerSecondSquared",
-            PluralName: "MilliMetersPerSecondSquared",
+        // MillimeterPerSecondSquared
+        AccelerationUnits.TryAdd("MillimeterPerSecondSquared", new Unit(
+            SingularName: "MillimeterPerSecondSquared",
+            PluralName: "MillimetersPerSecondSquared",
             Abbreviations: ["mm/s²"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiMeterPerSecondSquared
-        AccelerationUnits.TryAdd("CentiMeterPerSecondSquared", new Unit(
-            SingularName: "CentiMeterPerSecondSquared",
-            PluralName: "CentiMetersPerSecondSquared",
+        // CentimeterPerSecondSquared
+        AccelerationUnits.TryAdd("CentimeterPerSecondSquared", new Unit(
+            SingularName: "CentimeterPerSecondSquared",
+            PluralName: "CentimetersPerSecondSquared",
             Abbreviations: ["cm/s²"],
-            Factor: 1,
+            Factor: 0.01,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.01,
-            FromUnitToBase: static val => (val) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciMeterPerSecondSquared
-        AccelerationUnits.TryAdd("DeciMeterPerSecondSquared", new Unit(
-            SingularName: "DeciMeterPerSecondSquared",
-            PluralName: "DeciMetersPerSecondSquared",
+        // DecimeterPerSecondSquared
+        AccelerationUnits.TryAdd("DecimeterPerSecondSquared", new Unit(
+            SingularName: "DecimeterPerSecondSquared",
+            PluralName: "DecimetersPerSecondSquared",
             Abbreviations: ["dm/s²"],
-            Factor: 1,
+            Factor: 0.1,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.1,
-            FromUnitToBase: static val => (val) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloMeterPerSecondSquared
-        AccelerationUnits.TryAdd("KiloMeterPerSecondSquared", new Unit(
-            SingularName: "KiloMeterPerSecondSquared",
-            PluralName: "KiloMetersPerSecondSquared",
+        // KilometerPerSecondSquared
+        AccelerationUnits.TryAdd("KilometerPerSecondSquared", new Unit(
+            SingularName: "KilometerPerSecondSquared",
+            PluralName: "KilometersPerSecondSquared",
             Abbreviations: ["km/s²"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // InchPerSecondSquared
         AccelerationUnits.TryAdd("InchPerSecondSquared", new Unit(
@@ -102,8 +102,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // FootPerSecondSquared
         AccelerationUnits.TryAdd("FootPerSecondSquared", new Unit(
@@ -114,8 +114,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // KnotPerSecond
         AccelerationUnits.TryAdd("KnotPerSecond", new Unit(
@@ -124,10 +124,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["kn/s"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (1852.0 / 3600.0),
-            FromUnitToBase: static val => val * (1852.0 / 3600.0),
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (1852.0 / 3600.0)),
+            FromUnitToBase: static val => (val * (1852.0 / 3600.0)),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // KnotPerMinute
         AccelerationUnits.TryAdd("KnotPerMinute", new Unit(
@@ -136,10 +136,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["kn/min"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 60 / (1852.0 / 3600.0),
-            FromUnitToBase: static val => val * (1852.0 / 3600.0) / 60,
+            FromBaseToUnit: static val => (val * 60 / (1852.0 / 3600.0)),
+            FromUnitToBase: static val => (val * (1852.0 / 3600.0) / 60),
             Remarks: "https://en.wikipedia.org/wiki/Knot_(unit)",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // KnotPerHour
         AccelerationUnits.TryAdd("KnotPerHour", new Unit(
@@ -148,10 +148,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["kn/h"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 3600 / (1852.0 / 3600.0),
-            FromUnitToBase: static val => val * (1852.0 / 3600.0) / 3600,
+            FromBaseToUnit: static val => (val * 3600 / (1852.0 / 3600.0)),
+            FromUnitToBase: static val => (val * (1852.0 / 3600.0) / 3600),
             Remarks: "https://en.wikipedia.org/wiki/Knot_(unit)",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // StandardGravity
         AccelerationUnits.TryAdd("StandardGravity", new Unit(
@@ -162,20 +162,20 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliStandardGravity
-        AccelerationUnits.TryAdd("MilliStandardGravity", new Unit(
-            SingularName: "MilliStandardGravity",
-            PluralName: "MilliStandardGravity",
+        // MillistandardGravity
+        AccelerationUnits.TryAdd("MillistandardGravity", new Unit(
+            SingularName: "MillistandardGravity",
+            PluralName: "MillistandardGravity",
             Abbreviations: ["mg"],
-            Factor: 1,
+            Factor: 0.00980665,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 9.80665) / 0.001,
-            FromUnitToBase: static val => (val * 9.80665) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -184,7 +184,7 @@ public static partial class UoMRegistry {
             "Acceleration, in physics, is the rate at which the velocity of an object changes over time. An object's acceleration is the net result of any and all forces acting on the object, as described by Newton's Second Law. The SI unit for acceleration is the Meter per second squared (m/s²). Accelerations are vector quantities (they have magnitude and direction) and add according to the parallelogram law. As a vector, the calculated net force is equal to the product of the object's mass (a scalar quantity) and the acceleration.",
             AccelerationUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 1, ["T"] = -2 },
-            "",
+            null,
             false,
             1
         );

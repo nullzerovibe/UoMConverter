@@ -18,32 +18,32 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // InverseCentimeter
         ReciprocalLengthUnits.TryAdd("InverseCentimeter", new Unit(
             SingularName: "InverseCentimeter",
             PluralName: "InverseCentimeters",
             Abbreviations: ["cm⁻¹", "1/cm"],
-            Factor: 1,
+            Factor: 100,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e2,
-            FromUnitToBase: static val => val * 1e2,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // InverseMillimeter
         ReciprocalLengthUnits.TryAdd("InverseMillimeter", new Unit(
             SingularName: "InverseMillimeter",
             PluralName: "InverseMillimeters",
             Abbreviations: ["mm⁻¹", "1/mm"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e3,
-            FromUnitToBase: static val => val * 1e3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // InverseMile
         ReciprocalLengthUnits.TryAdd("InverseMile", new Unit(
@@ -54,8 +54,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // InverseYard
         ReciprocalLengthUnits.TryAdd("InverseYard", new Unit(
@@ -66,8 +66,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // InverseFoot
         ReciprocalLengthUnits.TryAdd("InverseFoot", new Unit(
@@ -78,8 +78,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // InverseUsSurveyFoot
         ReciprocalLengthUnits.TryAdd("InverseUsSurveyFoot", new Unit(
@@ -88,46 +88,46 @@ public static partial class UoMRegistry {
             Abbreviations: ["ftUS⁻¹", "1/ftUS"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1200 / 3937,
-            FromUnitToBase: static val => val * 3937 / 1200,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 1200 / 3937),
+            FromUnitToBase: static val => (val * 3937 / 1200),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // InverseInch
         ReciprocalLengthUnits.TryAdd("InverseInch", new Unit(
             SingularName: "InverseInch",
             PluralName: "InverseInches",
             Abbreviations: ["in⁻¹", "1/in"],
-            Factor: 1,
+            Factor: 39.37007874015748,
             Offset: 0,
-            FromBaseToUnit: static val => val * 2.54e-2,
-            FromUnitToBase: static val => val / 2.54e-2,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // InverseMil
         ReciprocalLengthUnits.TryAdd("InverseMil", new Unit(
             SingularName: "InverseMil",
             PluralName: "InverseMils",
             Abbreviations: ["mil⁻¹", "1/mil"],
-            Factor: 1,
+            Factor: 39370.07874015748,
             Offset: 0,
-            FromBaseToUnit: static val => val * 2.54e-5,
-            FromUnitToBase: static val => val / 2.54e-5,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // InverseMicroinch
         ReciprocalLengthUnits.TryAdd("InverseMicroinch", new Unit(
             SingularName: "InverseMicroinch",
             PluralName: "InverseMicroinches",
             Abbreviations: ["µin⁻¹", "1/µin"],
-            Factor: 1,
+            Factor: 39370078.740157485,
             Offset: 0,
-            FromBaseToUnit: static val => val * 2.54e-8,
-            FromUnitToBase: static val => val / 2.54e-8,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -136,7 +136,7 @@ public static partial class UoMRegistry {
             "Reciprocal (Inverse) Length is used in various fields of science and mathematics. It is defined as the inverse value of a length unit.",
             ReciprocalLengthUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = -1 },
-            "",
+            null,
             false,
             1
         );

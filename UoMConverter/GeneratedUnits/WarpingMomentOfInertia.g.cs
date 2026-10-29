@@ -18,44 +18,44 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DecimeterToTheSixth
         WarpingMomentOfInertiaUnits.TryAdd("DecimeterToTheSixth", new Unit(
             SingularName: "DecimeterToTheSixth",
             PluralName: "DecimetersToTheSixth",
             Abbreviations: ["dm⁶"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e6,
-            FromUnitToBase: static val => val / 1e6,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CentimeterToTheSixth
         WarpingMomentOfInertiaUnits.TryAdd("CentimeterToTheSixth", new Unit(
             SingularName: "CentimeterToTheSixth",
             PluralName: "CentimetersToTheSixth",
             Abbreviations: ["cm⁶"],
-            Factor: 1,
+            Factor: 1E-12,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e12,
-            FromUnitToBase: static val => val / 1e12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // MillimeterToTheSixth
         WarpingMomentOfInertiaUnits.TryAdd("MillimeterToTheSixth", new Unit(
             SingularName: "MillimeterToTheSixth",
             PluralName: "MillimetersToTheSixth",
             Abbreviations: ["mm⁶"],
-            Factor: 1,
+            Factor: 1E-18,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e18,
-            FromUnitToBase: static val => val / 1e18,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // FootToTheSixth
         WarpingMomentOfInertiaUnits.TryAdd("FootToTheSixth", new Unit(
@@ -66,8 +66,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // InchToTheSixth
         WarpingMomentOfInertiaUnits.TryAdd("InchToTheSixth", new Unit(
@@ -78,8 +78,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -88,7 +88,7 @@ public static partial class UoMRegistry {
             "A geometric property of an area that is used to determine the warping stress.",
             WarpingMomentOfInertiaUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 6 },
-            "",
+            null,
             false,
             1
         );

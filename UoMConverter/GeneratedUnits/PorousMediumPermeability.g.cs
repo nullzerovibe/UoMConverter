@@ -14,36 +14,36 @@ public static partial class UoMRegistry {
             SingularName: "Darcy",
             PluralName: "Darcys",
             Abbreviations: ["D"],
-            Factor: 1,
+            Factor: 9.869233E-13,
             Offset: 0,
-            FromBaseToUnit: static val => val / 9.869233e-13,
-            FromUnitToBase: static val => val * 9.869233e-13,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Darcy_(unit)",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
-        // MicroDarcy
-        PorousMediumPermeabilityUnits.TryAdd("MicroDarcy", new Unit(
-            SingularName: "MicroDarcy",
-            PluralName: "MicroDarcys",
+        // Microdarcy
+        PorousMediumPermeabilityUnits.TryAdd("Microdarcy", new Unit(
+            SingularName: "Microdarcy",
+            PluralName: "Microdarcys",
             Abbreviations: ["µD"],
-            Factor: 1,
+            Factor: 9.869233E-19,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 9.869233e-13) / 1E-06,
-            FromUnitToBase: static val => (val * 9.869233e-13) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliDarcy
-        PorousMediumPermeabilityUnits.TryAdd("MilliDarcy", new Unit(
-            SingularName: "MilliDarcy",
-            PluralName: "MilliDarcys",
+        // Millidarcy
+        PorousMediumPermeabilityUnits.TryAdd("Millidarcy", new Unit(
+            SingularName: "Millidarcy",
+            PluralName: "Millidarcys",
             Abbreviations: ["mD"],
-            Factor: 1,
+            Factor: 9.869233E-16,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 9.869233e-13) / 0.001,
-            FromUnitToBase: static val => (val * 9.869233e-13) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // SquareMeter
         PorousMediumPermeabilityUnits.TryAdd("SquareMeter", new Unit(
@@ -54,20 +54,20 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // SquareCentimeter
         PorousMediumPermeabilityUnits.TryAdd("SquareCentimeter", new Unit(
             SingularName: "SquareCentimeter",
             PluralName: "SquareCentimeters",
             Abbreviations: ["cm²"],
-            Factor: 1,
+            Factor: 0.0001,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e-4,
-            FromUnitToBase: static val => val * 1e-4,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -76,7 +76,7 @@ public static partial class UoMRegistry {
             "",
             PorousMediumPermeabilityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 2 },
-            "",
+            null,
             false,
             1
         );

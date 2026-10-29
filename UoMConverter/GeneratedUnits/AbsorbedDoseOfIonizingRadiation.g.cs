@@ -19,151 +19,151 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Gray_(unit)",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
-        // FemtoGray
-        AbsorbedDoseOfIonizingRadiationUnits.TryAdd("FemtoGray", new Unit(
-            SingularName: "FemtoGray",
-            PluralName: "FemtoGrays",
+        // Femtogray
+        AbsorbedDoseOfIonizingRadiationUnits.TryAdd("Femtogray", new Unit(
+            SingularName: "Femtogray",
+            PluralName: "Femtograys",
             Abbreviations: ["fGy"],
-            Factor: 1,
+            Factor: 1E-15,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-15,
-            FromUnitToBase: static val => (val) * 1E-15,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PicoGray
-        AbsorbedDoseOfIonizingRadiationUnits.TryAdd("PicoGray", new Unit(
-            SingularName: "PicoGray",
-            PluralName: "PicoGrays",
+        // Picogray
+        AbsorbedDoseOfIonizingRadiationUnits.TryAdd("Picogray", new Unit(
+            SingularName: "Picogray",
+            PluralName: "Picograys",
             Abbreviations: ["pGy"],
-            Factor: 1,
+            Factor: 1E-12,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-12,
-            FromUnitToBase: static val => (val) * 1E-12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoGray
-        AbsorbedDoseOfIonizingRadiationUnits.TryAdd("NanoGray", new Unit(
-            SingularName: "NanoGray",
-            PluralName: "NanoGrays",
+        // Nanogray
+        AbsorbedDoseOfIonizingRadiationUnits.TryAdd("Nanogray", new Unit(
+            SingularName: "Nanogray",
+            PluralName: "Nanograys",
             Abbreviations: ["nGy"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroGray
-        AbsorbedDoseOfIonizingRadiationUnits.TryAdd("MicroGray", new Unit(
-            SingularName: "MicroGray",
-            PluralName: "MicroGrays",
+        // Microgray
+        AbsorbedDoseOfIonizingRadiationUnits.TryAdd("Microgray", new Unit(
+            SingularName: "Microgray",
+            PluralName: "Micrograys",
             Abbreviations: ["µGy"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliGray
-        AbsorbedDoseOfIonizingRadiationUnits.TryAdd("MilliGray", new Unit(
-            SingularName: "MilliGray",
-            PluralName: "MilliGrays",
+        // Milligray
+        AbsorbedDoseOfIonizingRadiationUnits.TryAdd("Milligray", new Unit(
+            SingularName: "Milligray",
+            PluralName: "Milligrays",
             Abbreviations: ["mGy"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiGray
-        AbsorbedDoseOfIonizingRadiationUnits.TryAdd("CentiGray", new Unit(
-            SingularName: "CentiGray",
-            PluralName: "CentiGrays",
+        // Centigray
+        AbsorbedDoseOfIonizingRadiationUnits.TryAdd("Centigray", new Unit(
+            SingularName: "Centigray",
+            PluralName: "Centigrays",
             Abbreviations: ["cGy"],
-            Factor: 1,
+            Factor: 0.01,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.01,
-            FromUnitToBase: static val => (val) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciGray
-        AbsorbedDoseOfIonizingRadiationUnits.TryAdd("DeciGray", new Unit(
-            SingularName: "DeciGray",
-            PluralName: "DeciGrays",
+        // Decigray
+        AbsorbedDoseOfIonizingRadiationUnits.TryAdd("Decigray", new Unit(
+            SingularName: "Decigray",
+            PluralName: "Decigrays",
             Abbreviations: ["dGy"],
-            Factor: 1,
+            Factor: 0.1,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.1,
-            FromUnitToBase: static val => (val) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloGray
-        AbsorbedDoseOfIonizingRadiationUnits.TryAdd("KiloGray", new Unit(
-            SingularName: "KiloGray",
-            PluralName: "KiloGrays",
+        // Kilogray
+        AbsorbedDoseOfIonizingRadiationUnits.TryAdd("Kilogray", new Unit(
+            SingularName: "Kilogray",
+            PluralName: "Kilograys",
             Abbreviations: ["kGy"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaGray
-        AbsorbedDoseOfIonizingRadiationUnits.TryAdd("MegaGray", new Unit(
-            SingularName: "MegaGray",
-            PluralName: "MegaGrays",
+        // Megagray
+        AbsorbedDoseOfIonizingRadiationUnits.TryAdd("Megagray", new Unit(
+            SingularName: "Megagray",
+            PluralName: "Megagrays",
             Abbreviations: ["MGy"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaGray
-        AbsorbedDoseOfIonizingRadiationUnits.TryAdd("GigaGray", new Unit(
-            SingularName: "GigaGray",
-            PluralName: "GigaGrays",
+        // Gigagray
+        AbsorbedDoseOfIonizingRadiationUnits.TryAdd("Gigagray", new Unit(
+            SingularName: "Gigagray",
+            PluralName: "Gigagrays",
             Abbreviations: ["GGy"],
-            Factor: 1,
+            Factor: 1000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000,
-            FromUnitToBase: static val => (val) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // TeraGray
-        AbsorbedDoseOfIonizingRadiationUnits.TryAdd("TeraGray", new Unit(
-            SingularName: "TeraGray",
-            PluralName: "TeraGrays",
+        // Teragray
+        AbsorbedDoseOfIonizingRadiationUnits.TryAdd("Teragray", new Unit(
+            SingularName: "Teragray",
+            PluralName: "Teragrays",
             Abbreviations: ["TGy"],
-            Factor: 1,
+            Factor: 1000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000000,
-            FromUnitToBase: static val => (val) * 1000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PetaGray
-        AbsorbedDoseOfIonizingRadiationUnits.TryAdd("PetaGray", new Unit(
-            SingularName: "PetaGray",
-            PluralName: "PetaGrays",
+        // Petagray
+        AbsorbedDoseOfIonizingRadiationUnits.TryAdd("Petagray", new Unit(
+            SingularName: "Petagray",
+            PluralName: "Petagrays",
             Abbreviations: ["PGy"],
-            Factor: 1,
+            Factor: 1000000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000000000,
-            FromUnitToBase: static val => (val) * 1000000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Rad
         AbsorbedDoseOfIonizingRadiationUnits.TryAdd("Rad", new Unit(
@@ -175,43 +175,43 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Rad_(radiation_unit)",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
-        // MilliRad
-        AbsorbedDoseOfIonizingRadiationUnits.TryAdd("MilliRad", new Unit(
-            SingularName: "MilliRad",
-            PluralName: "MilliRads",
+        // Millirad
+        AbsorbedDoseOfIonizingRadiationUnits.TryAdd("Millirad", new Unit(
+            SingularName: "Millirad",
+            PluralName: "Millirads",
             Abbreviations: ["mrad"],
-            Factor: 1,
+            Factor: 1E-05,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 100) / 0.001,
-            FromUnitToBase: static val => (val / 100) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloRad
-        AbsorbedDoseOfIonizingRadiationUnits.TryAdd("KiloRad", new Unit(
-            SingularName: "KiloRad",
-            PluralName: "KiloRads",
+        // Kilorad
+        AbsorbedDoseOfIonizingRadiationUnits.TryAdd("Kilorad", new Unit(
+            SingularName: "Kilorad",
+            PluralName: "Kilorads",
             Abbreviations: ["krad"],
-            Factor: 1,
+            Factor: 10,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 100) / 1000,
-            FromUnitToBase: static val => (val / 100) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaRad
-        AbsorbedDoseOfIonizingRadiationUnits.TryAdd("MegaRad", new Unit(
-            SingularName: "MegaRad",
-            PluralName: "MegaRads",
+        // Megarad
+        AbsorbedDoseOfIonizingRadiationUnits.TryAdd("Megarad", new Unit(
+            SingularName: "Megarad",
+            PluralName: "Megarads",
             Abbreviations: ["Mrad"],
-            Factor: 1,
+            Factor: 10000,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 100) / 1000000,
-            FromUnitToBase: static val => (val / 100) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -220,7 +220,7 @@ public static partial class UoMRegistry {
             "Absorbed dose is a dose quantity which is the measure of the energy deposited in matter by ionizing radiation per unit mass.",
             AbsorbedDoseOfIonizingRadiationUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 2, ["T"] = -2 },
-            "",
+            null,
             false,
             1
         );

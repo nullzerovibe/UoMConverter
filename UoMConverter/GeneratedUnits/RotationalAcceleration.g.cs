@@ -18,8 +18,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DegreePerSecondSquared
         RotationalAccelerationUnits.TryAdd("DegreePerSecondSquared", new Unit(
@@ -28,10 +28,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["°/s²", "deg/s²"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (180 / Math.PI) * val,
-            FromUnitToBase: static val => (Math.PI / 180) * val,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((180 / Math.PI) * val),
+            FromUnitToBase: static val => ((Math.PI / 180) * val),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // RevolutionPerMinutePerSecond
         RotationalAccelerationUnits.TryAdd("RevolutionPerMinutePerSecond", new Unit(
@@ -40,10 +40,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["rpm/s"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (60 / (2 * Math.PI)) * val,
-            FromUnitToBase: static val => ((2 * Math.PI) / 60) * val,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((60 / (2 * Math.PI)) * val),
+            FromUnitToBase: static val => (((2 * Math.PI) / 60) * val),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // RevolutionPerSecondSquared
         RotationalAccelerationUnits.TryAdd("RevolutionPerSecondSquared", new Unit(
@@ -52,10 +52,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["r/s²"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (1 / (2 * Math.PI)) * val,
-            FromUnitToBase: static val => (2 * Math.PI) * val,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((1 / (2 * Math.PI)) * val),
+            FromUnitToBase: static val => ((2 * Math.PI) * val),
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -64,7 +64,7 @@ public static partial class UoMRegistry {
             "Angular acceleration is the rate of change of rotational speed.",
             RotationalAccelerationUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["T"] = -2 },
-            "",
+            null,
             false,
             1
         );

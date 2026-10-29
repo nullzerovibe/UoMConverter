@@ -18,80 +18,80 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PicoCoulomb
-        ElectricChargeUnits.TryAdd("PicoCoulomb", new Unit(
-            SingularName: "PicoCoulomb",
-            PluralName: "PicoCoulombs",
+        // Picocoulomb
+        ElectricChargeUnits.TryAdd("Picocoulomb", new Unit(
+            SingularName: "Picocoulomb",
+            PluralName: "Picocoulombs",
             Abbreviations: ["pC"],
-            Factor: 1,
+            Factor: 1E-12,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-12,
-            FromUnitToBase: static val => (val) * 1E-12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoCoulomb
-        ElectricChargeUnits.TryAdd("NanoCoulomb", new Unit(
-            SingularName: "NanoCoulomb",
-            PluralName: "NanoCoulombs",
+        // Nanocoulomb
+        ElectricChargeUnits.TryAdd("Nanocoulomb", new Unit(
+            SingularName: "Nanocoulomb",
+            PluralName: "Nanocoulombs",
             Abbreviations: ["nC"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroCoulomb
-        ElectricChargeUnits.TryAdd("MicroCoulomb", new Unit(
-            SingularName: "MicroCoulomb",
-            PluralName: "MicroCoulombs",
+        // Microcoulomb
+        ElectricChargeUnits.TryAdd("Microcoulomb", new Unit(
+            SingularName: "Microcoulomb",
+            PluralName: "Microcoulombs",
             Abbreviations: ["µC"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliCoulomb
-        ElectricChargeUnits.TryAdd("MilliCoulomb", new Unit(
-            SingularName: "MilliCoulomb",
-            PluralName: "MilliCoulombs",
+        // Millicoulomb
+        ElectricChargeUnits.TryAdd("Millicoulomb", new Unit(
+            SingularName: "Millicoulomb",
+            PluralName: "Millicoulombs",
             Abbreviations: ["mC"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloCoulomb
-        ElectricChargeUnits.TryAdd("KiloCoulomb", new Unit(
-            SingularName: "KiloCoulomb",
-            PluralName: "KiloCoulombs",
+        // Kilocoulomb
+        ElectricChargeUnits.TryAdd("Kilocoulomb", new Unit(
+            SingularName: "Kilocoulomb",
+            PluralName: "Kilocoulombs",
             Abbreviations: ["kC"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaCoulomb
-        ElectricChargeUnits.TryAdd("MegaCoulomb", new Unit(
-            SingularName: "MegaCoulomb",
-            PluralName: "MegaCoulombs",
+        // Megacoulomb
+        ElectricChargeUnits.TryAdd("Megacoulomb", new Unit(
+            SingularName: "Megacoulomb",
+            PluralName: "Megacoulombs",
             Abbreviations: ["MC"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // AmpereHour
         ElectricChargeUnits.TryAdd("AmpereHour", new Unit(
@@ -102,44 +102,44 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliAmpereHour
-        ElectricChargeUnits.TryAdd("MilliAmpereHour", new Unit(
-            SingularName: "MilliAmpereHour",
-            PluralName: "MilliAmpereHours",
+        // MilliampereHour
+        ElectricChargeUnits.TryAdd("MilliampereHour", new Unit(
+            SingularName: "MilliampereHour",
+            PluralName: "MilliampereHours",
             Abbreviations: ["mA-h", "mAh"],
-            Factor: 1,
+            Factor: 3.6,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 3600) / 0.001,
-            FromUnitToBase: static val => (val * 3600) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloAmpereHour
-        ElectricChargeUnits.TryAdd("KiloAmpereHour", new Unit(
-            SingularName: "KiloAmpereHour",
-            PluralName: "KiloAmpereHours",
+        // KiloampereHour
+        ElectricChargeUnits.TryAdd("KiloampereHour", new Unit(
+            SingularName: "KiloampereHour",
+            PluralName: "KiloampereHours",
             Abbreviations: ["kA-h", "kAh"],
-            Factor: 1,
+            Factor: 3600000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 3600) / 1000,
-            FromUnitToBase: static val => (val * 3600) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaAmpereHour
-        ElectricChargeUnits.TryAdd("MegaAmpereHour", new Unit(
-            SingularName: "MegaAmpereHour",
-            PluralName: "MegaAmpereHours",
+        // MegaampereHour
+        ElectricChargeUnits.TryAdd("MegaampereHour", new Unit(
+            SingularName: "MegaampereHour",
+            PluralName: "MegaampereHours",
             Abbreviations: ["MA-h", "MAh"],
-            Factor: 1,
+            Factor: 3600000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 3600) / 1000000,
-            FromUnitToBase: static val => (val * 3600) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -148,7 +148,7 @@ public static partial class UoMRegistry {
             "Electric charge is the physical property of matter that causes it to experience a force when placed in an electromagnetic field.",
             ElectricChargeUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["T"] = 1, ["I"] = 1 },
-            "",
+            null,
             false,
             1
         );

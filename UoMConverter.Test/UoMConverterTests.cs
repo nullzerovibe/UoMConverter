@@ -55,7 +55,7 @@ public class UoMConverterTests {
     public void GetUnit_ReturnsFullMetadata() {
         var unit = _converter.GetUnit("cm");
         Assert.NotNull(unit);
-        Assert.Equal("CentiMeter", unit.SingularName);
+        Assert.Equal("Centimeter", unit.SingularName);
         Assert.Contains("cm", unit.Abbreviations);
     }
 
@@ -75,12 +75,18 @@ public class UoMConverterTests {
     }
 
     [Theory]
-    [InlineData(null)]
     [InlineData("")]
     [InlineData("   ")]
-    public void Convert_InvalidInput_ThrowsArgumentException(string? invalidUnit) {
-        Assert.Throws<ArgumentException>(() => _converter.Convert(10, invalidUnit!, "Meter"));
-        Assert.Throws<ArgumentException>(() => _converter.Convert(10, "Meter", invalidUnit!));
+    public void Convert_InvalidInput_ThrowsArgumentException(string invalidUnit) {
+        Assert.Throws<ArgumentException>(() => _converter.Convert(10, invalidUnit, "Meter"));
+        Assert.Throws<ArgumentException>(() => _converter.Convert(10, "Meter", invalidUnit));
+    }
+
+    [Fact]
+    public void Convert_NullUnit_ThrowsArgumentNullException() {
+        Assert.Throws<ArgumentNullException>(() => _converter.Convert(10, null!, "Meter"));
+        Assert.Throws<ArgumentNullException>(() => _converter.Convert(10, "Meter", null!));
+        Assert.Throws<ArgumentNullException>(() => _converter.Convert(10, null!, "Meter", "Length"));
     }
 
     [Fact]

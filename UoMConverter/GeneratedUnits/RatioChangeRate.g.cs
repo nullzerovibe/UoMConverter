@@ -14,12 +14,12 @@ public static partial class UoMRegistry {
             SingularName: "PercentPerSecond",
             PluralName: "PercentsPerSecond",
             Abbreviations: ["%/s"],
-            Factor: 1,
+            Factor: 0.01,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e2,
-            FromUnitToBase: static val => val / 1e2,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DecimalFractionPerSecond
         RatioChangeRateUnits.TryAdd("DecimalFractionPerSecond", new Unit(
@@ -30,8 +30,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -40,7 +40,7 @@ public static partial class UoMRegistry {
             "The change in ratio per unit of time.",
             RatioChangeRateUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["T"] = -1 },
-            "",
+            null,
             false,
             1
         );

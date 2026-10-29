@@ -19,43 +19,43 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Sievert",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
-        // NanoSievert
-        RadiationEquivalentDoseUnits.TryAdd("NanoSievert", new Unit(
-            SingularName: "NanoSievert",
-            PluralName: "NanoSieverts",
+        // Nanosievert
+        RadiationEquivalentDoseUnits.TryAdd("Nanosievert", new Unit(
+            SingularName: "Nanosievert",
+            PluralName: "Nanosieverts",
             Abbreviations: ["nSv"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroSievert
-        RadiationEquivalentDoseUnits.TryAdd("MicroSievert", new Unit(
-            SingularName: "MicroSievert",
-            PluralName: "MicroSieverts",
+        // Microsievert
+        RadiationEquivalentDoseUnits.TryAdd("Microsievert", new Unit(
+            SingularName: "Microsievert",
+            PluralName: "Microsieverts",
             Abbreviations: ["µSv"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliSievert
-        RadiationEquivalentDoseUnits.TryAdd("MilliSievert", new Unit(
-            SingularName: "MilliSievert",
-            PluralName: "MilliSieverts",
+        // Millisievert
+        RadiationEquivalentDoseUnits.TryAdd("Millisievert", new Unit(
+            SingularName: "Millisievert",
+            PluralName: "Millisieverts",
             Abbreviations: ["mSv"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // RoentgenEquivalentMan
         RadiationEquivalentDoseUnits.TryAdd("RoentgenEquivalentMan", new Unit(
@@ -66,20 +66,20 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliRoentgenEquivalentMan
-        RadiationEquivalentDoseUnits.TryAdd("MilliRoentgenEquivalentMan", new Unit(
-            SingularName: "MilliRoentgenEquivalentMan",
-            PluralName: "MilliRoentgensEquivalentMan",
+        // MilliroentgenEquivalentMan
+        RadiationEquivalentDoseUnits.TryAdd("MilliroentgenEquivalentMan", new Unit(
+            SingularName: "MilliroentgenEquivalentMan",
+            PluralName: "MilliroentgensEquivalentMan",
             Abbreviations: ["mrem"],
-            Factor: 1,
+            Factor: 1E-05,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 100) / 0.001,
-            FromUnitToBase: static val => (val / 100) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -88,7 +88,7 @@ public static partial class UoMRegistry {
             "Equivalent dose is a dose quantity representing the stochastic health effects of low levels of ionizing radiation on the human body which represents the probability of radiation-induced cancer and genetic damage.",
             RadiationEquivalentDoseUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 2, ["T"] = -2 },
-            "",
+            null,
             false,
             1
         );

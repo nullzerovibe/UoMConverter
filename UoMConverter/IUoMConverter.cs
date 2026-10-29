@@ -8,11 +8,10 @@ namespace UoMConverter;
 public interface IUoMConverter {
     /// <summary>
     /// Converts a value from one unit to another.
-    /// </summary>
-    /// <summary>
-    /// Converts a value from one unit to another.
     /// By default, uses smart detection to resolve ambiguities (e.g. "A" -> "m").
     /// </summary>
+    /// <exception cref="System.ArgumentNullException">Thrown if a unit is null.</exception>
+    /// <exception cref="System.ArgumentException">Thrown if units are unknown, incompatible, or ambiguous.</exception>
     double Convert(double value, string fromUnit, string toUnit, bool useSmartDetection = true);
 
     /// <summary>

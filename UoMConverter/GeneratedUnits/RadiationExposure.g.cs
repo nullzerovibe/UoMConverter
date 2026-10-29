@@ -18,92 +18,92 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PicoCoulombPerKilogram
-        RadiationExposureUnits.TryAdd("PicoCoulombPerKilogram", new Unit(
-            SingularName: "PicoCoulombPerKilogram",
-            PluralName: "PicoCoulombsPerKilogram",
+        // PicocoulombPerKilogram
+        RadiationExposureUnits.TryAdd("PicocoulombPerKilogram", new Unit(
+            SingularName: "PicocoulombPerKilogram",
+            PluralName: "PicocoulombsPerKilogram",
             Abbreviations: ["pC/kg"],
-            Factor: 1,
+            Factor: 1E-12,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-12,
-            FromUnitToBase: static val => (val) * 1E-12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoCoulombPerKilogram
-        RadiationExposureUnits.TryAdd("NanoCoulombPerKilogram", new Unit(
-            SingularName: "NanoCoulombPerKilogram",
-            PluralName: "NanoCoulombsPerKilogram",
+        // NanocoulombPerKilogram
+        RadiationExposureUnits.TryAdd("NanocoulombPerKilogram", new Unit(
+            SingularName: "NanocoulombPerKilogram",
+            PluralName: "NanocoulombsPerKilogram",
             Abbreviations: ["nC/kg"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroCoulombPerKilogram
-        RadiationExposureUnits.TryAdd("MicroCoulombPerKilogram", new Unit(
-            SingularName: "MicroCoulombPerKilogram",
-            PluralName: "MicroCoulombsPerKilogram",
+        // MicrocoulombPerKilogram
+        RadiationExposureUnits.TryAdd("MicrocoulombPerKilogram", new Unit(
+            SingularName: "MicrocoulombPerKilogram",
+            PluralName: "MicrocoulombsPerKilogram",
             Abbreviations: ["µC/kg"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliCoulombPerKilogram
-        RadiationExposureUnits.TryAdd("MilliCoulombPerKilogram", new Unit(
-            SingularName: "MilliCoulombPerKilogram",
-            PluralName: "MilliCoulombsPerKilogram",
+        // MillicoulombPerKilogram
+        RadiationExposureUnits.TryAdd("MillicoulombPerKilogram", new Unit(
+            SingularName: "MillicoulombPerKilogram",
+            PluralName: "MillicoulombsPerKilogram",
             Abbreviations: ["mC/kg"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Roentgen
         RadiationExposureUnits.TryAdd("Roentgen", new Unit(
             SingularName: "Roentgen",
             PluralName: "Roentgens",
             Abbreviations: ["R"],
-            Factor: 1,
+            Factor: 0.000258,
             Offset: 0,
-            FromBaseToUnit: static val => val / 2.58e-4,
-            FromUnitToBase: static val => val * 2.58e-4,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroRoentgen
-        RadiationExposureUnits.TryAdd("MicroRoentgen", new Unit(
-            SingularName: "MicroRoentgen",
-            PluralName: "MicroRoentgens",
+        // Microroentgen
+        RadiationExposureUnits.TryAdd("Microroentgen", new Unit(
+            SingularName: "Microroentgen",
+            PluralName: "Microroentgens",
             Abbreviations: ["µR"],
-            Factor: 1,
+            Factor: 2.58E-10,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 2.58e-4) / 1E-06,
-            FromUnitToBase: static val => (val * 2.58e-4) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliRoentgen
-        RadiationExposureUnits.TryAdd("MilliRoentgen", new Unit(
-            SingularName: "MilliRoentgen",
-            PluralName: "MilliRoentgens",
+        // Milliroentgen
+        RadiationExposureUnits.TryAdd("Milliroentgen", new Unit(
+            SingularName: "Milliroentgen",
+            PluralName: "Milliroentgens",
             Abbreviations: ["mR"],
-            Factor: 1,
+            Factor: 2.58E-07,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 2.58e-4) / 0.001,
-            FromUnitToBase: static val => (val * 2.58e-4) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -112,7 +112,7 @@ public static partial class UoMRegistry {
             "Radiation exposure is a measure of the ionization of air due to ionizing radiation from photons.",
             RadiationExposureUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["M"] = -1, ["T"] = 1, ["I"] = 1 },
-            "",
+            null,
             false,
             1
         );

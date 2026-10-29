@@ -18,68 +18,68 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoTesla
-        MagneticFieldUnits.TryAdd("NanoTesla", new Unit(
-            SingularName: "NanoTesla",
-            PluralName: "NanoTeslas",
+        // Nanotesla
+        MagneticFieldUnits.TryAdd("Nanotesla", new Unit(
+            SingularName: "Nanotesla",
+            PluralName: "Nanoteslas",
             Abbreviations: ["nT"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroTesla
-        MagneticFieldUnits.TryAdd("MicroTesla", new Unit(
-            SingularName: "MicroTesla",
-            PluralName: "MicroTeslas",
+        // Microtesla
+        MagneticFieldUnits.TryAdd("Microtesla", new Unit(
+            SingularName: "Microtesla",
+            PluralName: "Microteslas",
             Abbreviations: ["µT"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliTesla
-        MagneticFieldUnits.TryAdd("MilliTesla", new Unit(
-            SingularName: "MilliTesla",
-            PluralName: "MilliTeslas",
+        // Millitesla
+        MagneticFieldUnits.TryAdd("Millitesla", new Unit(
+            SingularName: "Millitesla",
+            PluralName: "Milliteslas",
             Abbreviations: ["mT"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Gauss
         MagneticFieldUnits.TryAdd("Gauss", new Unit(
             SingularName: "Gauss",
             PluralName: "Gausses",
             Abbreviations: ["G"],
-            Factor: 1,
+            Factor: 0.0001,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e4,
-            FromUnitToBase: static val => val / 1e4,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliGauss
-        MagneticFieldUnits.TryAdd("MilliGauss", new Unit(
-            SingularName: "MilliGauss",
-            PluralName: "MilliGausses",
+        // Milligauss
+        MagneticFieldUnits.TryAdd("Milligauss", new Unit(
+            SingularName: "Milligauss",
+            PluralName: "Milligausses",
             Abbreviations: ["mG"],
-            Factor: 1,
+            Factor: 1.0000000000000001E-07,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e4) / 0.001,
-            FromUnitToBase: static val => (val / 1e4) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -88,7 +88,7 @@ public static partial class UoMRegistry {
             "A magnetic field is a force field that is created by moving electric charges (electric currents) and magnetic dipoles, and exerts a force on other nearby moving charges and magnetic dipoles.",
             MagneticFieldUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["M"] = 1, ["T"] = -2, ["I"] = -1 },
-            "",
+            null,
             false,
             1
         );

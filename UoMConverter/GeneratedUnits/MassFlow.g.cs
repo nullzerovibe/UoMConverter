@@ -18,104 +18,104 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoGramPerSecond
-        MassFlowUnits.TryAdd("NanoGramPerSecond", new Unit(
-            SingularName: "NanoGramPerSecond",
-            PluralName: "NanoGramsPerSecond",
+        // NanogramPerSecond
+        MassFlowUnits.TryAdd("NanogramPerSecond", new Unit(
+            SingularName: "NanogramPerSecond",
+            PluralName: "NanogramsPerSecond",
             Abbreviations: ["ng/s", "ng/S"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroGramPerSecond
-        MassFlowUnits.TryAdd("MicroGramPerSecond", new Unit(
-            SingularName: "MicroGramPerSecond",
-            PluralName: "MicroGramsPerSecond",
+        // MicrogramPerSecond
+        MassFlowUnits.TryAdd("MicrogramPerSecond", new Unit(
+            SingularName: "MicrogramPerSecond",
+            PluralName: "MicrogramsPerSecond",
             Abbreviations: ["µg/s", "µg/S"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliGramPerSecond
-        MassFlowUnits.TryAdd("MilliGramPerSecond", new Unit(
-            SingularName: "MilliGramPerSecond",
-            PluralName: "MilliGramsPerSecond",
+        // MilligramPerSecond
+        MassFlowUnits.TryAdd("MilligramPerSecond", new Unit(
+            SingularName: "MilligramPerSecond",
+            PluralName: "MilligramsPerSecond",
             Abbreviations: ["mg/s", "mg/S"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiGramPerSecond
-        MassFlowUnits.TryAdd("CentiGramPerSecond", new Unit(
-            SingularName: "CentiGramPerSecond",
-            PluralName: "CentiGramsPerSecond",
+        // CentigramPerSecond
+        MassFlowUnits.TryAdd("CentigramPerSecond", new Unit(
+            SingularName: "CentigramPerSecond",
+            PluralName: "CentigramsPerSecond",
             Abbreviations: ["cg/s", "cg/S"],
-            Factor: 1,
+            Factor: 0.01,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.01,
-            FromUnitToBase: static val => (val) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciGramPerSecond
-        MassFlowUnits.TryAdd("DeciGramPerSecond", new Unit(
-            SingularName: "DeciGramPerSecond",
-            PluralName: "DeciGramsPerSecond",
+        // DecigramPerSecond
+        MassFlowUnits.TryAdd("DecigramPerSecond", new Unit(
+            SingularName: "DecigramPerSecond",
+            PluralName: "DecigramsPerSecond",
             Abbreviations: ["dg/s", "dg/S"],
-            Factor: 1,
+            Factor: 0.1,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.1,
-            FromUnitToBase: static val => (val) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DecaGramPerSecond
-        MassFlowUnits.TryAdd("DecaGramPerSecond", new Unit(
-            SingularName: "DecaGramPerSecond",
-            PluralName: "DecaGramsPerSecond",
+        // DecagramPerSecond
+        MassFlowUnits.TryAdd("DecagramPerSecond", new Unit(
+            SingularName: "DecagramPerSecond",
+            PluralName: "DecagramsPerSecond",
             Abbreviations: ["dag/s", "dag/S"],
-            Factor: 1,
+            Factor: 10,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 10,
-            FromUnitToBase: static val => (val) * 10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // HectoGramPerSecond
-        MassFlowUnits.TryAdd("HectoGramPerSecond", new Unit(
-            SingularName: "HectoGramPerSecond",
-            PluralName: "HectoGramsPerSecond",
+        // HectogramPerSecond
+        MassFlowUnits.TryAdd("HectogramPerSecond", new Unit(
+            SingularName: "HectogramPerSecond",
+            PluralName: "HectogramsPerSecond",
             Abbreviations: ["hg/s", "hg/S"],
-            Factor: 1,
+            Factor: 100,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 100,
-            FromUnitToBase: static val => (val) * 100,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloGramPerSecond
-        MassFlowUnits.TryAdd("KiloGramPerSecond", new Unit(
-            SingularName: "KiloGramPerSecond",
-            PluralName: "KiloGramsPerSecond",
+        // KilogramPerSecond
+        MassFlowUnits.TryAdd("KilogramPerSecond", new Unit(
+            SingularName: "KilogramPerSecond",
+            PluralName: "KilogramsPerSecond",
             Abbreviations: ["kg/s", "kg/S"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // GramPerDay
         MassFlowUnits.TryAdd("GramPerDay", new Unit(
@@ -126,116 +126,116 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoGramPerDay
-        MassFlowUnits.TryAdd("NanoGramPerDay", new Unit(
-            SingularName: "NanoGramPerDay",
-            PluralName: "NanoGramsPerDay",
+        // NanogramPerDay
+        MassFlowUnits.TryAdd("NanogramPerDay", new Unit(
+            SingularName: "NanogramPerDay",
+            PluralName: "NanogramsPerDay",
             Abbreviations: ["ng/d"],
-            Factor: 1,
+            Factor: 1.1574074074074074E-14,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 86400) / 1E-09,
-            FromUnitToBase: static val => (val / 86400) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroGramPerDay
-        MassFlowUnits.TryAdd("MicroGramPerDay", new Unit(
-            SingularName: "MicroGramPerDay",
-            PluralName: "MicroGramsPerDay",
+        // MicrogramPerDay
+        MassFlowUnits.TryAdd("MicrogramPerDay", new Unit(
+            SingularName: "MicrogramPerDay",
+            PluralName: "MicrogramsPerDay",
             Abbreviations: ["µg/d"],
-            Factor: 1,
+            Factor: 1.1574074074074074E-11,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 86400) / 1E-06,
-            FromUnitToBase: static val => (val / 86400) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliGramPerDay
-        MassFlowUnits.TryAdd("MilliGramPerDay", new Unit(
-            SingularName: "MilliGramPerDay",
-            PluralName: "MilliGramsPerDay",
+        // MilligramPerDay
+        MassFlowUnits.TryAdd("MilligramPerDay", new Unit(
+            SingularName: "MilligramPerDay",
+            PluralName: "MilligramsPerDay",
             Abbreviations: ["mg/d"],
-            Factor: 1,
+            Factor: 1.1574074074074074E-08,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 86400) / 0.001,
-            FromUnitToBase: static val => (val / 86400) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiGramPerDay
-        MassFlowUnits.TryAdd("CentiGramPerDay", new Unit(
-            SingularName: "CentiGramPerDay",
-            PluralName: "CentiGramsPerDay",
+        // CentigramPerDay
+        MassFlowUnits.TryAdd("CentigramPerDay", new Unit(
+            SingularName: "CentigramPerDay",
+            PluralName: "CentigramsPerDay",
             Abbreviations: ["cg/d"],
-            Factor: 1,
+            Factor: 1.1574074074074074E-07,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 86400) / 0.01,
-            FromUnitToBase: static val => (val / 86400) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciGramPerDay
-        MassFlowUnits.TryAdd("DeciGramPerDay", new Unit(
-            SingularName: "DeciGramPerDay",
-            PluralName: "DeciGramsPerDay",
+        // DecigramPerDay
+        MassFlowUnits.TryAdd("DecigramPerDay", new Unit(
+            SingularName: "DecigramPerDay",
+            PluralName: "DecigramsPerDay",
             Abbreviations: ["dg/d"],
-            Factor: 1,
+            Factor: 1.1574074074074074E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 86400) / 0.1,
-            FromUnitToBase: static val => (val / 86400) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DecaGramPerDay
-        MassFlowUnits.TryAdd("DecaGramPerDay", new Unit(
-            SingularName: "DecaGramPerDay",
-            PluralName: "DecaGramsPerDay",
+        // DecagramPerDay
+        MassFlowUnits.TryAdd("DecagramPerDay", new Unit(
+            SingularName: "DecagramPerDay",
+            PluralName: "DecagramsPerDay",
             Abbreviations: ["dag/d"],
-            Factor: 1,
+            Factor: 0.00011574074074074073,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 86400) / 10,
-            FromUnitToBase: static val => (val / 86400) * 10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // HectoGramPerDay
-        MassFlowUnits.TryAdd("HectoGramPerDay", new Unit(
-            SingularName: "HectoGramPerDay",
-            PluralName: "HectoGramsPerDay",
+        // HectogramPerDay
+        MassFlowUnits.TryAdd("HectogramPerDay", new Unit(
+            SingularName: "HectogramPerDay",
+            PluralName: "HectogramsPerDay",
             Abbreviations: ["hg/d"],
-            Factor: 1,
+            Factor: 0.0011574074074074073,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 86400) / 100,
-            FromUnitToBase: static val => (val / 86400) * 100,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloGramPerDay
-        MassFlowUnits.TryAdd("KiloGramPerDay", new Unit(
-            SingularName: "KiloGramPerDay",
-            PluralName: "KiloGramsPerDay",
+        // KilogramPerDay
+        MassFlowUnits.TryAdd("KilogramPerDay", new Unit(
+            SingularName: "KilogramPerDay",
+            PluralName: "KilogramsPerDay",
             Abbreviations: ["kg/d"],
-            Factor: 1,
+            Factor: 0.011574074074074073,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 86400) / 1000,
-            FromUnitToBase: static val => (val / 86400) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaGramPerDay
-        MassFlowUnits.TryAdd("MegaGramPerDay", new Unit(
-            SingularName: "MegaGramPerDay",
-            PluralName: "MegaGramsPerDay",
+        // MegagramPerDay
+        MassFlowUnits.TryAdd("MegagramPerDay", new Unit(
+            SingularName: "MegagramPerDay",
+            PluralName: "MegagramsPerDay",
             Abbreviations: ["Mg/d"],
-            Factor: 1,
+            Factor: 11.574074074074073,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 86400) / 1000000,
-            FromUnitToBase: static val => (val / 86400) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // GramPerHour
         MassFlowUnits.TryAdd("GramPerHour", new Unit(
@@ -246,8 +246,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // KilogramPerHour
         MassFlowUnits.TryAdd("KilogramPerHour", new Unit(
@@ -258,8 +258,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // KilogramPerMinute
         MassFlowUnits.TryAdd("KilogramPerMinute", new Unit(
@@ -270,8 +270,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // TonnePerHour
         MassFlowUnits.TryAdd("TonnePerHour", new Unit(
@@ -280,10 +280,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["t/h"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 3.6 / 1000,
-            FromUnitToBase: static val => val * 1000 / 3.6,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 3.6 / 1000),
+            FromUnitToBase: static val => (val * 1000 / 3.6),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundPerDay
         MassFlowUnits.TryAdd("PoundPerDay", new Unit(
@@ -292,22 +292,22 @@ public static partial class UoMRegistry {
             Abbreviations: ["lb/d"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 86400 / 453.59237,
-            FromUnitToBase: static val => val * 453.59237 / 86400,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 86400 / 453.59237),
+            FromUnitToBase: static val => (val * 453.59237 / 86400),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaPoundPerDay
-        MassFlowUnits.TryAdd("MegaPoundPerDay", new Unit(
-            SingularName: "MegaPoundPerDay",
-            PluralName: "MegaPoundsPerDay",
+        // MegapoundPerDay
+        MassFlowUnits.TryAdd("MegapoundPerDay", new Unit(
+            SingularName: "MegapoundPerDay",
+            PluralName: "MegapoundsPerDay",
             Abbreviations: ["Mlb/d"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 86400 / 453.59237) / 1000000,
-            FromUnitToBase: static val => (val * 453.59237 / 86400) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * 86400 / 453.59237) / 1000000),
+            FromUnitToBase: static val => ((val * 1000000) * 453.59237 / 86400),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundPerHour
         MassFlowUnits.TryAdd("PoundPerHour", new Unit(
@@ -316,22 +316,22 @@ public static partial class UoMRegistry {
             Abbreviations: ["lb/h"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 3600 / 453.59237,
-            FromUnitToBase: static val => val * 453.59237 / 3600,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 3600 / 453.59237),
+            FromUnitToBase: static val => (val * 453.59237 / 3600),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaPoundPerHour
-        MassFlowUnits.TryAdd("MegaPoundPerHour", new Unit(
-            SingularName: "MegaPoundPerHour",
-            PluralName: "MegaPoundsPerHour",
+        // MegapoundPerHour
+        MassFlowUnits.TryAdd("MegapoundPerHour", new Unit(
+            SingularName: "MegapoundPerHour",
+            PluralName: "MegapoundsPerHour",
             Abbreviations: ["Mlb/h"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 3600 / 453.59237) / 1000000,
-            FromUnitToBase: static val => (val * 453.59237 / 3600) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * 3600 / 453.59237) / 1000000),
+            FromUnitToBase: static val => ((val * 1000000) * 453.59237 / 3600),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundPerMinute
         MassFlowUnits.TryAdd("PoundPerMinute", new Unit(
@@ -340,22 +340,22 @@ public static partial class UoMRegistry {
             Abbreviations: ["lb/min"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 60 / 453.59237,
-            FromUnitToBase: static val => val * 453.59237 / 60,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 60 / 453.59237),
+            FromUnitToBase: static val => (val * 453.59237 / 60),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaPoundPerMinute
-        MassFlowUnits.TryAdd("MegaPoundPerMinute", new Unit(
-            SingularName: "MegaPoundPerMinute",
-            PluralName: "MegaPoundsPerMinute",
+        // MegapoundPerMinute
+        MassFlowUnits.TryAdd("MegapoundPerMinute", new Unit(
+            SingularName: "MegapoundPerMinute",
+            PluralName: "MegapoundsPerMinute",
             Abbreviations: ["Mlb/min"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 60 / 453.59237) / 1000000,
-            FromUnitToBase: static val => (val * 453.59237 / 60) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * 60 / 453.59237) / 1000000),
+            FromUnitToBase: static val => ((val * 1000000) * 453.59237 / 60),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundPerSecond
         MassFlowUnits.TryAdd("PoundPerSecond", new Unit(
@@ -366,20 +366,20 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaPoundPerSecond
-        MassFlowUnits.TryAdd("MegaPoundPerSecond", new Unit(
-            SingularName: "MegaPoundPerSecond",
-            PluralName: "MegaPoundsPerSecond",
+        // MegapoundPerSecond
+        MassFlowUnits.TryAdd("MegapoundPerSecond", new Unit(
+            SingularName: "MegapoundPerSecond",
+            PluralName: "MegapoundsPerSecond",
             Abbreviations: ["Mlb/s"],
-            Factor: 1,
+            Factor: 453592370,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 453.59237) / 1000000,
-            FromUnitToBase: static val => (val * 453.59237) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // TonnePerDay
         MassFlowUnits.TryAdd("TonnePerDay", new Unit(
@@ -390,8 +390,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // ShortTonPerHour
         MassFlowUnits.TryAdd("ShortTonPerHour", new Unit(
@@ -400,10 +400,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["short tn/h"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 3.6 / 907.18474,
-            FromUnitToBase: static val => val * 907.18474 / 3.6,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 3.6 / 907.18474),
+            FromUnitToBase: static val => (val * 907.18474 / 3.6),
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -412,7 +412,7 @@ public static partial class UoMRegistry {
             "Mass flow is the ratio of the mass change to the time during which the change occurred (value of mass changes per unit time).",
             MassFlowUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["M"] = 1, ["T"] = -1 },
-            "",
+            null,
             false,
             1
         );

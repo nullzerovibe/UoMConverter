@@ -18,8 +18,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // LiterPerMeter
         VolumePerLengthUnits.TryAdd("LiterPerMeter", new Unit(
@@ -30,20 +30,20 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // LiterPerKilometer
         VolumePerLengthUnits.TryAdd("LiterPerKilometer", new Unit(
             SingularName: "LiterPerKilometer",
             PluralName: "LitersPerKilometer",
             Abbreviations: ["l/km"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e6,
-            FromUnitToBase: static val => val / 1e6,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // LiterPerMillimeter
         VolumePerLengthUnits.TryAdd("LiterPerMillimeter", new Unit(
@@ -54,8 +54,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // OilBarrelPerFoot
         VolumePerLengthUnits.TryAdd("OilBarrelPerFoot", new Unit(
@@ -64,10 +64,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["bbl/ft"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 0.3048 / 0.158987294928,
-            FromUnitToBase: static val => val * 0.158987294928 / 0.3048,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 0.3048 / 0.158987294928),
+            FromUnitToBase: static val => (val * 0.158987294928 / 0.3048),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CubicYardPerFoot
         VolumePerLengthUnits.TryAdd("CubicYardPerFoot", new Unit(
@@ -76,10 +76,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["yd³/ft"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 0.3048 / 0.764554857984,
-            FromUnitToBase: static val => val * 0.764554857984 / 0.3048,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 0.3048 / 0.764554857984),
+            FromUnitToBase: static val => (val * 0.764554857984 / 0.3048),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CubicYardPerUsSurveyFoot
         VolumePerLengthUnits.TryAdd("CubicYardPerUsSurveyFoot", new Unit(
@@ -88,10 +88,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["yd³/ftUS"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1200 / (0.764554857984 * 3937),
-            FromUnitToBase: static val => val * 0.764554857984 * 3937 / 1200,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 1200 / (0.764554857984 * 3937)),
+            FromUnitToBase: static val => (val * 0.764554857984 * 3937 / 1200),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // UsGallonPerMile
         VolumePerLengthUnits.TryAdd("UsGallonPerMile", new Unit(
@@ -100,10 +100,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["gal (U.S.)/mi"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1609.344 / 0.003785411784,
-            FromUnitToBase: static val => val * 0.003785411784 / 1609.344,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 1609.344 / 0.003785411784),
+            FromUnitToBase: static val => (val * 0.003785411784 / 1609.344),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // ImperialGallonPerMile
         VolumePerLengthUnits.TryAdd("ImperialGallonPerMile", new Unit(
@@ -112,10 +112,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["gal (imp.)/mi"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1609.344 / 0.00454609,
-            FromUnitToBase: static val => val * 0.00454609 / 1609.344,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 1609.344 / 0.00454609),
+            FromUnitToBase: static val => (val * 0.00454609 / 1609.344),
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -124,7 +124,7 @@ public static partial class UoMRegistry {
             "Volume, typically of fluid, that a container can hold within a unit of length.",
             VolumePerLengthUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 2 },
-            "",
+            null,
             false,
             1
         );

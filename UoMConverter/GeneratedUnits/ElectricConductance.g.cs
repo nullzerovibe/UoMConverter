@@ -18,92 +18,92 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoSiemens
-        ElectricConductanceUnits.TryAdd("NanoSiemens", new Unit(
-            SingularName: "NanoSiemens",
-            PluralName: "NanoSiemens",
+        // Nanosiemens
+        ElectricConductanceUnits.TryAdd("Nanosiemens", new Unit(
+            SingularName: "Nanosiemens",
+            PluralName: "Nanosiemens",
             Abbreviations: ["nS"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroSiemens
-        ElectricConductanceUnits.TryAdd("MicroSiemens", new Unit(
-            SingularName: "MicroSiemens",
-            PluralName: "MicroSiemens",
+        // Microsiemens
+        ElectricConductanceUnits.TryAdd("Microsiemens", new Unit(
+            SingularName: "Microsiemens",
+            PluralName: "Microsiemens",
             Abbreviations: ["µS"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliSiemens
-        ElectricConductanceUnits.TryAdd("MilliSiemens", new Unit(
-            SingularName: "MilliSiemens",
-            PluralName: "MilliSiemens",
+        // Millisiemens
+        ElectricConductanceUnits.TryAdd("Millisiemens", new Unit(
+            SingularName: "Millisiemens",
+            PluralName: "Millisiemens",
             Abbreviations: ["mS"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloSiemens
-        ElectricConductanceUnits.TryAdd("KiloSiemens", new Unit(
-            SingularName: "KiloSiemens",
-            PluralName: "KiloSiemens",
+        // Kilosiemens
+        ElectricConductanceUnits.TryAdd("Kilosiemens", new Unit(
+            SingularName: "Kilosiemens",
+            PluralName: "Kilosiemens",
             Abbreviations: ["kS"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaSiemens
-        ElectricConductanceUnits.TryAdd("MegaSiemens", new Unit(
-            SingularName: "MegaSiemens",
-            PluralName: "MegaSiemens",
+        // Megasiemens
+        ElectricConductanceUnits.TryAdd("Megasiemens", new Unit(
+            SingularName: "Megasiemens",
+            PluralName: "Megasiemens",
             Abbreviations: ["MS"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaSiemens
-        ElectricConductanceUnits.TryAdd("GigaSiemens", new Unit(
-            SingularName: "GigaSiemens",
-            PluralName: "GigaSiemens",
+        // Gigasiemens
+        ElectricConductanceUnits.TryAdd("Gigasiemens", new Unit(
+            SingularName: "Gigasiemens",
+            PluralName: "Gigasiemens",
             Abbreviations: ["GS"],
-            Factor: 1,
+            Factor: 1000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000,
-            FromUnitToBase: static val => (val) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // TeraSiemens
-        ElectricConductanceUnits.TryAdd("TeraSiemens", new Unit(
-            SingularName: "TeraSiemens",
-            PluralName: "TeraSiemens",
+        // Terasiemens
+        ElectricConductanceUnits.TryAdd("Terasiemens", new Unit(
+            SingularName: "Terasiemens",
+            PluralName: "Terasiemens",
             Abbreviations: ["TS"],
-            Factor: 1,
+            Factor: 1000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000000,
-            FromUnitToBase: static val => (val) * 1000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Mho
         ElectricConductanceUnits.TryAdd("Mho", new Unit(
@@ -114,92 +114,92 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoMho
-        ElectricConductanceUnits.TryAdd("NanoMho", new Unit(
-            SingularName: "NanoMho",
-            PluralName: "NanoMhos",
+        // Nanomho
+        ElectricConductanceUnits.TryAdd("Nanomho", new Unit(
+            SingularName: "Nanomho",
+            PluralName: "Nanomhos",
             Abbreviations: ["n℧"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroMho
-        ElectricConductanceUnits.TryAdd("MicroMho", new Unit(
-            SingularName: "MicroMho",
-            PluralName: "MicroMhos",
+        // Micromho
+        ElectricConductanceUnits.TryAdd("Micromho", new Unit(
+            SingularName: "Micromho",
+            PluralName: "Micromhos",
             Abbreviations: ["µ℧"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliMho
-        ElectricConductanceUnits.TryAdd("MilliMho", new Unit(
-            SingularName: "MilliMho",
-            PluralName: "MilliMhos",
+        // Millimho
+        ElectricConductanceUnits.TryAdd("Millimho", new Unit(
+            SingularName: "Millimho",
+            PluralName: "Millimhos",
             Abbreviations: ["m℧"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloMho
-        ElectricConductanceUnits.TryAdd("KiloMho", new Unit(
-            SingularName: "KiloMho",
-            PluralName: "KiloMhos",
+        // Kilomho
+        ElectricConductanceUnits.TryAdd("Kilomho", new Unit(
+            SingularName: "Kilomho",
+            PluralName: "Kilomhos",
             Abbreviations: ["k℧"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaMho
-        ElectricConductanceUnits.TryAdd("MegaMho", new Unit(
-            SingularName: "MegaMho",
-            PluralName: "MegaMhos",
+        // Megamho
+        ElectricConductanceUnits.TryAdd("Megamho", new Unit(
+            SingularName: "Megamho",
+            PluralName: "Megamhos",
             Abbreviations: ["M℧"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaMho
-        ElectricConductanceUnits.TryAdd("GigaMho", new Unit(
-            SingularName: "GigaMho",
-            PluralName: "GigaMhos",
+        // Gigamho
+        ElectricConductanceUnits.TryAdd("Gigamho", new Unit(
+            SingularName: "Gigamho",
+            PluralName: "Gigamhos",
             Abbreviations: ["G℧"],
-            Factor: 1,
+            Factor: 1000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000,
-            FromUnitToBase: static val => (val) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // TeraMho
-        ElectricConductanceUnits.TryAdd("TeraMho", new Unit(
-            SingularName: "TeraMho",
-            PluralName: "TeraMhos",
+        // Teramho
+        ElectricConductanceUnits.TryAdd("Teramho", new Unit(
+            SingularName: "Teramho",
+            PluralName: "Teramhos",
             Abbreviations: ["T℧"],
-            Factor: 1,
+            Factor: 1000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000000,
-            FromUnitToBase: static val => (val) * 1000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -208,7 +208,7 @@ public static partial class UoMRegistry {
             "The electrical conductance of an object is a measure of the ease with which an electric current passes. Along with susceptance, it is one of two elements of admittance. Its reciprocal quantity is electrical resistance.",
             ElectricConductanceUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = -2, ["M"] = -1, ["T"] = 3, ["I"] = 2 },
-            "",
+            null,
             false,
             1
         );

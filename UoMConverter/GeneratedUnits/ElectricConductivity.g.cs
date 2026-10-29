@@ -18,20 +18,20 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // SiemensPerInch
         ElectricConductivityUnits.TryAdd("SiemensPerInch", new Unit(
             SingularName: "SiemensPerInch",
             PluralName: "SiemensPerInch",
             Abbreviations: ["S/in"],
-            Factor: 1,
+            Factor: 39.37007874015748,
             Offset: 0,
-            FromBaseToUnit: static val => val * 2.54e-2,
-            FromUnitToBase: static val => val / 2.54e-2,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // SiemensPerFoot
         ElectricConductivityUnits.TryAdd("SiemensPerFoot", new Unit(
@@ -42,44 +42,44 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // SiemensPerCentimeter
         ElectricConductivityUnits.TryAdd("SiemensPerCentimeter", new Unit(
             SingularName: "SiemensPerCentimeter",
             PluralName: "SiemensPerCentimeter",
             Abbreviations: ["S/cm"],
-            Factor: 1,
+            Factor: 100,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e2,
-            FromUnitToBase: static val => val * 1e2,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroSiemensPerCentimeter
-        ElectricConductivityUnits.TryAdd("MicroSiemensPerCentimeter", new Unit(
-            SingularName: "MicroSiemensPerCentimeter",
-            PluralName: "MicroSiemensPerCentimeter",
+        // MicrosiemensPerCentimeter
+        ElectricConductivityUnits.TryAdd("MicrosiemensPerCentimeter", new Unit(
+            SingularName: "MicrosiemensPerCentimeter",
+            PluralName: "MicrosiemensPerCentimeter",
             Abbreviations: ["µS/cm"],
-            Factor: 1,
+            Factor: 9.999999999999999E-05,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e2) / 1E-06,
-            FromUnitToBase: static val => (val * 1e2) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliSiemensPerCentimeter
-        ElectricConductivityUnits.TryAdd("MilliSiemensPerCentimeter", new Unit(
-            SingularName: "MilliSiemensPerCentimeter",
-            PluralName: "MilliSiemensPerCentimeter",
+        // MillisiemensPerCentimeter
+        ElectricConductivityUnits.TryAdd("MillisiemensPerCentimeter", new Unit(
+            SingularName: "MillisiemensPerCentimeter",
+            PluralName: "MillisiemensPerCentimeter",
             Abbreviations: ["mS/cm"],
-            Factor: 1,
+            Factor: 0.1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e2) / 0.001,
-            FromUnitToBase: static val => (val * 1e2) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -88,7 +88,7 @@ public static partial class UoMRegistry {
             "Electrical conductivity or specific conductance is the reciprocal of electrical resistivity, and measures a material's ability to conduct an electric current.",
             ElectricConductivityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = -3, ["M"] = -1, ["T"] = 3, ["I"] = 2 },
-            "",
+            null,
             false,
             1
         );

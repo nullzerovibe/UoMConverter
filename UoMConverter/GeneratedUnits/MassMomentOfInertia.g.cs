@@ -14,288 +14,288 @@ public static partial class UoMRegistry {
             SingularName: "GramSquareMeter",
             PluralName: "GramSquareMeters",
             Abbreviations: ["g·m²"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e3,
-            FromUnitToBase: static val => val / 1e3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliGramSquareMeter
-        MassMomentOfInertiaUnits.TryAdd("MilliGramSquareMeter", new Unit(
-            SingularName: "MilliGramSquareMeter",
-            PluralName: "MilliGramSquareMeters",
+        // MilligramSquareMeter
+        MassMomentOfInertiaUnits.TryAdd("MilligramSquareMeter", new Unit(
+            SingularName: "MilligramSquareMeter",
+            PluralName: "MilligramSquareMeters",
             Abbreviations: ["mg·m²"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 0.001,
-            FromUnitToBase: static val => (val / 1e3) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloGramSquareMeter
-        MassMomentOfInertiaUnits.TryAdd("KiloGramSquareMeter", new Unit(
-            SingularName: "KiloGramSquareMeter",
-            PluralName: "KiloGramSquareMeters",
+        // KilogramSquareMeter
+        MassMomentOfInertiaUnits.TryAdd("KilogramSquareMeter", new Unit(
+            SingularName: "KilogramSquareMeter",
+            PluralName: "KilogramSquareMeters",
             Abbreviations: ["kg·m²"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 1000,
-            FromUnitToBase: static val => (val / 1e3) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // GramSquareDecimeter
         MassMomentOfInertiaUnits.TryAdd("GramSquareDecimeter", new Unit(
             SingularName: "GramSquareDecimeter",
             PluralName: "GramSquareDecimeters",
             Abbreviations: ["g·dm²"],
-            Factor: 1,
+            Factor: 1E-05,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e5,
-            FromUnitToBase: static val => val / 1e5,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliGramSquareDecimeter
-        MassMomentOfInertiaUnits.TryAdd("MilliGramSquareDecimeter", new Unit(
-            SingularName: "MilliGramSquareDecimeter",
-            PluralName: "MilliGramSquareDecimeters",
+        // MilligramSquareDecimeter
+        MassMomentOfInertiaUnits.TryAdd("MilligramSquareDecimeter", new Unit(
+            SingularName: "MilligramSquareDecimeter",
+            PluralName: "MilligramSquareDecimeters",
             Abbreviations: ["mg·dm²"],
-            Factor: 1,
+            Factor: 1E-08,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e5) / 0.001,
-            FromUnitToBase: static val => (val / 1e5) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloGramSquareDecimeter
-        MassMomentOfInertiaUnits.TryAdd("KiloGramSquareDecimeter", new Unit(
-            SingularName: "KiloGramSquareDecimeter",
-            PluralName: "KiloGramSquareDecimeters",
+        // KilogramSquareDecimeter
+        MassMomentOfInertiaUnits.TryAdd("KilogramSquareDecimeter", new Unit(
+            SingularName: "KilogramSquareDecimeter",
+            PluralName: "KilogramSquareDecimeters",
             Abbreviations: ["kg·dm²"],
-            Factor: 1,
+            Factor: 0.01,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e5) / 1000,
-            FromUnitToBase: static val => (val / 1e5) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // GramSquareCentimeter
         MassMomentOfInertiaUnits.TryAdd("GramSquareCentimeter", new Unit(
             SingularName: "GramSquareCentimeter",
             PluralName: "GramSquareCentimeters",
             Abbreviations: ["g·cm²"],
-            Factor: 1,
+            Factor: 1E-07,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e7,
-            FromUnitToBase: static val => val / 1e7,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliGramSquareCentimeter
-        MassMomentOfInertiaUnits.TryAdd("MilliGramSquareCentimeter", new Unit(
-            SingularName: "MilliGramSquareCentimeter",
-            PluralName: "MilliGramSquareCentimeters",
+        // MilligramSquareCentimeter
+        MassMomentOfInertiaUnits.TryAdd("MilligramSquareCentimeter", new Unit(
+            SingularName: "MilligramSquareCentimeter",
+            PluralName: "MilligramSquareCentimeters",
             Abbreviations: ["mg·cm²"],
-            Factor: 1,
+            Factor: 1E-10,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e7) / 0.001,
-            FromUnitToBase: static val => (val / 1e7) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloGramSquareCentimeter
-        MassMomentOfInertiaUnits.TryAdd("KiloGramSquareCentimeter", new Unit(
-            SingularName: "KiloGramSquareCentimeter",
-            PluralName: "KiloGramSquareCentimeters",
+        // KilogramSquareCentimeter
+        MassMomentOfInertiaUnits.TryAdd("KilogramSquareCentimeter", new Unit(
+            SingularName: "KilogramSquareCentimeter",
+            PluralName: "KilogramSquareCentimeters",
             Abbreviations: ["kg·cm²"],
-            Factor: 1,
+            Factor: 9.999999999999999E-05,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e7) / 1000,
-            FromUnitToBase: static val => (val / 1e7) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // GramSquareMillimeter
         MassMomentOfInertiaUnits.TryAdd("GramSquareMillimeter", new Unit(
             SingularName: "GramSquareMillimeter",
             PluralName: "GramSquareMillimeters",
             Abbreviations: ["g·mm²"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e9,
-            FromUnitToBase: static val => val / 1e9,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliGramSquareMillimeter
-        MassMomentOfInertiaUnits.TryAdd("MilliGramSquareMillimeter", new Unit(
-            SingularName: "MilliGramSquareMillimeter",
-            PluralName: "MilliGramSquareMillimeters",
+        // MilligramSquareMillimeter
+        MassMomentOfInertiaUnits.TryAdd("MilligramSquareMillimeter", new Unit(
+            SingularName: "MilligramSquareMillimeter",
+            PluralName: "MilligramSquareMillimeters",
             Abbreviations: ["mg·mm²"],
-            Factor: 1,
+            Factor: 1.0000000000000002E-12,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e9) / 0.001,
-            FromUnitToBase: static val => (val / 1e9) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloGramSquareMillimeter
-        MassMomentOfInertiaUnits.TryAdd("KiloGramSquareMillimeter", new Unit(
-            SingularName: "KiloGramSquareMillimeter",
-            PluralName: "KiloGramSquareMillimeters",
+        // KilogramSquareMillimeter
+        MassMomentOfInertiaUnits.TryAdd("KilogramSquareMillimeter", new Unit(
+            SingularName: "KilogramSquareMillimeter",
+            PluralName: "KilogramSquareMillimeters",
             Abbreviations: ["kg·mm²"],
-            Factor: 1,
+            Factor: 1.0000000000000002E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e9) / 1000,
-            FromUnitToBase: static val => (val / 1e9) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // TonneSquareMeter
         MassMomentOfInertiaUnits.TryAdd("TonneSquareMeter", new Unit(
             SingularName: "TonneSquareMeter",
             PluralName: "TonneSquareMeters",
             Abbreviations: ["t·m²"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e-3,
-            FromUnitToBase: static val => val / 1e-3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloTonneSquareMeter
-        MassMomentOfInertiaUnits.TryAdd("KiloTonneSquareMeter", new Unit(
-            SingularName: "KiloTonneSquareMeter",
-            PluralName: "KiloTonneSquareMeters",
+        // KilotonneSquareMeter
+        MassMomentOfInertiaUnits.TryAdd("KilotonneSquareMeter", new Unit(
+            SingularName: "KilotonneSquareMeter",
+            PluralName: "KilotonneSquareMeters",
             Abbreviations: ["kt·m²"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-3) / 1000,
-            FromUnitToBase: static val => (val / 1e-3) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaTonneSquareMeter
-        MassMomentOfInertiaUnits.TryAdd("MegaTonneSquareMeter", new Unit(
-            SingularName: "MegaTonneSquareMeter",
-            PluralName: "MegaTonneSquareMeters",
+        // MegatonneSquareMeter
+        MassMomentOfInertiaUnits.TryAdd("MegatonneSquareMeter", new Unit(
+            SingularName: "MegatonneSquareMeter",
+            PluralName: "MegatonneSquareMeters",
             Abbreviations: ["Mt·m²"],
-            Factor: 1,
+            Factor: 1000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-3) / 1000000,
-            FromUnitToBase: static val => (val / 1e-3) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // TonneSquareDecimeter
         MassMomentOfInertiaUnits.TryAdd("TonneSquareDecimeter", new Unit(
             SingularName: "TonneSquareDecimeter",
             PluralName: "TonneSquareDecimeters",
             Abbreviations: ["t·dm²"],
-            Factor: 1,
+            Factor: 10,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e-1,
-            FromUnitToBase: static val => val / 1e-1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloTonneSquareDecimeter
-        MassMomentOfInertiaUnits.TryAdd("KiloTonneSquareDecimeter", new Unit(
-            SingularName: "KiloTonneSquareDecimeter",
-            PluralName: "KiloTonneSquareDecimeters",
+        // KilotonneSquareDecimeter
+        MassMomentOfInertiaUnits.TryAdd("KilotonneSquareDecimeter", new Unit(
+            SingularName: "KilotonneSquareDecimeter",
+            PluralName: "KilotonneSquareDecimeters",
             Abbreviations: ["kt·dm²"],
-            Factor: 1,
+            Factor: 10000,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-1) / 1000,
-            FromUnitToBase: static val => (val / 1e-1) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaTonneSquareDecimeter
-        MassMomentOfInertiaUnits.TryAdd("MegaTonneSquareDecimeter", new Unit(
-            SingularName: "MegaTonneSquareDecimeter",
-            PluralName: "MegaTonneSquareDecimeters",
+        // MegatonneSquareDecimeter
+        MassMomentOfInertiaUnits.TryAdd("MegatonneSquareDecimeter", new Unit(
+            SingularName: "MegatonneSquareDecimeter",
+            PluralName: "MegatonneSquareDecimeters",
             Abbreviations: ["Mt·dm²"],
-            Factor: 1,
+            Factor: 10000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-1) / 1000000,
-            FromUnitToBase: static val => (val / 1e-1) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // TonneSquareCentimeter
         MassMomentOfInertiaUnits.TryAdd("TonneSquareCentimeter", new Unit(
             SingularName: "TonneSquareCentimeter",
             PluralName: "TonneSquareCentimeters",
             Abbreviations: ["t·cm²"],
-            Factor: 1,
+            Factor: 0.1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e1,
-            FromUnitToBase: static val => val / 1e1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloTonneSquareCentimeter
-        MassMomentOfInertiaUnits.TryAdd("KiloTonneSquareCentimeter", new Unit(
-            SingularName: "KiloTonneSquareCentimeter",
-            PluralName: "KiloTonneSquareCentimeters",
+        // KilotonneSquareCentimeter
+        MassMomentOfInertiaUnits.TryAdd("KilotonneSquareCentimeter", new Unit(
+            SingularName: "KilotonneSquareCentimeter",
+            PluralName: "KilotonneSquareCentimeters",
             Abbreviations: ["kt·cm²"],
-            Factor: 1,
+            Factor: 100,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e1) / 1000,
-            FromUnitToBase: static val => (val / 1e1) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaTonneSquareCentimeter
-        MassMomentOfInertiaUnits.TryAdd("MegaTonneSquareCentimeter", new Unit(
-            SingularName: "MegaTonneSquareCentimeter",
-            PluralName: "MegaTonneSquareCentimeters",
+        // MegatonneSquareCentimeter
+        MassMomentOfInertiaUnits.TryAdd("MegatonneSquareCentimeter", new Unit(
+            SingularName: "MegatonneSquareCentimeter",
+            PluralName: "MegatonneSquareCentimeters",
             Abbreviations: ["Mt·cm²"],
-            Factor: 1,
+            Factor: 100000,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e1) / 1000000,
-            FromUnitToBase: static val => (val / 1e1) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // TonneSquareMillimeter
         MassMomentOfInertiaUnits.TryAdd("TonneSquareMillimeter", new Unit(
             SingularName: "TonneSquareMillimeter",
             PluralName: "TonneSquareMillimeters",
             Abbreviations: ["t·mm²"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e3,
-            FromUnitToBase: static val => val / 1e3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloTonneSquareMillimeter
-        MassMomentOfInertiaUnits.TryAdd("KiloTonneSquareMillimeter", new Unit(
-            SingularName: "KiloTonneSquareMillimeter",
-            PluralName: "KiloTonneSquareMillimeters",
+        // KilotonneSquareMillimeter
+        MassMomentOfInertiaUnits.TryAdd("KilotonneSquareMillimeter", new Unit(
+            SingularName: "KilotonneSquareMillimeter",
+            PluralName: "KilotonneSquareMillimeters",
             Abbreviations: ["kt·mm²"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 1000,
-            FromUnitToBase: static val => (val / 1e3) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaTonneSquareMillimeter
-        MassMomentOfInertiaUnits.TryAdd("MegaTonneSquareMillimeter", new Unit(
-            SingularName: "MegaTonneSquareMillimeter",
-            PluralName: "MegaTonneSquareMillimeters",
+        // MegatonneSquareMillimeter
+        MassMomentOfInertiaUnits.TryAdd("MegatonneSquareMillimeter", new Unit(
+            SingularName: "MegatonneSquareMillimeter",
+            PluralName: "MegatonneSquareMillimeters",
             Abbreviations: ["Mt·mm²"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 1000000,
-            FromUnitToBase: static val => (val / 1e3) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundSquareFoot
         MassMomentOfInertiaUnits.TryAdd("PoundSquareFoot", new Unit(
@@ -304,10 +304,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["lb·ft²"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (0.45359237 * 9.290304e-2),
-            FromUnitToBase: static val => val * (0.45359237 * 9.290304e-2),
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (0.45359237 * 9.290304e-2)),
+            FromUnitToBase: static val => (val * (0.45359237 * 9.290304e-2)),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundSquareInch
         MassMomentOfInertiaUnits.TryAdd("PoundSquareInch", new Unit(
@@ -316,10 +316,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["lb·in²"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (0.45359237 * 0.00064516),
-            FromUnitToBase: static val => val * (0.45359237 * 0.00064516),
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (0.45359237 * 0.00064516)),
+            FromUnitToBase: static val => (val * (0.45359237 * 0.00064516)),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // SlugSquareFoot
         MassMomentOfInertiaUnits.TryAdd("SlugSquareFoot", new Unit(
@@ -328,10 +328,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["slug·ft²"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 0.3048 / (0.45359237 * 9.290304e-2 * 9.80665),
-            FromUnitToBase: static val => val * 0.45359237 * 9.290304e-2 * 9.80665 / 0.3048,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 0.3048 / (0.45359237 * 9.290304e-2 * 9.80665)),
+            FromUnitToBase: static val => (val * 0.45359237 * 9.290304e-2 * 9.80665 / 0.3048),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // SlugSquareInch
         MassMomentOfInertiaUnits.TryAdd("SlugSquareInch", new Unit(
@@ -340,10 +340,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["slug·in²"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 0.3048 / (0.45359237 * 0.00064516 * 9.80665),
-            FromUnitToBase: static val => val * 0.45359237 * 0.00064516 * 9.80665 / 0.3048,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 0.3048 / (0.45359237 * 0.00064516 * 9.80665)),
+            FromUnitToBase: static val => (val * 0.45359237 * 0.00064516 * 9.80665 / 0.3048),
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -352,7 +352,7 @@ public static partial class UoMRegistry {
             "A property of body reflects how its mass is distributed with regard to an axis.",
             MassMomentOfInertiaUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 2, ["M"] = 1 },
-            "",
+            null,
             false,
             1
         );

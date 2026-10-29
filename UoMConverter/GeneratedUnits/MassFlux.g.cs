@@ -14,144 +14,144 @@ public static partial class UoMRegistry {
             SingularName: "GramPerSecondPerSquareMeter",
             PluralName: "GramsPerSecondPerSquareMeter",
             Abbreviations: ["g·s⁻¹·m⁻²"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e3,
-            FromUnitToBase: static val => val / 1e3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloGramPerSecondPerSquareMeter
-        MassFluxUnits.TryAdd("KiloGramPerSecondPerSquareMeter", new Unit(
-            SingularName: "KiloGramPerSecondPerSquareMeter",
-            PluralName: "KiloGramsPerSecondPerSquareMeter",
+        // KilogramPerSecondPerSquareMeter
+        MassFluxUnits.TryAdd("KilogramPerSecondPerSquareMeter", new Unit(
+            SingularName: "KilogramPerSecondPerSquareMeter",
+            PluralName: "KilogramsPerSecondPerSquareMeter",
             Abbreviations: ["kg·s⁻¹·m⁻²"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 1000,
-            FromUnitToBase: static val => (val / 1e3) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // GramPerSecondPerSquareCentimeter
         MassFluxUnits.TryAdd("GramPerSecondPerSquareCentimeter", new Unit(
             SingularName: "GramPerSecondPerSquareCentimeter",
             PluralName: "GramsPerSecondPerSquareCentimeter",
             Abbreviations: ["g·s⁻¹·cm⁻²"],
-            Factor: 1,
+            Factor: 10,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e-1,
-            FromUnitToBase: static val => val / 1e-1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloGramPerSecondPerSquareCentimeter
-        MassFluxUnits.TryAdd("KiloGramPerSecondPerSquareCentimeter", new Unit(
-            SingularName: "KiloGramPerSecondPerSquareCentimeter",
-            PluralName: "KiloGramsPerSecondPerSquareCentimeter",
+        // KilogramPerSecondPerSquareCentimeter
+        MassFluxUnits.TryAdd("KilogramPerSecondPerSquareCentimeter", new Unit(
+            SingularName: "KilogramPerSecondPerSquareCentimeter",
+            PluralName: "KilogramsPerSecondPerSquareCentimeter",
             Abbreviations: ["kg·s⁻¹·cm⁻²"],
-            Factor: 1,
+            Factor: 10000,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-1) / 1000,
-            FromUnitToBase: static val => (val / 1e-1) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // GramPerSecondPerSquareMillimeter
         MassFluxUnits.TryAdd("GramPerSecondPerSquareMillimeter", new Unit(
             SingularName: "GramPerSecondPerSquareMillimeter",
             PluralName: "GramsPerSecondPerSquareMillimeter",
             Abbreviations: ["g·s⁻¹·mm⁻²"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e-3,
-            FromUnitToBase: static val => val / 1e-3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloGramPerSecondPerSquareMillimeter
-        MassFluxUnits.TryAdd("KiloGramPerSecondPerSquareMillimeter", new Unit(
-            SingularName: "KiloGramPerSecondPerSquareMillimeter",
-            PluralName: "KiloGramsPerSecondPerSquareMillimeter",
+        // KilogramPerSecondPerSquareMillimeter
+        MassFluxUnits.TryAdd("KilogramPerSecondPerSquareMillimeter", new Unit(
+            SingularName: "KilogramPerSecondPerSquareMillimeter",
+            PluralName: "KilogramsPerSecondPerSquareMillimeter",
             Abbreviations: ["kg·s⁻¹·mm⁻²"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-3) / 1000,
-            FromUnitToBase: static val => (val / 1e-3) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // GramPerHourPerSquareMeter
         MassFluxUnits.TryAdd("GramPerHourPerSquareMeter", new Unit(
             SingularName: "GramPerHourPerSquareMeter",
             PluralName: "GramsPerHourPerSquareMeter",
             Abbreviations: ["g·h⁻¹·m⁻²"],
-            Factor: 1,
+            Factor: 2.7777777777777776E-07,
             Offset: 0,
-            FromBaseToUnit: static val => val * 3.6e6,
-            FromUnitToBase: static val => val / 3.6e6,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloGramPerHourPerSquareMeter
-        MassFluxUnits.TryAdd("KiloGramPerHourPerSquareMeter", new Unit(
-            SingularName: "KiloGramPerHourPerSquareMeter",
-            PluralName: "KiloGramsPerHourPerSquareMeter",
+        // KilogramPerHourPerSquareMeter
+        MassFluxUnits.TryAdd("KilogramPerHourPerSquareMeter", new Unit(
+            SingularName: "KilogramPerHourPerSquareMeter",
+            PluralName: "KilogramsPerHourPerSquareMeter",
             Abbreviations: ["kg·h⁻¹·m⁻²"],
-            Factor: 1,
+            Factor: 0.0002777777777777778,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 3.6e6) / 1000,
-            FromUnitToBase: static val => (val / 3.6e6) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // GramPerHourPerSquareCentimeter
         MassFluxUnits.TryAdd("GramPerHourPerSquareCentimeter", new Unit(
             SingularName: "GramPerHourPerSquareCentimeter",
             PluralName: "GramsPerHourPerSquareCentimeter",
             Abbreviations: ["g·h⁻¹·cm⁻²"],
-            Factor: 1,
+            Factor: 0.002777777777777778,
             Offset: 0,
-            FromBaseToUnit: static val => val * 3.6e2,
-            FromUnitToBase: static val => val / 3.6e2,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloGramPerHourPerSquareCentimeter
-        MassFluxUnits.TryAdd("KiloGramPerHourPerSquareCentimeter", new Unit(
-            SingularName: "KiloGramPerHourPerSquareCentimeter",
-            PluralName: "KiloGramsPerHourPerSquareCentimeter",
+        // KilogramPerHourPerSquareCentimeter
+        MassFluxUnits.TryAdd("KilogramPerHourPerSquareCentimeter", new Unit(
+            SingularName: "KilogramPerHourPerSquareCentimeter",
+            PluralName: "KilogramsPerHourPerSquareCentimeter",
             Abbreviations: ["kg·h⁻¹·cm⁻²"],
-            Factor: 1,
+            Factor: 2.7777777777777777,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 3.6e2) / 1000,
-            FromUnitToBase: static val => (val / 3.6e2) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // GramPerHourPerSquareMillimeter
         MassFluxUnits.TryAdd("GramPerHourPerSquareMillimeter", new Unit(
             SingularName: "GramPerHourPerSquareMillimeter",
             PluralName: "GramsPerHourPerSquareMillimeter",
             Abbreviations: ["g·h⁻¹·mm⁻²"],
-            Factor: 1,
+            Factor: 0.2777777777777778,
             Offset: 0,
-            FromBaseToUnit: static val => val * 3.6e0,
-            FromUnitToBase: static val => val / 3.6e0,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloGramPerHourPerSquareMillimeter
-        MassFluxUnits.TryAdd("KiloGramPerHourPerSquareMillimeter", new Unit(
-            SingularName: "KiloGramPerHourPerSquareMillimeter",
-            PluralName: "KiloGramsPerHourPerSquareMillimeter",
+        // KilogramPerHourPerSquareMillimeter
+        MassFluxUnits.TryAdd("KilogramPerHourPerSquareMillimeter", new Unit(
+            SingularName: "KilogramPerHourPerSquareMillimeter",
+            PluralName: "KilogramsPerHourPerSquareMillimeter",
             Abbreviations: ["kg·h⁻¹·mm⁻²"],
-            Factor: 1,
+            Factor: 277.77777777777777,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 3.6e0) / 1000,
-            FromUnitToBase: static val => (val / 3.6e0) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -160,7 +160,7 @@ public static partial class UoMRegistry {
             "Mass flux is the mass flow rate per unit area.",
             MassFluxUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = -2, ["M"] = 1, ["T"] = -1 },
-            "",
+            null,
             false,
             1
         );

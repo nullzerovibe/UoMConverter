@@ -18,152 +18,152 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloByte
-        InformationUnits.TryAdd("KiloByte", new Unit(
-            SingularName: "KiloByte",
-            PluralName: "KiloBytes",
+        // Kilobyte
+        InformationUnits.TryAdd("Kilobyte", new Unit(
+            SingularName: "Kilobyte",
+            PluralName: "Kilobytes",
             Abbreviations: ["kB"],
-            Factor: 1,
+            Factor: 8000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1000,
-            FromUnitToBase: static val => (val * 8) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaByte
-        InformationUnits.TryAdd("MegaByte", new Unit(
-            SingularName: "MegaByte",
-            PluralName: "MegaBytes",
+        // Megabyte
+        InformationUnits.TryAdd("Megabyte", new Unit(
+            SingularName: "Megabyte",
+            PluralName: "Megabytes",
             Abbreviations: ["MB"],
-            Factor: 1,
+            Factor: 8000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1000000,
-            FromUnitToBase: static val => (val * 8) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaByte
-        InformationUnits.TryAdd("GigaByte", new Unit(
-            SingularName: "GigaByte",
-            PluralName: "GigaBytes",
+        // Gigabyte
+        InformationUnits.TryAdd("Gigabyte", new Unit(
+            SingularName: "Gigabyte",
+            PluralName: "Gigabytes",
             Abbreviations: ["GB"],
-            Factor: 1,
+            Factor: 8000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1000000000,
-            FromUnitToBase: static val => (val * 8) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // TeraByte
-        InformationUnits.TryAdd("TeraByte", new Unit(
-            SingularName: "TeraByte",
-            PluralName: "TeraBytes",
+        // Terabyte
+        InformationUnits.TryAdd("Terabyte", new Unit(
+            SingularName: "Terabyte",
+            PluralName: "Terabytes",
             Abbreviations: ["TB"],
-            Factor: 1,
+            Factor: 8000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1000000000000,
-            FromUnitToBase: static val => (val * 8) * 1000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PetaByte
-        InformationUnits.TryAdd("PetaByte", new Unit(
-            SingularName: "PetaByte",
-            PluralName: "PetaBytes",
+        // Petabyte
+        InformationUnits.TryAdd("Petabyte", new Unit(
+            SingularName: "Petabyte",
+            PluralName: "Petabytes",
             Abbreviations: ["PB"],
-            Factor: 1,
+            Factor: 8000000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1000000000000000,
-            FromUnitToBase: static val => (val * 8) * 1000000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // ExaByte
-        InformationUnits.TryAdd("ExaByte", new Unit(
-            SingularName: "ExaByte",
-            PluralName: "ExaBytes",
+        // Exabyte
+        InformationUnits.TryAdd("Exabyte", new Unit(
+            SingularName: "Exabyte",
+            PluralName: "Exabytes",
             Abbreviations: ["EB"],
-            Factor: 1,
+            Factor: 8E+18,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1E+18,
-            FromUnitToBase: static val => (val * 8) * 1E+18,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KibiByte
-        InformationUnits.TryAdd("KibiByte", new Unit(
-            SingularName: "KibiByte",
-            PluralName: "KibiBytes",
+        // Kibibyte
+        InformationUnits.TryAdd("Kibibyte", new Unit(
+            SingularName: "Kibibyte",
+            PluralName: "Kibibytes",
             Abbreviations: ["KiB"],
-            Factor: 1,
+            Factor: 8192,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1024,
-            FromUnitToBase: static val => (val * 8) * 1024,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MebiByte
-        InformationUnits.TryAdd("MebiByte", new Unit(
-            SingularName: "MebiByte",
-            PluralName: "MebiBytes",
+        // Mebibyte
+        InformationUnits.TryAdd("Mebibyte", new Unit(
+            SingularName: "Mebibyte",
+            PluralName: "Mebibytes",
             Abbreviations: ["MiB"],
-            Factor: 1,
+            Factor: 8388608,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1048576,
-            FromUnitToBase: static val => (val * 8) * 1048576,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GibiByte
-        InformationUnits.TryAdd("GibiByte", new Unit(
-            SingularName: "GibiByte",
-            PluralName: "GibiBytes",
+        // Gibibyte
+        InformationUnits.TryAdd("Gibibyte", new Unit(
+            SingularName: "Gibibyte",
+            PluralName: "Gibibytes",
             Abbreviations: ["GiB"],
-            Factor: 1,
+            Factor: 8589934592,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1073741824,
-            FromUnitToBase: static val => (val * 8) * 1073741824,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // TebiByte
-        InformationUnits.TryAdd("TebiByte", new Unit(
-            SingularName: "TebiByte",
-            PluralName: "TebiBytes",
+        // Tebibyte
+        InformationUnits.TryAdd("Tebibyte", new Unit(
+            SingularName: "Tebibyte",
+            PluralName: "Tebibytes",
             Abbreviations: ["TiB"],
-            Factor: 1,
+            Factor: 8796093022208,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1099511627776,
-            FromUnitToBase: static val => (val * 8) * 1099511627776,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PebiByte
-        InformationUnits.TryAdd("PebiByte", new Unit(
-            SingularName: "PebiByte",
-            PluralName: "PebiBytes",
+        // Pebibyte
+        InformationUnits.TryAdd("Pebibyte", new Unit(
+            SingularName: "Pebibyte",
+            PluralName: "Pebibytes",
             Abbreviations: ["PiB"],
-            Factor: 1,
+            Factor: 9007199254740992,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1125899906842624,
-            FromUnitToBase: static val => (val * 8) * 1125899906842624,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // ExbiByte
-        InformationUnits.TryAdd("ExbiByte", new Unit(
-            SingularName: "ExbiByte",
-            PluralName: "ExbiBytes",
+        // Exbibyte
+        InformationUnits.TryAdd("Exbibyte", new Unit(
+            SingularName: "Exbibyte",
+            PluralName: "Exbibytes",
             Abbreviations: ["EiB"],
-            Factor: 1,
+            Factor: 9.223372036854776E+18,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1.152921504606847E+18,
-            FromUnitToBase: static val => (val * 8) * 1.152921504606847E+18,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Octet
         InformationUnits.TryAdd("Octet", new Unit(
@@ -174,152 +174,152 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloOctet
-        InformationUnits.TryAdd("KiloOctet", new Unit(
-            SingularName: "KiloOctet",
-            PluralName: "KiloOctets",
+        // Kilooctet
+        InformationUnits.TryAdd("Kilooctet", new Unit(
+            SingularName: "Kilooctet",
+            PluralName: "Kilooctets",
             Abbreviations: ["ko"],
-            Factor: 1,
+            Factor: 8000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1000,
-            FromUnitToBase: static val => (val * 8) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaOctet
-        InformationUnits.TryAdd("MegaOctet", new Unit(
-            SingularName: "MegaOctet",
-            PluralName: "MegaOctets",
+        // Megaoctet
+        InformationUnits.TryAdd("Megaoctet", new Unit(
+            SingularName: "Megaoctet",
+            PluralName: "Megaoctets",
             Abbreviations: ["Mo"],
-            Factor: 1,
+            Factor: 8000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1000000,
-            FromUnitToBase: static val => (val * 8) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaOctet
-        InformationUnits.TryAdd("GigaOctet", new Unit(
-            SingularName: "GigaOctet",
-            PluralName: "GigaOctets",
+        // Gigaoctet
+        InformationUnits.TryAdd("Gigaoctet", new Unit(
+            SingularName: "Gigaoctet",
+            PluralName: "Gigaoctets",
             Abbreviations: ["Go"],
-            Factor: 1,
+            Factor: 8000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1000000000,
-            FromUnitToBase: static val => (val * 8) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // TeraOctet
-        InformationUnits.TryAdd("TeraOctet", new Unit(
-            SingularName: "TeraOctet",
-            PluralName: "TeraOctets",
+        // Teraoctet
+        InformationUnits.TryAdd("Teraoctet", new Unit(
+            SingularName: "Teraoctet",
+            PluralName: "Teraoctets",
             Abbreviations: ["To"],
-            Factor: 1,
+            Factor: 8000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1000000000000,
-            FromUnitToBase: static val => (val * 8) * 1000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PetaOctet
-        InformationUnits.TryAdd("PetaOctet", new Unit(
-            SingularName: "PetaOctet",
-            PluralName: "PetaOctets",
+        // Petaoctet
+        InformationUnits.TryAdd("Petaoctet", new Unit(
+            SingularName: "Petaoctet",
+            PluralName: "Petaoctets",
             Abbreviations: ["Po"],
-            Factor: 1,
+            Factor: 8000000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1000000000000000,
-            FromUnitToBase: static val => (val * 8) * 1000000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // ExaOctet
-        InformationUnits.TryAdd("ExaOctet", new Unit(
-            SingularName: "ExaOctet",
-            PluralName: "ExaOctets",
+        // Exaoctet
+        InformationUnits.TryAdd("Exaoctet", new Unit(
+            SingularName: "Exaoctet",
+            PluralName: "Exaoctets",
             Abbreviations: ["Eo"],
-            Factor: 1,
+            Factor: 8E+18,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1E+18,
-            FromUnitToBase: static val => (val * 8) * 1E+18,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KibiOctet
-        InformationUnits.TryAdd("KibiOctet", new Unit(
-            SingularName: "KibiOctet",
-            PluralName: "KibiOctets",
+        // Kibioctet
+        InformationUnits.TryAdd("Kibioctet", new Unit(
+            SingularName: "Kibioctet",
+            PluralName: "Kibioctets",
             Abbreviations: ["Kio"],
-            Factor: 1,
+            Factor: 8192,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1024,
-            FromUnitToBase: static val => (val * 8) * 1024,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MebiOctet
-        InformationUnits.TryAdd("MebiOctet", new Unit(
-            SingularName: "MebiOctet",
-            PluralName: "MebiOctets",
+        // Mebioctet
+        InformationUnits.TryAdd("Mebioctet", new Unit(
+            SingularName: "Mebioctet",
+            PluralName: "Mebioctets",
             Abbreviations: ["Mio"],
-            Factor: 1,
+            Factor: 8388608,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1048576,
-            FromUnitToBase: static val => (val * 8) * 1048576,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GibiOctet
-        InformationUnits.TryAdd("GibiOctet", new Unit(
-            SingularName: "GibiOctet",
-            PluralName: "GibiOctets",
+        // Gibioctet
+        InformationUnits.TryAdd("Gibioctet", new Unit(
+            SingularName: "Gibioctet",
+            PluralName: "Gibioctets",
             Abbreviations: ["Gio"],
-            Factor: 1,
+            Factor: 8589934592,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1073741824,
-            FromUnitToBase: static val => (val * 8) * 1073741824,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // TebiOctet
-        InformationUnits.TryAdd("TebiOctet", new Unit(
-            SingularName: "TebiOctet",
-            PluralName: "TebiOctets",
+        // Tebioctet
+        InformationUnits.TryAdd("Tebioctet", new Unit(
+            SingularName: "Tebioctet",
+            PluralName: "Tebioctets",
             Abbreviations: ["Tio"],
-            Factor: 1,
+            Factor: 8796093022208,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1099511627776,
-            FromUnitToBase: static val => (val * 8) * 1099511627776,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PebiOctet
-        InformationUnits.TryAdd("PebiOctet", new Unit(
-            SingularName: "PebiOctet",
-            PluralName: "PebiOctets",
+        // Pebioctet
+        InformationUnits.TryAdd("Pebioctet", new Unit(
+            SingularName: "Pebioctet",
+            PluralName: "Pebioctets",
             Abbreviations: ["Pio"],
-            Factor: 1,
+            Factor: 9007199254740992,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1125899906842624,
-            FromUnitToBase: static val => (val * 8) * 1125899906842624,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // ExbiOctet
-        InformationUnits.TryAdd("ExbiOctet", new Unit(
-            SingularName: "ExbiOctet",
-            PluralName: "ExbiOctets",
+        // Exbioctet
+        InformationUnits.TryAdd("Exbioctet", new Unit(
+            SingularName: "Exbioctet",
+            PluralName: "Exbioctets",
             Abbreviations: ["Eio"],
-            Factor: 1,
+            Factor: 9.223372036854776E+18,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1.152921504606847E+18,
-            FromUnitToBase: static val => (val * 8) * 1.152921504606847E+18,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Bit
         InformationUnits.TryAdd("Bit", new Unit(
@@ -330,152 +330,152 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloBit
-        InformationUnits.TryAdd("KiloBit", new Unit(
-            SingularName: "KiloBit",
-            PluralName: "KiloBits",
+        // Kilobit
+        InformationUnits.TryAdd("Kilobit", new Unit(
+            SingularName: "Kilobit",
+            PluralName: "Kilobits",
             Abbreviations: ["kb"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaBit
-        InformationUnits.TryAdd("MegaBit", new Unit(
-            SingularName: "MegaBit",
-            PluralName: "MegaBits",
+        // Megabit
+        InformationUnits.TryAdd("Megabit", new Unit(
+            SingularName: "Megabit",
+            PluralName: "Megabits",
             Abbreviations: ["Mb"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaBit
-        InformationUnits.TryAdd("GigaBit", new Unit(
-            SingularName: "GigaBit",
-            PluralName: "GigaBits",
+        // Gigabit
+        InformationUnits.TryAdd("Gigabit", new Unit(
+            SingularName: "Gigabit",
+            PluralName: "Gigabits",
             Abbreviations: ["Gb"],
-            Factor: 1,
+            Factor: 1000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000,
-            FromUnitToBase: static val => (val) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // TeraBit
-        InformationUnits.TryAdd("TeraBit", new Unit(
-            SingularName: "TeraBit",
-            PluralName: "TeraBits",
+        // Terabit
+        InformationUnits.TryAdd("Terabit", new Unit(
+            SingularName: "Terabit",
+            PluralName: "Terabits",
             Abbreviations: ["Tb"],
-            Factor: 1,
+            Factor: 1000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000000,
-            FromUnitToBase: static val => (val) * 1000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PetaBit
-        InformationUnits.TryAdd("PetaBit", new Unit(
-            SingularName: "PetaBit",
-            PluralName: "PetaBits",
+        // Petabit
+        InformationUnits.TryAdd("Petabit", new Unit(
+            SingularName: "Petabit",
+            PluralName: "Petabits",
             Abbreviations: ["Pb"],
-            Factor: 1,
+            Factor: 1000000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000000000,
-            FromUnitToBase: static val => (val) * 1000000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // ExaBit
-        InformationUnits.TryAdd("ExaBit", new Unit(
-            SingularName: "ExaBit",
-            PluralName: "ExaBits",
+        // Exabit
+        InformationUnits.TryAdd("Exabit", new Unit(
+            SingularName: "Exabit",
+            PluralName: "Exabits",
             Abbreviations: ["Eb"],
-            Factor: 1,
+            Factor: 1E+18,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E+18,
-            FromUnitToBase: static val => (val) * 1E+18,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KibiBit
-        InformationUnits.TryAdd("KibiBit", new Unit(
-            SingularName: "KibiBit",
-            PluralName: "KibiBits",
+        // Kibibit
+        InformationUnits.TryAdd("Kibibit", new Unit(
+            SingularName: "Kibibit",
+            PluralName: "Kibibits",
             Abbreviations: ["Kib"],
-            Factor: 1,
+            Factor: 1024,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1024,
-            FromUnitToBase: static val => (val) * 1024,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MebiBit
-        InformationUnits.TryAdd("MebiBit", new Unit(
-            SingularName: "MebiBit",
-            PluralName: "MebiBits",
+        // Mebibit
+        InformationUnits.TryAdd("Mebibit", new Unit(
+            SingularName: "Mebibit",
+            PluralName: "Mebibits",
             Abbreviations: ["Mib"],
-            Factor: 1,
+            Factor: 1048576,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1048576,
-            FromUnitToBase: static val => (val) * 1048576,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GibiBit
-        InformationUnits.TryAdd("GibiBit", new Unit(
-            SingularName: "GibiBit",
-            PluralName: "GibiBits",
+        // Gibibit
+        InformationUnits.TryAdd("Gibibit", new Unit(
+            SingularName: "Gibibit",
+            PluralName: "Gibibits",
             Abbreviations: ["Gib"],
-            Factor: 1,
+            Factor: 1073741824,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1073741824,
-            FromUnitToBase: static val => (val) * 1073741824,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // TebiBit
-        InformationUnits.TryAdd("TebiBit", new Unit(
-            SingularName: "TebiBit",
-            PluralName: "TebiBits",
+        // Tebibit
+        InformationUnits.TryAdd("Tebibit", new Unit(
+            SingularName: "Tebibit",
+            PluralName: "Tebibits",
             Abbreviations: ["Tib"],
-            Factor: 1,
+            Factor: 1099511627776,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1099511627776,
-            FromUnitToBase: static val => (val) * 1099511627776,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PebiBit
-        InformationUnits.TryAdd("PebiBit", new Unit(
-            SingularName: "PebiBit",
-            PluralName: "PebiBits",
+        // Pebibit
+        InformationUnits.TryAdd("Pebibit", new Unit(
+            SingularName: "Pebibit",
+            PluralName: "Pebibits",
             Abbreviations: ["Pib"],
-            Factor: 1,
+            Factor: 1125899906842624,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1125899906842624,
-            FromUnitToBase: static val => (val) * 1125899906842624,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // ExbiBit
-        InformationUnits.TryAdd("ExbiBit", new Unit(
-            SingularName: "ExbiBit",
-            PluralName: "ExbiBits",
+        // Exbibit
+        InformationUnits.TryAdd("Exbibit", new Unit(
+            SingularName: "Exbibit",
+            PluralName: "Exbibits",
             Abbreviations: ["Eib"],
-            Factor: 1,
+            Factor: 1.152921504606847E+18,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1.152921504606847E+18,
-            FromUnitToBase: static val => (val) * 1.152921504606847E+18,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -484,7 +484,7 @@ public static partial class UoMRegistry {
             "In computing and telecommunications, a unit of information is the capacity of some standard data storage system or communication channel, used to measure the capacities of other systems and channels. In information theory, units of information are also used to measure the information contents or entropy of random variables.",
             InformationUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> {  },
-            "",
+            null,
             false,
             1
         );

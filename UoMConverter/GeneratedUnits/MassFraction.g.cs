@@ -18,8 +18,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // GramPerGram
         MassFractionUnits.TryAdd("GramPerGram", new Unit(
@@ -30,272 +30,272 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoGramPerGram
-        MassFractionUnits.TryAdd("NanoGramPerGram", new Unit(
-            SingularName: "NanoGramPerGram",
-            PluralName: "NanoGramsPerGram",
+        // NanogramPerGram
+        MassFractionUnits.TryAdd("NanogramPerGram", new Unit(
+            SingularName: "NanogramPerGram",
+            PluralName: "NanogramsPerGram",
             Abbreviations: ["ng/g"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroGramPerGram
-        MassFractionUnits.TryAdd("MicroGramPerGram", new Unit(
-            SingularName: "MicroGramPerGram",
-            PluralName: "MicroGramsPerGram",
+        // MicrogramPerGram
+        MassFractionUnits.TryAdd("MicrogramPerGram", new Unit(
+            SingularName: "MicrogramPerGram",
+            PluralName: "MicrogramsPerGram",
             Abbreviations: ["µg/g"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliGramPerGram
-        MassFractionUnits.TryAdd("MilliGramPerGram", new Unit(
-            SingularName: "MilliGramPerGram",
-            PluralName: "MilliGramsPerGram",
+        // MilligramPerGram
+        MassFractionUnits.TryAdd("MilligramPerGram", new Unit(
+            SingularName: "MilligramPerGram",
+            PluralName: "MilligramsPerGram",
             Abbreviations: ["mg/g"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiGramPerGram
-        MassFractionUnits.TryAdd("CentiGramPerGram", new Unit(
-            SingularName: "CentiGramPerGram",
-            PluralName: "CentiGramsPerGram",
+        // CentigramPerGram
+        MassFractionUnits.TryAdd("CentigramPerGram", new Unit(
+            SingularName: "CentigramPerGram",
+            PluralName: "CentigramsPerGram",
             Abbreviations: ["cg/g"],
-            Factor: 1,
+            Factor: 0.01,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.01,
-            FromUnitToBase: static val => (val) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciGramPerGram
-        MassFractionUnits.TryAdd("DeciGramPerGram", new Unit(
-            SingularName: "DeciGramPerGram",
-            PluralName: "DeciGramsPerGram",
+        // DecigramPerGram
+        MassFractionUnits.TryAdd("DecigramPerGram", new Unit(
+            SingularName: "DecigramPerGram",
+            PluralName: "DecigramsPerGram",
             Abbreviations: ["dg/g"],
-            Factor: 1,
+            Factor: 0.1,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.1,
-            FromUnitToBase: static val => (val) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DecaGramPerGram
-        MassFractionUnits.TryAdd("DecaGramPerGram", new Unit(
-            SingularName: "DecaGramPerGram",
-            PluralName: "DecaGramsPerGram",
+        // DecagramPerGram
+        MassFractionUnits.TryAdd("DecagramPerGram", new Unit(
+            SingularName: "DecagramPerGram",
+            PluralName: "DecagramsPerGram",
             Abbreviations: ["dag/g"],
-            Factor: 1,
+            Factor: 10,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 10,
-            FromUnitToBase: static val => (val) * 10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // HectoGramPerGram
-        MassFractionUnits.TryAdd("HectoGramPerGram", new Unit(
-            SingularName: "HectoGramPerGram",
-            PluralName: "HectoGramsPerGram",
+        // HectogramPerGram
+        MassFractionUnits.TryAdd("HectogramPerGram", new Unit(
+            SingularName: "HectogramPerGram",
+            PluralName: "HectogramsPerGram",
             Abbreviations: ["hg/g"],
-            Factor: 1,
+            Factor: 100,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 100,
-            FromUnitToBase: static val => (val) * 100,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloGramPerGram
-        MassFractionUnits.TryAdd("KiloGramPerGram", new Unit(
-            SingularName: "KiloGramPerGram",
-            PluralName: "KiloGramsPerGram",
+        // KilogramPerGram
+        MassFractionUnits.TryAdd("KilogramPerGram", new Unit(
+            SingularName: "KilogramPerGram",
+            PluralName: "KilogramsPerGram",
             Abbreviations: ["kg/g"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // GramPerKilogram
         MassFractionUnits.TryAdd("GramPerKilogram", new Unit(
             SingularName: "GramPerKilogram",
             PluralName: "GramsPerKilogram",
             Abbreviations: ["g/kg"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e3,
-            FromUnitToBase: static val => val / 1e3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoGramPerKilogram
-        MassFractionUnits.TryAdd("NanoGramPerKilogram", new Unit(
-            SingularName: "NanoGramPerKilogram",
-            PluralName: "NanoGramsPerKilogram",
+        // NanogramPerKilogram
+        MassFractionUnits.TryAdd("NanogramPerKilogram", new Unit(
+            SingularName: "NanogramPerKilogram",
+            PluralName: "NanogramsPerKilogram",
             Abbreviations: ["ng/kg"],
-            Factor: 1,
+            Factor: 1.0000000000000002E-12,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 1E-09,
-            FromUnitToBase: static val => (val / 1e3) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroGramPerKilogram
-        MassFractionUnits.TryAdd("MicroGramPerKilogram", new Unit(
-            SingularName: "MicroGramPerKilogram",
-            PluralName: "MicroGramsPerKilogram",
+        // MicrogramPerKilogram
+        MassFractionUnits.TryAdd("MicrogramPerKilogram", new Unit(
+            SingularName: "MicrogramPerKilogram",
+            PluralName: "MicrogramsPerKilogram",
             Abbreviations: ["µg/kg"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 1E-06,
-            FromUnitToBase: static val => (val / 1e3) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliGramPerKilogram
-        MassFractionUnits.TryAdd("MilliGramPerKilogram", new Unit(
-            SingularName: "MilliGramPerKilogram",
-            PluralName: "MilliGramsPerKilogram",
+        // MilligramPerKilogram
+        MassFractionUnits.TryAdd("MilligramPerKilogram", new Unit(
+            SingularName: "MilligramPerKilogram",
+            PluralName: "MilligramsPerKilogram",
             Abbreviations: ["mg/kg"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 0.001,
-            FromUnitToBase: static val => (val / 1e3) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiGramPerKilogram
-        MassFractionUnits.TryAdd("CentiGramPerKilogram", new Unit(
-            SingularName: "CentiGramPerKilogram",
-            PluralName: "CentiGramsPerKilogram",
+        // CentigramPerKilogram
+        MassFractionUnits.TryAdd("CentigramPerKilogram", new Unit(
+            SingularName: "CentigramPerKilogram",
+            PluralName: "CentigramsPerKilogram",
             Abbreviations: ["cg/kg"],
-            Factor: 1,
+            Factor: 1E-05,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 0.01,
-            FromUnitToBase: static val => (val / 1e3) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciGramPerKilogram
-        MassFractionUnits.TryAdd("DeciGramPerKilogram", new Unit(
-            SingularName: "DeciGramPerKilogram",
-            PluralName: "DeciGramsPerKilogram",
+        // DecigramPerKilogram
+        MassFractionUnits.TryAdd("DecigramPerKilogram", new Unit(
+            SingularName: "DecigramPerKilogram",
+            PluralName: "DecigramsPerKilogram",
             Abbreviations: ["dg/kg"],
-            Factor: 1,
+            Factor: 0.0001,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 0.1,
-            FromUnitToBase: static val => (val / 1e3) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DecaGramPerKilogram
-        MassFractionUnits.TryAdd("DecaGramPerKilogram", new Unit(
-            SingularName: "DecaGramPerKilogram",
-            PluralName: "DecaGramsPerKilogram",
+        // DecagramPerKilogram
+        MassFractionUnits.TryAdd("DecagramPerKilogram", new Unit(
+            SingularName: "DecagramPerKilogram",
+            PluralName: "DecagramsPerKilogram",
             Abbreviations: ["dag/kg"],
-            Factor: 1,
+            Factor: 0.01,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 10,
-            FromUnitToBase: static val => (val / 1e3) * 10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // HectoGramPerKilogram
-        MassFractionUnits.TryAdd("HectoGramPerKilogram", new Unit(
-            SingularName: "HectoGramPerKilogram",
-            PluralName: "HectoGramsPerKilogram",
+        // HectogramPerKilogram
+        MassFractionUnits.TryAdd("HectogramPerKilogram", new Unit(
+            SingularName: "HectogramPerKilogram",
+            PluralName: "HectogramsPerKilogram",
             Abbreviations: ["hg/kg"],
-            Factor: 1,
+            Factor: 0.1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 100,
-            FromUnitToBase: static val => (val / 1e3) * 100,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloGramPerKilogram
-        MassFractionUnits.TryAdd("KiloGramPerKilogram", new Unit(
-            SingularName: "KiloGramPerKilogram",
-            PluralName: "KiloGramsPerKilogram",
+        // KilogramPerKilogram
+        MassFractionUnits.TryAdd("KilogramPerKilogram", new Unit(
+            SingularName: "KilogramPerKilogram",
+            PluralName: "KilogramsPerKilogram",
             Abbreviations: ["kg/kg"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 1000,
-            FromUnitToBase: static val => (val / 1e3) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Percent
         MassFractionUnits.TryAdd("Percent", new Unit(
             SingularName: "Percent",
             PluralName: "Percent",
             Abbreviations: ["%", "% (w/w)"],
-            Factor: 1,
+            Factor: 0.01,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e2,
-            FromUnitToBase: static val => val / 1e2,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PartPerThousand
         MassFractionUnits.TryAdd("PartPerThousand", new Unit(
             SingularName: "PartPerThousand",
             PluralName: "PartsPerThousand",
             Abbreviations: ["‰"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e3,
-            FromUnitToBase: static val => val / 1e3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PartPerMillion
         MassFractionUnits.TryAdd("PartPerMillion", new Unit(
             SingularName: "PartPerMillion",
             PluralName: "PartsPerMillion",
             Abbreviations: ["ppm"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e6,
-            FromUnitToBase: static val => val / 1e6,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PartPerBillion
         MassFractionUnits.TryAdd("PartPerBillion", new Unit(
             SingularName: "PartPerBillion",
             PluralName: "PartsPerBillion",
             Abbreviations: ["ppb"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e9,
-            FromUnitToBase: static val => val / 1e9,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PartPerTrillion
         MassFractionUnits.TryAdd("PartPerTrillion", new Unit(
             SingularName: "PartPerTrillion",
             PluralName: "PartsPerTrillion",
             Abbreviations: ["ppt"],
-            Factor: 1,
+            Factor: 1E-12,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e12,
-            FromUnitToBase: static val => val / 1e12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -304,7 +304,7 @@ public static partial class UoMRegistry {
             "The mass fraction is defined as the mass of a constituent divided by the total mass of the mixture.",
             MassFractionUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> {  },
-            "",
+            null,
             false,
             1
         );

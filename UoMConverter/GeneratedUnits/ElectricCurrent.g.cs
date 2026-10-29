@@ -18,104 +18,104 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // FemtoAmpere
-        ElectricCurrentUnits.TryAdd("FemtoAmpere", new Unit(
-            SingularName: "FemtoAmpere",
-            PluralName: "FemtoAmperes",
+        // Femtoampere
+        ElectricCurrentUnits.TryAdd("Femtoampere", new Unit(
+            SingularName: "Femtoampere",
+            PluralName: "Femtoamperes",
             Abbreviations: ["fA"],
-            Factor: 1,
+            Factor: 1E-15,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-15,
-            FromUnitToBase: static val => (val) * 1E-15,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PicoAmpere
-        ElectricCurrentUnits.TryAdd("PicoAmpere", new Unit(
-            SingularName: "PicoAmpere",
-            PluralName: "PicoAmperes",
+        // Picoampere
+        ElectricCurrentUnits.TryAdd("Picoampere", new Unit(
+            SingularName: "Picoampere",
+            PluralName: "Picoamperes",
             Abbreviations: ["pA"],
-            Factor: 1,
+            Factor: 1E-12,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-12,
-            FromUnitToBase: static val => (val) * 1E-12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoAmpere
-        ElectricCurrentUnits.TryAdd("NanoAmpere", new Unit(
-            SingularName: "NanoAmpere",
-            PluralName: "NanoAmperes",
+        // Nanoampere
+        ElectricCurrentUnits.TryAdd("Nanoampere", new Unit(
+            SingularName: "Nanoampere",
+            PluralName: "Nanoamperes",
             Abbreviations: ["nA"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroAmpere
-        ElectricCurrentUnits.TryAdd("MicroAmpere", new Unit(
-            SingularName: "MicroAmpere",
-            PluralName: "MicroAmperes",
+        // Microampere
+        ElectricCurrentUnits.TryAdd("Microampere", new Unit(
+            SingularName: "Microampere",
+            PluralName: "Microamperes",
             Abbreviations: ["µA"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliAmpere
-        ElectricCurrentUnits.TryAdd("MilliAmpere", new Unit(
-            SingularName: "MilliAmpere",
-            PluralName: "MilliAmperes",
+        // Milliampere
+        ElectricCurrentUnits.TryAdd("Milliampere", new Unit(
+            SingularName: "Milliampere",
+            PluralName: "Milliamperes",
             Abbreviations: ["mA"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiAmpere
-        ElectricCurrentUnits.TryAdd("CentiAmpere", new Unit(
-            SingularName: "CentiAmpere",
-            PluralName: "CentiAmperes",
+        // Centiampere
+        ElectricCurrentUnits.TryAdd("Centiampere", new Unit(
+            SingularName: "Centiampere",
+            PluralName: "Centiamperes",
             Abbreviations: ["cA"],
-            Factor: 1,
+            Factor: 0.01,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.01,
-            FromUnitToBase: static val => (val) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloAmpere
-        ElectricCurrentUnits.TryAdd("KiloAmpere", new Unit(
-            SingularName: "KiloAmpere",
-            PluralName: "KiloAmperes",
+        // Kiloampere
+        ElectricCurrentUnits.TryAdd("Kiloampere", new Unit(
+            SingularName: "Kiloampere",
+            PluralName: "Kiloamperes",
             Abbreviations: ["kA"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaAmpere
-        ElectricCurrentUnits.TryAdd("MegaAmpere", new Unit(
-            SingularName: "MegaAmpere",
-            PluralName: "MegaAmperes",
+        // Megaampere
+        ElectricCurrentUnits.TryAdd("Megaampere", new Unit(
+            SingularName: "Megaampere",
+            PluralName: "Megaamperes",
             Abbreviations: ["MA"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -124,7 +124,7 @@ public static partial class UoMRegistry {
             "An electric current is a flow of electric charge. In electric circuits this charge is often carried by moving electrons in a wire. It can also be carried by ions in an electrolyte, or by both ions and electrons such as in a plasma.",
             ElectricCurrentUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["I"] = 1 },
-            "",
+            null,
             false,
             1
         );

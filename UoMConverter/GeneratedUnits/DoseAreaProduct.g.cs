@@ -18,56 +18,56 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroGraySquareMeter
-        DoseAreaProductUnits.TryAdd("MicroGraySquareMeter", new Unit(
-            SingularName: "MicroGraySquareMeter",
-            PluralName: "MicroGraySquareMeters",
+        // MicrograySquareMeter
+        DoseAreaProductUnits.TryAdd("MicrograySquareMeter", new Unit(
+            SingularName: "MicrograySquareMeter",
+            PluralName: "MicrograySquareMeters",
             Abbreviations: ["µGy·m²"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliGraySquareMeter
-        DoseAreaProductUnits.TryAdd("MilliGraySquareMeter", new Unit(
-            SingularName: "MilliGraySquareMeter",
-            PluralName: "MilliGraySquareMeters",
+        // MilligraySquareMeter
+        DoseAreaProductUnits.TryAdd("MilligraySquareMeter", new Unit(
+            SingularName: "MilligraySquareMeter",
+            PluralName: "MilligraySquareMeters",
             Abbreviations: ["mGy·m²"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiGraySquareMeter
-        DoseAreaProductUnits.TryAdd("CentiGraySquareMeter", new Unit(
-            SingularName: "CentiGraySquareMeter",
-            PluralName: "CentiGraySquareMeters",
+        // CentigraySquareMeter
+        DoseAreaProductUnits.TryAdd("CentigraySquareMeter", new Unit(
+            SingularName: "CentigraySquareMeter",
+            PluralName: "CentigraySquareMeters",
             Abbreviations: ["cGy·m²"],
-            Factor: 1,
+            Factor: 0.01,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.01,
-            FromUnitToBase: static val => (val) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciGraySquareMeter
-        DoseAreaProductUnits.TryAdd("DeciGraySquareMeter", new Unit(
-            SingularName: "DeciGraySquareMeter",
-            PluralName: "DeciGraySquareMeters",
+        // DecigraySquareMeter
+        DoseAreaProductUnits.TryAdd("DecigraySquareMeter", new Unit(
+            SingularName: "DecigraySquareMeter",
+            PluralName: "DecigraySquareMeters",
             Abbreviations: ["dGy·m²"],
-            Factor: 1,
+            Factor: 0.1,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.1,
-            FromUnitToBase: static val => (val) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // GraySquareDecimeter
         DoseAreaProductUnits.TryAdd("GraySquareDecimeter", new Unit(
@@ -78,56 +78,56 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroGraySquareDecimeter
-        DoseAreaProductUnits.TryAdd("MicroGraySquareDecimeter", new Unit(
-            SingularName: "MicroGraySquareDecimeter",
-            PluralName: "MicroGraySquareDecimeters",
+        // MicrograySquareDecimeter
+        DoseAreaProductUnits.TryAdd("MicrograySquareDecimeter", new Unit(
+            SingularName: "MicrograySquareDecimeter",
+            PluralName: "MicrograySquareDecimeters",
             Abbreviations: ["µGy·dm²"],
-            Factor: 1,
+            Factor: 1E-08,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 100) / 1E-06,
-            FromUnitToBase: static val => (val / 100) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliGraySquareDecimeter
-        DoseAreaProductUnits.TryAdd("MilliGraySquareDecimeter", new Unit(
-            SingularName: "MilliGraySquareDecimeter",
-            PluralName: "MilliGraySquareDecimeters",
+        // MilligraySquareDecimeter
+        DoseAreaProductUnits.TryAdd("MilligraySquareDecimeter", new Unit(
+            SingularName: "MilligraySquareDecimeter",
+            PluralName: "MilligraySquareDecimeters",
             Abbreviations: ["mGy·dm²"],
-            Factor: 1,
+            Factor: 1E-05,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 100) / 0.001,
-            FromUnitToBase: static val => (val / 100) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiGraySquareDecimeter
-        DoseAreaProductUnits.TryAdd("CentiGraySquareDecimeter", new Unit(
-            SingularName: "CentiGraySquareDecimeter",
-            PluralName: "CentiGraySquareDecimeters",
+        // CentigraySquareDecimeter
+        DoseAreaProductUnits.TryAdd("CentigraySquareDecimeter", new Unit(
+            SingularName: "CentigraySquareDecimeter",
+            PluralName: "CentigraySquareDecimeters",
             Abbreviations: ["cGy·dm²"],
-            Factor: 1,
+            Factor: 0.0001,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 100) / 0.01,
-            FromUnitToBase: static val => (val / 100) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciGraySquareDecimeter
-        DoseAreaProductUnits.TryAdd("DeciGraySquareDecimeter", new Unit(
-            SingularName: "DeciGraySquareDecimeter",
-            PluralName: "DeciGraySquareDecimeters",
+        // DecigraySquareDecimeter
+        DoseAreaProductUnits.TryAdd("DecigraySquareDecimeter", new Unit(
+            SingularName: "DecigraySquareDecimeter",
+            PluralName: "DecigraySquareDecimeters",
             Abbreviations: ["dGy·dm²"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 100) / 0.1,
-            FromUnitToBase: static val => (val / 100) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // GraySquareCentimeter
         DoseAreaProductUnits.TryAdd("GraySquareCentimeter", new Unit(
@@ -138,56 +138,56 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroGraySquareCentimeter
-        DoseAreaProductUnits.TryAdd("MicroGraySquareCentimeter", new Unit(
-            SingularName: "MicroGraySquareCentimeter",
-            PluralName: "MicroGraySquareCentimeters",
+        // MicrograySquareCentimeter
+        DoseAreaProductUnits.TryAdd("MicrograySquareCentimeter", new Unit(
+            SingularName: "MicrograySquareCentimeter",
+            PluralName: "MicrograySquareCentimeters",
             Abbreviations: ["µGy·cm²"],
-            Factor: 1,
+            Factor: 1E-10,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 10000) / 1E-06,
-            FromUnitToBase: static val => (val / 10000) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliGraySquareCentimeter
-        DoseAreaProductUnits.TryAdd("MilliGraySquareCentimeter", new Unit(
-            SingularName: "MilliGraySquareCentimeter",
-            PluralName: "MilliGraySquareCentimeters",
+        // MilligraySquareCentimeter
+        DoseAreaProductUnits.TryAdd("MilligraySquareCentimeter", new Unit(
+            SingularName: "MilligraySquareCentimeter",
+            PluralName: "MilligraySquareCentimeters",
             Abbreviations: ["mGy·cm²"],
-            Factor: 1,
+            Factor: 1.0000000000000001E-07,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 10000) / 0.001,
-            FromUnitToBase: static val => (val / 10000) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiGraySquareCentimeter
-        DoseAreaProductUnits.TryAdd("CentiGraySquareCentimeter", new Unit(
-            SingularName: "CentiGraySquareCentimeter",
-            PluralName: "CentiGraySquareCentimeters",
+        // CentigraySquareCentimeter
+        DoseAreaProductUnits.TryAdd("CentigraySquareCentimeter", new Unit(
+            SingularName: "CentigraySquareCentimeter",
+            PluralName: "CentigraySquareCentimeters",
             Abbreviations: ["cGy·cm²"],
-            Factor: 1,
+            Factor: 1.0000000000000002E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 10000) / 0.01,
-            FromUnitToBase: static val => (val / 10000) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciGraySquareCentimeter
-        DoseAreaProductUnits.TryAdd("DeciGraySquareCentimeter", new Unit(
-            SingularName: "DeciGraySquareCentimeter",
-            PluralName: "DeciGraySquareCentimeters",
+        // DecigraySquareCentimeter
+        DoseAreaProductUnits.TryAdd("DecigraySquareCentimeter", new Unit(
+            SingularName: "DecigraySquareCentimeter",
+            PluralName: "DecigraySquareCentimeters",
             Abbreviations: ["dGy·cm²"],
-            Factor: 1,
+            Factor: 1E-05,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 10000) / 0.1,
-            FromUnitToBase: static val => (val / 10000) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // GraySquareMillimeter
         DoseAreaProductUnits.TryAdd("GraySquareMillimeter", new Unit(
@@ -198,56 +198,56 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroGraySquareMillimeter
-        DoseAreaProductUnits.TryAdd("MicroGraySquareMillimeter", new Unit(
-            SingularName: "MicroGraySquareMillimeter",
-            PluralName: "MicroGraySquareMillimeters",
+        // MicrograySquareMillimeter
+        DoseAreaProductUnits.TryAdd("MicrograySquareMillimeter", new Unit(
+            SingularName: "MicrograySquareMillimeter",
+            PluralName: "MicrograySquareMillimeters",
             Abbreviations: ["µGy·mm²"],
-            Factor: 1,
+            Factor: 1E-12,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1000000) / 1E-06,
-            FromUnitToBase: static val => (val / 1000000) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliGraySquareMillimeter
-        DoseAreaProductUnits.TryAdd("MilliGraySquareMillimeter", new Unit(
-            SingularName: "MilliGraySquareMillimeter",
-            PluralName: "MilliGraySquareMillimeters",
+        // MilligraySquareMillimeter
+        DoseAreaProductUnits.TryAdd("MilligraySquareMillimeter", new Unit(
+            SingularName: "MilligraySquareMillimeter",
+            PluralName: "MilligraySquareMillimeters",
             Abbreviations: ["mGy·mm²"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1000000) / 0.001,
-            FromUnitToBase: static val => (val / 1000000) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiGraySquareMillimeter
-        DoseAreaProductUnits.TryAdd("CentiGraySquareMillimeter", new Unit(
-            SingularName: "CentiGraySquareMillimeter",
-            PluralName: "CentiGraySquareMillimeters",
+        // CentigraySquareMillimeter
+        DoseAreaProductUnits.TryAdd("CentigraySquareMillimeter", new Unit(
+            SingularName: "CentigraySquareMillimeter",
+            PluralName: "CentigraySquareMillimeters",
             Abbreviations: ["cGy·mm²"],
-            Factor: 1,
+            Factor: 1E-08,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1000000) / 0.01,
-            FromUnitToBase: static val => (val / 1000000) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciGraySquareMillimeter
-        DoseAreaProductUnits.TryAdd("DeciGraySquareMillimeter", new Unit(
-            SingularName: "DeciGraySquareMillimeter",
-            PluralName: "DeciGraySquareMillimeters",
+        // DecigraySquareMillimeter
+        DoseAreaProductUnits.TryAdd("DecigraySquareMillimeter", new Unit(
+            SingularName: "DecigraySquareMillimeter",
+            PluralName: "DecigraySquareMillimeters",
             Abbreviations: ["dGy·mm²"],
-            Factor: 1,
+            Factor: 1E-07,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1000000) / 0.1,
-            FromUnitToBase: static val => (val / 1000000) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // GraySquareMicrometer
         DoseAreaProductUnits.TryAdd("GraySquareMicrometer", new Unit(
@@ -258,56 +258,56 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroGraySquareMicrometer
-        DoseAreaProductUnits.TryAdd("MicroGraySquareMicrometer", new Unit(
-            SingularName: "MicroGraySquareMicrometer",
-            PluralName: "MicroGraySquareMicrometers",
+        // MicrograySquareMicrometer
+        DoseAreaProductUnits.TryAdd("MicrograySquareMicrometer", new Unit(
+            SingularName: "MicrograySquareMicrometer",
+            PluralName: "MicrograySquareMicrometers",
             Abbreviations: ["µGy·μm²"],
-            Factor: 1,
+            Factor: 9.999999999999999E-19,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1000000000000) / 1E-06,
-            FromUnitToBase: static val => (val / 1000000000000) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliGraySquareMicrometer
-        DoseAreaProductUnits.TryAdd("MilliGraySquareMicrometer", new Unit(
-            SingularName: "MilliGraySquareMicrometer",
-            PluralName: "MilliGraySquareMicrometers",
+        // MilligraySquareMicrometer
+        DoseAreaProductUnits.TryAdd("MilligraySquareMicrometer", new Unit(
+            SingularName: "MilligraySquareMicrometer",
+            PluralName: "MilligraySquareMicrometers",
             Abbreviations: ["mGy·μm²"],
-            Factor: 1,
+            Factor: 1E-15,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1000000000000) / 0.001,
-            FromUnitToBase: static val => (val / 1000000000000) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiGraySquareMicrometer
-        DoseAreaProductUnits.TryAdd("CentiGraySquareMicrometer", new Unit(
-            SingularName: "CentiGraySquareMicrometer",
-            PluralName: "CentiGraySquareMicrometers",
+        // CentigraySquareMicrometer
+        DoseAreaProductUnits.TryAdd("CentigraySquareMicrometer", new Unit(
+            SingularName: "CentigraySquareMicrometer",
+            PluralName: "CentigraySquareMicrometers",
             Abbreviations: ["cGy·μm²"],
-            Factor: 1,
+            Factor: 1E-14,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1000000000000) / 0.01,
-            FromUnitToBase: static val => (val / 1000000000000) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciGraySquareMicrometer
-        DoseAreaProductUnits.TryAdd("DeciGraySquareMicrometer", new Unit(
-            SingularName: "DeciGraySquareMicrometer",
-            PluralName: "DeciGraySquareMicrometers",
+        // DecigraySquareMicrometer
+        DoseAreaProductUnits.TryAdd("DecigraySquareMicrometer", new Unit(
+            SingularName: "DecigraySquareMicrometer",
+            PluralName: "DecigraySquareMicrometers",
             Abbreviations: ["dGy·μm²"],
-            Factor: 1,
+            Factor: 1E-13,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1000000000000) / 0.1,
-            FromUnitToBase: static val => (val / 1000000000000) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -316,7 +316,7 @@ public static partial class UoMRegistry {
             "It is defined as the absorbed dose multiplied by the area irradiated.",
             DoseAreaProductUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 4, ["T"] = -2 },
-            "",
+            null,
             false,
             1
         );

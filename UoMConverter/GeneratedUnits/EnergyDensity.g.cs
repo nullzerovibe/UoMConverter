@@ -18,140 +18,140 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloJoulePerCubicMeter
-        EnergyDensityUnits.TryAdd("KiloJoulePerCubicMeter", new Unit(
-            SingularName: "KiloJoulePerCubicMeter",
-            PluralName: "KiloJoulesPerCubicMeter",
+        // KilojoulePerCubicMeter
+        EnergyDensityUnits.TryAdd("KilojoulePerCubicMeter", new Unit(
+            SingularName: "KilojoulePerCubicMeter",
+            PluralName: "KilojoulesPerCubicMeter",
             Abbreviations: ["kJ/m³"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaJoulePerCubicMeter
-        EnergyDensityUnits.TryAdd("MegaJoulePerCubicMeter", new Unit(
-            SingularName: "MegaJoulePerCubicMeter",
-            PluralName: "MegaJoulesPerCubicMeter",
+        // MegajoulePerCubicMeter
+        EnergyDensityUnits.TryAdd("MegajoulePerCubicMeter", new Unit(
+            SingularName: "MegajoulePerCubicMeter",
+            PluralName: "MegajoulesPerCubicMeter",
             Abbreviations: ["MJ/m³"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaJoulePerCubicMeter
-        EnergyDensityUnits.TryAdd("GigaJoulePerCubicMeter", new Unit(
-            SingularName: "GigaJoulePerCubicMeter",
-            PluralName: "GigaJoulesPerCubicMeter",
+        // GigajoulePerCubicMeter
+        EnergyDensityUnits.TryAdd("GigajoulePerCubicMeter", new Unit(
+            SingularName: "GigajoulePerCubicMeter",
+            PluralName: "GigajoulesPerCubicMeter",
             Abbreviations: ["GJ/m³"],
-            Factor: 1,
+            Factor: 1000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000,
-            FromUnitToBase: static val => (val) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // TeraJoulePerCubicMeter
-        EnergyDensityUnits.TryAdd("TeraJoulePerCubicMeter", new Unit(
-            SingularName: "TeraJoulePerCubicMeter",
-            PluralName: "TeraJoulesPerCubicMeter",
+        // TerajoulePerCubicMeter
+        EnergyDensityUnits.TryAdd("TerajoulePerCubicMeter", new Unit(
+            SingularName: "TerajoulePerCubicMeter",
+            PluralName: "TerajoulesPerCubicMeter",
             Abbreviations: ["TJ/m³"],
-            Factor: 1,
+            Factor: 1000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000000,
-            FromUnitToBase: static val => (val) * 1000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PetaJoulePerCubicMeter
-        EnergyDensityUnits.TryAdd("PetaJoulePerCubicMeter", new Unit(
-            SingularName: "PetaJoulePerCubicMeter",
-            PluralName: "PetaJoulesPerCubicMeter",
+        // PetajoulePerCubicMeter
+        EnergyDensityUnits.TryAdd("PetajoulePerCubicMeter", new Unit(
+            SingularName: "PetajoulePerCubicMeter",
+            PluralName: "PetajoulesPerCubicMeter",
             Abbreviations: ["PJ/m³"],
-            Factor: 1,
+            Factor: 1000000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000000000,
-            FromUnitToBase: static val => (val) * 1000000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // WattHourPerCubicMeter
         EnergyDensityUnits.TryAdd("WattHourPerCubicMeter", new Unit(
             SingularName: "WattHourPerCubicMeter",
             PluralName: "WattHoursPerCubicMeter",
             Abbreviations: ["Wh/m³"],
-            Factor: 1,
+            Factor: 3600,
             Offset: 0,
-            FromBaseToUnit: static val => val / 3.6e+3,
-            FromUnitToBase: static val => val * 3.6e+3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloWattHourPerCubicMeter
-        EnergyDensityUnits.TryAdd("KiloWattHourPerCubicMeter", new Unit(
-            SingularName: "KiloWattHourPerCubicMeter",
-            PluralName: "KiloWattHoursPerCubicMeter",
+        // KilowattHourPerCubicMeter
+        EnergyDensityUnits.TryAdd("KilowattHourPerCubicMeter", new Unit(
+            SingularName: "KilowattHourPerCubicMeter",
+            PluralName: "KilowattHoursPerCubicMeter",
             Abbreviations: ["kWh/m³"],
-            Factor: 1,
+            Factor: 3600000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 3.6e+3) / 1000,
-            FromUnitToBase: static val => (val * 3.6e+3) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaWattHourPerCubicMeter
-        EnergyDensityUnits.TryAdd("MegaWattHourPerCubicMeter", new Unit(
-            SingularName: "MegaWattHourPerCubicMeter",
-            PluralName: "MegaWattHoursPerCubicMeter",
+        // MegawattHourPerCubicMeter
+        EnergyDensityUnits.TryAdd("MegawattHourPerCubicMeter", new Unit(
+            SingularName: "MegawattHourPerCubicMeter",
+            PluralName: "MegawattHoursPerCubicMeter",
             Abbreviations: ["MWh/m³"],
-            Factor: 1,
+            Factor: 3600000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 3.6e+3) / 1000000,
-            FromUnitToBase: static val => (val * 3.6e+3) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaWattHourPerCubicMeter
-        EnergyDensityUnits.TryAdd("GigaWattHourPerCubicMeter", new Unit(
-            SingularName: "GigaWattHourPerCubicMeter",
-            PluralName: "GigaWattHoursPerCubicMeter",
+        // GigawattHourPerCubicMeter
+        EnergyDensityUnits.TryAdd("GigawattHourPerCubicMeter", new Unit(
+            SingularName: "GigawattHourPerCubicMeter",
+            PluralName: "GigawattHoursPerCubicMeter",
             Abbreviations: ["GWh/m³"],
-            Factor: 1,
+            Factor: 3600000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 3.6e+3) / 1000000000,
-            FromUnitToBase: static val => (val * 3.6e+3) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // TeraWattHourPerCubicMeter
-        EnergyDensityUnits.TryAdd("TeraWattHourPerCubicMeter", new Unit(
-            SingularName: "TeraWattHourPerCubicMeter",
-            PluralName: "TeraWattHoursPerCubicMeter",
+        // TerawattHourPerCubicMeter
+        EnergyDensityUnits.TryAdd("TerawattHourPerCubicMeter", new Unit(
+            SingularName: "TerawattHourPerCubicMeter",
+            PluralName: "TerawattHoursPerCubicMeter",
             Abbreviations: ["TWh/m³"],
-            Factor: 1,
+            Factor: 3600000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 3.6e+3) / 1000000000000,
-            FromUnitToBase: static val => (val * 3.6e+3) * 1000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PetaWattHourPerCubicMeter
-        EnergyDensityUnits.TryAdd("PetaWattHourPerCubicMeter", new Unit(
-            SingularName: "PetaWattHourPerCubicMeter",
-            PluralName: "PetaWattHoursPerCubicMeter",
+        // PetawattHourPerCubicMeter
+        EnergyDensityUnits.TryAdd("PetawattHourPerCubicMeter", new Unit(
+            SingularName: "PetawattHourPerCubicMeter",
+            PluralName: "PetawattHoursPerCubicMeter",
             Abbreviations: ["PWh/m³"],
-            Factor: 1,
+            Factor: 3.6E+18,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 3.6e+3) / 1000000000000000,
-            FromUnitToBase: static val => (val * 3.6e+3) * 1000000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -160,7 +160,7 @@ public static partial class UoMRegistry {
             "",
             EnergyDensityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["M"] = 1, ["L"] = -1, ["T"] = -2 },
-            "",
+            null,
             false,
             1
         );

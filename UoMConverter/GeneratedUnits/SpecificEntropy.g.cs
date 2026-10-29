@@ -18,32 +18,32 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloJoulePerKilogramKelvin
-        SpecificEntropyUnits.TryAdd("KiloJoulePerKilogramKelvin", new Unit(
-            SingularName: "KiloJoulePerKilogramKelvin",
-            PluralName: "KiloJoulesPerKilogramKelvin",
+        // KilojoulePerKilogramKelvin
+        SpecificEntropyUnits.TryAdd("KilojoulePerKilogramKelvin", new Unit(
+            SingularName: "KilojoulePerKilogramKelvin",
+            PluralName: "KilojoulesPerKilogramKelvin",
             Abbreviations: ["kJ/kg·K"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaJoulePerKilogramKelvin
-        SpecificEntropyUnits.TryAdd("MegaJoulePerKilogramKelvin", new Unit(
-            SingularName: "MegaJoulePerKilogramKelvin",
-            PluralName: "MegaJoulesPerKilogramKelvin",
+        // MegajoulePerKilogramKelvin
+        SpecificEntropyUnits.TryAdd("MegajoulePerKilogramKelvin", new Unit(
+            SingularName: "MegajoulePerKilogramKelvin",
+            PluralName: "MegajoulesPerKilogramKelvin",
             Abbreviations: ["MJ/kg·K"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // JoulePerKilogramDegreeCelsius
         SpecificEntropyUnits.TryAdd("JoulePerKilogramDegreeCelsius", new Unit(
@@ -54,68 +54,68 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloJoulePerKilogramDegreeCelsius
-        SpecificEntropyUnits.TryAdd("KiloJoulePerKilogramDegreeCelsius", new Unit(
-            SingularName: "KiloJoulePerKilogramDegreeCelsius",
-            PluralName: "KiloJoulesPerKilogramDegreeCelsius",
+        // KilojoulePerKilogramDegreeCelsius
+        SpecificEntropyUnits.TryAdd("KilojoulePerKilogramDegreeCelsius", new Unit(
+            SingularName: "KilojoulePerKilogramDegreeCelsius",
+            PluralName: "KilojoulesPerKilogramDegreeCelsius",
             Abbreviations: ["kJ/kg·°C"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaJoulePerKilogramDegreeCelsius
-        SpecificEntropyUnits.TryAdd("MegaJoulePerKilogramDegreeCelsius", new Unit(
-            SingularName: "MegaJoulePerKilogramDegreeCelsius",
-            PluralName: "MegaJoulesPerKilogramDegreeCelsius",
+        // MegajoulePerKilogramDegreeCelsius
+        SpecificEntropyUnits.TryAdd("MegajoulePerKilogramDegreeCelsius", new Unit(
+            SingularName: "MegajoulePerKilogramDegreeCelsius",
+            PluralName: "MegajoulesPerKilogramDegreeCelsius",
             Abbreviations: ["MJ/kg·°C"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CaloriePerGramKelvin
         SpecificEntropyUnits.TryAdd("CaloriePerGramKelvin", new Unit(
             SingularName: "CaloriePerGramKelvin",
             PluralName: "CaloriesPerGramKelvin",
             Abbreviations: ["cal/g·K"],
-            Factor: 1,
+            Factor: 4184,
             Offset: 0,
-            FromBaseToUnit: static val => val / 4.184e3,
-            FromUnitToBase: static val => val * 4.184e3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloCaloriePerGramKelvin
-        SpecificEntropyUnits.TryAdd("KiloCaloriePerGramKelvin", new Unit(
-            SingularName: "KiloCaloriePerGramKelvin",
-            PluralName: "KiloCaloriesPerGramKelvin",
+        // KilocaloriePerGramKelvin
+        SpecificEntropyUnits.TryAdd("KilocaloriePerGramKelvin", new Unit(
+            SingularName: "KilocaloriePerGramKelvin",
+            PluralName: "KilocaloriesPerGramKelvin",
             Abbreviations: ["kcal/g·K"],
-            Factor: 1,
+            Factor: 4184000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 4.184e3) / 1000,
-            FromUnitToBase: static val => (val * 4.184e3) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // BtuPerPoundFahrenheit
         SpecificEntropyUnits.TryAdd("BtuPerPoundFahrenheit", new Unit(
             SingularName: "BtuPerPoundFahrenheit",
             PluralName: "BtusPerPoundFahrenheit",
             Abbreviations: ["BTU/(lb·°F)", "BTU/(lbm·°F)"],
-            Factor: 1,
+            Factor: 4186.8,
             Offset: 0,
-            FromBaseToUnit: static val => val / 4.1868e3,
-            FromUnitToBase: static val => val * 4.1868e3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -124,7 +124,7 @@ public static partial class UoMRegistry {
             "Specific entropy is an amount of energy required to raise temperature of a substance by 1 Kelvin per unit mass.",
             SpecificEntropyUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 2, ["T"] = -2, ["Θ"] = -1 },
-            "",
+            null,
             false,
             1
         );

@@ -18,320 +18,320 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoNewtonPerMeter
-        ForcePerLengthUnits.TryAdd("NanoNewtonPerMeter", new Unit(
-            SingularName: "NanoNewtonPerMeter",
-            PluralName: "NanoNewtonsPerMeter",
+        // NanonewtonPerMeter
+        ForcePerLengthUnits.TryAdd("NanonewtonPerMeter", new Unit(
+            SingularName: "NanonewtonPerMeter",
+            PluralName: "NanonewtonsPerMeter",
             Abbreviations: ["nN/m"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroNewtonPerMeter
-        ForcePerLengthUnits.TryAdd("MicroNewtonPerMeter", new Unit(
-            SingularName: "MicroNewtonPerMeter",
-            PluralName: "MicroNewtonsPerMeter",
+        // MicronewtonPerMeter
+        ForcePerLengthUnits.TryAdd("MicronewtonPerMeter", new Unit(
+            SingularName: "MicronewtonPerMeter",
+            PluralName: "MicronewtonsPerMeter",
             Abbreviations: ["µN/m"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliNewtonPerMeter
-        ForcePerLengthUnits.TryAdd("MilliNewtonPerMeter", new Unit(
-            SingularName: "MilliNewtonPerMeter",
-            PluralName: "MilliNewtonsPerMeter",
+        // MillinewtonPerMeter
+        ForcePerLengthUnits.TryAdd("MillinewtonPerMeter", new Unit(
+            SingularName: "MillinewtonPerMeter",
+            PluralName: "MillinewtonsPerMeter",
             Abbreviations: ["mN/m"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiNewtonPerMeter
-        ForcePerLengthUnits.TryAdd("CentiNewtonPerMeter", new Unit(
-            SingularName: "CentiNewtonPerMeter",
-            PluralName: "CentiNewtonsPerMeter",
+        // CentinewtonPerMeter
+        ForcePerLengthUnits.TryAdd("CentinewtonPerMeter", new Unit(
+            SingularName: "CentinewtonPerMeter",
+            PluralName: "CentinewtonsPerMeter",
             Abbreviations: ["cN/m"],
-            Factor: 1,
+            Factor: 0.01,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.01,
-            FromUnitToBase: static val => (val) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciNewtonPerMeter
-        ForcePerLengthUnits.TryAdd("DeciNewtonPerMeter", new Unit(
-            SingularName: "DeciNewtonPerMeter",
-            PluralName: "DeciNewtonsPerMeter",
+        // DecinewtonPerMeter
+        ForcePerLengthUnits.TryAdd("DecinewtonPerMeter", new Unit(
+            SingularName: "DecinewtonPerMeter",
+            PluralName: "DecinewtonsPerMeter",
             Abbreviations: ["dN/m"],
-            Factor: 1,
+            Factor: 0.1,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.1,
-            FromUnitToBase: static val => (val) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DecaNewtonPerMeter
-        ForcePerLengthUnits.TryAdd("DecaNewtonPerMeter", new Unit(
-            SingularName: "DecaNewtonPerMeter",
-            PluralName: "DecaNewtonsPerMeter",
+        // DecanewtonPerMeter
+        ForcePerLengthUnits.TryAdd("DecanewtonPerMeter", new Unit(
+            SingularName: "DecanewtonPerMeter",
+            PluralName: "DecanewtonsPerMeter",
             Abbreviations: ["daN/m"],
-            Factor: 1,
+            Factor: 10,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 10,
-            FromUnitToBase: static val => (val) * 10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloNewtonPerMeter
-        ForcePerLengthUnits.TryAdd("KiloNewtonPerMeter", new Unit(
-            SingularName: "KiloNewtonPerMeter",
-            PluralName: "KiloNewtonsPerMeter",
+        // KilonewtonPerMeter
+        ForcePerLengthUnits.TryAdd("KilonewtonPerMeter", new Unit(
+            SingularName: "KilonewtonPerMeter",
+            PluralName: "KilonewtonsPerMeter",
             Abbreviations: ["kN/m"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaNewtonPerMeter
-        ForcePerLengthUnits.TryAdd("MegaNewtonPerMeter", new Unit(
-            SingularName: "MegaNewtonPerMeter",
-            PluralName: "MegaNewtonsPerMeter",
+        // MeganewtonPerMeter
+        ForcePerLengthUnits.TryAdd("MeganewtonPerMeter", new Unit(
+            SingularName: "MeganewtonPerMeter",
+            PluralName: "MeganewtonsPerMeter",
             Abbreviations: ["MN/m"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // NewtonPerCentimeter
         ForcePerLengthUnits.TryAdd("NewtonPerCentimeter", new Unit(
             SingularName: "NewtonPerCentimeter",
             PluralName: "NewtonsPerCentimeter",
             Abbreviations: ["N/cm"],
-            Factor: 1,
+            Factor: 100,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e2,
-            FromUnitToBase: static val => val * 1e2,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoNewtonPerCentimeter
-        ForcePerLengthUnits.TryAdd("NanoNewtonPerCentimeter", new Unit(
-            SingularName: "NanoNewtonPerCentimeter",
-            PluralName: "NanoNewtonsPerCentimeter",
+        // NanonewtonPerCentimeter
+        ForcePerLengthUnits.TryAdd("NanonewtonPerCentimeter", new Unit(
+            SingularName: "NanonewtonPerCentimeter",
+            PluralName: "NanonewtonsPerCentimeter",
             Abbreviations: ["nN/cm"],
-            Factor: 1,
+            Factor: 1.0000000000000001E-07,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e2) / 1E-09,
-            FromUnitToBase: static val => (val * 1e2) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroNewtonPerCentimeter
-        ForcePerLengthUnits.TryAdd("MicroNewtonPerCentimeter", new Unit(
-            SingularName: "MicroNewtonPerCentimeter",
-            PluralName: "MicroNewtonsPerCentimeter",
+        // MicronewtonPerCentimeter
+        ForcePerLengthUnits.TryAdd("MicronewtonPerCentimeter", new Unit(
+            SingularName: "MicronewtonPerCentimeter",
+            PluralName: "MicronewtonsPerCentimeter",
             Abbreviations: ["µN/cm"],
-            Factor: 1,
+            Factor: 9.999999999999999E-05,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e2) / 1E-06,
-            FromUnitToBase: static val => (val * 1e2) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliNewtonPerCentimeter
-        ForcePerLengthUnits.TryAdd("MilliNewtonPerCentimeter", new Unit(
-            SingularName: "MilliNewtonPerCentimeter",
-            PluralName: "MilliNewtonsPerCentimeter",
+        // MillinewtonPerCentimeter
+        ForcePerLengthUnits.TryAdd("MillinewtonPerCentimeter", new Unit(
+            SingularName: "MillinewtonPerCentimeter",
+            PluralName: "MillinewtonsPerCentimeter",
             Abbreviations: ["mN/cm"],
-            Factor: 1,
+            Factor: 0.1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e2) / 0.001,
-            FromUnitToBase: static val => (val * 1e2) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiNewtonPerCentimeter
-        ForcePerLengthUnits.TryAdd("CentiNewtonPerCentimeter", new Unit(
-            SingularName: "CentiNewtonPerCentimeter",
-            PluralName: "CentiNewtonsPerCentimeter",
+        // CentinewtonPerCentimeter
+        ForcePerLengthUnits.TryAdd("CentinewtonPerCentimeter", new Unit(
+            SingularName: "CentinewtonPerCentimeter",
+            PluralName: "CentinewtonsPerCentimeter",
             Abbreviations: ["cN/cm"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e2) / 0.01,
-            FromUnitToBase: static val => (val * 1e2) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciNewtonPerCentimeter
-        ForcePerLengthUnits.TryAdd("DeciNewtonPerCentimeter", new Unit(
-            SingularName: "DeciNewtonPerCentimeter",
-            PluralName: "DeciNewtonsPerCentimeter",
+        // DecinewtonPerCentimeter
+        ForcePerLengthUnits.TryAdd("DecinewtonPerCentimeter", new Unit(
+            SingularName: "DecinewtonPerCentimeter",
+            PluralName: "DecinewtonsPerCentimeter",
             Abbreviations: ["dN/cm"],
-            Factor: 1,
+            Factor: 10,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e2) / 0.1,
-            FromUnitToBase: static val => (val * 1e2) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DecaNewtonPerCentimeter
-        ForcePerLengthUnits.TryAdd("DecaNewtonPerCentimeter", new Unit(
-            SingularName: "DecaNewtonPerCentimeter",
-            PluralName: "DecaNewtonsPerCentimeter",
+        // DecanewtonPerCentimeter
+        ForcePerLengthUnits.TryAdd("DecanewtonPerCentimeter", new Unit(
+            SingularName: "DecanewtonPerCentimeter",
+            PluralName: "DecanewtonsPerCentimeter",
             Abbreviations: ["daN/cm"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e2) / 10,
-            FromUnitToBase: static val => (val * 1e2) * 10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloNewtonPerCentimeter
-        ForcePerLengthUnits.TryAdd("KiloNewtonPerCentimeter", new Unit(
-            SingularName: "KiloNewtonPerCentimeter",
-            PluralName: "KiloNewtonsPerCentimeter",
+        // KilonewtonPerCentimeter
+        ForcePerLengthUnits.TryAdd("KilonewtonPerCentimeter", new Unit(
+            SingularName: "KilonewtonPerCentimeter",
+            PluralName: "KilonewtonsPerCentimeter",
             Abbreviations: ["kN/cm"],
-            Factor: 1,
+            Factor: 100000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e2) / 1000,
-            FromUnitToBase: static val => (val * 1e2) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaNewtonPerCentimeter
-        ForcePerLengthUnits.TryAdd("MegaNewtonPerCentimeter", new Unit(
-            SingularName: "MegaNewtonPerCentimeter",
-            PluralName: "MegaNewtonsPerCentimeter",
+        // MeganewtonPerCentimeter
+        ForcePerLengthUnits.TryAdd("MeganewtonPerCentimeter", new Unit(
+            SingularName: "MeganewtonPerCentimeter",
+            PluralName: "MeganewtonsPerCentimeter",
             Abbreviations: ["MN/cm"],
-            Factor: 1,
+            Factor: 100000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e2) / 1000000,
-            FromUnitToBase: static val => (val * 1e2) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // NewtonPerMillimeter
         ForcePerLengthUnits.TryAdd("NewtonPerMillimeter", new Unit(
             SingularName: "NewtonPerMillimeter",
             PluralName: "NewtonsPerMillimeter",
             Abbreviations: ["N/mm"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e3,
-            FromUnitToBase: static val => val * 1e3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoNewtonPerMillimeter
-        ForcePerLengthUnits.TryAdd("NanoNewtonPerMillimeter", new Unit(
-            SingularName: "NanoNewtonPerMillimeter",
-            PluralName: "NanoNewtonsPerMillimeter",
+        // NanonewtonPerMillimeter
+        ForcePerLengthUnits.TryAdd("NanonewtonPerMillimeter", new Unit(
+            SingularName: "NanonewtonPerMillimeter",
+            PluralName: "NanonewtonsPerMillimeter",
             Abbreviations: ["nN/mm"],
-            Factor: 1,
+            Factor: 1.0000000000000002E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e3) / 1E-09,
-            FromUnitToBase: static val => (val * 1e3) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroNewtonPerMillimeter
-        ForcePerLengthUnits.TryAdd("MicroNewtonPerMillimeter", new Unit(
-            SingularName: "MicroNewtonPerMillimeter",
-            PluralName: "MicroNewtonsPerMillimeter",
+        // MicronewtonPerMillimeter
+        ForcePerLengthUnits.TryAdd("MicronewtonPerMillimeter", new Unit(
+            SingularName: "MicronewtonPerMillimeter",
+            PluralName: "MicronewtonsPerMillimeter",
             Abbreviations: ["µN/mm"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e3) / 1E-06,
-            FromUnitToBase: static val => (val * 1e3) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliNewtonPerMillimeter
-        ForcePerLengthUnits.TryAdd("MilliNewtonPerMillimeter", new Unit(
-            SingularName: "MilliNewtonPerMillimeter",
-            PluralName: "MilliNewtonsPerMillimeter",
+        // MillinewtonPerMillimeter
+        ForcePerLengthUnits.TryAdd("MillinewtonPerMillimeter", new Unit(
+            SingularName: "MillinewtonPerMillimeter",
+            PluralName: "MillinewtonsPerMillimeter",
             Abbreviations: ["mN/mm"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e3) / 0.001,
-            FromUnitToBase: static val => (val * 1e3) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiNewtonPerMillimeter
-        ForcePerLengthUnits.TryAdd("CentiNewtonPerMillimeter", new Unit(
-            SingularName: "CentiNewtonPerMillimeter",
-            PluralName: "CentiNewtonsPerMillimeter",
+        // CentinewtonPerMillimeter
+        ForcePerLengthUnits.TryAdd("CentinewtonPerMillimeter", new Unit(
+            SingularName: "CentinewtonPerMillimeter",
+            PluralName: "CentinewtonsPerMillimeter",
             Abbreviations: ["cN/mm"],
-            Factor: 1,
+            Factor: 10,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e3) / 0.01,
-            FromUnitToBase: static val => (val * 1e3) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciNewtonPerMillimeter
-        ForcePerLengthUnits.TryAdd("DeciNewtonPerMillimeter", new Unit(
-            SingularName: "DeciNewtonPerMillimeter",
-            PluralName: "DeciNewtonsPerMillimeter",
+        // DecinewtonPerMillimeter
+        ForcePerLengthUnits.TryAdd("DecinewtonPerMillimeter", new Unit(
+            SingularName: "DecinewtonPerMillimeter",
+            PluralName: "DecinewtonsPerMillimeter",
             Abbreviations: ["dN/mm"],
-            Factor: 1,
+            Factor: 100,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e3) / 0.1,
-            FromUnitToBase: static val => (val * 1e3) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DecaNewtonPerMillimeter
-        ForcePerLengthUnits.TryAdd("DecaNewtonPerMillimeter", new Unit(
-            SingularName: "DecaNewtonPerMillimeter",
-            PluralName: "DecaNewtonsPerMillimeter",
+        // DecanewtonPerMillimeter
+        ForcePerLengthUnits.TryAdd("DecanewtonPerMillimeter", new Unit(
+            SingularName: "DecanewtonPerMillimeter",
+            PluralName: "DecanewtonsPerMillimeter",
             Abbreviations: ["daN/mm"],
-            Factor: 1,
+            Factor: 10000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e3) / 10,
-            FromUnitToBase: static val => (val * 1e3) * 10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloNewtonPerMillimeter
-        ForcePerLengthUnits.TryAdd("KiloNewtonPerMillimeter", new Unit(
-            SingularName: "KiloNewtonPerMillimeter",
-            PluralName: "KiloNewtonsPerMillimeter",
+        // KilonewtonPerMillimeter
+        ForcePerLengthUnits.TryAdd("KilonewtonPerMillimeter", new Unit(
+            SingularName: "KilonewtonPerMillimeter",
+            PluralName: "KilonewtonsPerMillimeter",
             Abbreviations: ["kN/mm"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e3) / 1000,
-            FromUnitToBase: static val => (val * 1e3) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaNewtonPerMillimeter
-        ForcePerLengthUnits.TryAdd("MegaNewtonPerMillimeter", new Unit(
-            SingularName: "MegaNewtonPerMillimeter",
-            PluralName: "MegaNewtonsPerMillimeter",
+        // MeganewtonPerMillimeter
+        ForcePerLengthUnits.TryAdd("MeganewtonPerMillimeter", new Unit(
+            SingularName: "MeganewtonPerMillimeter",
+            PluralName: "MeganewtonsPerMillimeter",
             Abbreviations: ["MN/mm"],
-            Factor: 1,
+            Factor: 1000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e3) / 1000000,
-            FromUnitToBase: static val => (val * 1e3) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // KilogramForcePerMeter
         ForcePerLengthUnits.TryAdd("KilogramForcePerMeter", new Unit(
@@ -342,8 +342,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // KilogramForcePerCentimeter
         ForcePerLengthUnits.TryAdd("KilogramForcePerCentimeter", new Unit(
@@ -354,56 +354,56 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // KilogramForcePerMillimeter
         ForcePerLengthUnits.TryAdd("KilogramForcePerMillimeter", new Unit(
             SingularName: "KilogramForcePerMillimeter",
             PluralName: "KilogramsForcePerMillimeter",
             Abbreviations: ["kgf/mm"],
-            Factor: 1,
+            Factor: 9806.65,
             Offset: 0,
-            FromBaseToUnit: static val => val / 9.80665e3,
-            FromUnitToBase: static val => val * 9.80665e3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // TonneForcePerMeter
         ForcePerLengthUnits.TryAdd("TonneForcePerMeter", new Unit(
             SingularName: "TonneForcePerMeter",
             PluralName: "TonnesForcePerMeter",
             Abbreviations: ["tf/m"],
-            Factor: 1,
+            Factor: 9806.65,
             Offset: 0,
-            FromBaseToUnit: static val => val / 9.80665e3,
-            FromUnitToBase: static val => val * 9.80665e3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // TonneForcePerCentimeter
         ForcePerLengthUnits.TryAdd("TonneForcePerCentimeter", new Unit(
             SingularName: "TonneForcePerCentimeter",
             PluralName: "TonnesForcePerCentimeter",
             Abbreviations: ["tf/cm"],
-            Factor: 1,
+            Factor: 980665,
             Offset: 0,
-            FromBaseToUnit: static val => val / 9.80665e5,
-            FromUnitToBase: static val => val * 9.80665e5,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // TonneForcePerMillimeter
         ForcePerLengthUnits.TryAdd("TonneForcePerMillimeter", new Unit(
             SingularName: "TonneForcePerMillimeter",
             PluralName: "TonnesForcePerMillimeter",
             Abbreviations: ["tf/mm"],
-            Factor: 1,
+            Factor: 9806650,
             Offset: 0,
-            FromBaseToUnit: static val => val / 9.80665e6,
-            FromUnitToBase: static val => val * 9.80665e6,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundForcePerFoot
         ForcePerLengthUnits.TryAdd("PoundForcePerFoot", new Unit(
@@ -412,10 +412,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["lbf/ft"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 0.3048 / 4.4482216152605,
-            FromUnitToBase: static val => val * 4.4482216152605 / 0.3048,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 0.3048 / 4.4482216152605),
+            FromUnitToBase: static val => (val * 4.4482216152605 / 0.3048),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundForcePerInch
         ForcePerLengthUnits.TryAdd("PoundForcePerInch", new Unit(
@@ -424,10 +424,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["lbf/in"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 2.54e-2 / 4.4482216152605,
-            FromUnitToBase: static val => val * 4.4482216152605 / 2.54e-2,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 2.54e-2 / 4.4482216152605),
+            FromUnitToBase: static val => (val * 4.4482216152605 / 2.54e-2),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundForcePerYard
         ForcePerLengthUnits.TryAdd("PoundForcePerYard", new Unit(
@@ -436,10 +436,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["lbf/yd"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 0.9144 / 4.4482216152605,
-            FromUnitToBase: static val => val * 4.4482216152605 / 0.9144,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 0.9144 / 4.4482216152605),
+            FromUnitToBase: static val => (val * 4.4482216152605 / 0.9144),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // KilopoundForcePerFoot
         ForcePerLengthUnits.TryAdd("KilopoundForcePerFoot", new Unit(
@@ -448,10 +448,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["kipf/ft", "kip/ft", "k/ft"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 0.3048e-3 / 4.4482216152605,
-            FromUnitToBase: static val => val * 4.4482216152605 / 0.3048e-3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 0.3048e-3 / 4.4482216152605),
+            FromUnitToBase: static val => (val * 4.4482216152605 / 0.3048e-3),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // KilopoundForcePerInch
         ForcePerLengthUnits.TryAdd("KilopoundForcePerInch", new Unit(
@@ -460,10 +460,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["kipf/in", "kip/in", "k/in"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 2.54e-5 / 4.4482216152605,
-            FromUnitToBase: static val => val * 4.4482216152605 / 2.54e-5,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 2.54e-5 / 4.4482216152605),
+            FromUnitToBase: static val => (val * 4.4482216152605 / 2.54e-5),
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -472,7 +472,7 @@ public static partial class UoMRegistry {
             "The magnitude of force per unit length.",
             ForcePerLengthUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["M"] = 1, ["T"] = -2 },
-            "",
+            null,
             false,
             1
         );

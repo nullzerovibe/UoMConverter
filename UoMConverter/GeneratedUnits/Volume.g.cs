@@ -18,8 +18,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Merica
         VolumeUnits.TryAdd("Merica", new Unit(
@@ -30,8 +30,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Mastil
         VolumeUnits.TryAdd("Mastil", new Unit(
@@ -42,8 +42,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Akov
         VolumeUnits.TryAdd("Akov", new Unit(
@@ -54,128 +54,128 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Liter
         VolumeUnits.TryAdd("Liter", new Unit(
             SingularName: "Liter",
             PluralName: "Liters",
             Abbreviations: ["l"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e3,
-            FromUnitToBase: static val => val / 1e3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoLiter
-        VolumeUnits.TryAdd("NanoLiter", new Unit(
-            SingularName: "NanoLiter",
-            PluralName: "NanoLiters",
+        // Nanoliter
+        VolumeUnits.TryAdd("Nanoliter", new Unit(
+            SingularName: "Nanoliter",
+            PluralName: "Nanoliters",
             Abbreviations: ["nl"],
-            Factor: 1,
+            Factor: 1.0000000000000002E-12,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 1E-09,
-            FromUnitToBase: static val => (val / 1e3) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroLiter
-        VolumeUnits.TryAdd("MicroLiter", new Unit(
-            SingularName: "MicroLiter",
-            PluralName: "MicroLiters",
+        // Microliter
+        VolumeUnits.TryAdd("Microliter", new Unit(
+            SingularName: "Microliter",
+            PluralName: "Microliters",
             Abbreviations: ["µl"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 1E-06,
-            FromUnitToBase: static val => (val / 1e3) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliLiter
-        VolumeUnits.TryAdd("MilliLiter", new Unit(
-            SingularName: "MilliLiter",
-            PluralName: "MilliLiters",
+        // Milliliter
+        VolumeUnits.TryAdd("Milliliter", new Unit(
+            SingularName: "Milliliter",
+            PluralName: "Milliliters",
             Abbreviations: ["ml"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 0.001,
-            FromUnitToBase: static val => (val / 1e3) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiLiter
-        VolumeUnits.TryAdd("CentiLiter", new Unit(
-            SingularName: "CentiLiter",
-            PluralName: "CentiLiters",
+        // Centiliter
+        VolumeUnits.TryAdd("Centiliter", new Unit(
+            SingularName: "Centiliter",
+            PluralName: "Centiliters",
             Abbreviations: ["cl"],
-            Factor: 1,
+            Factor: 1E-05,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 0.01,
-            FromUnitToBase: static val => (val / 1e3) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciLiter
-        VolumeUnits.TryAdd("DeciLiter", new Unit(
-            SingularName: "DeciLiter",
-            PluralName: "DeciLiters",
+        // Deciliter
+        VolumeUnits.TryAdd("Deciliter", new Unit(
+            SingularName: "Deciliter",
+            PluralName: "Deciliters",
             Abbreviations: ["dl"],
-            Factor: 1,
+            Factor: 0.0001,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 0.1,
-            FromUnitToBase: static val => (val / 1e3) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DecaLiter
-        VolumeUnits.TryAdd("DecaLiter", new Unit(
-            SingularName: "DecaLiter",
-            PluralName: "DecaLiters",
+        // Decaliter
+        VolumeUnits.TryAdd("Decaliter", new Unit(
+            SingularName: "Decaliter",
+            PluralName: "Decaliters",
             Abbreviations: ["dal"],
-            Factor: 1,
+            Factor: 0.01,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 10,
-            FromUnitToBase: static val => (val / 1e3) * 10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // HectoLiter
-        VolumeUnits.TryAdd("HectoLiter", new Unit(
-            SingularName: "HectoLiter",
-            PluralName: "HectoLiters",
+        // Hectoliter
+        VolumeUnits.TryAdd("Hectoliter", new Unit(
+            SingularName: "Hectoliter",
+            PluralName: "Hectoliters",
             Abbreviations: ["hl"],
-            Factor: 1,
+            Factor: 0.1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 100,
-            FromUnitToBase: static val => (val / 1e3) * 100,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloLiter
-        VolumeUnits.TryAdd("KiloLiter", new Unit(
-            SingularName: "KiloLiter",
-            PluralName: "KiloLiters",
+        // Kiloliter
+        VolumeUnits.TryAdd("Kiloliter", new Unit(
+            SingularName: "Kiloliter",
+            PluralName: "Kiloliters",
             Abbreviations: ["kl"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 1000,
-            FromUnitToBase: static val => (val / 1e3) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaLiter
-        VolumeUnits.TryAdd("MegaLiter", new Unit(
-            SingularName: "MegaLiter",
-            PluralName: "MegaLiters",
+        // Megaliter
+        VolumeUnits.TryAdd("Megaliter", new Unit(
+            SingularName: "Megaliter",
+            PluralName: "Megaliters",
             Abbreviations: ["Ml"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 1000000,
-            FromUnitToBase: static val => (val / 1e3) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CubicMeter
         VolumeUnits.TryAdd("CubicMeter", new Unit(
@@ -186,116 +186,116 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // HectoCubicMeter
-        VolumeUnits.TryAdd("HectoCubicMeter", new Unit(
-            SingularName: "HectoCubicMeter",
-            PluralName: "HectoCubicMeters",
+        // HectocubicMeter
+        VolumeUnits.TryAdd("HectocubicMeter", new Unit(
+            SingularName: "HectocubicMeter",
+            PluralName: "HectocubicMeters",
             Abbreviations: ["hm³"],
-            Factor: 1,
+            Factor: 100,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 100,
-            FromUnitToBase: static val => (val) * 100,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloCubicMeter
-        VolumeUnits.TryAdd("KiloCubicMeter", new Unit(
-            SingularName: "KiloCubicMeter",
-            PluralName: "KiloCubicMeters",
+        // KilocubicMeter
+        VolumeUnits.TryAdd("KilocubicMeter", new Unit(
+            SingularName: "KilocubicMeter",
+            PluralName: "KilocubicMeters",
             Abbreviations: ["km³"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CubicKilometer
         VolumeUnits.TryAdd("CubicKilometer", new Unit(
             SingularName: "CubicKilometer",
             PluralName: "CubicKilometers",
             Abbreviations: ["km³"],
-            Factor: 1,
+            Factor: 1000000000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e9,
-            FromUnitToBase: static val => val * 1e9,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CubicHectometer
         VolumeUnits.TryAdd("CubicHectometer", new Unit(
             SingularName: "CubicHectometer",
             PluralName: "CubicHectometers",
             Abbreviations: ["hm³"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e6,
-            FromUnitToBase: static val => val * 1e6,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CubicDecimeter
         VolumeUnits.TryAdd("CubicDecimeter", new Unit(
             SingularName: "CubicDecimeter",
             PluralName: "CubicDecimeters",
             Abbreviations: ["dm³"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e3,
-            FromUnitToBase: static val => val / 1e3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CubicCentimeter
         VolumeUnits.TryAdd("CubicCentimeter", new Unit(
             SingularName: "CubicCentimeter",
             PluralName: "CubicCentimeters",
             Abbreviations: ["cm³"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e6,
-            FromUnitToBase: static val => val / 1e6,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CubicMillimeter
         VolumeUnits.TryAdd("CubicMillimeter", new Unit(
             SingularName: "CubicMillimeter",
             PluralName: "CubicMillimeters",
             Abbreviations: ["mm³"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e9,
-            FromUnitToBase: static val => val / 1e9,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CubicMicrometer
         VolumeUnits.TryAdd("CubicMicrometer", new Unit(
             SingularName: "CubicMicrometer",
             PluralName: "CubicMicrometers",
             Abbreviations: ["µm³"],
-            Factor: 1,
+            Factor: 1E-18,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e18,
-            FromUnitToBase: static val => val / 1e18,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CubicMile
         VolumeUnits.TryAdd("CubicMile", new Unit(
             SingularName: "CubicMile",
             PluralName: "CubicMiles",
             Abbreviations: ["mi³"],
-            Factor: 1,
+            Factor: 4168181825.4405794,
             Offset: 0,
-            FromBaseToUnit: static val => val / 4.168181825440579584e9,
-            FromUnitToBase: static val => val * 4.168181825440579584e9,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Cubic_mile",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // CubicYard
         VolumeUnits.TryAdd("CubicYard", new Unit(
@@ -307,7 +307,7 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Cubic_yard",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // CubicFoot
         VolumeUnits.TryAdd("CubicFoot", new Unit(
@@ -319,55 +319,55 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Cubic_foot",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
-        // HectoCubicFoot
-        VolumeUnits.TryAdd("HectoCubicFoot", new Unit(
-            SingularName: "HectoCubicFoot",
-            PluralName: "HectoCubicFeet",
+        // HectocubicFoot
+        VolumeUnits.TryAdd("HectocubicFoot", new Unit(
+            SingularName: "HectocubicFoot",
+            PluralName: "HectocubicFeet",
             Abbreviations: ["hft³"],
-            Factor: 1,
+            Factor: 2.8316846592,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 0.028316846592) / 100,
-            FromUnitToBase: static val => (val * 0.028316846592) * 100,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloCubicFoot
-        VolumeUnits.TryAdd("KiloCubicFoot", new Unit(
-            SingularName: "KiloCubicFoot",
-            PluralName: "KiloCubicFeet",
+        // KilocubicFoot
+        VolumeUnits.TryAdd("KilocubicFoot", new Unit(
+            SingularName: "KilocubicFoot",
+            PluralName: "KilocubicFeet",
             Abbreviations: ["kft³"],
-            Factor: 1,
+            Factor: 28.316846592,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 0.028316846592) / 1000,
-            FromUnitToBase: static val => (val * 0.028316846592) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaCubicFoot
-        VolumeUnits.TryAdd("MegaCubicFoot", new Unit(
-            SingularName: "MegaCubicFoot",
-            PluralName: "MegaCubicFeet",
+        // MegacubicFoot
+        VolumeUnits.TryAdd("MegacubicFoot", new Unit(
+            SingularName: "MegacubicFoot",
+            PluralName: "MegacubicFeet",
             Abbreviations: ["Mft³"],
-            Factor: 1,
+            Factor: 28316.846592,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 0.028316846592) / 1000000,
-            FromUnitToBase: static val => (val * 0.028316846592) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CubicInch
         VolumeUnits.TryAdd("CubicInch", new Unit(
             SingularName: "CubicInch",
             PluralName: "CubicInches",
             Abbreviations: ["in³"],
-            Factor: 1,
+            Factor: 1.6387064E-05,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1.6387064e-5,
-            FromUnitToBase: static val => val * 1.6387064e-5,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Cubic_yard",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // ImperialGallon
         VolumeUnits.TryAdd("ImperialGallon", new Unit(
@@ -379,43 +379,43 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Gallon#Imperial_gallon",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
-        // KiloImperialGallon
-        VolumeUnits.TryAdd("KiloImperialGallon", new Unit(
-            SingularName: "KiloImperialGallon",
-            PluralName: "KiloImperialGallons",
+        // KiloimperialGallon
+        VolumeUnits.TryAdd("KiloimperialGallon", new Unit(
+            SingularName: "KiloimperialGallon",
+            PluralName: "KiloimperialGallons",
             Abbreviations: ["kgal (imp.)"],
-            Factor: 1,
+            Factor: 4.54609,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 0.00454609) / 1000,
-            FromUnitToBase: static val => (val * 0.00454609) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaImperialGallon
-        VolumeUnits.TryAdd("MegaImperialGallon", new Unit(
-            SingularName: "MegaImperialGallon",
-            PluralName: "MegaImperialGallons",
+        // MegaimperialGallon
+        VolumeUnits.TryAdd("MegaimperialGallon", new Unit(
+            SingularName: "MegaimperialGallon",
+            PluralName: "MegaimperialGallons",
             Abbreviations: ["Mgal (imp.)"],
-            Factor: 1,
+            Factor: 4546.09,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 0.00454609) / 1000000,
-            FromUnitToBase: static val => (val * 0.00454609) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // ImperialOunce
         VolumeUnits.TryAdd("ImperialOunce", new Unit(
             SingularName: "ImperialOunce",
             PluralName: "ImperialOunces",
             Abbreviations: ["oz (imp.)"],
-            Factor: 1,
+            Factor: 2.84130625E-05,
             Offset: 0,
-            FromBaseToUnit: static val => val / 2.84130625e-5,
-            FromUnitToBase: static val => val * 2.84130625e-5,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Fluid_ounce",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // UsGallon
         VolumeUnits.TryAdd("UsGallon", new Unit(
@@ -427,151 +427,151 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Gallon#US_liquid_gallon",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
-        // DecaUsGallon
-        VolumeUnits.TryAdd("DecaUsGallon", new Unit(
-            SingularName: "DecaUsGallon",
-            PluralName: "DecaUsGallons",
+        // DecausGallon
+        VolumeUnits.TryAdd("DecausGallon", new Unit(
+            SingularName: "DecausGallon",
+            PluralName: "DecausGallons",
             Abbreviations: ["dagal (U.S.)"],
-            Factor: 1,
+            Factor: 0.03785411784,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 0.003785411784) / 10,
-            FromUnitToBase: static val => (val * 0.003785411784) * 10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciUsGallon
-        VolumeUnits.TryAdd("DeciUsGallon", new Unit(
-            SingularName: "DeciUsGallon",
-            PluralName: "DeciUsGallons",
+        // DeciusGallon
+        VolumeUnits.TryAdd("DeciusGallon", new Unit(
+            SingularName: "DeciusGallon",
+            PluralName: "DeciusGallons",
             Abbreviations: ["dgal (U.S.)"],
-            Factor: 1,
+            Factor: 0.00037854117840000005,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 0.003785411784) / 0.1,
-            FromUnitToBase: static val => (val * 0.003785411784) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // HectoUsGallon
-        VolumeUnits.TryAdd("HectoUsGallon", new Unit(
-            SingularName: "HectoUsGallon",
-            PluralName: "HectoUsGallons",
+        // HectousGallon
+        VolumeUnits.TryAdd("HectousGallon", new Unit(
+            SingularName: "HectousGallon",
+            PluralName: "HectousGallons",
             Abbreviations: ["hgal (U.S.)"],
-            Factor: 1,
+            Factor: 0.3785411784,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 0.003785411784) / 100,
-            FromUnitToBase: static val => (val * 0.003785411784) * 100,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloUsGallon
-        VolumeUnits.TryAdd("KiloUsGallon", new Unit(
-            SingularName: "KiloUsGallon",
-            PluralName: "KiloUsGallons",
+        // KilousGallon
+        VolumeUnits.TryAdd("KilousGallon", new Unit(
+            SingularName: "KilousGallon",
+            PluralName: "KilousGallons",
             Abbreviations: ["kgal (U.S.)"],
-            Factor: 1,
+            Factor: 3.7854117840000003,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 0.003785411784) / 1000,
-            FromUnitToBase: static val => (val * 0.003785411784) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaUsGallon
-        VolumeUnits.TryAdd("MegaUsGallon", new Unit(
-            SingularName: "MegaUsGallon",
-            PluralName: "MegaUsGallons",
+        // MegausGallon
+        VolumeUnits.TryAdd("MegausGallon", new Unit(
+            SingularName: "MegausGallon",
+            PluralName: "MegausGallons",
             Abbreviations: ["Mgal (U.S.)"],
-            Factor: 1,
+            Factor: 3785.4117840000004,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 0.003785411784) / 1000000,
-            FromUnitToBase: static val => (val * 0.003785411784) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // UsOunce
         VolumeUnits.TryAdd("UsOunce", new Unit(
             SingularName: "UsOunce",
             PluralName: "UsOunces",
             Abbreviations: ["oz (U.S.)"],
-            Factor: 1,
+            Factor: 2.95735295625E-05,
             Offset: 0,
-            FromBaseToUnit: static val => val / 2.95735295625e-5,
-            FromUnitToBase: static val => val * 2.95735295625e-5,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Fluid_ounce",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // UsTablespoon
         VolumeUnits.TryAdd("UsTablespoon", new Unit(
             SingularName: "UsTablespoon",
             PluralName: "UsTablespoons",
             Abbreviations: ["tablespoon (U.S.)"],
-            Factor: 1,
+            Factor: 1.478676478125E-05,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1.478676478125e-5,
-            FromUnitToBase: static val => val * 1.478676478125e-5,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Tablespoon#United_States",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // AuTablespoon
         VolumeUnits.TryAdd("AuTablespoon", new Unit(
             SingularName: "AuTablespoon",
             PluralName: "AuTablespoons",
             Abbreviations: ["tablespoon (A.U.)"],
-            Factor: 1,
+            Factor: 2E-05,
             Offset: 0,
-            FromBaseToUnit: static val => val / 2e-5,
-            FromUnitToBase: static val => val * 2e-5,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Tablespoon#Australia",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // MetricTablespoon
         VolumeUnits.TryAdd("MetricTablespoon", new Unit(
             SingularName: "MetricTablespoon",
             PluralName: "MetricTablespoons",
             Abbreviations: ["tablespoon", "tbsp", "tbsp.", "tblsp", "tblsp."],
-            Factor: 1,
+            Factor: 1.5E-05,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1.5e-5,
-            FromUnitToBase: static val => val * 1.5e-5,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Tablespoon#International_metric",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // UkTablespoon
         VolumeUnits.TryAdd("UkTablespoon", new Unit(
             SingularName: "UkTablespoon",
             PluralName: "UkTablespoons",
             Abbreviations: ["tablespoon (U.K.)"],
-            Factor: 1,
+            Factor: 1.5E-05,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1.5e-5,
-            FromUnitToBase: static val => val * 1.5e-5,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Tablespoon#International",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // MetricTeaspoon
         VolumeUnits.TryAdd("MetricTeaspoon", new Unit(
             SingularName: "MetricTeaspoon",
             PluralName: "MetricTeaspoons",
             Abbreviations: ["tsp", "t", "ts", "tspn", "t.", "ts.", "tsp.", "tspn.", "teaspoon"],
-            Factor: 1,
+            Factor: 5E-06,
             Offset: 0,
-            FromBaseToUnit: static val => val / 0.5e-5,
-            FromUnitToBase: static val => val * 0.5e-5,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Teaspoon#Metric_teaspoon",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // UsTeaspoon
         VolumeUnits.TryAdd("UsTeaspoon", new Unit(
             SingularName: "UsTeaspoon",
             PluralName: "UsTeaspoons",
             Abbreviations: ["teaspoon (U.S.)"],
-            Factor: 1,
+            Factor: 4.92892159375E-06,
             Offset: 0,
-            FromBaseToUnit: static val => val / 4.92892159375e-6,
-            FromUnitToBase: static val => val * 4.92892159375e-6,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Teaspoon#United_States_customary_unit",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // MetricCup
         VolumeUnits.TryAdd("MetricCup", new Unit(
@@ -583,7 +583,7 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Cup_(unit)#Metric_cup",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // UsCustomaryCup
         VolumeUnits.TryAdd("UsCustomaryCup", new Unit(
@@ -595,7 +595,7 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Cup_(unit)#Customary_cup",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // UsLegalCup
         VolumeUnits.TryAdd("UsLegalCup", new Unit(
@@ -607,7 +607,7 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Cup_(unit)#Legal_cup",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // OilBarrel
         VolumeUnits.TryAdd("OilBarrel", new Unit(
@@ -619,7 +619,7 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Barrel_(unit)#Oil_barrel",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // UsBeerBarrel
         VolumeUnits.TryAdd("UsBeerBarrel", new Unit(
@@ -631,7 +631,7 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Barrel_(unit)#Fluid_barrel_in_the_US_and_UK",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // ImperialBeerBarrel
         VolumeUnits.TryAdd("ImperialBeerBarrel", new Unit(
@@ -643,43 +643,43 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Barrel_(unit)#Fluid_barrel_in_the_US_and_UK",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // UsQuart
         VolumeUnits.TryAdd("UsQuart", new Unit(
             SingularName: "UsQuart",
             PluralName: "UsQuarts",
             Abbreviations: ["qt (U.S.)"],
-            Factor: 1,
+            Factor: 0.000946352946,
             Offset: 0,
-            FromBaseToUnit: static val => val / 9.46352946e-4,
-            FromUnitToBase: static val => val * 9.46352946e-4,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Quart#US_liquid_quart",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // ImperialQuart
         VolumeUnits.TryAdd("ImperialQuart", new Unit(
             SingularName: "ImperialQuart",
             PluralName: "ImperialQuarts",
             Abbreviations: ["qt (imp.)"],
-            Factor: 1,
+            Factor: 0.0011365225,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1.1365225e-3,
-            FromUnitToBase: static val => val * 1.1365225e-3,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Quart#Imperial_quart",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // UsPint
         VolumeUnits.TryAdd("UsPint", new Unit(
             SingularName: "UsPint",
             PluralName: "UsPints",
             Abbreviations: ["pt (U.S.)"],
-            Factor: 1,
+            Factor: 0.000473176473,
             Offset: 0,
-            FromBaseToUnit: static val => val / 4.73176473e-4,
-            FromUnitToBase: static val => val * 4.73176473e-4,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Pint#US_liquid_pint",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // AcreFoot
         VolumeUnits.TryAdd("AcreFoot", new Unit(
@@ -691,19 +691,19 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Acre-foot",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // ImperialPint
         VolumeUnits.TryAdd("ImperialPint", new Unit(
             SingularName: "ImperialPint",
             PluralName: "ImperialPints",
             Abbreviations: ["pt (imp.)", "UK pt", "pt", "p"],
-            Factor: 1,
+            Factor: 0.00056826125,
             Offset: 0,
-            FromBaseToUnit: static val => val / 5.6826125e-4,
-            FromUnitToBase: static val => val * 5.6826125e-4,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Pint#Imperial_pint",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // BoardFoot
         VolumeUnits.TryAdd("BoardFoot", new Unit(
@@ -712,10 +712,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["bf", "board foot", "board feet"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (0.028316846592 / 12),
-            FromUnitToBase: static val => val * (0.028316846592 / 12),
+            FromBaseToUnit: static val => (val / (0.028316846592 / 12)),
+            FromUnitToBase: static val => (val * (0.028316846592 / 12)),
             Remarks: "https://en.wikipedia.org/wiki/Board_foot",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -724,7 +724,7 @@ public static partial class UoMRegistry {
             "Volume units used in historical Croatia/Venice/Ottoman regions for grain and milling.",
             VolumeUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> {  },
-            "",
+            null,
             false,
             1
         );

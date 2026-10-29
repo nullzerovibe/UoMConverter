@@ -18,92 +18,92 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroPascal
-        PressureUnits.TryAdd("MicroPascal", new Unit(
-            SingularName: "MicroPascal",
-            PluralName: "MicroPascals",
+        // Micropascal
+        PressureUnits.TryAdd("Micropascal", new Unit(
+            SingularName: "Micropascal",
+            PluralName: "Micropascals",
             Abbreviations: ["µPa"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliPascal
-        PressureUnits.TryAdd("MilliPascal", new Unit(
-            SingularName: "MilliPascal",
-            PluralName: "MilliPascals",
+        // Millipascal
+        PressureUnits.TryAdd("Millipascal", new Unit(
+            SingularName: "Millipascal",
+            PluralName: "Millipascals",
             Abbreviations: ["mPa"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DecaPascal
-        PressureUnits.TryAdd("DecaPascal", new Unit(
-            SingularName: "DecaPascal",
-            PluralName: "DecaPascals",
+        // Decapascal
+        PressureUnits.TryAdd("Decapascal", new Unit(
+            SingularName: "Decapascal",
+            PluralName: "Decapascals",
             Abbreviations: ["daPa"],
-            Factor: 1,
+            Factor: 10,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 10,
-            FromUnitToBase: static val => (val) * 10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // HectoPascal
-        PressureUnits.TryAdd("HectoPascal", new Unit(
-            SingularName: "HectoPascal",
-            PluralName: "HectoPascals",
+        // Hectopascal
+        PressureUnits.TryAdd("Hectopascal", new Unit(
+            SingularName: "Hectopascal",
+            PluralName: "Hectopascals",
             Abbreviations: ["hPa"],
-            Factor: 1,
+            Factor: 100,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 100,
-            FromUnitToBase: static val => (val) * 100,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloPascal
-        PressureUnits.TryAdd("KiloPascal", new Unit(
-            SingularName: "KiloPascal",
-            PluralName: "KiloPascals",
+        // Kilopascal
+        PressureUnits.TryAdd("Kilopascal", new Unit(
+            SingularName: "Kilopascal",
+            PluralName: "Kilopascals",
             Abbreviations: ["kPa"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaPascal
-        PressureUnits.TryAdd("MegaPascal", new Unit(
-            SingularName: "MegaPascal",
-            PluralName: "MegaPascals",
+        // Megapascal
+        PressureUnits.TryAdd("Megapascal", new Unit(
+            SingularName: "Megapascal",
+            PluralName: "Megapascals",
             Abbreviations: ["MPa"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaPascal
-        PressureUnits.TryAdd("GigaPascal", new Unit(
-            SingularName: "GigaPascal",
-            PluralName: "GigaPascals",
+        // Gigapascal
+        PressureUnits.TryAdd("Gigapascal", new Unit(
+            SingularName: "Gigapascal",
+            PluralName: "Gigapascals",
             Abbreviations: ["GPa"],
-            Factor: 1,
+            Factor: 1000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000,
-            FromUnitToBase: static val => (val) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Atmosphere
         PressureUnits.TryAdd("Atmosphere", new Unit(
@@ -112,94 +112,94 @@ public static partial class UoMRegistry {
             Abbreviations: ["atm"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (1.01325 * 1e5),
-            FromUnitToBase: static val => val * 1.01325 * 1e5,
+            FromBaseToUnit: static val => (val / (1.01325 * 1e5)),
+            FromUnitToBase: static val => (val * 1.01325 * 1e5),
             Remarks: "https://en.wikipedia.org/wiki/Standard_atmosphere_(unit)",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // Bar
         PressureUnits.TryAdd("Bar", new Unit(
             SingularName: "Bar",
             PluralName: "Bars",
             Abbreviations: ["bar"],
-            Factor: 1,
+            Factor: 100000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e5,
-            FromUnitToBase: static val => val * 1e5,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Bar_(unit)",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
-        // MicroBar
-        PressureUnits.TryAdd("MicroBar", new Unit(
-            SingularName: "MicroBar",
-            PluralName: "MicroBars",
+        // Microbar
+        PressureUnits.TryAdd("Microbar", new Unit(
+            SingularName: "Microbar",
+            PluralName: "Microbars",
             Abbreviations: ["µbar"],
-            Factor: 1,
+            Factor: 0.09999999999999999,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e5) / 1E-06,
-            FromUnitToBase: static val => (val * 1e5) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliBar
-        PressureUnits.TryAdd("MilliBar", new Unit(
-            SingularName: "MilliBar",
-            PluralName: "MilliBars",
+        // Millibar
+        PressureUnits.TryAdd("Millibar", new Unit(
+            SingularName: "Millibar",
+            PluralName: "Millibars",
             Abbreviations: ["mbar"],
-            Factor: 1,
+            Factor: 100,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e5) / 0.001,
-            FromUnitToBase: static val => (val * 1e5) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiBar
-        PressureUnits.TryAdd("CentiBar", new Unit(
-            SingularName: "CentiBar",
-            PluralName: "CentiBars",
+        // Centibar
+        PressureUnits.TryAdd("Centibar", new Unit(
+            SingularName: "Centibar",
+            PluralName: "Centibars",
             Abbreviations: ["cbar"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e5) / 0.01,
-            FromUnitToBase: static val => (val * 1e5) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciBar
-        PressureUnits.TryAdd("DeciBar", new Unit(
-            SingularName: "DeciBar",
-            PluralName: "DeciBars",
+        // Decibar
+        PressureUnits.TryAdd("Decibar", new Unit(
+            SingularName: "Decibar",
+            PluralName: "Decibars",
             Abbreviations: ["dbar"],
-            Factor: 1,
+            Factor: 10000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e5) / 0.1,
-            FromUnitToBase: static val => (val * 1e5) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloBar
-        PressureUnits.TryAdd("KiloBar", new Unit(
-            SingularName: "KiloBar",
-            PluralName: "KiloBars",
+        // Kilobar
+        PressureUnits.TryAdd("Kilobar", new Unit(
+            SingularName: "Kilobar",
+            PluralName: "Kilobars",
             Abbreviations: ["kbar"],
-            Factor: 1,
+            Factor: 100000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e5) / 1000,
-            FromUnitToBase: static val => (val * 1e5) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaBar
-        PressureUnits.TryAdd("MegaBar", new Unit(
-            SingularName: "MegaBar",
-            PluralName: "MegaBars",
+        // Megabar
+        PressureUnits.TryAdd("Megabar", new Unit(
+            SingularName: "Megabar",
+            PluralName: "Megabars",
             Abbreviations: ["Mbar"],
-            Factor: 1,
+            Factor: 100000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e5) / 1000000,
-            FromUnitToBase: static val => (val * 1e5) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // KilogramForcePerSquareMeter
         PressureUnits.TryAdd("KilogramForcePerSquareMeter", new Unit(
@@ -210,32 +210,32 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // KilogramForcePerSquareCentimeter
         PressureUnits.TryAdd("KilogramForcePerSquareCentimeter", new Unit(
             SingularName: "KilogramForcePerSquareCentimeter",
             PluralName: "KilogramsForcePerSquareCentimeter",
             Abbreviations: ["kgf/cm²"],
-            Factor: 1,
+            Factor: 98066.5,
             Offset: 0,
-            FromBaseToUnit: static val => val / 9.80665e4,
-            FromUnitToBase: static val => val * 9.80665e4,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Kilogram-force_per_square_centimetre",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // KilogramForcePerSquareMillimeter
         PressureUnits.TryAdd("KilogramForcePerSquareMillimeter", new Unit(
             SingularName: "KilogramForcePerSquareMillimeter",
             PluralName: "KilogramsForcePerSquareMillimeter",
             Abbreviations: ["kgf/mm²"],
-            Factor: 1,
+            Factor: 9806650,
             Offset: 0,
-            FromBaseToUnit: static val => val / 9.80665e6,
-            FromUnitToBase: static val => val * 9.80665e6,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // NewtonPerSquareMeter
         PressureUnits.TryAdd("NewtonPerSquareMeter", new Unit(
@@ -246,92 +246,92 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloNewtonPerSquareMeter
-        PressureUnits.TryAdd("KiloNewtonPerSquareMeter", new Unit(
-            SingularName: "KiloNewtonPerSquareMeter",
-            PluralName: "KiloNewtonsPerSquareMeter",
+        // KilonewtonPerSquareMeter
+        PressureUnits.TryAdd("KilonewtonPerSquareMeter", new Unit(
+            SingularName: "KilonewtonPerSquareMeter",
+            PluralName: "KilonewtonsPerSquareMeter",
             Abbreviations: ["kN/m²"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaNewtonPerSquareMeter
-        PressureUnits.TryAdd("MegaNewtonPerSquareMeter", new Unit(
-            SingularName: "MegaNewtonPerSquareMeter",
-            PluralName: "MegaNewtonsPerSquareMeter",
+        // MeganewtonPerSquareMeter
+        PressureUnits.TryAdd("MeganewtonPerSquareMeter", new Unit(
+            SingularName: "MeganewtonPerSquareMeter",
+            PluralName: "MeganewtonsPerSquareMeter",
             Abbreviations: ["MN/m²"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // NewtonPerSquareCentimeter
         PressureUnits.TryAdd("NewtonPerSquareCentimeter", new Unit(
             SingularName: "NewtonPerSquareCentimeter",
             PluralName: "NewtonsPerSquareCentimeter",
             Abbreviations: ["N/cm²"],
-            Factor: 1,
+            Factor: 10000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e4,
-            FromUnitToBase: static val => val * 1e4,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloNewtonPerSquareCentimeter
-        PressureUnits.TryAdd("KiloNewtonPerSquareCentimeter", new Unit(
-            SingularName: "KiloNewtonPerSquareCentimeter",
-            PluralName: "KiloNewtonsPerSquareCentimeter",
+        // KilonewtonPerSquareCentimeter
+        PressureUnits.TryAdd("KilonewtonPerSquareCentimeter", new Unit(
+            SingularName: "KilonewtonPerSquareCentimeter",
+            PluralName: "KilonewtonsPerSquareCentimeter",
             Abbreviations: ["kN/cm²"],
-            Factor: 1,
+            Factor: 10000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e4) / 1000,
-            FromUnitToBase: static val => (val * 1e4) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // NewtonPerSquareMillimeter
         PressureUnits.TryAdd("NewtonPerSquareMillimeter", new Unit(
             SingularName: "NewtonPerSquareMillimeter",
             PluralName: "NewtonsPerSquareMillimeter",
             Abbreviations: ["N/mm²"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e6,
-            FromUnitToBase: static val => val * 1e6,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloNewtonPerSquareMillimeter
-        PressureUnits.TryAdd("KiloNewtonPerSquareMillimeter", new Unit(
-            SingularName: "KiloNewtonPerSquareMillimeter",
-            PluralName: "KiloNewtonsPerSquareMillimeter",
+        // KilonewtonPerSquareMillimeter
+        PressureUnits.TryAdd("KilonewtonPerSquareMillimeter", new Unit(
+            SingularName: "KilonewtonPerSquareMillimeter",
+            PluralName: "KilonewtonsPerSquareMillimeter",
             Abbreviations: ["kN/mm²"],
-            Factor: 1,
+            Factor: 1000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e6) / 1000,
-            FromUnitToBase: static val => (val * 1e6) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // TechnicalAtmosphere
         PressureUnits.TryAdd("TechnicalAtmosphere", new Unit(
             SingularName: "TechnicalAtmosphere",
             PluralName: "TechnicalAtmospheres",
             Abbreviations: ["at"],
-            Factor: 1,
+            Factor: 98066.5,
             Offset: 0,
-            FromBaseToUnit: static val => val / 9.80665e4,
-            FromUnitToBase: static val => val * 9.80665e4,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Kilogram-force_per_square_centimetre",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // Torr
         PressureUnits.TryAdd("Torr", new Unit(
@@ -340,22 +340,22 @@ public static partial class UoMRegistry {
             Abbreviations: ["torr"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 760 / 101325,
-            FromUnitToBase: static val => val * 101325 / 760,
+            FromBaseToUnit: static val => (val * 760 / 101325),
+            FromUnitToBase: static val => (val * 101325 / 760),
             Remarks: "https://en.wikipedia.org/wiki/Torr",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
-        // MilliTorr
-        PressureUnits.TryAdd("MilliTorr", new Unit(
-            SingularName: "MilliTorr",
-            PluralName: "MilliTorrs",
+        // Millitorr
+        PressureUnits.TryAdd("Millitorr", new Unit(
+            SingularName: "Millitorr",
+            PluralName: "Millitorrs",
             Abbreviations: ["mtorr"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 760 / 101325) / 0.001,
-            FromUnitToBase: static val => (val * 101325 / 760) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * 760 / 101325) / 0.001),
+            FromUnitToBase: static val => ((val * 0.001) * 101325 / 760),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundForcePerSquareInch
         PressureUnits.TryAdd("PoundForcePerSquareInch", new Unit(
@@ -364,22 +364,22 @@ public static partial class UoMRegistry {
             Abbreviations: ["psi", "lb/in²"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 0.00064516 / 4.4482216152605,
-            FromUnitToBase: static val => val * 4.4482216152605 / 0.00064516,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 0.00064516 / 4.4482216152605),
+            FromUnitToBase: static val => (val * 4.4482216152605 / 0.00064516),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloPoundForcePerSquareInch
-        PressureUnits.TryAdd("KiloPoundForcePerSquareInch", new Unit(
-            SingularName: "KiloPoundForcePerSquareInch",
-            PluralName: "KiloPoundsForcePerSquareInch",
+        // KilopoundForcePerSquareInch
+        PressureUnits.TryAdd("KilopoundForcePerSquareInch", new Unit(
+            SingularName: "KilopoundForcePerSquareInch",
+            PluralName: "KilopoundsForcePerSquareInch",
             Abbreviations: ["ksi", "kipf/in²"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 0.00064516 / 4.4482216152605) / 1000,
-            FromUnitToBase: static val => (val * 4.4482216152605 / 0.00064516) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * 0.00064516 / 4.4482216152605) / 1000),
+            FromUnitToBase: static val => ((val * 1000) * 4.4482216152605 / 0.00064516),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundForcePerSquareMil
         PressureUnits.TryAdd("PoundForcePerSquareMil", new Unit(
@@ -388,22 +388,22 @@ public static partial class UoMRegistry {
             Abbreviations: ["lb/mil²", "lbs/mil²"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * (2.54e-5 * 2.54e-5) / 4.4482216152605,
-            FromUnitToBase: static val => val * 4.4482216152605 / (2.54e-5 * 2.54e-5),
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * (2.54e-5 * 2.54e-5) / 4.4482216152605),
+            FromUnitToBase: static val => (val * 4.4482216152605 / (2.54e-5 * 2.54e-5)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloPoundForcePerSquareMil
-        PressureUnits.TryAdd("KiloPoundForcePerSquareMil", new Unit(
-            SingularName: "KiloPoundForcePerSquareMil",
-            PluralName: "KiloPoundsForcePerSquareMil",
+        // KilopoundForcePerSquareMil
+        PressureUnits.TryAdd("KilopoundForcePerSquareMil", new Unit(
+            SingularName: "KilopoundForcePerSquareMil",
+            PluralName: "KilopoundsForcePerSquareMil",
             Abbreviations: ["kipf/mil²"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * (2.54e-5 * 2.54e-5) / 4.4482216152605) / 1000,
-            FromUnitToBase: static val => (val * 4.4482216152605 / (2.54e-5 * 2.54e-5)) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * (2.54e-5 * 2.54e-5) / 4.4482216152605) / 1000),
+            FromUnitToBase: static val => ((val * 1000) * 4.4482216152605 / (2.54e-5 * 2.54e-5)),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundForcePerSquareFoot
         PressureUnits.TryAdd("PoundForcePerSquareFoot", new Unit(
@@ -412,46 +412,46 @@ public static partial class UoMRegistry {
             Abbreviations: ["lb/ft²"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 9.290304e-2 / 4.4482216152605,
-            FromUnitToBase: static val => val * 4.4482216152605 / 9.290304e-2,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 9.290304e-2 / 4.4482216152605),
+            FromUnitToBase: static val => (val * 4.4482216152605 / 9.290304e-2),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloPoundForcePerSquareFoot
-        PressureUnits.TryAdd("KiloPoundForcePerSquareFoot", new Unit(
-            SingularName: "KiloPoundForcePerSquareFoot",
-            PluralName: "KiloPoundsForcePerSquareFoot",
+        // KilopoundForcePerSquareFoot
+        PressureUnits.TryAdd("KilopoundForcePerSquareFoot", new Unit(
+            SingularName: "KilopoundForcePerSquareFoot",
+            PluralName: "KilopoundsForcePerSquareFoot",
             Abbreviations: ["kipf/ft²"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 9.290304e-2 / 4.4482216152605) / 1000,
-            FromUnitToBase: static val => (val * 4.4482216152605 / 9.290304e-2) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * 9.290304e-2 / 4.4482216152605) / 1000),
+            FromUnitToBase: static val => ((val * 1000) * 4.4482216152605 / 9.290304e-2),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // TonneForcePerSquareMillimeter
         PressureUnits.TryAdd("TonneForcePerSquareMillimeter", new Unit(
             SingularName: "TonneForcePerSquareMillimeter",
             PluralName: "TonnesForcePerSquareMillimeter",
             Abbreviations: ["tf/mm²"],
-            Factor: 1,
+            Factor: 9806650000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 9.80665e9,
-            FromUnitToBase: static val => val * 9.80665e9,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // TonneForcePerSquareMeter
         PressureUnits.TryAdd("TonneForcePerSquareMeter", new Unit(
             SingularName: "TonneForcePerSquareMeter",
             PluralName: "TonnesForcePerSquareMeter",
             Abbreviations: ["tf/m²"],
-            Factor: 1,
+            Factor: 9806.65,
             Offset: 0,
-            FromBaseToUnit: static val => val / 9.80665e3,
-            FromUnitToBase: static val => val * 9.80665e3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // MeterOfHead
         PressureUnits.TryAdd("MeterOfHead", new Unit(
@@ -462,20 +462,20 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // TonneForcePerSquareCentimeter
         PressureUnits.TryAdd("TonneForcePerSquareCentimeter", new Unit(
             SingularName: "TonneForcePerSquareCentimeter",
             PluralName: "TonnesForcePerSquareCentimeter",
             Abbreviations: ["tf/cm²"],
-            Factor: 1,
+            Factor: 98066500,
             Offset: 0,
-            FromBaseToUnit: static val => val / 9.80665e7,
-            FromUnitToBase: static val => val * 9.80665e7,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // FootOfHead
         PressureUnits.TryAdd("FootOfHead", new Unit(
@@ -484,10 +484,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["ft of head"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (9804.139432 * 0.3048),
-            FromUnitToBase: static val => val * 9804.139432 * 0.3048,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (9804.139432 * 0.3048)),
+            FromUnitToBase: static val => (val * 9804.139432 * 0.3048),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // MillimeterOfMercury
         PressureUnits.TryAdd("MillimeterOfMercury", new Unit(
@@ -499,7 +499,7 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Millimetre_of_mercury",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // InchOfMercury
         PressureUnits.TryAdd("InchOfMercury", new Unit(
@@ -508,22 +508,22 @@ public static partial class UoMRegistry {
             Abbreviations: ["inHg"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (2.54e1 * 133.322387415),
-            FromUnitToBase: static val => val * 2.54e1 * 133.322387415,
+            FromBaseToUnit: static val => (val / (2.54e1 * 133.322387415)),
+            FromUnitToBase: static val => (val * 2.54e1 * 133.322387415),
             Remarks: "https://en.wikipedia.org/wiki/Inch_of_mercury",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // DynePerSquareCentimeter
         PressureUnits.TryAdd("DynePerSquareCentimeter", new Unit(
             SingularName: "DynePerSquareCentimeter",
             PluralName: "DynesPerSquareCentimeter",
             Abbreviations: ["dyn/cm²"],
-            Factor: 1,
+            Factor: 0.1,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1.0e-1,
-            FromUnitToBase: static val => val * 1.0e-1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundPerInchSecondSquared
         PressureUnits.TryAdd("PoundPerInchSecondSquared", new Unit(
@@ -532,46 +532,46 @@ public static partial class UoMRegistry {
             Abbreviations: ["lbm/(in·s²)", "lb/(in·s²)"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 386.0886 / (4.4482216152605 / 0.00064516),
-            FromUnitToBase: static val => val * (4.4482216152605 / 0.00064516) / 386.0886,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 386.0886 / (4.4482216152605 / 0.00064516)),
+            FromUnitToBase: static val => (val * (4.4482216152605 / 0.00064516) / 386.0886),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // MeterOfWaterColumn
         PressureUnits.TryAdd("MeterOfWaterColumn", new Unit(
             SingularName: "MeterOfWaterColumn",
             PluralName: "MetersOfWaterColumn",
             Abbreviations: ["mH₂O", "mH2O", "m wc", "m wg"],
-            Factor: 1,
+            Factor: 9806.65,
             Offset: 0,
-            FromBaseToUnit: static val => val / 9.80665e3,
-            FromUnitToBase: static val => val * 9.80665e3,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Centimetre_or_millimetre_of_water",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
-        // MilliMeterOfWaterColumn
-        PressureUnits.TryAdd("MilliMeterOfWaterColumn", new Unit(
-            SingularName: "MilliMeterOfWaterColumn",
-            PluralName: "MilliMetersOfWaterColumn",
+        // MillimeterOfWaterColumn
+        PressureUnits.TryAdd("MillimeterOfWaterColumn", new Unit(
+            SingularName: "MillimeterOfWaterColumn",
+            PluralName: "MillimetersOfWaterColumn",
             Abbreviations: ["mmH₂O", "mmH2O", "mm wc", "mm wg"],
-            Factor: 1,
+            Factor: 9.80665,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 9.80665e3) / 0.001,
-            FromUnitToBase: static val => (val * 9.80665e3) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiMeterOfWaterColumn
-        PressureUnits.TryAdd("CentiMeterOfWaterColumn", new Unit(
-            SingularName: "CentiMeterOfWaterColumn",
-            PluralName: "CentiMetersOfWaterColumn",
+        // CentimeterOfWaterColumn
+        PressureUnits.TryAdd("CentimeterOfWaterColumn", new Unit(
+            SingularName: "CentimeterOfWaterColumn",
+            PluralName: "CentimetersOfWaterColumn",
             Abbreviations: ["cmH₂O", "cmH2O", "cm wc", "cm wg"],
-            Factor: 1,
+            Factor: 98.0665,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 9.80665e3) / 0.01,
-            FromUnitToBase: static val => (val * 9.80665e3) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // InchOfWaterColumn
         PressureUnits.TryAdd("InchOfWaterColumn", new Unit(
@@ -580,10 +580,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["inH2O", "inch wc", "wc"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (2.54e-2 * 9.80665e3),
-            FromUnitToBase: static val => val * 2.54e-2 * 9.80665e3,
+            FromBaseToUnit: static val => (val / (2.54e-2 * 9.80665e3)),
+            FromUnitToBase: static val => (val * 2.54e-2 * 9.80665e3),
             Remarks: "https://en.wikipedia.org/wiki/Inch_of_water",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -592,7 +592,7 @@ public static partial class UoMRegistry {
             "Pressure (symbol: P or p) is the ratio of force to the area over which that force is distributed. Pressure is force per unit area applied in a direction perpendicular to the surface of an object. Gauge pressure (also spelled gage pressure)[a] is the pressure relative to the local atmospheric or ambient pressure. Pressure is measured in any unit of force divided by any unit of area. The SI unit of pressure is the newton per square metre, which is called the pascal (Pa) after the seventeenth-century philosopher and scientist Blaise Pascal. A pressure of 1 Pa is small; it approximately equals the pressure exerted by a dollar bill resting flat on a table. Everyday pressures are often stated in kilopascals (1 kPa = 1000 Pa).",
             PressureUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = -1, ["M"] = 1, ["T"] = -2 },
-            "",
+            null,
             false,
             1
         );

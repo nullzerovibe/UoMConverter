@@ -18,92 +18,92 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoOhm
-        ElectricReactanceUnits.TryAdd("NanoOhm", new Unit(
-            SingularName: "NanoOhm",
-            PluralName: "NanoOhms",
+        // Nanoohm
+        ElectricReactanceUnits.TryAdd("Nanoohm", new Unit(
+            SingularName: "Nanoohm",
+            PluralName: "Nanoohms",
             Abbreviations: ["nΩ"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroOhm
-        ElectricReactanceUnits.TryAdd("MicroOhm", new Unit(
-            SingularName: "MicroOhm",
-            PluralName: "MicroOhms",
+        // Microohm
+        ElectricReactanceUnits.TryAdd("Microohm", new Unit(
+            SingularName: "Microohm",
+            PluralName: "Microohms",
             Abbreviations: ["µΩ"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliOhm
-        ElectricReactanceUnits.TryAdd("MilliOhm", new Unit(
-            SingularName: "MilliOhm",
-            PluralName: "MilliOhms",
+        // Milliohm
+        ElectricReactanceUnits.TryAdd("Milliohm", new Unit(
+            SingularName: "Milliohm",
+            PluralName: "Milliohms",
             Abbreviations: ["mΩ"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloOhm
-        ElectricReactanceUnits.TryAdd("KiloOhm", new Unit(
-            SingularName: "KiloOhm",
-            PluralName: "KiloOhms",
+        // Kiloohm
+        ElectricReactanceUnits.TryAdd("Kiloohm", new Unit(
+            SingularName: "Kiloohm",
+            PluralName: "Kiloohms",
             Abbreviations: ["kΩ"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaOhm
-        ElectricReactanceUnits.TryAdd("MegaOhm", new Unit(
-            SingularName: "MegaOhm",
-            PluralName: "MegaOhms",
+        // Megaohm
+        ElectricReactanceUnits.TryAdd("Megaohm", new Unit(
+            SingularName: "Megaohm",
+            PluralName: "Megaohms",
             Abbreviations: ["MΩ"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaOhm
-        ElectricReactanceUnits.TryAdd("GigaOhm", new Unit(
-            SingularName: "GigaOhm",
-            PluralName: "GigaOhms",
+        // Gigaohm
+        ElectricReactanceUnits.TryAdd("Gigaohm", new Unit(
+            SingularName: "Gigaohm",
+            PluralName: "Gigaohms",
             Abbreviations: ["GΩ"],
-            Factor: 1,
+            Factor: 1000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000,
-            FromUnitToBase: static val => (val) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // TeraOhm
-        ElectricReactanceUnits.TryAdd("TeraOhm", new Unit(
-            SingularName: "TeraOhm",
-            PluralName: "TeraOhms",
+        // Teraohm
+        ElectricReactanceUnits.TryAdd("Teraohm", new Unit(
+            SingularName: "Teraohm",
+            PluralName: "Teraohms",
             Abbreviations: ["TΩ"],
-            Factor: 1,
+            Factor: 1000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000000,
-            FromUnitToBase: static val => (val) * 1000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -112,7 +112,7 @@ public static partial class UoMRegistry {
             "In electrical circuits, reactance is the opposition presented to alternating current by inductance and capacitance. Along with resistance, it is one of two elements of impedance.",
             ElectricReactanceUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -3, ["I"] = -2 },
-            "",
+            null,
             false,
             1
         );

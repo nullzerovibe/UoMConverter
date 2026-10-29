@@ -18,32 +18,32 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloNewtonMillimeterPerMeter
-        TorquePerLengthUnits.TryAdd("KiloNewtonMillimeterPerMeter", new Unit(
-            SingularName: "KiloNewtonMillimeterPerMeter",
-            PluralName: "KiloNewtonMillimetersPerMeter",
+        // KilonewtonMillimeterPerMeter
+        TorquePerLengthUnits.TryAdd("KilonewtonMillimeterPerMeter", new Unit(
+            SingularName: "KilonewtonMillimeterPerMeter",
+            PluralName: "KilonewtonMillimetersPerMeter",
             Abbreviations: ["kN·mm/m"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1000) / 1000,
-            FromUnitToBase: static val => (val * 0.001) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaNewtonMillimeterPerMeter
-        TorquePerLengthUnits.TryAdd("MegaNewtonMillimeterPerMeter", new Unit(
-            SingularName: "MegaNewtonMillimeterPerMeter",
-            PluralName: "MegaNewtonMillimetersPerMeter",
+        // MeganewtonMillimeterPerMeter
+        TorquePerLengthUnits.TryAdd("MeganewtonMillimeterPerMeter", new Unit(
+            SingularName: "MeganewtonMillimeterPerMeter",
+            PluralName: "MeganewtonMillimetersPerMeter",
             Abbreviations: ["MN·mm/m"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1000) / 1000000,
-            FromUnitToBase: static val => (val * 0.001) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // NewtonCentimeterPerMeter
         TorquePerLengthUnits.TryAdd("NewtonCentimeterPerMeter", new Unit(
@@ -54,32 +54,32 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloNewtonCentimeterPerMeter
-        TorquePerLengthUnits.TryAdd("KiloNewtonCentimeterPerMeter", new Unit(
-            SingularName: "KiloNewtonCentimeterPerMeter",
-            PluralName: "KiloNewtonCentimetersPerMeter",
+        // KilonewtonCentimeterPerMeter
+        TorquePerLengthUnits.TryAdd("KilonewtonCentimeterPerMeter", new Unit(
+            SingularName: "KilonewtonCentimeterPerMeter",
+            PluralName: "KilonewtonCentimetersPerMeter",
             Abbreviations: ["kN·cm/m"],
-            Factor: 1,
+            Factor: 10,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 100) / 1000,
-            FromUnitToBase: static val => (val * 0.01) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaNewtonCentimeterPerMeter
-        TorquePerLengthUnits.TryAdd("MegaNewtonCentimeterPerMeter", new Unit(
-            SingularName: "MegaNewtonCentimeterPerMeter",
-            PluralName: "MegaNewtonCentimetersPerMeter",
+        // MeganewtonCentimeterPerMeter
+        TorquePerLengthUnits.TryAdd("MeganewtonCentimeterPerMeter", new Unit(
+            SingularName: "MeganewtonCentimeterPerMeter",
+            PluralName: "MeganewtonCentimetersPerMeter",
             Abbreviations: ["MN·cm/m"],
-            Factor: 1,
+            Factor: 10000,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 100) / 1000000,
-            FromUnitToBase: static val => (val * 0.01) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // NewtonMeterPerMeter
         TorquePerLengthUnits.TryAdd("NewtonMeterPerMeter", new Unit(
@@ -90,32 +90,32 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloNewtonMeterPerMeter
-        TorquePerLengthUnits.TryAdd("KiloNewtonMeterPerMeter", new Unit(
-            SingularName: "KiloNewtonMeterPerMeter",
-            PluralName: "KiloNewtonMetersPerMeter",
+        // KilonewtonMeterPerMeter
+        TorquePerLengthUnits.TryAdd("KilonewtonMeterPerMeter", new Unit(
+            SingularName: "KilonewtonMeterPerMeter",
+            PluralName: "KilonewtonMetersPerMeter",
             Abbreviations: ["kN·m/m"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaNewtonMeterPerMeter
-        TorquePerLengthUnits.TryAdd("MegaNewtonMeterPerMeter", new Unit(
-            SingularName: "MegaNewtonMeterPerMeter",
-            PluralName: "MegaNewtonMetersPerMeter",
+        // MeganewtonMeterPerMeter
+        TorquePerLengthUnits.TryAdd("MeganewtonMeterPerMeter", new Unit(
+            SingularName: "MeganewtonMeterPerMeter",
+            PluralName: "MeganewtonMetersPerMeter",
             Abbreviations: ["MN·m/m"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundForceInchPerFoot
         TorquePerLengthUnits.TryAdd("PoundForceInchPerFoot", new Unit(
@@ -126,32 +126,32 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloPoundForceInchPerFoot
-        TorquePerLengthUnits.TryAdd("KiloPoundForceInchPerFoot", new Unit(
-            SingularName: "KiloPoundForceInchPerFoot",
-            PluralName: "KiloPoundForceInchesPerFoot",
+        // KilopoundForceInchPerFoot
+        TorquePerLengthUnits.TryAdd("KilopoundForceInchPerFoot", new Unit(
+            SingularName: "KilopoundForceInchPerFoot",
+            PluralName: "KilopoundForceInchesPerFoot",
             Abbreviations: ["kipf·in/ft"],
-            Factor: 1,
+            Factor: 370.685147638,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 0.370685147638) / 1000,
-            FromUnitToBase: static val => (val * 0.370685147638) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaPoundForceInchPerFoot
-        TorquePerLengthUnits.TryAdd("MegaPoundForceInchPerFoot", new Unit(
-            SingularName: "MegaPoundForceInchPerFoot",
-            PluralName: "MegaPoundForceInchesPerFoot",
+        // MegapoundForceInchPerFoot
+        TorquePerLengthUnits.TryAdd("MegapoundForceInchPerFoot", new Unit(
+            SingularName: "MegapoundForceInchPerFoot",
+            PluralName: "MegapoundForceInchesPerFoot",
             Abbreviations: ["Mlbf·in/ft"],
-            Factor: 1,
+            Factor: 370685.14763799997,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 0.370685147638) / 1000000,
-            FromUnitToBase: static val => (val * 0.370685147638) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundForceFootPerFoot
         TorquePerLengthUnits.TryAdd("PoundForceFootPerFoot", new Unit(
@@ -162,32 +162,32 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloPoundForceFootPerFoot
-        TorquePerLengthUnits.TryAdd("KiloPoundForceFootPerFoot", new Unit(
-            SingularName: "KiloPoundForceFootPerFoot",
-            PluralName: "KiloPoundForceFeetPerFoot",
+        // KilopoundForceFootPerFoot
+        TorquePerLengthUnits.TryAdd("KilopoundForceFootPerFoot", new Unit(
+            SingularName: "KilopoundForceFootPerFoot",
+            PluralName: "KilopoundForceFeetPerFoot",
             Abbreviations: ["kipf·ft/ft"],
-            Factor: 1,
+            Factor: 4448.221615259999,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 4.44822161526) / 1000,
-            FromUnitToBase: static val => (val * 4.44822161526) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaPoundForceFootPerFoot
-        TorquePerLengthUnits.TryAdd("MegaPoundForceFootPerFoot", new Unit(
-            SingularName: "MegaPoundForceFootPerFoot",
-            PluralName: "MegaPoundForceFeetPerFoot",
+        // MegapoundForceFootPerFoot
+        TorquePerLengthUnits.TryAdd("MegapoundForceFootPerFoot", new Unit(
+            SingularName: "MegapoundForceFootPerFoot",
+            PluralName: "MegapoundForceFeetPerFoot",
             Abbreviations: ["Mlbf·ft/ft"],
-            Factor: 1,
+            Factor: 4448221.615259999,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 4.44822161526) / 1000000,
-            FromUnitToBase: static val => (val * 4.44822161526) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // KilogramForceMillimeterPerMeter
         TorquePerLengthUnits.TryAdd("KilogramForceMillimeterPerMeter", new Unit(
@@ -198,8 +198,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // KilogramForceCentimeterPerMeter
         TorquePerLengthUnits.TryAdd("KilogramForceCentimeterPerMeter", new Unit(
@@ -210,8 +210,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // KilogramForceMeterPerMeter
         TorquePerLengthUnits.TryAdd("KilogramForceMeterPerMeter", new Unit(
@@ -222,8 +222,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // TonneForceMillimeterPerMeter
         TorquePerLengthUnits.TryAdd("TonneForceMillimeterPerMeter", new Unit(
@@ -234,8 +234,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // TonneForceCentimeterPerMeter
         TorquePerLengthUnits.TryAdd("TonneForceCentimeterPerMeter", new Unit(
@@ -246,8 +246,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // TonneForceMeterPerMeter
         TorquePerLengthUnits.TryAdd("TonneForceMeterPerMeter", new Unit(
@@ -258,8 +258,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -268,7 +268,7 @@ public static partial class UoMRegistry {
             "The magnitude of torque per unit length.",
             TorquePerLengthUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 1, ["M"] = 1, ["T"] = -2 },
-            "",
+            null,
             false,
             1
         );

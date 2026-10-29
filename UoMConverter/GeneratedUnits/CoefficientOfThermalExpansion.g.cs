@@ -18,8 +18,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PerDegreeCelsius
         CoefficientOfThermalExpansionUnits.TryAdd("PerDegreeCelsius", new Unit(
@@ -30,8 +30,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PerDegreeFahrenheit
         CoefficientOfThermalExpansionUnits.TryAdd("PerDegreeFahrenheit", new Unit(
@@ -40,34 +40,34 @@ public static partial class UoMRegistry {
             Abbreviations: ["°F⁻¹"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 5 / 9,
-            FromUnitToBase: static val => val * 9 / 5,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 5 / 9),
+            FromUnitToBase: static val => (val * 9 / 5),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PpmPerKelvin
         CoefficientOfThermalExpansionUnits.TryAdd("PpmPerKelvin", new Unit(
             SingularName: "PpmPerKelvin",
             PluralName: "PpmPerKelvin",
             Abbreviations: ["ppm/K"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e6,
-            FromUnitToBase: static val => val / 1e6,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PpmPerDegreeCelsius
         CoefficientOfThermalExpansionUnits.TryAdd("PpmPerDegreeCelsius", new Unit(
             SingularName: "PpmPerDegreeCelsius",
             PluralName: "PpmPerDegreeCelsius",
             Abbreviations: ["ppm/°C"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e6,
-            FromUnitToBase: static val => val / 1e6,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PpmPerDegreeFahrenheit
         CoefficientOfThermalExpansionUnits.TryAdd("PpmPerDegreeFahrenheit", new Unit(
@@ -76,10 +76,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["ppm/°F"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 5e6 / 9,
-            FromUnitToBase: static val => val * 9 / 5e6,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 5e6 / 9),
+            FromUnitToBase: static val => (val * 9 / 5e6),
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -88,7 +88,7 @@ public static partial class UoMRegistry {
             "A unit that represents a fractional change in size in response to a change in temperature.",
             CoefficientOfThermalExpansionUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["Θ"] = -1 },
-            "",
+            null,
             false,
             1
         );

@@ -18,8 +18,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // StandardCubicMeterPerMinute
         StandardVolumeFlowUnits.TryAdd("StandardCubicMeterPerMinute", new Unit(
@@ -30,8 +30,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // StandardCubicMeterPerHour
         StandardVolumeFlowUnits.TryAdd("StandardCubicMeterPerHour", new Unit(
@@ -42,8 +42,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // StandardCubicMeterPerDay
         StandardVolumeFlowUnits.TryAdd("StandardCubicMeterPerDay", new Unit(
@@ -54,20 +54,20 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // StandardCubicCentimeterPerMinute
         StandardVolumeFlowUnits.TryAdd("StandardCubicCentimeterPerMinute", new Unit(
             SingularName: "StandardCubicCentimeterPerMinute",
             PluralName: "StandardCubicCentimetersPerMinute",
             Abbreviations: ["sccm"],
-            Factor: 1,
+            Factor: 1.6666666666666667E-08,
             Offset: 0,
-            FromBaseToUnit: static val => val * 6e7,
-            FromUnitToBase: static val => val / 6e7,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // StandardLiterPerMinute
         StandardVolumeFlowUnits.TryAdd("StandardLiterPerMinute", new Unit(
@@ -78,8 +78,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // StandardCubicFootPerSecond
         StandardVolumeFlowUnits.TryAdd("StandardCubicFootPerSecond", new Unit(
@@ -90,8 +90,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // StandardCubicFootPerMinute
         StandardVolumeFlowUnits.TryAdd("StandardCubicFootPerMinute", new Unit(
@@ -100,10 +100,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["scfm"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (0.028316846592 / 60),
-            FromUnitToBase: static val => val * 0.028316846592 / 60,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (0.028316846592 / 60)),
+            FromUnitToBase: static val => (val * 0.028316846592 / 60),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // StandardCubicFootPerHour
         StandardVolumeFlowUnits.TryAdd("StandardCubicFootPerHour", new Unit(
@@ -112,10 +112,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["scfh"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (0.028316846592 / 3600),
-            FromUnitToBase: static val => val * 0.028316846592 / 3600,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (0.028316846592 / 3600)),
+            FromUnitToBase: static val => (val * 0.028316846592 / 3600),
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -124,7 +124,7 @@ public static partial class UoMRegistry {
             "The molar flow rate of a gas corrected to standardized conditions of temperature and pressure thus representing a fixed number of moles of gas regardless of composition and actual flow conditions.",
             StandardVolumeFlowUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["M"] = 1, ["T"] = -1 },
-            "",
+            null,
             false,
             1
         );

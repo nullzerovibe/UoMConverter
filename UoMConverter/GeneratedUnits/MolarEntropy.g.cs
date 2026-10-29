@@ -18,32 +18,32 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloJoulePerMoleKelvin
-        MolarEntropyUnits.TryAdd("KiloJoulePerMoleKelvin", new Unit(
-            SingularName: "KiloJoulePerMoleKelvin",
-            PluralName: "KiloJoulesPerMoleKelvin",
+        // KilojoulePerMoleKelvin
+        MolarEntropyUnits.TryAdd("KilojoulePerMoleKelvin", new Unit(
+            SingularName: "KilojoulePerMoleKelvin",
+            PluralName: "KilojoulesPerMoleKelvin",
             Abbreviations: ["kJ/(mol·K)"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaJoulePerMoleKelvin
-        MolarEntropyUnits.TryAdd("MegaJoulePerMoleKelvin", new Unit(
-            SingularName: "MegaJoulePerMoleKelvin",
-            PluralName: "MegaJoulesPerMoleKelvin",
+        // MegajoulePerMoleKelvin
+        MolarEntropyUnits.TryAdd("MegajoulePerMoleKelvin", new Unit(
+            SingularName: "MegajoulePerMoleKelvin",
+            PluralName: "MegajoulesPerMoleKelvin",
             Abbreviations: ["MJ/(mol·K)"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -52,7 +52,7 @@ public static partial class UoMRegistry {
             "Molar entropy is amount of energy required to increase temperature of 1 mole substance by 1 Kelvin.",
             MolarEntropyUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -2, ["Θ"] = -1, ["N"] = -1 },
-            "",
+            null,
             false,
             1
         );

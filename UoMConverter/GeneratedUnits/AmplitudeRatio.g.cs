@@ -18,8 +18,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DecibelMicrovolt
         AmplitudeRatioUnits.TryAdd("DecibelMicrovolt", new Unit(
@@ -30,8 +30,8 @@ public static partial class UoMRegistry {
             Offset: -120,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DecibelMillivolt
         AmplitudeRatioUnits.TryAdd("DecibelMillivolt", new Unit(
@@ -42,8 +42,8 @@ public static partial class UoMRegistry {
             Offset: -60,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DecibelUnloaded
         AmplitudeRatioUnits.TryAdd("DecibelUnloaded", new Unit(
@@ -54,8 +54,8 @@ public static partial class UoMRegistry {
             Offset: -2.218487499,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -64,7 +64,7 @@ public static partial class UoMRegistry {
             "The strength of a signal expressed in decibels (dB) relative to one volt RMS.",
             AmplitudeRatioUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> {  },
-            "",
+            null,
             true,
             2
         );

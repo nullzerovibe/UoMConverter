@@ -18,68 +18,68 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoRadianPerSecond
-        RotationalSpeedUnits.TryAdd("NanoRadianPerSecond", new Unit(
-            SingularName: "NanoRadianPerSecond",
-            PluralName: "NanoRadiansPerSecond",
+        // NanoradianPerSecond
+        RotationalSpeedUnits.TryAdd("NanoradianPerSecond", new Unit(
+            SingularName: "NanoradianPerSecond",
+            PluralName: "NanoradiansPerSecond",
             Abbreviations: ["nrad/s"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroRadianPerSecond
-        RotationalSpeedUnits.TryAdd("MicroRadianPerSecond", new Unit(
-            SingularName: "MicroRadianPerSecond",
-            PluralName: "MicroRadiansPerSecond",
+        // MicroradianPerSecond
+        RotationalSpeedUnits.TryAdd("MicroradianPerSecond", new Unit(
+            SingularName: "MicroradianPerSecond",
+            PluralName: "MicroradiansPerSecond",
             Abbreviations: ["µrad/s"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliRadianPerSecond
-        RotationalSpeedUnits.TryAdd("MilliRadianPerSecond", new Unit(
-            SingularName: "MilliRadianPerSecond",
-            PluralName: "MilliRadiansPerSecond",
+        // MilliradianPerSecond
+        RotationalSpeedUnits.TryAdd("MilliradianPerSecond", new Unit(
+            SingularName: "MilliradianPerSecond",
+            PluralName: "MilliradiansPerSecond",
             Abbreviations: ["mrad/s"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiRadianPerSecond
-        RotationalSpeedUnits.TryAdd("CentiRadianPerSecond", new Unit(
-            SingularName: "CentiRadianPerSecond",
-            PluralName: "CentiRadiansPerSecond",
+        // CentiradianPerSecond
+        RotationalSpeedUnits.TryAdd("CentiradianPerSecond", new Unit(
+            SingularName: "CentiradianPerSecond",
+            PluralName: "CentiradiansPerSecond",
             Abbreviations: ["crad/s"],
-            Factor: 1,
+            Factor: 0.01,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.01,
-            FromUnitToBase: static val => (val) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciRadianPerSecond
-        RotationalSpeedUnits.TryAdd("DeciRadianPerSecond", new Unit(
-            SingularName: "DeciRadianPerSecond",
-            PluralName: "DeciRadiansPerSecond",
+        // DeciradianPerSecond
+        RotationalSpeedUnits.TryAdd("DeciradianPerSecond", new Unit(
+            SingularName: "DeciradianPerSecond",
+            PluralName: "DeciradiansPerSecond",
             Abbreviations: ["drad/s"],
-            Factor: 1,
+            Factor: 0.1,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.1,
-            FromUnitToBase: static val => (val) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DegreePerSecond
         RotationalSpeedUnits.TryAdd("DegreePerSecond", new Unit(
@@ -88,46 +88,46 @@ public static partial class UoMRegistry {
             Abbreviations: ["°/s", "deg/s"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (180 / Math.PI) * val,
-            FromUnitToBase: static val => (Math.PI / 180) * val,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((180 / Math.PI) * val),
+            FromUnitToBase: static val => ((Math.PI / 180) * val),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoDegreePerSecond
-        RotationalSpeedUnits.TryAdd("NanoDegreePerSecond", new Unit(
-            SingularName: "NanoDegreePerSecond",
-            PluralName: "NanoDegreesPerSecond",
+        // NanodegreePerSecond
+        RotationalSpeedUnits.TryAdd("NanodegreePerSecond", new Unit(
+            SingularName: "NanodegreePerSecond",
+            PluralName: "NanodegreesPerSecond",
             Abbreviations: ["n°/s", "ndeg/s"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => ((180 / Math.PI) * val) / 1E-09,
-            FromUnitToBase: static val => ((Math.PI / 180) * val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (((180 / Math.PI) * val) / 1E-09),
+            FromUnitToBase: static val => ((Math.PI / 180) * (val * 1E-09)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroDegreePerSecond
-        RotationalSpeedUnits.TryAdd("MicroDegreePerSecond", new Unit(
-            SingularName: "MicroDegreePerSecond",
-            PluralName: "MicroDegreesPerSecond",
+        // MicrodegreePerSecond
+        RotationalSpeedUnits.TryAdd("MicrodegreePerSecond", new Unit(
+            SingularName: "MicrodegreePerSecond",
+            PluralName: "MicrodegreesPerSecond",
             Abbreviations: ["µ°/s", "µdeg/s"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => ((180 / Math.PI) * val) / 1E-06,
-            FromUnitToBase: static val => ((Math.PI / 180) * val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (((180 / Math.PI) * val) / 1E-06),
+            FromUnitToBase: static val => ((Math.PI / 180) * (val * 1E-06)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliDegreePerSecond
-        RotationalSpeedUnits.TryAdd("MilliDegreePerSecond", new Unit(
-            SingularName: "MilliDegreePerSecond",
-            PluralName: "MilliDegreesPerSecond",
+        // MillidegreePerSecond
+        RotationalSpeedUnits.TryAdd("MillidegreePerSecond", new Unit(
+            SingularName: "MillidegreePerSecond",
+            PluralName: "MillidegreesPerSecond",
             Abbreviations: ["m°/s", "mdeg/s"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => ((180 / Math.PI) * val) / 0.001,
-            FromUnitToBase: static val => ((Math.PI / 180) * val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (((180 / Math.PI) * val) / 0.001),
+            FromUnitToBase: static val => ((Math.PI / 180) * (val * 0.001)),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DegreePerMinute
         RotationalSpeedUnits.TryAdd("DegreePerMinute", new Unit(
@@ -136,10 +136,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["°/min", "deg/min"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (180 * 60 / Math.PI) * val,
-            FromUnitToBase: static val => (Math.PI / (180 * 60)) * val,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((180 * 60 / Math.PI) * val),
+            FromUnitToBase: static val => ((Math.PI / (180 * 60)) * val),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // RevolutionPerSecond
         RotationalSpeedUnits.TryAdd("RevolutionPerSecond", new Unit(
@@ -148,10 +148,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["r/s"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (2 * Math.PI),
-            FromUnitToBase: static val => val * 2 * Math.PI,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (2 * Math.PI)),
+            FromUnitToBase: static val => (val * 2 * Math.PI),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // RevolutionPerMinute
         RotationalSpeedUnits.TryAdd("RevolutionPerMinute", new Unit(
@@ -160,10 +160,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["rpm", "r/min"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / (2 * Math.PI)) * 60,
-            FromUnitToBase: static val => (val * 2 * Math.PI) / 60,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / (2 * Math.PI)) * 60),
+            FromUnitToBase: static val => ((val * 2 * Math.PI) / 60),
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -172,7 +172,7 @@ public static partial class UoMRegistry {
             "Rotational speed (sometimes called speed of revolution) is the number of complete rotations, revolutions, cycles, or turns per time unit. Rotational speed is a cyclic frequency, measured in radians per second or in hertz in the SI System by scientists, or in revolutions per minute (rpm or min-1) or revolutions per second in everyday life. The symbol for rotational speed is ω (the Greek lowercase letter \"omega\").",
             RotationalSpeedUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["T"] = -1 },
-            "",
+            null,
             false,
             1
         );

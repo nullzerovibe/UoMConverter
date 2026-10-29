@@ -18,32 +18,32 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloVoltampereReactiveHour
-        ReactiveEnergyUnits.TryAdd("KiloVoltampereReactiveHour", new Unit(
-            SingularName: "KiloVoltampereReactiveHour",
-            PluralName: "KiloVoltampereReactiveHours",
+        // KilovoltampereReactiveHour
+        ReactiveEnergyUnits.TryAdd("KilovoltampereReactiveHour", new Unit(
+            SingularName: "KilovoltampereReactiveHour",
+            PluralName: "KilovoltampereReactiveHours",
             Abbreviations: ["kvarh"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaVoltampereReactiveHour
-        ReactiveEnergyUnits.TryAdd("MegaVoltampereReactiveHour", new Unit(
-            SingularName: "MegaVoltampereReactiveHour",
-            PluralName: "MegaVoltampereReactiveHours",
+        // MegavoltampereReactiveHour
+        ReactiveEnergyUnits.TryAdd("MegavoltampereReactiveHour", new Unit(
+            SingularName: "MegavoltampereReactiveHour",
+            PluralName: "MegavoltampereReactiveHours",
             Abbreviations: ["Mvarh"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -52,7 +52,7 @@ public static partial class UoMRegistry {
             "The Volt-ampere reactive hour (expressed as varh) is the reactive power of one Volt-ampere reactive produced in one hour.",
             ReactiveEnergyUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -1 },
-            "",
+            null,
             false,
             1
         );

@@ -14,12 +14,12 @@ public static partial class UoMRegistry {
             SingularName: "Dyn",
             PluralName: "Dyne",
             Abbreviations: ["dyn"],
-            Factor: 1,
+            Factor: 1E-05,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e5,
-            FromUnitToBase: static val => val / 1e5,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Dyne#Definition",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // KilogramForce
         ForceUnits.TryAdd("KilogramForce", new Unit(
@@ -31,7 +31,7 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Kilogram-force",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // TonneForce
         ForceUnits.TryAdd("TonneForce", new Unit(
@@ -40,10 +40,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["tf", "Ton"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (9.80665 * 1000),
-            FromUnitToBase: static val => val * (9.80665 * 1000),
+            FromBaseToUnit: static val => (val / (9.80665 * 1000)),
+            FromUnitToBase: static val => (val * (9.80665 * 1000)),
             Remarks: "https://en.wikipedia.org/wiki/Kilogram-force#Related_units",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // Newton
         ForceUnits.TryAdd("Newton", new Unit(
@@ -55,67 +55,67 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Newton_(unit)",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
-        // MicroNewton
-        ForceUnits.TryAdd("MicroNewton", new Unit(
-            SingularName: "MicroNewton",
-            PluralName: "MicroNewtons",
+        // Micronewton
+        ForceUnits.TryAdd("Micronewton", new Unit(
+            SingularName: "Micronewton",
+            PluralName: "Micronewtons",
             Abbreviations: ["µN"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliNewton
-        ForceUnits.TryAdd("MilliNewton", new Unit(
-            SingularName: "MilliNewton",
-            PluralName: "MilliNewtons",
+        // Millinewton
+        ForceUnits.TryAdd("Millinewton", new Unit(
+            SingularName: "Millinewton",
+            PluralName: "Millinewtons",
             Abbreviations: ["mN"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DecaNewton
-        ForceUnits.TryAdd("DecaNewton", new Unit(
-            SingularName: "DecaNewton",
-            PluralName: "DecaNewtons",
+        // Decanewton
+        ForceUnits.TryAdd("Decanewton", new Unit(
+            SingularName: "Decanewton",
+            PluralName: "Decanewtons",
             Abbreviations: ["daN"],
-            Factor: 1,
+            Factor: 10,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 10,
-            FromUnitToBase: static val => (val) * 10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloNewton
-        ForceUnits.TryAdd("KiloNewton", new Unit(
-            SingularName: "KiloNewton",
-            PluralName: "KiloNewtons",
+        // Kilonewton
+        ForceUnits.TryAdd("Kilonewton", new Unit(
+            SingularName: "Kilonewton",
+            PluralName: "Kilonewtons",
             Abbreviations: ["kN"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaNewton
-        ForceUnits.TryAdd("MegaNewton", new Unit(
-            SingularName: "MegaNewton",
-            PluralName: "MegaNewtons",
+        // Meganewton
+        ForceUnits.TryAdd("Meganewton", new Unit(
+            SingularName: "Meganewton",
+            PluralName: "Meganewtons",
             Abbreviations: ["MN"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Kilopond
         ForceUnits.TryAdd("Kilopond", new Unit(
@@ -127,7 +127,7 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Kilogram-force",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // Poundal
         ForceUnits.TryAdd("Poundal", new Unit(
@@ -139,7 +139,7 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Poundal",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // PoundForce
         ForceUnits.TryAdd("PoundForce", new Unit(
@@ -151,19 +151,19 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Pound_(force)#Definitions",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
-        // KiloPoundForce
-        ForceUnits.TryAdd("KiloPoundForce", new Unit(
-            SingularName: "KiloPoundForce",
-            PluralName: "KiloPoundsForce",
+        // KilopoundForce
+        ForceUnits.TryAdd("KilopoundForce", new Unit(
+            SingularName: "KilopoundForce",
+            PluralName: "KilopoundsForce",
             Abbreviations: ["kipf", "kip", "k"],
-            Factor: 1,
+            Factor: 4448.2216152605,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 4.4482216152605) / 1000,
-            FromUnitToBase: static val => (val * 4.4482216152605) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // OunceForce
         ForceUnits.TryAdd("OunceForce", new Unit(
@@ -172,10 +172,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["ozf"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (4.4482216152605 / 16),
-            FromUnitToBase: static val => val * (4.4482216152605 / 16),
+            FromBaseToUnit: static val => (val / (4.4482216152605 / 16)),
+            FromUnitToBase: static val => (val * (4.4482216152605 / 16)),
             Remarks: "https://en.wikipedia.org/wiki/Ounce#Ounce-force",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // ShortTonForce
         ForceUnits.TryAdd("ShortTonForce", new Unit(
@@ -184,10 +184,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["tf (short)", "t (US)f", "short tons-force"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (4.4482216152605 * 2000),
-            FromUnitToBase: static val => val * (4.4482216152605 * 2000),
+            FromBaseToUnit: static val => (val / (4.4482216152605 * 2000)),
+            FromUnitToBase: static val => (val * (4.4482216152605 * 2000)),
             Remarks: "https://en.wikipedia.org/wiki/Ton-force#Short_ton-force",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -196,7 +196,7 @@ public static partial class UoMRegistry {
             "In physics, a force is any influence that causes an object to undergo a certain change, either concerning its movement, direction, or geometrical construction. In other words, a force can cause an object with mass to change its velocity (which includes to begin moving from a state of rest), i.e., to accelerate, or a flexible object to deform, or both. Force can also be described by intuitive concepts such as a push or a pull. A force has both magnitude and direction, making it a vector quantity. It is measured in the SI unit of newtons and represented by the symbol F.",
             ForceUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 1, ["M"] = 1, ["T"] = -2 },
-            "",
+            null,
             false,
             1
         );

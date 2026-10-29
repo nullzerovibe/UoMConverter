@@ -18,20 +18,20 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CoulombPerSquareCentimeter
         ElectricSurfaceChargeDensityUnits.TryAdd("CoulombPerSquareCentimeter", new Unit(
             SingularName: "CoulombPerSquareCentimeter",
             PluralName: "CoulombsPerSquareCentimeter",
             Abbreviations: ["C/cm²"],
-            Factor: 1,
+            Factor: 10000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1.0e4,
-            FromUnitToBase: static val => val * 1.0e4,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CoulombPerSquareInch
         ElectricSurfaceChargeDensityUnits.TryAdd("CoulombPerSquareInch", new Unit(
@@ -42,8 +42,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -52,7 +52,7 @@ public static partial class UoMRegistry {
             "In electromagnetism, surface charge density is a measure of the amount of electric charge per surface area.",
             ElectricSurfaceChargeDensityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = -2, ["T"] = 1, ["I"] = 1 },
-            "",
+            null,
             false,
             1
         );

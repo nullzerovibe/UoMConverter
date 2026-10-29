@@ -14,12 +14,12 @@ public static partial class UoMRegistry {
             SingularName: "GramPerKiloWattHour",
             PluralName: "GramsPerKiloWattHour",
             Abbreviations: ["g/kWh"],
-            Factor: 1,
+            Factor: 2.7777777777777777E-10,
             Offset: 0,
-            FromBaseToUnit: static val => val * 3.6e9,
-            FromUnitToBase: static val => val / 3.6e9,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // KilogramPerJoule
         BrakeSpecificFuelConsumptionUnits.TryAdd("KilogramPerJoule", new Unit(
@@ -30,8 +30,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundPerMechanicalHorsepowerHour
         BrakeSpecificFuelConsumptionUnits.TryAdd("PoundPerMechanicalHorsepowerHour", new Unit(
@@ -40,10 +40,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["lb/hph"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 3600 / (0.45359237 / (76.0402249 * 9.80665)),
-            FromUnitToBase: static val => val * (0.45359237 / (76.0402249 * 9.80665))/3600,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 3600 / (0.45359237 / (76.0402249 * 9.80665))),
+            FromUnitToBase: static val => (val * (0.45359237 / (76.0402249 * 9.80665))/3600),
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -52,7 +52,7 @@ public static partial class UoMRegistry {
             "Brake specific fuel consumption (BSFC) is a measure of the fuel efficiency of any prime mover that burns fuel and produces rotational, or shaft, power. It is typically used for comparing the efficiency of internal combustion engines with a shaft output.",
             BrakeSpecificFuelConsumptionUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = -2, ["T"] = 2 },
-            "",
+            null,
             false,
             1
         );

@@ -18,44 +18,44 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloVoltampereReactive
-        ElectricReactivePowerUnits.TryAdd("KiloVoltampereReactive", new Unit(
-            SingularName: "KiloVoltampereReactive",
-            PluralName: "KiloVoltamperesReactive",
+        // KilovoltampereReactive
+        ElectricReactivePowerUnits.TryAdd("KilovoltampereReactive", new Unit(
+            SingularName: "KilovoltampereReactive",
+            PluralName: "KilovoltamperesReactive",
             Abbreviations: ["kvar"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaVoltampereReactive
-        ElectricReactivePowerUnits.TryAdd("MegaVoltampereReactive", new Unit(
-            SingularName: "MegaVoltampereReactive",
-            PluralName: "MegaVoltamperesReactive",
+        // MegavoltampereReactive
+        ElectricReactivePowerUnits.TryAdd("MegavoltampereReactive", new Unit(
+            SingularName: "MegavoltampereReactive",
+            PluralName: "MegavoltamperesReactive",
             Abbreviations: ["Mvar"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaVoltampereReactive
-        ElectricReactivePowerUnits.TryAdd("GigaVoltampereReactive", new Unit(
-            SingularName: "GigaVoltampereReactive",
-            PluralName: "GigaVoltamperesReactive",
+        // GigavoltampereReactive
+        ElectricReactivePowerUnits.TryAdd("GigavoltampereReactive", new Unit(
+            SingularName: "GigavoltampereReactive",
+            PluralName: "GigavoltamperesReactive",
             Abbreviations: ["Gvar"],
-            Factor: 1,
+            Factor: 1000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000,
-            FromUnitToBase: static val => (val) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -64,7 +64,7 @@ public static partial class UoMRegistry {
             "In electric power transmission and distribution, volt-ampere reactive (var) is a unit of measurement of reactive power. Reactive power exists in an AC circuit when the current and voltage are not in phase.",
             ElectricReactivePowerUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -3 },
-            "",
+            null,
             false,
             1
         );

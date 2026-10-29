@@ -18,116 +18,116 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloMolePerCubicMeter
-        MolarityUnits.TryAdd("KiloMolePerCubicMeter", new Unit(
-            SingularName: "KiloMolePerCubicMeter",
-            PluralName: "KiloMolesPerCubicMeter",
+        // KilomolePerCubicMeter
+        MolarityUnits.TryAdd("KilomolePerCubicMeter", new Unit(
+            SingularName: "KilomolePerCubicMeter",
+            PluralName: "KilomolesPerCubicMeter",
             Abbreviations: ["kmol/m³"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // MolePerLiter
         MolarityUnits.TryAdd("MolePerLiter", new Unit(
             SingularName: "MolePerLiter",
             PluralName: "MolesPerLiter",
             Abbreviations: ["mol/l", "M"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e-3,
-            FromUnitToBase: static val => val / 1e-3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // FemtoMolePerLiter
-        MolarityUnits.TryAdd("FemtoMolePerLiter", new Unit(
-            SingularName: "FemtoMolePerLiter",
-            PluralName: "FemtoMolesPerLiter",
+        // FemtomolePerLiter
+        MolarityUnits.TryAdd("FemtomolePerLiter", new Unit(
+            SingularName: "FemtomolePerLiter",
+            PluralName: "FemtomolesPerLiter",
             Abbreviations: ["fmol/l", "fM"],
-            Factor: 1,
+            Factor: 1E-12,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-3) / 1E-15,
-            FromUnitToBase: static val => (val / 1e-3) * 1E-15,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PicoMolePerLiter
-        MolarityUnits.TryAdd("PicoMolePerLiter", new Unit(
-            SingularName: "PicoMolePerLiter",
-            PluralName: "PicoMolesPerLiter",
+        // PicomolePerLiter
+        MolarityUnits.TryAdd("PicomolePerLiter", new Unit(
+            SingularName: "PicomolePerLiter",
+            PluralName: "PicomolesPerLiter",
             Abbreviations: ["pmol/l", "pM"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-3) / 1E-12,
-            FromUnitToBase: static val => (val / 1e-3) * 1E-12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoMolePerLiter
-        MolarityUnits.TryAdd("NanoMolePerLiter", new Unit(
-            SingularName: "NanoMolePerLiter",
-            PluralName: "NanoMolesPerLiter",
+        // NanomolePerLiter
+        MolarityUnits.TryAdd("NanomolePerLiter", new Unit(
+            SingularName: "NanomolePerLiter",
+            PluralName: "NanomolesPerLiter",
             Abbreviations: ["nmol/l", "nM"],
-            Factor: 1,
+            Factor: 1.0000000000000002E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-3) / 1E-09,
-            FromUnitToBase: static val => (val / 1e-3) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroMolePerLiter
-        MolarityUnits.TryAdd("MicroMolePerLiter", new Unit(
-            SingularName: "MicroMolePerLiter",
-            PluralName: "MicroMolesPerLiter",
+        // MicromolePerLiter
+        MolarityUnits.TryAdd("MicromolePerLiter", new Unit(
+            SingularName: "MicromolePerLiter",
+            PluralName: "MicromolesPerLiter",
             Abbreviations: ["µmol/l", "µM"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-3) / 1E-06,
-            FromUnitToBase: static val => (val / 1e-3) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliMolePerLiter
-        MolarityUnits.TryAdd("MilliMolePerLiter", new Unit(
-            SingularName: "MilliMolePerLiter",
-            PluralName: "MilliMolesPerLiter",
+        // MillimolePerLiter
+        MolarityUnits.TryAdd("MillimolePerLiter", new Unit(
+            SingularName: "MillimolePerLiter",
+            PluralName: "MillimolesPerLiter",
             Abbreviations: ["mmol/l", "mM"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-3) / 0.001,
-            FromUnitToBase: static val => (val / 1e-3) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiMolePerLiter
-        MolarityUnits.TryAdd("CentiMolePerLiter", new Unit(
-            SingularName: "CentiMolePerLiter",
-            PluralName: "CentiMolesPerLiter",
+        // CentimolePerLiter
+        MolarityUnits.TryAdd("CentimolePerLiter", new Unit(
+            SingularName: "CentimolePerLiter",
+            PluralName: "CentimolesPerLiter",
             Abbreviations: ["cmol/l", "cM"],
-            Factor: 1,
+            Factor: 10,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-3) / 0.01,
-            FromUnitToBase: static val => (val / 1e-3) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciMolePerLiter
-        MolarityUnits.TryAdd("DeciMolePerLiter", new Unit(
-            SingularName: "DeciMolePerLiter",
-            PluralName: "DeciMolesPerLiter",
+        // DecimolePerLiter
+        MolarityUnits.TryAdd("DecimolePerLiter", new Unit(
+            SingularName: "DecimolePerLiter",
+            PluralName: "DecimolesPerLiter",
             Abbreviations: ["dmol/l", "dM"],
-            Factor: 1,
+            Factor: 100,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-3) / 0.1,
-            FromUnitToBase: static val => (val / 1e-3) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundMolePerCubicFoot
         MolarityUnits.TryAdd("PoundMolePerCubicFoot", new Unit(
@@ -136,10 +136,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["lbmol/ft³"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (1000 * 0.45359237 / 0.028316846592),
-            FromUnitToBase: static val => val * 1000 * 0.45359237 / 0.028316846592,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (1000 * 0.45359237 / 0.028316846592)),
+            FromUnitToBase: static val => (val * 1000 * 0.45359237 / 0.028316846592),
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -148,7 +148,7 @@ public static partial class UoMRegistry {
             "Molar concentration, also called molarity, amount concentration or substance concentration, is a measure of the concentration of a solute in a solution, or of any chemical species, in terms of amount of substance in a given volume.",
             MolarityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = -3, ["N"] = 1 },
-            "",
+            null,
             false,
             1
         );

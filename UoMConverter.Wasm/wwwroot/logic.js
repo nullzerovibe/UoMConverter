@@ -340,10 +340,22 @@ const loadDimensionUsage = () => {
     } catch { return {}; }
 };
 
+// WHY: Unit names are case-insensitive in the engine (e.g. "KiloMeter" became "Kilometer"); keys must be too.
+export const unitUsageKey = (dimName, unitName) => `${dimName}::${unitName}`.toLowerCase();
+
 const loadUnitUsage = () => {
     try {
         const saved = localStorage.getItem(STORAGE_KEY_UNIT_FREQ);
-        return saved ? JSON.parse(saved) : {};
+        const parsed = saved ? JSON.parse(saved) : {};
+        const normalized = {};
+        for (const [key, entry] of Object.entries(parsed)) {
+            const k = key.toLowerCase();
+            const prev = normalized[k];
+            normalized[k] = prev
+                ? { count: (prev.count || 0) + (entry.count || 0), lastUsed: Math.max(prev.lastUsed || 0, entry.lastUsed || 0) }
+                : entry;
+        }
+        return normalized;
     } catch { return {}; }
 };
 
@@ -975,7 +987,7 @@ export const actions = {
         if (!appState.settings.value.useUnitFrequency) return;
 
         const currentUsage = { ...appState.unitUsage.value };
-        const key = `${dimName}::${unitName}`;
+        const key = unitUsageKey(dimName, unitName);
         if (!currentUsage[key]) {
             currentUsage[key] = { count: 1, lastUsed: Date.now() };
         } else {

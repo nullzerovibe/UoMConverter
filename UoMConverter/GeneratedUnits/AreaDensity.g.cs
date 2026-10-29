@@ -18,8 +18,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // GramPerSquareMeter
         AreaDensityUnits.TryAdd("GramPerSquareMeter", new Unit(
@@ -31,7 +31,7 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Grammage",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // MilligramPerSquareMeter
         AreaDensityUnits.TryAdd("MilligramPerSquareMeter", new Unit(
@@ -42,8 +42,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -52,7 +52,7 @@ public static partial class UoMRegistry {
             "The area density of a two-dimensional object is calculated as the mass per unit area. For paper this is also called grammage.",
             AreaDensityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = -2, ["M"] = 1 },
-            "",
+            null,
             false,
             1
         );

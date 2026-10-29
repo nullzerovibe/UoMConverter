@@ -18,8 +18,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // LiterPerLiter
         VolumeConcentrationUnits.TryAdd("LiterPerLiter", new Unit(
@@ -30,224 +30,224 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PicoLiterPerLiter
-        VolumeConcentrationUnits.TryAdd("PicoLiterPerLiter", new Unit(
-            SingularName: "PicoLiterPerLiter",
-            PluralName: "PicoLitersPerLiter",
+        // PicoliterPerLiter
+        VolumeConcentrationUnits.TryAdd("PicoliterPerLiter", new Unit(
+            SingularName: "PicoliterPerLiter",
+            PluralName: "PicolitersPerLiter",
             Abbreviations: ["pl/l"],
-            Factor: 1,
+            Factor: 1E-12,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-12,
-            FromUnitToBase: static val => (val) * 1E-12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoLiterPerLiter
-        VolumeConcentrationUnits.TryAdd("NanoLiterPerLiter", new Unit(
-            SingularName: "NanoLiterPerLiter",
-            PluralName: "NanoLitersPerLiter",
+        // NanoliterPerLiter
+        VolumeConcentrationUnits.TryAdd("NanoliterPerLiter", new Unit(
+            SingularName: "NanoliterPerLiter",
+            PluralName: "NanolitersPerLiter",
             Abbreviations: ["nl/l"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroLiterPerLiter
-        VolumeConcentrationUnits.TryAdd("MicroLiterPerLiter", new Unit(
-            SingularName: "MicroLiterPerLiter",
-            PluralName: "MicroLitersPerLiter",
+        // MicroliterPerLiter
+        VolumeConcentrationUnits.TryAdd("MicroliterPerLiter", new Unit(
+            SingularName: "MicroliterPerLiter",
+            PluralName: "MicrolitersPerLiter",
             Abbreviations: ["µl/l"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliLiterPerLiter
-        VolumeConcentrationUnits.TryAdd("MilliLiterPerLiter", new Unit(
-            SingularName: "MilliLiterPerLiter",
-            PluralName: "MilliLitersPerLiter",
+        // MilliliterPerLiter
+        VolumeConcentrationUnits.TryAdd("MilliliterPerLiter", new Unit(
+            SingularName: "MilliliterPerLiter",
+            PluralName: "MillilitersPerLiter",
             Abbreviations: ["ml/l"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiLiterPerLiter
-        VolumeConcentrationUnits.TryAdd("CentiLiterPerLiter", new Unit(
-            SingularName: "CentiLiterPerLiter",
-            PluralName: "CentiLitersPerLiter",
+        // CentiliterPerLiter
+        VolumeConcentrationUnits.TryAdd("CentiliterPerLiter", new Unit(
+            SingularName: "CentiliterPerLiter",
+            PluralName: "CentilitersPerLiter",
             Abbreviations: ["cl/l"],
-            Factor: 1,
+            Factor: 0.01,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.01,
-            FromUnitToBase: static val => (val) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciLiterPerLiter
-        VolumeConcentrationUnits.TryAdd("DeciLiterPerLiter", new Unit(
-            SingularName: "DeciLiterPerLiter",
-            PluralName: "DeciLitersPerLiter",
+        // DeciliterPerLiter
+        VolumeConcentrationUnits.TryAdd("DeciliterPerLiter", new Unit(
+            SingularName: "DeciliterPerLiter",
+            PluralName: "DecilitersPerLiter",
             Abbreviations: ["dl/l"],
-            Factor: 1,
+            Factor: 0.1,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.1,
-            FromUnitToBase: static val => (val) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // LiterPerMilliliter
         VolumeConcentrationUnits.TryAdd("LiterPerMilliliter", new Unit(
             SingularName: "LiterPerMilliliter",
             PluralName: "LitersPerMilliliter",
             Abbreviations: ["l/ml"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e-3,
-            FromUnitToBase: static val => val / 1e-3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PicoLiterPerMilliliter
-        VolumeConcentrationUnits.TryAdd("PicoLiterPerMilliliter", new Unit(
-            SingularName: "PicoLiterPerMilliliter",
-            PluralName: "PicoLitersPerMilliliter",
+        // PicoliterPerMilliliter
+        VolumeConcentrationUnits.TryAdd("PicoliterPerMilliliter", new Unit(
+            SingularName: "PicoliterPerMilliliter",
+            PluralName: "PicolitersPerMilliliter",
             Abbreviations: ["pl/ml"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-3) / 1E-12,
-            FromUnitToBase: static val => (val / 1e-3) * 1E-12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoLiterPerMilliliter
-        VolumeConcentrationUnits.TryAdd("NanoLiterPerMilliliter", new Unit(
-            SingularName: "NanoLiterPerMilliliter",
-            PluralName: "NanoLitersPerMilliliter",
+        // NanoliterPerMilliliter
+        VolumeConcentrationUnits.TryAdd("NanoliterPerMilliliter", new Unit(
+            SingularName: "NanoliterPerMilliliter",
+            PluralName: "NanolitersPerMilliliter",
             Abbreviations: ["nl/ml"],
-            Factor: 1,
+            Factor: 1.0000000000000002E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-3) / 1E-09,
-            FromUnitToBase: static val => (val / 1e-3) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroLiterPerMilliliter
-        VolumeConcentrationUnits.TryAdd("MicroLiterPerMilliliter", new Unit(
-            SingularName: "MicroLiterPerMilliliter",
-            PluralName: "MicroLitersPerMilliliter",
+        // MicroliterPerMilliliter
+        VolumeConcentrationUnits.TryAdd("MicroliterPerMilliliter", new Unit(
+            SingularName: "MicroliterPerMilliliter",
+            PluralName: "MicrolitersPerMilliliter",
             Abbreviations: ["µl/ml"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-3) / 1E-06,
-            FromUnitToBase: static val => (val / 1e-3) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliLiterPerMilliliter
-        VolumeConcentrationUnits.TryAdd("MilliLiterPerMilliliter", new Unit(
-            SingularName: "MilliLiterPerMilliliter",
-            PluralName: "MilliLitersPerMilliliter",
+        // MilliliterPerMilliliter
+        VolumeConcentrationUnits.TryAdd("MilliliterPerMilliliter", new Unit(
+            SingularName: "MilliliterPerMilliliter",
+            PluralName: "MillilitersPerMilliliter",
             Abbreviations: ["ml/ml"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-3) / 0.001,
-            FromUnitToBase: static val => (val / 1e-3) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiLiterPerMilliliter
-        VolumeConcentrationUnits.TryAdd("CentiLiterPerMilliliter", new Unit(
-            SingularName: "CentiLiterPerMilliliter",
-            PluralName: "CentiLitersPerMilliliter",
+        // CentiliterPerMilliliter
+        VolumeConcentrationUnits.TryAdd("CentiliterPerMilliliter", new Unit(
+            SingularName: "CentiliterPerMilliliter",
+            PluralName: "CentilitersPerMilliliter",
             Abbreviations: ["cl/ml"],
-            Factor: 1,
+            Factor: 10,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-3) / 0.01,
-            FromUnitToBase: static val => (val / 1e-3) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciLiterPerMilliliter
-        VolumeConcentrationUnits.TryAdd("DeciLiterPerMilliliter", new Unit(
-            SingularName: "DeciLiterPerMilliliter",
-            PluralName: "DeciLitersPerMilliliter",
+        // DeciliterPerMilliliter
+        VolumeConcentrationUnits.TryAdd("DeciliterPerMilliliter", new Unit(
+            SingularName: "DeciliterPerMilliliter",
+            PluralName: "DecilitersPerMilliliter",
             Abbreviations: ["dl/ml"],
-            Factor: 1,
+            Factor: 100,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-3) / 0.1,
-            FromUnitToBase: static val => (val / 1e-3) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Percent
         VolumeConcentrationUnits.TryAdd("Percent", new Unit(
             SingularName: "Percent",
             PluralName: "Percent",
             Abbreviations: ["%", "% (v/v)"],
-            Factor: 1,
+            Factor: 0.01,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e2,
-            FromUnitToBase: static val => val / 1e2,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PartPerThousand
         VolumeConcentrationUnits.TryAdd("PartPerThousand", new Unit(
             SingularName: "PartPerThousand",
             PluralName: "PartsPerThousand",
             Abbreviations: ["‰"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e3,
-            FromUnitToBase: static val => val / 1e3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PartPerMillion
         VolumeConcentrationUnits.TryAdd("PartPerMillion", new Unit(
             SingularName: "PartPerMillion",
             PluralName: "PartsPerMillion",
             Abbreviations: ["ppm"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e6,
-            FromUnitToBase: static val => val / 1e6,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PartPerBillion
         VolumeConcentrationUnits.TryAdd("PartPerBillion", new Unit(
             SingularName: "PartPerBillion",
             PluralName: "PartsPerBillion",
             Abbreviations: ["ppb"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e9,
-            FromUnitToBase: static val => val / 1e9,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PartPerTrillion
         VolumeConcentrationUnits.TryAdd("PartPerTrillion", new Unit(
             SingularName: "PartPerTrillion",
             PluralName: "PartsPerTrillion",
             Abbreviations: ["ppt"],
-            Factor: 1,
+            Factor: 1E-12,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e12,
-            FromUnitToBase: static val => val / 1e12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -256,7 +256,7 @@ public static partial class UoMRegistry {
             "The volume concentration (not to be confused with volume fraction) is defined as the volume of a constituent divided by the total volume of the mixture.",
             VolumeConcentrationUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> {  },
-            "",
+            null,
             false,
             1
         );

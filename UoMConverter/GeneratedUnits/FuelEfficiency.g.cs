@@ -16,10 +16,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["l/100km"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => 100 / val,
-            FromUnitToBase: static val => 100 / val,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (100 / val),
+            FromUnitToBase: static val => (100 / val),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // MilePerUsGallon
         FuelEfficiencyUnits.TryAdd("MilePerUsGallon", new Unit(
@@ -28,10 +28,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["mpg (U.S.)"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 3.785411784 / 1.609344,
-            FromUnitToBase: static val => val * 1.609344 / 3.785411784,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 3.785411784 / 1.609344),
+            FromUnitToBase: static val => (val * 1.609344 / 3.785411784),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // MilePerUkGallon
         FuelEfficiencyUnits.TryAdd("MilePerUkGallon", new Unit(
@@ -40,10 +40,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["mpg (imp.)"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 4.54609 / 1.609344,
-            FromUnitToBase: static val => val * 1.609344 / 4.54609,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 4.54609 / 1.609344),
+            FromUnitToBase: static val => (val * 1.609344 / 4.54609),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // KilometerPerLiter
         FuelEfficiencyUnits.TryAdd("KilometerPerLiter", new Unit(
@@ -54,8 +54,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -64,7 +64,7 @@ public static partial class UoMRegistry {
             "In the context of transport, fuel economy is the energy efficiency of a particular vehicle, given as a ratio of distance traveled per unit of fuel consumed. In most countries, using the metric system, fuel economy is stated as \"fuel consumption\" in liters per 100 kilometers (L/100 km) or kilometers per liter (km/L or kmpl). In countries using non-metric system, fuel economy is expressed in miles per gallon (mpg) (imperial galon or US galon).",
             FuelEfficiencyUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = -2 },
-            "",
+            null,
             false,
             1
         );

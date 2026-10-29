@@ -6,7 +6,7 @@ namespace UoMConverter.Wasm;
 /// <summary>
 /// Interop class for handling UoMConverter operations from JavaScript.
 /// </summary>
-public class UoMConverterInterop {
+public sealed class UoMConverterInterop {
     private readonly global::UoMConverter.UoMConverter _converter = new();
 
     /// <summary>
@@ -21,19 +21,7 @@ public class UoMConverterInterop {
     /// </summary>
     /// <returns>An array of dimension names.</returns>
     [JSInvokable]
-    public string[] GetDimensions() {
-        try {
-            Console.WriteLine("UoMConverter Interop: GetDimensions called.");
-            var dims = _converter.GetDimensions().ToArray();
-            Console.WriteLine($"UoMConverter Interop: Found {dims.Length} dimensions.");
-            return dims;
-        }
-        catch (Exception ex) {
-            Console.WriteLine($"UoMConverter Interop: Error in GetDimensions: {ex.Message}");
-            Console.WriteLine(ex.StackTrace);
-            return new[] { "Error: " + ex.Message };
-        }
-    }
+    public string[] GetDimensions() => [.. _converter.GetDimensions()];
 
     /// <summary>
     /// Retrieves all units for a specific dimension.
@@ -53,18 +41,7 @@ public class UoMConverterInterop {
     /// <param name="unitQuery">The name or abbreviation to search for.</param>
     /// <returns>The dimension name, or null if not found.</returns>
     [JSInvokable]
-    public string? GetDimensionForUnit(string unitQuery) {
-        var dims = _converter.GetDimensions();
-        foreach (var d in dims) {
-            var units = _converter.GetUnitList(d);
-            if (units.Any(u => string.Equals(u.Name, unitQuery, StringComparison.OrdinalIgnoreCase) || 
-                               string.Equals(u.Abbreviation, unitQuery, StringComparison.OrdinalIgnoreCase) ||
-                               string.Equals(u.Plural, unitQuery, StringComparison.OrdinalIgnoreCase))) {
-                return d;
-            }
-        }
-        return null;
-    }
+    public string? GetDimensionForUnit(string unitQuery) => _converter.GetDimensionForUnit(unitQuery);
 
     /// <summary>
     /// Converts a value from one unit to another.

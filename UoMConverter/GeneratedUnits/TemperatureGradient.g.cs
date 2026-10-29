@@ -18,8 +18,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DegreeCelsiusPerMeter
         TemperatureGradientUnits.TryAdd("DegreeCelsiusPerMeter", new Unit(
@@ -30,8 +30,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DegreeFahrenheitPerFoot
         TemperatureGradientUnits.TryAdd("DegreeFahrenheitPerFoot", new Unit(
@@ -40,22 +40,22 @@ public static partial class UoMRegistry {
             Abbreviations: ["∆°F/ft"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 0.3048) * 9 / 5,
-            FromUnitToBase: static val => (val / 0.3048) * 5 / 9,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * 0.3048) * 9 / 5),
+            FromUnitToBase: static val => ((val / 0.3048) * 5 / 9),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DegreeCelsiusPerKilometer
         TemperatureGradientUnits.TryAdd("DegreeCelsiusPerKilometer", new Unit(
             SingularName: "DegreeCelsiusPerKilometer",
             PluralName: "DegreesCelsiusPerKilometer",
             Abbreviations: ["∆°C/km"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e3,
-            FromUnitToBase: static val => val / 1e3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -64,7 +64,7 @@ public static partial class UoMRegistry {
             "",
             TemperatureGradientUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = -1, ["Θ"] = 1 },
-            "",
+            null,
             false,
             1
         );

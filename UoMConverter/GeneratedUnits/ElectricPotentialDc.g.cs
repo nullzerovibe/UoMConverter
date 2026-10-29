@@ -18,56 +18,56 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroVoltDc
-        ElectricPotentialDcUnits.TryAdd("MicroVoltDc", new Unit(
-            SingularName: "MicroVoltDc",
-            PluralName: "MicroVoltsDc",
+        // MicrovoltDc
+        ElectricPotentialDcUnits.TryAdd("MicrovoltDc", new Unit(
+            SingularName: "MicrovoltDc",
+            PluralName: "MicrovoltsDc",
             Abbreviations: ["µVdc"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliVoltDc
-        ElectricPotentialDcUnits.TryAdd("MilliVoltDc", new Unit(
-            SingularName: "MilliVoltDc",
-            PluralName: "MilliVoltsDc",
+        // MillivoltDc
+        ElectricPotentialDcUnits.TryAdd("MillivoltDc", new Unit(
+            SingularName: "MillivoltDc",
+            PluralName: "MillivoltsDc",
             Abbreviations: ["mVdc"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloVoltDc
-        ElectricPotentialDcUnits.TryAdd("KiloVoltDc", new Unit(
-            SingularName: "KiloVoltDc",
-            PluralName: "KiloVoltsDc",
+        // KilovoltDc
+        ElectricPotentialDcUnits.TryAdd("KilovoltDc", new Unit(
+            SingularName: "KilovoltDc",
+            PluralName: "KilovoltsDc",
             Abbreviations: ["kVdc"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaVoltDc
-        ElectricPotentialDcUnits.TryAdd("MegaVoltDc", new Unit(
-            SingularName: "MegaVoltDc",
-            PluralName: "MegaVoltsDc",
+        // MegavoltDc
+        ElectricPotentialDcUnits.TryAdd("MegavoltDc", new Unit(
+            SingularName: "MegavoltDc",
+            PluralName: "MegavoltsDc",
             Abbreviations: ["MVdc"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -76,7 +76,7 @@ public static partial class UoMRegistry {
             "The Electric Potential of a system known to use Direct Current.",
             ElectricPotentialDcUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> {  },
-            "",
+            null,
             false,
             1
         );

@@ -18,116 +18,116 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloJoulePerKilogram
-        SpecificEnergyUnits.TryAdd("KiloJoulePerKilogram", new Unit(
-            SingularName: "KiloJoulePerKilogram",
-            PluralName: "KiloJoulesPerKilogram",
+        // KilojoulePerKilogram
+        SpecificEnergyUnits.TryAdd("KilojoulePerKilogram", new Unit(
+            SingularName: "KilojoulePerKilogram",
+            PluralName: "KilojoulesPerKilogram",
             Abbreviations: ["kJ/kg"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaJoulePerKilogram
-        SpecificEnergyUnits.TryAdd("MegaJoulePerKilogram", new Unit(
-            SingularName: "MegaJoulePerKilogram",
-            PluralName: "MegaJoulesPerKilogram",
+        // MegajoulePerKilogram
+        SpecificEnergyUnits.TryAdd("MegajoulePerKilogram", new Unit(
+            SingularName: "MegajoulePerKilogram",
+            PluralName: "MegajoulesPerKilogram",
             Abbreviations: ["MJ/kg"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // MegajoulePerTonne
         SpecificEnergyUnits.TryAdd("MegajoulePerTonne", new Unit(
             SingularName: "MegajoulePerTonne",
             PluralName: "MegajoulesPerTonne",
             Abbreviations: ["MJ/t"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e3,
-            FromUnitToBase: static val => val * 1e3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CaloriePerGram
         SpecificEnergyUnits.TryAdd("CaloriePerGram", new Unit(
             SingularName: "CaloriePerGram",
             PluralName: "CaloriesPerGram",
             Abbreviations: ["cal/g"],
-            Factor: 1,
+            Factor: 4184,
             Offset: 0,
-            FromBaseToUnit: static val => val / 4.184e3,
-            FromUnitToBase: static val => val * 4.184e3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloCaloriePerGram
-        SpecificEnergyUnits.TryAdd("KiloCaloriePerGram", new Unit(
-            SingularName: "KiloCaloriePerGram",
-            PluralName: "KiloCaloriesPerGram",
+        // KilocaloriePerGram
+        SpecificEnergyUnits.TryAdd("KilocaloriePerGram", new Unit(
+            SingularName: "KilocaloriePerGram",
+            PluralName: "KilocaloriesPerGram",
             Abbreviations: ["kcal/g"],
-            Factor: 1,
+            Factor: 4184000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 4.184e3) / 1000,
-            FromUnitToBase: static val => (val * 4.184e3) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // WattHourPerKilogram
         SpecificEnergyUnits.TryAdd("WattHourPerKilogram", new Unit(
             SingularName: "WattHourPerKilogram",
             PluralName: "WattHoursPerKilogram",
             Abbreviations: ["Wh/kg"],
-            Factor: 1,
+            Factor: 3600,
             Offset: 0,
-            FromBaseToUnit: static val => val / 3.6e3,
-            FromUnitToBase: static val => val * 3.6e3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloWattHourPerKilogram
-        SpecificEnergyUnits.TryAdd("KiloWattHourPerKilogram", new Unit(
-            SingularName: "KiloWattHourPerKilogram",
-            PluralName: "KiloWattHoursPerKilogram",
+        // KilowattHourPerKilogram
+        SpecificEnergyUnits.TryAdd("KilowattHourPerKilogram", new Unit(
+            SingularName: "KilowattHourPerKilogram",
+            PluralName: "KilowattHoursPerKilogram",
             Abbreviations: ["kWh/kg"],
-            Factor: 1,
+            Factor: 3600000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 3.6e3) / 1000,
-            FromUnitToBase: static val => (val * 3.6e3) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaWattHourPerKilogram
-        SpecificEnergyUnits.TryAdd("MegaWattHourPerKilogram", new Unit(
-            SingularName: "MegaWattHourPerKilogram",
-            PluralName: "MegaWattHoursPerKilogram",
+        // MegawattHourPerKilogram
+        SpecificEnergyUnits.TryAdd("MegawattHourPerKilogram", new Unit(
+            SingularName: "MegawattHourPerKilogram",
+            PluralName: "MegawattHoursPerKilogram",
             Abbreviations: ["MWh/kg"],
-            Factor: 1,
+            Factor: 3600000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 3.6e3) / 1000000,
-            FromUnitToBase: static val => (val * 3.6e3) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaWattHourPerKilogram
-        SpecificEnergyUnits.TryAdd("GigaWattHourPerKilogram", new Unit(
-            SingularName: "GigaWattHourPerKilogram",
-            PluralName: "GigaWattHoursPerKilogram",
+        // GigawattHourPerKilogram
+        SpecificEnergyUnits.TryAdd("GigawattHourPerKilogram", new Unit(
+            SingularName: "GigawattHourPerKilogram",
+            PluralName: "GigawattHoursPerKilogram",
             Abbreviations: ["GWh/kg"],
-            Factor: 1,
+            Factor: 3600000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 3.6e3) / 1000000000,
-            FromUnitToBase: static val => (val * 3.6e3) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // WattDayPerKilogram
         SpecificEnergyUnits.TryAdd("WattDayPerKilogram", new Unit(
@@ -136,58 +136,58 @@ public static partial class UoMRegistry {
             Abbreviations: ["Wd/kg"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (24 * 3.6e3),
-            FromUnitToBase: static val => val * (24 * 3.6e3),
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (24 * 3.6e3)),
+            FromUnitToBase: static val => (val * (24 * 3.6e3)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloWattDayPerKilogram
-        SpecificEnergyUnits.TryAdd("KiloWattDayPerKilogram", new Unit(
-            SingularName: "KiloWattDayPerKilogram",
-            PluralName: "KiloWattDaysPerKilogram",
+        // KilowattDayPerKilogram
+        SpecificEnergyUnits.TryAdd("KilowattDayPerKilogram", new Unit(
+            SingularName: "KilowattDayPerKilogram",
+            PluralName: "KilowattDaysPerKilogram",
             Abbreviations: ["kWd/kg"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / (24 * 3.6e3)) / 1000,
-            FromUnitToBase: static val => (val * (24 * 3.6e3)) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / (24 * 3.6e3)) / 1000),
+            FromUnitToBase: static val => ((val * 1000) * (24 * 3.6e3)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaWattDayPerKilogram
-        SpecificEnergyUnits.TryAdd("MegaWattDayPerKilogram", new Unit(
-            SingularName: "MegaWattDayPerKilogram",
-            PluralName: "MegaWattDaysPerKilogram",
+        // MegawattDayPerKilogram
+        SpecificEnergyUnits.TryAdd("MegawattDayPerKilogram", new Unit(
+            SingularName: "MegawattDayPerKilogram",
+            PluralName: "MegawattDaysPerKilogram",
             Abbreviations: ["MWd/kg"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / (24 * 3.6e3)) / 1000000,
-            FromUnitToBase: static val => (val * (24 * 3.6e3)) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / (24 * 3.6e3)) / 1000000),
+            FromUnitToBase: static val => ((val * 1000000) * (24 * 3.6e3)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaWattDayPerKilogram
-        SpecificEnergyUnits.TryAdd("GigaWattDayPerKilogram", new Unit(
-            SingularName: "GigaWattDayPerKilogram",
-            PluralName: "GigaWattDaysPerKilogram",
+        // GigawattDayPerKilogram
+        SpecificEnergyUnits.TryAdd("GigawattDayPerKilogram", new Unit(
+            SingularName: "GigawattDayPerKilogram",
+            PluralName: "GigawattDaysPerKilogram",
             Abbreviations: ["GWd/kg"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / (24 * 3.6e3)) / 1000000000,
-            FromUnitToBase: static val => (val * (24 * 3.6e3)) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / (24 * 3.6e3)) / 1000000000),
+            FromUnitToBase: static val => ((val * 1000000000) * (24 * 3.6e3)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // TeraWattDayPerKilogram
-        SpecificEnergyUnits.TryAdd("TeraWattDayPerKilogram", new Unit(
-            SingularName: "TeraWattDayPerKilogram",
-            PluralName: "TeraWattDaysPerKilogram",
+        // TerawattDayPerKilogram
+        SpecificEnergyUnits.TryAdd("TerawattDayPerKilogram", new Unit(
+            SingularName: "TerawattDayPerKilogram",
+            PluralName: "TerawattDaysPerKilogram",
             Abbreviations: ["TWd/kg"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / (24 * 3.6e3)) / 1000000000000,
-            FromUnitToBase: static val => (val * (24 * 3.6e3)) * 1000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / (24 * 3.6e3)) / 1000000000000),
+            FromUnitToBase: static val => ((val * 1000000000000) * (24 * 3.6e3)),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // WattDayPerTonne
         SpecificEnergyUnits.TryAdd("WattDayPerTonne", new Unit(
@@ -196,58 +196,58 @@ public static partial class UoMRegistry {
             Abbreviations: ["Wd/t"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / ((24 * 3.6e3) / 1e3),
-            FromUnitToBase: static val => val * ((24 * 3.6e3) / 1e3),
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / ((24 * 3.6e3) / 1e3)),
+            FromUnitToBase: static val => (val * ((24 * 3.6e3) / 1e3)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloWattDayPerTonne
-        SpecificEnergyUnits.TryAdd("KiloWattDayPerTonne", new Unit(
-            SingularName: "KiloWattDayPerTonne",
-            PluralName: "KiloWattDaysPerTonne",
+        // KilowattDayPerTonne
+        SpecificEnergyUnits.TryAdd("KilowattDayPerTonne", new Unit(
+            SingularName: "KilowattDayPerTonne",
+            PluralName: "KilowattDaysPerTonne",
             Abbreviations: ["kWd/t"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / ((24 * 3.6e3) / 1e3)) / 1000,
-            FromUnitToBase: static val => (val * ((24 * 3.6e3) / 1e3)) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / ((24 * 3.6e3) / 1e3)) / 1000),
+            FromUnitToBase: static val => ((val * 1000) * ((24 * 3.6e3) / 1e3)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaWattDayPerTonne
-        SpecificEnergyUnits.TryAdd("MegaWattDayPerTonne", new Unit(
-            SingularName: "MegaWattDayPerTonne",
-            PluralName: "MegaWattDaysPerTonne",
+        // MegawattDayPerTonne
+        SpecificEnergyUnits.TryAdd("MegawattDayPerTonne", new Unit(
+            SingularName: "MegawattDayPerTonne",
+            PluralName: "MegawattDaysPerTonne",
             Abbreviations: ["MWd/t"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / ((24 * 3.6e3) / 1e3)) / 1000000,
-            FromUnitToBase: static val => (val * ((24 * 3.6e3) / 1e3)) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / ((24 * 3.6e3) / 1e3)) / 1000000),
+            FromUnitToBase: static val => ((val * 1000000) * ((24 * 3.6e3) / 1e3)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaWattDayPerTonne
-        SpecificEnergyUnits.TryAdd("GigaWattDayPerTonne", new Unit(
-            SingularName: "GigaWattDayPerTonne",
-            PluralName: "GigaWattDaysPerTonne",
+        // GigawattDayPerTonne
+        SpecificEnergyUnits.TryAdd("GigawattDayPerTonne", new Unit(
+            SingularName: "GigawattDayPerTonne",
+            PluralName: "GigawattDaysPerTonne",
             Abbreviations: ["GWd/t"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / ((24 * 3.6e3) / 1e3)) / 1000000000,
-            FromUnitToBase: static val => (val * ((24 * 3.6e3) / 1e3)) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / ((24 * 3.6e3) / 1e3)) / 1000000000),
+            FromUnitToBase: static val => ((val * 1000000000) * ((24 * 3.6e3) / 1e3)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // TeraWattDayPerTonne
-        SpecificEnergyUnits.TryAdd("TeraWattDayPerTonne", new Unit(
-            SingularName: "TeraWattDayPerTonne",
-            PluralName: "TeraWattDaysPerTonne",
+        // TerawattDayPerTonne
+        SpecificEnergyUnits.TryAdd("TerawattDayPerTonne", new Unit(
+            SingularName: "TerawattDayPerTonne",
+            PluralName: "TerawattDaysPerTonne",
             Abbreviations: ["TWd/t"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / ((24 * 3.6e3) / 1e3)) / 1000000000000,
-            FromUnitToBase: static val => (val * ((24 * 3.6e3) / 1e3)) * 1000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / ((24 * 3.6e3) / 1e3)) / 1000000000000),
+            FromUnitToBase: static val => ((val * 1000000000000) * ((24 * 3.6e3) / 1e3)),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // WattDayPerShortTon
         SpecificEnergyUnits.TryAdd("WattDayPerShortTon", new Unit(
@@ -256,106 +256,106 @@ public static partial class UoMRegistry {
             Abbreviations: ["Wd/ST"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / ((24 * 3.6e3) / 9.0718474e2),
-            FromUnitToBase: static val => val * ((24 * 3.6e3) / 9.0718474e2),
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / ((24 * 3.6e3) / 9.0718474e2)),
+            FromUnitToBase: static val => (val * ((24 * 3.6e3) / 9.0718474e2)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloWattDayPerShortTon
-        SpecificEnergyUnits.TryAdd("KiloWattDayPerShortTon", new Unit(
-            SingularName: "KiloWattDayPerShortTon",
-            PluralName: "KiloWattDaysPerShortTon",
+        // KilowattDayPerShortTon
+        SpecificEnergyUnits.TryAdd("KilowattDayPerShortTon", new Unit(
+            SingularName: "KilowattDayPerShortTon",
+            PluralName: "KilowattDaysPerShortTon",
             Abbreviations: ["kWd/ST"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / ((24 * 3.6e3) / 9.0718474e2)) / 1000,
-            FromUnitToBase: static val => (val * ((24 * 3.6e3) / 9.0718474e2)) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / ((24 * 3.6e3) / 9.0718474e2)) / 1000),
+            FromUnitToBase: static val => ((val * 1000) * ((24 * 3.6e3) / 9.0718474e2)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaWattDayPerShortTon
-        SpecificEnergyUnits.TryAdd("MegaWattDayPerShortTon", new Unit(
-            SingularName: "MegaWattDayPerShortTon",
-            PluralName: "MegaWattDaysPerShortTon",
+        // MegawattDayPerShortTon
+        SpecificEnergyUnits.TryAdd("MegawattDayPerShortTon", new Unit(
+            SingularName: "MegawattDayPerShortTon",
+            PluralName: "MegawattDaysPerShortTon",
             Abbreviations: ["MWd/ST"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / ((24 * 3.6e3) / 9.0718474e2)) / 1000000,
-            FromUnitToBase: static val => (val * ((24 * 3.6e3) / 9.0718474e2)) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / ((24 * 3.6e3) / 9.0718474e2)) / 1000000),
+            FromUnitToBase: static val => ((val * 1000000) * ((24 * 3.6e3) / 9.0718474e2)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaWattDayPerShortTon
-        SpecificEnergyUnits.TryAdd("GigaWattDayPerShortTon", new Unit(
-            SingularName: "GigaWattDayPerShortTon",
-            PluralName: "GigaWattDaysPerShortTon",
+        // GigawattDayPerShortTon
+        SpecificEnergyUnits.TryAdd("GigawattDayPerShortTon", new Unit(
+            SingularName: "GigawattDayPerShortTon",
+            PluralName: "GigawattDaysPerShortTon",
             Abbreviations: ["GWd/ST"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / ((24 * 3.6e3) / 9.0718474e2)) / 1000000000,
-            FromUnitToBase: static val => (val * ((24 * 3.6e3) / 9.0718474e2)) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / ((24 * 3.6e3) / 9.0718474e2)) / 1000000000),
+            FromUnitToBase: static val => ((val * 1000000000) * ((24 * 3.6e3) / 9.0718474e2)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // TeraWattDayPerShortTon
-        SpecificEnergyUnits.TryAdd("TeraWattDayPerShortTon", new Unit(
-            SingularName: "TeraWattDayPerShortTon",
-            PluralName: "TeraWattDaysPerShortTon",
+        // TerawattDayPerShortTon
+        SpecificEnergyUnits.TryAdd("TerawattDayPerShortTon", new Unit(
+            SingularName: "TerawattDayPerShortTon",
+            PluralName: "TerawattDaysPerShortTon",
             Abbreviations: ["TWd/ST"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / ((24 * 3.6e3) / 9.0718474e2)) / 1000000000000,
-            FromUnitToBase: static val => (val * ((24 * 3.6e3) / 9.0718474e2)) * 1000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / ((24 * 3.6e3) / 9.0718474e2)) / 1000000000000),
+            FromUnitToBase: static val => ((val * 1000000000000) * ((24 * 3.6e3) / 9.0718474e2)),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // WattHourPerPound
         SpecificEnergyUnits.TryAdd("WattHourPerPound", new Unit(
             SingularName: "WattHourPerPound",
             PluralName: "WattHoursPerPound",
             Abbreviations: ["Wh/lbs"],
-            Factor: 1,
+            Factor: 7936.64,
             Offset: 0,
-            FromBaseToUnit: static val => val / 7.93664e3,
-            FromUnitToBase: static val => val * 7.93664e3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloWattHourPerPound
-        SpecificEnergyUnits.TryAdd("KiloWattHourPerPound", new Unit(
-            SingularName: "KiloWattHourPerPound",
-            PluralName: "KiloWattHoursPerPound",
+        // KilowattHourPerPound
+        SpecificEnergyUnits.TryAdd("KilowattHourPerPound", new Unit(
+            SingularName: "KilowattHourPerPound",
+            PluralName: "KilowattHoursPerPound",
             Abbreviations: ["kWh/lbs"],
-            Factor: 1,
+            Factor: 7936640,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 7.93664e3) / 1000,
-            FromUnitToBase: static val => (val * 7.93664e3) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaWattHourPerPound
-        SpecificEnergyUnits.TryAdd("MegaWattHourPerPound", new Unit(
-            SingularName: "MegaWattHourPerPound",
-            PluralName: "MegaWattHoursPerPound",
+        // MegawattHourPerPound
+        SpecificEnergyUnits.TryAdd("MegawattHourPerPound", new Unit(
+            SingularName: "MegawattHourPerPound",
+            PluralName: "MegawattHoursPerPound",
             Abbreviations: ["MWh/lbs"],
-            Factor: 1,
+            Factor: 7936640000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 7.93664e3) / 1000000,
-            FromUnitToBase: static val => (val * 7.93664e3) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaWattHourPerPound
-        SpecificEnergyUnits.TryAdd("GigaWattHourPerPound", new Unit(
-            SingularName: "GigaWattHourPerPound",
-            PluralName: "GigaWattHoursPerPound",
+        // GigawattHourPerPound
+        SpecificEnergyUnits.TryAdd("GigawattHourPerPound", new Unit(
+            SingularName: "GigawattHourPerPound",
+            PluralName: "GigawattHoursPerPound",
             Abbreviations: ["GWh/lbs"],
-            Factor: 1,
+            Factor: 7936640000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 7.93664e3) / 1000000000,
-            FromUnitToBase: static val => (val * 7.93664e3) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // BtuPerPound
         SpecificEnergyUnits.TryAdd("BtuPerPound", new Unit(
@@ -364,10 +364,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["btu/lb"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 0.45359237 / 1055.05585262,
-            FromUnitToBase: static val => val * 1055.05585262 / 0.45359237,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 0.45359237 / 1055.05585262),
+            FromUnitToBase: static val => (val * 1055.05585262 / 0.45359237),
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -376,7 +376,7 @@ public static partial class UoMRegistry {
             "The SpecificEnergy",
             SpecificEnergyUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 2, ["T"] = -2 },
-            "",
+            null,
             false,
             1
         );

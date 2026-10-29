@@ -18,164 +18,164 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // FemtoWatt
-        LuminosityUnits.TryAdd("FemtoWatt", new Unit(
-            SingularName: "FemtoWatt",
-            PluralName: "FemtoWatts",
+        // Femtowatt
+        LuminosityUnits.TryAdd("Femtowatt", new Unit(
+            SingularName: "Femtowatt",
+            PluralName: "Femtowatts",
             Abbreviations: ["fW"],
-            Factor: 1,
+            Factor: 1E-15,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-15,
-            FromUnitToBase: static val => (val) * 1E-15,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PicoWatt
-        LuminosityUnits.TryAdd("PicoWatt", new Unit(
-            SingularName: "PicoWatt",
-            PluralName: "PicoWatts",
+        // Picowatt
+        LuminosityUnits.TryAdd("Picowatt", new Unit(
+            SingularName: "Picowatt",
+            PluralName: "Picowatts",
             Abbreviations: ["pW"],
-            Factor: 1,
+            Factor: 1E-12,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-12,
-            FromUnitToBase: static val => (val) * 1E-12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoWatt
-        LuminosityUnits.TryAdd("NanoWatt", new Unit(
-            SingularName: "NanoWatt",
-            PluralName: "NanoWatts",
+        // Nanowatt
+        LuminosityUnits.TryAdd("Nanowatt", new Unit(
+            SingularName: "Nanowatt",
+            PluralName: "Nanowatts",
             Abbreviations: ["nW"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroWatt
-        LuminosityUnits.TryAdd("MicroWatt", new Unit(
-            SingularName: "MicroWatt",
-            PluralName: "MicroWatts",
+        // Microwatt
+        LuminosityUnits.TryAdd("Microwatt", new Unit(
+            SingularName: "Microwatt",
+            PluralName: "Microwatts",
             Abbreviations: ["µW"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliWatt
-        LuminosityUnits.TryAdd("MilliWatt", new Unit(
-            SingularName: "MilliWatt",
-            PluralName: "MilliWatts",
+        // Milliwatt
+        LuminosityUnits.TryAdd("Milliwatt", new Unit(
+            SingularName: "Milliwatt",
+            PluralName: "Milliwatts",
             Abbreviations: ["mW"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciWatt
-        LuminosityUnits.TryAdd("DeciWatt", new Unit(
-            SingularName: "DeciWatt",
-            PluralName: "DeciWatts",
+        // Deciwatt
+        LuminosityUnits.TryAdd("Deciwatt", new Unit(
+            SingularName: "Deciwatt",
+            PluralName: "Deciwatts",
             Abbreviations: ["dW"],
-            Factor: 1,
+            Factor: 0.1,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.1,
-            FromUnitToBase: static val => (val) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DecaWatt
-        LuminosityUnits.TryAdd("DecaWatt", new Unit(
-            SingularName: "DecaWatt",
-            PluralName: "DecaWatts",
+        // Decawatt
+        LuminosityUnits.TryAdd("Decawatt", new Unit(
+            SingularName: "Decawatt",
+            PluralName: "Decawatts",
             Abbreviations: ["daW"],
-            Factor: 1,
+            Factor: 10,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 10,
-            FromUnitToBase: static val => (val) * 10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloWatt
-        LuminosityUnits.TryAdd("KiloWatt", new Unit(
-            SingularName: "KiloWatt",
-            PluralName: "KiloWatts",
+        // Kilowatt
+        LuminosityUnits.TryAdd("Kilowatt", new Unit(
+            SingularName: "Kilowatt",
+            PluralName: "Kilowatts",
             Abbreviations: ["kW"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaWatt
-        LuminosityUnits.TryAdd("MegaWatt", new Unit(
-            SingularName: "MegaWatt",
-            PluralName: "MegaWatts",
+        // Megawatt
+        LuminosityUnits.TryAdd("Megawatt", new Unit(
+            SingularName: "Megawatt",
+            PluralName: "Megawatts",
             Abbreviations: ["MW"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaWatt
-        LuminosityUnits.TryAdd("GigaWatt", new Unit(
-            SingularName: "GigaWatt",
-            PluralName: "GigaWatts",
+        // Gigawatt
+        LuminosityUnits.TryAdd("Gigawatt", new Unit(
+            SingularName: "Gigawatt",
+            PluralName: "Gigawatts",
             Abbreviations: ["GW"],
-            Factor: 1,
+            Factor: 1000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000,
-            FromUnitToBase: static val => (val) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // TeraWatt
-        LuminosityUnits.TryAdd("TeraWatt", new Unit(
-            SingularName: "TeraWatt",
-            PluralName: "TeraWatts",
+        // Terawatt
+        LuminosityUnits.TryAdd("Terawatt", new Unit(
+            SingularName: "Terawatt",
+            PluralName: "Terawatts",
             Abbreviations: ["TW"],
-            Factor: 1,
+            Factor: 1000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000000,
-            FromUnitToBase: static val => (val) * 1000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PetaWatt
-        LuminosityUnits.TryAdd("PetaWatt", new Unit(
-            SingularName: "PetaWatt",
-            PluralName: "PetaWatts",
+        // Petawatt
+        LuminosityUnits.TryAdd("Petawatt", new Unit(
+            SingularName: "Petawatt",
+            PluralName: "Petawatts",
             Abbreviations: ["PW"],
-            Factor: 1,
+            Factor: 1000000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000000000,
-            FromUnitToBase: static val => (val) * 1000000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // SolarLuminosity
         LuminosityUnits.TryAdd("SolarLuminosity", new Unit(
             SingularName: "SolarLuminosity",
             PluralName: "SolarLuminosities",
             Abbreviations: ["L⊙"],
-            Factor: 1,
+            Factor: 3.828E+26,
             Offset: 0,
-            FromBaseToUnit: static val => val / 3.828e26,
-            FromUnitToBase: static val => val * 3.828e26,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Luminosity#Measurement",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -184,7 +184,7 @@ public static partial class UoMRegistry {
             "Luminosity is an absolute measure of radiated electromagnetic power (light), the radiant power emitted by a light-emitting object.",
             LuminosityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -3 },
-            "",
+            null,
             false,
             1
         );

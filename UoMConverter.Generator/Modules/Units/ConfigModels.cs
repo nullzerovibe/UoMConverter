@@ -56,4 +56,4 @@ public record ConfigLocalization {
 /// <summary>
 /// Result of processing a single JSON file.
 /// </summary>
-internal record ProcessedQuantityFile(ConfigQuantity? Quantity, string Path);
+internal record ProcessedQuantityFile(ConfigQuantity? Quantity, string Path, string? Error = null);

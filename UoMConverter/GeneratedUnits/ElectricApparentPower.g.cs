@@ -18,68 +18,68 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroVoltampere
-        ElectricApparentPowerUnits.TryAdd("MicroVoltampere", new Unit(
-            SingularName: "MicroVoltampere",
-            PluralName: "MicroVoltamperes",
+        // Microvoltampere
+        ElectricApparentPowerUnits.TryAdd("Microvoltampere", new Unit(
+            SingularName: "Microvoltampere",
+            PluralName: "Microvoltamperes",
             Abbreviations: ["µVA"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliVoltampere
-        ElectricApparentPowerUnits.TryAdd("MilliVoltampere", new Unit(
-            SingularName: "MilliVoltampere",
-            PluralName: "MilliVoltamperes",
+        // Millivoltampere
+        ElectricApparentPowerUnits.TryAdd("Millivoltampere", new Unit(
+            SingularName: "Millivoltampere",
+            PluralName: "Millivoltamperes",
             Abbreviations: ["mVA"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloVoltampere
-        ElectricApparentPowerUnits.TryAdd("KiloVoltampere", new Unit(
-            SingularName: "KiloVoltampere",
-            PluralName: "KiloVoltamperes",
+        // Kilovoltampere
+        ElectricApparentPowerUnits.TryAdd("Kilovoltampere", new Unit(
+            SingularName: "Kilovoltampere",
+            PluralName: "Kilovoltamperes",
             Abbreviations: ["kVA"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaVoltampere
-        ElectricApparentPowerUnits.TryAdd("MegaVoltampere", new Unit(
-            SingularName: "MegaVoltampere",
-            PluralName: "MegaVoltamperes",
+        // Megavoltampere
+        ElectricApparentPowerUnits.TryAdd("Megavoltampere", new Unit(
+            SingularName: "Megavoltampere",
+            PluralName: "Megavoltamperes",
             Abbreviations: ["MVA"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaVoltampere
-        ElectricApparentPowerUnits.TryAdd("GigaVoltampere", new Unit(
-            SingularName: "GigaVoltampere",
-            PluralName: "GigaVoltamperes",
+        // Gigavoltampere
+        ElectricApparentPowerUnits.TryAdd("Gigavoltampere", new Unit(
+            SingularName: "Gigavoltampere",
+            PluralName: "Gigavoltamperes",
             Abbreviations: ["GVA"],
-            Factor: 1,
+            Factor: 1000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000,
-            FromUnitToBase: static val => (val) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -88,7 +88,7 @@ public static partial class UoMRegistry {
             "Power engineers measure apparent power as the magnitude of the vector sum of active and reactive power. It is the product of the root mean square voltage (in volts) and the root mean square current (in amperes).",
             ElectricApparentPowerUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -3 },
-            "",
+            null,
             false,
             1
         );

@@ -18,152 +18,152 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloBitPerSecond
-        BitRateUnits.TryAdd("KiloBitPerSecond", new Unit(
-            SingularName: "KiloBitPerSecond",
-            PluralName: "KiloBitsPerSecond",
+        // KilobitPerSecond
+        BitRateUnits.TryAdd("KilobitPerSecond", new Unit(
+            SingularName: "KilobitPerSecond",
+            PluralName: "KilobitsPerSecond",
             Abbreviations: ["kbit/s", "kbps"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaBitPerSecond
-        BitRateUnits.TryAdd("MegaBitPerSecond", new Unit(
-            SingularName: "MegaBitPerSecond",
-            PluralName: "MegaBitsPerSecond",
+        // MegabitPerSecond
+        BitRateUnits.TryAdd("MegabitPerSecond", new Unit(
+            SingularName: "MegabitPerSecond",
+            PluralName: "MegabitsPerSecond",
             Abbreviations: ["Mbit/s", "Mbps"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaBitPerSecond
-        BitRateUnits.TryAdd("GigaBitPerSecond", new Unit(
-            SingularName: "GigaBitPerSecond",
-            PluralName: "GigaBitsPerSecond",
+        // GigabitPerSecond
+        BitRateUnits.TryAdd("GigabitPerSecond", new Unit(
+            SingularName: "GigabitPerSecond",
+            PluralName: "GigabitsPerSecond",
             Abbreviations: ["Gbit/s", "Gbps"],
-            Factor: 1,
+            Factor: 1000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000,
-            FromUnitToBase: static val => (val) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // TeraBitPerSecond
-        BitRateUnits.TryAdd("TeraBitPerSecond", new Unit(
-            SingularName: "TeraBitPerSecond",
-            PluralName: "TeraBitsPerSecond",
+        // TerabitPerSecond
+        BitRateUnits.TryAdd("TerabitPerSecond", new Unit(
+            SingularName: "TerabitPerSecond",
+            PluralName: "TerabitsPerSecond",
             Abbreviations: ["Tbit/s", "Tbps"],
-            Factor: 1,
+            Factor: 1000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000000,
-            FromUnitToBase: static val => (val) * 1000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PetaBitPerSecond
-        BitRateUnits.TryAdd("PetaBitPerSecond", new Unit(
-            SingularName: "PetaBitPerSecond",
-            PluralName: "PetaBitsPerSecond",
+        // PetabitPerSecond
+        BitRateUnits.TryAdd("PetabitPerSecond", new Unit(
+            SingularName: "PetabitPerSecond",
+            PluralName: "PetabitsPerSecond",
             Abbreviations: ["Pbit/s", "Pbps"],
-            Factor: 1,
+            Factor: 1000000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000000000,
-            FromUnitToBase: static val => (val) * 1000000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // ExaBitPerSecond
-        BitRateUnits.TryAdd("ExaBitPerSecond", new Unit(
-            SingularName: "ExaBitPerSecond",
-            PluralName: "ExaBitsPerSecond",
+        // ExabitPerSecond
+        BitRateUnits.TryAdd("ExabitPerSecond", new Unit(
+            SingularName: "ExabitPerSecond",
+            PluralName: "ExabitsPerSecond",
             Abbreviations: ["Ebit/s", "Ebps"],
-            Factor: 1,
+            Factor: 1E+18,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E+18,
-            FromUnitToBase: static val => (val) * 1E+18,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KibiBitPerSecond
-        BitRateUnits.TryAdd("KibiBitPerSecond", new Unit(
-            SingularName: "KibiBitPerSecond",
-            PluralName: "KibiBitsPerSecond",
+        // KibibitPerSecond
+        BitRateUnits.TryAdd("KibibitPerSecond", new Unit(
+            SingularName: "KibibitPerSecond",
+            PluralName: "KibibitsPerSecond",
             Abbreviations: ["Kibit/s", "Kibps"],
-            Factor: 1,
+            Factor: 1024,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1024,
-            FromUnitToBase: static val => (val) * 1024,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MebiBitPerSecond
-        BitRateUnits.TryAdd("MebiBitPerSecond", new Unit(
-            SingularName: "MebiBitPerSecond",
-            PluralName: "MebiBitsPerSecond",
+        // MebibitPerSecond
+        BitRateUnits.TryAdd("MebibitPerSecond", new Unit(
+            SingularName: "MebibitPerSecond",
+            PluralName: "MebibitsPerSecond",
             Abbreviations: ["Mibit/s", "Mibps"],
-            Factor: 1,
+            Factor: 1048576,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1048576,
-            FromUnitToBase: static val => (val) * 1048576,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GibiBitPerSecond
-        BitRateUnits.TryAdd("GibiBitPerSecond", new Unit(
-            SingularName: "GibiBitPerSecond",
-            PluralName: "GibiBitsPerSecond",
+        // GibibitPerSecond
+        BitRateUnits.TryAdd("GibibitPerSecond", new Unit(
+            SingularName: "GibibitPerSecond",
+            PluralName: "GibibitsPerSecond",
             Abbreviations: ["Gibit/s", "Gibps"],
-            Factor: 1,
+            Factor: 1073741824,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1073741824,
-            FromUnitToBase: static val => (val) * 1073741824,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // TebiBitPerSecond
-        BitRateUnits.TryAdd("TebiBitPerSecond", new Unit(
-            SingularName: "TebiBitPerSecond",
-            PluralName: "TebiBitsPerSecond",
+        // TebibitPerSecond
+        BitRateUnits.TryAdd("TebibitPerSecond", new Unit(
+            SingularName: "TebibitPerSecond",
+            PluralName: "TebibitsPerSecond",
             Abbreviations: ["Tibit/s", "Tibps"],
-            Factor: 1,
+            Factor: 1099511627776,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1099511627776,
-            FromUnitToBase: static val => (val) * 1099511627776,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PebiBitPerSecond
-        BitRateUnits.TryAdd("PebiBitPerSecond", new Unit(
-            SingularName: "PebiBitPerSecond",
-            PluralName: "PebiBitsPerSecond",
+        // PebibitPerSecond
+        BitRateUnits.TryAdd("PebibitPerSecond", new Unit(
+            SingularName: "PebibitPerSecond",
+            PluralName: "PebibitsPerSecond",
             Abbreviations: ["Pibit/s", "Pibps"],
-            Factor: 1,
+            Factor: 1125899906842624,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1125899906842624,
-            FromUnitToBase: static val => (val) * 1125899906842624,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // ExbiBitPerSecond
-        BitRateUnits.TryAdd("ExbiBitPerSecond", new Unit(
-            SingularName: "ExbiBitPerSecond",
-            PluralName: "ExbiBitsPerSecond",
+        // ExbibitPerSecond
+        BitRateUnits.TryAdd("ExbibitPerSecond", new Unit(
+            SingularName: "ExbibitPerSecond",
+            PluralName: "ExbibitsPerSecond",
             Abbreviations: ["Eibit/s", "Eibps"],
-            Factor: 1,
+            Factor: 1.152921504606847E+18,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1.152921504606847E+18,
-            FromUnitToBase: static val => (val) * 1.152921504606847E+18,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // BytePerSecond
         BitRateUnits.TryAdd("BytePerSecond", new Unit(
@@ -174,152 +174,152 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloBytePerSecond
-        BitRateUnits.TryAdd("KiloBytePerSecond", new Unit(
-            SingularName: "KiloBytePerSecond",
-            PluralName: "KiloBytesPerSecond",
+        // KilobytePerSecond
+        BitRateUnits.TryAdd("KilobytePerSecond", new Unit(
+            SingularName: "KilobytePerSecond",
+            PluralName: "KilobytesPerSecond",
             Abbreviations: ["kB/s"],
-            Factor: 1,
+            Factor: 8000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1000,
-            FromUnitToBase: static val => (val * 8) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaBytePerSecond
-        BitRateUnits.TryAdd("MegaBytePerSecond", new Unit(
-            SingularName: "MegaBytePerSecond",
-            PluralName: "MegaBytesPerSecond",
+        // MegabytePerSecond
+        BitRateUnits.TryAdd("MegabytePerSecond", new Unit(
+            SingularName: "MegabytePerSecond",
+            PluralName: "MegabytesPerSecond",
             Abbreviations: ["MB/s"],
-            Factor: 1,
+            Factor: 8000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1000000,
-            FromUnitToBase: static val => (val * 8) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaBytePerSecond
-        BitRateUnits.TryAdd("GigaBytePerSecond", new Unit(
-            SingularName: "GigaBytePerSecond",
-            PluralName: "GigaBytesPerSecond",
+        // GigabytePerSecond
+        BitRateUnits.TryAdd("GigabytePerSecond", new Unit(
+            SingularName: "GigabytePerSecond",
+            PluralName: "GigabytesPerSecond",
             Abbreviations: ["GB/s"],
-            Factor: 1,
+            Factor: 8000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1000000000,
-            FromUnitToBase: static val => (val * 8) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // TeraBytePerSecond
-        BitRateUnits.TryAdd("TeraBytePerSecond", new Unit(
-            SingularName: "TeraBytePerSecond",
-            PluralName: "TeraBytesPerSecond",
+        // TerabytePerSecond
+        BitRateUnits.TryAdd("TerabytePerSecond", new Unit(
+            SingularName: "TerabytePerSecond",
+            PluralName: "TerabytesPerSecond",
             Abbreviations: ["TB/s"],
-            Factor: 1,
+            Factor: 8000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1000000000000,
-            FromUnitToBase: static val => (val * 8) * 1000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PetaBytePerSecond
-        BitRateUnits.TryAdd("PetaBytePerSecond", new Unit(
-            SingularName: "PetaBytePerSecond",
-            PluralName: "PetaBytesPerSecond",
+        // PetabytePerSecond
+        BitRateUnits.TryAdd("PetabytePerSecond", new Unit(
+            SingularName: "PetabytePerSecond",
+            PluralName: "PetabytesPerSecond",
             Abbreviations: ["PB/s"],
-            Factor: 1,
+            Factor: 8000000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1000000000000000,
-            FromUnitToBase: static val => (val * 8) * 1000000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // ExaBytePerSecond
-        BitRateUnits.TryAdd("ExaBytePerSecond", new Unit(
-            SingularName: "ExaBytePerSecond",
-            PluralName: "ExaBytesPerSecond",
+        // ExabytePerSecond
+        BitRateUnits.TryAdd("ExabytePerSecond", new Unit(
+            SingularName: "ExabytePerSecond",
+            PluralName: "ExabytesPerSecond",
             Abbreviations: ["EB/s"],
-            Factor: 1,
+            Factor: 8E+18,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1E+18,
-            FromUnitToBase: static val => (val * 8) * 1E+18,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KibiBytePerSecond
-        BitRateUnits.TryAdd("KibiBytePerSecond", new Unit(
-            SingularName: "KibiBytePerSecond",
-            PluralName: "KibiBytesPerSecond",
+        // KibibytePerSecond
+        BitRateUnits.TryAdd("KibibytePerSecond", new Unit(
+            SingularName: "KibibytePerSecond",
+            PluralName: "KibibytesPerSecond",
             Abbreviations: ["KiB/s"],
-            Factor: 1,
+            Factor: 8192,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1024,
-            FromUnitToBase: static val => (val * 8) * 1024,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MebiBytePerSecond
-        BitRateUnits.TryAdd("MebiBytePerSecond", new Unit(
-            SingularName: "MebiBytePerSecond",
-            PluralName: "MebiBytesPerSecond",
+        // MebibytePerSecond
+        BitRateUnits.TryAdd("MebibytePerSecond", new Unit(
+            SingularName: "MebibytePerSecond",
+            PluralName: "MebibytesPerSecond",
             Abbreviations: ["MiB/s"],
-            Factor: 1,
+            Factor: 8388608,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1048576,
-            FromUnitToBase: static val => (val * 8) * 1048576,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GibiBytePerSecond
-        BitRateUnits.TryAdd("GibiBytePerSecond", new Unit(
-            SingularName: "GibiBytePerSecond",
-            PluralName: "GibiBytesPerSecond",
+        // GibibytePerSecond
+        BitRateUnits.TryAdd("GibibytePerSecond", new Unit(
+            SingularName: "GibibytePerSecond",
+            PluralName: "GibibytesPerSecond",
             Abbreviations: ["GiB/s"],
-            Factor: 1,
+            Factor: 8589934592,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1073741824,
-            FromUnitToBase: static val => (val * 8) * 1073741824,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // TebiBytePerSecond
-        BitRateUnits.TryAdd("TebiBytePerSecond", new Unit(
-            SingularName: "TebiBytePerSecond",
-            PluralName: "TebiBytesPerSecond",
+        // TebibytePerSecond
+        BitRateUnits.TryAdd("TebibytePerSecond", new Unit(
+            SingularName: "TebibytePerSecond",
+            PluralName: "TebibytesPerSecond",
             Abbreviations: ["TiB/s"],
-            Factor: 1,
+            Factor: 8796093022208,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1099511627776,
-            FromUnitToBase: static val => (val * 8) * 1099511627776,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PebiBytePerSecond
-        BitRateUnits.TryAdd("PebiBytePerSecond", new Unit(
-            SingularName: "PebiBytePerSecond",
-            PluralName: "PebiBytesPerSecond",
+        // PebibytePerSecond
+        BitRateUnits.TryAdd("PebibytePerSecond", new Unit(
+            SingularName: "PebibytePerSecond",
+            PluralName: "PebibytesPerSecond",
             Abbreviations: ["PiB/s"],
-            Factor: 1,
+            Factor: 9007199254740992,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1125899906842624,
-            FromUnitToBase: static val => (val * 8) * 1125899906842624,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // ExbiBytePerSecond
-        BitRateUnits.TryAdd("ExbiBytePerSecond", new Unit(
-            SingularName: "ExbiBytePerSecond",
-            PluralName: "ExbiBytesPerSecond",
+        // ExbibytePerSecond
+        BitRateUnits.TryAdd("ExbibytePerSecond", new Unit(
+            SingularName: "ExbibytePerSecond",
+            PluralName: "ExbibytesPerSecond",
             Abbreviations: ["EiB/s"],
-            Factor: 1,
+            Factor: 9.223372036854776E+18,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1.152921504606847E+18,
-            FromUnitToBase: static val => (val * 8) * 1.152921504606847E+18,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // OctetPerSecond
         BitRateUnits.TryAdd("OctetPerSecond", new Unit(
@@ -330,152 +330,152 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloOctetPerSecond
-        BitRateUnits.TryAdd("KiloOctetPerSecond", new Unit(
-            SingularName: "KiloOctetPerSecond",
-            PluralName: "KiloOctetsPerSecond",
+        // KilooctetPerSecond
+        BitRateUnits.TryAdd("KilooctetPerSecond", new Unit(
+            SingularName: "KilooctetPerSecond",
+            PluralName: "KilooctetsPerSecond",
             Abbreviations: ["ko/s"],
-            Factor: 1,
+            Factor: 8000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1000,
-            FromUnitToBase: static val => (val * 8) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaOctetPerSecond
-        BitRateUnits.TryAdd("MegaOctetPerSecond", new Unit(
-            SingularName: "MegaOctetPerSecond",
-            PluralName: "MegaOctetsPerSecond",
+        // MegaoctetPerSecond
+        BitRateUnits.TryAdd("MegaoctetPerSecond", new Unit(
+            SingularName: "MegaoctetPerSecond",
+            PluralName: "MegaoctetsPerSecond",
             Abbreviations: ["Mo/s"],
-            Factor: 1,
+            Factor: 8000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1000000,
-            FromUnitToBase: static val => (val * 8) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaOctetPerSecond
-        BitRateUnits.TryAdd("GigaOctetPerSecond", new Unit(
-            SingularName: "GigaOctetPerSecond",
-            PluralName: "GigaOctetsPerSecond",
+        // GigaoctetPerSecond
+        BitRateUnits.TryAdd("GigaoctetPerSecond", new Unit(
+            SingularName: "GigaoctetPerSecond",
+            PluralName: "GigaoctetsPerSecond",
             Abbreviations: ["Go/s"],
-            Factor: 1,
+            Factor: 8000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1000000000,
-            FromUnitToBase: static val => (val * 8) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // TeraOctetPerSecond
-        BitRateUnits.TryAdd("TeraOctetPerSecond", new Unit(
-            SingularName: "TeraOctetPerSecond",
-            PluralName: "TeraOctetsPerSecond",
+        // TeraoctetPerSecond
+        BitRateUnits.TryAdd("TeraoctetPerSecond", new Unit(
+            SingularName: "TeraoctetPerSecond",
+            PluralName: "TeraoctetsPerSecond",
             Abbreviations: ["To/s"],
-            Factor: 1,
+            Factor: 8000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1000000000000,
-            FromUnitToBase: static val => (val * 8) * 1000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PetaOctetPerSecond
-        BitRateUnits.TryAdd("PetaOctetPerSecond", new Unit(
-            SingularName: "PetaOctetPerSecond",
-            PluralName: "PetaOctetsPerSecond",
+        // PetaoctetPerSecond
+        BitRateUnits.TryAdd("PetaoctetPerSecond", new Unit(
+            SingularName: "PetaoctetPerSecond",
+            PluralName: "PetaoctetsPerSecond",
             Abbreviations: ["Po/s"],
-            Factor: 1,
+            Factor: 8000000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1000000000000000,
-            FromUnitToBase: static val => (val * 8) * 1000000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // ExaOctetPerSecond
-        BitRateUnits.TryAdd("ExaOctetPerSecond", new Unit(
-            SingularName: "ExaOctetPerSecond",
-            PluralName: "ExaOctetsPerSecond",
+        // ExaoctetPerSecond
+        BitRateUnits.TryAdd("ExaoctetPerSecond", new Unit(
+            SingularName: "ExaoctetPerSecond",
+            PluralName: "ExaoctetsPerSecond",
             Abbreviations: ["Eo/s"],
-            Factor: 1,
+            Factor: 8E+18,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1E+18,
-            FromUnitToBase: static val => (val * 8) * 1E+18,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KibiOctetPerSecond
-        BitRateUnits.TryAdd("KibiOctetPerSecond", new Unit(
-            SingularName: "KibiOctetPerSecond",
-            PluralName: "KibiOctetsPerSecond",
+        // KibioctetPerSecond
+        BitRateUnits.TryAdd("KibioctetPerSecond", new Unit(
+            SingularName: "KibioctetPerSecond",
+            PluralName: "KibioctetsPerSecond",
             Abbreviations: ["Kio/s"],
-            Factor: 1,
+            Factor: 8192,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1024,
-            FromUnitToBase: static val => (val * 8) * 1024,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MebiOctetPerSecond
-        BitRateUnits.TryAdd("MebiOctetPerSecond", new Unit(
-            SingularName: "MebiOctetPerSecond",
-            PluralName: "MebiOctetsPerSecond",
+        // MebioctetPerSecond
+        BitRateUnits.TryAdd("MebioctetPerSecond", new Unit(
+            SingularName: "MebioctetPerSecond",
+            PluralName: "MebioctetsPerSecond",
             Abbreviations: ["Mio/s"],
-            Factor: 1,
+            Factor: 8388608,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1048576,
-            FromUnitToBase: static val => (val * 8) * 1048576,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GibiOctetPerSecond
-        BitRateUnits.TryAdd("GibiOctetPerSecond", new Unit(
-            SingularName: "GibiOctetPerSecond",
-            PluralName: "GibiOctetsPerSecond",
+        // GibioctetPerSecond
+        BitRateUnits.TryAdd("GibioctetPerSecond", new Unit(
+            SingularName: "GibioctetPerSecond",
+            PluralName: "GibioctetsPerSecond",
             Abbreviations: ["Gio/s"],
-            Factor: 1,
+            Factor: 8589934592,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1073741824,
-            FromUnitToBase: static val => (val * 8) * 1073741824,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // TebiOctetPerSecond
-        BitRateUnits.TryAdd("TebiOctetPerSecond", new Unit(
-            SingularName: "TebiOctetPerSecond",
-            PluralName: "TebiOctetsPerSecond",
+        // TebioctetPerSecond
+        BitRateUnits.TryAdd("TebioctetPerSecond", new Unit(
+            SingularName: "TebioctetPerSecond",
+            PluralName: "TebioctetsPerSecond",
             Abbreviations: ["Tio/s"],
-            Factor: 1,
+            Factor: 8796093022208,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1099511627776,
-            FromUnitToBase: static val => (val * 8) * 1099511627776,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PebiOctetPerSecond
-        BitRateUnits.TryAdd("PebiOctetPerSecond", new Unit(
-            SingularName: "PebiOctetPerSecond",
-            PluralName: "PebiOctetsPerSecond",
+        // PebioctetPerSecond
+        BitRateUnits.TryAdd("PebioctetPerSecond", new Unit(
+            SingularName: "PebioctetPerSecond",
+            PluralName: "PebioctetsPerSecond",
             Abbreviations: ["Pio/s"],
-            Factor: 1,
+            Factor: 9007199254740992,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1125899906842624,
-            FromUnitToBase: static val => (val * 8) * 1125899906842624,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // ExbiOctetPerSecond
-        BitRateUnits.TryAdd("ExbiOctetPerSecond", new Unit(
-            SingularName: "ExbiOctetPerSecond",
-            PluralName: "ExbiOctetsPerSecond",
+        // ExbioctetPerSecond
+        BitRateUnits.TryAdd("ExbioctetPerSecond", new Unit(
+            SingularName: "ExbioctetPerSecond",
+            PluralName: "ExbioctetsPerSecond",
             Abbreviations: ["Eio/s"],
-            Factor: 1,
+            Factor: 9.223372036854776E+18,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 8) / 1.152921504606847E+18,
-            FromUnitToBase: static val => (val * 8) * 1.152921504606847E+18,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -484,7 +484,7 @@ public static partial class UoMRegistry {
             "In telecommunications and computing, bit rate is the number of bits that are conveyed or processed per unit of time.",
             BitRateUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["T"] = -1 },
-            "",
+            null,
             false,
             1
         );

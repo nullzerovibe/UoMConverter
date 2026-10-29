@@ -18,80 +18,80 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PicoWattPerSquareMeter
-        IrradianceUnits.TryAdd("PicoWattPerSquareMeter", new Unit(
-            SingularName: "PicoWattPerSquareMeter",
-            PluralName: "PicoWattsPerSquareMeter",
+        // PicowattPerSquareMeter
+        IrradianceUnits.TryAdd("PicowattPerSquareMeter", new Unit(
+            SingularName: "PicowattPerSquareMeter",
+            PluralName: "PicowattsPerSquareMeter",
             Abbreviations: ["pW/m²"],
-            Factor: 1,
+            Factor: 1E-12,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-12,
-            FromUnitToBase: static val => (val) * 1E-12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoWattPerSquareMeter
-        IrradianceUnits.TryAdd("NanoWattPerSquareMeter", new Unit(
-            SingularName: "NanoWattPerSquareMeter",
-            PluralName: "NanoWattsPerSquareMeter",
+        // NanowattPerSquareMeter
+        IrradianceUnits.TryAdd("NanowattPerSquareMeter", new Unit(
+            SingularName: "NanowattPerSquareMeter",
+            PluralName: "NanowattsPerSquareMeter",
             Abbreviations: ["nW/m²"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroWattPerSquareMeter
-        IrradianceUnits.TryAdd("MicroWattPerSquareMeter", new Unit(
-            SingularName: "MicroWattPerSquareMeter",
-            PluralName: "MicroWattsPerSquareMeter",
+        // MicrowattPerSquareMeter
+        IrradianceUnits.TryAdd("MicrowattPerSquareMeter", new Unit(
+            SingularName: "MicrowattPerSquareMeter",
+            PluralName: "MicrowattsPerSquareMeter",
             Abbreviations: ["µW/m²"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliWattPerSquareMeter
-        IrradianceUnits.TryAdd("MilliWattPerSquareMeter", new Unit(
-            SingularName: "MilliWattPerSquareMeter",
-            PluralName: "MilliWattsPerSquareMeter",
+        // MilliwattPerSquareMeter
+        IrradianceUnits.TryAdd("MilliwattPerSquareMeter", new Unit(
+            SingularName: "MilliwattPerSquareMeter",
+            PluralName: "MilliwattsPerSquareMeter",
             Abbreviations: ["mW/m²"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloWattPerSquareMeter
-        IrradianceUnits.TryAdd("KiloWattPerSquareMeter", new Unit(
-            SingularName: "KiloWattPerSquareMeter",
-            PluralName: "KiloWattsPerSquareMeter",
+        // KilowattPerSquareMeter
+        IrradianceUnits.TryAdd("KilowattPerSquareMeter", new Unit(
+            SingularName: "KilowattPerSquareMeter",
+            PluralName: "KilowattsPerSquareMeter",
             Abbreviations: ["kW/m²"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaWattPerSquareMeter
-        IrradianceUnits.TryAdd("MegaWattPerSquareMeter", new Unit(
-            SingularName: "MegaWattPerSquareMeter",
-            PluralName: "MegaWattsPerSquareMeter",
+        // MegawattPerSquareMeter
+        IrradianceUnits.TryAdd("MegawattPerSquareMeter", new Unit(
+            SingularName: "MegawattPerSquareMeter",
+            PluralName: "MegawattsPerSquareMeter",
             Abbreviations: ["MW/m²"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // WattPerSquareCentimeter
         IrradianceUnits.TryAdd("WattPerSquareCentimeter", new Unit(
@@ -102,80 +102,80 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PicoWattPerSquareCentimeter
-        IrradianceUnits.TryAdd("PicoWattPerSquareCentimeter", new Unit(
-            SingularName: "PicoWattPerSquareCentimeter",
-            PluralName: "PicoWattsPerSquareCentimeter",
+        // PicowattPerSquareCentimeter
+        IrradianceUnits.TryAdd("PicowattPerSquareCentimeter", new Unit(
+            SingularName: "PicowattPerSquareCentimeter",
+            PluralName: "PicowattsPerSquareCentimeter",
             Abbreviations: ["pW/cm²"],
-            Factor: 1,
+            Factor: 1E-08,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 0.0001) / 1E-12,
-            FromUnitToBase: static val => (val * 10000) * 1E-12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoWattPerSquareCentimeter
-        IrradianceUnits.TryAdd("NanoWattPerSquareCentimeter", new Unit(
-            SingularName: "NanoWattPerSquareCentimeter",
-            PluralName: "NanoWattsPerSquareCentimeter",
+        // NanowattPerSquareCentimeter
+        IrradianceUnits.TryAdd("NanowattPerSquareCentimeter", new Unit(
+            SingularName: "NanowattPerSquareCentimeter",
+            PluralName: "NanowattsPerSquareCentimeter",
             Abbreviations: ["nW/cm²"],
-            Factor: 1,
+            Factor: 1E-05,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 0.0001) / 1E-09,
-            FromUnitToBase: static val => (val * 10000) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroWattPerSquareCentimeter
-        IrradianceUnits.TryAdd("MicroWattPerSquareCentimeter", new Unit(
-            SingularName: "MicroWattPerSquareCentimeter",
-            PluralName: "MicroWattsPerSquareCentimeter",
+        // MicrowattPerSquareCentimeter
+        IrradianceUnits.TryAdd("MicrowattPerSquareCentimeter", new Unit(
+            SingularName: "MicrowattPerSquareCentimeter",
+            PluralName: "MicrowattsPerSquareCentimeter",
             Abbreviations: ["µW/cm²"],
-            Factor: 1,
+            Factor: 0.01,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 0.0001) / 1E-06,
-            FromUnitToBase: static val => (val * 10000) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliWattPerSquareCentimeter
-        IrradianceUnits.TryAdd("MilliWattPerSquareCentimeter", new Unit(
-            SingularName: "MilliWattPerSquareCentimeter",
-            PluralName: "MilliWattsPerSquareCentimeter",
+        // MilliwattPerSquareCentimeter
+        IrradianceUnits.TryAdd("MilliwattPerSquareCentimeter", new Unit(
+            SingularName: "MilliwattPerSquareCentimeter",
+            PluralName: "MilliwattsPerSquareCentimeter",
             Abbreviations: ["mW/cm²"],
-            Factor: 1,
+            Factor: 10,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 0.0001) / 0.001,
-            FromUnitToBase: static val => (val * 10000) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloWattPerSquareCentimeter
-        IrradianceUnits.TryAdd("KiloWattPerSquareCentimeter", new Unit(
-            SingularName: "KiloWattPerSquareCentimeter",
-            PluralName: "KiloWattsPerSquareCentimeter",
+        // KilowattPerSquareCentimeter
+        IrradianceUnits.TryAdd("KilowattPerSquareCentimeter", new Unit(
+            SingularName: "KilowattPerSquareCentimeter",
+            PluralName: "KilowattsPerSquareCentimeter",
             Abbreviations: ["kW/cm²"],
-            Factor: 1,
+            Factor: 10000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 0.0001) / 1000,
-            FromUnitToBase: static val => (val * 10000) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaWattPerSquareCentimeter
-        IrradianceUnits.TryAdd("MegaWattPerSquareCentimeter", new Unit(
-            SingularName: "MegaWattPerSquareCentimeter",
-            PluralName: "MegaWattsPerSquareCentimeter",
+        // MegawattPerSquareCentimeter
+        IrradianceUnits.TryAdd("MegawattPerSquareCentimeter", new Unit(
+            SingularName: "MegawattPerSquareCentimeter",
+            PluralName: "MegawattsPerSquareCentimeter",
             Abbreviations: ["MW/cm²"],
-            Factor: 1,
+            Factor: 10000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 0.0001) / 1000000,
-            FromUnitToBase: static val => (val * 10000) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -184,7 +184,7 @@ public static partial class UoMRegistry {
             "Irradiance is the intensity of ultraviolet (UV) or visible light incident on a surface.",
             IrradianceUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["M"] = 1, ["T"] = -3 },
-            "",
+            null,
             false,
             1
         );

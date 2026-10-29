@@ -18,68 +18,68 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Percent
         RatioUnits.TryAdd("Percent", new Unit(
             SingularName: "Percent",
             PluralName: "Percent",
             Abbreviations: ["%"],
-            Factor: 1,
+            Factor: 0.01,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e2,
-            FromUnitToBase: static val => val / 1e2,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PartPerThousand
         RatioUnits.TryAdd("PartPerThousand", new Unit(
             SingularName: "PartPerThousand",
             PluralName: "PartsPerThousand",
             Abbreviations: ["‰"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e3,
-            FromUnitToBase: static val => val / 1e3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PartPerMillion
         RatioUnits.TryAdd("PartPerMillion", new Unit(
             SingularName: "PartPerMillion",
             PluralName: "PartsPerMillion",
             Abbreviations: ["ppm"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e6,
-            FromUnitToBase: static val => val / 1e6,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PartPerBillion
         RatioUnits.TryAdd("PartPerBillion", new Unit(
             SingularName: "PartPerBillion",
             PluralName: "PartsPerBillion",
             Abbreviations: ["ppb"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e9,
-            FromUnitToBase: static val => val / 1e9,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PartPerTrillion
         RatioUnits.TryAdd("PartPerTrillion", new Unit(
             SingularName: "PartPerTrillion",
             PluralName: "PartsPerTrillion",
             Abbreviations: ["ppt"],
-            Factor: 1,
+            Factor: 1E-12,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e12,
-            FromUnitToBase: static val => val / 1e12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -88,7 +88,7 @@ public static partial class UoMRegistry {
             "In mathematics, a ratio is a relationship between two numbers of the same kind (e.g., objects, persons, students, spoonfuls, units of whatever identical dimension), usually expressed as \"a to b\" or a:b, sometimes expressed arithmetically as a dimensionless quotient of the two that explicitly indicates how many times the first number contains the second (not necessarily an integer).",
             RatioUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> {  },
-            "",
+            null,
             false,
             1
         );

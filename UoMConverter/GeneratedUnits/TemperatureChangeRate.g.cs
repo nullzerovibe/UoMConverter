@@ -18,104 +18,104 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoDegreeCelsiusPerSecond
-        TemperatureChangeRateUnits.TryAdd("NanoDegreeCelsiusPerSecond", new Unit(
-            SingularName: "NanoDegreeCelsiusPerSecond",
-            PluralName: "NanoDegreesCelsiusPerSecond",
+        // NanodegreeCelsiusPerSecond
+        TemperatureChangeRateUnits.TryAdd("NanodegreeCelsiusPerSecond", new Unit(
+            SingularName: "NanodegreeCelsiusPerSecond",
+            PluralName: "NanodegreesCelsiusPerSecond",
             Abbreviations: ["n°C/s"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroDegreeCelsiusPerSecond
-        TemperatureChangeRateUnits.TryAdd("MicroDegreeCelsiusPerSecond", new Unit(
-            SingularName: "MicroDegreeCelsiusPerSecond",
-            PluralName: "MicroDegreesCelsiusPerSecond",
+        // MicrodegreeCelsiusPerSecond
+        TemperatureChangeRateUnits.TryAdd("MicrodegreeCelsiusPerSecond", new Unit(
+            SingularName: "MicrodegreeCelsiusPerSecond",
+            PluralName: "MicrodegreesCelsiusPerSecond",
             Abbreviations: ["µ°C/s"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliDegreeCelsiusPerSecond
-        TemperatureChangeRateUnits.TryAdd("MilliDegreeCelsiusPerSecond", new Unit(
-            SingularName: "MilliDegreeCelsiusPerSecond",
-            PluralName: "MilliDegreesCelsiusPerSecond",
+        // MillidegreeCelsiusPerSecond
+        TemperatureChangeRateUnits.TryAdd("MillidegreeCelsiusPerSecond", new Unit(
+            SingularName: "MillidegreeCelsiusPerSecond",
+            PluralName: "MillidegreesCelsiusPerSecond",
             Abbreviations: ["m°C/s"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiDegreeCelsiusPerSecond
-        TemperatureChangeRateUnits.TryAdd("CentiDegreeCelsiusPerSecond", new Unit(
-            SingularName: "CentiDegreeCelsiusPerSecond",
-            PluralName: "CentiDegreesCelsiusPerSecond",
+        // CentidegreeCelsiusPerSecond
+        TemperatureChangeRateUnits.TryAdd("CentidegreeCelsiusPerSecond", new Unit(
+            SingularName: "CentidegreeCelsiusPerSecond",
+            PluralName: "CentidegreesCelsiusPerSecond",
             Abbreviations: ["c°C/s"],
-            Factor: 1,
+            Factor: 0.01,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.01,
-            FromUnitToBase: static val => (val) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciDegreeCelsiusPerSecond
-        TemperatureChangeRateUnits.TryAdd("DeciDegreeCelsiusPerSecond", new Unit(
-            SingularName: "DeciDegreeCelsiusPerSecond",
-            PluralName: "DeciDegreesCelsiusPerSecond",
+        // DecidegreeCelsiusPerSecond
+        TemperatureChangeRateUnits.TryAdd("DecidegreeCelsiusPerSecond", new Unit(
+            SingularName: "DecidegreeCelsiusPerSecond",
+            PluralName: "DecidegreesCelsiusPerSecond",
             Abbreviations: ["d°C/s"],
-            Factor: 1,
+            Factor: 0.1,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.1,
-            FromUnitToBase: static val => (val) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DecaDegreeCelsiusPerSecond
-        TemperatureChangeRateUnits.TryAdd("DecaDegreeCelsiusPerSecond", new Unit(
-            SingularName: "DecaDegreeCelsiusPerSecond",
-            PluralName: "DecaDegreesCelsiusPerSecond",
+        // DecadegreeCelsiusPerSecond
+        TemperatureChangeRateUnits.TryAdd("DecadegreeCelsiusPerSecond", new Unit(
+            SingularName: "DecadegreeCelsiusPerSecond",
+            PluralName: "DecadegreesCelsiusPerSecond",
             Abbreviations: ["da°C/s"],
-            Factor: 1,
+            Factor: 10,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 10,
-            FromUnitToBase: static val => (val) * 10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // HectoDegreeCelsiusPerSecond
-        TemperatureChangeRateUnits.TryAdd("HectoDegreeCelsiusPerSecond", new Unit(
-            SingularName: "HectoDegreeCelsiusPerSecond",
-            PluralName: "HectoDegreesCelsiusPerSecond",
+        // HectodegreeCelsiusPerSecond
+        TemperatureChangeRateUnits.TryAdd("HectodegreeCelsiusPerSecond", new Unit(
+            SingularName: "HectodegreeCelsiusPerSecond",
+            PluralName: "HectodegreesCelsiusPerSecond",
             Abbreviations: ["h°C/s"],
-            Factor: 1,
+            Factor: 100,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 100,
-            FromUnitToBase: static val => (val) * 100,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloDegreeCelsiusPerSecond
-        TemperatureChangeRateUnits.TryAdd("KiloDegreeCelsiusPerSecond", new Unit(
-            SingularName: "KiloDegreeCelsiusPerSecond",
-            PluralName: "KiloDegreesCelsiusPerSecond",
+        // KilodegreeCelsiusPerSecond
+        TemperatureChangeRateUnits.TryAdd("KilodegreeCelsiusPerSecond", new Unit(
+            SingularName: "KilodegreeCelsiusPerSecond",
+            PluralName: "KilodegreesCelsiusPerSecond",
             Abbreviations: ["k°C/s"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DegreeCelsiusPerMinute
         TemperatureChangeRateUnits.TryAdd("DegreeCelsiusPerMinute", new Unit(
@@ -126,8 +126,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DegreeKelvinPerMinute
         TemperatureChangeRateUnits.TryAdd("DegreeKelvinPerMinute", new Unit(
@@ -138,8 +138,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DegreeFahrenheitPerMinute
         TemperatureChangeRateUnits.TryAdd("DegreeFahrenheitPerMinute", new Unit(
@@ -148,10 +148,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["°F/min"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 9 / 5 * 60,
-            FromUnitToBase: static val => val * 5 / 9 / 60,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 9 / 5 * 60),
+            FromUnitToBase: static val => (val * 5 / 9 / 60),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DegreeFahrenheitPerSecond
         TemperatureChangeRateUnits.TryAdd("DegreeFahrenheitPerSecond", new Unit(
@@ -160,10 +160,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["°F/s"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 9 / 5,
-            FromUnitToBase: static val => val * 5 / 9,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 9 / 5),
+            FromUnitToBase: static val => (val * 5 / 9),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DegreeKelvinPerSecond
         TemperatureChangeRateUnits.TryAdd("DegreeKelvinPerSecond", new Unit(
@@ -174,8 +174,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DegreeCelsiusPerHour
         TemperatureChangeRateUnits.TryAdd("DegreeCelsiusPerHour", new Unit(
@@ -186,8 +186,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DegreeKelvinPerHour
         TemperatureChangeRateUnits.TryAdd("DegreeKelvinPerHour", new Unit(
@@ -198,8 +198,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DegreeFahrenheitPerHour
         TemperatureChangeRateUnits.TryAdd("DegreeFahrenheitPerHour", new Unit(
@@ -208,10 +208,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["°F/h"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 9 / 5 * 3600,
-            FromUnitToBase: static val => val * 5 / 9 / 3600,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 9 / 5 * 3600),
+            FromUnitToBase: static val => (val * 5 / 9 / 3600),
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -220,7 +220,7 @@ public static partial class UoMRegistry {
             "Temperature change rate is the ratio of the temperature change to the time during which the change occurred (value of temperature changes per unit time).",
             TemperatureChangeRateUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["T"] = -1, ["Θ"] = 1 },
-            "",
+            null,
             false,
             1
         );

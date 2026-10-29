@@ -18,8 +18,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PascalSecond
         DynamicViscosityUnits.TryAdd("PascalSecond", new Unit(
@@ -30,32 +30,32 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliPascalSecond
-        DynamicViscosityUnits.TryAdd("MilliPascalSecond", new Unit(
-            SingularName: "MilliPascalSecond",
-            PluralName: "MilliPascalSeconds",
+        // MillipascalSecond
+        DynamicViscosityUnits.TryAdd("MillipascalSecond", new Unit(
+            SingularName: "MillipascalSecond",
+            PluralName: "MillipascalSeconds",
             Abbreviations: ["mPa·s", "mPaS"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroPascalSecond
-        DynamicViscosityUnits.TryAdd("MicroPascalSecond", new Unit(
-            SingularName: "MicroPascalSecond",
-            PluralName: "MicroPascalSeconds",
+        // MicropascalSecond
+        DynamicViscosityUnits.TryAdd("MicropascalSecond", new Unit(
+            SingularName: "MicropascalSecond",
+            PluralName: "MicropascalSeconds",
             Abbreviations: ["µPa·s", "µPaS"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Poise
         DynamicViscosityUnits.TryAdd("Poise", new Unit(
@@ -66,20 +66,20 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiPoise
-        DynamicViscosityUnits.TryAdd("CentiPoise", new Unit(
-            SingularName: "CentiPoise",
-            PluralName: "CentiPoise",
+        // Centipoise
+        DynamicViscosityUnits.TryAdd("Centipoise", new Unit(
+            SingularName: "Centipoise",
+            PluralName: "Centipoise",
             Abbreviations: ["cP"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 10) / 0.01,
-            FromUnitToBase: static val => (val / 10) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Reyn
         DynamicViscosityUnits.TryAdd("Reyn", new Unit(
@@ -88,10 +88,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["reyn"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 0.00064516 / 4.4482216152605,
-            FromUnitToBase: static val => val * 4.4482216152605 / 0.00064516,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 0.00064516 / 4.4482216152605),
+            FromUnitToBase: static val => (val * 4.4482216152605 / 0.00064516),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundForceSecondPerSquareInch
         DynamicViscosityUnits.TryAdd("PoundForceSecondPerSquareInch", new Unit(
@@ -100,10 +100,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["lbf·s/in²"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 0.00064516 / 4.4482216152605,
-            FromUnitToBase: static val => val * 4.4482216152605 / 0.00064516,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 0.00064516 / 4.4482216152605),
+            FromUnitToBase: static val => (val * 4.4482216152605 / 0.00064516),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundForceSecondPerSquareFoot
         DynamicViscosityUnits.TryAdd("PoundForceSecondPerSquareFoot", new Unit(
@@ -112,10 +112,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["lbf·s/ft²"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 9.290304e-2 / 4.4482216152605,
-            FromUnitToBase: static val => val * 4.4482216152605 / 9.290304e-2,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 9.290304e-2 / 4.4482216152605),
+            FromUnitToBase: static val => (val * 4.4482216152605 / 9.290304e-2),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundPerFootSecond
         DynamicViscosityUnits.TryAdd("PoundPerFootSecond", new Unit(
@@ -124,10 +124,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["lb/(ft·s)"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 0.3048 / 0.45359237,
-            FromUnitToBase: static val => val * 0.45359237 / 0.3048,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 0.3048 / 0.45359237),
+            FromUnitToBase: static val => (val * 0.45359237 / 0.3048),
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -136,7 +136,7 @@ public static partial class UoMRegistry {
             "The dynamic (shear) viscosity of a fluid expresses its resistance to shearing flows, where adjacent layers move parallel to each other with different speeds",
             DynamicViscosityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = -1, ["M"] = 1, ["T"] = -1 },
-            "",
+            null,
             false,
             1
         );

@@ -18,32 +18,32 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloNewtonMillimeter
-        TorqueUnits.TryAdd("KiloNewtonMillimeter", new Unit(
-            SingularName: "KiloNewtonMillimeter",
-            PluralName: "KiloNewtonMillimeters",
+        // KilonewtonMillimeter
+        TorqueUnits.TryAdd("KilonewtonMillimeter", new Unit(
+            SingularName: "KilonewtonMillimeter",
+            PluralName: "KilonewtonMillimeters",
             Abbreviations: ["kN·mm"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1000) / 1000,
-            FromUnitToBase: static val => (val * 0.001) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaNewtonMillimeter
-        TorqueUnits.TryAdd("MegaNewtonMillimeter", new Unit(
-            SingularName: "MegaNewtonMillimeter",
-            PluralName: "MegaNewtonMillimeters",
+        // MeganewtonMillimeter
+        TorqueUnits.TryAdd("MeganewtonMillimeter", new Unit(
+            SingularName: "MeganewtonMillimeter",
+            PluralName: "MeganewtonMillimeters",
             Abbreviations: ["MN·mm"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1000) / 1000000,
-            FromUnitToBase: static val => (val * 0.001) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // NewtonCentimeter
         TorqueUnits.TryAdd("NewtonCentimeter", new Unit(
@@ -54,32 +54,32 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloNewtonCentimeter
-        TorqueUnits.TryAdd("KiloNewtonCentimeter", new Unit(
-            SingularName: "KiloNewtonCentimeter",
-            PluralName: "KiloNewtonCentimeters",
+        // KilonewtonCentimeter
+        TorqueUnits.TryAdd("KilonewtonCentimeter", new Unit(
+            SingularName: "KilonewtonCentimeter",
+            PluralName: "KilonewtonCentimeters",
             Abbreviations: ["kN·cm"],
-            Factor: 1,
+            Factor: 10,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 100) / 1000,
-            FromUnitToBase: static val => (val * 0.01) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaNewtonCentimeter
-        TorqueUnits.TryAdd("MegaNewtonCentimeter", new Unit(
-            SingularName: "MegaNewtonCentimeter",
-            PluralName: "MegaNewtonCentimeters",
+        // MeganewtonCentimeter
+        TorqueUnits.TryAdd("MeganewtonCentimeter", new Unit(
+            SingularName: "MeganewtonCentimeter",
+            PluralName: "MeganewtonCentimeters",
             Abbreviations: ["MN·cm"],
-            Factor: 1,
+            Factor: 10000,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 100) / 1000000,
-            FromUnitToBase: static val => (val * 0.01) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // NewtonMeter
         TorqueUnits.TryAdd("NewtonMeter", new Unit(
@@ -90,32 +90,32 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloNewtonMeter
-        TorqueUnits.TryAdd("KiloNewtonMeter", new Unit(
-            SingularName: "KiloNewtonMeter",
-            PluralName: "KiloNewtonMeters",
+        // KilonewtonMeter
+        TorqueUnits.TryAdd("KilonewtonMeter", new Unit(
+            SingularName: "KilonewtonMeter",
+            PluralName: "KilonewtonMeters",
             Abbreviations: ["kN·m"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaNewtonMeter
-        TorqueUnits.TryAdd("MegaNewtonMeter", new Unit(
-            SingularName: "MegaNewtonMeter",
-            PluralName: "MegaNewtonMeters",
+        // MeganewtonMeter
+        TorqueUnits.TryAdd("MeganewtonMeter", new Unit(
+            SingularName: "MeganewtonMeter",
+            PluralName: "MeganewtonMeters",
             Abbreviations: ["MN·m"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundalFoot
         TorqueUnits.TryAdd("PoundalFoot", new Unit(
@@ -124,10 +124,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["pdl·ft"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (0.138254954376 * 0.3048),
-            FromUnitToBase: static val => val * 0.138254954376 * 0.3048,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (0.138254954376 * 0.3048)),
+            FromUnitToBase: static val => (val * 0.138254954376 * 0.3048),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundForceInch
         TorqueUnits.TryAdd("PoundForceInch", new Unit(
@@ -136,34 +136,34 @@ public static partial class UoMRegistry {
             Abbreviations: ["lbf·in"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (4.4482216152605 * 2.54e-2),
-            FromUnitToBase: static val => val * 4.4482216152605 * 2.54e-2,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (4.4482216152605 * 2.54e-2)),
+            FromUnitToBase: static val => (val * 4.4482216152605 * 2.54e-2),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloPoundForceInch
-        TorqueUnits.TryAdd("KiloPoundForceInch", new Unit(
-            SingularName: "KiloPoundForceInch",
-            PluralName: "KiloPoundForceInches",
+        // KilopoundForceInch
+        TorqueUnits.TryAdd("KilopoundForceInch", new Unit(
+            SingularName: "KilopoundForceInch",
+            PluralName: "KilopoundForceInches",
             Abbreviations: ["kipf·in"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / (4.4482216152605 * 2.54e-2)) / 1000,
-            FromUnitToBase: static val => (val * 4.4482216152605 * 2.54e-2) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / (4.4482216152605 * 2.54e-2)) / 1000),
+            FromUnitToBase: static val => ((val * 1000) * 4.4482216152605 * 2.54e-2),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaPoundForceInch
-        TorqueUnits.TryAdd("MegaPoundForceInch", new Unit(
-            SingularName: "MegaPoundForceInch",
-            PluralName: "MegaPoundForceInches",
+        // MegapoundForceInch
+        TorqueUnits.TryAdd("MegapoundForceInch", new Unit(
+            SingularName: "MegapoundForceInch",
+            PluralName: "MegapoundForceInches",
             Abbreviations: ["Mlbf·in"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / (4.4482216152605 * 2.54e-2)) / 1000000,
-            FromUnitToBase: static val => (val * 4.4482216152605 * 2.54e-2) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / (4.4482216152605 * 2.54e-2)) / 1000000),
+            FromUnitToBase: static val => ((val * 1000000) * 4.4482216152605 * 2.54e-2),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundForceFoot
         TorqueUnits.TryAdd("PoundForceFoot", new Unit(
@@ -172,94 +172,94 @@ public static partial class UoMRegistry {
             Abbreviations: ["lbf·ft"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (4.4482216152605 * 0.3048),
-            FromUnitToBase: static val => val * 4.4482216152605 * 0.3048,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (4.4482216152605 * 0.3048)),
+            FromUnitToBase: static val => (val * 4.4482216152605 * 0.3048),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloPoundForceFoot
-        TorqueUnits.TryAdd("KiloPoundForceFoot", new Unit(
-            SingularName: "KiloPoundForceFoot",
-            PluralName: "KiloPoundForceFeet",
+        // KilopoundForceFoot
+        TorqueUnits.TryAdd("KilopoundForceFoot", new Unit(
+            SingularName: "KilopoundForceFoot",
+            PluralName: "KilopoundForceFeet",
             Abbreviations: ["kipf·ft"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / (4.4482216152605 * 0.3048)) / 1000,
-            FromUnitToBase: static val => (val * 4.4482216152605 * 0.3048) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / (4.4482216152605 * 0.3048)) / 1000),
+            FromUnitToBase: static val => ((val * 1000) * 4.4482216152605 * 0.3048),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaPoundForceFoot
-        TorqueUnits.TryAdd("MegaPoundForceFoot", new Unit(
-            SingularName: "MegaPoundForceFoot",
-            PluralName: "MegaPoundForceFeet",
+        // MegapoundForceFoot
+        TorqueUnits.TryAdd("MegapoundForceFoot", new Unit(
+            SingularName: "MegapoundForceFoot",
+            PluralName: "MegapoundForceFeet",
             Abbreviations: ["Mlbf·ft"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / (4.4482216152605 * 0.3048)) / 1000000,
-            FromUnitToBase: static val => (val * 4.4482216152605 * 0.3048) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / (4.4482216152605 * 0.3048)) / 1000000),
+            FromUnitToBase: static val => ((val * 1000000) * 4.4482216152605 * 0.3048),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // GramForceMillimeter
         TorqueUnits.TryAdd("GramForceMillimeter", new Unit(
             SingularName: "GramForceMillimeter",
             PluralName: "GramForceMillimeters",
             Abbreviations: ["gf·mm"],
-            Factor: 1,
+            Factor: 9.80665E-06,
             Offset: 0,
-            FromBaseToUnit: static val => val / 9.80665e-6,
-            FromUnitToBase: static val => val * 9.80665e-6,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // GramForceCentimeter
         TorqueUnits.TryAdd("GramForceCentimeter", new Unit(
             SingularName: "GramForceCentimeter",
             PluralName: "GramForceCentimeters",
             Abbreviations: ["gf·cm"],
-            Factor: 1,
+            Factor: 9.80665E-05,
             Offset: 0,
-            FromBaseToUnit: static val => val / 9.80665e-5,
-            FromUnitToBase: static val => val * 9.80665e-5,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // GramForceMeter
         TorqueUnits.TryAdd("GramForceMeter", new Unit(
             SingularName: "GramForceMeter",
             PluralName: "GramForceMeters",
             Abbreviations: ["gf·m"],
-            Factor: 1,
+            Factor: 0.00980665,
             Offset: 0,
-            FromBaseToUnit: static val => val / 9.80665e-3,
-            FromUnitToBase: static val => val * 9.80665e-3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // KilogramForceMillimeter
         TorqueUnits.TryAdd("KilogramForceMillimeter", new Unit(
             SingularName: "KilogramForceMillimeter",
             PluralName: "KilogramForceMillimeters",
             Abbreviations: ["kgf·mm"],
-            Factor: 1,
+            Factor: 0.00980665,
             Offset: 0,
-            FromBaseToUnit: static val => val / 9.80665e-3,
-            FromUnitToBase: static val => val * 9.80665e-3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // KilogramForceCentimeter
         TorqueUnits.TryAdd("KilogramForceCentimeter", new Unit(
             SingularName: "KilogramForceCentimeter",
             PluralName: "KilogramForceCentimeters",
             Abbreviations: ["kgf·cm"],
-            Factor: 1,
+            Factor: 0.0980665,
             Offset: 0,
-            FromBaseToUnit: static val => val / 9.80665e-2,
-            FromUnitToBase: static val => val * 9.80665e-2,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // KilogramForceMeter
         TorqueUnits.TryAdd("KilogramForceMeter", new Unit(
@@ -270,8 +270,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // TonneForceMillimeter
         TorqueUnits.TryAdd("TonneForceMillimeter", new Unit(
@@ -282,32 +282,32 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // TonneForceCentimeter
         TorqueUnits.TryAdd("TonneForceCentimeter", new Unit(
             SingularName: "TonneForceCentimeter",
             PluralName: "TonneForceCentimeters",
             Abbreviations: ["tf·cm"],
-            Factor: 1,
+            Factor: 98.0665,
             Offset: 0,
-            FromBaseToUnit: static val => val / 9.80665e1,
-            FromUnitToBase: static val => val * 9.80665e1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // TonneForceMeter
         TorqueUnits.TryAdd("TonneForceMeter", new Unit(
             SingularName: "TonneForceMeter",
             PluralName: "TonneForceMeters",
             Abbreviations: ["tf·m"],
-            Factor: 1,
+            Factor: 9806.65,
             Offset: 0,
-            FromBaseToUnit: static val => val / 9.80665e3,
-            FromUnitToBase: static val => val * 9.80665e3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -316,7 +316,7 @@ public static partial class UoMRegistry {
             "Torque, moment or moment of force (see the terminology below), is the tendency of a force to rotate an object about an axis,[1] fulcrum, or pivot. Just as a force is a push or a pull, a torque can be thought of as a twist to an object. Mathematically, torque is defined as the cross product of the lever-arm distance and force, which tends to produce rotation. Loosely speaking, torque is a measure of the turning force on an object such as a bolt or a flywheel. For example, pushing or pulling the handle of a wrench connected to a nut or bolt produces a torque (turning force) that loosens or tightens the nut or bolt.",
             TorqueUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -2 },
-            "",
+            null,
             false,
             1
         );

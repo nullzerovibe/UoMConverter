@@ -18,32 +18,32 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloJoulePerCubicMeterKelvin
-        VolumetricHeatCapacityUnits.TryAdd("KiloJoulePerCubicMeterKelvin", new Unit(
-            SingularName: "KiloJoulePerCubicMeterKelvin",
-            PluralName: "KiloJoulesPerCubicMeterKelvin",
+        // KilojoulePerCubicMeterKelvin
+        VolumetricHeatCapacityUnits.TryAdd("KilojoulePerCubicMeterKelvin", new Unit(
+            SingularName: "KilojoulePerCubicMeterKelvin",
+            PluralName: "KilojoulesPerCubicMeterKelvin",
             Abbreviations: ["kJ/(m³·K)"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaJoulePerCubicMeterKelvin
-        VolumetricHeatCapacityUnits.TryAdd("MegaJoulePerCubicMeterKelvin", new Unit(
-            SingularName: "MegaJoulePerCubicMeterKelvin",
-            PluralName: "MegaJoulesPerCubicMeterKelvin",
+        // MegajoulePerCubicMeterKelvin
+        VolumetricHeatCapacityUnits.TryAdd("MegajoulePerCubicMeterKelvin", new Unit(
+            SingularName: "MegajoulePerCubicMeterKelvin",
+            PluralName: "MegajoulesPerCubicMeterKelvin",
             Abbreviations: ["MJ/(m³·K)"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // JoulePerCubicMeterDegreeCelsius
         VolumetricHeatCapacityUnits.TryAdd("JoulePerCubicMeterDegreeCelsius", new Unit(
@@ -54,56 +54,56 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloJoulePerCubicMeterDegreeCelsius
-        VolumetricHeatCapacityUnits.TryAdd("KiloJoulePerCubicMeterDegreeCelsius", new Unit(
-            SingularName: "KiloJoulePerCubicMeterDegreeCelsius",
-            PluralName: "KiloJoulesPerCubicMeterDegreeCelsius",
+        // KilojoulePerCubicMeterDegreeCelsius
+        VolumetricHeatCapacityUnits.TryAdd("KilojoulePerCubicMeterDegreeCelsius", new Unit(
+            SingularName: "KilojoulePerCubicMeterDegreeCelsius",
+            PluralName: "KilojoulesPerCubicMeterDegreeCelsius",
             Abbreviations: ["kJ/(m³·°C)"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaJoulePerCubicMeterDegreeCelsius
-        VolumetricHeatCapacityUnits.TryAdd("MegaJoulePerCubicMeterDegreeCelsius", new Unit(
-            SingularName: "MegaJoulePerCubicMeterDegreeCelsius",
-            PluralName: "MegaJoulesPerCubicMeterDegreeCelsius",
+        // MegajoulePerCubicMeterDegreeCelsius
+        VolumetricHeatCapacityUnits.TryAdd("MegajoulePerCubicMeterDegreeCelsius", new Unit(
+            SingularName: "MegajoulePerCubicMeterDegreeCelsius",
+            PluralName: "MegajoulesPerCubicMeterDegreeCelsius",
             Abbreviations: ["MJ/(m³·°C)"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CaloriePerCubicCentimeterDegreeCelsius
         VolumetricHeatCapacityUnits.TryAdd("CaloriePerCubicCentimeterDegreeCelsius", new Unit(
             SingularName: "CaloriePerCubicCentimeterDegreeCelsius",
             PluralName: "CaloriesPerCubicCentimeterDegreeCelsius",
             Abbreviations: ["cal/(cm³·°C)"],
-            Factor: 1,
+            Factor: 4184000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 4.184e6,
-            FromUnitToBase: static val => val * 4.184e6,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloCaloriePerCubicCentimeterDegreeCelsius
-        VolumetricHeatCapacityUnits.TryAdd("KiloCaloriePerCubicCentimeterDegreeCelsius", new Unit(
-            SingularName: "KiloCaloriePerCubicCentimeterDegreeCelsius",
-            PluralName: "KiloCaloriesPerCubicCentimeterDegreeCelsius",
+        // KilocaloriePerCubicCentimeterDegreeCelsius
+        VolumetricHeatCapacityUnits.TryAdd("KilocaloriePerCubicCentimeterDegreeCelsius", new Unit(
+            SingularName: "KilocaloriePerCubicCentimeterDegreeCelsius",
+            PluralName: "KilocaloriesPerCubicCentimeterDegreeCelsius",
             Abbreviations: ["kcal/(cm³·°C)"],
-            Factor: 1,
+            Factor: 4184000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 4.184e6) / 1000,
-            FromUnitToBase: static val => (val * 4.184e6) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // BtuPerCubicFootDegreeFahrenheit
         VolumetricHeatCapacityUnits.TryAdd("BtuPerCubicFootDegreeFahrenheit", new Unit(
@@ -112,10 +112,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["BTU/(ft³·°F)"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / ((1055.05585262 / 0.028316846592) * 1.8),
-            FromUnitToBase: static val => val * (1055.05585262 / 0.028316846592) * 1.8,
+            FromBaseToUnit: static val => (val / ((1055.05585262 / 0.028316846592) * 1.8)),
+            FromUnitToBase: static val => (val * (1055.05585262 / 0.028316846592) * 1.8),
             Remarks: "Based on the International Table (IT) definition of the British thermal unit (BTU), where 1 BTU is defined as exactly 1055.05585262 joules (≈1.05506 kJ). See https://en.wikipedia.org/wiki/British_thermal_unit for details.",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -124,7 +124,7 @@ public static partial class UoMRegistry {
             "The volumetric heat capacity is the amount of energy that must be added, in the form of heat, to one unit of volume of the material in order to cause an increase of one unit in its temperature.",
             VolumetricHeatCapacityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["M"] = 1, ["L"] = -1, ["T"] = -2, ["Θ"] = -1 },
-            "",
+            null,
             false,
             1
         );

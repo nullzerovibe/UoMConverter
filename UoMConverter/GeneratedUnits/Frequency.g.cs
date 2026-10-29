@@ -18,80 +18,80 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroHertz
-        FrequencyUnits.TryAdd("MicroHertz", new Unit(
-            SingularName: "MicroHertz",
-            PluralName: "MicroHertz",
+        // Microhertz
+        FrequencyUnits.TryAdd("Microhertz", new Unit(
+            SingularName: "Microhertz",
+            PluralName: "Microhertz",
             Abbreviations: ["µHz"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliHertz
-        FrequencyUnits.TryAdd("MilliHertz", new Unit(
-            SingularName: "MilliHertz",
-            PluralName: "MilliHertz",
+        // Millihertz
+        FrequencyUnits.TryAdd("Millihertz", new Unit(
+            SingularName: "Millihertz",
+            PluralName: "Millihertz",
             Abbreviations: ["mHz"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloHertz
-        FrequencyUnits.TryAdd("KiloHertz", new Unit(
-            SingularName: "KiloHertz",
-            PluralName: "KiloHertz",
+        // Kilohertz
+        FrequencyUnits.TryAdd("Kilohertz", new Unit(
+            SingularName: "Kilohertz",
+            PluralName: "Kilohertz",
             Abbreviations: ["kHz"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaHertz
-        FrequencyUnits.TryAdd("MegaHertz", new Unit(
-            SingularName: "MegaHertz",
-            PluralName: "MegaHertz",
+        // Megahertz
+        FrequencyUnits.TryAdd("Megahertz", new Unit(
+            SingularName: "Megahertz",
+            PluralName: "Megahertz",
             Abbreviations: ["MHz"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaHertz
-        FrequencyUnits.TryAdd("GigaHertz", new Unit(
-            SingularName: "GigaHertz",
-            PluralName: "GigaHertz",
+        // Gigahertz
+        FrequencyUnits.TryAdd("Gigahertz", new Unit(
+            SingularName: "Gigahertz",
+            PluralName: "Gigahertz",
             Abbreviations: ["GHz"],
-            Factor: 1,
+            Factor: 1000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000,
-            FromUnitToBase: static val => (val) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // TeraHertz
-        FrequencyUnits.TryAdd("TeraHertz", new Unit(
-            SingularName: "TeraHertz",
-            PluralName: "TeraHertz",
+        // Terahertz
+        FrequencyUnits.TryAdd("Terahertz", new Unit(
+            SingularName: "Terahertz",
+            PluralName: "Terahertz",
             Abbreviations: ["THz"],
-            Factor: 1,
+            Factor: 1000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000000,
-            FromUnitToBase: static val => (val) * 1000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // RadianPerSecond
         FrequencyUnits.TryAdd("RadianPerSecond", new Unit(
@@ -100,10 +100,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["rad/s"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * (2 * Math.PI),
-            FromUnitToBase: static val => val / (2 * Math.PI),
+            FromBaseToUnit: static val => (val * (2 * Math.PI)),
+            FromUnitToBase: static val => (val / (2 * Math.PI)),
             Remarks: "https://en.wikipedia.org/wiki/Angular_frequency",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // CyclePerMinute
         FrequencyUnits.TryAdd("CyclePerMinute", new Unit(
@@ -114,8 +114,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CyclePerHour
         FrequencyUnits.TryAdd("CyclePerHour", new Unit(
@@ -126,8 +126,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // BeatPerMinute
         FrequencyUnits.TryAdd("BeatPerMinute", new Unit(
@@ -138,8 +138,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PerSecond
         FrequencyUnits.TryAdd("PerSecond", new Unit(
@@ -150,8 +150,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -160,7 +160,7 @@ public static partial class UoMRegistry {
             "The number of occurrences of a repeating event per unit time.",
             FrequencyUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["T"] = -1 },
-            "",
+            null,
             false,
             1
         );

@@ -14,12 +14,12 @@ public static partial class UoMRegistry {
             SingularName: "SquareKilometer",
             PluralName: "SquareKilometers",
             Abbreviations: ["km²"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e6,
-            FromUnitToBase: static val => val * 1e6,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // SquareMeter
         AreaUnits.TryAdd("SquareMeter", new Unit(
@@ -30,56 +30,56 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // SquareDecimeter
         AreaUnits.TryAdd("SquareDecimeter", new Unit(
             SingularName: "SquareDecimeter",
             PluralName: "SquareDecimeters",
             Abbreviations: ["dm²"],
-            Factor: 1,
+            Factor: 0.01,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e-2,
-            FromUnitToBase: static val => val * 1e-2,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // SquareCentimeter
         AreaUnits.TryAdd("SquareCentimeter", new Unit(
             SingularName: "SquareCentimeter",
             PluralName: "SquareCentimeters",
             Abbreviations: ["cm²"],
-            Factor: 1,
+            Factor: 0.0001,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e-4,
-            FromUnitToBase: static val => val * 1e-4,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // SquareMillimeter
         AreaUnits.TryAdd("SquareMillimeter", new Unit(
             SingularName: "SquareMillimeter",
             PluralName: "SquareMillimeters",
             Abbreviations: ["mm²"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e-6,
-            FromUnitToBase: static val => val * 1e-6,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // SquareMicrometer
         AreaUnits.TryAdd("SquareMicrometer", new Unit(
             SingularName: "SquareMicrometer",
             PluralName: "SquareMicrometers",
             Abbreviations: ["µm²"],
-            Factor: 1,
+            Factor: 1E-12,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e-12,
-            FromUnitToBase: static val => val * 1e-12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // SquareMile
         AreaUnits.TryAdd("SquareMile", new Unit(
@@ -88,10 +88,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["mi²"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1609.344 / 1609.344,
-            FromUnitToBase: static val => val * 1609.344 * 1609.344,
+            FromBaseToUnit: static val => (val / 1609.344 / 1609.344),
+            FromUnitToBase: static val => (val * 1609.344 * 1609.344),
             Remarks: "https://en.wikipedia.org/wiki/Mile",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // SquareYard
         AreaUnits.TryAdd("SquareYard", new Unit(
@@ -100,22 +100,22 @@ public static partial class UoMRegistry {
             Abbreviations: ["yd²"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / 0.9144 / 0.9144,
-            FromUnitToBase: static val => val * 0.9144 * 0.9144,
+            FromBaseToUnit: static val => (val / 0.9144 / 0.9144),
+            FromUnitToBase: static val => (val * 0.9144 * 0.9144),
             Remarks: "https://en.wikipedia.org/wiki/Yard",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // SquareFoot
         AreaUnits.TryAdd("SquareFoot", new Unit(
             SingularName: "SquareFoot",
             PluralName: "SquareFeet",
             Abbreviations: ["ft²"],
-            Factor: 1,
+            Factor: 0.09290304,
             Offset: 0,
-            FromBaseToUnit: static val => val / 9.290304e-2,
-            FromUnitToBase: static val => val * 9.290304e-2,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // UsSurveySquareFoot
         AreaUnits.TryAdd("UsSurveySquareFoot", new Unit(
@@ -124,10 +124,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["ft² (US)"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (1200.0 / 3937.0) / (1200.0 / 3937.0),
-            FromUnitToBase: static val => val * (1200.0 / 3937.0) * (1200.0 / 3937.0),
+            FromBaseToUnit: static val => (val / (1200.0 / 3937.0) / (1200.0 / 3937.0)),
+            FromUnitToBase: static val => (val * (1200.0 / 3937.0) * (1200.0 / 3937.0)),
             Remarks: "https://en.wikipedia.org/wiki/Foot_(unit)",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // SquareInch
         AreaUnits.TryAdd("SquareInch", new Unit(
@@ -138,8 +138,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Acre
         AreaUnits.TryAdd("Acre", new Unit(
@@ -151,19 +151,19 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Acre",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // Hectare
         AreaUnits.TryAdd("Hectare", new Unit(
             SingularName: "Hectare",
             PluralName: "Hectares",
             Abbreviations: ["ha"],
-            Factor: 1,
+            Factor: 10000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e4,
-            FromUnitToBase: static val => val * 1e4,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // SquareNauticalMile
         AreaUnits.TryAdd("SquareNauticalMile", new Unit(
@@ -174,8 +174,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -184,7 +184,7 @@ public static partial class UoMRegistry {
             "Area is a quantity that expresses the extent of a two-dimensional surface or shape, or planar lamina, in the plane. Area can be understood as the amount of material with a given thickness that would be necessary to fashion a model of the shape, or the amount of paint necessary to cover the surface with a single coat.[1] It is the two-dimensional analog of the length of a curve (a one-dimensional concept) or the volume of a solid (a three-dimensional concept).",
             AreaUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 2 },
-            "",
+            null,
             false,
             1
         );

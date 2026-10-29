@@ -18,68 +18,68 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // InverseSquareKilometer
         ReciprocalAreaUnits.TryAdd("InverseSquareKilometer", new Unit(
             SingularName: "InverseSquareKilometer",
             PluralName: "InverseSquareKilometers",
             Abbreviations: ["km⁻²"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e6,
-            FromUnitToBase: static val => val / 1e6,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // InverseSquareDecimeter
         ReciprocalAreaUnits.TryAdd("InverseSquareDecimeter", new Unit(
             SingularName: "InverseSquareDecimeter",
             PluralName: "InverseSquareDecimeters",
             Abbreviations: ["dm⁻²"],
-            Factor: 1,
+            Factor: 100,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e-2,
-            FromUnitToBase: static val => val / 1e-2,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // InverseSquareCentimeter
         ReciprocalAreaUnits.TryAdd("InverseSquareCentimeter", new Unit(
             SingularName: "InverseSquareCentimeter",
             PluralName: "InverseSquareCentimeters",
             Abbreviations: ["cm⁻²"],
-            Factor: 1,
+            Factor: 10000,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e-4,
-            FromUnitToBase: static val => val / 1e-4,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // InverseSquareMillimeter
         ReciprocalAreaUnits.TryAdd("InverseSquareMillimeter", new Unit(
             SingularName: "InverseSquareMillimeter",
             PluralName: "InverseSquareMillimeters",
             Abbreviations: ["mm⁻²"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e-6,
-            FromUnitToBase: static val => val / 1e-6,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // InverseSquareMicrometer
         ReciprocalAreaUnits.TryAdd("InverseSquareMicrometer", new Unit(
             SingularName: "InverseSquareMicrometer",
             PluralName: "InverseSquareMicrometers",
             Abbreviations: ["µm⁻²"],
-            Factor: 1,
+            Factor: 1000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e-12,
-            FromUnitToBase: static val => val / 1e-12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // InverseSquareMile
         ReciprocalAreaUnits.TryAdd("InverseSquareMile", new Unit(
@@ -88,10 +88,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["mi⁻²"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * (1609.344 * 1609.344),
-            FromUnitToBase: static val => val / (1609.344 * 1609.344),
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * (1609.344 * 1609.344)),
+            FromUnitToBase: static val => (val / (1609.344 * 1609.344)),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // InverseSquareYard
         ReciprocalAreaUnits.TryAdd("InverseSquareYard", new Unit(
@@ -100,22 +100,22 @@ public static partial class UoMRegistry {
             Abbreviations: ["yd⁻²"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * (0.9144 * 0.9144),
-            FromUnitToBase: static val => val / (0.9144 * 0.9144),
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * (0.9144 * 0.9144)),
+            FromUnitToBase: static val => (val / (0.9144 * 0.9144)),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // InverseSquareFoot
         ReciprocalAreaUnits.TryAdd("InverseSquareFoot", new Unit(
             SingularName: "InverseSquareFoot",
             PluralName: "InverseSquareFeet",
             Abbreviations: ["ft⁻²"],
-            Factor: 1,
+            Factor: 10.763910416709722,
             Offset: 0,
-            FromBaseToUnit: static val => val * 9.290304e-2,
-            FromUnitToBase: static val => val / 9.290304e-2,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // InverseUsSurveySquareFoot
         ReciprocalAreaUnits.TryAdd("InverseUsSurveySquareFoot", new Unit(
@@ -124,10 +124,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["ft⁻² (US)"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * (1200.0 / 3937.0) * (1200.0 / 3937.0),
-            FromUnitToBase: static val => val / (1200.0 / 3937.0) / (1200.0 / 3937.0),
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * (1200.0 / 3937.0) * (1200.0 / 3937.0)),
+            FromUnitToBase: static val => (val / (1200.0 / 3937.0) / (1200.0 / 3937.0)),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // InverseSquareInch
         ReciprocalAreaUnits.TryAdd("InverseSquareInch", new Unit(
@@ -138,8 +138,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -148,7 +148,7 @@ public static partial class UoMRegistry {
             "Reciprocal area (Inverse-square) quantity is used to specify a physical quantity inversely proportional to the square of the distance.",
             ReciprocalAreaUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = -2 },
-            "",
+            null,
             false,
             1
         );

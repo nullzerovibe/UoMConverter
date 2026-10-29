@@ -18,32 +18,32 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloJoulePerMole
-        MolarEnergyUnits.TryAdd("KiloJoulePerMole", new Unit(
-            SingularName: "KiloJoulePerMole",
-            PluralName: "KiloJoulesPerMole",
+        // KilojoulePerMole
+        MolarEnergyUnits.TryAdd("KilojoulePerMole", new Unit(
+            SingularName: "KilojoulePerMole",
+            PluralName: "KilojoulesPerMole",
             Abbreviations: ["kJ/mol"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaJoulePerMole
-        MolarEnergyUnits.TryAdd("MegaJoulePerMole", new Unit(
-            SingularName: "MegaJoulePerMole",
-            PluralName: "MegaJoulesPerMole",
+        // MegajoulePerMole
+        MolarEnergyUnits.TryAdd("MegajoulePerMole", new Unit(
+            SingularName: "MegajoulePerMole",
+            PluralName: "MegajoulesPerMole",
             Abbreviations: ["MJ/mol"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -52,7 +52,7 @@ public static partial class UoMRegistry {
             "Molar energy is the amount of energy stored in 1 mole of a substance.",
             MolarEnergyUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -2, ["N"] = -1 },
-            "",
+            null,
             false,
             1
         );

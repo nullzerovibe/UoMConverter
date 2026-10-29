@@ -18,8 +18,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -28,7 +28,7 @@ public static partial class UoMRegistry {
             "In electromagnetism, permittivity is the measure of resistance that is encountered when forming an electric field in a particular medium.",
             PermittivityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = -3, ["M"] = -1, ["T"] = 4, ["I"] = 2 },
-            "",
+            null,
             false,
             1
         );

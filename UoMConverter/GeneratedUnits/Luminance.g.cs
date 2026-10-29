@@ -18,92 +18,92 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoCandelaPerSquareMeter
-        LuminanceUnits.TryAdd("NanoCandelaPerSquareMeter", new Unit(
-            SingularName: "NanoCandelaPerSquareMeter",
-            PluralName: "NanoCandelasPerSquareMeter",
+        // NanocandelaPerSquareMeter
+        LuminanceUnits.TryAdd("NanocandelaPerSquareMeter", new Unit(
+            SingularName: "NanocandelaPerSquareMeter",
+            PluralName: "NanocandelasPerSquareMeter",
             Abbreviations: ["nCd/m²"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroCandelaPerSquareMeter
-        LuminanceUnits.TryAdd("MicroCandelaPerSquareMeter", new Unit(
-            SingularName: "MicroCandelaPerSquareMeter",
-            PluralName: "MicroCandelasPerSquareMeter",
+        // MicrocandelaPerSquareMeter
+        LuminanceUnits.TryAdd("MicrocandelaPerSquareMeter", new Unit(
+            SingularName: "MicrocandelaPerSquareMeter",
+            PluralName: "MicrocandelasPerSquareMeter",
             Abbreviations: ["µCd/m²"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliCandelaPerSquareMeter
-        LuminanceUnits.TryAdd("MilliCandelaPerSquareMeter", new Unit(
-            SingularName: "MilliCandelaPerSquareMeter",
-            PluralName: "MilliCandelasPerSquareMeter",
+        // MillicandelaPerSquareMeter
+        LuminanceUnits.TryAdd("MillicandelaPerSquareMeter", new Unit(
+            SingularName: "MillicandelaPerSquareMeter",
+            PluralName: "MillicandelasPerSquareMeter",
             Abbreviations: ["mCd/m²"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiCandelaPerSquareMeter
-        LuminanceUnits.TryAdd("CentiCandelaPerSquareMeter", new Unit(
-            SingularName: "CentiCandelaPerSquareMeter",
-            PluralName: "CentiCandelasPerSquareMeter",
+        // CenticandelaPerSquareMeter
+        LuminanceUnits.TryAdd("CenticandelaPerSquareMeter", new Unit(
+            SingularName: "CenticandelaPerSquareMeter",
+            PluralName: "CenticandelasPerSquareMeter",
             Abbreviations: ["cCd/m²"],
-            Factor: 1,
+            Factor: 0.01,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.01,
-            FromUnitToBase: static val => (val) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciCandelaPerSquareMeter
-        LuminanceUnits.TryAdd("DeciCandelaPerSquareMeter", new Unit(
-            SingularName: "DeciCandelaPerSquareMeter",
-            PluralName: "DeciCandelasPerSquareMeter",
+        // DecicandelaPerSquareMeter
+        LuminanceUnits.TryAdd("DecicandelaPerSquareMeter", new Unit(
+            SingularName: "DecicandelaPerSquareMeter",
+            PluralName: "DecicandelasPerSquareMeter",
             Abbreviations: ["dCd/m²"],
-            Factor: 1,
+            Factor: 0.1,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.1,
-            FromUnitToBase: static val => (val) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloCandelaPerSquareMeter
-        LuminanceUnits.TryAdd("KiloCandelaPerSquareMeter", new Unit(
-            SingularName: "KiloCandelaPerSquareMeter",
-            PluralName: "KiloCandelasPerSquareMeter",
+        // KilocandelaPerSquareMeter
+        LuminanceUnits.TryAdd("KilocandelaPerSquareMeter", new Unit(
+            SingularName: "KilocandelaPerSquareMeter",
+            PluralName: "KilocandelasPerSquareMeter",
             Abbreviations: ["kCd/m²"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CandelaPerSquareFoot
         LuminanceUnits.TryAdd("CandelaPerSquareFoot", new Unit(
             SingularName: "CandelaPerSquareFoot",
             PluralName: "CandelasPerSquareFoot",
             Abbreviations: ["Cd/ft²"],
-            Factor: 1,
+            Factor: 10.763910416709722,
             Offset: 0,
-            FromBaseToUnit: static val => val * 9.290304e-2,
-            FromUnitToBase: static val => val / 9.290304e-2,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CandelaPerSquareInch
         LuminanceUnits.TryAdd("CandelaPerSquareInch", new Unit(
@@ -114,8 +114,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Nit
         LuminanceUnits.TryAdd("Nit", new Unit(
@@ -127,7 +127,7 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "https://www.britannica.com/science/luminosity",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -136,7 +136,7 @@ public static partial class UoMRegistry {
             "",
             LuminanceUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["J"] = 1, ["L"] = -2 },
-            "",
+            null,
             false,
             1
         );

@@ -16,10 +16,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["in/yr"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 2.54e-2) * 31540000,
-            FromUnitToBase: static val => (val / 31540000) * 2.54e-2,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / 2.54e-2) * 31540000),
+            FromUnitToBase: static val => ((val / 31540000) * 2.54e-2),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // MeterPerYear
         SpeedUnits.TryAdd("MeterPerYear", new Unit(
@@ -30,80 +30,80 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoMeterPerYear
-        SpeedUnits.TryAdd("NanoMeterPerYear", new Unit(
-            SingularName: "NanoMeterPerYear",
-            PluralName: "NanoMetersPerYear",
+        // NanometerPerYear
+        SpeedUnits.TryAdd("NanometerPerYear", new Unit(
+            SingularName: "NanometerPerYear",
+            PluralName: "NanometersPerYear",
             Abbreviations: ["nm/yr"],
-            Factor: 1,
+            Factor: 3.170577045022194E-17,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 31540000) / 1E-09,
-            FromUnitToBase: static val => (val / 31540000) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroMeterPerYear
-        SpeedUnits.TryAdd("MicroMeterPerYear", new Unit(
-            SingularName: "MicroMeterPerYear",
-            PluralName: "MicroMetersPerYear",
+        // MicrometerPerYear
+        SpeedUnits.TryAdd("MicrometerPerYear", new Unit(
+            SingularName: "MicrometerPerYear",
+            PluralName: "MicrometersPerYear",
             Abbreviations: ["µm/yr"],
-            Factor: 1,
+            Factor: 3.1705770450221936E-14,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 31540000) / 1E-06,
-            FromUnitToBase: static val => (val / 31540000) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliMeterPerYear
-        SpeedUnits.TryAdd("MilliMeterPerYear", new Unit(
-            SingularName: "MilliMeterPerYear",
-            PluralName: "MilliMetersPerYear",
+        // MillimeterPerYear
+        SpeedUnits.TryAdd("MillimeterPerYear", new Unit(
+            SingularName: "MillimeterPerYear",
+            PluralName: "MillimetersPerYear",
             Abbreviations: ["mm/yr"],
-            Factor: 1,
+            Factor: 3.170577045022194E-11,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 31540000) / 0.001,
-            FromUnitToBase: static val => (val / 31540000) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiMeterPerYear
-        SpeedUnits.TryAdd("CentiMeterPerYear", new Unit(
-            SingularName: "CentiMeterPerYear",
-            PluralName: "CentiMetersPerYear",
+        // CentimeterPerYear
+        SpeedUnits.TryAdd("CentimeterPerYear", new Unit(
+            SingularName: "CentimeterPerYear",
+            PluralName: "CentimetersPerYear",
             Abbreviations: ["cm/yr"],
-            Factor: 1,
+            Factor: 3.170577045022194E-10,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 31540000) / 0.01,
-            FromUnitToBase: static val => (val / 31540000) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciMeterPerYear
-        SpeedUnits.TryAdd("DeciMeterPerYear", new Unit(
-            SingularName: "DeciMeterPerYear",
-            PluralName: "DeciMetersPerYear",
+        // DecimeterPerYear
+        SpeedUnits.TryAdd("DecimeterPerYear", new Unit(
+            SingularName: "DecimeterPerYear",
+            PluralName: "DecimetersPerYear",
             Abbreviations: ["dm/yr"],
-            Factor: 1,
+            Factor: 3.170577045022194E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 31540000) / 0.1,
-            FromUnitToBase: static val => (val / 31540000) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloMeterPerYear
-        SpeedUnits.TryAdd("KiloMeterPerYear", new Unit(
-            SingularName: "KiloMeterPerYear",
-            PluralName: "KiloMetersPerYear",
+        // KilometerPerYear
+        SpeedUnits.TryAdd("KilometerPerYear", new Unit(
+            SingularName: "KilometerPerYear",
+            PluralName: "KilometersPerYear",
             Abbreviations: ["km/yr"],
-            Factor: 1,
+            Factor: 3.170577045022194E-05,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 31540000) / 1000,
-            FromUnitToBase: static val => (val / 31540000) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // MeterPerSecond
         SpeedUnits.TryAdd("MeterPerSecond", new Unit(
@@ -114,80 +114,80 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoMeterPerSecond
-        SpeedUnits.TryAdd("NanoMeterPerSecond", new Unit(
-            SingularName: "NanoMeterPerSecond",
-            PluralName: "NanoMetersPerSecond",
+        // NanometerPerSecond
+        SpeedUnits.TryAdd("NanometerPerSecond", new Unit(
+            SingularName: "NanometerPerSecond",
+            PluralName: "NanometersPerSecond",
             Abbreviations: ["nm/s"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroMeterPerSecond
-        SpeedUnits.TryAdd("MicroMeterPerSecond", new Unit(
-            SingularName: "MicroMeterPerSecond",
-            PluralName: "MicroMetersPerSecond",
+        // MicrometerPerSecond
+        SpeedUnits.TryAdd("MicrometerPerSecond", new Unit(
+            SingularName: "MicrometerPerSecond",
+            PluralName: "MicrometersPerSecond",
             Abbreviations: ["µm/s"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliMeterPerSecond
-        SpeedUnits.TryAdd("MilliMeterPerSecond", new Unit(
-            SingularName: "MilliMeterPerSecond",
-            PluralName: "MilliMetersPerSecond",
+        // MillimeterPerSecond
+        SpeedUnits.TryAdd("MillimeterPerSecond", new Unit(
+            SingularName: "MillimeterPerSecond",
+            PluralName: "MillimetersPerSecond",
             Abbreviations: ["mm/s"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiMeterPerSecond
-        SpeedUnits.TryAdd("CentiMeterPerSecond", new Unit(
-            SingularName: "CentiMeterPerSecond",
-            PluralName: "CentiMetersPerSecond",
+        // CentimeterPerSecond
+        SpeedUnits.TryAdd("CentimeterPerSecond", new Unit(
+            SingularName: "CentimeterPerSecond",
+            PluralName: "CentimetersPerSecond",
             Abbreviations: ["cm/s"],
-            Factor: 1,
+            Factor: 0.01,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.01,
-            FromUnitToBase: static val => (val) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciMeterPerSecond
-        SpeedUnits.TryAdd("DeciMeterPerSecond", new Unit(
-            SingularName: "DeciMeterPerSecond",
-            PluralName: "DeciMetersPerSecond",
+        // DecimeterPerSecond
+        SpeedUnits.TryAdd("DecimeterPerSecond", new Unit(
+            SingularName: "DecimeterPerSecond",
+            PluralName: "DecimetersPerSecond",
             Abbreviations: ["dm/s"],
-            Factor: 1,
+            Factor: 0.1,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.1,
-            FromUnitToBase: static val => (val) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloMeterPerSecond
-        SpeedUnits.TryAdd("KiloMeterPerSecond", new Unit(
-            SingularName: "KiloMeterPerSecond",
-            PluralName: "KiloMetersPerSecond",
+        // KilometerPerSecond
+        SpeedUnits.TryAdd("KilometerPerSecond", new Unit(
+            SingularName: "KilometerPerSecond",
+            PluralName: "KilometersPerSecond",
             Abbreviations: ["km/s"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // MeterPerMinute
         SpeedUnits.TryAdd("MeterPerMinute", new Unit(
@@ -198,80 +198,80 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoMeterPerMinute
-        SpeedUnits.TryAdd("NanoMeterPerMinute", new Unit(
-            SingularName: "NanoMeterPerMinute",
-            PluralName: "NanoMetersPerMinute",
+        // NanometerPerMinute
+        SpeedUnits.TryAdd("NanometerPerMinute", new Unit(
+            SingularName: "NanometerPerMinute",
+            PluralName: "NanometersPerMinute",
             Abbreviations: ["nm/min"],
-            Factor: 1,
+            Factor: 1.6666666666666667E-11,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 60) / 1E-09,
-            FromUnitToBase: static val => (val / 60) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroMeterPerMinute
-        SpeedUnits.TryAdd("MicroMeterPerMinute", new Unit(
-            SingularName: "MicroMeterPerMinute",
-            PluralName: "MicroMetersPerMinute",
+        // MicrometerPerMinute
+        SpeedUnits.TryAdd("MicrometerPerMinute", new Unit(
+            SingularName: "MicrometerPerMinute",
+            PluralName: "MicrometersPerMinute",
             Abbreviations: ["µm/min"],
-            Factor: 1,
+            Factor: 1.6666666666666667E-08,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 60) / 1E-06,
-            FromUnitToBase: static val => (val / 60) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliMeterPerMinute
-        SpeedUnits.TryAdd("MilliMeterPerMinute", new Unit(
-            SingularName: "MilliMeterPerMinute",
-            PluralName: "MilliMetersPerMinute",
+        // MillimeterPerMinute
+        SpeedUnits.TryAdd("MillimeterPerMinute", new Unit(
+            SingularName: "MillimeterPerMinute",
+            PluralName: "MillimetersPerMinute",
             Abbreviations: ["mm/min"],
-            Factor: 1,
+            Factor: 1.6666666666666667E-05,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 60) / 0.001,
-            FromUnitToBase: static val => (val / 60) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiMeterPerMinute
-        SpeedUnits.TryAdd("CentiMeterPerMinute", new Unit(
-            SingularName: "CentiMeterPerMinute",
-            PluralName: "CentiMetersPerMinute",
+        // CentimeterPerMinute
+        SpeedUnits.TryAdd("CentimeterPerMinute", new Unit(
+            SingularName: "CentimeterPerMinute",
+            PluralName: "CentimetersPerMinute",
             Abbreviations: ["cm/min"],
-            Factor: 1,
+            Factor: 0.00016666666666666666,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 60) / 0.01,
-            FromUnitToBase: static val => (val / 60) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciMeterPerMinute
-        SpeedUnits.TryAdd("DeciMeterPerMinute", new Unit(
-            SingularName: "DeciMeterPerMinute",
-            PluralName: "DeciMetersPerMinute",
+        // DecimeterPerMinute
+        SpeedUnits.TryAdd("DecimeterPerMinute", new Unit(
+            SingularName: "DecimeterPerMinute",
+            PluralName: "DecimetersPerMinute",
             Abbreviations: ["dm/min"],
-            Factor: 1,
+            Factor: 0.0016666666666666668,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 60) / 0.1,
-            FromUnitToBase: static val => (val / 60) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloMeterPerMinute
-        SpeedUnits.TryAdd("KiloMeterPerMinute", new Unit(
-            SingularName: "KiloMeterPerMinute",
-            PluralName: "KiloMetersPerMinute",
+        // KilometerPerMinute
+        SpeedUnits.TryAdd("KilometerPerMinute", new Unit(
+            SingularName: "KilometerPerMinute",
+            PluralName: "KilometersPerMinute",
             Abbreviations: ["km/min"],
-            Factor: 1,
+            Factor: 16.666666666666668,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 60) / 1000,
-            FromUnitToBase: static val => (val / 60) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // MeterPerHour
         SpeedUnits.TryAdd("MeterPerHour", new Unit(
@@ -282,44 +282,44 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliMeterPerHour
-        SpeedUnits.TryAdd("MilliMeterPerHour", new Unit(
-            SingularName: "MilliMeterPerHour",
-            PluralName: "MilliMetersPerHour",
+        // MillimeterPerHour
+        SpeedUnits.TryAdd("MillimeterPerHour", new Unit(
+            SingularName: "MillimeterPerHour",
+            PluralName: "MillimetersPerHour",
             Abbreviations: ["mm/h"],
-            Factor: 1,
+            Factor: 2.7777777777777776E-07,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 3600) / 0.001,
-            FromUnitToBase: static val => (val / 3600) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiMeterPerHour
-        SpeedUnits.TryAdd("CentiMeterPerHour", new Unit(
-            SingularName: "CentiMeterPerHour",
-            PluralName: "CentiMetersPerHour",
+        // CentimeterPerHour
+        SpeedUnits.TryAdd("CentimeterPerHour", new Unit(
+            SingularName: "CentimeterPerHour",
+            PluralName: "CentimetersPerHour",
             Abbreviations: ["cm/h"],
-            Factor: 1,
+            Factor: 2.777777777777778E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 3600) / 0.01,
-            FromUnitToBase: static val => (val / 3600) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloMeterPerHour
-        SpeedUnits.TryAdd("KiloMeterPerHour", new Unit(
-            SingularName: "KiloMeterPerHour",
-            PluralName: "KiloMetersPerHour",
+        // KilometerPerHour
+        SpeedUnits.TryAdd("KilometerPerHour", new Unit(
+            SingularName: "KilometerPerHour",
+            PluralName: "KilometersPerHour",
             Abbreviations: ["km/h"],
-            Factor: 1,
+            Factor: 0.2777777777777778,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 3600) / 1000,
-            FromUnitToBase: static val => (val / 3600) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // FootPerSecond
         SpeedUnits.TryAdd("FootPerSecond", new Unit(
@@ -330,8 +330,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // FootPerMinute
         SpeedUnits.TryAdd("FootPerMinute", new Unit(
@@ -340,10 +340,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["ft/min"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / 0.3048 * 60,
-            FromUnitToBase: static val => val * 0.3048 / 60,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / 0.3048 * 60),
+            FromUnitToBase: static val => (val * 0.3048 / 60),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // FootPerHour
         SpeedUnits.TryAdd("FootPerHour", new Unit(
@@ -352,10 +352,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["ft/h"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / 0.3048 * 3600,
-            FromUnitToBase: static val => val * 0.3048 / 3600,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / 0.3048 * 3600),
+            FromUnitToBase: static val => (val * 0.3048 / 3600),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // UsSurveyFootPerSecond
         SpeedUnits.TryAdd("UsSurveyFootPerSecond", new Unit(
@@ -364,10 +364,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["ftUS/s"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 3937 / 1200,
-            FromUnitToBase: static val => val * 1200 / 3937,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 3937 / 1200),
+            FromUnitToBase: static val => (val * 1200 / 3937),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // UsSurveyFootPerMinute
         SpeedUnits.TryAdd("UsSurveyFootPerMinute", new Unit(
@@ -376,10 +376,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["ftUS/min"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 3937 / 1200) * 60,
-            FromUnitToBase: static val => (val * 1200 / 3937) / 60,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * 3937 / 1200) * 60),
+            FromUnitToBase: static val => ((val * 1200 / 3937) / 60),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // UsSurveyFootPerHour
         SpeedUnits.TryAdd("UsSurveyFootPerHour", new Unit(
@@ -388,22 +388,22 @@ public static partial class UoMRegistry {
             Abbreviations: ["ftUS/h"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 3937 / 1200) * 3600,
-            FromUnitToBase: static val => (val * 1200 / 3937) / 3600,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * 3937 / 1200) * 3600),
+            FromUnitToBase: static val => ((val * 1200 / 3937) / 3600),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // InchPerSecond
         SpeedUnits.TryAdd("InchPerSecond", new Unit(
             SingularName: "InchPerSecond",
             PluralName: "InchesPerSecond",
             Abbreviations: ["in/s"],
-            Factor: 1,
+            Factor: 0.0254,
             Offset: 0,
-            FromBaseToUnit: static val => val / 2.54e-2,
-            FromUnitToBase: static val => val * 2.54e-2,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // InchPerMinute
         SpeedUnits.TryAdd("InchPerMinute", new Unit(
@@ -412,10 +412,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["in/min"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 2.54e-2) * 60,
-            FromUnitToBase: static val => (val / 60) * 2.54e-2,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / 2.54e-2) * 60),
+            FromUnitToBase: static val => ((val / 60) * 2.54e-2),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // InchPerHour
         SpeedUnits.TryAdd("InchPerHour", new Unit(
@@ -424,10 +424,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["in/h"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 2.54e-2) * 3600,
-            FromUnitToBase: static val => (val / 3600) * 2.54e-2,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / 2.54e-2) * 3600),
+            FromUnitToBase: static val => ((val / 3600) * 2.54e-2),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // YardPerSecond
         SpeedUnits.TryAdd("YardPerSecond", new Unit(
@@ -438,8 +438,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // YardPerMinute
         SpeedUnits.TryAdd("YardPerMinute", new Unit(
@@ -448,10 +448,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["yd/min"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / 0.9144 * 60,
-            FromUnitToBase: static val => val * 0.9144 / 60,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / 0.9144 * 60),
+            FromUnitToBase: static val => (val * 0.9144 / 60),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // YardPerHour
         SpeedUnits.TryAdd("YardPerHour", new Unit(
@@ -460,10 +460,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["yd/h"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / 0.9144 * 3600,
-            FromUnitToBase: static val => val * 0.9144 / 3600,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / 0.9144 * 3600),
+            FromUnitToBase: static val => (val * 0.9144 / 3600),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Knot
         SpeedUnits.TryAdd("Knot", new Unit(
@@ -472,10 +472,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["kn", "kt", "knot", "knots"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (1852.0 / 3600.0),
-            FromUnitToBase: static val => val * (1852.0 / 3600.0),
+            FromBaseToUnit: static val => (val / (1852.0 / 3600.0)),
+            FromUnitToBase: static val => (val * (1852.0 / 3600.0)),
             Remarks: "https://en.wikipedia.org/wiki/Knot_(unit)",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // MilePerHour
         SpeedUnits.TryAdd("MilePerHour", new Unit(
@@ -486,8 +486,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Mach
         SpeedUnits.TryAdd("Mach", new Unit(
@@ -498,8 +498,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -508,7 +508,7 @@ public static partial class UoMRegistry {
             "In everyday use and in kinematics, the speed of an object is the magnitude of its velocity (the rate of change of its position); it is thus a scalar quantity.[1] The average speed of an object in an interval of time is the distance travelled by the object divided by the duration of the interval;[2] the instantaneous speed is the limit of the average speed as the duration of the time interval approaches zero.",
             SpeedUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 1, ["T"] = -1 },
-            "",
+            null,
             false,
             1
         );

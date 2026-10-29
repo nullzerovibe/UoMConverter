@@ -18,32 +18,32 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloNewtonMeterPerRadianPerMeter
-        RotationalStiffnessPerLengthUnits.TryAdd("KiloNewtonMeterPerRadianPerMeter", new Unit(
-            SingularName: "KiloNewtonMeterPerRadianPerMeter",
-            PluralName: "KiloNewtonMetersPerRadianPerMeter",
+        // KilonewtonMeterPerRadianPerMeter
+        RotationalStiffnessPerLengthUnits.TryAdd("KilonewtonMeterPerRadianPerMeter", new Unit(
+            SingularName: "KilonewtonMeterPerRadianPerMeter",
+            PluralName: "KilonewtonMetersPerRadianPerMeter",
             Abbreviations: ["kN·m/rad/m", "kNm/rad/m"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaNewtonMeterPerRadianPerMeter
-        RotationalStiffnessPerLengthUnits.TryAdd("MegaNewtonMeterPerRadianPerMeter", new Unit(
-            SingularName: "MegaNewtonMeterPerRadianPerMeter",
-            PluralName: "MegaNewtonMetersPerRadianPerMeter",
+        // MeganewtonMeterPerRadianPerMeter
+        RotationalStiffnessPerLengthUnits.TryAdd("MeganewtonMeterPerRadianPerMeter", new Unit(
+            SingularName: "MeganewtonMeterPerRadianPerMeter",
+            PluralName: "MeganewtonMetersPerRadianPerMeter",
             Abbreviations: ["MN·m/rad/m", "MNm/rad/m"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundForceFootPerDegreesPerFoot
         RotationalStiffnessPerLengthUnits.TryAdd("PoundForceFootPerDegreesPerFoot", new Unit(
@@ -52,10 +52,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["lbf·ft/deg/ft"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (4.4482216152605 * 180 / Math.PI),
-            FromUnitToBase: static val => val * (4.4482216152605 * 180 / Math.PI),
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (4.4482216152605 * 180 / Math.PI)),
+            FromUnitToBase: static val => (val * (4.4482216152605 * 180 / Math.PI)),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // KilopoundForceFootPerDegreesPerFoot
         RotationalStiffnessPerLengthUnits.TryAdd("KilopoundForceFootPerDegreesPerFoot", new Unit(
@@ -64,10 +64,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["kipf·ft/°/ft", "kip·ft/°/ft", "k·ft/°/ft", "kipf·ft/deg/ft", "kip·ft/deg/ft", "k·ft/deg/ft"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (4.4482216152605e3 * 180 / Math.PI),
-            FromUnitToBase: static val => val * (4.4482216152605e3 * 180 / Math.PI),
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (4.4482216152605e3 * 180 / Math.PI)),
+            FromUnitToBase: static val => (val * (4.4482216152605e3 * 180 / Math.PI)),
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -76,7 +76,7 @@ public static partial class UoMRegistry {
             "https://en.wikipedia.org/wiki/Stiffness#Rotational_stiffness",
             RotationalStiffnessPerLengthUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 1, ["M"] = 1, ["T"] = -2 },
-            "",
+            null,
             false,
             1
         );

@@ -18,56 +18,56 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PicoHenry
-        ElectricInductanceUnits.TryAdd("PicoHenry", new Unit(
-            SingularName: "PicoHenry",
-            PluralName: "PicoHenries",
+        // Picohenry
+        ElectricInductanceUnits.TryAdd("Picohenry", new Unit(
+            SingularName: "Picohenry",
+            PluralName: "Picohenries",
             Abbreviations: ["pH"],
-            Factor: 1,
+            Factor: 1E-12,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-12,
-            FromUnitToBase: static val => (val) * 1E-12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoHenry
-        ElectricInductanceUnits.TryAdd("NanoHenry", new Unit(
-            SingularName: "NanoHenry",
-            PluralName: "NanoHenries",
+        // Nanohenry
+        ElectricInductanceUnits.TryAdd("Nanohenry", new Unit(
+            SingularName: "Nanohenry",
+            PluralName: "Nanohenries",
             Abbreviations: ["nH"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroHenry
-        ElectricInductanceUnits.TryAdd("MicroHenry", new Unit(
-            SingularName: "MicroHenry",
-            PluralName: "MicroHenries",
+        // Microhenry
+        ElectricInductanceUnits.TryAdd("Microhenry", new Unit(
+            SingularName: "Microhenry",
+            PluralName: "Microhenries",
             Abbreviations: ["µH"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliHenry
-        ElectricInductanceUnits.TryAdd("MilliHenry", new Unit(
-            SingularName: "MilliHenry",
-            PluralName: "MilliHenries",
+        // Millihenry
+        ElectricInductanceUnits.TryAdd("Millihenry", new Unit(
+            SingularName: "Millihenry",
+            PluralName: "Millihenries",
             Abbreviations: ["mH"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -76,7 +76,7 @@ public static partial class UoMRegistry {
             "Inductance is a property of an electrical conductor which opposes a change in current.",
             ElectricInductanceUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -2, ["I"] = -2 },
-            "",
+            null,
             false,
             1
         );

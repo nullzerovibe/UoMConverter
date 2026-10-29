@@ -1,7 +1,7 @@
 import { h, render } from 'https://esm.sh/preact@10.19.3';
 import { useEffect, useMemo, useRef, useState } from 'https://esm.sh/preact@10.19.3/hooks';
 import htm from 'https://esm.sh/htm@3.1.1';
-import { FLAT_MAP, EXAMPLE_GROUPS, getCategoryIconUrl, getTypeIconUrl, appState, actions, formatLabel, matchesQueryTokens } from './logic.js';
+import { FLAT_MAP, EXAMPLE_GROUPS, getCategoryIconUrl, getTypeIconUrl, appState, actions, formatLabel, matchesQueryTokens, unitUsageKey } from './logic.js';
 
 const html = htm.bind(h);
 
@@ -289,16 +289,18 @@ export const MainCard = ({ state, actions }) => {
             sorted.sort((a, b) => {
                 const nameA = a.Name || a.name || '';
                 const nameB = b.Name || b.name || '';
-                const countA = usage[`${dimName}::${nameA}`]?.count || 0;
-                const countB = usage[`${dimName}::${nameB}`]?.count || 0;
+                const usageA = usage[unitUsageKey(dimName, nameA)];
+                const usageB = usage[unitUsageKey(dimName, nameB)];
+                const countA = usageA?.count || 0;
+                const countB = usageB?.count || 0;
 
                 // Only promote if used at least 2 times, otherwise stick to primary sort
                 if (countA >= 2 || countB >= 2) {
                     if (countA !== countB) return countB - countA; // Descending count
 
                     // Tie-breaker based on most recent
-                    const recA = usage[`${dimName}::${nameA}`]?.lastUsed || 0;
-                    const recB = usage[`${dimName}::${nameB}`]?.lastUsed || 0;
+                    const recA = usageA?.lastUsed || 0;
+                    const recB = usageB?.lastUsed || 0;
                     if (recA !== recB) return recB - recA;
                 }
 

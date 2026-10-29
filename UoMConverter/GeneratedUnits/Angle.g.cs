@@ -18,68 +18,68 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoRadian
-        AngleUnits.TryAdd("NanoRadian", new Unit(
-            SingularName: "NanoRadian",
-            PluralName: "NanoRadians",
+        // Nanoradian
+        AngleUnits.TryAdd("Nanoradian", new Unit(
+            SingularName: "Nanoradian",
+            PluralName: "Nanoradians",
             Abbreviations: ["nrad"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroRadian
-        AngleUnits.TryAdd("MicroRadian", new Unit(
-            SingularName: "MicroRadian",
-            PluralName: "MicroRadians",
+        // Microradian
+        AngleUnits.TryAdd("Microradian", new Unit(
+            SingularName: "Microradian",
+            PluralName: "Microradians",
             Abbreviations: ["µrad"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliRadian
-        AngleUnits.TryAdd("MilliRadian", new Unit(
-            SingularName: "MilliRadian",
-            PluralName: "MilliRadians",
+        // Milliradian
+        AngleUnits.TryAdd("Milliradian", new Unit(
+            SingularName: "Milliradian",
+            PluralName: "Milliradians",
             Abbreviations: ["mrad"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiRadian
-        AngleUnits.TryAdd("CentiRadian", new Unit(
-            SingularName: "CentiRadian",
-            PluralName: "CentiRadians",
+        // Centiradian
+        AngleUnits.TryAdd("Centiradian", new Unit(
+            SingularName: "Centiradian",
+            PluralName: "Centiradians",
             Abbreviations: ["crad"],
-            Factor: 1,
+            Factor: 0.01,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.01,
-            FromUnitToBase: static val => (val) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciRadian
-        AngleUnits.TryAdd("DeciRadian", new Unit(
-            SingularName: "DeciRadian",
-            PluralName: "DeciRadians",
+        // Deciradian
+        AngleUnits.TryAdd("Deciradian", new Unit(
+            SingularName: "Deciradian",
+            PluralName: "Deciradians",
             Abbreviations: ["drad"],
-            Factor: 1,
+            Factor: 0.1,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.1,
-            FromUnitToBase: static val => (val) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Degree
         AngleUnits.TryAdd("Degree", new Unit(
@@ -88,46 +88,46 @@ public static partial class UoMRegistry {
             Abbreviations: ["°", "deg"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 180 / Math.PI,
-            FromUnitToBase: static val => val * Math.PI / 180,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 180 / Math.PI),
+            FromUnitToBase: static val => (val * Math.PI / 180),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoDegree
-        AngleUnits.TryAdd("NanoDegree", new Unit(
-            SingularName: "NanoDegree",
-            PluralName: "NanoDegrees",
+        // Nanodegree
+        AngleUnits.TryAdd("Nanodegree", new Unit(
+            SingularName: "Nanodegree",
+            PluralName: "Nanodegrees",
             Abbreviations: ["n°", "ndeg"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 180 / Math.PI) / 1E-09,
-            FromUnitToBase: static val => (val * Math.PI / 180) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * 180 / Math.PI) / 1E-09),
+            FromUnitToBase: static val => ((val * 1E-09) * Math.PI / 180),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroDegree
-        AngleUnits.TryAdd("MicroDegree", new Unit(
-            SingularName: "MicroDegree",
-            PluralName: "MicroDegrees",
+        // Microdegree
+        AngleUnits.TryAdd("Microdegree", new Unit(
+            SingularName: "Microdegree",
+            PluralName: "Microdegrees",
             Abbreviations: ["µ°", "µdeg"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 180 / Math.PI) / 1E-06,
-            FromUnitToBase: static val => (val * Math.PI / 180) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * 180 / Math.PI) / 1E-06),
+            FromUnitToBase: static val => ((val * 1E-06) * Math.PI / 180),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliDegree
-        AngleUnits.TryAdd("MilliDegree", new Unit(
-            SingularName: "MilliDegree",
-            PluralName: "MilliDegrees",
+        // Millidegree
+        AngleUnits.TryAdd("Millidegree", new Unit(
+            SingularName: "Millidegree",
+            PluralName: "Millidegrees",
             Abbreviations: ["m°", "mdeg"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 180 / Math.PI) / 0.001,
-            FromUnitToBase: static val => (val * Math.PI / 180) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * 180 / Math.PI) / 0.001),
+            FromUnitToBase: static val => ((val * 0.001) * Math.PI / 180),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Arcminute
         AngleUnits.TryAdd("Arcminute", new Unit(
@@ -136,10 +136,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["'", "arcmin", "amin", "min"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 60 * 180 / Math.PI,
-            FromUnitToBase: static val => val * Math.PI / (60 * 180),
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 60 * 180 / Math.PI),
+            FromUnitToBase: static val => (val * Math.PI / (60 * 180)),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Arcsecond
         AngleUnits.TryAdd("Arcsecond", new Unit(
@@ -148,10 +148,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["″", "arcsec", "asec", "sec"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 3600 * 180 / Math.PI,
-            FromUnitToBase: static val => val * Math.PI / (3600 * 180),
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 3600 * 180 / Math.PI),
+            FromUnitToBase: static val => (val * Math.PI / (3600 * 180)),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Gradian
         AngleUnits.TryAdd("Gradian", new Unit(
@@ -160,10 +160,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["g"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 200 / Math.PI,
-            FromUnitToBase: static val => val * Math.PI / 200,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 200 / Math.PI),
+            FromUnitToBase: static val => (val * Math.PI / 200),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // NatoMil
         AngleUnits.TryAdd("NatoMil", new Unit(
@@ -172,10 +172,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["mil"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 3200 / Math.PI,
-            FromUnitToBase: static val => val * Math.PI / 3200,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 3200 / Math.PI),
+            FromUnitToBase: static val => (val * Math.PI / 3200),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Revolution
         AngleUnits.TryAdd("Revolution", new Unit(
@@ -184,10 +184,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["r"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (2 * Math.PI),
-            FromUnitToBase: static val => val * 2 * Math.PI,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (2 * Math.PI)),
+            FromUnitToBase: static val => (val * 2 * Math.PI),
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -196,7 +196,7 @@ public static partial class UoMRegistry {
             "In geometry, an angle is the figure formed by two rays, called the sides of the angle, sharing a common endpoint, called the vertex of the angle.",
             AngleUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> {  },
-            "",
+            null,
             false,
             1
         );

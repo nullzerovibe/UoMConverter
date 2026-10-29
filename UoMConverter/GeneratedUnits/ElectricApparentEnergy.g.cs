@@ -18,32 +18,32 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloVoltampereHour
-        ElectricApparentEnergyUnits.TryAdd("KiloVoltampereHour", new Unit(
-            SingularName: "KiloVoltampereHour",
-            PluralName: "KiloVoltampereHours",
+        // KilovoltampereHour
+        ElectricApparentEnergyUnits.TryAdd("KilovoltampereHour", new Unit(
+            SingularName: "KilovoltampereHour",
+            PluralName: "KilovoltampereHours",
             Abbreviations: ["kVAh"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaVoltampereHour
-        ElectricApparentEnergyUnits.TryAdd("MegaVoltampereHour", new Unit(
-            SingularName: "MegaVoltampereHour",
-            PluralName: "MegaVoltampereHours",
+        // MegavoltampereHour
+        ElectricApparentEnergyUnits.TryAdd("MegavoltampereHour", new Unit(
+            SingularName: "MegavoltampereHour",
+            PluralName: "MegavoltampereHours",
             Abbreviations: ["MVAh"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -52,7 +52,7 @@ public static partial class UoMRegistry {
             "A unit for expressing the integral of apparent power over time, equal to the product of 1 volt-ampere and 1 hour, or to 3600 joules.",
             ElectricApparentEnergyUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -2 },
-            "",
+            null,
             false,
             1
         );

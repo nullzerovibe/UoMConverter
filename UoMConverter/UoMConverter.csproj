@@ -4,16 +4,7 @@
     <LangVersion>preview</LangVersion>
     <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
     <CompilerGeneratedFilesOutputPath>obj/GeneratedUnits</CompilerGeneratedFilesOutputPath>
-    
-    <!-- NuGet Metadata -->
     <PackageId>UoMConverter</PackageId>
-    <Authors>NullZeroVibe</Authors>
-    <Company>NullZeroVibe</Company>
-    <Description>A high-performance, extensible unit of measure conversion library for .NET, leveraging source generators for maximum efficiency.</Description>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <RepositoryUrl>https://github.com/nullzerovibe/UoMConverter</RepositoryUrl>
-    <PackageTags>unit conversion;measurement;source-generator;performance;zero-allocation</PackageTags>
-
   </PropertyGroup>
 
   <ItemGroup>
@@ -33,17 +24,15 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
   </ItemGroup>
  
-  <Target Name="CleanGeneratedUnits" BeforeTargets="CoreCompile">
-    <RemoveDir Directories="GeneratedUnits" />
-    <MakeDir Directories="GeneratedUnits" />
-  </Target>
- 
-  <Target Name="FlattenGeneratedFiles" AfterTargets="CoreCompile">
+  <!-- WHY: Mirrors generator output into a browsable, tracked folder. Runs only after a successful compile, so a failed build never empties it. -->
+  <Target Name="SyncGeneratedUnits" AfterTargets="CoreCompile">
     <ItemGroup>
-      <GeneratedFiles Include="obj/GeneratedUnits/**/*.g.cs" />
+      <_GeneratedSource Include="$(CompilerGeneratedFilesOutputPath)/**/*.g.cs" />
+      <_StaleMirror Include="GeneratedUnits/*.g.cs" />
+      <_StaleMirror Remove="@(_GeneratedSource)" MatchOnMetadata="Filename" />
     </ItemGroup>
-    <Copy SourceFiles="@(GeneratedFiles)" DestinationFolder="GeneratedUnits" OverwriteReadOnlyFiles="true" ContinueOnError="true" />
-    <RemoveDir Directories="GeneratedUnits/UoMConverter.Generator" />
+    <Copy SourceFiles="@(_GeneratedSource)" DestinationFolder="GeneratedUnits" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" ContinueOnError="true" />
+    <Delete Files="@(_StaleMirror)" Condition="'@(_GeneratedSource)' != ''" />
   </Target>
 
 </Project>

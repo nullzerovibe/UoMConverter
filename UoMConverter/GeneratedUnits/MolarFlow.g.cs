@@ -18,20 +18,20 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloMolePerSecond
-        MolarFlowUnits.TryAdd("KiloMolePerSecond", new Unit(
-            SingularName: "KiloMolePerSecond",
-            PluralName: "KiloMolesPerSecond",
+        // KilomolePerSecond
+        MolarFlowUnits.TryAdd("KilomolePerSecond", new Unit(
+            SingularName: "KilomolePerSecond",
+            PluralName: "KilomolesPerSecond",
             Abbreviations: ["kmol/s"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // MolePerMinute
         MolarFlowUnits.TryAdd("MolePerMinute", new Unit(
@@ -42,20 +42,20 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloMolePerMinute
-        MolarFlowUnits.TryAdd("KiloMolePerMinute", new Unit(
-            SingularName: "KiloMolePerMinute",
-            PluralName: "KiloMolesPerMinute",
+        // KilomolePerMinute
+        MolarFlowUnits.TryAdd("KilomolePerMinute", new Unit(
+            SingularName: "KilomolePerMinute",
+            PluralName: "KilomolesPerMinute",
             Abbreviations: ["kmol/min"],
-            Factor: 1,
+            Factor: 16.666666666666668,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 60) / 1000,
-            FromUnitToBase: static val => (val / 60) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // MolePerHour
         MolarFlowUnits.TryAdd("MolePerHour", new Unit(
@@ -66,20 +66,20 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloMolePerHour
-        MolarFlowUnits.TryAdd("KiloMolePerHour", new Unit(
-            SingularName: "KiloMolePerHour",
-            PluralName: "KiloMolesPerHour",
+        // KilomolePerHour
+        MolarFlowUnits.TryAdd("KilomolePerHour", new Unit(
+            SingularName: "KilomolePerHour",
+            PluralName: "KilomolesPerHour",
             Abbreviations: ["kkmol/h"],
-            Factor: 1,
+            Factor: 0.2777777777777778,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 3600) / 1000,
-            FromUnitToBase: static val => (val / 3600) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundMolePerSecond
         MolarFlowUnits.TryAdd("PoundMolePerSecond", new Unit(
@@ -90,8 +90,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundMolePerMinute
         MolarFlowUnits.TryAdd("PoundMolePerMinute", new Unit(
@@ -100,10 +100,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["lbmol/min"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 453.59237) * 60,
-            FromUnitToBase: static val => (val * 453.59237) / 60,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / 453.59237) * 60),
+            FromUnitToBase: static val => ((val * 453.59237) / 60),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundMolePerHour
         MolarFlowUnits.TryAdd("PoundMolePerHour", new Unit(
@@ -112,10 +112,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["lbmol/h"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 453.59237) * 3600,
-            FromUnitToBase: static val => (val * 453.59237) / 3600,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / 453.59237) * 3600),
+            FromUnitToBase: static val => ((val * 453.59237) / 3600),
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -124,7 +124,7 @@ public static partial class UoMRegistry {
             "Molar flow is the ratio of the amount of substance change to the time during which the change occurred (value of amount of substance changes per unit time).",
             MolarFlowUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["N"] = 1, ["T"] = -1 },
-            "",
+            null,
             false,
             1
         );

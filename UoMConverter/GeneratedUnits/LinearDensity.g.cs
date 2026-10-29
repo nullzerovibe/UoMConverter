@@ -18,140 +18,140 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroGramPerMillimeter
-        LinearDensityUnits.TryAdd("MicroGramPerMillimeter", new Unit(
-            SingularName: "MicroGramPerMillimeter",
-            PluralName: "MicroGramsPerMillimeter",
+        // MicrogramPerMillimeter
+        LinearDensityUnits.TryAdd("MicrogramPerMillimeter", new Unit(
+            SingularName: "MicrogramPerMillimeter",
+            PluralName: "MicrogramsPerMillimeter",
             Abbreviations: ["µg/mm"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliGramPerMillimeter
-        LinearDensityUnits.TryAdd("MilliGramPerMillimeter", new Unit(
-            SingularName: "MilliGramPerMillimeter",
-            PluralName: "MilliGramsPerMillimeter",
+        // MilligramPerMillimeter
+        LinearDensityUnits.TryAdd("MilligramPerMillimeter", new Unit(
+            SingularName: "MilligramPerMillimeter",
+            PluralName: "MilligramsPerMillimeter",
             Abbreviations: ["mg/mm"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloGramPerMillimeter
-        LinearDensityUnits.TryAdd("KiloGramPerMillimeter", new Unit(
-            SingularName: "KiloGramPerMillimeter",
-            PluralName: "KiloGramsPerMillimeter",
+        // KilogramPerMillimeter
+        LinearDensityUnits.TryAdd("KilogramPerMillimeter", new Unit(
+            SingularName: "KilogramPerMillimeter",
+            PluralName: "KilogramsPerMillimeter",
             Abbreviations: ["kg/mm"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // GramPerCentimeter
         LinearDensityUnits.TryAdd("GramPerCentimeter", new Unit(
             SingularName: "GramPerCentimeter",
             PluralName: "GramsPerCentimeter",
             Abbreviations: ["g/cm"],
-            Factor: 1,
+            Factor: 0.1,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e-1,
-            FromUnitToBase: static val => val * 1e-1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroGramPerCentimeter
-        LinearDensityUnits.TryAdd("MicroGramPerCentimeter", new Unit(
-            SingularName: "MicroGramPerCentimeter",
-            PluralName: "MicroGramsPerCentimeter",
+        // MicrogramPerCentimeter
+        LinearDensityUnits.TryAdd("MicrogramPerCentimeter", new Unit(
+            SingularName: "MicrogramPerCentimeter",
+            PluralName: "MicrogramsPerCentimeter",
             Abbreviations: ["µg/cm"],
-            Factor: 1,
+            Factor: 1E-07,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e-1) / 1E-06,
-            FromUnitToBase: static val => (val * 1e-1) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliGramPerCentimeter
-        LinearDensityUnits.TryAdd("MilliGramPerCentimeter", new Unit(
-            SingularName: "MilliGramPerCentimeter",
-            PluralName: "MilliGramsPerCentimeter",
+        // MilligramPerCentimeter
+        LinearDensityUnits.TryAdd("MilligramPerCentimeter", new Unit(
+            SingularName: "MilligramPerCentimeter",
+            PluralName: "MilligramsPerCentimeter",
             Abbreviations: ["mg/cm"],
-            Factor: 1,
+            Factor: 0.0001,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e-1) / 0.001,
-            FromUnitToBase: static val => (val * 1e-1) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloGramPerCentimeter
-        LinearDensityUnits.TryAdd("KiloGramPerCentimeter", new Unit(
-            SingularName: "KiloGramPerCentimeter",
-            PluralName: "KiloGramsPerCentimeter",
+        // KilogramPerCentimeter
+        LinearDensityUnits.TryAdd("KilogramPerCentimeter", new Unit(
+            SingularName: "KilogramPerCentimeter",
+            PluralName: "KilogramsPerCentimeter",
             Abbreviations: ["kg/cm"],
-            Factor: 1,
+            Factor: 100,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e-1) / 1000,
-            FromUnitToBase: static val => (val * 1e-1) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // GramPerMeter
         LinearDensityUnits.TryAdd("GramPerMeter", new Unit(
             SingularName: "GramPerMeter",
             PluralName: "GramsPerMeter",
             Abbreviations: ["g/m"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e-3,
-            FromUnitToBase: static val => val * 1e-3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroGramPerMeter
-        LinearDensityUnits.TryAdd("MicroGramPerMeter", new Unit(
-            SingularName: "MicroGramPerMeter",
-            PluralName: "MicroGramsPerMeter",
+        // MicrogramPerMeter
+        LinearDensityUnits.TryAdd("MicrogramPerMeter", new Unit(
+            SingularName: "MicrogramPerMeter",
+            PluralName: "MicrogramsPerMeter",
             Abbreviations: ["µg/m"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e-3) / 1E-06,
-            FromUnitToBase: static val => (val * 1e-3) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliGramPerMeter
-        LinearDensityUnits.TryAdd("MilliGramPerMeter", new Unit(
-            SingularName: "MilliGramPerMeter",
-            PluralName: "MilliGramsPerMeter",
+        // MilligramPerMeter
+        LinearDensityUnits.TryAdd("MilligramPerMeter", new Unit(
+            SingularName: "MilligramPerMeter",
+            PluralName: "MilligramsPerMeter",
             Abbreviations: ["mg/m"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e-3) / 0.001,
-            FromUnitToBase: static val => (val * 1e-3) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloGramPerMeter
-        LinearDensityUnits.TryAdd("KiloGramPerMeter", new Unit(
-            SingularName: "KiloGramPerMeter",
-            PluralName: "KiloGramsPerMeter",
+        // KilogramPerMeter
+        LinearDensityUnits.TryAdd("KilogramPerMeter", new Unit(
+            SingularName: "KilogramPerMeter",
+            PluralName: "KilogramsPerMeter",
             Abbreviations: ["kg/m"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e-3) / 1000,
-            FromUnitToBase: static val => (val * 1e-3) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundPerInch
         LinearDensityUnits.TryAdd("PoundPerInch", new Unit(
@@ -160,10 +160,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["lb/in"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 2.54e-2 / 0.45359237,
-            FromUnitToBase: static val => val * 0.45359237 / 2.54e-2,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 2.54e-2 / 0.45359237),
+            FromUnitToBase: static val => (val * 0.45359237 / 2.54e-2),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundPerFoot
         LinearDensityUnits.TryAdd("PoundPerFoot", new Unit(
@@ -172,10 +172,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["lb/ft"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 0.3048 / 0.45359237,
-            FromUnitToBase: static val => val * 0.45359237 / 0.3048,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 0.3048 / 0.45359237),
+            FromUnitToBase: static val => (val * 0.45359237 / 0.3048),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // GramPerFoot
         LinearDensityUnits.TryAdd("GramPerFoot", new Unit(
@@ -184,46 +184,46 @@ public static partial class UoMRegistry {
             Abbreviations: ["g/ft"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / ( 1e-3 / 0.3048 ),
-            FromUnitToBase: static val => val * ( 1e-3 / 0.3048 ),
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / ( 1e-3 / 0.3048 )),
+            FromUnitToBase: static val => (val * ( 1e-3 / 0.3048 )),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroGramPerFoot
-        LinearDensityUnits.TryAdd("MicroGramPerFoot", new Unit(
-            SingularName: "MicroGramPerFoot",
-            PluralName: "MicroGramsPerFoot",
+        // MicrogramPerFoot
+        LinearDensityUnits.TryAdd("MicrogramPerFoot", new Unit(
+            SingularName: "MicrogramPerFoot",
+            PluralName: "MicrogramsPerFoot",
             Abbreviations: ["µg/ft"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / ( 1e-3 / 0.3048 )) / 1E-06,
-            FromUnitToBase: static val => (val * ( 1e-3 / 0.3048 )) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / ( 1e-3 / 0.3048 )) / 1E-06),
+            FromUnitToBase: static val => ((val * 1E-06) * ( 1e-3 / 0.3048 )),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliGramPerFoot
-        LinearDensityUnits.TryAdd("MilliGramPerFoot", new Unit(
-            SingularName: "MilliGramPerFoot",
-            PluralName: "MilliGramsPerFoot",
+        // MilligramPerFoot
+        LinearDensityUnits.TryAdd("MilligramPerFoot", new Unit(
+            SingularName: "MilligramPerFoot",
+            PluralName: "MilligramsPerFoot",
             Abbreviations: ["mg/ft"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / ( 1e-3 / 0.3048 )) / 0.001,
-            FromUnitToBase: static val => (val * ( 1e-3 / 0.3048 )) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / ( 1e-3 / 0.3048 )) / 0.001),
+            FromUnitToBase: static val => ((val * 0.001) * ( 1e-3 / 0.3048 )),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloGramPerFoot
-        LinearDensityUnits.TryAdd("KiloGramPerFoot", new Unit(
-            SingularName: "KiloGramPerFoot",
-            PluralName: "KiloGramsPerFoot",
+        // KilogramPerFoot
+        LinearDensityUnits.TryAdd("KilogramPerFoot", new Unit(
+            SingularName: "KilogramPerFoot",
+            PluralName: "KilogramsPerFoot",
             Abbreviations: ["kg/ft"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / ( 1e-3 / 0.3048 )) / 1000,
-            FromUnitToBase: static val => (val * ( 1e-3 / 0.3048 )) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / ( 1e-3 / 0.3048 )) / 1000),
+            FromUnitToBase: static val => ((val * 1000) * ( 1e-3 / 0.3048 )),
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -232,7 +232,7 @@ public static partial class UoMRegistry {
             "The Linear Density, or more precisely, the linear mass density, of a substance is its mass per unit length.  The term linear density is most often used when describing the characteristics of one-dimensional objects, although linear density can also be used to describe the density of a three-dimensional quantity along one particular dimension.",
             LinearDensityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = -1, ["M"] = 1 },
-            "",
+            null,
             false,
             1
         );

@@ -18,152 +18,152 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // FemtoMeter
-        LengthUnits.TryAdd("FemtoMeter", new Unit(
-            SingularName: "FemtoMeter",
-            PluralName: "FemtoMeters",
+        // Femtometer
+        LengthUnits.TryAdd("Femtometer", new Unit(
+            SingularName: "Femtometer",
+            PluralName: "Femtometers",
             Abbreviations: ["fm"],
-            Factor: 1,
+            Factor: 1E-15,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-15,
-            FromUnitToBase: static val => (val) * 1E-15,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PicoMeter
-        LengthUnits.TryAdd("PicoMeter", new Unit(
-            SingularName: "PicoMeter",
-            PluralName: "PicoMeters",
+        // Picometer
+        LengthUnits.TryAdd("Picometer", new Unit(
+            SingularName: "Picometer",
+            PluralName: "Picometers",
             Abbreviations: ["pm"],
-            Factor: 1,
+            Factor: 1E-12,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-12,
-            FromUnitToBase: static val => (val) * 1E-12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoMeter
-        LengthUnits.TryAdd("NanoMeter", new Unit(
-            SingularName: "NanoMeter",
-            PluralName: "NanoMeters",
+        // Nanometer
+        LengthUnits.TryAdd("Nanometer", new Unit(
+            SingularName: "Nanometer",
+            PluralName: "Nanometers",
             Abbreviations: ["nm"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroMeter
-        LengthUnits.TryAdd("MicroMeter", new Unit(
-            SingularName: "MicroMeter",
-            PluralName: "MicroMeters",
+        // Micrometer
+        LengthUnits.TryAdd("Micrometer", new Unit(
+            SingularName: "Micrometer",
+            PluralName: "Micrometers",
             Abbreviations: ["µm"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliMeter
-        LengthUnits.TryAdd("MilliMeter", new Unit(
-            SingularName: "MilliMeter",
-            PluralName: "MilliMeters",
+        // Millimeter
+        LengthUnits.TryAdd("Millimeter", new Unit(
+            SingularName: "Millimeter",
+            PluralName: "Millimeters",
             Abbreviations: ["mm"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiMeter
-        LengthUnits.TryAdd("CentiMeter", new Unit(
-            SingularName: "CentiMeter",
-            PluralName: "CentiMeters",
+        // Centimeter
+        LengthUnits.TryAdd("Centimeter", new Unit(
+            SingularName: "Centimeter",
+            PluralName: "Centimeters",
             Abbreviations: ["cm"],
-            Factor: 1,
+            Factor: 0.01,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.01,
-            FromUnitToBase: static val => (val) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciMeter
-        LengthUnits.TryAdd("DeciMeter", new Unit(
-            SingularName: "DeciMeter",
-            PluralName: "DeciMeters",
+        // Decimeter
+        LengthUnits.TryAdd("Decimeter", new Unit(
+            SingularName: "Decimeter",
+            PluralName: "Decimeters",
             Abbreviations: ["dm"],
-            Factor: 1,
+            Factor: 0.1,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.1,
-            FromUnitToBase: static val => (val) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DecaMeter
-        LengthUnits.TryAdd("DecaMeter", new Unit(
-            SingularName: "DecaMeter",
-            PluralName: "DecaMeters",
+        // Decameter
+        LengthUnits.TryAdd("Decameter", new Unit(
+            SingularName: "Decameter",
+            PluralName: "Decameters",
             Abbreviations: ["dam"],
-            Factor: 1,
+            Factor: 10,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 10,
-            FromUnitToBase: static val => (val) * 10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // HectoMeter
-        LengthUnits.TryAdd("HectoMeter", new Unit(
-            SingularName: "HectoMeter",
-            PluralName: "HectoMeters",
+        // Hectometer
+        LengthUnits.TryAdd("Hectometer", new Unit(
+            SingularName: "Hectometer",
+            PluralName: "Hectometers",
             Abbreviations: ["hm"],
-            Factor: 1,
+            Factor: 100,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 100,
-            FromUnitToBase: static val => (val) * 100,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloMeter
-        LengthUnits.TryAdd("KiloMeter", new Unit(
-            SingularName: "KiloMeter",
-            PluralName: "KiloMeters",
+        // Kilometer
+        LengthUnits.TryAdd("Kilometer", new Unit(
+            SingularName: "Kilometer",
+            PluralName: "Kilometers",
             Abbreviations: ["km"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaMeter
-        LengthUnits.TryAdd("MegaMeter", new Unit(
-            SingularName: "MegaMeter",
-            PluralName: "MegaMeters",
+        // Megameter
+        LengthUnits.TryAdd("Megameter", new Unit(
+            SingularName: "Megameter",
+            PluralName: "Megameters",
             Abbreviations: ["Mm"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaMeter
-        LengthUnits.TryAdd("GigaMeter", new Unit(
-            SingularName: "GigaMeter",
-            PluralName: "GigaMeters",
+        // Gigameter
+        LengthUnits.TryAdd("Gigameter", new Unit(
+            SingularName: "Gigameter",
+            PluralName: "Gigameters",
             Abbreviations: ["Gm"],
-            Factor: 1,
+            Factor: 1000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000,
-            FromUnitToBase: static val => (val) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Mile
         LengthUnits.TryAdd("Mile", new Unit(
@@ -175,7 +175,7 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Mile",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // Yard
         LengthUnits.TryAdd("Yard", new Unit(
@@ -187,19 +187,19 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Yard",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
-        // KiloYard
-        LengthUnits.TryAdd("KiloYard", new Unit(
-            SingularName: "KiloYard",
-            PluralName: "KiloYards",
+        // Kiloyard
+        LengthUnits.TryAdd("Kiloyard", new Unit(
+            SingularName: "Kiloyard",
+            PluralName: "Kiloyards",
             Abbreviations: ["kyd"],
-            Factor: 1,
+            Factor: 914.4,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 0.9144) / 1000,
-            FromUnitToBase: static val => (val * 0.9144) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Foot
         LengthUnits.TryAdd("Foot", new Unit(
@@ -211,19 +211,19 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Foot_(unit)",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
-        // KiloFoot
-        LengthUnits.TryAdd("KiloFoot", new Unit(
-            SingularName: "KiloFoot",
-            PluralName: "KiloFeet",
+        // Kilofoot
+        LengthUnits.TryAdd("Kilofoot", new Unit(
+            SingularName: "Kilofoot",
+            PluralName: "Kilofeet",
             Abbreviations: ["kft", "k'", "k′"],
-            Factor: 1,
+            Factor: 304.8,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 0.3048) / 1000,
-            FromUnitToBase: static val => (val * 0.3048) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // UsSurveyFoot
         LengthUnits.TryAdd("UsSurveyFoot", new Unit(
@@ -232,34 +232,34 @@ public static partial class UoMRegistry {
             Abbreviations: ["ftUS"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 3937 / 1200,
-            FromUnitToBase: static val => val * 1200 / 3937,
+            FromBaseToUnit: static val => (val * 3937 / 1200),
+            FromUnitToBase: static val => (val * 1200 / 3937),
             Remarks: "https://en.wikipedia.org/wiki/Foot_(unit)",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // Inch
         LengthUnits.TryAdd("Inch", new Unit(
             SingularName: "Inch",
             PluralName: "Inches",
             Abbreviations: ["in", "\"", "″"],
-            Factor: 1,
+            Factor: 0.0254,
             Offset: 0,
-            FromBaseToUnit: static val => val / 2.54e-2,
-            FromUnitToBase: static val => val * 2.54e-2,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Inch",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // Mil
         LengthUnits.TryAdd("Mil", new Unit(
             SingularName: "Mil",
             PluralName: "Mils",
             Abbreviations: ["mil"],
-            Factor: 1,
+            Factor: 2.54E-05,
             Offset: 0,
-            FromBaseToUnit: static val => val / 2.54e-5,
-            FromUnitToBase: static val => val * 2.54e-5,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // NauticalMile
         LengthUnits.TryAdd("NauticalMile", new Unit(
@@ -270,8 +270,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Fathom
         LengthUnits.TryAdd("Fathom", new Unit(
@@ -282,8 +282,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Shackle
         LengthUnits.TryAdd("Shackle", new Unit(
@@ -294,20 +294,20 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Microinch
         LengthUnits.TryAdd("Microinch", new Unit(
             SingularName: "Microinch",
             PluralName: "Microinches",
             Abbreviations: ["µin"],
-            Factor: 1,
+            Factor: 2.54E-08,
             Offset: 0,
-            FromBaseToUnit: static val => val / 2.54e-8,
-            FromUnitToBase: static val => val * 2.54e-8,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PrinterPoint
         LengthUnits.TryAdd("PrinterPoint", new Unit(
@@ -316,10 +316,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["pt"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 72.27 / 2.54e-2,
-            FromUnitToBase: static val => val * 2.54e-2 / 72.27 ,
+            FromBaseToUnit: static val => (val * 72.27 / 2.54e-2),
+            FromUnitToBase: static val => (val * 2.54e-2 / 72.27 ),
             Remarks: "https://en.wikipedia.org/wiki/Point_(typography)",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // DtpPoint
         LengthUnits.TryAdd("DtpPoint", new Unit(
@@ -328,10 +328,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["pt"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 72 / 2.54e-2,
-            FromUnitToBase: static val => val * 2.54e-2 / 72,
+            FromBaseToUnit: static val => (val * 72 / 2.54e-2),
+            FromUnitToBase: static val => (val * 2.54e-2 / 72),
             Remarks: "https://en.wikipedia.org/wiki/Point_(typography)",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // PrinterPica
         LengthUnits.TryAdd("PrinterPica", new Unit(
@@ -340,10 +340,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["pica"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (2.54e-2 * 400 / 2409),
-            FromUnitToBase: static val => val * 2.54e-2 * 400 / 2409,
+            FromBaseToUnit: static val => (val / (2.54e-2 * 400 / 2409)),
+            FromUnitToBase: static val => (val * 2.54e-2 * 400 / 2409),
             Remarks: "https://en.wikipedia.org/wiki/Pica_(typography)",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // DtpPica
         LengthUnits.TryAdd("DtpPica", new Unit(
@@ -352,10 +352,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["pica"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 6 / 2.54e-2,
-            FromUnitToBase: static val => val * 2.54e-2 / 6,
+            FromBaseToUnit: static val => (val * 6 / 2.54e-2),
+            FromUnitToBase: static val => (val * 2.54e-2 / 6),
             Remarks: "https://en.wikipedia.org/wiki/Pica_(typography)",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // Twip
         LengthUnits.TryAdd("Twip", new Unit(
@@ -364,118 +364,118 @@ public static partial class UoMRegistry {
             Abbreviations: ["twip"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1440 / 2.54e-2,
-            FromUnitToBase: static val => val * 2.54e-2 / 1440,
+            FromBaseToUnit: static val => (val * 1440 / 2.54e-2),
+            FromUnitToBase: static val => (val * 2.54e-2 / 1440),
             Remarks: "https://en.wikipedia.org/wiki/Twip",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // Hand
         LengthUnits.TryAdd("Hand", new Unit(
             SingularName: "Hand",
             PluralName: "Hands",
             Abbreviations: ["h", "hh"],
-            Factor: 1,
+            Factor: 0.1016,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1.016e-1,
-            FromUnitToBase: static val => val * 1.016e-1,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Hand_(unit)",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // AstronomicalUnit
         LengthUnits.TryAdd("AstronomicalUnit", new Unit(
             SingularName: "AstronomicalUnit",
             PluralName: "AstronomicalUnits",
             Abbreviations: ["au", "ua"],
-            Factor: 1,
+            Factor: 149597870700,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1.4959787070e11,
-            FromUnitToBase: static val => val * 1.4959787070e11,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Astronomical_unit",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // Parsec
         LengthUnits.TryAdd("Parsec", new Unit(
             SingularName: "Parsec",
             PluralName: "Parsecs",
             Abbreviations: ["pc"],
-            Factor: 1,
+            Factor: 30856775812800000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 3.08567758128e16,
-            FromUnitToBase: static val => val * 3.08567758128e16,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Parsec",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
-        // KiloParsec
-        LengthUnits.TryAdd("KiloParsec", new Unit(
-            SingularName: "KiloParsec",
-            PluralName: "KiloParsecs",
+        // Kiloparsec
+        LengthUnits.TryAdd("Kiloparsec", new Unit(
+            SingularName: "Kiloparsec",
+            PluralName: "Kiloparsecs",
             Abbreviations: ["kpc"],
-            Factor: 1,
+            Factor: 3.08567758128E+19,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 3.08567758128e16) / 1000,
-            FromUnitToBase: static val => (val * 3.08567758128e16) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaParsec
-        LengthUnits.TryAdd("MegaParsec", new Unit(
-            SingularName: "MegaParsec",
-            PluralName: "MegaParsecs",
+        // Megaparsec
+        LengthUnits.TryAdd("Megaparsec", new Unit(
+            SingularName: "Megaparsec",
+            PluralName: "Megaparsecs",
             Abbreviations: ["Mpc"],
-            Factor: 1,
+            Factor: 3.08567758128E+22,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 3.08567758128e16) / 1000000,
-            FromUnitToBase: static val => (val * 3.08567758128e16) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // LightYear
         LengthUnits.TryAdd("LightYear", new Unit(
             SingularName: "LightYear",
             PluralName: "LightYears",
             Abbreviations: ["ly"],
-            Factor: 1,
+            Factor: 9460730472580000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 9.46073047258e15,
-            FromUnitToBase: static val => val * 9.46073047258e15,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Light-year",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
-        // KiloLightYear
-        LengthUnits.TryAdd("KiloLightYear", new Unit(
-            SingularName: "KiloLightYear",
-            PluralName: "KiloLightYears",
+        // KilolightYear
+        LengthUnits.TryAdd("KilolightYear", new Unit(
+            SingularName: "KilolightYear",
+            PluralName: "KilolightYears",
             Abbreviations: ["kly"],
-            Factor: 1,
+            Factor: 9.46073047258E+18,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 9.46073047258e15) / 1000,
-            FromUnitToBase: static val => (val * 9.46073047258e15) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaLightYear
-        LengthUnits.TryAdd("MegaLightYear", new Unit(
-            SingularName: "MegaLightYear",
-            PluralName: "MegaLightYears",
+        // MegalightYear
+        LengthUnits.TryAdd("MegalightYear", new Unit(
+            SingularName: "MegalightYear",
+            PluralName: "MegalightYears",
             Abbreviations: ["Mly"],
-            Factor: 1,
+            Factor: 9.46073047258E+21,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 9.46073047258e15) / 1000000,
-            FromUnitToBase: static val => (val * 9.46073047258e15) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // SolarRadius
         LengthUnits.TryAdd("SolarRadius", new Unit(
             SingularName: "SolarRadius",
             PluralName: "SolarRadiuses",
             Abbreviations: ["R⊙"],
-            Factor: 1,
+            Factor: 695700000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 6.95700e8,
-            FromUnitToBase: static val => val * 6.95700e8,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Stellar_classification",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // Chain
         LengthUnits.TryAdd("Chain", new Unit(
@@ -487,19 +487,19 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Chain_(unit)",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // Angstrom
         LengthUnits.TryAdd("Angstrom", new Unit(
             SingularName: "Angstrom",
             PluralName: "Angstroms",
             Abbreviations: ["Å", "A"],
-            Factor: 1,
+            Factor: 1E-10,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e-10,
-            FromUnitToBase: static val => val * 1e-10,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Angstrom",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // DataMile
         LengthUnits.TryAdd("DataMile", new Unit(
@@ -511,7 +511,7 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Data_mile",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -520,7 +520,7 @@ public static partial class UoMRegistry {
             "Many different units of length have been used around the world. The main units in modern use are U.S. customary units in the United States and the Metric system elsewhere. British Imperial units are still used for some purposes in the United Kingdom and some other countries. The metric system is sub-divided into SI and non-SI units.",
             LengthUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 1 },
-            "",
+            null,
             false,
             1
         );

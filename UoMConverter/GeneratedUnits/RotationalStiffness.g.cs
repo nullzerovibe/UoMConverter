@@ -18,32 +18,32 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloNewtonMeterPerRadian
-        RotationalStiffnessUnits.TryAdd("KiloNewtonMeterPerRadian", new Unit(
-            SingularName: "KiloNewtonMeterPerRadian",
-            PluralName: "KiloNewtonMetersPerRadian",
+        // KilonewtonMeterPerRadian
+        RotationalStiffnessUnits.TryAdd("KilonewtonMeterPerRadian", new Unit(
+            SingularName: "KilonewtonMeterPerRadian",
+            PluralName: "KilonewtonMetersPerRadian",
             Abbreviations: ["kN·m/rad", "kNm/rad"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaNewtonMeterPerRadian
-        RotationalStiffnessUnits.TryAdd("MegaNewtonMeterPerRadian", new Unit(
-            SingularName: "MegaNewtonMeterPerRadian",
-            PluralName: "MegaNewtonMetersPerRadian",
+        // MeganewtonMeterPerRadian
+        RotationalStiffnessUnits.TryAdd("MeganewtonMeterPerRadian", new Unit(
+            SingularName: "MeganewtonMeterPerRadian",
+            PluralName: "MeganewtonMetersPerRadian",
             Abbreviations: ["MN·m/rad", "MNm/rad"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundForceFootPerDegrees
         RotationalStiffnessUnits.TryAdd("PoundForceFootPerDegrees", new Unit(
@@ -52,10 +52,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["lbf·ft/deg"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (4.4482216152605 * 0.3048 * 180 / Math.PI),
-            FromUnitToBase: static val => val * (4.4482216152605 * 0.3048 * 180 / Math.PI),
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (4.4482216152605 * 0.3048 * 180 / Math.PI)),
+            FromUnitToBase: static val => (val * (4.4482216152605 * 0.3048 * 180 / Math.PI)),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // KilopoundForceFootPerDegrees
         RotationalStiffnessUnits.TryAdd("KilopoundForceFootPerDegrees", new Unit(
@@ -64,10 +64,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["kipf·ft/°", "kip·ft/°g", "k·ft/°", "kipf·ft/deg", "kip·ft/deg", "k·ft/deg"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (4.4482216152605e3 * 0.3048 * 180 / Math.PI),
-            FromUnitToBase: static val => val * (4.4482216152605e3 * 0.3048 * 180 / Math.PI),
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (4.4482216152605e3 * 0.3048 * 180 / Math.PI)),
+            FromUnitToBase: static val => (val * (4.4482216152605e3 * 0.3048 * 180 / Math.PI)),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // NewtonMillimeterPerDegree
         RotationalStiffnessUnits.TryAdd("NewtonMillimeterPerDegree", new Unit(
@@ -76,106 +76,106 @@ public static partial class UoMRegistry {
             Abbreviations: ["N·mm/deg", "Nmm/deg", "N·mm/°", "Nmm/°"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / 180 * Math.PI * 1000,
-            FromUnitToBase: static val => val * 180 / Math.PI * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / 180 * Math.PI * 1000),
+            FromUnitToBase: static val => (val * 180 / Math.PI * 0.001),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoNewtonMillimeterPerDegree
-        RotationalStiffnessUnits.TryAdd("NanoNewtonMillimeterPerDegree", new Unit(
-            SingularName: "NanoNewtonMillimeterPerDegree",
-            PluralName: "NanoNewtonMillimetersPerDegree",
+        // NanonewtonMillimeterPerDegree
+        RotationalStiffnessUnits.TryAdd("NanonewtonMillimeterPerDegree", new Unit(
+            SingularName: "NanonewtonMillimeterPerDegree",
+            PluralName: "NanonewtonMillimetersPerDegree",
             Abbreviations: ["nN·mm/deg", "nNmm/deg", "nN·mm/°", "nNmm/°"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 180 * Math.PI * 1000) / 1E-09,
-            FromUnitToBase: static val => (val * 180 / Math.PI * 0.001) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / 180 * Math.PI * 1000) / 1E-09),
+            FromUnitToBase: static val => ((val * 1E-09) * 180 / Math.PI * 0.001),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroNewtonMillimeterPerDegree
-        RotationalStiffnessUnits.TryAdd("MicroNewtonMillimeterPerDegree", new Unit(
-            SingularName: "MicroNewtonMillimeterPerDegree",
-            PluralName: "MicroNewtonMillimetersPerDegree",
+        // MicronewtonMillimeterPerDegree
+        RotationalStiffnessUnits.TryAdd("MicronewtonMillimeterPerDegree", new Unit(
+            SingularName: "MicronewtonMillimeterPerDegree",
+            PluralName: "MicronewtonMillimetersPerDegree",
             Abbreviations: ["µN·mm/deg", "µNmm/deg", "µN·mm/°", "µNmm/°"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 180 * Math.PI * 1000) / 1E-06,
-            FromUnitToBase: static val => (val * 180 / Math.PI * 0.001) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / 180 * Math.PI * 1000) / 1E-06),
+            FromUnitToBase: static val => ((val * 1E-06) * 180 / Math.PI * 0.001),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliNewtonMillimeterPerDegree
-        RotationalStiffnessUnits.TryAdd("MilliNewtonMillimeterPerDegree", new Unit(
-            SingularName: "MilliNewtonMillimeterPerDegree",
-            PluralName: "MilliNewtonMillimetersPerDegree",
+        // MillinewtonMillimeterPerDegree
+        RotationalStiffnessUnits.TryAdd("MillinewtonMillimeterPerDegree", new Unit(
+            SingularName: "MillinewtonMillimeterPerDegree",
+            PluralName: "MillinewtonMillimetersPerDegree",
             Abbreviations: ["mN·mm/deg", "mNmm/deg", "mN·mm/°", "mNmm/°"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 180 * Math.PI * 1000) / 0.001,
-            FromUnitToBase: static val => (val * 180 / Math.PI * 0.001) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / 180 * Math.PI * 1000) / 0.001),
+            FromUnitToBase: static val => ((val * 0.001) * 180 / Math.PI * 0.001),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiNewtonMillimeterPerDegree
-        RotationalStiffnessUnits.TryAdd("CentiNewtonMillimeterPerDegree", new Unit(
-            SingularName: "CentiNewtonMillimeterPerDegree",
-            PluralName: "CentiNewtonMillimetersPerDegree",
+        // CentinewtonMillimeterPerDegree
+        RotationalStiffnessUnits.TryAdd("CentinewtonMillimeterPerDegree", new Unit(
+            SingularName: "CentinewtonMillimeterPerDegree",
+            PluralName: "CentinewtonMillimetersPerDegree",
             Abbreviations: ["cN·mm/deg", "cNmm/deg", "cN·mm/°", "cNmm/°"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 180 * Math.PI * 1000) / 0.01,
-            FromUnitToBase: static val => (val * 180 / Math.PI * 0.001) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / 180 * Math.PI * 1000) / 0.01),
+            FromUnitToBase: static val => ((val * 0.01) * 180 / Math.PI * 0.001),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciNewtonMillimeterPerDegree
-        RotationalStiffnessUnits.TryAdd("DeciNewtonMillimeterPerDegree", new Unit(
-            SingularName: "DeciNewtonMillimeterPerDegree",
-            PluralName: "DeciNewtonMillimetersPerDegree",
+        // DecinewtonMillimeterPerDegree
+        RotationalStiffnessUnits.TryAdd("DecinewtonMillimeterPerDegree", new Unit(
+            SingularName: "DecinewtonMillimeterPerDegree",
+            PluralName: "DecinewtonMillimetersPerDegree",
             Abbreviations: ["dN·mm/deg", "dNmm/deg", "dN·mm/°", "dNmm/°"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 180 * Math.PI * 1000) / 0.1,
-            FromUnitToBase: static val => (val * 180 / Math.PI * 0.001) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / 180 * Math.PI * 1000) / 0.1),
+            FromUnitToBase: static val => ((val * 0.1) * 180 / Math.PI * 0.001),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DecaNewtonMillimeterPerDegree
-        RotationalStiffnessUnits.TryAdd("DecaNewtonMillimeterPerDegree", new Unit(
-            SingularName: "DecaNewtonMillimeterPerDegree",
-            PluralName: "DecaNewtonMillimetersPerDegree",
+        // DecanewtonMillimeterPerDegree
+        RotationalStiffnessUnits.TryAdd("DecanewtonMillimeterPerDegree", new Unit(
+            SingularName: "DecanewtonMillimeterPerDegree",
+            PluralName: "DecanewtonMillimetersPerDegree",
             Abbreviations: ["daN·mm/deg", "daNmm/deg", "daN·mm/°", "daNmm/°"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 180 * Math.PI * 1000) / 10,
-            FromUnitToBase: static val => (val * 180 / Math.PI * 0.001) * 10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / 180 * Math.PI * 1000) / 10),
+            FromUnitToBase: static val => ((val * 10) * 180 / Math.PI * 0.001),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloNewtonMillimeterPerDegree
-        RotationalStiffnessUnits.TryAdd("KiloNewtonMillimeterPerDegree", new Unit(
-            SingularName: "KiloNewtonMillimeterPerDegree",
-            PluralName: "KiloNewtonMillimetersPerDegree",
+        // KilonewtonMillimeterPerDegree
+        RotationalStiffnessUnits.TryAdd("KilonewtonMillimeterPerDegree", new Unit(
+            SingularName: "KilonewtonMillimeterPerDegree",
+            PluralName: "KilonewtonMillimetersPerDegree",
             Abbreviations: ["kN·mm/deg", "kNmm/deg", "kN·mm/°", "kNmm/°"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 180 * Math.PI * 1000) / 1000,
-            FromUnitToBase: static val => (val * 180 / Math.PI * 0.001) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / 180 * Math.PI * 1000) / 1000),
+            FromUnitToBase: static val => ((val * 1000) * 180 / Math.PI * 0.001),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaNewtonMillimeterPerDegree
-        RotationalStiffnessUnits.TryAdd("MegaNewtonMillimeterPerDegree", new Unit(
-            SingularName: "MegaNewtonMillimeterPerDegree",
-            PluralName: "MegaNewtonMillimetersPerDegree",
+        // MeganewtonMillimeterPerDegree
+        RotationalStiffnessUnits.TryAdd("MeganewtonMillimeterPerDegree", new Unit(
+            SingularName: "MeganewtonMillimeterPerDegree",
+            PluralName: "MeganewtonMillimetersPerDegree",
             Abbreviations: ["MN·mm/deg", "MNmm/deg", "MN·mm/°", "MNmm/°"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 180 * Math.PI * 1000) / 1000000,
-            FromUnitToBase: static val => (val * 180 / Math.PI * 0.001) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / 180 * Math.PI * 1000) / 1000000),
+            FromUnitToBase: static val => ((val * 1000000) * 180 / Math.PI * 0.001),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // NewtonMeterPerDegree
         RotationalStiffnessUnits.TryAdd("NewtonMeterPerDegree", new Unit(
@@ -184,106 +184,106 @@ public static partial class UoMRegistry {
             Abbreviations: ["N·m/deg", "Nm/deg", "N·m/°", "Nm/°"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (180 / Math.PI),
-            FromUnitToBase: static val => val * (180 / Math.PI),
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (180 / Math.PI)),
+            FromUnitToBase: static val => (val * (180 / Math.PI)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoNewtonMeterPerDegree
-        RotationalStiffnessUnits.TryAdd("NanoNewtonMeterPerDegree", new Unit(
-            SingularName: "NanoNewtonMeterPerDegree",
-            PluralName: "NanoNewtonMetersPerDegree",
+        // NanonewtonMeterPerDegree
+        RotationalStiffnessUnits.TryAdd("NanonewtonMeterPerDegree", new Unit(
+            SingularName: "NanonewtonMeterPerDegree",
+            PluralName: "NanonewtonMetersPerDegree",
             Abbreviations: ["nN·m/deg", "nNm/deg", "nN·m/°", "nNm/°"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / (180 / Math.PI)) / 1E-09,
-            FromUnitToBase: static val => (val * (180 / Math.PI)) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / (180 / Math.PI)) / 1E-09),
+            FromUnitToBase: static val => ((val * 1E-09) * (180 / Math.PI)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroNewtonMeterPerDegree
-        RotationalStiffnessUnits.TryAdd("MicroNewtonMeterPerDegree", new Unit(
-            SingularName: "MicroNewtonMeterPerDegree",
-            PluralName: "MicroNewtonMetersPerDegree",
+        // MicronewtonMeterPerDegree
+        RotationalStiffnessUnits.TryAdd("MicronewtonMeterPerDegree", new Unit(
+            SingularName: "MicronewtonMeterPerDegree",
+            PluralName: "MicronewtonMetersPerDegree",
             Abbreviations: ["µN·m/deg", "µNm/deg", "µN·m/°", "µNm/°"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / (180 / Math.PI)) / 1E-06,
-            FromUnitToBase: static val => (val * (180 / Math.PI)) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / (180 / Math.PI)) / 1E-06),
+            FromUnitToBase: static val => ((val * 1E-06) * (180 / Math.PI)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliNewtonMeterPerDegree
-        RotationalStiffnessUnits.TryAdd("MilliNewtonMeterPerDegree", new Unit(
-            SingularName: "MilliNewtonMeterPerDegree",
-            PluralName: "MilliNewtonMetersPerDegree",
+        // MillinewtonMeterPerDegree
+        RotationalStiffnessUnits.TryAdd("MillinewtonMeterPerDegree", new Unit(
+            SingularName: "MillinewtonMeterPerDegree",
+            PluralName: "MillinewtonMetersPerDegree",
             Abbreviations: ["mN·m/deg", "mNm/deg", "mN·m/°", "mNm/°"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / (180 / Math.PI)) / 0.001,
-            FromUnitToBase: static val => (val * (180 / Math.PI)) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / (180 / Math.PI)) / 0.001),
+            FromUnitToBase: static val => ((val * 0.001) * (180 / Math.PI)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiNewtonMeterPerDegree
-        RotationalStiffnessUnits.TryAdd("CentiNewtonMeterPerDegree", new Unit(
-            SingularName: "CentiNewtonMeterPerDegree",
-            PluralName: "CentiNewtonMetersPerDegree",
+        // CentinewtonMeterPerDegree
+        RotationalStiffnessUnits.TryAdd("CentinewtonMeterPerDegree", new Unit(
+            SingularName: "CentinewtonMeterPerDegree",
+            PluralName: "CentinewtonMetersPerDegree",
             Abbreviations: ["cN·m/deg", "cNm/deg", "cN·m/°", "cNm/°"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / (180 / Math.PI)) / 0.01,
-            FromUnitToBase: static val => (val * (180 / Math.PI)) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / (180 / Math.PI)) / 0.01),
+            FromUnitToBase: static val => ((val * 0.01) * (180 / Math.PI)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciNewtonMeterPerDegree
-        RotationalStiffnessUnits.TryAdd("DeciNewtonMeterPerDegree", new Unit(
-            SingularName: "DeciNewtonMeterPerDegree",
-            PluralName: "DeciNewtonMetersPerDegree",
+        // DecinewtonMeterPerDegree
+        RotationalStiffnessUnits.TryAdd("DecinewtonMeterPerDegree", new Unit(
+            SingularName: "DecinewtonMeterPerDegree",
+            PluralName: "DecinewtonMetersPerDegree",
             Abbreviations: ["dN·m/deg", "dNm/deg", "dN·m/°", "dNm/°"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / (180 / Math.PI)) / 0.1,
-            FromUnitToBase: static val => (val * (180 / Math.PI)) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / (180 / Math.PI)) / 0.1),
+            FromUnitToBase: static val => ((val * 0.1) * (180 / Math.PI)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DecaNewtonMeterPerDegree
-        RotationalStiffnessUnits.TryAdd("DecaNewtonMeterPerDegree", new Unit(
-            SingularName: "DecaNewtonMeterPerDegree",
-            PluralName: "DecaNewtonMetersPerDegree",
+        // DecanewtonMeterPerDegree
+        RotationalStiffnessUnits.TryAdd("DecanewtonMeterPerDegree", new Unit(
+            SingularName: "DecanewtonMeterPerDegree",
+            PluralName: "DecanewtonMetersPerDegree",
             Abbreviations: ["daN·m/deg", "daNm/deg", "daN·m/°", "daNm/°"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / (180 / Math.PI)) / 10,
-            FromUnitToBase: static val => (val * (180 / Math.PI)) * 10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / (180 / Math.PI)) / 10),
+            FromUnitToBase: static val => ((val * 10) * (180 / Math.PI)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloNewtonMeterPerDegree
-        RotationalStiffnessUnits.TryAdd("KiloNewtonMeterPerDegree", new Unit(
-            SingularName: "KiloNewtonMeterPerDegree",
-            PluralName: "KiloNewtonMetersPerDegree",
+        // KilonewtonMeterPerDegree
+        RotationalStiffnessUnits.TryAdd("KilonewtonMeterPerDegree", new Unit(
+            SingularName: "KilonewtonMeterPerDegree",
+            PluralName: "KilonewtonMetersPerDegree",
             Abbreviations: ["kN·m/deg", "kNm/deg", "kN·m/°", "kNm/°"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / (180 / Math.PI)) / 1000,
-            FromUnitToBase: static val => (val * (180 / Math.PI)) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / (180 / Math.PI)) / 1000),
+            FromUnitToBase: static val => ((val * 1000) * (180 / Math.PI)),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaNewtonMeterPerDegree
-        RotationalStiffnessUnits.TryAdd("MegaNewtonMeterPerDegree", new Unit(
-            SingularName: "MegaNewtonMeterPerDegree",
-            PluralName: "MegaNewtonMetersPerDegree",
+        // MeganewtonMeterPerDegree
+        RotationalStiffnessUnits.TryAdd("MeganewtonMeterPerDegree", new Unit(
+            SingularName: "MeganewtonMeterPerDegree",
+            PluralName: "MeganewtonMetersPerDegree",
             Abbreviations: ["MN·m/deg", "MNm/deg", "MN·m/°", "MNm/°"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / (180 / Math.PI)) / 1000000,
-            FromUnitToBase: static val => (val * (180 / Math.PI)) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / (180 / Math.PI)) / 1000000),
+            FromUnitToBase: static val => ((val * 1000000) * (180 / Math.PI)),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // NewtonMillimeterPerRadian
         RotationalStiffnessUnits.TryAdd("NewtonMillimeterPerRadian", new Unit(
@@ -294,104 +294,104 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoNewtonMillimeterPerRadian
-        RotationalStiffnessUnits.TryAdd("NanoNewtonMillimeterPerRadian", new Unit(
-            SingularName: "NanoNewtonMillimeterPerRadian",
-            PluralName: "NanoNewtonMillimetersPerRadian",
+        // NanonewtonMillimeterPerRadian
+        RotationalStiffnessUnits.TryAdd("NanonewtonMillimeterPerRadian", new Unit(
+            SingularName: "NanonewtonMillimeterPerRadian",
+            PluralName: "NanonewtonMillimetersPerRadian",
             Abbreviations: ["nN·mm/rad", "nNmm/rad"],
-            Factor: 1,
+            Factor: 1.0000000000000002E-12,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1000) / 1E-09,
-            FromUnitToBase: static val => (val * 0.001) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroNewtonMillimeterPerRadian
-        RotationalStiffnessUnits.TryAdd("MicroNewtonMillimeterPerRadian", new Unit(
-            SingularName: "MicroNewtonMillimeterPerRadian",
-            PluralName: "MicroNewtonMillimetersPerRadian",
+        // MicronewtonMillimeterPerRadian
+        RotationalStiffnessUnits.TryAdd("MicronewtonMillimeterPerRadian", new Unit(
+            SingularName: "MicronewtonMillimeterPerRadian",
+            PluralName: "MicronewtonMillimetersPerRadian",
             Abbreviations: ["µN·mm/rad", "µNmm/rad"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1000) / 1E-06,
-            FromUnitToBase: static val => (val * 0.001) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliNewtonMillimeterPerRadian
-        RotationalStiffnessUnits.TryAdd("MilliNewtonMillimeterPerRadian", new Unit(
-            SingularName: "MilliNewtonMillimeterPerRadian",
-            PluralName: "MilliNewtonMillimetersPerRadian",
+        // MillinewtonMillimeterPerRadian
+        RotationalStiffnessUnits.TryAdd("MillinewtonMillimeterPerRadian", new Unit(
+            SingularName: "MillinewtonMillimeterPerRadian",
+            PluralName: "MillinewtonMillimetersPerRadian",
             Abbreviations: ["mN·mm/rad", "mNmm/rad"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1000) / 0.001,
-            FromUnitToBase: static val => (val * 0.001) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiNewtonMillimeterPerRadian
-        RotationalStiffnessUnits.TryAdd("CentiNewtonMillimeterPerRadian", new Unit(
-            SingularName: "CentiNewtonMillimeterPerRadian",
-            PluralName: "CentiNewtonMillimetersPerRadian",
+        // CentinewtonMillimeterPerRadian
+        RotationalStiffnessUnits.TryAdd("CentinewtonMillimeterPerRadian", new Unit(
+            SingularName: "CentinewtonMillimeterPerRadian",
+            PluralName: "CentinewtonMillimetersPerRadian",
             Abbreviations: ["cN·mm/rad", "cNmm/rad"],
-            Factor: 1,
+            Factor: 1E-05,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1000) / 0.01,
-            FromUnitToBase: static val => (val * 0.001) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciNewtonMillimeterPerRadian
-        RotationalStiffnessUnits.TryAdd("DeciNewtonMillimeterPerRadian", new Unit(
-            SingularName: "DeciNewtonMillimeterPerRadian",
-            PluralName: "DeciNewtonMillimetersPerRadian",
+        // DecinewtonMillimeterPerRadian
+        RotationalStiffnessUnits.TryAdd("DecinewtonMillimeterPerRadian", new Unit(
+            SingularName: "DecinewtonMillimeterPerRadian",
+            PluralName: "DecinewtonMillimetersPerRadian",
             Abbreviations: ["dN·mm/rad", "dNmm/rad"],
-            Factor: 1,
+            Factor: 0.0001,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1000) / 0.1,
-            FromUnitToBase: static val => (val * 0.001) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DecaNewtonMillimeterPerRadian
-        RotationalStiffnessUnits.TryAdd("DecaNewtonMillimeterPerRadian", new Unit(
-            SingularName: "DecaNewtonMillimeterPerRadian",
-            PluralName: "DecaNewtonMillimetersPerRadian",
+        // DecanewtonMillimeterPerRadian
+        RotationalStiffnessUnits.TryAdd("DecanewtonMillimeterPerRadian", new Unit(
+            SingularName: "DecanewtonMillimeterPerRadian",
+            PluralName: "DecanewtonMillimetersPerRadian",
             Abbreviations: ["daN·mm/rad", "daNmm/rad"],
-            Factor: 1,
+            Factor: 0.01,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1000) / 10,
-            FromUnitToBase: static val => (val * 0.001) * 10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloNewtonMillimeterPerRadian
-        RotationalStiffnessUnits.TryAdd("KiloNewtonMillimeterPerRadian", new Unit(
-            SingularName: "KiloNewtonMillimeterPerRadian",
-            PluralName: "KiloNewtonMillimetersPerRadian",
+        // KilonewtonMillimeterPerRadian
+        RotationalStiffnessUnits.TryAdd("KilonewtonMillimeterPerRadian", new Unit(
+            SingularName: "KilonewtonMillimeterPerRadian",
+            PluralName: "KilonewtonMillimetersPerRadian",
             Abbreviations: ["kN·mm/rad", "kNmm/rad"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1000) / 1000,
-            FromUnitToBase: static val => (val * 0.001) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaNewtonMillimeterPerRadian
-        RotationalStiffnessUnits.TryAdd("MegaNewtonMillimeterPerRadian", new Unit(
-            SingularName: "MegaNewtonMillimeterPerRadian",
-            PluralName: "MegaNewtonMillimetersPerRadian",
+        // MeganewtonMillimeterPerRadian
+        RotationalStiffnessUnits.TryAdd("MeganewtonMillimeterPerRadian", new Unit(
+            SingularName: "MeganewtonMillimeterPerRadian",
+            PluralName: "MeganewtonMillimetersPerRadian",
             Abbreviations: ["MN·mm/rad", "MNmm/rad"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1000) / 1000000,
-            FromUnitToBase: static val => (val * 0.001) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundForceFeetPerRadian
         RotationalStiffnessUnits.TryAdd("PoundForceFeetPerRadian", new Unit(
@@ -400,10 +400,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["lbf·ft/rad"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (4.4482216152605 * 0.3048),
-            FromUnitToBase: static val => val * 4.4482216152605 * 0.3048,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (4.4482216152605 * 0.3048)),
+            FromUnitToBase: static val => (val * 4.4482216152605 * 0.3048),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // KilopoundForceFootPerRadian
         RotationalStiffnessUnits.TryAdd("KilopoundForceFootPerRadian", new Unit(
@@ -412,10 +412,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["kipf·ft/rad", "kip·ft/rad", "k·ft/rad"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (4.4482216152605e3 * 0.3048),
-            FromUnitToBase: static val => val * 4.4482216152605e3 * 0.3048,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (4.4482216152605e3 * 0.3048)),
+            FromUnitToBase: static val => (val * 4.4482216152605e3 * 0.3048),
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -424,7 +424,7 @@ public static partial class UoMRegistry {
             "https://en.wikipedia.org/wiki/Stiffness#Rotational_stiffness",
             RotationalStiffnessUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 2, ["M"] = 1, ["T"] = -2 },
-            "",
+            null,
             false,
             1
         );

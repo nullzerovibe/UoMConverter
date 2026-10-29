@@ -18,44 +18,44 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // DecimeterToTheFourth
         AreaMomentOfInertiaUnits.TryAdd("DecimeterToTheFourth", new Unit(
             SingularName: "DecimeterToTheFourth",
             PluralName: "DecimetersToTheFourth",
             Abbreviations: ["dm⁴"],
-            Factor: 1,
+            Factor: 0.0001,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e4,
-            FromUnitToBase: static val => val / 1e4,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CentimeterToTheFourth
         AreaMomentOfInertiaUnits.TryAdd("CentimeterToTheFourth", new Unit(
             SingularName: "CentimeterToTheFourth",
             PluralName: "CentimetersToTheFourth",
             Abbreviations: ["cm⁴"],
-            Factor: 1,
+            Factor: 1E-08,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e8,
-            FromUnitToBase: static val => val / 1e8,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // MillimeterToTheFourth
         AreaMomentOfInertiaUnits.TryAdd("MillimeterToTheFourth", new Unit(
             SingularName: "MillimeterToTheFourth",
             PluralName: "MillimetersToTheFourth",
             Abbreviations: ["mm⁴"],
-            Factor: 1,
+            Factor: 1E-12,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e12,
-            FromUnitToBase: static val => val / 1e12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // FootToTheFourth
         AreaMomentOfInertiaUnits.TryAdd("FootToTheFourth", new Unit(
@@ -66,8 +66,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // InchToTheFourth
         AreaMomentOfInertiaUnits.TryAdd("InchToTheFourth", new Unit(
@@ -78,8 +78,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -88,7 +88,7 @@ public static partial class UoMRegistry {
             "A geometric property of an area that reflects how its points are distributed with regard to an axis.",
             AreaMomentOfInertiaUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 4 },
-            "",
+            null,
             false,
             1
         );

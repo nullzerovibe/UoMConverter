@@ -16,10 +16,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["lb/(lbf·h)"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 9.80665e-3 * 3600 / 1000,
-            FromUnitToBase: static val => val * 1000 / (9.80665e-3 * 3600),
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 9.80665e-3 * 3600 / 1000),
+            FromUnitToBase: static val => (val * 1000 / (9.80665e-3 * 3600)),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // KilogramPerKilogramForceHour
         SpecificFuelConsumptionUnits.TryAdd("KilogramPerKilogramForceHour", new Unit(
@@ -28,10 +28,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["kg/(kgf·h)"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 9.80665e-3 * 3600 / 1000,
-            FromUnitToBase: static val => val * 1000 / (9.80665e-3 * 3600),
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 9.80665e-3 * 3600 / 1000),
+            FromUnitToBase: static val => (val * 1000 / (9.80665e-3 * 3600)),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // GramPerKilonewtonSecond
         SpecificFuelConsumptionUnits.TryAdd("GramPerKilonewtonSecond", new Unit(
@@ -42,20 +42,20 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloGramPerKilonewtonSecond
-        SpecificFuelConsumptionUnits.TryAdd("KiloGramPerKilonewtonSecond", new Unit(
-            SingularName: "KiloGramPerKilonewtonSecond",
-            PluralName: "KiloGramsPerKilonewtonSecond",
+        // KilogramPerKilonewtonSecond
+        SpecificFuelConsumptionUnits.TryAdd("KilogramPerKilonewtonSecond", new Unit(
+            SingularName: "KilogramPerKilonewtonSecond",
+            PluralName: "KilogramsPerKilonewtonSecond",
             Abbreviations: ["kg/(kN·s)"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -64,7 +64,7 @@ public static partial class UoMRegistry {
             "SFC is the fuel efficiency of an engine design with respect to thrust output",
             SpecificFuelConsumptionUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = -1, ["T"] = 1 },
-            "",
+            null,
             false,
             1
         );

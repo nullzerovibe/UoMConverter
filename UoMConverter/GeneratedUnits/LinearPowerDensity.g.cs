@@ -18,236 +18,236 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliWattPerMeter
-        LinearPowerDensityUnits.TryAdd("MilliWattPerMeter", new Unit(
-            SingularName: "MilliWattPerMeter",
-            PluralName: "MilliWattsPerMeter",
+        // MilliwattPerMeter
+        LinearPowerDensityUnits.TryAdd("MilliwattPerMeter", new Unit(
+            SingularName: "MilliwattPerMeter",
+            PluralName: "MilliwattsPerMeter",
             Abbreviations: ["mW/m"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloWattPerMeter
-        LinearPowerDensityUnits.TryAdd("KiloWattPerMeter", new Unit(
-            SingularName: "KiloWattPerMeter",
-            PluralName: "KiloWattsPerMeter",
+        // KilowattPerMeter
+        LinearPowerDensityUnits.TryAdd("KilowattPerMeter", new Unit(
+            SingularName: "KilowattPerMeter",
+            PluralName: "KilowattsPerMeter",
             Abbreviations: ["kW/m"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaWattPerMeter
-        LinearPowerDensityUnits.TryAdd("MegaWattPerMeter", new Unit(
-            SingularName: "MegaWattPerMeter",
-            PluralName: "MegaWattsPerMeter",
+        // MegawattPerMeter
+        LinearPowerDensityUnits.TryAdd("MegawattPerMeter", new Unit(
+            SingularName: "MegawattPerMeter",
+            PluralName: "MegawattsPerMeter",
             Abbreviations: ["MW/m"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaWattPerMeter
-        LinearPowerDensityUnits.TryAdd("GigaWattPerMeter", new Unit(
-            SingularName: "GigaWattPerMeter",
-            PluralName: "GigaWattsPerMeter",
+        // GigawattPerMeter
+        LinearPowerDensityUnits.TryAdd("GigawattPerMeter", new Unit(
+            SingularName: "GigawattPerMeter",
+            PluralName: "GigawattsPerMeter",
             Abbreviations: ["GW/m"],
-            Factor: 1,
+            Factor: 1000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000,
-            FromUnitToBase: static val => (val) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // WattPerCentimeter
         LinearPowerDensityUnits.TryAdd("WattPerCentimeter", new Unit(
             SingularName: "WattPerCentimeter",
             PluralName: "WattsPerCentimeter",
             Abbreviations: ["W/cm"],
-            Factor: 1,
+            Factor: 100,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e2,
-            FromUnitToBase: static val => val * 1e2,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliWattPerCentimeter
-        LinearPowerDensityUnits.TryAdd("MilliWattPerCentimeter", new Unit(
-            SingularName: "MilliWattPerCentimeter",
-            PluralName: "MilliWattsPerCentimeter",
+        // MilliwattPerCentimeter
+        LinearPowerDensityUnits.TryAdd("MilliwattPerCentimeter", new Unit(
+            SingularName: "MilliwattPerCentimeter",
+            PluralName: "MilliwattsPerCentimeter",
             Abbreviations: ["mW/cm"],
-            Factor: 1,
+            Factor: 0.1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e2) / 0.001,
-            FromUnitToBase: static val => (val * 1e2) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloWattPerCentimeter
-        LinearPowerDensityUnits.TryAdd("KiloWattPerCentimeter", new Unit(
-            SingularName: "KiloWattPerCentimeter",
-            PluralName: "KiloWattsPerCentimeter",
+        // KilowattPerCentimeter
+        LinearPowerDensityUnits.TryAdd("KilowattPerCentimeter", new Unit(
+            SingularName: "KilowattPerCentimeter",
+            PluralName: "KilowattsPerCentimeter",
             Abbreviations: ["kW/cm"],
-            Factor: 1,
+            Factor: 100000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e2) / 1000,
-            FromUnitToBase: static val => (val * 1e2) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaWattPerCentimeter
-        LinearPowerDensityUnits.TryAdd("MegaWattPerCentimeter", new Unit(
-            SingularName: "MegaWattPerCentimeter",
-            PluralName: "MegaWattsPerCentimeter",
+        // MegawattPerCentimeter
+        LinearPowerDensityUnits.TryAdd("MegawattPerCentimeter", new Unit(
+            SingularName: "MegawattPerCentimeter",
+            PluralName: "MegawattsPerCentimeter",
             Abbreviations: ["MW/cm"],
-            Factor: 1,
+            Factor: 100000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e2) / 1000000,
-            FromUnitToBase: static val => (val * 1e2) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaWattPerCentimeter
-        LinearPowerDensityUnits.TryAdd("GigaWattPerCentimeter", new Unit(
-            SingularName: "GigaWattPerCentimeter",
-            PluralName: "GigaWattsPerCentimeter",
+        // GigawattPerCentimeter
+        LinearPowerDensityUnits.TryAdd("GigawattPerCentimeter", new Unit(
+            SingularName: "GigawattPerCentimeter",
+            PluralName: "GigawattsPerCentimeter",
             Abbreviations: ["GW/cm"],
-            Factor: 1,
+            Factor: 100000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e2) / 1000000000,
-            FromUnitToBase: static val => (val * 1e2) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // WattPerMillimeter
         LinearPowerDensityUnits.TryAdd("WattPerMillimeter", new Unit(
             SingularName: "WattPerMillimeter",
             PluralName: "WattsPerMillimeter",
             Abbreviations: ["W/mm"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e3,
-            FromUnitToBase: static val => val * 1e3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliWattPerMillimeter
-        LinearPowerDensityUnits.TryAdd("MilliWattPerMillimeter", new Unit(
-            SingularName: "MilliWattPerMillimeter",
-            PluralName: "MilliWattsPerMillimeter",
+        // MilliwattPerMillimeter
+        LinearPowerDensityUnits.TryAdd("MilliwattPerMillimeter", new Unit(
+            SingularName: "MilliwattPerMillimeter",
+            PluralName: "MilliwattsPerMillimeter",
             Abbreviations: ["mW/mm"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e3) / 0.001,
-            FromUnitToBase: static val => (val * 1e3) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloWattPerMillimeter
-        LinearPowerDensityUnits.TryAdd("KiloWattPerMillimeter", new Unit(
-            SingularName: "KiloWattPerMillimeter",
-            PluralName: "KiloWattsPerMillimeter",
+        // KilowattPerMillimeter
+        LinearPowerDensityUnits.TryAdd("KilowattPerMillimeter", new Unit(
+            SingularName: "KilowattPerMillimeter",
+            PluralName: "KilowattsPerMillimeter",
             Abbreviations: ["kW/mm"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e3) / 1000,
-            FromUnitToBase: static val => (val * 1e3) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaWattPerMillimeter
-        LinearPowerDensityUnits.TryAdd("MegaWattPerMillimeter", new Unit(
-            SingularName: "MegaWattPerMillimeter",
-            PluralName: "MegaWattsPerMillimeter",
+        // MegawattPerMillimeter
+        LinearPowerDensityUnits.TryAdd("MegawattPerMillimeter", new Unit(
+            SingularName: "MegawattPerMillimeter",
+            PluralName: "MegawattsPerMillimeter",
             Abbreviations: ["MW/mm"],
-            Factor: 1,
+            Factor: 1000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e3) / 1000000,
-            FromUnitToBase: static val => (val * 1e3) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaWattPerMillimeter
-        LinearPowerDensityUnits.TryAdd("GigaWattPerMillimeter", new Unit(
-            SingularName: "GigaWattPerMillimeter",
-            PluralName: "GigaWattsPerMillimeter",
+        // GigawattPerMillimeter
+        LinearPowerDensityUnits.TryAdd("GigawattPerMillimeter", new Unit(
+            SingularName: "GigawattPerMillimeter",
+            PluralName: "GigawattsPerMillimeter",
             Abbreviations: ["GW/mm"],
-            Factor: 1,
+            Factor: 1000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e3) / 1000000000,
-            FromUnitToBase: static val => (val * 1e3) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // WattPerInch
         LinearPowerDensityUnits.TryAdd("WattPerInch", new Unit(
             SingularName: "WattPerInch",
             PluralName: "WattsPerInch",
             Abbreviations: ["W/in"],
-            Factor: 1,
+            Factor: 39.37007874015748,
             Offset: 0,
-            FromBaseToUnit: static val => val * 2.54e-2,
-            FromUnitToBase: static val => val / 2.54e-2,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliWattPerInch
-        LinearPowerDensityUnits.TryAdd("MilliWattPerInch", new Unit(
-            SingularName: "MilliWattPerInch",
-            PluralName: "MilliWattsPerInch",
+        // MilliwattPerInch
+        LinearPowerDensityUnits.TryAdd("MilliwattPerInch", new Unit(
+            SingularName: "MilliwattPerInch",
+            PluralName: "MilliwattsPerInch",
             Abbreviations: ["mW/in"],
-            Factor: 1,
+            Factor: 0.03937007874015748,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 2.54e-2) / 0.001,
-            FromUnitToBase: static val => (val / 2.54e-2) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloWattPerInch
-        LinearPowerDensityUnits.TryAdd("KiloWattPerInch", new Unit(
-            SingularName: "KiloWattPerInch",
-            PluralName: "KiloWattsPerInch",
+        // KilowattPerInch
+        LinearPowerDensityUnits.TryAdd("KilowattPerInch", new Unit(
+            SingularName: "KilowattPerInch",
+            PluralName: "KilowattsPerInch",
             Abbreviations: ["kW/in"],
-            Factor: 1,
+            Factor: 39370.07874015748,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 2.54e-2) / 1000,
-            FromUnitToBase: static val => (val / 2.54e-2) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaWattPerInch
-        LinearPowerDensityUnits.TryAdd("MegaWattPerInch", new Unit(
-            SingularName: "MegaWattPerInch",
-            PluralName: "MegaWattsPerInch",
+        // MegawattPerInch
+        LinearPowerDensityUnits.TryAdd("MegawattPerInch", new Unit(
+            SingularName: "MegawattPerInch",
+            PluralName: "MegawattsPerInch",
             Abbreviations: ["MW/in"],
-            Factor: 1,
+            Factor: 39370078.740157485,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 2.54e-2) / 1000000,
-            FromUnitToBase: static val => (val / 2.54e-2) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaWattPerInch
-        LinearPowerDensityUnits.TryAdd("GigaWattPerInch", new Unit(
-            SingularName: "GigaWattPerInch",
-            PluralName: "GigaWattsPerInch",
+        // GigawattPerInch
+        LinearPowerDensityUnits.TryAdd("GigawattPerInch", new Unit(
+            SingularName: "GigawattPerInch",
+            PluralName: "GigawattsPerInch",
             Abbreviations: ["GW/in"],
-            Factor: 1,
+            Factor: 39370078740.15748,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 2.54e-2) / 1000000000,
-            FromUnitToBase: static val => (val / 2.54e-2) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // WattPerFoot
         LinearPowerDensityUnits.TryAdd("WattPerFoot", new Unit(
@@ -258,56 +258,56 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliWattPerFoot
-        LinearPowerDensityUnits.TryAdd("MilliWattPerFoot", new Unit(
-            SingularName: "MilliWattPerFoot",
-            PluralName: "MilliWattsPerFoot",
+        // MilliwattPerFoot
+        LinearPowerDensityUnits.TryAdd("MilliwattPerFoot", new Unit(
+            SingularName: "MilliwattPerFoot",
+            PluralName: "MilliwattsPerFoot",
             Abbreviations: ["mW/ft"],
-            Factor: 1,
+            Factor: 0.003280839895013123,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 0.3048) / 0.001,
-            FromUnitToBase: static val => (val / 0.3048) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloWattPerFoot
-        LinearPowerDensityUnits.TryAdd("KiloWattPerFoot", new Unit(
-            SingularName: "KiloWattPerFoot",
-            PluralName: "KiloWattsPerFoot",
+        // KilowattPerFoot
+        LinearPowerDensityUnits.TryAdd("KilowattPerFoot", new Unit(
+            SingularName: "KilowattPerFoot",
+            PluralName: "KilowattsPerFoot",
             Abbreviations: ["kW/ft"],
-            Factor: 1,
+            Factor: 3280.839895013123,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 0.3048) / 1000,
-            FromUnitToBase: static val => (val / 0.3048) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaWattPerFoot
-        LinearPowerDensityUnits.TryAdd("MegaWattPerFoot", new Unit(
-            SingularName: "MegaWattPerFoot",
-            PluralName: "MegaWattsPerFoot",
+        // MegawattPerFoot
+        LinearPowerDensityUnits.TryAdd("MegawattPerFoot", new Unit(
+            SingularName: "MegawattPerFoot",
+            PluralName: "MegawattsPerFoot",
             Abbreviations: ["MW/ft"],
-            Factor: 1,
+            Factor: 3280839.895013123,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 0.3048) / 1000000,
-            FromUnitToBase: static val => (val / 0.3048) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaWattPerFoot
-        LinearPowerDensityUnits.TryAdd("GigaWattPerFoot", new Unit(
-            SingularName: "GigaWattPerFoot",
-            PluralName: "GigaWattsPerFoot",
+        // GigawattPerFoot
+        LinearPowerDensityUnits.TryAdd("GigawattPerFoot", new Unit(
+            SingularName: "GigawattPerFoot",
+            PluralName: "GigawattsPerFoot",
             Abbreviations: ["GW/ft"],
-            Factor: 1,
+            Factor: 3280839895.013123,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 0.3048) / 1000000000,
-            FromUnitToBase: static val => (val / 0.3048) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -316,7 +316,7 @@ public static partial class UoMRegistry {
             "The Linear Power Density of a substance is its power per unit length.  The term linear density is most often used when describing the characteristics of one-dimensional objects, although linear density can also be used to describe the density of a three-dimensional quantity along one particular dimension.",
             LinearPowerDensityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["M"] = 1, ["L"] = 1, ["T"] = -3 },
-            "",
+            null,
             false,
             1
         );

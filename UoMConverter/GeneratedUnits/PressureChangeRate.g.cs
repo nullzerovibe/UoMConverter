@@ -18,32 +18,32 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloPascalPerSecond
-        PressureChangeRateUnits.TryAdd("KiloPascalPerSecond", new Unit(
-            SingularName: "KiloPascalPerSecond",
-            PluralName: "KiloPascalsPerSecond",
+        // KilopascalPerSecond
+        PressureChangeRateUnits.TryAdd("KilopascalPerSecond", new Unit(
+            SingularName: "KilopascalPerSecond",
+            PluralName: "KilopascalsPerSecond",
             Abbreviations: ["kPa/s"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaPascalPerSecond
-        PressureChangeRateUnits.TryAdd("MegaPascalPerSecond", new Unit(
-            SingularName: "MegaPascalPerSecond",
-            PluralName: "MegaPascalsPerSecond",
+        // MegapascalPerSecond
+        PressureChangeRateUnits.TryAdd("MegapascalPerSecond", new Unit(
+            SingularName: "MegapascalPerSecond",
+            PluralName: "MegapascalsPerSecond",
             Abbreviations: ["MPa/s"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PascalPerMinute
         PressureChangeRateUnits.TryAdd("PascalPerMinute", new Unit(
@@ -54,32 +54,32 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloPascalPerMinute
-        PressureChangeRateUnits.TryAdd("KiloPascalPerMinute", new Unit(
-            SingularName: "KiloPascalPerMinute",
-            PluralName: "KiloPascalsPerMinute",
+        // KilopascalPerMinute
+        PressureChangeRateUnits.TryAdd("KilopascalPerMinute", new Unit(
+            SingularName: "KilopascalPerMinute",
+            PluralName: "KilopascalsPerMinute",
             Abbreviations: ["kPa/min"],
-            Factor: 1,
+            Factor: 16.666666666666668,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 60) / 1000,
-            FromUnitToBase: static val => (val / 60) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaPascalPerMinute
-        PressureChangeRateUnits.TryAdd("MegaPascalPerMinute", new Unit(
-            SingularName: "MegaPascalPerMinute",
-            PluralName: "MegaPascalsPerMinute",
+        // MegapascalPerMinute
+        PressureChangeRateUnits.TryAdd("MegapascalPerMinute", new Unit(
+            SingularName: "MegapascalPerMinute",
+            PluralName: "MegapascalsPerMinute",
             Abbreviations: ["MPa/min"],
-            Factor: 1,
+            Factor: 16666.666666666668,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 60) / 1000000,
-            FromUnitToBase: static val => (val / 60) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // MillimeterOfMercuryPerSecond
         PressureChangeRateUnits.TryAdd("MillimeterOfMercuryPerSecond", new Unit(
@@ -90,8 +90,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // AtmospherePerSecond
         PressureChangeRateUnits.TryAdd("AtmospherePerSecond", new Unit(
@@ -100,10 +100,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["atm/s"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / (1.01325 * 1e5),
-            FromUnitToBase: static val => val * 1.01325 * 1e5,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / (1.01325 * 1e5)),
+            FromUnitToBase: static val => (val * 1.01325 * 1e5),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundForcePerSquareInchPerSecond
         PressureChangeRateUnits.TryAdd("PoundForcePerSquareInchPerSecond", new Unit(
@@ -112,34 +112,34 @@ public static partial class UoMRegistry {
             Abbreviations: ["psi/s", "lb/in²/s"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 0.00064516 / 4.4482216152605,
-            FromUnitToBase: static val => val * 4.4482216152605 / 0.00064516,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 0.00064516 / 4.4482216152605),
+            FromUnitToBase: static val => (val * 4.4482216152605 / 0.00064516),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloPoundForcePerSquareInchPerSecond
-        PressureChangeRateUnits.TryAdd("KiloPoundForcePerSquareInchPerSecond", new Unit(
-            SingularName: "KiloPoundForcePerSquareInchPerSecond",
-            PluralName: "KiloPoundsForcePerSquareInchPerSecond",
+        // KilopoundForcePerSquareInchPerSecond
+        PressureChangeRateUnits.TryAdd("KilopoundForcePerSquareInchPerSecond", new Unit(
+            SingularName: "KilopoundForcePerSquareInchPerSecond",
+            PluralName: "KilopoundsForcePerSquareInchPerSecond",
             Abbreviations: ["ksi/s", "kipf/in²/s"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 0.00064516 / 4.4482216152605) / 1000,
-            FromUnitToBase: static val => (val * 4.4482216152605 / 0.00064516) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * 0.00064516 / 4.4482216152605) / 1000),
+            FromUnitToBase: static val => ((val * 1000) * 4.4482216152605 / 0.00064516),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaPoundForcePerSquareInchPerSecond
-        PressureChangeRateUnits.TryAdd("MegaPoundForcePerSquareInchPerSecond", new Unit(
-            SingularName: "MegaPoundForcePerSquareInchPerSecond",
-            PluralName: "MegaPoundsForcePerSquareInchPerSecond",
+        // MegapoundForcePerSquareInchPerSecond
+        PressureChangeRateUnits.TryAdd("MegapoundForcePerSquareInchPerSecond", new Unit(
+            SingularName: "MegapoundForcePerSquareInchPerSecond",
+            PluralName: "MegapoundsForcePerSquareInchPerSecond",
             Abbreviations: ["Mpsi/s", "Mlb/in²/s"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 0.00064516 / 4.4482216152605) / 1000000,
-            FromUnitToBase: static val => (val * 4.4482216152605 / 0.00064516) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * 0.00064516 / 4.4482216152605) / 1000000),
+            FromUnitToBase: static val => ((val * 1000000) * 4.4482216152605 / 0.00064516),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundForcePerSquareInchPerMinute
         PressureChangeRateUnits.TryAdd("PoundForcePerSquareInchPerMinute", new Unit(
@@ -148,58 +148,58 @@ public static partial class UoMRegistry {
             Abbreviations: ["psi/min", "lb/in²/min"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 60 / (4.4482216152605 / 0.00064516),
-            FromUnitToBase: static val => val * (4.4482216152605 / 0.00064516) / 60,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 60 / (4.4482216152605 / 0.00064516)),
+            FromUnitToBase: static val => (val * (4.4482216152605 / 0.00064516) / 60),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloPoundForcePerSquareInchPerMinute
-        PressureChangeRateUnits.TryAdd("KiloPoundForcePerSquareInchPerMinute", new Unit(
-            SingularName: "KiloPoundForcePerSquareInchPerMinute",
-            PluralName: "KiloPoundsForcePerSquareInchPerMinute",
+        // KilopoundForcePerSquareInchPerMinute
+        PressureChangeRateUnits.TryAdd("KilopoundForcePerSquareInchPerMinute", new Unit(
+            SingularName: "KilopoundForcePerSquareInchPerMinute",
+            PluralName: "KilopoundsForcePerSquareInchPerMinute",
             Abbreviations: ["ksi/min", "kipf/in²/min"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 60 / (4.4482216152605 / 0.00064516)) / 1000,
-            FromUnitToBase: static val => (val * (4.4482216152605 / 0.00064516) / 60) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * 60 / (4.4482216152605 / 0.00064516)) / 1000),
+            FromUnitToBase: static val => ((val * 1000) * (4.4482216152605 / 0.00064516) / 60),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaPoundForcePerSquareInchPerMinute
-        PressureChangeRateUnits.TryAdd("MegaPoundForcePerSquareInchPerMinute", new Unit(
-            SingularName: "MegaPoundForcePerSquareInchPerMinute",
-            PluralName: "MegaPoundsForcePerSquareInchPerMinute",
+        // MegapoundForcePerSquareInchPerMinute
+        PressureChangeRateUnits.TryAdd("MegapoundForcePerSquareInchPerMinute", new Unit(
+            SingularName: "MegapoundForcePerSquareInchPerMinute",
+            PluralName: "MegapoundsForcePerSquareInchPerMinute",
             Abbreviations: ["Mpsi/min", "Mlb/in²/min"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 60 / (4.4482216152605 / 0.00064516)) / 1000000,
-            FromUnitToBase: static val => (val * (4.4482216152605 / 0.00064516) / 60) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * 60 / (4.4482216152605 / 0.00064516)) / 1000000),
+            FromUnitToBase: static val => ((val * 1000000) * (4.4482216152605 / 0.00064516) / 60),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // BarPerSecond
         PressureChangeRateUnits.TryAdd("BarPerSecond", new Unit(
             SingularName: "BarPerSecond",
             PluralName: "BarsPerSecond",
             Abbreviations: ["bar/s"],
-            Factor: 1,
+            Factor: 100000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e5,
-            FromUnitToBase: static val => val * 1e5,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliBarPerSecond
-        PressureChangeRateUnits.TryAdd("MilliBarPerSecond", new Unit(
-            SingularName: "MilliBarPerSecond",
-            PluralName: "MilliBarsPerSecond",
+        // MillibarPerSecond
+        PressureChangeRateUnits.TryAdd("MillibarPerSecond", new Unit(
+            SingularName: "MillibarPerSecond",
+            PluralName: "MillibarsPerSecond",
             Abbreviations: ["mbar/s"],
-            Factor: 1,
+            Factor: 100,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e5) / 0.001,
-            FromUnitToBase: static val => (val * 1e5) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // BarPerMinute
         PressureChangeRateUnits.TryAdd("BarPerMinute", new Unit(
@@ -208,22 +208,22 @@ public static partial class UoMRegistry {
             Abbreviations: ["bar/min"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e5 * 60,
-            FromUnitToBase: static val => val * 1e5 / 60,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val / 1e5 * 60),
+            FromUnitToBase: static val => (val * 1e5 / 60),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliBarPerMinute
-        PressureChangeRateUnits.TryAdd("MilliBarPerMinute", new Unit(
-            SingularName: "MilliBarPerMinute",
-            PluralName: "MilliBarsPerMinute",
+        // MillibarPerMinute
+        PressureChangeRateUnits.TryAdd("MillibarPerMinute", new Unit(
+            SingularName: "MillibarPerMinute",
+            PluralName: "MillibarsPerMinute",
             Abbreviations: ["mbar/min"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e5 * 60) / 0.001,
-            FromUnitToBase: static val => (val * 1e5 / 60) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val / 1e5 * 60) / 0.001),
+            FromUnitToBase: static val => ((val * 0.001) * 1e5 / 60),
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -232,7 +232,7 @@ public static partial class UoMRegistry {
             "Pressure change rate is the ratio of the pressure change to the time during which the change occurred (value of pressure changes per unit time).",
             PressureChangeRateUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = -1, ["M"] = 1, ["T"] = -3 },
-            "",
+            null,
             false,
             1
         );

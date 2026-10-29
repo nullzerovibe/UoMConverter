@@ -14,6 +14,14 @@ namespace UoMConverter.Generator;
 /// </summary>
 [Generator]
 public class UoMGenerator : IIncrementalGenerator {
+    internal static readonly DiagnosticDescriptor InvalidUnitDefinition = new(
+        id: "UOM0001",
+        title: "Invalid unit definition file",
+        messageFormat: "Unit definition '{0}' could not be parsed and was skipped: {1}",
+        category: "UoMConverter",
+        defaultSeverity: DiagnosticSeverity.Warning,
+        isEnabledByDefault: true);
+
     /// <summary>
     /// Initializes the generator pipeline.
     /// </summary>
@@ -23,7 +31,7 @@ public class UoMGenerator : IIncrementalGenerator {
         var jsonFiles = context.AdditionalTextsProvider
             .Where(file => file.Path.EndsWith(".json", StringComparison.OrdinalIgnoreCase))
             .Select((text, token) => QuantityParser.ProcessJsonFile(text, token))
-            .Where(x => x.Quantity is not null);
+            .Where(x => x.Quantity is not null || x.Error is not null);
 
         // 2. Collect all processed files into a single bundle
         var quantities = jsonFiles.Collect();
@@ -37,6 +45,12 @@ public class UoMGenerator : IIncrementalGenerator {
     /// </summary>
     private static void GenerateUnits(SourceProductionContext spc, ImmutableArray<ProcessedQuantityFile> source) {
         if (source.IsDefaultOrEmpty) return;
+
+        foreach (var file in source) {
+            if (file.Error is null) continue;
+            var location = Location.Create(file.Path, default, default);
+            spc.ReportDiagnostic(Diagnostic.Create(InvalidUnitDefinition, location, System.IO.Path.GetFileName(file.Path), file.Error));
+        }
 
         // 1. Merge standard and custom quantities, resolving overrides and collisions
         var finalQuantities = QuantityParser.MergeQuantities(source);

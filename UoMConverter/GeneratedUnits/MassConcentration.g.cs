@@ -14,348 +14,348 @@ public static partial class UoMRegistry {
             SingularName: "GramPerCubicMillimeter",
             PluralName: "GramsPerCubicMillimeter",
             Abbreviations: ["g/mm³"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e-6,
-            FromUnitToBase: static val => val / 1e-6,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloGramPerCubicMillimeter
-        MassConcentrationUnits.TryAdd("KiloGramPerCubicMillimeter", new Unit(
-            SingularName: "KiloGramPerCubicMillimeter",
-            PluralName: "KiloGramsPerCubicMillimeter",
+        // KilogramPerCubicMillimeter
+        MassConcentrationUnits.TryAdd("KilogramPerCubicMillimeter", new Unit(
+            SingularName: "KilogramPerCubicMillimeter",
+            PluralName: "KilogramsPerCubicMillimeter",
             Abbreviations: ["kg/mm³"],
-            Factor: 1,
+            Factor: 1000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-6) / 1000,
-            FromUnitToBase: static val => (val / 1e-6) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // GramPerCubicCentimeter
         MassConcentrationUnits.TryAdd("GramPerCubicCentimeter", new Unit(
             SingularName: "GramPerCubicCentimeter",
             PluralName: "GramsPerCubicCentimeter",
             Abbreviations: ["g/cm³"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e-3,
-            FromUnitToBase: static val => val / 1e-3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloGramPerCubicCentimeter
-        MassConcentrationUnits.TryAdd("KiloGramPerCubicCentimeter", new Unit(
-            SingularName: "KiloGramPerCubicCentimeter",
-            PluralName: "KiloGramsPerCubicCentimeter",
+        // KilogramPerCubicCentimeter
+        MassConcentrationUnits.TryAdd("KilogramPerCubicCentimeter", new Unit(
+            SingularName: "KilogramPerCubicCentimeter",
+            PluralName: "KilogramsPerCubicCentimeter",
             Abbreviations: ["kg/cm³"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-3) / 1000,
-            FromUnitToBase: static val => (val / 1e-3) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // GramPerCubicMeter
         MassConcentrationUnits.TryAdd("GramPerCubicMeter", new Unit(
             SingularName: "GramPerCubicMeter",
             PluralName: "GramsPerCubicMeter",
             Abbreviations: ["g/m³"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e3,
-            FromUnitToBase: static val => val / 1e3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloGramPerCubicMeter
-        MassConcentrationUnits.TryAdd("KiloGramPerCubicMeter", new Unit(
-            SingularName: "KiloGramPerCubicMeter",
-            PluralName: "KiloGramsPerCubicMeter",
+        // KilogramPerCubicMeter
+        MassConcentrationUnits.TryAdd("KilogramPerCubicMeter", new Unit(
+            SingularName: "KilogramPerCubicMeter",
+            PluralName: "KilogramsPerCubicMeter",
             Abbreviations: ["kg/m³"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 1000,
-            FromUnitToBase: static val => (val / 1e3) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliGramPerCubicMeter
-        MassConcentrationUnits.TryAdd("MilliGramPerCubicMeter", new Unit(
-            SingularName: "MilliGramPerCubicMeter",
-            PluralName: "MilliGramsPerCubicMeter",
+        // MilligramPerCubicMeter
+        MassConcentrationUnits.TryAdd("MilligramPerCubicMeter", new Unit(
+            SingularName: "MilligramPerCubicMeter",
+            PluralName: "MilligramsPerCubicMeter",
             Abbreviations: ["mg/m³"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 0.001,
-            FromUnitToBase: static val => (val / 1e3) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroGramPerCubicMeter
-        MassConcentrationUnits.TryAdd("MicroGramPerCubicMeter", new Unit(
-            SingularName: "MicroGramPerCubicMeter",
-            PluralName: "MicroGramsPerCubicMeter",
+        // MicrogramPerCubicMeter
+        MassConcentrationUnits.TryAdd("MicrogramPerCubicMeter", new Unit(
+            SingularName: "MicrogramPerCubicMeter",
+            PluralName: "MicrogramsPerCubicMeter",
             Abbreviations: ["µg/m³"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 1E-06,
-            FromUnitToBase: static val => (val / 1e3) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // GramPerMicroliter
         MassConcentrationUnits.TryAdd("GramPerMicroliter", new Unit(
             SingularName: "GramPerMicroliter",
             PluralName: "GramsPerMicroliter",
             Abbreviations: ["g/μl"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e-6,
-            FromUnitToBase: static val => val / 1e-6,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PicoGramPerMicroliter
-        MassConcentrationUnits.TryAdd("PicoGramPerMicroliter", new Unit(
-            SingularName: "PicoGramPerMicroliter",
-            PluralName: "PicoGramsPerMicroliter",
+        // PicogramPerMicroliter
+        MassConcentrationUnits.TryAdd("PicogramPerMicroliter", new Unit(
+            SingularName: "PicogramPerMicroliter",
+            PluralName: "PicogramsPerMicroliter",
             Abbreviations: ["pg/μl"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-6) / 1E-12,
-            FromUnitToBase: static val => (val / 1e-6) * 1E-12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoGramPerMicroliter
-        MassConcentrationUnits.TryAdd("NanoGramPerMicroliter", new Unit(
-            SingularName: "NanoGramPerMicroliter",
-            PluralName: "NanoGramsPerMicroliter",
+        // NanogramPerMicroliter
+        MassConcentrationUnits.TryAdd("NanogramPerMicroliter", new Unit(
+            SingularName: "NanogramPerMicroliter",
+            PluralName: "NanogramsPerMicroliter",
             Abbreviations: ["ng/μl"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-6) / 1E-09,
-            FromUnitToBase: static val => (val / 1e-6) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroGramPerMicroliter
-        MassConcentrationUnits.TryAdd("MicroGramPerMicroliter", new Unit(
-            SingularName: "MicroGramPerMicroliter",
-            PluralName: "MicroGramsPerMicroliter",
+        // MicrogramPerMicroliter
+        MassConcentrationUnits.TryAdd("MicrogramPerMicroliter", new Unit(
+            SingularName: "MicrogramPerMicroliter",
+            PluralName: "MicrogramsPerMicroliter",
             Abbreviations: ["µg/μl"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-6) / 1E-06,
-            FromUnitToBase: static val => (val / 1e-6) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliGramPerMicroliter
-        MassConcentrationUnits.TryAdd("MilliGramPerMicroliter", new Unit(
-            SingularName: "MilliGramPerMicroliter",
-            PluralName: "MilliGramsPerMicroliter",
+        // MilligramPerMicroliter
+        MassConcentrationUnits.TryAdd("MilligramPerMicroliter", new Unit(
+            SingularName: "MilligramPerMicroliter",
+            PluralName: "MilligramsPerMicroliter",
             Abbreviations: ["mg/μl"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-6) / 0.001,
-            FromUnitToBase: static val => (val / 1e-6) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiGramPerMicroliter
-        MassConcentrationUnits.TryAdd("CentiGramPerMicroliter", new Unit(
-            SingularName: "CentiGramPerMicroliter",
-            PluralName: "CentiGramsPerMicroliter",
+        // CentigramPerMicroliter
+        MassConcentrationUnits.TryAdd("CentigramPerMicroliter", new Unit(
+            SingularName: "CentigramPerMicroliter",
+            PluralName: "CentigramsPerMicroliter",
             Abbreviations: ["cg/μl"],
-            Factor: 1,
+            Factor: 10000,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-6) / 0.01,
-            FromUnitToBase: static val => (val / 1e-6) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciGramPerMicroliter
-        MassConcentrationUnits.TryAdd("DeciGramPerMicroliter", new Unit(
-            SingularName: "DeciGramPerMicroliter",
-            PluralName: "DeciGramsPerMicroliter",
+        // DecigramPerMicroliter
+        MassConcentrationUnits.TryAdd("DecigramPerMicroliter", new Unit(
+            SingularName: "DecigramPerMicroliter",
+            PluralName: "DecigramsPerMicroliter",
             Abbreviations: ["dg/μl"],
-            Factor: 1,
+            Factor: 100000,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-6) / 0.1,
-            FromUnitToBase: static val => (val / 1e-6) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // GramPerMilliliter
         MassConcentrationUnits.TryAdd("GramPerMilliliter", new Unit(
             SingularName: "GramPerMilliliter",
             PluralName: "GramsPerMilliliter",
             Abbreviations: ["g/ml"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e-3,
-            FromUnitToBase: static val => val / 1e-3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PicoGramPerMilliliter
-        MassConcentrationUnits.TryAdd("PicoGramPerMilliliter", new Unit(
-            SingularName: "PicoGramPerMilliliter",
-            PluralName: "PicoGramsPerMilliliter",
+        // PicogramPerMilliliter
+        MassConcentrationUnits.TryAdd("PicogramPerMilliliter", new Unit(
+            SingularName: "PicogramPerMilliliter",
+            PluralName: "PicogramsPerMilliliter",
             Abbreviations: ["pg/ml"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-3) / 1E-12,
-            FromUnitToBase: static val => (val / 1e-3) * 1E-12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoGramPerMilliliter
-        MassConcentrationUnits.TryAdd("NanoGramPerMilliliter", new Unit(
-            SingularName: "NanoGramPerMilliliter",
-            PluralName: "NanoGramsPerMilliliter",
+        // NanogramPerMilliliter
+        MassConcentrationUnits.TryAdd("NanogramPerMilliliter", new Unit(
+            SingularName: "NanogramPerMilliliter",
+            PluralName: "NanogramsPerMilliliter",
             Abbreviations: ["ng/ml"],
-            Factor: 1,
+            Factor: 1.0000000000000002E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-3) / 1E-09,
-            FromUnitToBase: static val => (val / 1e-3) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroGramPerMilliliter
-        MassConcentrationUnits.TryAdd("MicroGramPerMilliliter", new Unit(
-            SingularName: "MicroGramPerMilliliter",
-            PluralName: "MicroGramsPerMilliliter",
+        // MicrogramPerMilliliter
+        MassConcentrationUnits.TryAdd("MicrogramPerMilliliter", new Unit(
+            SingularName: "MicrogramPerMilliliter",
+            PluralName: "MicrogramsPerMilliliter",
             Abbreviations: ["µg/ml"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-3) / 1E-06,
-            FromUnitToBase: static val => (val / 1e-3) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliGramPerMilliliter
-        MassConcentrationUnits.TryAdd("MilliGramPerMilliliter", new Unit(
-            SingularName: "MilliGramPerMilliliter",
-            PluralName: "MilliGramsPerMilliliter",
+        // MilligramPerMilliliter
+        MassConcentrationUnits.TryAdd("MilligramPerMilliliter", new Unit(
+            SingularName: "MilligramPerMilliliter",
+            PluralName: "MilligramsPerMilliliter",
             Abbreviations: ["mg/ml"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-3) / 0.001,
-            FromUnitToBase: static val => (val / 1e-3) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiGramPerMilliliter
-        MassConcentrationUnits.TryAdd("CentiGramPerMilliliter", new Unit(
-            SingularName: "CentiGramPerMilliliter",
-            PluralName: "CentiGramsPerMilliliter",
+        // CentigramPerMilliliter
+        MassConcentrationUnits.TryAdd("CentigramPerMilliliter", new Unit(
+            SingularName: "CentigramPerMilliliter",
+            PluralName: "CentigramsPerMilliliter",
             Abbreviations: ["cg/ml"],
-            Factor: 1,
+            Factor: 10,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-3) / 0.01,
-            FromUnitToBase: static val => (val / 1e-3) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciGramPerMilliliter
-        MassConcentrationUnits.TryAdd("DeciGramPerMilliliter", new Unit(
-            SingularName: "DeciGramPerMilliliter",
-            PluralName: "DeciGramsPerMilliliter",
+        // DecigramPerMilliliter
+        MassConcentrationUnits.TryAdd("DecigramPerMilliliter", new Unit(
+            SingularName: "DecigramPerMilliliter",
+            PluralName: "DecigramsPerMilliliter",
             Abbreviations: ["dg/ml"],
-            Factor: 1,
+            Factor: 100,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-3) / 0.1,
-            FromUnitToBase: static val => (val / 1e-3) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // GramPerDeciliter
         MassConcentrationUnits.TryAdd("GramPerDeciliter", new Unit(
             SingularName: "GramPerDeciliter",
             PluralName: "GramsPerDeciliter",
             Abbreviations: ["g/dl"],
-            Factor: 1,
+            Factor: 10,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e-1,
-            FromUnitToBase: static val => val / 1e-1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PicoGramPerDeciliter
-        MassConcentrationUnits.TryAdd("PicoGramPerDeciliter", new Unit(
-            SingularName: "PicoGramPerDeciliter",
-            PluralName: "PicoGramsPerDeciliter",
+        // PicogramPerDeciliter
+        MassConcentrationUnits.TryAdd("PicogramPerDeciliter", new Unit(
+            SingularName: "PicogramPerDeciliter",
+            PluralName: "PicogramsPerDeciliter",
             Abbreviations: ["pg/dl"],
-            Factor: 1,
+            Factor: 1E-11,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-1) / 1E-12,
-            FromUnitToBase: static val => (val / 1e-1) * 1E-12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoGramPerDeciliter
-        MassConcentrationUnits.TryAdd("NanoGramPerDeciliter", new Unit(
-            SingularName: "NanoGramPerDeciliter",
-            PluralName: "NanoGramsPerDeciliter",
+        // NanogramPerDeciliter
+        MassConcentrationUnits.TryAdd("NanogramPerDeciliter", new Unit(
+            SingularName: "NanogramPerDeciliter",
+            PluralName: "NanogramsPerDeciliter",
             Abbreviations: ["ng/dl"],
-            Factor: 1,
+            Factor: 1E-08,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-1) / 1E-09,
-            FromUnitToBase: static val => (val / 1e-1) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroGramPerDeciliter
-        MassConcentrationUnits.TryAdd("MicroGramPerDeciliter", new Unit(
-            SingularName: "MicroGramPerDeciliter",
-            PluralName: "MicroGramsPerDeciliter",
+        // MicrogramPerDeciliter
+        MassConcentrationUnits.TryAdd("MicrogramPerDeciliter", new Unit(
+            SingularName: "MicrogramPerDeciliter",
+            PluralName: "MicrogramsPerDeciliter",
             Abbreviations: ["µg/dl"],
-            Factor: 1,
+            Factor: 9.999999999999999E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-1) / 1E-06,
-            FromUnitToBase: static val => (val / 1e-1) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliGramPerDeciliter
-        MassConcentrationUnits.TryAdd("MilliGramPerDeciliter", new Unit(
-            SingularName: "MilliGramPerDeciliter",
-            PluralName: "MilliGramsPerDeciliter",
+        // MilligramPerDeciliter
+        MassConcentrationUnits.TryAdd("MilligramPerDeciliter", new Unit(
+            SingularName: "MilligramPerDeciliter",
+            PluralName: "MilligramsPerDeciliter",
             Abbreviations: ["mg/dl"],
-            Factor: 1,
+            Factor: 0.01,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-1) / 0.001,
-            FromUnitToBase: static val => (val / 1e-1) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiGramPerDeciliter
-        MassConcentrationUnits.TryAdd("CentiGramPerDeciliter", new Unit(
-            SingularName: "CentiGramPerDeciliter",
-            PluralName: "CentiGramsPerDeciliter",
+        // CentigramPerDeciliter
+        MassConcentrationUnits.TryAdd("CentigramPerDeciliter", new Unit(
+            SingularName: "CentigramPerDeciliter",
+            PluralName: "CentigramsPerDeciliter",
             Abbreviations: ["cg/dl"],
-            Factor: 1,
+            Factor: 0.1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-1) / 0.01,
-            FromUnitToBase: static val => (val / 1e-1) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciGramPerDeciliter
-        MassConcentrationUnits.TryAdd("DeciGramPerDeciliter", new Unit(
-            SingularName: "DeciGramPerDeciliter",
-            PluralName: "DeciGramsPerDeciliter",
+        // DecigramPerDeciliter
+        MassConcentrationUnits.TryAdd("DecigramPerDeciliter", new Unit(
+            SingularName: "DecigramPerDeciliter",
+            PluralName: "DecigramsPerDeciliter",
             Abbreviations: ["dg/dl"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e-1) / 0.1,
-            FromUnitToBase: static val => (val / 1e-1) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // GramPerLiter
         MassConcentrationUnits.TryAdd("GramPerLiter", new Unit(
@@ -366,116 +366,116 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PicoGramPerLiter
-        MassConcentrationUnits.TryAdd("PicoGramPerLiter", new Unit(
-            SingularName: "PicoGramPerLiter",
-            PluralName: "PicoGramsPerLiter",
+        // PicogramPerLiter
+        MassConcentrationUnits.TryAdd("PicogramPerLiter", new Unit(
+            SingularName: "PicogramPerLiter",
+            PluralName: "PicogramsPerLiter",
             Abbreviations: ["pg/l"],
-            Factor: 1,
+            Factor: 1E-12,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-12,
-            FromUnitToBase: static val => (val) * 1E-12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoGramPerLiter
-        MassConcentrationUnits.TryAdd("NanoGramPerLiter", new Unit(
-            SingularName: "NanoGramPerLiter",
-            PluralName: "NanoGramsPerLiter",
+        // NanogramPerLiter
+        MassConcentrationUnits.TryAdd("NanogramPerLiter", new Unit(
+            SingularName: "NanogramPerLiter",
+            PluralName: "NanogramsPerLiter",
             Abbreviations: ["ng/l"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroGramPerLiter
-        MassConcentrationUnits.TryAdd("MicroGramPerLiter", new Unit(
-            SingularName: "MicroGramPerLiter",
-            PluralName: "MicroGramsPerLiter",
+        // MicrogramPerLiter
+        MassConcentrationUnits.TryAdd("MicrogramPerLiter", new Unit(
+            SingularName: "MicrogramPerLiter",
+            PluralName: "MicrogramsPerLiter",
             Abbreviations: ["µg/l"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliGramPerLiter
-        MassConcentrationUnits.TryAdd("MilliGramPerLiter", new Unit(
-            SingularName: "MilliGramPerLiter",
-            PluralName: "MilliGramsPerLiter",
+        // MilligramPerLiter
+        MassConcentrationUnits.TryAdd("MilligramPerLiter", new Unit(
+            SingularName: "MilligramPerLiter",
+            PluralName: "MilligramsPerLiter",
             Abbreviations: ["mg/l"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiGramPerLiter
-        MassConcentrationUnits.TryAdd("CentiGramPerLiter", new Unit(
-            SingularName: "CentiGramPerLiter",
-            PluralName: "CentiGramsPerLiter",
+        // CentigramPerLiter
+        MassConcentrationUnits.TryAdd("CentigramPerLiter", new Unit(
+            SingularName: "CentigramPerLiter",
+            PluralName: "CentigramsPerLiter",
             Abbreviations: ["cg/l"],
-            Factor: 1,
+            Factor: 0.01,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.01,
-            FromUnitToBase: static val => (val) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciGramPerLiter
-        MassConcentrationUnits.TryAdd("DeciGramPerLiter", new Unit(
-            SingularName: "DeciGramPerLiter",
-            PluralName: "DeciGramsPerLiter",
+        // DecigramPerLiter
+        MassConcentrationUnits.TryAdd("DecigramPerLiter", new Unit(
+            SingularName: "DecigramPerLiter",
+            PluralName: "DecigramsPerLiter",
             Abbreviations: ["dg/l"],
-            Factor: 1,
+            Factor: 0.1,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.1,
-            FromUnitToBase: static val => (val) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloGramPerLiter
-        MassConcentrationUnits.TryAdd("KiloGramPerLiter", new Unit(
-            SingularName: "KiloGramPerLiter",
-            PluralName: "KiloGramsPerLiter",
+        // KilogramPerLiter
+        MassConcentrationUnits.TryAdd("KilogramPerLiter", new Unit(
+            SingularName: "KilogramPerLiter",
+            PluralName: "KilogramsPerLiter",
             Abbreviations: ["kg/l"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // TonnePerCubicMillimeter
         MassConcentrationUnits.TryAdd("TonnePerCubicMillimeter", new Unit(
             SingularName: "TonnePerCubicMillimeter",
             PluralName: "TonnesPerCubicMillimeter",
             Abbreviations: ["t/mm³"],
-            Factor: 1,
+            Factor: 1000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e-12,
-            FromUnitToBase: static val => val / 1e-12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // TonnePerCubicCentimeter
         MassConcentrationUnits.TryAdd("TonnePerCubicCentimeter", new Unit(
             SingularName: "TonnePerCubicCentimeter",
             PluralName: "TonnesPerCubicCentimeter",
             Abbreviations: ["t/cm³"],
-            Factor: 1,
+            Factor: 999999999.9999999,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e-9,
-            FromUnitToBase: static val => val / 1e-9,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // TonnePerCubicMeter
         MassConcentrationUnits.TryAdd("TonnePerCubicMeter", new Unit(
@@ -486,8 +486,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundPerCubicInch
         MassConcentrationUnits.TryAdd("PoundPerCubicInch", new Unit(
@@ -496,22 +496,22 @@ public static partial class UoMRegistry {
             Abbreviations: ["lb/in³"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1.6387064e-5 / 0.45359237,
-            FromUnitToBase: static val => val * 0.45359237 / 1.6387064e-5,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 1.6387064e-5 / 0.45359237),
+            FromUnitToBase: static val => (val * 0.45359237 / 1.6387064e-5),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloPoundPerCubicInch
-        MassConcentrationUnits.TryAdd("KiloPoundPerCubicInch", new Unit(
-            SingularName: "KiloPoundPerCubicInch",
-            PluralName: "KiloPoundsPerCubicInch",
+        // KilopoundPerCubicInch
+        MassConcentrationUnits.TryAdd("KilopoundPerCubicInch", new Unit(
+            SingularName: "KilopoundPerCubicInch",
+            PluralName: "KilopoundsPerCubicInch",
             Abbreviations: ["kip/in³"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1.6387064e-5 / 0.45359237) / 1000,
-            FromUnitToBase: static val => (val * 0.45359237 / 1.6387064e-5) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * 1.6387064e-5 / 0.45359237) / 1000),
+            FromUnitToBase: static val => ((val * 1000) * 0.45359237 / 1.6387064e-5),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundPerCubicFoot
         MassConcentrationUnits.TryAdd("PoundPerCubicFoot", new Unit(
@@ -520,22 +520,22 @@ public static partial class UoMRegistry {
             Abbreviations: ["lb/ft³"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 0.028316846592 / 0.45359237,
-            FromUnitToBase: static val => val * 0.45359237 / 0.028316846592,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 0.028316846592 / 0.45359237),
+            FromUnitToBase: static val => (val * 0.45359237 / 0.028316846592),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloPoundPerCubicFoot
-        MassConcentrationUnits.TryAdd("KiloPoundPerCubicFoot", new Unit(
-            SingularName: "KiloPoundPerCubicFoot",
-            PluralName: "KiloPoundsPerCubicFoot",
+        // KilopoundPerCubicFoot
+        MassConcentrationUnits.TryAdd("KilopoundPerCubicFoot", new Unit(
+            SingularName: "KilopoundPerCubicFoot",
+            PluralName: "KilopoundsPerCubicFoot",
             Abbreviations: ["kip/ft³"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 0.028316846592 / 0.45359237) / 1000,
-            FromUnitToBase: static val => (val * 0.45359237 / 0.028316846592) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * 0.028316846592 / 0.45359237) / 1000),
+            FromUnitToBase: static val => ((val * 1000) * 0.45359237 / 0.028316846592),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // SlugPerCubicFoot
         MassConcentrationUnits.TryAdd("SlugPerCubicFoot", new Unit(
@@ -544,10 +544,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["slug/ft³"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * (0.3048 * 0.028316846592) / (0.45359237 * 9.80665),
-            FromUnitToBase: static val => val * (0.45359237 * 9.80665) / (0.3048 * 0.028316846592),
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * (0.3048 * 0.028316846592) / (0.45359237 * 9.80665)),
+            FromUnitToBase: static val => (val * (0.45359237 * 9.80665) / (0.3048 * 0.028316846592)),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundPerUSGallon
         MassConcentrationUnits.TryAdd("PoundPerUSGallon", new Unit(
@@ -556,10 +556,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["ppg (U.S.)"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 0.003785411784 / 0.45359237,
-            FromUnitToBase: static val => val * 0.45359237 / 0.003785411784,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 0.003785411784 / 0.45359237),
+            FromUnitToBase: static val => (val * 0.45359237 / 0.003785411784),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // OuncePerUSGallon
         MassConcentrationUnits.TryAdd("OuncePerUSGallon", new Unit(
@@ -568,10 +568,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["oz/gal (U.S.)"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 0.003785411784 / 0.028349523125,
-            FromUnitToBase: static val => val * 0.028349523125 / 0.003785411784,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 0.003785411784 / 0.028349523125),
+            FromUnitToBase: static val => (val * 0.028349523125 / 0.003785411784),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // OuncePerImperialGallon
         MassConcentrationUnits.TryAdd("OuncePerImperialGallon", new Unit(
@@ -580,10 +580,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["oz/gal (imp.)"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 0.00454609 / 0.028349523125,
-            FromUnitToBase: static val => val * 0.028349523125 / 0.00454609,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 0.00454609 / 0.028349523125),
+            FromUnitToBase: static val => (val * 0.028349523125 / 0.00454609),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundPerImperialGallon
         MassConcentrationUnits.TryAdd("PoundPerImperialGallon", new Unit(
@@ -592,10 +592,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["ppg (imp.)"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 0.00454609 / 0.45359237,
-            FromUnitToBase: static val => val * 0.45359237 / 0.00454609,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 0.00454609 / 0.45359237),
+            FromUnitToBase: static val => (val * 0.45359237 / 0.00454609),
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -604,7 +604,7 @@ public static partial class UoMRegistry {
             "In chemistry, the mass concentration ρi (or γi) is defined as the mass of a constituent mi divided by the volume of the mixture V",
             MassConcentrationUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["M"] = 1, ["L"] = -3 },
-            "",
+            null,
             false,
             1
         );

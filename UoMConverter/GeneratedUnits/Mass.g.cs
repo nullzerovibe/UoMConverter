@@ -18,8 +18,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Kamen
         MassUnits.TryAdd("Kamen", new Unit(
@@ -30,8 +30,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Sinik
         MassUnits.TryAdd("Sinik", new Unit(
@@ -42,8 +42,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // LitraAncient
         MassUnits.TryAdd("LitraAncient", new Unit(
@@ -54,8 +54,8 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Polic
         MassUnits.TryAdd("Polic", new Unit(
@@ -66,176 +66,176 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Gram
         MassUnits.TryAdd("Gram", new Unit(
             SingularName: "Gram",
             PluralName: "Grams",
             Abbreviations: ["g"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1e3,
-            FromUnitToBase: static val => val / 1e3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // FemtoGram
-        MassUnits.TryAdd("FemtoGram", new Unit(
-            SingularName: "FemtoGram",
-            PluralName: "FemtoGrams",
+        // Femtogram
+        MassUnits.TryAdd("Femtogram", new Unit(
+            SingularName: "Femtogram",
+            PluralName: "Femtograms",
             Abbreviations: ["fg"],
-            Factor: 1,
+            Factor: 1E-18,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 1E-15,
-            FromUnitToBase: static val => (val / 1e3) * 1E-15,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PicoGram
-        MassUnits.TryAdd("PicoGram", new Unit(
-            SingularName: "PicoGram",
-            PluralName: "PicoGrams",
+        // Picogram
+        MassUnits.TryAdd("Picogram", new Unit(
+            SingularName: "Picogram",
+            PluralName: "Picograms",
             Abbreviations: ["pg"],
-            Factor: 1,
+            Factor: 1E-15,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 1E-12,
-            FromUnitToBase: static val => (val / 1e3) * 1E-12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoGram
-        MassUnits.TryAdd("NanoGram", new Unit(
-            SingularName: "NanoGram",
-            PluralName: "NanoGrams",
+        // Nanogram
+        MassUnits.TryAdd("Nanogram", new Unit(
+            SingularName: "Nanogram",
+            PluralName: "Nanograms",
             Abbreviations: ["ng"],
-            Factor: 1,
+            Factor: 1.0000000000000002E-12,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 1E-09,
-            FromUnitToBase: static val => (val / 1e3) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroGram
-        MassUnits.TryAdd("MicroGram", new Unit(
-            SingularName: "MicroGram",
-            PluralName: "MicroGrams",
+        // Microgram
+        MassUnits.TryAdd("Microgram", new Unit(
+            SingularName: "Microgram",
+            PluralName: "Micrograms",
             Abbreviations: ["µg"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 1E-06,
-            FromUnitToBase: static val => (val / 1e3) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliGram
-        MassUnits.TryAdd("MilliGram", new Unit(
-            SingularName: "MilliGram",
-            PluralName: "MilliGrams",
+        // Milligram
+        MassUnits.TryAdd("Milligram", new Unit(
+            SingularName: "Milligram",
+            PluralName: "Milligrams",
             Abbreviations: ["mg"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 0.001,
-            FromUnitToBase: static val => (val / 1e3) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiGram
-        MassUnits.TryAdd("CentiGram", new Unit(
-            SingularName: "CentiGram",
-            PluralName: "CentiGrams",
+        // Centigram
+        MassUnits.TryAdd("Centigram", new Unit(
+            SingularName: "Centigram",
+            PluralName: "Centigrams",
             Abbreviations: ["cg"],
-            Factor: 1,
+            Factor: 1E-05,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 0.01,
-            FromUnitToBase: static val => (val / 1e3) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciGram
-        MassUnits.TryAdd("DeciGram", new Unit(
-            SingularName: "DeciGram",
-            PluralName: "DeciGrams",
+        // Decigram
+        MassUnits.TryAdd("Decigram", new Unit(
+            SingularName: "Decigram",
+            PluralName: "Decigrams",
             Abbreviations: ["dg"],
-            Factor: 1,
+            Factor: 0.0001,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 0.1,
-            FromUnitToBase: static val => (val / 1e3) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DecaGram
-        MassUnits.TryAdd("DecaGram", new Unit(
-            SingularName: "DecaGram",
-            PluralName: "DecaGrams",
+        // Decagram
+        MassUnits.TryAdd("Decagram", new Unit(
+            SingularName: "Decagram",
+            PluralName: "Decagrams",
             Abbreviations: ["dag"],
-            Factor: 1,
+            Factor: 0.01,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 10,
-            FromUnitToBase: static val => (val / 1e3) * 10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // HectoGram
-        MassUnits.TryAdd("HectoGram", new Unit(
-            SingularName: "HectoGram",
-            PluralName: "HectoGrams",
+        // Hectogram
+        MassUnits.TryAdd("Hectogram", new Unit(
+            SingularName: "Hectogram",
+            PluralName: "Hectograms",
             Abbreviations: ["hg"],
-            Factor: 1,
+            Factor: 0.1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 100,
-            FromUnitToBase: static val => (val / 1e3) * 100,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloGram
-        MassUnits.TryAdd("KiloGram", new Unit(
-            SingularName: "KiloGram",
-            PluralName: "KiloGrams",
+        // Kilogram
+        MassUnits.TryAdd("Kilogram", new Unit(
+            SingularName: "Kilogram",
+            PluralName: "Kilograms",
             Abbreviations: ["kg"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1e3) / 1000,
-            FromUnitToBase: static val => (val / 1e3) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Tonne
         MassUnits.TryAdd("Tonne", new Unit(
             SingularName: "Tonne",
             PluralName: "Tonnes",
             Abbreviations: ["t"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e3,
-            FromUnitToBase: static val => val * 1e3,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Tonne",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
-        // KiloTonne
-        MassUnits.TryAdd("KiloTonne", new Unit(
-            SingularName: "KiloTonne",
-            PluralName: "KiloTonnes",
+        // Kilotonne
+        MassUnits.TryAdd("Kilotonne", new Unit(
+            SingularName: "Kilotonne",
+            PluralName: "Kilotonnes",
             Abbreviations: ["kt"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e3) / 1000,
-            FromUnitToBase: static val => (val * 1e3) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaTonne
-        MassUnits.TryAdd("MegaTonne", new Unit(
-            SingularName: "MegaTonne",
-            PluralName: "MegaTonnes",
+        // Megatonne
+        MassUnits.TryAdd("Megatonne", new Unit(
+            SingularName: "Megatonne",
+            PluralName: "Megatonnes",
             Abbreviations: ["Mt"],
-            Factor: 1,
+            Factor: 1000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e3) / 1000000,
-            FromUnitToBase: static val => (val * 1e3) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // ShortTon
         MassUnits.TryAdd("ShortTon", new Unit(
@@ -247,7 +247,7 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "http://en.wikipedia.org/wiki/Short_ton",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // LongTon
         MassUnits.TryAdd("LongTon", new Unit(
@@ -259,7 +259,7 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "http://en.wikipedia.org/wiki/Long_ton",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // Pound
         MassUnits.TryAdd("Pound", new Unit(
@@ -271,31 +271,31 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Pound_(mass)",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
-        // KiloPound
-        MassUnits.TryAdd("KiloPound", new Unit(
-            SingularName: "KiloPound",
-            PluralName: "KiloPounds",
+        // Kilopound
+        MassUnits.TryAdd("Kilopound", new Unit(
+            SingularName: "Kilopound",
+            PluralName: "Kilopounds",
             Abbreviations: ["klb", "klbs", "klbm"],
-            Factor: 1,
+            Factor: 453.59237,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 0.45359237) / 1000,
-            FromUnitToBase: static val => (val * 0.45359237) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaPound
-        MassUnits.TryAdd("MegaPound", new Unit(
-            SingularName: "MegaPound",
-            PluralName: "MegaPounds",
+        // Megapound
+        MassUnits.TryAdd("Megapound", new Unit(
+            SingularName: "Megapound",
+            PluralName: "Megapounds",
             Abbreviations: ["Mlb", "Mlbs", "Mlbm"],
-            Factor: 1,
+            Factor: 453592.37,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 0.45359237) / 1000000,
-            FromUnitToBase: static val => (val * 0.45359237) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Ounce
         MassUnits.TryAdd("Ounce", new Unit(
@@ -307,7 +307,7 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Ounce",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // Slug
         MassUnits.TryAdd("Slug", new Unit(
@@ -316,10 +316,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["slug"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 0.3048 / (0.45359237 * 9.80665),
-            FromUnitToBase: static val => val * 0.45359237 * 9.80665 / 0.3048,
+            FromBaseToUnit: static val => (val * 0.3048 / (0.45359237 * 9.80665)),
+            FromUnitToBase: static val => (val * 0.45359237 * 9.80665 / 0.3048),
             Remarks: "http://en.wikipedia.org/wiki/Slug_(unit)",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // Stone
         MassUnits.TryAdd("Stone", new Unit(
@@ -331,7 +331,7 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "http://en.wikipedia.org/wiki/Stone_(unit)",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // ShortHundredweight
         MassUnits.TryAdd("ShortHundredweight", new Unit(
@@ -343,7 +343,7 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Hundredweight",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // LongHundredweight
         MassUnits.TryAdd("LongHundredweight", new Unit(
@@ -355,91 +355,91 @@ public static partial class UoMRegistry {
             FromBaseToUnit: null,
             FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Hundredweight",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // Grain
         MassUnits.TryAdd("Grain", new Unit(
             SingularName: "Grain",
             PluralName: "Grains",
             Abbreviations: ["gr"],
-            Factor: 1,
+            Factor: 6.479891E-05,
             Offset: 0,
-            FromBaseToUnit: static val => val / 64.79891e-6,
-            FromUnitToBase: static val => val * 64.79891e-6,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Grain_(unit)",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // SolarMass
         MassUnits.TryAdd("SolarMass", new Unit(
             SingularName: "SolarMass",
             PluralName: "SolarMasses",
             Abbreviations: ["M☉", "M⊙"],
-            Factor: 1,
+            Factor: 1.98947E+30,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1.98947e30,
-            FromUnitToBase: static val => val * 1.98947e30,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Solar_mass",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // EarthMass
         MassUnits.TryAdd("EarthMass", new Unit(
             SingularName: "EarthMass",
             PluralName: "EarthMasses",
             Abbreviations: ["em"],
-            Factor: 1,
+            Factor: 5.9722E+24,
             Offset: 0,
-            FromBaseToUnit: static val => val / 5.9722E+24,
-            FromUnitToBase: static val => val * 5.9722E+24,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Earth_mass",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // Dalton
         MassUnits.TryAdd("Dalton", new Unit(
             SingularName: "Dalton",
             PluralName: "Daltons",
             Abbreviations: ["Da", "u"],
-            Factor: 1,
+            Factor: 1.6605390666E-27,
             Offset: 0,
-            FromBaseToUnit: static val => val /  1.66053906660e-27,
-            FromUnitToBase: static val => val *  1.66053906660e-27,
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
             Remarks: "https://en.wikipedia.org/wiki/Dalton_(unit)",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
-        // KiloDalton
-        MassUnits.TryAdd("KiloDalton", new Unit(
-            SingularName: "KiloDalton",
-            PluralName: "KiloDaltons",
+        // Kilodalton
+        MassUnits.TryAdd("Kilodalton", new Unit(
+            SingularName: "Kilodalton",
+            PluralName: "Kilodaltons",
             Abbreviations: ["kDa", "ku"],
-            Factor: 1,
+            Factor: 1.6605390666E-24,
             Offset: 0,
-            FromBaseToUnit: static val => (val /  1.66053906660e-27) / 1000,
-            FromUnitToBase: static val => (val *  1.66053906660e-27) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaDalton
-        MassUnits.TryAdd("MegaDalton", new Unit(
-            SingularName: "MegaDalton",
-            PluralName: "MegaDaltons",
+        // Megadalton
+        MassUnits.TryAdd("Megadalton", new Unit(
+            SingularName: "Megadalton",
+            PluralName: "Megadaltons",
             Abbreviations: ["MDa", "Mu"],
-            Factor: 1,
+            Factor: 1.6605390666E-21,
             Offset: 0,
-            FromBaseToUnit: static val => (val /  1.66053906660e-27) / 1000000,
-            FromUnitToBase: static val => (val *  1.66053906660e-27) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaDalton
-        MassUnits.TryAdd("GigaDalton", new Unit(
-            SingularName: "GigaDalton",
-            PluralName: "GigaDaltons",
+        // Gigadalton
+        MassUnits.TryAdd("Gigadalton", new Unit(
+            SingularName: "Gigadalton",
+            PluralName: "Gigadaltons",
             Abbreviations: ["GDa", "Gu"],
-            Factor: 1,
+            Factor: 1.6605390666E-18,
             Offset: 0,
-            FromBaseToUnit: static val => (val /  1.66053906660e-27) / 1000000000,
-            FromUnitToBase: static val => (val *  1.66053906660e-27) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -448,7 +448,7 @@ public static partial class UoMRegistry {
             "Mass units used in historical Croatia/Venice/Ottoman regions for grain and milling.",
             MassUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> {  },
-            "",
+            null,
             false,
             1
         );

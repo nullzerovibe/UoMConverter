@@ -18,344 +18,344 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PicoBecquerel
-        RadioactivityUnits.TryAdd("PicoBecquerel", new Unit(
-            SingularName: "PicoBecquerel",
-            PluralName: "PicoBecquerels",
+        // Picobecquerel
+        RadioactivityUnits.TryAdd("Picobecquerel", new Unit(
+            SingularName: "Picobecquerel",
+            PluralName: "Picobecquerels",
             Abbreviations: ["pBq"],
-            Factor: 1,
+            Factor: 1E-12,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-12,
-            FromUnitToBase: static val => (val) * 1E-12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoBecquerel
-        RadioactivityUnits.TryAdd("NanoBecquerel", new Unit(
-            SingularName: "NanoBecquerel",
-            PluralName: "NanoBecquerels",
+        // Nanobecquerel
+        RadioactivityUnits.TryAdd("Nanobecquerel", new Unit(
+            SingularName: "Nanobecquerel",
+            PluralName: "Nanobecquerels",
             Abbreviations: ["nBq"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroBecquerel
-        RadioactivityUnits.TryAdd("MicroBecquerel", new Unit(
-            SingularName: "MicroBecquerel",
-            PluralName: "MicroBecquerels",
+        // Microbecquerel
+        RadioactivityUnits.TryAdd("Microbecquerel", new Unit(
+            SingularName: "Microbecquerel",
+            PluralName: "Microbecquerels",
             Abbreviations: ["µBq"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliBecquerel
-        RadioactivityUnits.TryAdd("MilliBecquerel", new Unit(
-            SingularName: "MilliBecquerel",
-            PluralName: "MilliBecquerels",
+        // Millibecquerel
+        RadioactivityUnits.TryAdd("Millibecquerel", new Unit(
+            SingularName: "Millibecquerel",
+            PluralName: "Millibecquerels",
             Abbreviations: ["mBq"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloBecquerel
-        RadioactivityUnits.TryAdd("KiloBecquerel", new Unit(
-            SingularName: "KiloBecquerel",
-            PluralName: "KiloBecquerels",
+        // Kilobecquerel
+        RadioactivityUnits.TryAdd("Kilobecquerel", new Unit(
+            SingularName: "Kilobecquerel",
+            PluralName: "Kilobecquerels",
             Abbreviations: ["kBq"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaBecquerel
-        RadioactivityUnits.TryAdd("MegaBecquerel", new Unit(
-            SingularName: "MegaBecquerel",
-            PluralName: "MegaBecquerels",
+        // Megabecquerel
+        RadioactivityUnits.TryAdd("Megabecquerel", new Unit(
+            SingularName: "Megabecquerel",
+            PluralName: "Megabecquerels",
             Abbreviations: ["MBq"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaBecquerel
-        RadioactivityUnits.TryAdd("GigaBecquerel", new Unit(
-            SingularName: "GigaBecquerel",
-            PluralName: "GigaBecquerels",
+        // Gigabecquerel
+        RadioactivityUnits.TryAdd("Gigabecquerel", new Unit(
+            SingularName: "Gigabecquerel",
+            PluralName: "Gigabecquerels",
             Abbreviations: ["GBq"],
-            Factor: 1,
+            Factor: 1000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000,
-            FromUnitToBase: static val => (val) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // TeraBecquerel
-        RadioactivityUnits.TryAdd("TeraBecquerel", new Unit(
-            SingularName: "TeraBecquerel",
-            PluralName: "TeraBecquerels",
+        // Terabecquerel
+        RadioactivityUnits.TryAdd("Terabecquerel", new Unit(
+            SingularName: "Terabecquerel",
+            PluralName: "Terabecquerels",
             Abbreviations: ["TBq"],
-            Factor: 1,
+            Factor: 1000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000000,
-            FromUnitToBase: static val => (val) * 1000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PetaBecquerel
-        RadioactivityUnits.TryAdd("PetaBecquerel", new Unit(
-            SingularName: "PetaBecquerel",
-            PluralName: "PetaBecquerels",
+        // Petabecquerel
+        RadioactivityUnits.TryAdd("Petabecquerel", new Unit(
+            SingularName: "Petabecquerel",
+            PluralName: "Petabecquerels",
             Abbreviations: ["PBq"],
-            Factor: 1,
+            Factor: 1000000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000000000,
-            FromUnitToBase: static val => (val) * 1000000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // ExaBecquerel
-        RadioactivityUnits.TryAdd("ExaBecquerel", new Unit(
-            SingularName: "ExaBecquerel",
-            PluralName: "ExaBecquerels",
+        // Exabecquerel
+        RadioactivityUnits.TryAdd("Exabecquerel", new Unit(
+            SingularName: "Exabecquerel",
+            PluralName: "Exabecquerels",
             Abbreviations: ["EBq"],
-            Factor: 1,
+            Factor: 1E+18,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E+18,
-            FromUnitToBase: static val => (val) * 1E+18,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Curie
         RadioactivityUnits.TryAdd("Curie", new Unit(
             SingularName: "Curie",
             PluralName: "Curies",
             Abbreviations: ["Ci"],
-            Factor: 1,
+            Factor: 37000000000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 3.7e10,
-            FromUnitToBase: static val => val * 3.7e10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PicoCurie
-        RadioactivityUnits.TryAdd("PicoCurie", new Unit(
-            SingularName: "PicoCurie",
-            PluralName: "PicoCuries",
+        // Picocurie
+        RadioactivityUnits.TryAdd("Picocurie", new Unit(
+            SingularName: "Picocurie",
+            PluralName: "Picocuries",
             Abbreviations: ["pCi"],
-            Factor: 1,
+            Factor: 0.037,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 3.7e10) / 1E-12,
-            FromUnitToBase: static val => (val * 3.7e10) * 1E-12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoCurie
-        RadioactivityUnits.TryAdd("NanoCurie", new Unit(
-            SingularName: "NanoCurie",
-            PluralName: "NanoCuries",
+        // Nanocurie
+        RadioactivityUnits.TryAdd("Nanocurie", new Unit(
+            SingularName: "Nanocurie",
+            PluralName: "Nanocuries",
             Abbreviations: ["nCi"],
-            Factor: 1,
+            Factor: 37,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 3.7e10) / 1E-09,
-            FromUnitToBase: static val => (val * 3.7e10) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroCurie
-        RadioactivityUnits.TryAdd("MicroCurie", new Unit(
-            SingularName: "MicroCurie",
-            PluralName: "MicroCuries",
+        // Microcurie
+        RadioactivityUnits.TryAdd("Microcurie", new Unit(
+            SingularName: "Microcurie",
+            PluralName: "Microcuries",
             Abbreviations: ["µCi"],
-            Factor: 1,
+            Factor: 37000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 3.7e10) / 1E-06,
-            FromUnitToBase: static val => (val * 3.7e10) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliCurie
-        RadioactivityUnits.TryAdd("MilliCurie", new Unit(
-            SingularName: "MilliCurie",
-            PluralName: "MilliCuries",
+        // Millicurie
+        RadioactivityUnits.TryAdd("Millicurie", new Unit(
+            SingularName: "Millicurie",
+            PluralName: "Millicuries",
             Abbreviations: ["mCi"],
-            Factor: 1,
+            Factor: 37000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 3.7e10) / 0.001,
-            FromUnitToBase: static val => (val * 3.7e10) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloCurie
-        RadioactivityUnits.TryAdd("KiloCurie", new Unit(
-            SingularName: "KiloCurie",
-            PluralName: "KiloCuries",
+        // Kilocurie
+        RadioactivityUnits.TryAdd("Kilocurie", new Unit(
+            SingularName: "Kilocurie",
+            PluralName: "Kilocuries",
             Abbreviations: ["kCi"],
-            Factor: 1,
+            Factor: 37000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 3.7e10) / 1000,
-            FromUnitToBase: static val => (val * 3.7e10) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaCurie
-        RadioactivityUnits.TryAdd("MegaCurie", new Unit(
-            SingularName: "MegaCurie",
-            PluralName: "MegaCuries",
+        // Megacurie
+        RadioactivityUnits.TryAdd("Megacurie", new Unit(
+            SingularName: "Megacurie",
+            PluralName: "Megacuries",
             Abbreviations: ["MCi"],
-            Factor: 1,
+            Factor: 37000000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 3.7e10) / 1000000,
-            FromUnitToBase: static val => (val * 3.7e10) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaCurie
-        RadioactivityUnits.TryAdd("GigaCurie", new Unit(
-            SingularName: "GigaCurie",
-            PluralName: "GigaCuries",
+        // Gigacurie
+        RadioactivityUnits.TryAdd("Gigacurie", new Unit(
+            SingularName: "Gigacurie",
+            PluralName: "Gigacuries",
             Abbreviations: ["GCi"],
-            Factor: 1,
+            Factor: 3.7E+19,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 3.7e10) / 1000000000,
-            FromUnitToBase: static val => (val * 3.7e10) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // TeraCurie
-        RadioactivityUnits.TryAdd("TeraCurie", new Unit(
-            SingularName: "TeraCurie",
-            PluralName: "TeraCuries",
+        // Teracurie
+        RadioactivityUnits.TryAdd("Teracurie", new Unit(
+            SingularName: "Teracurie",
+            PluralName: "Teracuries",
             Abbreviations: ["TCi"],
-            Factor: 1,
+            Factor: 3.7E+22,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 3.7e10) / 1000000000000,
-            FromUnitToBase: static val => (val * 3.7e10) * 1000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // Rutherford
         RadioactivityUnits.TryAdd("Rutherford", new Unit(
             SingularName: "Rutherford",
             PluralName: "Rutherfords",
             Abbreviations: ["Rd"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e6,
-            FromUnitToBase: static val => val * 1e6,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PicoRutherford
-        RadioactivityUnits.TryAdd("PicoRutherford", new Unit(
-            SingularName: "PicoRutherford",
-            PluralName: "PicoRutherfords",
+        // Picorutherford
+        RadioactivityUnits.TryAdd("Picorutherford", new Unit(
+            SingularName: "Picorutherford",
+            PluralName: "Picorutherfords",
             Abbreviations: ["pRd"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e6) / 1E-12,
-            FromUnitToBase: static val => (val * 1e6) * 1E-12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoRutherford
-        RadioactivityUnits.TryAdd("NanoRutherford", new Unit(
-            SingularName: "NanoRutherford",
-            PluralName: "NanoRutherfords",
+        // Nanorutherford
+        RadioactivityUnits.TryAdd("Nanorutherford", new Unit(
+            SingularName: "Nanorutherford",
+            PluralName: "Nanorutherfords",
             Abbreviations: ["nRd"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e6) / 1E-09,
-            FromUnitToBase: static val => (val * 1e6) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroRutherford
-        RadioactivityUnits.TryAdd("MicroRutherford", new Unit(
-            SingularName: "MicroRutherford",
-            PluralName: "MicroRutherfords",
+        // Microrutherford
+        RadioactivityUnits.TryAdd("Microrutherford", new Unit(
+            SingularName: "Microrutherford",
+            PluralName: "Microrutherfords",
             Abbreviations: ["µRd"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e6) / 1E-06,
-            FromUnitToBase: static val => (val * 1e6) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliRutherford
-        RadioactivityUnits.TryAdd("MilliRutherford", new Unit(
-            SingularName: "MilliRutherford",
-            PluralName: "MilliRutherfords",
+        // Millirutherford
+        RadioactivityUnits.TryAdd("Millirutherford", new Unit(
+            SingularName: "Millirutherford",
+            PluralName: "Millirutherfords",
             Abbreviations: ["mRd"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e6) / 0.001,
-            FromUnitToBase: static val => (val * 1e6) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloRutherford
-        RadioactivityUnits.TryAdd("KiloRutherford", new Unit(
-            SingularName: "KiloRutherford",
-            PluralName: "KiloRutherfords",
+        // Kilorutherford
+        RadioactivityUnits.TryAdd("Kilorutherford", new Unit(
+            SingularName: "Kilorutherford",
+            PluralName: "Kilorutherfords",
             Abbreviations: ["kRd"],
-            Factor: 1,
+            Factor: 1000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e6) / 1000,
-            FromUnitToBase: static val => (val * 1e6) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaRutherford
-        RadioactivityUnits.TryAdd("MegaRutherford", new Unit(
-            SingularName: "MegaRutherford",
-            PluralName: "MegaRutherfords",
+        // Megarutherford
+        RadioactivityUnits.TryAdd("Megarutherford", new Unit(
+            SingularName: "Megarutherford",
+            PluralName: "Megarutherfords",
             Abbreviations: ["MRd"],
-            Factor: 1,
+            Factor: 1000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e6) / 1000000,
-            FromUnitToBase: static val => (val * 1e6) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaRutherford
-        RadioactivityUnits.TryAdd("GigaRutherford", new Unit(
-            SingularName: "GigaRutherford",
-            PluralName: "GigaRutherfords",
+        // Gigarutherford
+        RadioactivityUnits.TryAdd("Gigarutherford", new Unit(
+            SingularName: "Gigarutherford",
+            PluralName: "Gigarutherfords",
             Abbreviations: ["GRd"],
-            Factor: 1,
+            Factor: 1000000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e6) / 1000000000,
-            FromUnitToBase: static val => (val * 1e6) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // TeraRutherford
-        RadioactivityUnits.TryAdd("TeraRutherford", new Unit(
-            SingularName: "TeraRutherford",
-            PluralName: "TeraRutherfords",
+        // Terarutherford
+        RadioactivityUnits.TryAdd("Terarutherford", new Unit(
+            SingularName: "Terarutherford",
+            PluralName: "Terarutherfords",
             Abbreviations: ["TRd"],
-            Factor: 1,
+            Factor: 1E+18,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e6) / 1000000000000,
-            FromUnitToBase: static val => (val * 1e6) * 1000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -364,7 +364,7 @@ public static partial class UoMRegistry {
             "Amount of ionizing radiation released when an element spontaneously emits energy as a result of the radioactive decay of an unstable atom per unit time.",
             RadioactivityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["T"] = -1 },
-            "",
+            null,
             false,
             1
         );

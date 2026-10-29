@@ -18,80 +18,80 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloJoulePerSquareMeter
-        IrradiationUnits.TryAdd("KiloJoulePerSquareMeter", new Unit(
-            SingularName: "KiloJoulePerSquareMeter",
-            PluralName: "KiloJoulesPerSquareMeter",
+        // KilojoulePerSquareMeter
+        IrradiationUnits.TryAdd("KilojoulePerSquareMeter", new Unit(
+            SingularName: "KilojoulePerSquareMeter",
+            PluralName: "KilojoulesPerSquareMeter",
             Abbreviations: ["kJ/m²"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // JoulePerSquareCentimeter
         IrradiationUnits.TryAdd("JoulePerSquareCentimeter", new Unit(
             SingularName: "JoulePerSquareCentimeter",
             PluralName: "JoulesPerSquareCentimeter",
             Abbreviations: ["J/cm²"],
-            Factor: 1,
+            Factor: 10000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e4,
-            FromUnitToBase: static val => val * 1e4,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliJoulePerSquareCentimeter
-        IrradiationUnits.TryAdd("MilliJoulePerSquareCentimeter", new Unit(
-            SingularName: "MilliJoulePerSquareCentimeter",
-            PluralName: "MilliJoulesPerSquareCentimeter",
+        // MillijoulePerSquareCentimeter
+        IrradiationUnits.TryAdd("MillijoulePerSquareCentimeter", new Unit(
+            SingularName: "MillijoulePerSquareCentimeter",
+            PluralName: "MillijoulesPerSquareCentimeter",
             Abbreviations: ["mJ/cm²"],
-            Factor: 1,
+            Factor: 10,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1e4) / 0.001,
-            FromUnitToBase: static val => (val * 1e4) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // JoulePerSquareMillimeter
         IrradiationUnits.TryAdd("JoulePerSquareMillimeter", new Unit(
             SingularName: "JoulePerSquareMillimeter",
             PluralName: "JoulesPerSquareMillimeter",
             Abbreviations: ["J/mm²"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1e6,
-            FromUnitToBase: static val => val * 1e6,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // WattHourPerSquareMeter
         IrradiationUnits.TryAdd("WattHourPerSquareMeter", new Unit(
             SingularName: "WattHourPerSquareMeter",
             PluralName: "WattHoursPerSquareMeter",
             Abbreviations: ["Wh/m²"],
-            Factor: 1,
+            Factor: 3600,
             Offset: 0,
-            FromBaseToUnit: static val => val / 3600d,
-            FromUnitToBase: static val => val * 3600d,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloWattHourPerSquareMeter
-        IrradiationUnits.TryAdd("KiloWattHourPerSquareMeter", new Unit(
-            SingularName: "KiloWattHourPerSquareMeter",
-            PluralName: "KiloWattHoursPerSquareMeter",
+        // KilowattHourPerSquareMeter
+        IrradiationUnits.TryAdd("KilowattHourPerSquareMeter", new Unit(
+            SingularName: "KilowattHourPerSquareMeter",
+            PluralName: "KilowattHoursPerSquareMeter",
             Abbreviations: ["kWh/m²"],
-            Factor: 1,
+            Factor: 3600000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 3600d) / 1000,
-            FromUnitToBase: static val => (val * 3600d) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // BtuPerSquareFoot
         IrradiationUnits.TryAdd("BtuPerSquareFoot", new Unit(
@@ -100,22 +100,22 @@ public static partial class UoMRegistry {
             Abbreviations: ["Btu/ft²"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 9.290304e-2 / 1055.05585262,
-            FromUnitToBase: static val => val * 1055.05585262 / 9.290304e-2,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 9.290304e-2 / 1055.05585262),
+            FromUnitToBase: static val => (val * 1055.05585262 / 9.290304e-2),
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloBtuPerSquareFoot
-        IrradiationUnits.TryAdd("KiloBtuPerSquareFoot", new Unit(
-            SingularName: "KiloBtuPerSquareFoot",
-            PluralName: "KiloBtusPerSquareFoot",
+        // KilobtuPerSquareFoot
+        IrradiationUnits.TryAdd("KilobtuPerSquareFoot", new Unit(
+            SingularName: "KilobtuPerSquareFoot",
+            PluralName: "KilobtusPerSquareFoot",
             Abbreviations: ["kBtu/ft²"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 9.290304e-2 / 1055.05585262) / 1000,
-            FromUnitToBase: static val => (val * 1055.05585262 / 9.290304e-2) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => ((val * 9.290304e-2 / 1055.05585262) / 1000),
+            FromUnitToBase: static val => ((val * 1000) * 1055.05585262 / 9.290304e-2),
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -124,7 +124,7 @@ public static partial class UoMRegistry {
             "Irradiation is the process by which an object is exposed to radiation. The exposure can originate from various sources, including natural sources.",
             IrradiationUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["M"] = 1, ["T"] = -2 },
-            "",
+            null,
             false,
             1
         );

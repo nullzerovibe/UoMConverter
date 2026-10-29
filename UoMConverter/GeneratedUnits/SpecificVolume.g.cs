@@ -18,20 +18,20 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliCubicMeterPerKilogram
-        SpecificVolumeUnits.TryAdd("MilliCubicMeterPerKilogram", new Unit(
-            SingularName: "MilliCubicMeterPerKilogram",
-            PluralName: "MilliCubicMetersPerKilogram",
+        // MillicubicMeterPerKilogram
+        SpecificVolumeUnits.TryAdd("MillicubicMeterPerKilogram", new Unit(
+            SingularName: "MillicubicMeterPerKilogram",
+            PluralName: "MillicubicMetersPerKilogram",
             Abbreviations: ["mm³/kg"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // CubicFootPerPound
         SpecificVolumeUnits.TryAdd("CubicFootPerPound", new Unit(
@@ -40,10 +40,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["ft³/lb"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 0.45359237 / 0.028316846592,
-            FromUnitToBase: static val => val * 0.028316846592 / 0.45359237,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 0.45359237 / 0.028316846592),
+            FromUnitToBase: static val => (val * 0.028316846592 / 0.45359237),
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -52,7 +52,7 @@ public static partial class UoMRegistry {
             "In thermodynamics, the specific volume of a substance is the ratio of the substance's volume to its mass. It is the reciprocal of density and an intrinsic property of matter as well.",
             SpecificVolumeUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = 3, ["M"] = -1 },
-            "",
+            null,
             false,
             1
         );

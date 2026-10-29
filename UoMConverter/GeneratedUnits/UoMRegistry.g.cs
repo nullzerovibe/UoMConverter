@@ -10,9 +10,10 @@ namespace UoMConverter;
 /// Central registry for all physical quantities and units.
 /// </summary>
 public static partial class UoMRegistry {
-    private static readonly Dictionary<string, Quantity> _quantities = [];
+    private static readonly Dictionary<string, Quantity> _quantities = new(StringComparer.OrdinalIgnoreCase);
     private static readonly Dictionary<string, (Quantity Q, Unit U)> _unitLookupBuilder = new(StringComparer.OrdinalIgnoreCase);
     private static readonly Dictionary<string, (Quantity Q, Unit U)> _exactNameLookupBuilder = new(StringComparer.OrdinalIgnoreCase);
+    private static readonly Dictionary<string, (Quantity Q, Unit U)> _abbreviationLookupBuilder = new(StringComparer.Ordinal);
 
     /// <summary>
     /// Gets all registered physical quantities keyed by their name.
@@ -23,9 +24,13 @@ public static partial class UoMRegistry {
     /// </summary>
     public static FrozenDictionary<string, (Quantity Q, Unit U)> UnitLookup { get; private set; } = FrozenDictionary<string, (Quantity, Unit)>.Empty;
     /// <summary>
-    /// Gets a lookup of units by name (case-sensitive).
+    /// Gets a lookup of units by singular or plural name only (case-insensitive). Takes priority over <see cref="UnitLookup"/>.
     /// </summary>
     public static FrozenDictionary<string, (Quantity Q, Unit U)> ExactNameLookup { get; private set; } = FrozenDictionary<string, (Quantity, Unit)>.Empty;
+    /// <summary>
+    /// Gets a lookup of units by abbreviation (case-sensitive, e.g. 'mW' vs 'MW').
+    /// </summary>
+    public static FrozenDictionary<string, (Quantity Q, Unit U)> AbbreviationLookup { get; private set; } = FrozenDictionary<string, (Quantity, Unit)>.Empty;
 
     static UoMRegistry() {
         LoadLength();
@@ -165,9 +170,10 @@ public static partial class UoMRegistry {
         LoadVolumePerLength();
         LoadVolumetricHeatCapacity();
         LoadWarpingMomentOfInertia();
-        Quantities = _quantities.ToFrozenDictionary();
+        Quantities = _quantities.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase);
         UnitLookup = _unitLookupBuilder.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase);
         ExactNameLookup = _exactNameLookupBuilder.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase);
+        AbbreviationLookup = _abbreviationLookupBuilder.ToFrozenDictionary(StringComparer.Ordinal);
     }
 
     private static void RegisterUnit(Quantity q, Unit u) {
@@ -180,6 +186,7 @@ public static partial class UoMRegistry {
         }
         foreach (var abbr in u.Abbreviations) {
             _unitLookupBuilder.TryAdd(abbr, entry);
+            _abbreviationLookupBuilder.TryAdd(abbr, entry);
         }
     }
 }

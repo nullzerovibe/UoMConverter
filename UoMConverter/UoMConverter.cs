@@ -9,9 +9,10 @@ namespace UoMConverter;
 /// High-level API for unit of measure conversions and discovery.
 /// Optimized for UI discovery and WASM interoperability.
 /// </summary>
-public class UoMConverter : IUoMConverter {
-    private readonly FrozenDictionary<string, (Quantity Q, Unit U)> _unitLookup;
+public sealed class UoMConverter : IUoMConverter {
+    private readonly FrozenDictionary<string, (Quantity Q, Unit U)> _abbreviationLookup;
     private readonly FrozenDictionary<string, (Quantity Q, Unit U)> _exactNameLookup;
+    private readonly FrozenDictionary<string, string> _abbreviationCanonical;
     private readonly FrozenDictionary<string, List<(string Name, string Abbreviation, string Plural, double Factor, double Offset, bool IsComplex)>> _unitListCache;
 
     /// <summary>
@@ -20,17 +21,21 @@ public class UoMConverter : IUoMConverter {
     /// </summary>
     private readonly FrozenDictionary<string, Quantity[]> _unitToQuantities;
 
+    private readonly FrozenDictionary<string, (FrozenDictionary<string, Unit> Exact, FrozenDictionary<string, Unit> Names)> _quantityIndex;
+
     /// <summary>
     /// Initializes a new instance of the <see cref="UoMConverter"/> class.
     /// Loads unit definitions from the centralized registry.
     /// </summary>
     public UoMConverter() {
-        _unitLookup = UoMRegistry.UnitLookup;
+        _abbreviationLookup = UoMRegistry.AbbreviationLookup;
         _exactNameLookup = UoMRegistry.ExactNameLookup;
 
         // Fetch pre-computed caches globally to ensure zero-allocation instantiation
         _unitListCache = UoMRegistry.UnitListCache.Value;
         _unitToQuantities = UoMRegistry.UnitToQuantities.Value;
+        _quantityIndex = UoMRegistry.QuantityIndex.Value;
+        _abbreviationCanonical = UoMRegistry.AbbreviationCanonical.Value;
     }
 
     /// <summary>
@@ -61,10 +66,11 @@ public class UoMConverter : IUoMConverter {
     /// <param name="toUnit">The target unit name or abbreviation.</param>
     /// <param name="useSmartDetection">If true (default), attempts to resolve ambiguities by finding a common quantity.</param>
     /// <returns>The converted value.</returns>
+    /// <exception cref="ArgumentNullException">Thrown if a unit is null.</exception>
     /// <exception cref="ArgumentException">Thrown if units are unknown or belong to different physical quantities.</exception>
     public double Convert(double value, string fromUnit, string toUnit, bool useSmartDetection = true) {
-        if (fromUnit == null) throw new ArgumentException("Source unit cannot be null", nameof(fromUnit));
-        if (toUnit == null) throw new ArgumentException("Target unit cannot be null", nameof(toUnit));
+        ArgumentNullException.ThrowIfNull(fromUnit);
+        ArgumentNullException.ThrowIfNull(toUnit);
 
         return useSmartDetection
             ? ConvertWithSmartDetection(value, fromUnit, toUnit)
@@ -73,21 +79,26 @@ public class UoMConverter : IUoMConverter {
 
     /// <inheritdoc />
     public double Convert(double value, string fromUnit, string toUnit, string dimension) {
+        ArgumentNullException.ThrowIfNull(fromUnit);
+        ArgumentNullException.ThrowIfNull(toUnit);
+
         if (string.IsNullOrWhiteSpace(dimension))
             return Convert(value, fromUnit, toUnit);
 
         if (!UoMRegistry.Quantities.TryGetValue(dimension, out var q))
             throw new ArgumentException($"Unknown physical quantity: {dimension}", nameof(dimension));
 
-        // Use scoped lookup within the specific Quantity
+        return ConvertInQuantity(q, value, fromUnit, toUnit);
+    }
+
+    private double ConvertInQuantity(Quantity q, double value, string fromUnit, string toUnit) {
         if (!TryGetUnitInQuantity(q, fromUnit, out var sourceUnit, out _))
-            throw new ArgumentException($"Unknown source unit '{fromUnit}' in quantity '{dimension}'", nameof(fromUnit));
+            throw new ArgumentException($"Unknown source unit '{fromUnit}' in quantity '{q.Name}'", nameof(fromUnit));
 
         if (!TryGetUnitInQuantity(q, toUnit, out var targetUnit, out _))
-            throw new ArgumentException($"Unknown target unit '{toUnit}' in quantity '{dimension}'", nameof(toUnit));
+            throw new ArgumentException($"Unknown target unit '{toUnit}' in quantity '{q.Name}'", nameof(toUnit));
 
-        var baseValue = sourceUnit.ToBase(value);
-        return targetUnit.FromBase(baseValue);
+        return targetUnit.FromBase(sourceUnit.ToBase(value));
     }
 
     /// <summary>
@@ -101,69 +112,104 @@ public class UoMConverter : IUoMConverter {
         if (!_unitToQuantities.TryGetValue(toUnit, out var qTo))
             throw new ArgumentException($"Unknown target unit: {toUnit}", nameof(toUnit));
 
-        var common = qFrom.Intersect(qTo).ToArray();
+        // WHY: The reverse map is case-insensitive, so it can list quantities where a case-sensitive abbreviation does not resolve.
+        Unit? singleFrom = null, singleTo = null;
+        var commonCount = 0;
+        foreach (var q in qFrom) {
+            if (ContainsReference(qTo, q) &&
+                TryGetUnitInQuantity(q, fromUnit, out var source, out _) &&
+                TryGetUnitInQuantity(q, toUnit, out var target, out _)) {
+                if (commonCount++ == 0) {
+                    singleFrom = source;
+                    singleTo = target;
+                }
+            }
+        }
 
-        if (common.Length == 0)
+        if (commonCount == 0) {
+            if (!ResolvesInAny(qFrom, fromUnit))
+                throw new ArgumentException($"Unknown source unit: {fromUnit} (abbreviations are case-sensitive)", nameof(fromUnit));
+            if (!ResolvesInAny(qTo, toUnit))
+                throw new ArgumentException($"Unknown target unit: {toUnit} (abbreviations are case-sensitive)", nameof(toUnit));
             throw new ArgumentException(
                $"Cannot convert between incompatible units: '{fromUnit}' and '{toUnit}' belong to different physical quantities.");
+        }
 
-        if (common.Length > 1) {
-            // 1. Priority: EXACT match in both From and To units.
-            // This resolves cases like "MA" (ElectricCurrent, exact) vs "Ma" (Speed, fuzzy).
-            var exactMatches = new List<Quantity>();
-            foreach (var q in common) {
-                var foundFrom = TryGetUnitInQuantity(q, fromUnit, out _, out var exactFrom);
-                var foundTo = TryGetUnitInQuantity(q, toUnit, out _, out var exactTo);
+        if (commonCount == 1)
+            return singleTo!.FromBase(singleFrom!.ToBase(value));
 
-                if (foundFrom && foundTo && exactFrom && exactTo) {
-                    exactMatches.Add(q);
-                }
+        // WHY: Ambiguity is rare; allocations below are acceptable off the hot path.
+        // WARN: Do not use a capturing lambda here; its closure is allocated at method entry, taxing the fast path.
+        var common = new Quantity[commonCount];
+        var n = 0;
+        foreach (var q in qFrom) {
+            if (IsCandidate(q, qTo, fromUnit, toUnit)) common[n++] = q;
+        }
+
+        // 1. Priority: EXACT match in both From and To units.
+        // This resolves cases like "MA" (ElectricCurrent, exact) vs "Ma" (Speed, fuzzy).
+        var exactMatches = new List<Quantity>();
+        foreach (var q in common) {
+            var foundFrom = TryGetUnitInQuantity(q, fromUnit, out _, out var exactFrom);
+            var foundTo = TryGetUnitInQuantity(q, toUnit, out _, out var exactTo);
+
+            if (foundFrom && foundTo && exactFrom && exactTo) {
+                exactMatches.Add(q);
             }
+        }
 
-            // If we found exact matches, narrow down the candidates.
-            if (exactMatches.Count > 0) {
-                common = [.. exactMatches];
-            }
+        if (exactMatches.Count > 0) {
+            common = [.. exactMatches];
+        }
 
-            // 2. Safe Ambiguity Resolution:
-            // If the conversion yields the same result in ALL matching quantities (exact or not), return it.
-            // This handles cases like Power vs Luminosity (W -> kW) or Length vs Molarity (m -> cm) where units share names/scales.
-            // It effectively rejects Temperature vs TemperatureDelta (Offset vs No Offset).
+        // 2. Safe Ambiguity Resolution:
+        // If the conversion yields the same result in ALL matching quantities (exact or not), return it.
+        // This handles cases like Power vs Luminosity (W -> kW) or Length vs Molarity (m -> cm) where units share names/scales.
+        // It effectively rejects Temperature vs TemperatureDelta (Offset vs No Offset).
+        double? firstResult = null;
+        var allMatch = true;
 
-            double? firstResult = null;
-            var allMatch = true;
-
-            foreach (var q in common) {
-                try {
-                    var result = Convert(value, fromUnit, toUnit, q.Name);
-                    if (firstResult == null) {
-                        firstResult = result;
-                    }
-                    else {
-                        // Check for equality with small tolerance for floating point arithmetic
-                        if (Math.Abs(result - firstResult.Value) > 1e-9) {
-                            allMatch = false;
-                            break;
-                        }
-                    }
+        foreach (var q in common) {
+            try {
+                var result = ConvertInQuantity(q, value, fromUnit, toUnit);
+                if (firstResult == null) {
+                    firstResult = result;
                 }
-                catch {
-                    // If one conversion fails (shouldn't happen here), treat as mismatch
+                else if (Math.Abs(result - firstResult.Value) > 1e-9) {
                     allMatch = false;
                     break;
                 }
             }
-
-            if (allMatch && firstResult.HasValue) {
-                return firstResult.Value;
+            catch (ArgumentException) {
+                allMatch = false;
+                break;
             }
-
-            var names = string.Join(", ", common.Select(q => q.Name));
-            throw new ArgumentException(
-               $"Ambiguous conversion: '{fromUnit}' to '{toUnit}' is valid in multiple quantities ({names}). Please specify the dimension.");
         }
 
-        return Convert(value, fromUnit, toUnit, common[0].Name);
+        if (allMatch && firstResult.HasValue) {
+            return firstResult.Value;
+        }
+
+        var names = string.Join(", ", common.Select(q => q.Name));
+        throw new ArgumentException(
+           $"Ambiguous conversion: '{fromUnit}' to '{toUnit}' is valid in multiple quantities ({names}). Please specify the dimension.");
+    }
+
+    private bool IsCandidate(Quantity q, Quantity[] qTo, string fromUnit, string toUnit) =>
+        ContainsReference(qTo, q) && TryGetUnitInQuantity(q, fromUnit, out _, out _) && TryGetUnitInQuantity(q, toUnit, out _, out _);
+
+    private bool ResolvesInAny(Quantity[] quantities, string key) {
+        foreach (var q in quantities) {
+            if (TryGetUnitInQuantity(q, key, out _, out _)) return true;
+        }
+        return false;
+    }
+
+    private static bool ContainsReference(Quantity[] quantities, Quantity q) {
+        foreach (var candidate in quantities) {
+            if (ReferenceEquals(candidate, q)) return true;
+        }
+        return false;
     }
 
     /// <summary>
@@ -226,10 +272,22 @@ public class UoMConverter : IUoMConverter {
         return !string.IsNullOrWhiteSpace(dimension) && UoMRegistry.Quantities.TryGetValue(dimension, out var q) ? q.Units.Keys : Enumerable.Empty<string>();
     }
 
+    /// <summary>
+    /// Gets the name of the physical quantity a unit belongs to, using the same priority as <see cref="GetUnit"/>.
+    /// </summary>
+    /// <param name="unitKey">The unit name or abbreviation.</param>
+    /// <returns>The quantity name, or null if the unit is unknown.</returns>
+    public string? GetDimensionForUnit(string unitKey) {
+        return TryGetUnitInternal(unitKey, out var info) ? info.Q.Name : null;
+    }
+
     private bool TryGetUnitInternal(string key, out (Quantity Q, Unit U) info) {
         if (!string.IsNullOrWhiteSpace(key)) {
-            // Priority: Exact name -> Abbreviation/Any
-            if (_exactNameLookup.TryGetValue(key, out info) || _unitLookup.TryGetValue(key, out info)) {
+            // Priority: Name (any case) -> Abbreviation (exact case) -> Abbreviation (any case, only if unambiguous)
+            if (_exactNameLookup.TryGetValue(key, out info) || _abbreviationLookup.TryGetValue(key, out info)) {
+                return true;
+            }
+            if (_abbreviationCanonical.TryGetValue(key, out var canonical) && _abbreviationLookup.TryGetValue(canonical, out info)) {
                 return true;
             }
         }
@@ -238,29 +296,19 @@ public class UoMConverter : IUoMConverter {
     }
 
     /// <summary>
-    /// optimized single-pass lookup within the Quantity's units.
-    /// Checks Singular, Plural, and Abbreviations in two passes:
-    /// 1. Exact case match (priority) - e.g. "MA" -> MegaAmpere
-    /// 2. Case-insensitive match (fallback) - e.g. "megaampere" -> MegaAmpere
+    /// O(1) lookup within the Quantity's units (Singular, Plural, Abbreviations):
+    /// 1. Exact case match (priority) - e.g. "MA" -> Megaampere
+    /// 2. Case-insensitive name match - e.g. "megaampere" -> Megaampere
+    /// 3. Case-insensitive abbreviation match, only if that abbreviation has a single spelling registry-wide - e.g. "KG" -> kg
     /// </summary>
-    private static bool TryGetUnitInQuantity(Quantity q, string key, out Unit unit, out bool isExact) {
-        // Pass 1: Exact case match
-        foreach (var u in q.Units.Values) {
-            if (u.SingularName.Equals(key, StringComparison.Ordinal) ||
-                u.PluralName.Equals(key, StringComparison.Ordinal) ||
-                u.Abbreviations.Contains(key, StringComparer.Ordinal)) {
-                unit = u;
+    private bool TryGetUnitInQuantity(Quantity q, string key, out Unit unit, out bool isExact) {
+        if (_quantityIndex.TryGetValue(q.Name, out var index)) {
+            if (index.Exact.TryGetValue(key, out unit!)) {
                 isExact = true;
                 return true;
             }
-        }
-
-        // Pass 2: Case-insensitive match
-        foreach (var u in q.Units.Values) {
-            if (u.SingularName.Equals(key, StringComparison.OrdinalIgnoreCase) ||
-                u.PluralName.Equals(key, StringComparison.OrdinalIgnoreCase) ||
-                u.Abbreviations.Contains(key, StringComparer.OrdinalIgnoreCase)) {
-                unit = u;
+            if (index.Names.TryGetValue(key, out unit!) ||
+                (_abbreviationCanonical.TryGetValue(key, out var canonical) && index.Exact.TryGetValue(canonical, out unit!))) {
                 isExact = false;
                 return true;
             }

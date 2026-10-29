@@ -18,260 +18,260 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PicoWattPerCubicMeter
-        PowerDensityUnits.TryAdd("PicoWattPerCubicMeter", new Unit(
-            SingularName: "PicoWattPerCubicMeter",
-            PluralName: "PicoWattsPerCubicMeter",
+        // PicowattPerCubicMeter
+        PowerDensityUnits.TryAdd("PicowattPerCubicMeter", new Unit(
+            SingularName: "PicowattPerCubicMeter",
+            PluralName: "PicowattsPerCubicMeter",
             Abbreviations: ["pW/m³"],
-            Factor: 1,
+            Factor: 1E-12,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-12,
-            FromUnitToBase: static val => (val) * 1E-12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoWattPerCubicMeter
-        PowerDensityUnits.TryAdd("NanoWattPerCubicMeter", new Unit(
-            SingularName: "NanoWattPerCubicMeter",
-            PluralName: "NanoWattsPerCubicMeter",
+        // NanowattPerCubicMeter
+        PowerDensityUnits.TryAdd("NanowattPerCubicMeter", new Unit(
+            SingularName: "NanowattPerCubicMeter",
+            PluralName: "NanowattsPerCubicMeter",
             Abbreviations: ["nW/m³"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroWattPerCubicMeter
-        PowerDensityUnits.TryAdd("MicroWattPerCubicMeter", new Unit(
-            SingularName: "MicroWattPerCubicMeter",
-            PluralName: "MicroWattsPerCubicMeter",
+        // MicrowattPerCubicMeter
+        PowerDensityUnits.TryAdd("MicrowattPerCubicMeter", new Unit(
+            SingularName: "MicrowattPerCubicMeter",
+            PluralName: "MicrowattsPerCubicMeter",
             Abbreviations: ["µW/m³"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliWattPerCubicMeter
-        PowerDensityUnits.TryAdd("MilliWattPerCubicMeter", new Unit(
-            SingularName: "MilliWattPerCubicMeter",
-            PluralName: "MilliWattsPerCubicMeter",
+        // MilliwattPerCubicMeter
+        PowerDensityUnits.TryAdd("MilliwattPerCubicMeter", new Unit(
+            SingularName: "MilliwattPerCubicMeter",
+            PluralName: "MilliwattsPerCubicMeter",
             Abbreviations: ["mW/m³"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciWattPerCubicMeter
-        PowerDensityUnits.TryAdd("DeciWattPerCubicMeter", new Unit(
-            SingularName: "DeciWattPerCubicMeter",
-            PluralName: "DeciWattsPerCubicMeter",
+        // DeciwattPerCubicMeter
+        PowerDensityUnits.TryAdd("DeciwattPerCubicMeter", new Unit(
+            SingularName: "DeciwattPerCubicMeter",
+            PluralName: "DeciwattsPerCubicMeter",
             Abbreviations: ["dW/m³"],
-            Factor: 1,
+            Factor: 0.1,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.1,
-            FromUnitToBase: static val => (val) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DecaWattPerCubicMeter
-        PowerDensityUnits.TryAdd("DecaWattPerCubicMeter", new Unit(
-            SingularName: "DecaWattPerCubicMeter",
-            PluralName: "DecaWattsPerCubicMeter",
+        // DecawattPerCubicMeter
+        PowerDensityUnits.TryAdd("DecawattPerCubicMeter", new Unit(
+            SingularName: "DecawattPerCubicMeter",
+            PluralName: "DecawattsPerCubicMeter",
             Abbreviations: ["daW/m³"],
-            Factor: 1,
+            Factor: 10,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 10,
-            FromUnitToBase: static val => (val) * 10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloWattPerCubicMeter
-        PowerDensityUnits.TryAdd("KiloWattPerCubicMeter", new Unit(
-            SingularName: "KiloWattPerCubicMeter",
-            PluralName: "KiloWattsPerCubicMeter",
+        // KilowattPerCubicMeter
+        PowerDensityUnits.TryAdd("KilowattPerCubicMeter", new Unit(
+            SingularName: "KilowattPerCubicMeter",
+            PluralName: "KilowattsPerCubicMeter",
             Abbreviations: ["kW/m³"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaWattPerCubicMeter
-        PowerDensityUnits.TryAdd("MegaWattPerCubicMeter", new Unit(
-            SingularName: "MegaWattPerCubicMeter",
-            PluralName: "MegaWattsPerCubicMeter",
+        // MegawattPerCubicMeter
+        PowerDensityUnits.TryAdd("MegawattPerCubicMeter", new Unit(
+            SingularName: "MegawattPerCubicMeter",
+            PluralName: "MegawattsPerCubicMeter",
             Abbreviations: ["MW/m³"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000,
-            FromUnitToBase: static val => (val) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaWattPerCubicMeter
-        PowerDensityUnits.TryAdd("GigaWattPerCubicMeter", new Unit(
-            SingularName: "GigaWattPerCubicMeter",
-            PluralName: "GigaWattsPerCubicMeter",
+        // GigawattPerCubicMeter
+        PowerDensityUnits.TryAdd("GigawattPerCubicMeter", new Unit(
+            SingularName: "GigawattPerCubicMeter",
+            PluralName: "GigawattsPerCubicMeter",
             Abbreviations: ["GW/m³"],
-            Factor: 1,
+            Factor: 1000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000,
-            FromUnitToBase: static val => (val) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // TeraWattPerCubicMeter
-        PowerDensityUnits.TryAdd("TeraWattPerCubicMeter", new Unit(
-            SingularName: "TeraWattPerCubicMeter",
-            PluralName: "TeraWattsPerCubicMeter",
+        // TerawattPerCubicMeter
+        PowerDensityUnits.TryAdd("TerawattPerCubicMeter", new Unit(
+            SingularName: "TerawattPerCubicMeter",
+            PluralName: "TerawattsPerCubicMeter",
             Abbreviations: ["TW/m³"],
-            Factor: 1,
+            Factor: 1000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000000000000,
-            FromUnitToBase: static val => (val) * 1000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // WattPerCubicInch
         PowerDensityUnits.TryAdd("WattPerCubicInch", new Unit(
             SingularName: "WattPerCubicInch",
             PluralName: "WattsPerCubicInch",
             Abbreviations: ["W/in³"],
-            Factor: 1,
+            Factor: 61023.74409473229,
             Offset: 0,
-            FromBaseToUnit: static val => val * 1.6387064e-5,
-            FromUnitToBase: static val => val / 1.6387064e-5,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PicoWattPerCubicInch
-        PowerDensityUnits.TryAdd("PicoWattPerCubicInch", new Unit(
-            SingularName: "PicoWattPerCubicInch",
-            PluralName: "PicoWattsPerCubicInch",
+        // PicowattPerCubicInch
+        PowerDensityUnits.TryAdd("PicowattPerCubicInch", new Unit(
+            SingularName: "PicowattPerCubicInch",
+            PluralName: "PicowattsPerCubicInch",
             Abbreviations: ["pW/in³"],
-            Factor: 1,
+            Factor: 6.102374409473229E-08,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1.6387064e-5) / 1E-12,
-            FromUnitToBase: static val => (val / 1.6387064e-5) * 1E-12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoWattPerCubicInch
-        PowerDensityUnits.TryAdd("NanoWattPerCubicInch", new Unit(
-            SingularName: "NanoWattPerCubicInch",
-            PluralName: "NanoWattsPerCubicInch",
+        // NanowattPerCubicInch
+        PowerDensityUnits.TryAdd("NanowattPerCubicInch", new Unit(
+            SingularName: "NanowattPerCubicInch",
+            PluralName: "NanowattsPerCubicInch",
             Abbreviations: ["nW/in³"],
-            Factor: 1,
+            Factor: 6.10237440947323E-05,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1.6387064e-5) / 1E-09,
-            FromUnitToBase: static val => (val / 1.6387064e-5) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroWattPerCubicInch
-        PowerDensityUnits.TryAdd("MicroWattPerCubicInch", new Unit(
-            SingularName: "MicroWattPerCubicInch",
-            PluralName: "MicroWattsPerCubicInch",
+        // MicrowattPerCubicInch
+        PowerDensityUnits.TryAdd("MicrowattPerCubicInch", new Unit(
+            SingularName: "MicrowattPerCubicInch",
+            PluralName: "MicrowattsPerCubicInch",
             Abbreviations: ["µW/in³"],
-            Factor: 1,
+            Factor: 0.06102374409473229,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1.6387064e-5) / 1E-06,
-            FromUnitToBase: static val => (val / 1.6387064e-5) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliWattPerCubicInch
-        PowerDensityUnits.TryAdd("MilliWattPerCubicInch", new Unit(
-            SingularName: "MilliWattPerCubicInch",
-            PluralName: "MilliWattsPerCubicInch",
+        // MilliwattPerCubicInch
+        PowerDensityUnits.TryAdd("MilliwattPerCubicInch", new Unit(
+            SingularName: "MilliwattPerCubicInch",
+            PluralName: "MilliwattsPerCubicInch",
             Abbreviations: ["mW/in³"],
-            Factor: 1,
+            Factor: 61.023744094732294,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1.6387064e-5) / 0.001,
-            FromUnitToBase: static val => (val / 1.6387064e-5) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciWattPerCubicInch
-        PowerDensityUnits.TryAdd("DeciWattPerCubicInch", new Unit(
-            SingularName: "DeciWattPerCubicInch",
-            PluralName: "DeciWattsPerCubicInch",
+        // DeciwattPerCubicInch
+        PowerDensityUnits.TryAdd("DeciwattPerCubicInch", new Unit(
+            SingularName: "DeciwattPerCubicInch",
+            PluralName: "DeciwattsPerCubicInch",
             Abbreviations: ["dW/in³"],
-            Factor: 1,
+            Factor: 6102.374409473229,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1.6387064e-5) / 0.1,
-            FromUnitToBase: static val => (val / 1.6387064e-5) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DecaWattPerCubicInch
-        PowerDensityUnits.TryAdd("DecaWattPerCubicInch", new Unit(
-            SingularName: "DecaWattPerCubicInch",
-            PluralName: "DecaWattsPerCubicInch",
+        // DecawattPerCubicInch
+        PowerDensityUnits.TryAdd("DecawattPerCubicInch", new Unit(
+            SingularName: "DecawattPerCubicInch",
+            PluralName: "DecawattsPerCubicInch",
             Abbreviations: ["daW/in³"],
-            Factor: 1,
+            Factor: 610237.4409473229,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1.6387064e-5) / 10,
-            FromUnitToBase: static val => (val / 1.6387064e-5) * 10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloWattPerCubicInch
-        PowerDensityUnits.TryAdd("KiloWattPerCubicInch", new Unit(
-            SingularName: "KiloWattPerCubicInch",
-            PluralName: "KiloWattsPerCubicInch",
+        // KilowattPerCubicInch
+        PowerDensityUnits.TryAdd("KilowattPerCubicInch", new Unit(
+            SingularName: "KilowattPerCubicInch",
+            PluralName: "KilowattsPerCubicInch",
             Abbreviations: ["kW/in³"],
-            Factor: 1,
+            Factor: 61023744.09473229,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1.6387064e-5) / 1000,
-            FromUnitToBase: static val => (val / 1.6387064e-5) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaWattPerCubicInch
-        PowerDensityUnits.TryAdd("MegaWattPerCubicInch", new Unit(
-            SingularName: "MegaWattPerCubicInch",
-            PluralName: "MegaWattsPerCubicInch",
+        // MegawattPerCubicInch
+        PowerDensityUnits.TryAdd("MegawattPerCubicInch", new Unit(
+            SingularName: "MegawattPerCubicInch",
+            PluralName: "MegawattsPerCubicInch",
             Abbreviations: ["MW/in³"],
-            Factor: 1,
+            Factor: 61023744094.73229,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1.6387064e-5) / 1000000,
-            FromUnitToBase: static val => (val / 1.6387064e-5) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaWattPerCubicInch
-        PowerDensityUnits.TryAdd("GigaWattPerCubicInch", new Unit(
-            SingularName: "GigaWattPerCubicInch",
-            PluralName: "GigaWattsPerCubicInch",
+        // GigawattPerCubicInch
+        PowerDensityUnits.TryAdd("GigawattPerCubicInch", new Unit(
+            SingularName: "GigawattPerCubicInch",
+            PluralName: "GigawattsPerCubicInch",
             Abbreviations: ["GW/in³"],
-            Factor: 1,
+            Factor: 61023744094732.29,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1.6387064e-5) / 1000000000,
-            FromUnitToBase: static val => (val / 1.6387064e-5) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // TeraWattPerCubicInch
-        PowerDensityUnits.TryAdd("TeraWattPerCubicInch", new Unit(
-            SingularName: "TeraWattPerCubicInch",
-            PluralName: "TeraWattsPerCubicInch",
+        // TerawattPerCubicInch
+        PowerDensityUnits.TryAdd("TerawattPerCubicInch", new Unit(
+            SingularName: "TerawattPerCubicInch",
+            PluralName: "TerawattsPerCubicInch",
             Abbreviations: ["TW/in³"],
-            Factor: 1,
+            Factor: 61023744094732290,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 1.6387064e-5) / 1000000000000,
-            FromUnitToBase: static val => (val / 1.6387064e-5) * 1000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // WattPerCubicFoot
         PowerDensityUnits.TryAdd("WattPerCubicFoot", new Unit(
@@ -282,260 +282,260 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PicoWattPerCubicFoot
-        PowerDensityUnits.TryAdd("PicoWattPerCubicFoot", new Unit(
-            SingularName: "PicoWattPerCubicFoot",
-            PluralName: "PicoWattsPerCubicFoot",
+        // PicowattPerCubicFoot
+        PowerDensityUnits.TryAdd("PicowattPerCubicFoot", new Unit(
+            SingularName: "PicowattPerCubicFoot",
+            PluralName: "PicowattsPerCubicFoot",
             Abbreviations: ["pW/ft³"],
-            Factor: 1,
+            Factor: 3.531466672148859E-11,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 0.028316846592) / 1E-12,
-            FromUnitToBase: static val => (val / 0.028316846592) * 1E-12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoWattPerCubicFoot
-        PowerDensityUnits.TryAdd("NanoWattPerCubicFoot", new Unit(
-            SingularName: "NanoWattPerCubicFoot",
-            PluralName: "NanoWattsPerCubicFoot",
+        // NanowattPerCubicFoot
+        PowerDensityUnits.TryAdd("NanowattPerCubicFoot", new Unit(
+            SingularName: "NanowattPerCubicFoot",
+            PluralName: "NanowattsPerCubicFoot",
             Abbreviations: ["nW/ft³"],
-            Factor: 1,
+            Factor: 3.53146667214886E-08,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 0.028316846592) / 1E-09,
-            FromUnitToBase: static val => (val / 0.028316846592) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroWattPerCubicFoot
-        PowerDensityUnits.TryAdd("MicroWattPerCubicFoot", new Unit(
-            SingularName: "MicroWattPerCubicFoot",
-            PluralName: "MicroWattsPerCubicFoot",
+        // MicrowattPerCubicFoot
+        PowerDensityUnits.TryAdd("MicrowattPerCubicFoot", new Unit(
+            SingularName: "MicrowattPerCubicFoot",
+            PluralName: "MicrowattsPerCubicFoot",
             Abbreviations: ["µW/ft³"],
-            Factor: 1,
+            Factor: 3.531466672148859E-05,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 0.028316846592) / 1E-06,
-            FromUnitToBase: static val => (val / 0.028316846592) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliWattPerCubicFoot
-        PowerDensityUnits.TryAdd("MilliWattPerCubicFoot", new Unit(
-            SingularName: "MilliWattPerCubicFoot",
-            PluralName: "MilliWattsPerCubicFoot",
+        // MilliwattPerCubicFoot
+        PowerDensityUnits.TryAdd("MilliwattPerCubicFoot", new Unit(
+            SingularName: "MilliwattPerCubicFoot",
+            PluralName: "MilliwattsPerCubicFoot",
             Abbreviations: ["mW/ft³"],
-            Factor: 1,
+            Factor: 0.03531466672148859,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 0.028316846592) / 0.001,
-            FromUnitToBase: static val => (val / 0.028316846592) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciWattPerCubicFoot
-        PowerDensityUnits.TryAdd("DeciWattPerCubicFoot", new Unit(
-            SingularName: "DeciWattPerCubicFoot",
-            PluralName: "DeciWattsPerCubicFoot",
+        // DeciwattPerCubicFoot
+        PowerDensityUnits.TryAdd("DeciwattPerCubicFoot", new Unit(
+            SingularName: "DeciwattPerCubicFoot",
+            PluralName: "DeciwattsPerCubicFoot",
             Abbreviations: ["dW/ft³"],
-            Factor: 1,
+            Factor: 3.5314666721488592,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 0.028316846592) / 0.1,
-            FromUnitToBase: static val => (val / 0.028316846592) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DecaWattPerCubicFoot
-        PowerDensityUnits.TryAdd("DecaWattPerCubicFoot", new Unit(
-            SingularName: "DecaWattPerCubicFoot",
-            PluralName: "DecaWattsPerCubicFoot",
+        // DecawattPerCubicFoot
+        PowerDensityUnits.TryAdd("DecawattPerCubicFoot", new Unit(
+            SingularName: "DecawattPerCubicFoot",
+            PluralName: "DecawattsPerCubicFoot",
             Abbreviations: ["daW/ft³"],
-            Factor: 1,
+            Factor: 353.14666721488595,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 0.028316846592) / 10,
-            FromUnitToBase: static val => (val / 0.028316846592) * 10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloWattPerCubicFoot
-        PowerDensityUnits.TryAdd("KiloWattPerCubicFoot", new Unit(
-            SingularName: "KiloWattPerCubicFoot",
-            PluralName: "KiloWattsPerCubicFoot",
+        // KilowattPerCubicFoot
+        PowerDensityUnits.TryAdd("KilowattPerCubicFoot", new Unit(
+            SingularName: "KilowattPerCubicFoot",
+            PluralName: "KilowattsPerCubicFoot",
             Abbreviations: ["kW/ft³"],
-            Factor: 1,
+            Factor: 35314.66672148859,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 0.028316846592) / 1000,
-            FromUnitToBase: static val => (val / 0.028316846592) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaWattPerCubicFoot
-        PowerDensityUnits.TryAdd("MegaWattPerCubicFoot", new Unit(
-            SingularName: "MegaWattPerCubicFoot",
-            PluralName: "MegaWattsPerCubicFoot",
+        // MegawattPerCubicFoot
+        PowerDensityUnits.TryAdd("MegawattPerCubicFoot", new Unit(
+            SingularName: "MegawattPerCubicFoot",
+            PluralName: "MegawattsPerCubicFoot",
             Abbreviations: ["MW/ft³"],
-            Factor: 1,
+            Factor: 35314666.721488595,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 0.028316846592) / 1000000,
-            FromUnitToBase: static val => (val / 0.028316846592) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaWattPerCubicFoot
-        PowerDensityUnits.TryAdd("GigaWattPerCubicFoot", new Unit(
-            SingularName: "GigaWattPerCubicFoot",
-            PluralName: "GigaWattsPerCubicFoot",
+        // GigawattPerCubicFoot
+        PowerDensityUnits.TryAdd("GigawattPerCubicFoot", new Unit(
+            SingularName: "GigawattPerCubicFoot",
+            PluralName: "GigawattsPerCubicFoot",
             Abbreviations: ["GW/ft³"],
-            Factor: 1,
+            Factor: 35314666721.488594,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 0.028316846592) / 1000000000,
-            FromUnitToBase: static val => (val / 0.028316846592) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // TeraWattPerCubicFoot
-        PowerDensityUnits.TryAdd("TeraWattPerCubicFoot", new Unit(
-            SingularName: "TeraWattPerCubicFoot",
-            PluralName: "TeraWattsPerCubicFoot",
+        // TerawattPerCubicFoot
+        PowerDensityUnits.TryAdd("TerawattPerCubicFoot", new Unit(
+            SingularName: "TerawattPerCubicFoot",
+            PluralName: "TerawattsPerCubicFoot",
             Abbreviations: ["TW/ft³"],
-            Factor: 1,
+            Factor: 35314666721488.59,
             Offset: 0,
-            FromBaseToUnit: static val => (val * 0.028316846592) / 1000000000000,
-            FromUnitToBase: static val => (val / 0.028316846592) * 1000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // WattPerLiter
         PowerDensityUnits.TryAdd("WattPerLiter", new Unit(
             SingularName: "WattPerLiter",
             PluralName: "WattsPerLiter",
             Abbreviations: ["W/l"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => val / 1.0e3,
-            FromUnitToBase: static val => val * 1.0e3,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // PicoWattPerLiter
-        PowerDensityUnits.TryAdd("PicoWattPerLiter", new Unit(
-            SingularName: "PicoWattPerLiter",
-            PluralName: "PicoWattsPerLiter",
+        // PicowattPerLiter
+        PowerDensityUnits.TryAdd("PicowattPerLiter", new Unit(
+            SingularName: "PicowattPerLiter",
+            PluralName: "PicowattsPerLiter",
             Abbreviations: ["pW/l"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1.0e3) / 1E-12,
-            FromUnitToBase: static val => (val * 1.0e3) * 1E-12,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoWattPerLiter
-        PowerDensityUnits.TryAdd("NanoWattPerLiter", new Unit(
-            SingularName: "NanoWattPerLiter",
-            PluralName: "NanoWattsPerLiter",
+        // NanowattPerLiter
+        PowerDensityUnits.TryAdd("NanowattPerLiter", new Unit(
+            SingularName: "NanowattPerLiter",
+            PluralName: "NanowattsPerLiter",
             Abbreviations: ["nW/l"],
-            Factor: 1,
+            Factor: 1.0000000000000002E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1.0e3) / 1E-09,
-            FromUnitToBase: static val => (val * 1.0e3) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroWattPerLiter
-        PowerDensityUnits.TryAdd("MicroWattPerLiter", new Unit(
-            SingularName: "MicroWattPerLiter",
-            PluralName: "MicroWattsPerLiter",
+        // MicrowattPerLiter
+        PowerDensityUnits.TryAdd("MicrowattPerLiter", new Unit(
+            SingularName: "MicrowattPerLiter",
+            PluralName: "MicrowattsPerLiter",
             Abbreviations: ["µW/l"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1.0e3) / 1E-06,
-            FromUnitToBase: static val => (val * 1.0e3) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliWattPerLiter
-        PowerDensityUnits.TryAdd("MilliWattPerLiter", new Unit(
-            SingularName: "MilliWattPerLiter",
-            PluralName: "MilliWattsPerLiter",
+        // MilliwattPerLiter
+        PowerDensityUnits.TryAdd("MilliwattPerLiter", new Unit(
+            SingularName: "MilliwattPerLiter",
+            PluralName: "MilliwattsPerLiter",
             Abbreviations: ["mW/l"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1.0e3) / 0.001,
-            FromUnitToBase: static val => (val * 1.0e3) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciWattPerLiter
-        PowerDensityUnits.TryAdd("DeciWattPerLiter", new Unit(
-            SingularName: "DeciWattPerLiter",
-            PluralName: "DeciWattsPerLiter",
+        // DeciwattPerLiter
+        PowerDensityUnits.TryAdd("DeciwattPerLiter", new Unit(
+            SingularName: "DeciwattPerLiter",
+            PluralName: "DeciwattsPerLiter",
             Abbreviations: ["dW/l"],
-            Factor: 1,
+            Factor: 100,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1.0e3) / 0.1,
-            FromUnitToBase: static val => (val * 1.0e3) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DecaWattPerLiter
-        PowerDensityUnits.TryAdd("DecaWattPerLiter", new Unit(
-            SingularName: "DecaWattPerLiter",
-            PluralName: "DecaWattsPerLiter",
+        // DecawattPerLiter
+        PowerDensityUnits.TryAdd("DecawattPerLiter", new Unit(
+            SingularName: "DecawattPerLiter",
+            PluralName: "DecawattsPerLiter",
             Abbreviations: ["daW/l"],
-            Factor: 1,
+            Factor: 10000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1.0e3) / 10,
-            FromUnitToBase: static val => (val * 1.0e3) * 10,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloWattPerLiter
-        PowerDensityUnits.TryAdd("KiloWattPerLiter", new Unit(
-            SingularName: "KiloWattPerLiter",
-            PluralName: "KiloWattsPerLiter",
+        // KilowattPerLiter
+        PowerDensityUnits.TryAdd("KilowattPerLiter", new Unit(
+            SingularName: "KilowattPerLiter",
+            PluralName: "KilowattsPerLiter",
             Abbreviations: ["kW/l"],
-            Factor: 1,
+            Factor: 1000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1.0e3) / 1000,
-            FromUnitToBase: static val => (val * 1.0e3) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MegaWattPerLiter
-        PowerDensityUnits.TryAdd("MegaWattPerLiter", new Unit(
-            SingularName: "MegaWattPerLiter",
-            PluralName: "MegaWattsPerLiter",
+        // MegawattPerLiter
+        PowerDensityUnits.TryAdd("MegawattPerLiter", new Unit(
+            SingularName: "MegawattPerLiter",
+            PluralName: "MegawattsPerLiter",
             Abbreviations: ["MW/l"],
-            Factor: 1,
+            Factor: 1000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1.0e3) / 1000000,
-            FromUnitToBase: static val => (val * 1.0e3) * 1000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // GigaWattPerLiter
-        PowerDensityUnits.TryAdd("GigaWattPerLiter", new Unit(
-            SingularName: "GigaWattPerLiter",
-            PluralName: "GigaWattsPerLiter",
+        // GigawattPerLiter
+        PowerDensityUnits.TryAdd("GigawattPerLiter", new Unit(
+            SingularName: "GigawattPerLiter",
+            PluralName: "GigawattsPerLiter",
             Abbreviations: ["GW/l"],
-            Factor: 1,
+            Factor: 1000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1.0e3) / 1000000000,
-            FromUnitToBase: static val => (val * 1.0e3) * 1000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // TeraWattPerLiter
-        PowerDensityUnits.TryAdd("TeraWattPerLiter", new Unit(
-            SingularName: "TeraWattPerLiter",
-            PluralName: "TeraWattsPerLiter",
+        // TerawattPerLiter
+        PowerDensityUnits.TryAdd("TerawattPerLiter", new Unit(
+            SingularName: "TerawattPerLiter",
+            PluralName: "TerawattsPerLiter",
             Abbreviations: ["TW/l"],
-            Factor: 1,
+            Factor: 1000000000000000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 1.0e3) / 1000000000000,
-            FromUnitToBase: static val => (val * 1.0e3) * 1000000000000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -544,7 +544,7 @@ public static partial class UoMRegistry {
             "The amount of power in a volume.",
             PowerDensityUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["L"] = -1, ["M"] = 1, ["T"] = -3 },
-            "",
+            null,
             false,
             1
         );

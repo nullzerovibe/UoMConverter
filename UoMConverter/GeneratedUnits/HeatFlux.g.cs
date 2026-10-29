@@ -18,80 +18,80 @@ public static partial class UoMRegistry {
             Offset: 0,
             FromBaseToUnit: null,
             FromUnitToBase: null,
-            Remarks: "",
-            ObsoleteText: ""
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // NanoWattPerSquareMeter
-        HeatFluxUnits.TryAdd("NanoWattPerSquareMeter", new Unit(
-            SingularName: "NanoWattPerSquareMeter",
-            PluralName: "NanoWattsPerSquareMeter",
+        // NanowattPerSquareMeter
+        HeatFluxUnits.TryAdd("NanowattPerSquareMeter", new Unit(
+            SingularName: "NanowattPerSquareMeter",
+            PluralName: "NanowattsPerSquareMeter",
             Abbreviations: ["nW/m²"],
-            Factor: 1,
+            Factor: 1E-09,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-09,
-            FromUnitToBase: static val => (val) * 1E-09,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MicroWattPerSquareMeter
-        HeatFluxUnits.TryAdd("MicroWattPerSquareMeter", new Unit(
-            SingularName: "MicroWattPerSquareMeter",
-            PluralName: "MicroWattsPerSquareMeter",
+        // MicrowattPerSquareMeter
+        HeatFluxUnits.TryAdd("MicrowattPerSquareMeter", new Unit(
+            SingularName: "MicrowattPerSquareMeter",
+            PluralName: "MicrowattsPerSquareMeter",
             Abbreviations: ["µW/m²"],
-            Factor: 1,
+            Factor: 1E-06,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1E-06,
-            FromUnitToBase: static val => (val) * 1E-06,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // MilliWattPerSquareMeter
-        HeatFluxUnits.TryAdd("MilliWattPerSquareMeter", new Unit(
-            SingularName: "MilliWattPerSquareMeter",
-            PluralName: "MilliWattsPerSquareMeter",
+        // MilliwattPerSquareMeter
+        HeatFluxUnits.TryAdd("MilliwattPerSquareMeter", new Unit(
+            SingularName: "MilliwattPerSquareMeter",
+            PluralName: "MilliwattsPerSquareMeter",
             Abbreviations: ["mW/m²"],
-            Factor: 1,
+            Factor: 0.001,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.001,
-            FromUnitToBase: static val => (val) * 0.001,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // CentiWattPerSquareMeter
-        HeatFluxUnits.TryAdd("CentiWattPerSquareMeter", new Unit(
-            SingularName: "CentiWattPerSquareMeter",
-            PluralName: "CentiWattsPerSquareMeter",
+        // CentiwattPerSquareMeter
+        HeatFluxUnits.TryAdd("CentiwattPerSquareMeter", new Unit(
+            SingularName: "CentiwattPerSquareMeter",
+            PluralName: "CentiwattsPerSquareMeter",
             Abbreviations: ["cW/m²"],
-            Factor: 1,
+            Factor: 0.01,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.01,
-            FromUnitToBase: static val => (val) * 0.01,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // DeciWattPerSquareMeter
-        HeatFluxUnits.TryAdd("DeciWattPerSquareMeter", new Unit(
-            SingularName: "DeciWattPerSquareMeter",
-            PluralName: "DeciWattsPerSquareMeter",
+        // DeciwattPerSquareMeter
+        HeatFluxUnits.TryAdd("DeciwattPerSquareMeter", new Unit(
+            SingularName: "DeciwattPerSquareMeter",
+            PluralName: "DeciwattsPerSquareMeter",
             Abbreviations: ["dW/m²"],
-            Factor: 1,
+            Factor: 0.1,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 0.1,
-            FromUnitToBase: static val => (val) * 0.1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloWattPerSquareMeter
-        HeatFluxUnits.TryAdd("KiloWattPerSquareMeter", new Unit(
-            SingularName: "KiloWattPerSquareMeter",
-            PluralName: "KiloWattsPerSquareMeter",
+        // KilowattPerSquareMeter
+        HeatFluxUnits.TryAdd("KilowattPerSquareMeter", new Unit(
+            SingularName: "KilowattPerSquareMeter",
+            PluralName: "KilowattsPerSquareMeter",
             Abbreviations: ["kW/m²"],
-            Factor: 1,
+            Factor: 1000,
             Offset: 0,
-            FromBaseToUnit: static val => (val) / 1000,
-            FromUnitToBase: static val => (val) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // WattPerSquareInch
         HeatFluxUnits.TryAdd("WattPerSquareInch", new Unit(
@@ -100,10 +100,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["W/in²"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * (2.54e-2 * 2.54e-2),
-            FromUnitToBase: static val => val / (2.54e-2 * 2.54e-2),
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * (2.54e-2 * 2.54e-2)),
+            FromUnitToBase: static val => (val / (2.54e-2 * 2.54e-2)),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // WattPerSquareFoot
         HeatFluxUnits.TryAdd("WattPerSquareFoot", new Unit(
@@ -112,10 +112,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["W/ft²"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * (0.3048 * 0.3048),
-            FromUnitToBase: static val => val / (0.3048 * 0.3048),
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * (0.3048 * 0.3048)),
+            FromUnitToBase: static val => (val / (0.3048 * 0.3048)),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // BtuPerSecondSquareInch
         HeatFluxUnits.TryAdd("BtuPerSecondSquareInch", new Unit(
@@ -124,10 +124,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["BTU/(s·in²)"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * (2.54e-2 * 2.54e-2) / 1055.05585262,
-            FromUnitToBase: static val => val * 1055.05585262 / (2.54e-2 * 2.54e-2),
+            FromBaseToUnit: static val => (val * (2.54e-2 * 2.54e-2) / 1055.05585262),
+            FromUnitToBase: static val => (val * 1055.05585262 / (2.54e-2 * 2.54e-2)),
             Remarks: "Based on the International Table (IT) definition of the British thermal unit (BTU), where 1 BTU is defined as exactly 1055.05585262 joules (≈1.05506 kJ). See https://en.wikipedia.org/wiki/British_thermal_unit for details.",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // BtuPerSecondSquareFoot
         HeatFluxUnits.TryAdd("BtuPerSecondSquareFoot", new Unit(
@@ -136,10 +136,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["BTU/(s·ft²)"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * (0.3048 * 0.3048) / 1055.05585262,
-            FromUnitToBase: static val => val * 1055.05585262 / (0.3048 * 0.3048),
+            FromBaseToUnit: static val => (val * (0.3048 * 0.3048) / 1055.05585262),
+            FromUnitToBase: static val => (val * 1055.05585262 / (0.3048 * 0.3048)),
             Remarks: "Based on the International Table (IT) definition of the British thermal unit (BTU), where 1 BTU is defined as exactly 1055.05585262 joules (≈1.05506 kJ). See https://en.wikipedia.org/wiki/British_thermal_unit for details.",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // BtuPerMinuteSquareFoot
         HeatFluxUnits.TryAdd("BtuPerMinuteSquareFoot", new Unit(
@@ -148,10 +148,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["BTU/(min·ft²)"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * (0.3048 * 0.3048 * 60) / 1055.05585262,
-            FromUnitToBase: static val => val * 1055.05585262 / (0.3048 * 0.3048 * 60),
+            FromBaseToUnit: static val => (val * (0.3048 * 0.3048 * 60) / 1055.05585262),
+            FromUnitToBase: static val => (val * 1055.05585262 / (0.3048 * 0.3048 * 60)),
             Remarks: "Based on the International Table (IT) definition of the British thermal unit (BTU), where 1 BTU is defined as exactly 1055.05585262 joules (≈1.05506 kJ). See https://en.wikipedia.org/wiki/British_thermal_unit for details.",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // BtuPerHourSquareFoot
         HeatFluxUnits.TryAdd("BtuPerHourSquareFoot", new Unit(
@@ -160,34 +160,34 @@ public static partial class UoMRegistry {
             Abbreviations: ["BTU/(h·ft²)"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * (0.3048 * 0.3048 * 3600) / 1055.05585262,
-            FromUnitToBase: static val => val * 1055.05585262 / (0.3048 * 0.3048 * 3600),
+            FromBaseToUnit: static val => (val * (0.3048 * 0.3048 * 3600) / 1055.05585262),
+            FromUnitToBase: static val => (val * 1055.05585262 / (0.3048 * 0.3048 * 3600)),
             Remarks: "Based on the International Table (IT) definition of the British thermal unit (BTU), where 1 BTU is defined as exactly 1055.05585262 joules (≈1.05506 kJ). See https://en.wikipedia.org/wiki/British_thermal_unit for details.",
-            ObsoleteText: ""
+            ObsoleteText: null
         ));
         // CaloriePerSecondSquareCentimeter
         HeatFluxUnits.TryAdd("CaloriePerSecondSquareCentimeter", new Unit(
             SingularName: "CaloriePerSecondSquareCentimeter",
             PluralName: "CaloriesPerSecondSquareCentimeter",
             Abbreviations: ["cal/(s·cm²)"],
-            Factor: 1,
+            Factor: 41840,
             Offset: 0,
-            FromBaseToUnit: static val => val / 4.184e4,
-            FromUnitToBase: static val => val * 4.184e4,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
-        // KiloCaloriePerSecondSquareCentimeter
-        HeatFluxUnits.TryAdd("KiloCaloriePerSecondSquareCentimeter", new Unit(
-            SingularName: "KiloCaloriePerSecondSquareCentimeter",
-            PluralName: "KiloCaloriesPerSecondSquareCentimeter",
+        // KilocaloriePerSecondSquareCentimeter
+        HeatFluxUnits.TryAdd("KilocaloriePerSecondSquareCentimeter", new Unit(
+            SingularName: "KilocaloriePerSecondSquareCentimeter",
+            PluralName: "KilocaloriesPerSecondSquareCentimeter",
             Abbreviations: ["kcal/(s·cm²)"],
-            Factor: 1,
+            Factor: 41840000,
             Offset: 0,
-            FromBaseToUnit: static val => (val / 4.184e4) / 1000,
-            FromUnitToBase: static val => (val * 4.184e4) * 1000,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
         // KilocaloriePerHourSquareMeter
         HeatFluxUnits.TryAdd("KilocaloriePerHourSquareMeter", new Unit(
@@ -196,10 +196,10 @@ public static partial class UoMRegistry {
             Abbreviations: ["kcal/(h·m²)"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 3600 / 4.184e3,
-            FromUnitToBase: static val => val * 4.184e3 / 3600,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 3600 / 4.184e3),
+            FromUnitToBase: static val => (val * 4.184e3 / 3600),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundForcePerFootSecond
         HeatFluxUnits.TryAdd("PoundForcePerFootSecond", new Unit(
@@ -208,22 +208,22 @@ public static partial class UoMRegistry {
             Abbreviations: ["lbf/(ft·s)"],
             Factor: 1,
             Offset: 0,
-            FromBaseToUnit: static val => val * 9.290304e-2 / 1.3558179483314004,
-            FromUnitToBase: static val => val * 1.3558179483314004 / 9.290304e-2,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: static val => (val * 9.290304e-2 / 1.3558179483314004),
+            FromUnitToBase: static val => (val * 1.3558179483314004 / 9.290304e-2),
+            Remarks: null,
+            ObsoleteText: null
         ));
         // PoundPerSecondCubed
         HeatFluxUnits.TryAdd("PoundPerSecondCubed", new Unit(
             SingularName: "PoundPerSecondCubed",
             PluralName: "PoundsPerSecondCubed",
             Abbreviations: ["lb/s³", "lbm/s³"],
-            Factor: 1,
+            Factor: 0.45359237,
             Offset: 0,
-            FromBaseToUnit: static val => val / 4.5359237e-1,
-            FromUnitToBase: static val => val * 4.5359237e-1,
-            Remarks: "",
-            ObsoleteText: ""
+            FromBaseToUnit: null,
+            FromUnitToBase: null,
+            Remarks: null,
+            ObsoleteText: null
         ));
 
         var q = new Quantity(
@@ -232,7 +232,7 @@ public static partial class UoMRegistry {
             "Heat flux is the flow of energy per unit of area per unit of time",
             HeatFluxUnits.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase),
             new Dictionary<string, int> { ["M"] = 1, ["T"] = -3 },
-            "",
+            null,
             false,
             1
         );
