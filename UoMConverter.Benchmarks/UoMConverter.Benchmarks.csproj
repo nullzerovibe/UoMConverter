@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <IsPackable>false</IsPackable>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <!-- WHY: BenchmarkDotNet requires public, non-sealed benchmark classes with instance methods. -->
+    <NoWarn>$(NoWarn);CA1822;CA1515</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\UoMConverter\UoMConverter.csproj" />
+  </ItemGroup>
+
+</Project>

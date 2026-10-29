@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="UoMConverter.Benchmarks/UoMConverter.Benchmarks.csproj" />
   <Project Path="UoMConverter.Generator/UoMConverter.Generator.csproj" />
   <Project Path="UoMConverter.Generator.Test/UoMConverter.Generator.Test.csproj" />
   <Project Path="UoMConverter.Test/UoMConverter.Test.csproj" />

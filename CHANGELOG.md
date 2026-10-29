@@ -8,16 +8,28 @@ All notable changes to this project will be documented in this file.
 - **Abbreviations are case-sensitive unless unambiguous**: a wrong-case abbreviation resolves only when a single spelling exists registry-wide (`KG` → `kg` still works; `PA` is rejected because both `Pa` and `pA` exist). 322 such ambiguous inputs now throw instead of silently picking a unit.
 - `Temperature` vs `TemperatureDelta` with millidegrees (e.g. `Kelvin` → `MillidegreeCelsius`) now reports ambiguity, consistent with `Kelvin` → `DegreeCelsius`. Pass the dimension explicitly.
 - `Convert` throws `ArgumentNullException` (was `ArgumentException`) for null units. `UoMConverter` is now `sealed`.
+- **Typed exceptions**: failures throw `UnknownUnitException`, `UnknownDimensionException`, `IncompatibleUnitsException` or `AmbiguousConversionException` (all derive from `ArgumentException`, so `catch (ArgumentException)` still works; exact-type checks must be updated).
+- **`GetUnitList` returns `IReadOnlyList<UnitInfo>`** (a record struct with the same member names) instead of a 6-tuple sequence; positional deconstruction still works.
+- `UoMRegistry.UnitListCache` and `UoMRegistry.UnitToQuantities` are now internal (they exposed mutable, process-wide state). `Quantity.Dimensions` and `Unit.Abbreviations` are immutable.
+- The synthetic `CoverageTest` quantity is no longer shipped.
 
 ### Added
 - **`UOM0001` Diagnostic**: Malformed unit definition JSON now fails the build with file and position instead of being silently skipped.
 - **`UoMConverter.GetDimensionForUnit(string)`**: O(1) reverse lookup from unit to quantity name.
 - **`UoMRegistry.AbbreviationLookup`**: Case-sensitive abbreviation index.
+- **`TryConvert`**: exception-free conversion (smart or dimension-scoped).
+- **Formula allowlist** (`UOM0002`) and **inverse check** (`UOM0003`): unit formulas are parsed against a strict grammar and re-rendered from the syntax tree; arbitrary code in definition files fails the build.
+- **`UoMConverter.Generator.Test`** (generator unit tests) and **`UoMConverter.Benchmarks`** (BenchmarkDotNet).
 - **Regression Suite** (`UT_Regressions`): Round-trip of every unit, case-insensitive dimensions, null metadata, precomputed prefixes, UnitsNet casing, abbreviation case safety, and a zero-allocation guard for `Convert`.
 
 ### Changed
-- **Performance**: `Convert` is ~39x faster (~5.3 µs → ~136 ns) and allocation-free (1,776 B → 0 B) via per-quantity frozen unit indexes.
-- **Generator**: Prefixed units fold into a precomputed `Factor` when linear; delegate-backed units dropped from 1,444 to 310. Scientific notation (`1e-3`) is now recognized as linear.
+- **Performance**: `Convert` runs in ~40–80 ns (BenchmarkDotNet) and allocates nothing (was ~5.3 µs and 1,776 B/op) via per-quantity frozen unit indexes.
+- **Cold start**: ~125 ms → ~58 ms. Quantities are generated as packed data tables instead of ~1,800 constructor call sites, and UI-only caches build lazily.
+- **Generator**: affine formulas (including prefixed, temperature and compound expressions) fold into precomputed `Factor`/`Offset`; delegate-backed units dropped from 1,444 to 2 (the reciprocal FuelEfficiency unit).
+- **AOT/trimming**: the library is `IsAotCompatible`; `GetDocumentation` uses source-generated JSON and is cached (output unchanged).
+- **Packaging**: symbol package (snupkg), SourceLink, deterministic CI builds, `THIRD-PARTY-NOTICES.txt` in the package; UnitsNet license corrected to MIT-0.
+- **Release safety**: the release job verifies the tag matches `<Version>`; `update-version.ps1` only tags and pushes with `-Release` from a clean `main`. The demo deploys only after CI passes.
+- **Upstream sync** is pinned to a commit SHA and recorded in `UPSTREAM.txt`.
 - **Packaging**: Removed `GeneratePackageOnBuild` (broke clean `dotnet pack -c Release`); the generator is no longer packable; NuGet metadata unified in `Directory.Build.props`.
 - **Generated mirror**: `GeneratedUnits/` syncs only after a successful compile and removes stale files, instead of being wiped before every build.
 - **CI**: Split into a fast `test` job (no WASM workload, Release, coverage), a `wasm` job (PRs and tags), and a tag-only `release` job gated on both.

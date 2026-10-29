@@ -34,7 +34,7 @@
 
 ## Features
 
-- 🚀 **High-Performance Core**: Unit lookup and conversion run on precomputed frozen indexes: ~150 ns per conversion with **zero allocations** (measured on .NET 10, x64; guarded by a regression test).
+- 🚀 **High-Performance Core**: Unit lookup and conversion run on precomputed frozen indexes: ~40–80 ns per conversion with **zero allocations** (BenchmarkDotNet, .NET 10, x64; see `UoMConverter.Benchmarks`, and guarded by a regression test).
 - 🏘️ **Source Generated Registry**: 136 quantities and 1,779 units are compiled in from JSON definitions at build time. No reflection, no runtime parsing; linear units are precomputed `Factor`/`Offset` pairs.
 - 🔒 **Safe Lookups**: Names are case-insensitive (`kilometer`), abbreviations are case-sensitive (`mW` ≠ `MW`) and only fall back to case-insensitive matching when unambiguous (`KG` → `kg`).
 - 🧭 **Smart Detection**: Resolves shared abbreviations (e.g. `A` = Ampere or Ångström) by finding the quantity both units have in common, and refuses to guess when results would differ.
