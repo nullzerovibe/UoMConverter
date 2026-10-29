@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,22 @@ public class UoMGenerator : IIncrementalGenerator {
         id: "UOM0001",
         title: "Invalid unit definition file",
         messageFormat: "Unit definition '{0}' could not be parsed and was skipped: {1}",
+        category: "UoMConverter",
+        defaultSeverity: DiagnosticSeverity.Warning,
+        isEnabledByDefault: true);
+
+    internal static readonly DiagnosticDescriptor InvalidFormula = new(
+        id: "UOM0002",
+        title: "Invalid unit formula",
+        messageFormat: "Unit '{0}' was skipped: {1}",
+        category: "UoMConverter",
+        defaultSeverity: DiagnosticSeverity.Error,
+        isEnabledByDefault: true);
+
+    internal static readonly DiagnosticDescriptor InconsistentFormulas = new(
+        id: "UOM0003",
+        title: "Unit formulas are not inverses",
+        messageFormat: "Unit '{0}': {1}",
         category: "UoMConverter",
         defaultSeverity: DiagnosticSeverity.Warning,
         isEnabledByDefault: true);
@@ -58,7 +75,11 @@ public class UoMGenerator : IIncrementalGenerator {
         // 2. Generate individual quantity files (e.g., Length.g.cs, Mass.g.cs)
         // These files contain partial class implementations for loading unit data.
         foreach (var quantity in finalQuantities) {
-            var sourceText = SourceRenderer.RenderQuantityFile(quantity);
+            var diagnostics = new List<RenderDiagnostic>();
+            var sourceText = SourceRenderer.RenderQuantityFile(quantity, diagnostics);
+            foreach (var d in diagnostics) {
+                spc.ReportDiagnostic(Diagnostic.Create(d.IsError ? InvalidFormula : InconsistentFormulas, Location.None, d.Unit, d.Message));
+            }
             spc.AddSource($"{quantity.Name}.g.cs", SourceText.From(sourceText, Encoding.UTF8));
         }
 

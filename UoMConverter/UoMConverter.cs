@@ -15,7 +15,6 @@ public sealed class UoMConverter : IUoMConverter {
     private readonly FrozenDictionary<string, (Quantity Q, Unit U)> _abbreviationLookup;
     private readonly FrozenDictionary<string, (Quantity Q, Unit U)> _exactNameLookup;
     private readonly FrozenDictionary<string, string> _abbreviationCanonical;
-    private readonly FrozenDictionary<string, IReadOnlyList<UnitInfo>> _unitListCache;
 
     /// <summary>
     /// Maps every unit name/abbreviation to all Quantities that contain it.
@@ -33,8 +32,7 @@ public sealed class UoMConverter : IUoMConverter {
         _abbreviationLookup = UoMRegistry.AbbreviationLookup;
         _exactNameLookup = UoMRegistry.ExactNameLookup;
 
-        // Fetch pre-computed caches globally to ensure zero-allocation instantiation
-        _unitListCache = UoMRegistry.UnitListCache.Value;
+        // WHY: Only conversion caches are forced here; the UI-only unit list cache builds on first GetUnitList call.
         _unitToQuantities = UoMRegistry.UnitToQuantities.Value;
         _quantityIndex = UoMRegistry.QuantityIndex.Value;
         _abbreviationCanonical = UoMRegistry.AbbreviationCanonical.Value;
@@ -234,7 +232,7 @@ public sealed class UoMConverter : IUoMConverter {
 
     /// <inheritdoc />
     public IReadOnlyList<UnitInfo> GetUnitList(string dimension) {
-        return !string.IsNullOrWhiteSpace(dimension) && _unitListCache.TryGetValue(dimension, out var list) ? list : NoUnits;
+        return !string.IsNullOrWhiteSpace(dimension) && UoMRegistry.UnitListCache.Value.TryGetValue(dimension, out var list) ? list : NoUnits;
     }
 
     private static readonly IReadOnlyList<UnitInfo> NoUnits = ImmutableArray<UnitInfo>.Empty;

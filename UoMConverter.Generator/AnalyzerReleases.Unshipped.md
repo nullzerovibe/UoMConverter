@@ -6,3 +6,5 @@
 Rule ID | Category | Severity | Notes
 --------|----------|----------|-------
 UOM0001 | UoMConverter | Warning | UoMGenerator
+UOM0002 | UoMConverter | Error | UoMGenerator
+UOM0003 | UoMConverter | Warning | UoMGenerator
