@@ -36,6 +36,8 @@ All notable changes to this project will be documented in this file.
 - **WASM**: Unit-frequency stats are keyed case-insensitively; existing saved stats are migrated and merged on load.
 
 ### Fixed
+- **WASM demo**: Smart Paste never matched units (camelCase interop); offline mode (esm.sh modules uncached, query-string navigations missed the cache, failed precache wiped the last good cache); shortcuts calling nonexistent actions; Ctrl+S swapping units; storage errors blanking the page; pre-0.10 deep links (`KiloMeter`) falling back to defaults; "Export as CSV" exporting JSON; the live-chip thousands separator; a history entry per keystroke; the result animation never firing.
+- **WASM demo accessibility & performance**: screen-reader labels, named icon buttons, keyboard-operable rows, live result region; Unit Reference no longer renders while closed and its search is debounced; decimal-comma paste (`1,5 m to ft`); SRI on pinned CDN assets; ~160 lines of dead code removed.
 - **Silent wrong conversions from case-insensitive abbreviations**: e.g. `Convert(1, "MW/m²", "W/m²", "HeatFlux")` returned `0.001` (milliwatts) and `GetUnit("KiB")` returned `Kibibit`.
 - Dimension names are case-insensitive in `Convert(…, dimension)` and `GetQuantity` (previously only `GetUnitList`).
 - `ObsoleteText` and `Remarks` are `null` when absent (previously `""` on every unit).

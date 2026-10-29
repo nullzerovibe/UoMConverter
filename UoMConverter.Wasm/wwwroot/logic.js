@@ -34,6 +34,9 @@ export const EXAMPLE_GROUPS = [
 
 // Flatten for lookup
 let globalIndex = 0;
+
+const HISTORY_COMMIT_DELAY_MS = 1200;
+let historyCommitTimer = 0;
 export const FLAT_MAP = [];
 EXAMPLE_GROUPS.forEach(g => {
     g.items.forEach(item => {
@@ -206,129 +209,6 @@ const loadSavedSettings = () => {
 };
 
 
-
-const formatDate = (pattern) => {
-    const now = new Date();
-    const d = String(now.getDate()).padStart(2, '0');
-    const m = String(now.getMonth() + 1).padStart(2, '0');
-    const y = now.getFullYear();
-
-    return pattern
-        .replace('yyyy', y)
-        .replace('MM', m)
-        .replace('dd', d)
-        .replace('M', now.getMonth() + 1)
-        .replace('d', now.getDate());
-};
-
-const inferVariables = (expr) => {
-    if (!expr) return [];
-
-    const strippedExpr = expr.replace(/'[^']*'|"[^"]*"/g, m => ' '.repeat(m.length));
-    const idRegex = /(?:^|[^a-zA-Z0-9_$])([a-zA-Z_$][a-zA-Z0-9_$]*)/g;
-    const matches = [...strippedExpr.matchAll(idRegex)];
-
-    // We need access to appState.docs.value, so this function must be called where appState is available.
-    // Ideally appState should be defined before this, but due to hoisting/module structure, we access it directly if available, 
-    // or we pass it in. For now, we assume appState is imported/available in scope (which it is in this file).
-
-    const docInfo = appState.docs.value;
-    const keywords = new Set(['true', 'false', 'null', 'pi', 'e', 'inf', 'nan', 'infinity']);
-    const docFuncs = new Set((docInfo.functions || []).map(f => (f.Name || f.name || '').toLowerCase()));
-
-    const uniqueVars = [];
-    const seen = new Set();
-    matches.forEach(m => {
-        const name = m[1];
-        const pos = m.index + m[0].indexOf(name);
-        if (!seen.has(name)) {
-            const lower = name.toLowerCase();
-            if (!keywords.has(lower) && !docFuncs.has(lower)) {
-                uniqueVars.push({ name, pos });
-                seen.add(name);
-            }
-        }
-    });
-
-    if (uniqueVars.length === 0) return [];
-
-    const newVars = [];
-    uniqueVars.forEach(({ name, pos }) => {
-        const lower = name.toLowerCase();
-        const escapedName = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-
-        function getArgContext(formula, startPos) {
-            let depth = 0;
-            let commas = 0;
-            for (let i = startPos - 1; i >= 0; i--) {
-                const c = formula[i];
-                if (c === ')') depth++;
-                else if (c === '(') {
-                    if (depth === 0) {
-                        let nStart = i - 1;
-                        while (nStart >= 0 && /[a-zA-Z0-9_$]/.test(formula[nStart])) nStart--;
-                        return { name: formula.slice(nStart + 1, i).trim().toLowerCase(), index: commas };
-                    }
-                    depth--;
-                } else if (c === ',' && depth === 0) {
-                    commas++;
-                }
-            }
-            return null;
-        }
-
-        const ctx = getArgContext(expr, pos);
-        let inferredType = null;
-
-        if (ctx) {
-            const func = (docInfo.functions || []).find(f => (f.Name || f.name || '').toLowerCase() === ctx.name);
-            if (func && func.Arguments) {
-                let argDef = null;
-                let currentIdx = 0;
-                for (const arg of func.Arguments) {
-                    if (arg.Type === 'array' || arg.type === 'array') {
-                        argDef = (arg.Arguments || arg.arguments)?.[0];
-                        break;
-                    }
-                    if (currentIdx === ctx.index) {
-                        argDef = arg;
-                        break;
-                    }
-                    currentIdx++;
-                }
-                if (argDef) inferredType = (argDef.Type || argDef.type || '').toLowerCase();
-                if (!inferredType) {
-                    const cat = (func.Category || func.category || '').toLowerCase();
-                    if (cat === 'datetime') inferredType = 'date';
-                    else if (cat === 'string') inferredType = 'string';
-                    else if (cat === 'logical') inferredType = 'boolean';
-                }
-            }
-        }
-
-        const isBool = inferredType === 'boolean' ||
-            lower.includes('bool') || lower.includes('flag') || lower.includes('success') ||
-            new RegExp(`(?:if|iif|any|all)\\s*\\(\\s*${escapedName}\\s*[,)]`, 'i').test(expr) ||
-            new RegExp(`${escapedName}\\s*\\?`, 'i').test(expr);
-
-        const isDate = inferredType === 'date' ||
-            lower.includes('date') || lower.includes('time') || lower.includes('dt');
-
-        const isString = inferredType === 'string' || lower.startsWith('str_');
-        const isList = inferredType === 'array' || lower.includes('list') || lower.includes('arr');
-
-        let val = '10';
-        if (isBool) val = 'true';
-        // formatDate depends on appState being available, which it is.
-        else if (isDate) val = formatDate(appState.settings.value.dateFormat);
-        else if (isString) val = 'abc';
-        else if (isList) val = '[1, 10, 100]';
-
-        newVars.push({ name, value: val });
-    });
-
-    return newVars;
-};
 
 // --- STATE ---
 const settings = loadSavedSettings();
@@ -522,6 +402,12 @@ async function loadDocumentation() {
 }
 
 const util = {
+    // WHY: Accept both "1.5" and "1,5" (decimal comma locales); "1,234" / "1,234,567" are thousands groups.
+    parsePastedNumber: (raw) => {
+        const text = raw.trim();
+        const normalized = /^[+-]?\d{1,3}(,\d{3})+(\.\d+)?$/.test(text) ? text.replace(/,/g, '') : text.replace(',', '.');
+        return parseFloat(normalized);
+    },
     // RFC 4180 CSV. WHY: cells starting with = + @ or tab are prefixed with ' so spreadsheets do not execute them as formulas.
     toCsv: (rows) => {
         const columns = ['dimension', 'inputValue', 'fromUnit', 'fromUnitAbbr', 'toUnit', 'toUnitAbbr', 'resultValue'];
@@ -660,20 +546,33 @@ export const actions = {
 
                 if (!q) return;
 
+                // WHY: URL state is untrusted input (edited or stale links); ignore unknown dimensions, units and non-numeric values.
+                const dimensions = appState.dimensions.value || [];
+                if (dimensions.length > 0 && !dimensions.includes(q)) return;
+
                 isHandlingPopState = true;
                 try {
-                    await batch(async () => {
-                        if (q !== appState.selectedDimension.value) {
-                            appState.selectedDimension.value = q;
-                            await actions.loadUnits(q);
-                        }
+                    if (q !== appState.selectedDimension.value) {
+                        appState.selectedDimension.value = q;
+                        await actions.loadUnits(q);
+                    }
 
-                        if (f) appState.fromUnit.value = f;
-                        if (t) appState.toUnit.value = t;
-                        if (v !== null) appState.inputValue.value = parseFloat(v);
+                    const canonical = (name) => {
+                        if (!name) return null;
+                        const match = (appState.units.value || []).find(u => (u.name || u.Name || '').toLowerCase() === name.toLowerCase());
+                        return match ? (match.name || match.Name) : null;
+                    };
+                    const value = v === null ? NaN : parseFloat(v);
 
-                        actions.convert();
+                    batch(() => {
+                        const fromName = canonical(f);
+                        const toName = canonical(t);
+                        if (fromName) appState.fromUnit.value = fromName;
+                        if (toName) appState.toUnit.value = toName;
+                        if (Number.isFinite(value)) appState.inputValue.value = value;
                     });
+
+                    actions.convert();
                     syncUrlNow(true);
                 } finally {
                     isHandlingPopState = false;
@@ -961,15 +860,19 @@ export const actions = {
                         toUnitAbbr: toStr,
                         resultValue: resultFormatted
                     };
-                    const maxLen = parseInt(appState.settings.value.historyLength) || 15;
-                    // Remove duplicate conversion if it exists in history to bring it to top
-                    const newHistory = appState.history.value.filter(h =>
-                        !(h.inputValue === newItem.inputValue &&
-                            h.fromUnit === newItem.fromUnit &&
-                            h.toUnit === newItem.toUnit)
-                    );
-                    newHistory.unshift(newItem);
-                    appState.history.value = newHistory.slice(0, maxLen);
+                    // WHY: convert() runs on every keystroke; record only the value the user settles on (typing "1234" stores one entry, not four).
+                    clearTimeout(historyCommitTimer);
+                    historyCommitTimer = setTimeout(() => {
+                        const maxLen = parseInt(appState.settings.value.historyLength) || 15;
+                        // Remove duplicate conversion if it exists in history to bring it to top
+                        const newHistory = appState.history.value.filter(h =>
+                            !(h.inputValue === newItem.inputValue &&
+                                h.fromUnit === newItem.fromUnit &&
+                                h.toUnit === newItem.toUnit)
+                        );
+                        newHistory.unshift(newItem);
+                        appState.history.value = newHistory.slice(0, maxLen);
+                    }, HISTORY_COMMIT_DELAY_MS);
                 }
             } else {
                 appState.resultValue.value = 'Error';
@@ -1055,12 +958,12 @@ export const actions = {
 
         // Try to match patterns like "500 psi to kPa" or "500.25 kg in lbs"
         // Match: 1) Number, 2) FromUnit, 3) Separator (to/in/into/->|=), 4) ToUnit
-        const match = text.match(/^\s*([+-]?\d*(?:\.\d+)?(?:[eE][+-]?\d+)?)\s+([a-zA-Z°μµ/23^]+)\s+(?:to|in|into|->|=)\s+([a-zA-Z°μµ/23^]+)\s*$/i);
+        const match = text.match(/^\s*([+-]?(?:\d{1,3}(?:,\d{3})+|\d*)(?:[.,]\d+)?(?:[eE][+-]?\d+)?)\s+([a-zA-Z°μµ/23^]+)\s+(?:to|in|into|->|=)\s+([a-zA-Z°μµ/23^]+)\s*$/i);
 
         if (match) {
             e.preventDefault(); // Stop literal numerical pasting since we are handling the entire UI state swap
 
-            const val = parseFloat(match[1]);
+            const val = util.parsePastedNumber(match[1]);
             const fromStr = match[2].trim();
             const toStr = match[3].trim();
 
@@ -1122,16 +1025,6 @@ export const actions = {
         appState.docsOpen.value = true;
     },
 
-    removeVar: (index) => {
-        appState.variables.value = appState.variables.value.filter((_, i) => i !== index);
-    },
-    clearVars: () => {
-        appState.variables.value = [];
-        appState.result.value = '---';
-        appState.message.value = '';
-        appState.resultType.value = '';
-        appState.calcTime.value = null;
-    },
     copyToClipboard: (text) => {
         navigator.clipboard.writeText(text);
         util.notify("Copied to clipboard!", "success", "copy");
@@ -1308,13 +1201,6 @@ export const actions = {
         document.body.removeChild(a);
         URL.revokeObjectURL(url);
         util.notify("History exported successfully!", "success", "download");
-    },
-
-    toggleTheme: () => {
-        const current = appState.settings.value.theme || 'dark';
-        const next = current === 'dark' ? 'light' : 'dark';
-        appState.settings.value = { ...appState.settings.value, theme: next };
-        actions.saveSettings(appState.settings.value);
     },
 
     cancelSettings: () => {
