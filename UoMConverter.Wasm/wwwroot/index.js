@@ -1135,13 +1135,6 @@ export const Documentation = ({ state, actions }) => {
                                     <kbd class="kbd-badge">Space</kbd>
                                 </div>
 
-                                <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.75rem;">
-                                    <span style="color: color-mix(in srgb, var(--text), transparent 30%); font-size: 1rem;">Trigger Manual Calculation</span>
-                                    <div style="display:flex; gap: 0.5rem; align-items: center;">
-                                        <kbd class="kbd-badge">Ctrl</kbd> <span style="font-size: 0.8rem; color: var(--text-muted);">+</span> <kbd class="kbd-badge">Enter</kbd>
-                                    </div>
-                                </div>
-
                                  <div style="display: flex; align-items: center; justify-content: space-between;">
                                     <span style="color: color-mix(in srgb, var(--text), transparent 30%); font-size: 1rem;">Open Shortcuts View</span>
                                     <kbd class="kbd-badge">?</kbd>
@@ -1323,7 +1316,7 @@ export const Documentation = ({ state, actions }) => {
                     return html`
                                                 <div class="doc-card">
                                                     <div class="doc-header" style="justify-content: flex-start; gap: 0.75rem; margin-bottom: 0.25rem;">
-                                                        <span class="doc-name" style="font-size: 1.05rem; cursor: pointer;" onclick=${() => { actions.setDimension(dim.Name); actions.setFromUnit(u.Name); appState.toUnit.value = ''; appState.docsOpen.value = false; }}>${formatLabel(u.Name)}</span>
+                                                        <span class="doc-name" style="font-size: 1.05rem; cursor: pointer;" onclick=${async () => { appState.docsOpen.value = false; await actions.setDimension(dim.Name); actions.setFromUnit(u.Name); }}>${formatLabel(u.Name)}</span>
                                                         ${abbr ? html`<sl-badge class="uom-badge" size="small">${abbr}</sl-badge>` : null}
                                                     </div>
                                                     <div class="doc-desc">
@@ -1432,8 +1425,11 @@ const App = ({ state, actions }) => {
                 }
             }
 
+            // WHY: Single-key shortcuts must not fire on modifier combos (e.g. browser Ctrl+S).
+            const hasModifier = e.ctrlKey || e.metaKey || e.altKey;
+
             // Swap units
-            if (e.key.toLowerCase() === 's' && !isInputFocused) {
+            if (e.key.toLowerCase() === 's' && !hasModifier && !isInputFocused) {
                 e.preventDefault();
                 actions.swapUnits();
             }
@@ -1453,21 +1449,11 @@ const App = ({ state, actions }) => {
                 }
             }
 
-            // Ctrl+C to copy equation
-            if (e.key.toLowerCase() === 'c' && (e.ctrlKey || e.metaKey) && !isInputFocused) {
+            // Ctrl+C to copy equation, unless the user is copying selected text natively
+            const hasTextSelection = (globalThis.getSelection?.()?.toString() ?? '').length > 0;
+            if (e.key.toLowerCase() === 'c' && (e.ctrlKey || e.metaKey) && !isInputFocused && !hasTextSelection) {
                 e.preventDefault();
                 actions.copyExtended('equation');
-            }
-
-            // Ctrl+S to save snippet
-            if (e.key.toLowerCase() === 's' && (e.ctrlKey || e.metaKey)) {
-                e.preventDefault();
-                actions.openSaveSnippet();
-            }
-
-            // Ctrl+Enter to trigger calculate
-            if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
-                actions.calculate();
             }
         };
 

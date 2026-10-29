@@ -46,12 +46,15 @@ self.addEventListener('install', (event) => {
     offlineAssets = [...new Set(offlineAssets)];
 
     // 4. Cache everything upfront. Now the app is perfectly offline-capable immediately!
+    // WHY: Rethrow so a partial precache fails the install; otherwise activate would delete the last good cache.
+    // cache:'reload' bypasses the HTTP cache so a stale index.html is never stored under the new version.
     event.waitUntil(
-        caches.open(CACHE_NAME).then((cache) => {
-            return cache.addAll(offlineAssets);
-        }).catch(err => {
-            console.error('[SW] Failed to pre-cache offline assets:', err);
-        })
+        caches.open(CACHE_NAME)
+            .then((cache) => cache.addAll(offlineAssets.map((url) => new Request(url, { cache: 'reload' }))))
+            .catch((err) => {
+                console.error('[SW] Failed to pre-cache offline assets:', err);
+                throw err;
+            })
     );
 });
 
@@ -67,9 +70,22 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-    // We skip cross-origin requests for now to keep it simple, 
-    // except for those specifically included in ASSETS (CDNs)
+    if (event.request.method !== 'GET') return;
+
+    // WHY: The app shell is served with deep-link query strings (?from=&to=&val=); ignore them for navigations
+    // and fall back to the cached shell when offline.
+    if (event.request.mode === 'navigate') {
+        event.respondWith(
+            caches.match(event.request, { ignoreSearch: true })
+                .then((cached) => cached || fetch(event.request))
+                .catch(() => caches.match(new URL('index.html', self.registration.scope).href))
+        );
+        return;
+    }
+
+    // Cross-origin requests are cached only for curated CDNs (esm.sh serves Preact, htm and signals).
     const isCdn = event.request.url.includes('cdn.jsdelivr.net') ||
+        event.request.url.includes('esm.sh') ||
         event.request.url.includes('api.iconify.design') ||
         event.request.url.includes('fonts.googleapis.com') ||
         event.request.url.includes('fonts.gstatic.com');

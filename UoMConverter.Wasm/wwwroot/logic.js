@@ -155,10 +155,19 @@ export const getTypeIconUrl = (type) => {
 };
 
 // --- PERSISTENCE UTILS ---
+// WHY: Storage can be full, disabled or blocked (private modes); persistence must never break the app.
+const safeSetItem = (key, value) => {
+    try {
+        localStorage.setItem(key, JSON.stringify(value));
+    } catch (e) {
+        console.warn(`UoMConverter: could not persist '${key}'`, e);
+    }
+};
+
 const loadSavedHistory = () => {
     try {
-        const saved = localStorage.getItem(STORAGE_KEY_HISTORY);
-        return saved ? JSON.parse(saved) : [];
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY_HISTORY) ?? '[]');
+        return Array.isArray(saved) ? saved : [];
     } catch { return []; }
 };
 
@@ -433,19 +442,19 @@ export const appState = {
 
 // --- AUTO-SAVE EFFECTS ---
 effect(() => {
-    localStorage.setItem(STORAGE_KEY_HISTORY, JSON.stringify(appState.history.value));
+    safeSetItem(STORAGE_KEY_HISTORY, appState.history.value);
 });
 
 effect(() => {
-    localStorage.setItem(STORAGE_KEY_SNIPPETS, JSON.stringify(appState.snippets.value));
+    safeSetItem(STORAGE_KEY_SNIPPETS, appState.snippets.value);
 });
 
 effect(() => {
-    localStorage.setItem(STORAGE_KEY_DIM_USAGE, JSON.stringify(appState.dimensionUsage.value));
+    safeSetItem(STORAGE_KEY_DIM_USAGE, appState.dimensionUsage.value);
 });
 
 effect(() => {
-    localStorage.setItem(STORAGE_KEY_UNIT_FREQ, JSON.stringify(appState.unitUsage.value));
+    safeSetItem(STORAGE_KEY_UNIT_FREQ, appState.unitUsage.value);
 });
 
 effect(() => {
@@ -513,14 +522,23 @@ async function loadDocumentation() {
 }
 
 const util = {
+    // RFC 4180 CSV. WHY: cells starting with = + @ or tab are prefixed with ' so spreadsheets do not execute them as formulas.
+    toCsv: (rows) => {
+        const columns = ['dimension', 'inputValue', 'fromUnit', 'fromUnitAbbr', 'toUnit', 'toUnitAbbr', 'resultValue'];
+        const cell = (value) => {
+            let text = value === null || value === undefined ? '' : String(value);
+            if (/^[=+@\t]/.test(text)) text = `'${text}`;
+            return /[",\r\n]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text;
+        };
+        return [columns.join(','), ...rows.map((row) => columns.map((c) => cell(row[c])).join(','))].join('\r\n');
+    },
     notify: async (message, variant = 'success', icon = 'check2-circle') => {
         const alert = document.createElement('sl-alert');
         alert.variant = variant;
         alert.closable = true;
         alert.duration = 3000;
-        alert.innerHTML = `
-            ${message}
-        `;
+        // WHY: textContent, never innerHTML; messages can include unit names and pasted text.
+        alert.textContent = message;
 
         // Prevent layout shift/flicker by removing from flow immediately
         alert.style.position = 'fixed';
@@ -560,7 +578,7 @@ export const actions = {
             // Persist Pinned Dimensions
             effect(() => {
                 try {
-                    localStorage.setItem(STORAGE_KEY_PINNED_DIMS, JSON.stringify(appState.pinnedDimensions.value));
+                    safeSetItem(STORAGE_KEY_PINNED_DIMS, appState.pinnedDimensions.value);
                 } catch (e) {
                     console.warn("Failed to save pinned dimensions", e);
                 }
@@ -719,17 +737,27 @@ export const actions = {
                 appState.inputValue.value = parseFloat(initVal);
             }
 
+            // WHY: Unit names are case-insensitive (links shared before 0.10.0 use "KiloMeter"); normalize to the canonical name.
+            const canonicalUnitName = (query) => {
+                if (!query) return null;
+                const q = query.toLowerCase();
+                const match = units.find(u => (u.name || u.Name || '').toLowerCase() === q);
+                return match ? (match.name || match.Name) : null;
+            };
+            const fromName = canonicalUnitName(initFrom);
+            const toName = canonicalUnitName(initTo);
+
             // Smart defaults or URL restore
-            if (initFrom && units.some(u => (u.name || u.Name) === initFrom)) {
-                appState.fromUnit.value = initFrom;
+            if (fromName) {
+                appState.fromUnit.value = fromName;
             } else if (units.length >= 2) {
                 appState.fromUnit.value = units[0].name || units[0].Name;
             } else if (units.length > 0) {
                 appState.fromUnit.value = units[0].name || units[0].Name;
             }
 
-            if (initTo && units.some(u => (u.name || u.Name) === initTo)) {
-                appState.toUnit.value = initTo;
+            if (toName) {
+                appState.toUnit.value = toName;
             } else if (units.length >= 2) {
                 appState.toUnit.value = units[1].name || units[1].Name;
             } else if (units.length > 0) {
@@ -842,7 +870,7 @@ export const actions = {
                                     formatted = parseFloat(raw.toPrecision(12)).toString();
                                     if (appState.settings.value.useThousandsSeparator !== false && !formatted.includes('e') && !formatted.includes('E')) {
                                         const parts = formatted.split('.');
-                                        parts[0] = parts[0].replace(/\\B(?=(\\d{3})+(?!\\d))/g, ",");
+                                        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                                         formatted = parts.join('.');
                                     }
                                 }
@@ -1055,18 +1083,19 @@ export const actions = {
                     // Try to exactly match the requested units against the actual names or abbreviations
                     const findUnit = (query) => {
                         const q = query.toLowerCase();
+                        // WHY: Blazor interop serializes camelCase (name); keep PascalCase as a fallback.
                         return units.find(u =>
-                            (u.Name || '').toLowerCase() === q ||
-                            (u.Abbreviation || '').toLowerCase() === q ||
-                            (u.Plural || '').toLowerCase() === q
+                            (u.name ?? u.Name ?? '').toLowerCase() === q ||
+                            (u.abbreviation ?? u.Abbreviation ?? '').toLowerCase() === q ||
+                            (u.plural ?? u.Plural ?? '').toLowerCase() === q
                         );
                     };
 
                     const matchedFrom = findUnit(fromStr);
                     const matchedTo = findUnit(toStr);
 
-                    if (matchedFrom) appState.fromUnit.value = matchedFrom.Name;
-                    if (matchedTo) appState.toUnit.value = matchedTo.Name;
+                    if (matchedFrom) appState.fromUnit.value = matchedFrom.name ?? matchedFrom.Name;
+                    if (matchedTo) appState.toUnit.value = matchedTo.name ?? matchedTo.Name;
 
                     appState.inputValue.value = val;
 
@@ -1250,7 +1279,7 @@ export const actions = {
                 appState.history.value = appState.history.value.slice(0, maxLen);
             }
 
-            localStorage.setItem(STORAGE_KEY_SETTINGS, JSON.stringify(newSettings));
+            safeSetItem(STORAGE_KEY_SETTINGS, newSettings);
             appState.message.value = "Settings saved globally";
             util.notify("Settings saved successfully!");
 
@@ -1261,15 +1290,17 @@ export const actions = {
             appState.message.value = "Error: " + e.message;
         }
     },
-    exportHistory: async () => {
-        const historyData = JSON.stringify(appState.history.value, null, 2);
-        const blob = new Blob([historyData], { type: 'application/json' });
+    exportHistory: async (format = 'json') => {
+        const history = appState.history.value;
+        const isCsv = format === 'csv';
+        const content = isCsv ? util.toCsv(history) : JSON.stringify(history, null, 2);
+        const blob = new Blob([content], { type: isCsv ? 'text/csv;charset=utf-8' : 'application/json' });
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
 
         // Ensure consistent naming for exported data
-        const fileName = `uom_history_${new Date().getTime()}.json`;
+        const fileName = `uom_history_${new Date().getTime()}.${isCsv ? 'csv' : 'json'}`;
         a.download = fileName;
 
         document.body.appendChild(a);
