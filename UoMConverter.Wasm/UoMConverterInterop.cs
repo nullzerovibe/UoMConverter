@@ -28,8 +28,10 @@ public sealed class UoMConverterInterop {
     /// </summary>
     /// <param name="dimension">The dimension to retrieve units for.</param>
     /// <returns>The units of the dimension (serialized to JS in camelCase).</returns>
+    // WARN: Must be a plain array. The trimmed/AOT publish cannot serialize the ImmutableArray behind GetUnitList
+    // (SerializationNotSupportedType), which left the unit pickers empty; the dev server does not reproduce it.
     [JSInvokable]
-    public IReadOnlyList<UnitInfo> GetUnits(string dimension) => _converter.GetUnitList(dimension);
+    public UnitInfo[] GetUnits(string dimension) => [.. _converter.GetUnitList(dimension)];
 
     /// <summary>
     /// Finds the first dimension that contains a unit matching the given name or abbreviation.

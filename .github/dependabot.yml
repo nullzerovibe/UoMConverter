@@ -4,9 +4,23 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 5
+    # WHY: All versions live in Directory.Packages.props, so per-package PRs conflict with each other after the first merge.
+    groups:
+      nuget-minor-patch:
+        update-types: ["minor", "patch"]
+    ignore:
+      # WARN: The source generator must target a Roslyn version no newer than the compiler in the oldest supported SDK,
+      # otherwise it silently fails to load (CS9057). Raise these deliberately, not via Dependabot.
+      - dependency-name: "Microsoft.CodeAnalysis.CSharp"
+        update-types: ["version-update:semver-major", "version-update:semver-minor"]
+      - dependency-name: "Microsoft.CodeAnalysis.Analyzers"
+        update-types: ["version-update:semver-major", "version-update:semver-minor"]
 
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "monthly"
+    groups:
+      github-actions:
+        patterns: ["*"]
