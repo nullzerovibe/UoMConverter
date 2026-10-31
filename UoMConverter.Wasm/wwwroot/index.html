@@ -1,243 +1,47 @@
 <!DOCTYPE html>
-<html lang="en" class="sl-theme-dark">
-
+<html lang="en" data-accent="yellow">
 <head>
     <meta charset="utf-8" />
-    <title>UoMConverter</title>
-    <base href="/" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description"
-        content="High-performance .NET WASM Units of Measure Converter with a premium industrial theme." />
-    <meta name="theme-color" content="#0f172a" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>UoMConverter — units of measure, in .NET WebAssembly</title>
+    <meta name="description" content="Convert between thousands of units across every physical quantity. The UoMConverter .NET library compiled to WebAssembly: instant, private, offline." />
+    <meta name="theme-color" content="#14172b" />
+    <meta name="color-scheme" content="dark light" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <base href="./" />
 
-    <!-- OpenGraph / Social Sharing -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="UoMConverter - .NET WASM Units of Measure Converter" />
-    <meta property="og:description"
-        content="A blazingly fast unit converter and a professional industrial aesthetic." />
-    <meta property="og:image"
-        content="https://raw.githubusercontent.com/nullzerovibe/UoMConverter/main/docs/preview.png" />
+    <meta property="og:title" content="UoMConverter — .NET WebAssembly units of measure converter" />
+    <meta property="og:description" content="Thousands of units across every physical quantity, converted by the real .NET library running in your browser." />
+    <meta property="og:image" content="https://raw.githubusercontent.com/nullzerovibe/UoMConverter/main/docs/preview.png" />
     <meta property="og:url" content="https://nullzerovibe.github.io/UoMConverter/" />
     <meta name="twitter:card" content="summary_large_image" />
 
-    <!-- Shoelace (CDN) -->
-    <!-- WHY: SRI pins the exact bytes of these version-pinned CDN files; dynamically loaded Shoelace chunks cannot carry SRI. -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/themes/light.css"
-        integrity="sha384-0usmJJJTG5wZwRFlxdECle5gNAqtRYVm8rHBHjGO0+Cpgp83KTGEANVIFUYafjaO" crossorigin="anonymous" />
-    <script type="module"
-        src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/shoelace-autoloader.js"
-        integrity="sha384-rsRbuKcK03eS6T2ouIt4+Ho0AbSSHEWABYpNJCKdACuV1at0Ah+G8n1WqV4a2Iby" crossorigin="anonymous"></script>
+    <script src="nzv/boot.js"></script>
+    <link rel="preload" href="nzv/fonts/geist.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="nzv/fonts/geist-mono.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="nzv/nzv.css" />
+    <link rel="stylesheet" href="app.css" />
 
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="index.css" />
+    <link rel="icon" href="favicon/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
 
-
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
-
-    <!-- Import Map for Blazor (generated during publish) -->
     <script type="importmap"></script>
-
-    <script>
-        // Global Console Branding
-        console.log(`%c
-N u l l Z e r o V i b e
-▄▀▀▄░█▀▀█░█▀▀▄░█▀▀ 
-█░░░░█░░█░█░░█░█▀▀ 
-▀▄▄▀░█▄▄█░█▄▄▀░█▄▄
-
- ░▒▒▓▓ LIFETIME OF SYNTAX // AGENTIC EVOLUTION ▓▓▒▒░ 
-`, 'font-family: monospace; font-weight: bold; color: #00ffff;');
-    </script>
 </head>
-
-<body class="is-booting">
-    <!-- Boot Guard Splash Screen -->
-    <div id="boot-splash" class="boot-splash">
-        <img src="nlo/nlo-banner.jpg" class="splash-banner" alt="">
-        <div class="splash-logo">UoMConverter</div>
-        <div class="splash-description">High-performance .NET WASM Units of Measure Converter</div>
-        <div class="splash-loader"></div>
-        <div class="splash-status" id="boot-status">Initializing Engine...</div>
+<body>
+    <div id="nzv-splash" class="nzv-splash" role="status" aria-live="polite">
+        <img class="nzv-splash__logo" src="nzv/brand/nlo-192.png" alt="" width="96" height="96" />
+        <div class="nzv-splash__name">UoM<span class="u-accent">Converter</span></div>
+        <div class="nzv-splash__bar"></div>
+        <div class="nzv-splash__msg">STARTING .NET ENGINE</div>
+        <noscript><p class="u-dim">UoMConverter needs JavaScript and WebAssembly.</p></noscript>
     </div>
-
-    <!-- App Root -->
-    <div id="app" v-cloak>
-        <!-- Preact will mount here -->
-    </div>
-
-    <!-- Background Decoration -->
-    <img src="nlo/nlo-banner.jpg" class="app-banner" alt="" style="display:none;">
-    <!-- Hidden but kept for asset reference if needed -->
-
-    <!-- Corner Links (Static) -->
-    <div class="contact-footer">
-        <a href="mailto:nullzerovibe@gmail.com" class="contact-link">
-            <sl-icon name="envelope"></sl-icon>
-            <span>nullzerovibe@gmail.com</span>
-        </a>
-        <a href="https://github.com/nullzerovibe" target="_blank" class="contact-link">
-            <sl-icon name="github"></sl-icon>
-            <span>github.com/nullzerovibe</span>
-        </a>
-        <a href="https://x.com/nullzerovibe" target="_blank" class="contact-link">
-            <sl-icon name="twitter-x"></sl-icon>
-            <span>x.com/nullzerovibe</span>
-        </a>
-    </div>
-
-    <a href="https://github.com/nullzerovibe/UoMConverter" target="_blank" class="corner-logo-wrapper">
-        <img src="nlo/nlo-profile.png" alt="NullZeroVibe" class="corner-logo" />
-    </a>
-
-    <!-- Global Interop Setup (Must run before Blazor starts) -->
-    <script>
-        globalThis.uomConverter = null;
-        globalThis.registerUoMConverter = (dotNetHelper) => {
-            console.log("UoMConverter: .NET Instance Registered!", dotNetHelper);
-            const status = document.getElementById('boot-status');
-            if (status) status.textContent = 'Mounting UI...';
-
-            globalThis.uomConverter = dotNetHelper;
-            // Dispatch event for app.js to catch if it's already waiting
-            globalThis.dispatchEvent(new CustomEvent('uom-converter-ready', { detail: dotNetHelper }));
-        };
-    </script>
-
-    <!-- UI Boot Guard (Shoelace Definition Watcher) -->
-    <script>
-        (async () => {
-            console.log("Boot Guard: Monitoring Shoelace Definitions...");
-            const status = document.getElementById('boot-status');
-
-            try {
-                // Wait for core components to be defined by Shoelace Autoloader
-                await Promise.all([
-                    customElements.whenDefined('sl-button'),
-                    customElements.whenDefined('sl-dialog'),
-                    customElements.whenDefined('sl-card'),
-                    customElements.whenDefined('sl-input'),
-                    customElements.whenDefined('sl-icon')
-                ]);
-
-                console.log("Boot Guard: Shoelace components defined.");
-                if (status) status.textContent = 'Engine Ready';
-
-                // Once components are defined, lift the cloak and hide splash
-                // We Wait a tiny bit extra for WASM if possible, but the app handles WASM load internally
-                setTimeout(() => {
-                    const app = document.getElementById('app');
-                    const splash = document.getElementById('boot-splash');
-
-                    if (app) app.removeAttribute('v-cloak');
-                    if (splash) splash.classList.add('hidden');
-                    document.body.classList.remove('is-booting');
-
-                    console.log("Boot Guard: Cloak lifted. UI synchronized.");
-                }, 150);
-
-            } catch (e) {
-                console.error("Boot Guard: Initialization failed!", e);
-                if (status) status.textContent = 'Boot Error: ' + e.message;
-            }
-        })();
-    </script>
-
-    <!-- Blazor Bootstrapper -->
-    <script type="module">
-        // --- DYNAMIC FILENAME RESOLVER & BLAZOR STARTER ---
-        // Same logic as before to find the hashed blazor.webassembly.js
-        (function () {
-            let retries = 0;
-            const maxRetries = 20;
-
-            const loadEngine = () => {
-                const mapTag = document.querySelector('script[type="importmap"]');
-                let url = "_framework/blazor.webassembly.js"; // Fallback
-
-                if (mapTag && mapTag.textContent.trim().length > 0) {
-                    try {
-                        const map = JSON.parse(mapTag.textContent);
-                        // Try to find the blazor script in imports
-                        for (const key in map.imports) {
-                            if (key.includes("blazor.webassembly.js")) {
-                                url = map.imports[key];
-                                break;
-                            }
-                        }
-                        console.log("Bootstrapper: Importmap found. URL:", url);
-                    } catch (e) {
-                        console.error("Bootstrapper: Importmap parse failed:", e);
-                    }
-                } else if (retries < maxRetries) {
-                    // Importmap might not be populated yet if it's being injected late? 
-                    // Usually it's static in index.html or injected by server.
-                    // If static empty, use fallback immediately.
-                    // If we suspect a race (unlikely in static hosting), wait.
-                    // For now, proceed with fallback if empty.
-                }
-
-                console.log("Bootstrapper: Loading Blazor from", url);
-                const script = document.createElement('script');
-                script.src = url;
-                script.type = "module";
-                script.setAttribute('autostart', 'false');
-                script.onload = () => {
-                    console.log("Bootstrapper: Blazor script loaded. Starting...");
-                    Blazor.start().then(() => {
-                        console.log("Bootstrapper: Blazor started.");
-                    }).catch(e => console.error("Bootstrapper: Blazor.start failed", e));
-                };
-                script.onerror = (e) => console.error("Bootstrapper: Script load failed", e);
-                document.body.appendChild(script);
-            };
-
-            // Small delay to ensure DOM is ready and importmap (if any) is parsed
-            setTimeout(loadEngine, 50);
-        })();
-    </script>
-
-    <!-- Main UI Logic -->
-    <script type="module" src="index.js"></script>
-
-    <script>
-        if ('serviceWorker' in navigator) {
-            globalThis.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js', { updateViaCache: 'none' })
-                    .then(reg => {
-                        console.log('SW: Registered', reg);
-                        // Check if already active or wait for it
-                        if (reg.active) {
-                            globalThis.dispatchEvent(new CustomEvent('sw-ready'));
-                        }
-                        reg.addEventListener('updatefound', () => {
-                            const newWorker = reg.installing;
-                            newWorker.addEventListener('statechange', () => {
-                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                                    globalThis.dispatchEvent(new CustomEvent('sw-update'));
-                                }
-                                if (newWorker.state === 'activated') {
-                                    globalThis.dispatchEvent(new CustomEvent('sw-ready'));
-                                }
-                            });
-                        });
-                    })
-                    .catch(err => console.error('SW: Registration failed', err));
-            });
-
-            // Capture install prompt
-            globalThis.addEventListener('beforeinstallprompt', (e) => {
-                e.preventDefault();
-                globalThis.dispatchEvent(new CustomEvent('pwa-install-ready', { detail: e }));
-            });
-        }
-    </script>
+    <div id="app"></div>
+    <script type="module" src="app.js"></script>
 </body>
-
 </html>

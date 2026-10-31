@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="nlo/nlo-banner.jpg" width="100%" alt="nullzerovibe banner" />
+<img src="nzv/brand/nlo-banner.jpg" width="100%" alt="nullzerovibe banner" />
 
 # N u l l Z e r o V i b e
 <pre>
