@@ -1020,6 +1020,8 @@ input[type="number"].nzv-input::-webkit-outer-spin-button {
 }
 
 .nzv-readout__value small {
+    display: inline-block;
+    white-space: nowrap;
     font-size: 0.45em;
     color: var(--accent);
     font-weight: 600;
